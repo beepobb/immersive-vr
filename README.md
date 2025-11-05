@@ -1,2 +1,1 @@
-# Immersive-AR-VR-Conferencing
-Capstone Project
+# Capstone Project
