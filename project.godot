@@ -18,4 +18,5 @@ config/icon="res://icon.svg"
 [xr]
 
 openxr/enabled=true
+openxr/default_action_map="res://assets/XR/openxr_action_map.tres"
 shaders/enabled=true
