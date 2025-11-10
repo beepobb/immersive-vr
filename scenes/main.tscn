@@ -55,7 +55,7 @@ shape = SubResource("BoxShape3D_7dm0k")
 mesh = SubResource("BoxMesh_ig7tw")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_h2yge")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.862)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2, -0.862)
 
 [node name="Table" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17290175, 0.66686463, 1.2344054)

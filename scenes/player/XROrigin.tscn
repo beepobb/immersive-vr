@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://jg1qkgdrf47o"]
+[gd_scene load_steps=11 format=3 uid="uid://jg1qkgdrf47o"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_lig6a"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_7ul40"]
@@ -9,9 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_qxvw2"]
 [ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="7_5mjfp"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2gul"]
+albedo_color = Color(4.1392445e-06, 0.90278107, 0.6113531, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x2gul"]
+material = SubResource("StandardMaterial3D_x2gul")
+
 [node name="XROrigin3D" type="XROrigin3D"]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
+visible = false
 
 [node name="LeftController" type="XRController3D" parent="."]
 tracker = &"left_hand"
@@ -45,3 +52,26 @@ laser_length = 1
 [node name="PlayerBody" parent="." instance=ExtResource("5_qxvw2")]
 
 [node name="MovementJog" parent="." instance=ExtResource("7_5mjfp")]
+
+[node name="FootLController" type="XRController3D" parent="."]
+tracker = &"/user/vive_tracker_htcx/role/left_ankle"
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="FootLController"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_x2gul")
+
+[node name="FootRController" type="XRController3D" parent="."]
+tracker = &"/user/vive_tracker_htcx/role/right_ankle"
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="FootRController"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_x2gul")
+skeleton = NodePath("../../FootLController")
+
+[node name="Waist" type="XRController3D" parent="."]
+tracker = &"/user/vive_tracker_htcx/role/waist"
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Waist"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_x2gul")
+skeleton = NodePath("../../FootLController")
