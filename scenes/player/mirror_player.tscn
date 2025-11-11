@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddwjssv545w1q"]
+
+[ext_resource type="PackedScene" uid="uid://b7m7fywrshwou" path="res://assets/models/Remy.fbx" id="2_by7om"]
+
+[node name="MirrorPlayer" type="Node3D"]
+
+[node name="Remy" parent="." instance=ExtResource("2_by7om")]

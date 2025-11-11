@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0uy3mf2m2qny"]
+[gd_scene load_steps=14 format=3 uid="uid://b0uy3mf2m2qny"]
 
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bi103pmpjfs55" path="res://scenes/pickables/cube.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://bb1a15xabs5cj" path="res://scenes/UI/interactable_ui_3d.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bb1a15xabs5cj" path="res://scenes/ui/interactable_ui_3d.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cwlyes40d0mq8" path="res://scenes/skeleton_debug_mirror.tscn" id="5_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -71,3 +72,6 @@ transform = Transform3D(1, 0, 0, 0, 0.999968, 0.007993519, 0, -0.007993519, 0.99
 
 [node name="InteractableUI" parent="." instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.17337176, 2.3346, 2.0178115)
+
+[node name="SkeletonDebugMirror" parent="." instance=ExtResource("5_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.711421)

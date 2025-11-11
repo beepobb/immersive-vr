@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwlyes40d0mq8"]
+
+[ext_resource type="Script" uid="uid://bu0i13twus8li" path="res://scripts/VRIKDebugMirror.gd" id="1_cgvdo"]
+[ext_resource type="PackedScene" uid="uid://ddwjssv545w1q" path="res://scenes/player/mirror_player.tscn" id="2_1c37u"]
+
+[node name="SkeletonDebugMirror" type="Node3D"]
+script = ExtResource("1_cgvdo")
+
+[node name="MirrorPlayer" parent="." instance=ExtResource("2_1c37u")]

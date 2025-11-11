@@ -88,8 +88,6 @@ META_ENVIRONMENT_DEPTH_TO_CAMERA_PROJECTION_RIGHT={
 
 [xr]
 
-openxr/enabled=true
-openxr/default_action_map="res://assets/XR/openxr_action_map.tres"
 shaders/enabled=true
 openxr/extensions/meta/color_space=false
 openxr/extensions/meta/composition_layer_settings=false

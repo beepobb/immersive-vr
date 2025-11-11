@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb1a15xabs5cj"]
+[gd_scene load_steps=4 format=3 uid="uid://bb1a15xabs5cj"]
 
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_hgsn2"]
-[ext_resource type="PackedScene" uid="uid://c52ll3uatyoag" path="res://scenes/UI/interactable_ui.tscn" id="2_obi20"]
+[ext_resource type="PackedScene" uid="uid://c52ll3uatyoag" path="res://scenes/ui/interactable_ui.tscn" id="2_obi20"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxqii"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("1_hgsn2")]
 scene = ExtResource("2_obi20")
 viewport_size = Vector2(1280, 720)
+material = SubResource("StandardMaterial3D_qxqii")
 scene_properties_keys = PackedStringArray("interactable_ui.gd")
