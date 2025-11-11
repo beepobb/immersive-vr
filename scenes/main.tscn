@@ -68,7 +68,6 @@ mesh = SubResource("BoxMesh_sugp2")
 shape = SubResource("BoxShape3D_jyhfs")
 
 [node name="PickableObject" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 0.999968, 0.007993519, 0, -0.007993519, 0.999968, -0.16269004, 1.5882437, 1.2419146)
 
 [node name="InteractableUI" parent="." instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.17337176, 2.3346, 2.0178115)

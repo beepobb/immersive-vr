@@ -6,4 +6,4 @@
 [node name="SkeletonDebugMirror" type="Node3D"]
 script = ExtResource("1_cgvdo")
 
-[node name="MirrorPlayer" parent="." instance=ExtResource("2_1c37u")]
+[node name="SkeletalMesh" parent="." instance=ExtResource("2_1c37u")]

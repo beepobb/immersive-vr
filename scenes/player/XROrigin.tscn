@@ -1,5 +1,4 @@
 [gd_scene load_steps=11 format=3 uid="uid://jg1qkgdrf47o"]
-[gd_scene load_steps=11 format=3 uid="uid://jg1qkgdrf47o"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_lig6a"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_7ul40"]
@@ -16,16 +15,9 @@ albedo_color = Color(4.1392445e-06, 0.90278107, 0.6113531, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_x2gul"]
 material = SubResource("StandardMaterial3D_x2gul")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2gul"]
-albedo_color = Color(4.1392445e-06, 0.90278107, 0.6113531, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_x2gul"]
-material = SubResource("StandardMaterial3D_x2gul")
-
 [node name="XROrigin3D" type="XROrigin3D"]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
-visible = false
 visible = false
 
 [node name="LeftController" type="XRController3D" parent="."]
