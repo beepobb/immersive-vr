@@ -1,0 +1,190 @@
+[gd_scene load_steps=3 format=3 uid="uid://dskwobcin0gfq"]
+
+[ext_resource type="Theme" uid="uid://14kqmrsu81bn" path="res://Themes/AppTheme.tres" id="1_2tv6e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqpe6"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2tv6e")
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1200, 700)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/Header"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 28
+text = "←"
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer/Header"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="TitleGroup" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/Header/MarginContainer/TitleGroup"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Avatar Customization"
+
+[node name="Label2" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/Header/MarginContainer/TitleGroup"]
+layout_mode = 2
+text = "Design your avatar’s appearance to match your preference."
+
+[node name="ContentMarginContainer" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="Content" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="LeftPanel" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Display Name" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/LeftPanel"]
+layout_mode = 2
+text = "Display Name"
+
+[node name="LineEdit" type="LineEdit" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/LeftPanel"]
+layout_mode = 2
+
+[node name="Gender" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/LeftPanel"]
+layout_mode = 2
+text = "Gender"
+
+[node name="OptionButton" type="OptionButton" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/LeftPanel"]
+layout_mode = 2
+
+[node name="Age Range" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/LeftPanel"]
+layout_mode = 2
+text = "Age Range"
+
+[node name="OptionButton2" type="OptionButton" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/LeftPanel"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/LeftPanel"]
+layout_mode = 2
+text = "Randomize"
+
+[node name="PreviewWrap" type="Control" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content"]
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -638.0
+offset_bottom = -478.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 4
+
+[node name="RightPanel" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TabContainer" type="TabContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/side_margin = 0
+theme_override_constants/tab_separation = 10
+current_tab = 0
+
+[node name="Hair" type="PanelContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/TabContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dqpe6")
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/TabContainer/Hair"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/TabContainer/Hair/VBoxContainer"]
+layout_mode = 2
+text = "Hairstyle"
+
+[node name="GridContainer" type="GridContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/TabContainer/Hair/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="ButtonShort" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/TabContainer/Hair/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = "Short"
+
+[node name="ButtonBob" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/TabContainer/Hair/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = "Bob"
+
+[node name="ButtonLong" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/TabContainer/Hair/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = "Long"
+
+[node name="FooterMarginContainer" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 5
+
+[node name="Footer" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/FooterMarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/FooterMarginContainer/Footer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Confirm"

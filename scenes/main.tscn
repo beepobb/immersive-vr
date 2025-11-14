@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0uy3mf2m2qny"]
+[gd_scene load_steps=10 format=3 uid="uid://b0uy3mf2m2qny"]
 
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cufxnru0cegtw" path="res://assets/icons/icon.svg" id="3_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,6 +23,8 @@ size = Vector3(5, 0.1, 5)
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
 size = Vector3(5, 0.1, 5)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jyhfs"]
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_0xm2m")
 
@@ -39,6 +42,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("BoxShape3D_7dm0k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 0.411, 0, 0, 0, 0.995, 0, 0, 0)
 mesh = SubResource("BoxMesh_ig7tw")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_h2yge")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_right = 593.0
+offset_bottom = 324.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+material = SubResource("CanvasItemMaterial_jyhfs")
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 39.0
+tooltip_text = "
+"
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="MenuButton" type="MenuButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_sugp2")
