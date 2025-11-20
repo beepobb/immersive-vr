@@ -2,6 +2,8 @@ class_name FullBodyIKResolver3D
 
 extends SkeletonModifier3D
 
+const EPS := 1e-6
+
 # Retrieve bone data from skeleton
 @export var skeleton: Skeleton3D
 
@@ -19,7 +21,7 @@ extends SkeletonModifier3D
 @export var right_arm_bone_name: String = "RightArm"
 @export var right_forearm_bone_name: String = "RightForeArm"
 @export var right_hand_bone_name: String = "RightHand"
-@export var pelvis_bone_name: String = "Pelvis"
+@export var pelvis_bone_name: String = "Hips"
 @export var left_upleg_bone_name: String = "LeftUpLeg"
 @export var left_leg_bone_name: String = "LeftLeg"
 @export var left_foot_bone_name: String = "LeftFoot"
@@ -76,100 +78,16 @@ var spine_chain: Array[int] = []
 #======================================
 var joint_positions_cached: Dictionary = {}
 
-func _process_modification_with_delta(delta: float) -> void:
-	print(delta)
-	# Get tracker positions
-	var head_tracker_pos: Vector3 = tracker_head.global_transform.origin
-	var left_hand_tracker_pos: Vector3 = tracker_left_hand.global_transform.origin
-	var right_hand_tracker_pos: Vector3 = tracker_right_hand.global_transform.origin
-	var waist_tracker_basis: Basis = tracker_waist.global_transform.basis
-	var waist_tracker_pos: Vector3 = tracker_waist.global_transform.origin
-	var left_foot_tracker_pos: Vector3 = tracker_left_foot.global_transform.origin
-	var right_foot_tracker_pos: Vector3 = tracker_right_foot.global_transform.origin
+# Cached rest lengths (computed once)
+var left_arm_rest_lengths: Array[float] = []
+var right_arm_rest_lengths: Array[float] = []
+var left_leg_rest_lengths: Array[float] = []
+var right_leg_rest_lengths: Array[float] = []
+var spine_rest_lengths: Array[float] = []
 
-	var pelvis_transform: Transform3D = Transform3D(waist_tracker_basis, waist_tracker_pos)
-	skeleton.set_bone_global_pose_override(pelvis_bone_id, pelvis_transform, 1.0, true)
-
-	# Get pole vectors
-	var left_elbow_pole: Vector3 = get_pole_vector(
-		skeleton.get_bone_global_pose(left_shoulder_bone_id).origin,
-		spine2_bone_id,
-		true)
-	var right_elbow_pole: Vector3 = get_pole_vector(
-		skeleton.get_bone_global_pose(right_shoulder_bone_id).origin,
-		spine2_bone_id,
-		false)
-	var left_knee_pole: Vector3 = get_pole_vector(
-		skeleton.get_bone_global_pose(left_upleg_bone_id).origin,
-		pelvis_bone_id,
-		true)
-	var right_knee_pole: Vector3 = get_pole_vector(
-		skeleton.get_bone_global_pose(right_upleg_bone_id).origin,
-		pelvis_bone_id,
-		false)
-
-	# Resolve legs
-	var left_leg_positions: Array[Vector3] = get_joint_positions(left_leg_chain)
-	var left_leg_lengths: Array[float] = get_joint_distances(left_leg_chain)
-	var right_leg_positions: Array[Vector3] = get_joint_positions(right_leg_chain)
-	var right_leg_lengths: Array[float] = get_joint_distances(right_leg_chain)
-
-	left_leg_positions = solve_two_bone_ik(
-		left_leg_positions,
-		left_leg_lengths,
-		left_foot_tracker_pos,
-		left_knee_pole
-	)
-
-	right_leg_positions = solve_two_bone_ik(
-		right_leg_positions,
-		right_leg_lengths,
-		right_foot_tracker_pos,
-		right_knee_pole
-	)
-
-	apply_joint_positions(left_leg_chain, left_leg_positions)
-	apply_joint_positions(right_leg_chain, right_leg_positions)
-
-	# Resolve spine
-	var spine_joints = get_joint_positions(spine_chain)
-	var spine_lengths = get_joint_distances(spine_chain)
-	spine_joints = fabrik_solver(spine_joints, head_tracker_pos, spine_lengths)
-
-	# Cone constraints for spine
-	for i in range(spine_chain.size() - 1):
-		var parent_pos = spine_joints[i]
-		var child_pos = spine_joints[i + 1]
-		var forward_dir = (
-			skeleton.get_bone_global_pose(spine_chain[i + 1]).origin
-			- skeleton.get_bone_global_pose(spine_chain[i]).origin
-		).normalized()
-		spine_joints[i + 1] = apply_cone_constraint(child_pos, parent_pos, forward_dir, 45.0)
-
-	apply_joint_positions(spine_chain, spine_joints)
-
-	# Resolve arms
-	var left_arm_positions: Array[Vector3] = get_joint_positions(left_arm_chain)
-	var left_arm_lengths: Array[float] = get_joint_distances(left_arm_chain)
-	var right_arm_positions: Array[Vector3] = get_joint_positions(right_arm_chain)
-	var right_arm_lengths: Array[float] = get_joint_distances(right_arm_chain)
-
-	left_arm_positions = solve_two_bone_ik(
-		left_arm_positions,
-		left_arm_lengths,
-		left_hand_tracker_pos,
-		left_elbow_pole
-	)
-
-	right_arm_positions = solve_two_bone_ik(
-		right_arm_positions,
-		right_arm_lengths,
-		right_hand_tracker_pos,
-		right_elbow_pole
-	)
-
-	apply_joint_positions(left_arm_chain, left_arm_positions)
-	apply_joint_positions(right_arm_chain, right_arm_positions)
+@export var character_root: Node3D
+@export var enable_auto_scale: bool = false
+@export var model_head_rest_height: float = 1.8 # if known (meters)
 
 func _ready() -> void:
 	if not skeleton:
@@ -177,8 +95,6 @@ func _ready() -> void:
 		return
 
 	_init_bone_ids()
-	# joint_positions_cached.clear()
-
 
 	left_arm_chain = [
 		left_shoulder_bone_id,
@@ -210,6 +126,126 @@ func _ready() -> void:
 		head_bone_id
 	]
 
+	# compute rest lengths once
+	left_arm_rest_lengths = compute_chain_rest_lengths(left_arm_chain)
+	right_arm_rest_lengths = compute_chain_rest_lengths(right_arm_chain)
+	left_leg_rest_lengths = compute_chain_rest_lengths(left_leg_chain)
+	right_leg_rest_lengths = compute_chain_rest_lengths(right_leg_chain)
+	spine_rest_lengths = compute_chain_rest_lengths(spine_chain)
+
+func _process_modification_with_delta(_delta: float) -> void:
+	if enable_auto_scale and character_root and model_head_rest_height > 0.001:
+		var head_rest_global = get_bone_rest_global_transform(head_bone_id).origin
+		var model_head_y = head_rest_global.y
+		if model_head_y > EPS:
+			var scale_factor = tracker_head.global_transform.origin.y / model_head_y
+			character_root.scale = Vector3.ONE * scale_factor
+			# disable after first application
+			enable_auto_scale = false
+
+	# Get tracker positions
+	var head_tracker_pos: Vector3 = tracker_head.global_transform.origin
+	var left_hand_tracker_pos: Vector3 = tracker_left_hand.global_transform.origin
+	var right_hand_tracker_pos: Vector3 = tracker_right_hand.global_transform.origin
+	var waist_tracker_basis: Basis = tracker_waist.global_transform.basis
+	var waist_tracker_pos: Vector3 = tracker_waist.global_transform.origin
+	var left_foot_tracker_pos: Vector3 = tracker_left_foot.global_transform.origin
+	var right_foot_tracker_pos: Vector3 = tracker_right_foot.global_transform.origin
+
+	if waist_tracker_basis.x.length() < EPS or waist_tracker_basis.y.length() < EPS or waist_tracker_basis.z.length() < EPS:
+		waist_tracker_basis = Basis.IDENTITY
+
+	var pelvis_transform: Transform3D = Transform3D(waist_tracker_basis, waist_tracker_pos)
+	set_bone_global_transform_local_override(pelvis_bone_id, pelvis_transform, 1.0)
+
+	# Get pole vectors
+	var left_elbow_pole: Vector3 = get_pole_vector(
+		skeleton.get_bone_global_pose(left_shoulder_bone_id).origin,
+		spine2_bone_id,
+		true)
+	var right_elbow_pole: Vector3 = get_pole_vector(
+		skeleton.get_bone_global_pose(right_shoulder_bone_id).origin,
+		spine2_bone_id,
+		false)
+	var left_knee_pole: Vector3 = get_pole_vector(
+		skeleton.get_bone_global_pose(left_upleg_bone_id).origin,
+		pelvis_bone_id,
+		true)
+	var right_knee_pole: Vector3 = get_pole_vector(
+		skeleton.get_bone_global_pose(right_upleg_bone_id).origin,
+		pelvis_bone_id,
+		false)
+
+	# Resolve legs
+	var left_leg_positions: Array[Vector3] = get_joint_positions(left_leg_chain)
+	var right_leg_positions: Array[Vector3] = get_joint_positions(right_leg_chain)
+
+	left_leg_positions = solve_two_bone_ik(
+		left_leg_positions,
+		left_leg_rest_lengths,
+		left_foot_tracker_pos,
+		left_knee_pole
+	)
+
+	right_leg_positions = solve_two_bone_ik(
+		right_leg_positions,
+		right_leg_rest_lengths,
+		right_foot_tracker_pos,
+		right_knee_pole
+	)
+
+	apply_joint_positions_local(left_leg_chain, left_leg_positions)
+	apply_joint_positions_local(right_leg_chain, right_leg_positions)
+
+	# Resolve spine
+	var spine_joints = get_joint_positions(spine_chain)
+	spine_joints = fabrik_solver(spine_joints, head_tracker_pos, spine_rest_lengths)
+
+	# Cone constraints for spine
+	for i in range(spine_chain.size() - 1):
+		var parent_pos = spine_joints[i]
+		var child_pos = spine_joints[i + 1]
+		var forward_dir = (
+			skeleton.get_bone_global_pose(spine_chain[i + 1]).origin
+			- skeleton.get_bone_global_pose(spine_chain[i]).origin
+		).normalized()
+		spine_joints[i + 1] = apply_cone_constraint(child_pos, parent_pos, forward_dir, 45.0)
+
+	apply_joint_positions_local(spine_chain, spine_joints)
+
+	# Resolve arms
+	var left_arm_positions: Array[Vector3] = get_joint_positions(left_arm_chain)
+	var right_arm_positions: Array[Vector3] = get_joint_positions(right_arm_chain)
+
+	left_arm_positions = solve_two_bone_ik(
+		left_arm_positions,
+		left_arm_rest_lengths,
+		left_hand_tracker_pos,
+		left_elbow_pole
+	)
+
+	right_arm_positions = solve_two_bone_ik(
+		right_arm_positions,
+		right_arm_rest_lengths,
+		right_hand_tracker_pos,
+		right_elbow_pole
+	)
+
+	apply_joint_positions_local(left_arm_chain, left_arm_positions)
+	apply_joint_positions_local(right_arm_chain, right_arm_positions)
+
+func get_bone_rest_global_transform(bone_idx: int) -> Transform3D:
+	return skeleton.get_bone_global_rest_transform(bone_idx)
+
+
+func compute_chain_rest_lengths(chain: Array[int]) -> Array[float]:
+	var lengths := []
+	for i in range(chain.size() - 1):
+		var a = get_bone_rest_global_transform(chain[i]).origin
+		var b = get_bone_rest_global_transform(chain[i + 1]).origin
+		lengths.append(a.distance_to(b))
+	return lengths
+
 func _init_bone_ids():
 	head_bone_id = skeleton.find_bone(head_bone_name)
 	neck_bone_id = skeleton.find_bone(neck_bone_name)
@@ -232,27 +268,32 @@ func _init_bone_ids():
 	right_leg_bone_id = skeleton.find_bone(right_leg_bone_name)
 	right_foot_bone_id = skeleton.find_bone(right_foot_bone_name)
 
+func global_to_bone_local_transform(bone_idx: int, desired_global: Transform3D) -> Transform3D:
+	var parent = skeleton.get_bone_parent(bone_idx)
+	var parent_global = skeleton.get_bone_global_pose(parent) if parent != -1 else skeleton.global_transform
+	return parent_global.affine_inverse() * desired_global
+
+func set_bone_global_transform_local_override(bone_idx: int, desired_global: Transform3D, weight: float = 1.0) -> void:
+	var local = global_to_bone_local_transform(bone_idx, desired_global)
+	skeleton.set_bone_local_pose_override(bone_idx, local, weight, true)
+
+func set_bone_global_transform_local_override_keep_rotation(bone_idx: int, desired_global_pos: Vector3, weight: float = 1.0) -> void:
+	# keep bone rotation, only set position
+	var cur_global = skeleton.get_bone_global_pose(bone_idx)
+	var desired_global = Transform3D(cur_global.basis, desired_global_pos)
+	set_bone_global_transform_local_override(bone_idx, desired_global, weight)
+
+func apply_joint_positions_local(chain: Array[int], joint_positions: Array[Vector3]) -> void:
+	for i in range(chain.size()):
+		var bone_idx: int = chain[i]
+		var target_pos: Vector3 = joint_positions[i]
+		set_bone_global_transform_local_override_keep_rotation(bone_idx, target_pos, 1.0)
+
 func get_joint_positions(chain: Array[int]) -> Array[Vector3]:
 	var joint_positions: Array[Vector3] = []
 	for bone_idx in chain:
 		joint_positions.append(skeleton.get_bone_global_pose(bone_idx).origin)
 	return joint_positions
-
-func get_joint_distances(chain: Array[int]) -> Array[float]:
-	var joint_distances: Array[float] = []
-	for bone_idx in range(chain.size() - 1):
-		var first_bone_position: Vector3 = skeleton.get_bone_global_pose(chain[bone_idx]).origin
-		var second_bone_position: Vector3 = skeleton.get_bone_global_pose(chain[bone_idx + 1]).origin
-		joint_distances.append(first_bone_position.distance_to(second_bone_position))
-	return joint_distances
-
-func apply_joint_positions(chain: Array[int], joint_positions: Array[Vector3]) -> void:
-	for i in range(chain.size()):
-		var bone_idx: int = chain[i]
-		var target_pos: Vector3 = joint_positions[i]
-		var bone_transform: Transform3D = skeleton.get_bone_global_pose(bone_idx)
-		bone_transform.origin = target_pos
-		skeleton.set_bone_global_pose_override(bone_idx, bone_transform, 1.0, true)
 
 func fabrik_solver(
 	joint_positions: Array[Vector3],
@@ -348,18 +389,31 @@ func apply_cone_constraint(
 	bone_pos: Vector3,
 	parent_pos: Vector3,
 	direction: Vector3,
-	max_angle_deg: float) -> Vector3:
-	var current_dir = (bone_pos - parent_pos).normalized()
+	max_angle_deg: float
+	) -> Vector3:
+	var current_dir = (bone_pos - parent_pos)
+	if current_dir.length() < EPS:
+		return bone_pos
+	current_dir = current_dir.normalized()
 	var angle = rad_to_deg(current_dir.angle_to(direction))
 	if angle > max_angle_deg:
-		var axis = current_dir.cross(direction).normalized()
+		var axis = current_dir.cross(direction)
+		if axis.length() < EPS:
+			# can't build axis, return original
+			return bone_pos
+		axis = axis.normalized()
 		current_dir = direction.rotated(axis, deg_to_rad(max_angle_deg))
 		return parent_pos + current_dir * (bone_pos - parent_pos).length()
 	return bone_pos
 
 func apply_hinge_constraint(bone_pos: Vector3, parent_pos: Vector3, hinge_axis: Vector3) -> Vector3:
-	var dir = (bone_pos - parent_pos).normalized()
+	var dir = bone_pos - parent_pos
+	if dir.length() < EPS:
+		return bone_pos
+	dir = dir.normalized()
 	var projected = dir - dir.dot(hinge_axis) * hinge_axis
+	if projected.length() < EPS:
+		return bone_pos
 	return parent_pos + projected.normalized() * (bone_pos - parent_pos).length()
 
 func solve_two_bone_ik(
@@ -374,37 +428,50 @@ func solve_two_bone_ik(
 		if joint_positions.size() != 3:
 			push_error("TwoBoneIK: joint_positions array is not size 3")
 			return [];
-		if joint_positions.size() != 2:
+		if joint_lengths.size() != 2:
 			push_error("TwoBoneIK: joint_lengths array is not size 2")
 			return [];
 
 		var root: Vector3 = joint_positions[0]
 		var new_mid: Vector3 = joint_positions[1]
-
 		var a: float = joint_lengths[0]
 		var b: float = joint_lengths[1]
-		var c: float = root.distance_to(target_pos)
-		var total_chain_len: float = a + b
-
-		var root_to_pole: Vector3 = pole_pos - root
 		var root_to_target: Vector3 = target_pos - root
+		var c: float = root_to_target.length()
+		var total_chain_len: float = a + b
+		var root_to_pole: Vector3 = pole_pos - root
 
-		if root_to_target.length() > total_chain_len:
-			# Target is out of reach, stretch towards target
+		if c < EPS:
+			var pole_dir = root_to_pole
+			if pole_dir.length() < EPS:
+				pole_dir = Vector3(0, 0, 1)
+			pole_dir = pole_dir.normalized()
+			var mid = root + pole_dir * a
+			return [root, mid, target_pos]
+
+		if c > total_chain_len:
 			new_mid = root + root_to_target.normalized() * a
 			return [root, new_mid, target_pos]
 
-		var cos_angle = (a * a + c * c - b * b) / (2 * a * c)
-		var angle = acos(clamp(cos_angle, -1.0, 1.0))
+		# safe law of cosines
+		var denom = 2.0 * a * c
+		var cos_angle = 1.0
+		if abs(denom) > EPS:
+			cos_angle = (a * a + c * c - b * b) / denom
+			cos_angle = clamp(cos_angle, -1.0, 1.0)
+		var angle = acos(cos_angle)
 
-		var plane_normal: Vector3 = root_to_target.cross(root_to_pole).normalized()
+		# plane normal robust
+		var plane_normal = root_to_target.cross(root_to_pole)
+		if plane_normal.length() < EPS:
+			plane_normal = root_to_target.cross(Vector3.UP)
+			if plane_normal.length() < EPS:
+				plane_normal = root_to_target.cross(Vector3.RIGHT)
+			if plane_normal.length() < EPS:
+				plane_normal = Vector3(0, 1, 0)
+		plane_normal = plane_normal.normalized()
 
-		# Construct rotation basis around bending axis
-		var rbasis = Basis(plane_normal, angle)
-
-		# Rotate Root→Target direction by the angle ----
+		var rbasis = Basis(plane_normal, angle).orthonormalized()
 		var dir_rotated = rbasis.xform(root_to_target.normalized())
-
 		new_mid = root + dir_rotated * a
-
 		return [root, new_mid, target_pos]
