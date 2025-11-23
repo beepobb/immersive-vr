@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://dskwobcin0gfq"]
+[gd_scene load_steps=33 format=3 uid="uid://dskwobcin0gfq"]
 
 [ext_resource type="Theme" uid="uid://busw2t6mbwy12" path="res://UI/AvatarUITheme.tres" id="1_2tv6e"]
 [ext_resource type="Script" uid="uid://c3dmpkiukrc5c" path="res://UI/AvatarCustomizer.gd" id="2_dqpe6"]
+[ext_resource type="PackedScene" uid="uid://d3ghauap52tfs" path="res://Avatar/AvatarTest.tscn" id="3_4omh3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txvi4"]
 bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
@@ -30,6 +31,15 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4omh3"]
+
+[sub_resource type="Sky" id="Sky_7tsni"]
+sky_material = SubResource("ProceduralSkyMaterial_4omh3")
+
+[sub_resource type="Environment" id="Environment_c0frh"]
+background_mode = 2
+sky = SubResource("Sky_7tsni")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1imm"]
 content_margin_left = 10.0
@@ -275,16 +285,26 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -638.0
-offset_bottom = -478.0
+offset_right = -40.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 22)
+size = Vector2i(600, 600)
 render_target_update_mode = 4
+
+[node name="AvatarTest" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer/SubViewport" instance=ExtResource("3_4omh3")]
+
+[node name="Camera3D" type="Camera3D" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, 3)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer/SubViewport"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_c0frh")
 
 [node name="RightPanel" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content"]
 custom_minimum_size = Vector2(240, 300)
@@ -494,7 +514,7 @@ text = "Dark"
 [node name="FooterMarginContainer" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 50
+theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 0
 

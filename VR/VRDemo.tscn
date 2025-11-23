@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0rbi2csqn7u3"]
+
+[ext_resource type="PackedScene" uid="uid://d3ghauap52tfs" path="res://Avatar/AvatarTest.tscn" id="1_uc5dm"]
+
+[node name="VRDemo" type="Node3D"]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="AvatarTest" parent="XROrigin3D" instance=ExtResource("1_uc5dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
