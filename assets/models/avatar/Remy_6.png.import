@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8gvr74y7pco0"
-path="res://.godot/imported/Remy_19.png-4ce58c20a31448d6aa256e0ff95a2fe8.ctex"
+uid="uid://le8s8l5l5wd4"
+path="res://.godot/imported/Remy_6.png-61d4bb705651503bc5604124c4e54355.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "4efc87f5c34d4871259dc1cb306ca29d"
+"md5": "0ebed509c92bff5c7c01fc1380cc8474"
 }
 
 [deps]
 
-source_file="res://assets/models/Remy_19.png"
-dest_files=["res://.godot/imported/Remy_19.png-4ce58c20a31448d6aa256e0ff95a2fe8.ctex"]
+source_file="res://assets/models/avatar/Remy_6.png"
+dest_files=["res://.godot/imported/Remy_6.png-61d4bb705651503bc5604124c4e54355.ctex"]
 
 [params]
 

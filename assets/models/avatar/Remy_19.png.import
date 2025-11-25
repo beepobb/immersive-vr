@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3lflon8lpc3e"
-path.s3tc="res://.godot/imported/Remy_17.png-20badc1a79b7fb557aad0ad4415bc7d7.s3tc.ctex"
+uid="uid://c8gvr74y7pco0"
+path="res://.godot/imported/Remy_19.png-b784cd8573dc3414f5118b27b4823807.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "bcdec5b42733481b9e3b44189a0c2fb7"
+"md5": "4efc87f5c34d4871259dc1cb306ca29d"
 }
 
 [deps]
 
-source_file="res://assets/models/Remy_17.png"
-dest_files=["res://.godot/imported/Remy_17.png-20badc1a79b7fb557aad0ad4415bc7d7.s3tc.ctex"]
+source_file="res://assets/models/avatar/Remy_19.png"
+dest_files=["res://.godot/imported/Remy_19.png-b784cd8573dc3414f5118b27b4823807.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -41,4 +40,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

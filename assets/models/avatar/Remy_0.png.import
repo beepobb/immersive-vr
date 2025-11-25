@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgt6n7ujktd2f"
-path.s3tc="res://.godot/imported/Remy_alpha_0.png-6cc19d182191668e52847ef4a48bb9f7.s3tc.ctex"
+uid="uid://b5crok6wyhiqb"
+path.s3tc="res://.godot/imported/Remy_0.png-72e4cbca466ad1104a959df4277d6991.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e5f87e112ed58d7cd80fefb26be76101"
+"md5": "a36569e35a9bee4bee72c11ccef50428"
 }
 
 [deps]
 
-source_file="res://assets/models/Remy_alpha_0.png"
-dest_files=["res://.godot/imported/Remy_alpha_0.png-6cc19d182191668e52847ef4a48bb9f7.s3tc.ctex"]
+source_file="res://assets/models/avatar/Remy_0.png"
+dest_files=["res://.godot/imported/Remy_0.png-72e4cbca466ad1104a959df4277d6991.s3tc.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b7m7fywrshwou"
-path="res://.godot/imported/Remy.fbx-c1c3ae8cf332c73c389a45bc0bf8c139.scn"
+path="res://.godot/imported/Remy.fbx-fdff0cbfff52707b81bb295e16f91def.scn"
 
 [deps]
 
-source_file="res://assets/models/Remy.fbx"
-dest_files=["res://.godot/imported/Remy.fbx-c1c3ae8cf332c73c389a45bc0bf8c139.scn"]
+source_file="res://assets/models/avatar/Remy.fbx"
+dest_files=["res://.godot/imported/Remy.fbx-fdff0cbfff52707b81bb295e16f91def.scn"]
 
 [params]
 
