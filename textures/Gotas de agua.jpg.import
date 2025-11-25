@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1c8a39c65cd7a47426a679aef8e80efc2f2be6fb2d6bced81cac9155aa31d06
-size 951
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://jik27fcha21u"
+path="res://.godot/imported/Gotas de agua.jpg-58f86fa6d74f056b8e69b4912994acc9.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://textures/Gotas de agua.jpg"
+dest_files=["res://.godot/imported/Gotas de agua.jpg-58f86fa6d74f056b8e69b4912994acc9.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
