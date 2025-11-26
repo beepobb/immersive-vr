@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcpx74q01wtba"]
+[gd_scene load_steps=7 format=3 uid="uid://dcpx74q01wtba"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_135rx"]
 bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
@@ -21,6 +21,15 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmvcu"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="Theme" id="Theme_ksyxw"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksyxw"]
 bg_color = Color(0.06879826, 0.06879829, 0.068798244, 0.65882355)
 corner_radius_bottom_right = 24
@@ -38,27 +47,28 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_135rx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kpfb7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ys8rj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vmvcu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(380, 420)
 layout_mode = 0
-offset_right = 380.0
+offset_right = 420.0
 offset_bottom = 420.0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(380, 420)
 layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_ksyxw")
+expand_mode = 2
 stretch_mode = 5
 
 [node name="InfoOverlay" type="Panel" parent="VBoxContainer/TextureRect"]
 custom_minimum_size = Vector2(380, 120)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 300.0
-offset_bottom = 420.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_top = 301.0
+offset_right = 380.0
+offset_bottom = 421.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ksyxw")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TextureRect/InfoOverlay"]

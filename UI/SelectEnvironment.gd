@@ -57,7 +57,7 @@ func _hover_out(card: Control) -> void:
 # ---------------- SELECTION / NAVIGATION ----------------
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://UI/AvatarCustomizer.tscn")
+	get_node("/root/MainPreview").show_customizer_page()
 
 
 func _on_clarity_selected() -> void:
@@ -81,6 +81,10 @@ func _on_confirm_pressed() -> void:
 	if selected_env == "":
 		print("No environment selected!")
 		return
+		
+	# Save environment globally
+	AvatarState.environment_id = selected_env
 
 	#get_tree().change_scene_to_file("res://VR/LoadEnvironment.tscn")
 	get_tree().change_scene_to_file("res://VR/LoadEnvironment.tscn")
+	#I don't have a loadenvironment file btw

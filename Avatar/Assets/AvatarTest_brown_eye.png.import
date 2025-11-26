@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chkvf2m78o8w6"
-path.s3tc="res://.godot/imported/AvatarTest_ponytail01_diffuse.png-fc79516eea9bde6c110772a47e07fc63.s3tc.ctex"
+uid="uid://dpn65ona7e0vm"
+path.s3tc="res://.godot/imported/AvatarTest_brown_eye.png-6c313baf34df6b2c07aae2a1961e38f1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "453f12ef9815379fea8f4d72227122ba"
+"md5": "1b93ce1fc9dfa16177a6d61005cdb4fd"
 }
 
 [deps]
 
-source_file="res://Avatar/AvatarTest_ponytail01_diffuse.png"
-dest_files=["res://.godot/imported/AvatarTest_ponytail01_diffuse.png-fc79516eea9bde6c110772a47e07fc63.s3tc.ctex"]
+source_file="res://Avatar/Assets/AvatarTest_brown_eye.png"
+dest_files=["res://.godot/imported/AvatarTest_brown_eye.png-6c313baf34df6b2c07aae2a1961e38f1.s3tc.ctex"]
 
 [params]
 

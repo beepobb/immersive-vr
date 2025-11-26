@@ -1,8 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://dskwobcin0gfq"]
+[gd_scene load_steps=32 format=3 uid="uid://dskwobcin0gfq"]
 
 [ext_resource type="Theme" uid="uid://busw2t6mbwy12" path="res://UI/AvatarUITheme.tres" id="1_2tv6e"]
 [ext_resource type="Script" uid="uid://c3dmpkiukrc5c" path="res://UI/AvatarCustomizer.gd" id="2_dqpe6"]
-[ext_resource type="PackedScene" uid="uid://d3ghauap52tfs" path="res://Avatar/AvatarTest.tscn" id="3_4omh3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pd2dv"]
+bg_color = Color(0, 0, 0, 0.105882354)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txvi4"]
 bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
@@ -31,15 +33,6 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4omh3"]
-
-[sub_resource type="Sky" id="Sky_7tsni"]
-sky_material = SubResource("ProceduralSkyMaterial_4omh3")
-
-[sub_resource type="Environment" id="Environment_c0frh"]
-background_mode = 2
-sky = SubResource("Sky_7tsni")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1imm"]
 content_margin_left = 10.0
@@ -82,17 +75,26 @@ bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
 corner_radius_top_left = 24
 corner_radius_bottom_left = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8kce"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wdha"]
 bg_color = Color(0.25882354, 0.25882354, 0.25882354, 0.8156863)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ha0bd"]
 bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8esk"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy8ku"]
 bg_color = Color(0.25882354, 0.25882354, 0.25882354, 0.8156863)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtyxb"]
 bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70rsg"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5eim"]
 bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
@@ -112,23 +114,18 @@ bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm8yi"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4omh3"]
 bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4omh3"]
-bg_color = Color(0.2592937, 0.2592937, 0.2592937, 0.8156863)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0frh"]
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 0.8156863)
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfv4b"]
-bg_color = Color(0.1254902, 0.1254902, 0.1254902, 0.6117647)
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0frh"]
-bg_color = Color(0.4313402, 0.43134028, 0.43134007, 1)
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 
@@ -178,6 +175,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pd2dv")
 
 [node name="MarginContainer" type="MarginContainer" parent="MainPanel"]
 layout_mode = 2
@@ -276,35 +274,10 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ommwp")
 text = "Randomize"
 
 [node name="PreviewWrap" type="Control" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content"]
-custom_minimum_size = Vector2(640, 480)
+custom_minimum_size = Vector2(600, 600)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -40.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(600, 600)
-render_target_update_mode = 4
-
-[node name="AvatarTest" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer/SubViewport" instance=ExtResource("3_4omh3")]
-
-[node name="Camera3D" type="Camera3D" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, 3)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer/SubViewport"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/PreviewWrap/SubViewportContainer/SubViewport"]
-environment = SubResource("Environment_c0frh")
+mouse_filter = 2
 
 [node name="RightPanel" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content"]
 custom_minimum_size = Vector2(240, 300)
@@ -319,11 +292,10 @@ size_flags_vertical = 3
 theme_override_constants/side_margin = 0
 theme_override_constants/tab_separation = 10
 theme_override_styles/panel = SubResource("StyleBoxFlat_w1imm")
-current_tab = 4
+current_tab = 0
 tabs_visible = false
 
 [node name="HairPage" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/RightTabs"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -345,10 +317,10 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 3
 
-[node name="ButtonShort" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/RightTabs/HairPage/Hair/VBoxContainer/GridContainer"]
+[node name="ButtonPonytail" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/RightTabs/HairPage/Hair/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-text = "Short"
+text = "Ponytail"
 
 [node name="ButtonBob" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/RightTabs/HairPage/Hair/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(120, 120)
@@ -475,6 +447,7 @@ layout_mode = 2
 text = "Dark"
 
 [node name="FacePage" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/RightTabs"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
@@ -514,9 +487,9 @@ text = "Dark"
 [node name="FooterMarginContainer" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 80
+theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 0
+theme_override_constants/margin_bottom = 20
 
 [node name="Footer" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/FooterMarginContainer"]
 layout_mode = 2
@@ -531,13 +504,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 280.0
-offset_right = 896.0
+offset_left = 500.0
+offset_top = -2.5
+offset_right = 1116.0
+offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 10
 theme_override_constants/separation = 0
-alignment = 2
+alignment = 1
 
 [node name="BodyTab" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/FooterMarginContainer/Footer/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -554,6 +529,7 @@ text = "Body Type"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q8kce")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7wdha")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ha0bd")
 text = "Skin"
@@ -562,6 +538,7 @@ text = "Skin"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a8esk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gy8ku")
 theme_override_styles/focus = SubResource("StyleBoxFlat_jtyxb")
 text = "Outfit"
@@ -570,6 +547,7 @@ text = "Outfit"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_70rsg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y5eim")
 theme_override_styles/hover = SubResource("StyleBoxFlat_88w6v")
 theme_override_styles/focus = SubResource("StyleBoxFlat_fqi4a")
@@ -580,10 +558,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_dqpe6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nm8yi")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4omh3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_lfv4b")
-theme_override_styles/focus = SubResource("StyleBoxFlat_c0frh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4omh3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c0frh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lfv4b")
 text = "Face"
 
 [node name="Save Avatar" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/FooterMarginContainer/Footer"]
@@ -596,4 +573,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_sfgyx")
 theme_override_styles/focus = SubResource("StyleBoxFlat_y1eq8")
 text = "Save Avatar"
 
+[connection signal="pressed" from="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/RightTabs/HairPage/Hair/VBoxContainer/GridContainer/ButtonPonytail" to="." method="_on_ButtonPonytail_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/RightTabs/HairPage/Hair/VBoxContainer/GridContainer/ButtonBob" to="." method="_on_ButtonBob_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/VBoxContainer/ContentMarginContainer/Content/RightPanel/RightTabs/HairPage/Hair/VBoxContainer/GridContainer/ButtonLong" to="." method="_on_ButtonLong_pressed"]
 [connection signal="pressed" from="MainPanel/MarginContainer/VBoxContainer/FooterMarginContainer/Footer/Save Avatar" to="." method="_on_save_avatar_pressed"]

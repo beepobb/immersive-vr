@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqae0xw1f1lgs"]
+
+[ext_resource type="PackedScene" uid="uid://bh4d7hu5gcago" path="res://Avatar/Hair/Hair_long.glb" id="1_6js56"]
+
+[node name="Hair_long" instance=ExtResource("1_6js56")]

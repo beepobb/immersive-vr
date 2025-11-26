@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ukam0leptc41"
-path.s3tc="res://.godot/imported/AvatarTest_female_elegantsuit01_diffuse.png-b75d9d52da28e00c3edfdda53e892a11.s3tc.ctex"
+uid="uid://b2x0whsk2mb2b"
+path.s3tc="res://.godot/imported/Hair_long_long01_diffuse.png-49a41250a684879f479dfab8c6239ad5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ec8197343b819e46f38d9488d56f82eb"
+"md5": "e74ec614a8fcd3e92f0c81d19c0c18d6"
 }
 
 [deps]
 
-source_file="res://Avatar/AvatarTest_female_elegantsuit01_diffuse.png"
-dest_files=["res://.godot/imported/AvatarTest_female_elegantsuit01_diffuse.png-b75d9d52da28e00c3edfdda53e892a11.s3tc.ctex"]
+source_file="res://Avatar/Hair/Hair_long_long01_diffuse.png"
+dest_files=["res://.godot/imported/Hair_long_long01_diffuse.png-49a41250a684879f479dfab8c6239ad5.s3tc.ctex"]
 
 [params]
 
