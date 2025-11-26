@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjbny382vy6eu"
-path.s3tc="res://.godot/imported/AvatarTest_shoes01_diffuse.png-30480880b1d078031743e1a92c6a3401.s3tc.ctex"
+path.s3tc="res://.godot/imported/AvatarTest_shoes01_diffuse.png-f90228999eebf34ed739f331def06a2f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Avatar/AvatarTest_shoes01_diffuse.png"
-dest_files=["res://.godot/imported/AvatarTest_shoes01_diffuse.png-30480880b1d078031743e1a92c6a3401.s3tc.ctex"]
+source_file="res://assets/avatar/AvatarTest_shoes01_diffuse.png"
+dest_files=["res://.godot/imported/AvatarTest_shoes01_diffuse.png-f90228999eebf34ed739f331def06a2f.s3tc.ctex"]
 
 [params]
 

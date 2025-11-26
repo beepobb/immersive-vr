@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://coawq8882oqan"
-path="res://.godot/imported/AvatarTest.glb-e879f5580c91e4ff2db2aab68ec1a2ba.scn"
+path="res://.godot/imported/AvatarTest.glb-7cf5387f09e237134521fa54c344bf30.scn"
 
 [deps]
 
-source_file="res://Assets/Avatar/AvatarTest.glb"
-dest_files=["res://.godot/imported/AvatarTest.glb-e879f5580c91e4ff2db2aab68ec1a2ba.scn"]
+source_file="res://assets/avatar/AvatarTest.glb"
+dest_files=["res://.godot/imported/AvatarTest.glb-7cf5387f09e237134521fa54c344bf30.scn"]
 
 [params]
 

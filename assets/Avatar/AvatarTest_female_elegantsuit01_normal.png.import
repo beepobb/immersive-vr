@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh8x2vyy4ccso"
-path.s3tc="res://.godot/imported/AvatarTest_female_elegantsuit01_normal.png-79d31ebbded8f5832b35b8f0bd6c0ca8.s3tc.ctex"
+path.s3tc="res://.godot/imported/AvatarTest_female_elegantsuit01_normal.png-b818ab9bf9529b78f6a62810a4964b74.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Avatar/AvatarTest_female_elegantsuit01_normal.png"
-dest_files=["res://.godot/imported/AvatarTest_female_elegantsuit01_normal.png-79d31ebbded8f5832b35b8f0bd6c0ca8.s3tc.ctex"]
+source_file="res://assets/avatar/AvatarTest_female_elegantsuit01_normal.png"
+dest_files=["res://.godot/imported/AvatarTest_female_elegantsuit01_normal.png-b818ab9bf9529b78f6a62810a4964b74.s3tc.ctex"]
 
 [params]
 
