@@ -1,0 +1,202 @@
+[gd_scene load_steps=18 format=3 uid="uid://cj53q5hccnayk"]
+
+[ext_resource type="Theme" path="res://assets/themes/AvatarUITheme.tres" id="1_n35ai"]
+[ext_resource type="Script" uid="uid://s7cwluiugetv" path="res://scripts/ui/select_environment.gd" id="2_ax1qv"]
+[ext_resource type="PackedScene" uid="uid://dcpx74q01wtba" path="res://scenes/ui/clarity_card.tscn" id="3_0q6cc"]
+[ext_resource type="PackedScene" uid="uid://ymtiad0mdofc" path="res://scenes/ui/dialogue_cafe.tscn" id="4_0r5h6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fphxa"]
+bg_color = Color(0, 0, 0, 0.105882354)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txvi4"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llf7a"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5l4jl"]
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 0.8156863)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_610j4"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyph6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_886a6"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrv65"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjfif"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0q6cc"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0r5h6"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxohj"]
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 0.8156863)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmxot"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="SelectEnvControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n35ai")
+script = ExtResource("2_ax1qv")
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1200, 700)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fphxa")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_txvi4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_llf7a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5l4jl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_610j4")
+text = "←"
+
+[node name="HeaderMargin" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer/Header"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="TitleGroup" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/Header/HeaderMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Title" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/Header/HeaderMargin/TitleGroup"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "Select Your Virtual Environment"
+
+[node name="Subtitle" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/Header/HeaderMargin/TitleGroup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Click to preview and choose your preferred environment"
+
+[node name="ContentMargin" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_bottom = 50
+
+[node name="Content" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMargin"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="RoomPanel" type="PanelContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMargin/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wyph6")
+
+[node name="ClarityRoomCard" parent="MainPanel/MarginContainer/VBoxContainer/ContentMargin/Content/RoomPanel" instance=ExtResource("3_0q6cc")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_886a6")
+
+[node name="CafePanel" type="PanelContainer" parent="MainPanel/MarginContainer/VBoxContainer/ContentMargin/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rrv65")
+
+[node name="DialogueCafeCard" parent="MainPanel/MarginContainer/VBoxContainer/ContentMargin/Content/CafePanel" instance=ExtResource("4_0r5h6")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_kjfif")
+
+[node name="FooterMargin" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Footer" type="CenterContainer" parent="MainPanel/MarginContainer/VBoxContainer/FooterMargin"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ConfirmButton" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/FooterMargin/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0q6cc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0r5h6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yxohj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xmxot")
+text = "Confirm"
