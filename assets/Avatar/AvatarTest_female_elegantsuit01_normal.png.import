@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpn65ona7e0vm"
-path.s3tc="res://.godot/imported/AvatarTest_brown_eye.png-6c313baf34df6b2c07aae2a1961e38f1.s3tc.ctex"
+uid="uid://bh8x2vyy4ccso"
+path.s3tc="res://.godot/imported/AvatarTest_female_elegantsuit01_normal.png-79d31ebbded8f5832b35b8f0bd6c0ca8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "1b93ce1fc9dfa16177a6d61005cdb4fd"
+"md5": "7bbd886acc8155e68481fe973d0699b4"
 }
 
 [deps]
 
-source_file="res://Avatar/Assets/AvatarTest_brown_eye.png"
-dest_files=["res://.godot/imported/AvatarTest_brown_eye.png-6c313baf34df6b2c07aae2a1961e38f1.s3tc.ctex"]
+source_file="res://Assets/Avatar/AvatarTest_female_elegantsuit01_normal.png"
+dest_files=["res://.godot/imported/AvatarTest_female_elegantsuit01_normal.png-79d31ebbded8f5832b35b8f0bd6c0ca8.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Assets/AvatarTest_female_elegantsuit01_normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

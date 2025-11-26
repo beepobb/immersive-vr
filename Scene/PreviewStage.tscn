@@ -2,8 +2,8 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ge06a"]
 cull_mode = 1
-albedo_color = Color(0.3553137, 0.35531354, 0.35531357, 1)
-metallic = 0.1
+albedo_color = Color(0.36282933, 0.36282954, 0.36282936, 1)
+metallic = 0.51
 roughness = 0.2
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_l2fwm"]

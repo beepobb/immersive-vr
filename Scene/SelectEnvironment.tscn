@@ -1,9 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://cj53q5hccnayk"]
+[gd_scene load_steps=18 format=3 uid="uid://cj53q5hccnayk"]
 
-[ext_resource type="Theme" uid="uid://busw2t6mbwy12" path="res://UI/AvatarUITheme.tres" id="1_n35ai"]
-[ext_resource type="Script" uid="uid://s7cwluiugetv" path="res://UI/SelectEnvironment.gd" id="2_0q6cc"]
-[ext_resource type="PackedScene" uid="uid://dcpx74q01wtba" path="res://UI/ClarityCard.tscn" id="3_0q6cc"]
-[ext_resource type="PackedScene" uid="uid://ymtiad0mdofc" path="res://UI/DialogueCafe.tscn" id="4_0r5h6"]
+[ext_resource type="Theme" uid="uid://busw2t6mbwy12" path="res://Themes/AvatarUITheme.tres" id="1_n35ai"]
+[ext_resource type="Script" uid="uid://s7cwluiugetv" path="res://Scripts/SelectEnvironment.gd" id="2_0q6cc"]
+[ext_resource type="PackedScene" uid="uid://dcpx74q01wtba" path="res://Scene/ClarityCard.tscn" id="3_0q6cc"]
+[ext_resource type="PackedScene" uid="uid://ymtiad0mdofc" path="res://Scene/DialogueCafe.tscn" id="4_0r5h6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fphxa"]
+bg_color = Color(0, 0, 0, 0.105882354)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txvi4"]
 bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
@@ -99,6 +102,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fphxa")
 
 [node name="MarginContainer" type="MarginContainer" parent="MainPanel"]
 layout_mode = 2

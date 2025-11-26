@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://dskwobcin0gfq"]
 
-[ext_resource type="Theme" uid="uid://busw2t6mbwy12" path="res://UI/AvatarUITheme.tres" id="1_2tv6e"]
-[ext_resource type="Script" uid="uid://c3dmpkiukrc5c" path="res://UI/AvatarCustomizer.gd" id="2_dqpe6"]
+[ext_resource type="Theme" uid="uid://busw2t6mbwy12" path="res://Themes/AvatarUITheme.tres" id="1_2tv6e"]
+[ext_resource type="Script" uid="uid://c3dmpkiukrc5c" path="res://Scripts/AvatarCustomizer.gd" id="2_dqpe6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pd2dv"]
 bg_color = Color(0, 0, 0, 0.105882354)

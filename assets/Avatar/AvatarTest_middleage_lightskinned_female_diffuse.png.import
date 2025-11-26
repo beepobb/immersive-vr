@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c488t4wmhkqb5"
-path.s3tc="res://.godot/imported/Hair_bob_bob02_diffuse.png-c08c94c0882ff289248d05784bdf6c73.s3tc.ctex"
+uid="uid://c2e8vyu1n02yj"
+path.s3tc="res://.godot/imported/AvatarTest_middleage_lightskinned_female_diffuse.png-aac1ed2bdc525693727b53c3796a12f8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e6aa68b02575bdcb2ae2dae0455bb663"
+"md5": "295446536cd538035fcee212e65dae7b"
 }
 
 [deps]
 
-source_file="res://Avatar/Hair/Hair_bob_bob02_diffuse.png"
-dest_files=["res://.godot/imported/Hair_bob_bob02_diffuse.png-c08c94c0882ff289248d05784bdf6c73.s3tc.ctex"]
+source_file="res://Assets/Avatar/AvatarTest_middleage_lightskinned_female_diffuse.png"
+dest_files=["res://.godot/imported/AvatarTest_middleage_lightskinned_female_diffuse.png-aac1ed2bdc525693727b53c3796a12f8.s3tc.ctex"]
 
 [params]
 

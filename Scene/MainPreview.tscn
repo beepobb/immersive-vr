@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cw7x1s0g4f8vd"]
 
-[ext_resource type="Script" uid="uid://5t5mseu2iex5" path="res://Main/MainPreview.gd" id="1_cdyh7"]
-[ext_resource type="PackedScene" uid="uid://d3ghauap52tfs" path="res://Avatar/AvatarTest.tscn" id="1_i3m6c"]
-[ext_resource type="PackedScene" uid="uid://d3q3s14fe7ha6" path="res://Main/PreviewStage.tscn" id="2_6ix2i"]
-[ext_resource type="PackedScene" uid="uid://dskwobcin0gfq" path="res://UI/AvatarCustomizer.tscn" id="3_58vre"]
-[ext_resource type="PackedScene" uid="uid://cj53q5hccnayk" path="res://UI/SelectEnvironment.tscn" id="4_k8kk3"]
+[ext_resource type="Script" uid="uid://5t5mseu2iex5" path="res://Scripts/MainPreview.gd" id="1_cdyh7"]
+[ext_resource type="PackedScene" uid="uid://d3ghauap52tfs" path="res://Scene/AvatarTest.tscn" id="1_i3m6c"]
+[ext_resource type="PackedScene" uid="uid://d3q3s14fe7ha6" path="res://Scene/PreviewStage.tscn" id="2_6ix2i"]
+[ext_resource type="PackedScene" uid="uid://dskwobcin0gfq" path="res://Scene/AvatarCustomizer.tscn" id="3_58vre"]
+[ext_resource type="PackedScene" uid="uid://cj53q5hccnayk" path="res://Scene/SelectEnvironment.tscn" id="4_k8kk3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k8kk3"]
 

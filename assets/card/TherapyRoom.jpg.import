@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x0ut125aewrt"
-path="res://.godot/imported/TherapyRoom.jpg-ab03bee9563c504a447a4bba47fccdc5.ctex"
+path="res://.godot/imported/TherapyRoom.jpg-9119119eaf202260e7ffe935fe1ca27c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card/TherapyRoom.jpg"
-dest_files=["res://.godot/imported/TherapyRoom.jpg-ab03bee9563c504a447a4bba47fccdc5.ctex"]
+source_file="res://Assets/Card/TherapyRoom.jpg"
+dest_files=["res://.godot/imported/TherapyRoom.jpg-9119119eaf202260e7ffe935fe1ca27c.ctex"]
 
 [params]
 

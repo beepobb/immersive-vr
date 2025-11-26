@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://coawq8882oqan"
-path="res://.godot/imported/AvatarTest.glb-8b6b05f1d7b7e3c25bf38fa26046da47.scn"
+uid="uid://bh4d7hu5gcago"
+path="res://.godot/imported/Hair_long.glb-3abb960950d52af8269a807b4c85a400.scn"
 
 [deps]
 
-source_file="res://Avatar/AvatarTest.glb"
-dest_files=["res://.godot/imported/AvatarTest.glb-8b6b05f1d7b7e3c25bf38fa26046da47.scn"]
+source_file="res://Assets/Hair/Hair_long.glb"
+dest_files=["res://.godot/imported/Hair_long.glb-3abb960950d52af8269a807b4c85a400.scn"]
 
 [params]
 

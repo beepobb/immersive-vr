@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ukam0leptc41"
-path.s3tc="res://.godot/imported/AvatarTest_female_elegantsuit01_diffuse.png-e6f4dc7a5c08f696c622738c55492d2b.s3tc.ctex"
+uid="uid://chkvf2m78o8w6"
+path.s3tc="res://.godot/imported/Hair_ponytail.png-0eb8c9e454cfced760cd969a3c44e688.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ec8197343b819e46f38d9488d56f82eb"
+"md5": "453f12ef9815379fea8f4d72227122ba"
 }
 
 [deps]
 
-source_file="res://Avatar/Assets/AvatarTest_female_elegantsuit01_diffuse.png"
-dest_files=["res://.godot/imported/AvatarTest_female_elegantsuit01_diffuse.png-e6f4dc7a5c08f696c622738c55492d2b.s3tc.ctex"]
+source_file="res://Assets/Hair/Hair_ponytail.png"
+dest_files=["res://.godot/imported/Hair_ponytail.png-0eb8c9e454cfced760cd969a3c44e688.s3tc.ctex"]
 
 [params]
 

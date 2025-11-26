@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=4 uid="uid://d3ghauap52tfs"]
 
-[ext_resource type="PackedScene" uid="uid://coawq8882oqan" path="res://Avatar/AvatarTest.glb" id="1_xuas5"]
-[ext_resource type="Texture2D" uid="uid://c488t4wmhkqb5" path="res://Avatar/Hair/Hair_bob_bob02_diffuse.png" id="2_nkd3n"]
-[ext_resource type="Texture2D" uid="uid://b2x0whsk2mb2b" path="res://Avatar/Hair/Hair_long_long01_diffuse.png" id="3_jq402"]
+[ext_resource type="PackedScene" uid="uid://coawq8882oqan" path="res://Assets/Avatar/AvatarTest.glb" id="1_xuas5"]
+[ext_resource type="Texture2D" uid="uid://c488t4wmhkqb5" path="res://Assets/Hair/Hair_bob_bob02_diffuse.png" id="2_nkd3n"]
+[ext_resource type="Texture2D" uid="uid://b2x0whsk2mb2b" path="res://Assets/Hair/Hair_long_long01_diffuse.png" id="3_jq402"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yh5io"]
 resource_name = "Human.bob02.001"

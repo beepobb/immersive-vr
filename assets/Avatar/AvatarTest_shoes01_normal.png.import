@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo7f2fbmvhu3y"
-path.s3tc="res://.godot/imported/AvatarTest_female_elegantsuit01_normal.png-ab08c3444eb9097b1d6e6867542278f9.s3tc.ctex"
+uid="uid://b24xj3rsq18xq"
+path.s3tc="res://.godot/imported/AvatarTest_shoes01_normal.png-0791516d37adb187ac058a151c0f980a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7bbd886acc8155e68481fe973d0699b4"
+"md5": "ddc222212a99fbf88ea2da90d83c475f"
 }
 
 [deps]
 
-source_file="res://Avatar/Assets/AvatarTest_female_elegantsuit01_normal.png"
-dest_files=["res://.godot/imported/AvatarTest_female_elegantsuit01_normal.png-ab08c3444eb9097b1d6e6867542278f9.s3tc.ctex"]
+source_file="res://Assets/Avatar/AvatarTest_shoes01_normal.png"
+dest_files=["res://.godot/imported/AvatarTest_shoes01_normal.png-0791516d37adb187ac058a151c0f980a.s3tc.ctex"]
 
 [params]
 
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Avatar/AvatarTest_female_elegantsuit01_normal.png"
+roughness/src_normal="res://Assets/AvatarTest_shoes01_normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
