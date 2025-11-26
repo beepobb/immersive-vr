@@ -16,7 +16,7 @@ var rotating: bool = false
 
 func _ready() -> void:
 	# Use saved hair if we already have one, otherwise default to ponytail
-	var initial_style := AvatarState.hairstyle
+	var initial_style: String =  AvatarState.hair_style
 	if initial_style == "" or initial_style == null:
 		initial_style = "ponytail"
 	set_hair(initial_style)
