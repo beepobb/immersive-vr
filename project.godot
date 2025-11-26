@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-AvatarState="*res://Scripts/AvatarState.gd"
+AvatarState="*res://scripts/ui/avatar_state.gd"
 
 [display]
 

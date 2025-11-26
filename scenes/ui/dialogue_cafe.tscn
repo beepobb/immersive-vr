@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://ymtiad0mdofc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdx3h"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jpne"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.74509805)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ba2yv"]
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 0.8156863)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ejfq"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksyxw"]
+bg_color = Color(0.06879826, 0.06879829, 0.068798244, 0.65882355)
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="DialogueCafeCard" type="Button"]
+custom_minimum_size = Vector2(380, 420)
+anchors_preset = -1
+anchor_right = 0.33
+anchor_bottom = 0.648
+offset_right = -0.16000366
+offset_bottom = 0.0960083
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_pdx3h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6jpne")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ba2yv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7ejfq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(380, 420)
+layout_mode = 0
+offset_right = 380.0
+offset_bottom = 420.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="InfoOverlay" type="Panel" parent="VBoxContainer/TextureRect"]
+custom_minimum_size = Vector2(380, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 300.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ksyxw")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TextureRect/InfoOverlay"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 27
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TextureRect/InfoOverlay/MarginContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TextureRect/InfoOverlay/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Dialogue Cafe"
+
+[node name="DescLabel" type="Label" parent="VBoxContainer/TextureRect/InfoOverlay/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "A cozy café with warm lighting, designed to create
+a relaxed and professional space for open conversation."
+vertical_alignment = 2
