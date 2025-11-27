@@ -1,6 +1,7 @@
 extends Node3D
 
 var xr_interface: XRInterface
+signal load_environment(environment)
 
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -13,3 +14,10 @@ func _ready():
 		get_viewport().use_xr = NOTIFICATION_WM_CLOSE_REQUEST
 	else:
 		print("OpenXR not initialised, please check of your headset is connected")
+	
+	load_environment.connect(_load_environment)
+	
+func _load_environment(environment) -> void:
+	var scene = load(environment).instantiate()
+	scene.position = Vector3(0.0, 0.25, 0)
+	get_tree().add_tree(scene)

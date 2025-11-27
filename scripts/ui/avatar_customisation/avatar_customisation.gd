@@ -3,6 +3,8 @@ extends Node3D
 @onready var avatar: Node = $AvatarTest/Armature/Skeleton3D
 @onready var option_tabs = $AvatarCustomisationViewports/OptionTabs/Viewport/OptionTabs
 @onready var customise_options = $AvatarCustomisationViewports/CustomiseOptions/Viewport/CustomiseOptions
+@onready var save_avatar = $AvatarCustomisationViewports/SaveAvatar
+
 var current_tab: String
 var _current_hair: Node = null
 
@@ -24,7 +26,6 @@ func _on_tab_selected(tab_index: int) -> void:
 		var tab_container = customise_options.get_node("TabContainer")
 		tab_container.current_tab = tab_index
 		current_tab = tab_container.get_child(tab_index).name
-	print("Tab selected: " + current_tab)
 
 func _on_option_selected(option_name: String) -> void:
 	if current_tab == "BodyType":
@@ -39,60 +40,42 @@ func _on_option_selected(option_name: String) -> void:
 		AvatarState.hair_style = option_name
 	elif current_tab == "Face":
 		AvatarState.face_type = option_name
-		
-#func _apply_new_hair(hair_name: String) -> void:
-	## Remove previous hair instance if present
-	#if _current_hair and is_instance_valid(_current_hair):
-		#_current_hair.queue_free()
-		#_current_hair = null
-#
-	## Prepare candidate paths where hair scenes might live. Adjust these to match your project.
-	#var key = hair_name.strip_edges().to_lower().replace(" ", "_")
-	#var candidates := [
-		#"res://assets/hair/Hair_bob.tscn",
-		#"res://assets/hair/Hair_long.tscn"
-	#]
-#
-	#var found_scene: PackedScene = null
-	#for path in candidates:
-		#var res = ResourceLoader.load(path)
-		#if res and typeof(res) == TYPE_OBJECT and res is PackedScene:
-			#found_scene = res
-			#break
-#
-	#if not found_scene:
-		#var tried_paths := ""
-		#for path in candidates:
-			#tried_paths += path + ", "
-		#if tried_paths.length() > 2:
-			#tried_paths = tried_paths.substr(0, tried_paths.length() - 2)
-		#push_warning("Could not find hair scene for '%s'. Tried: %s" % [hair_name, tried_paths])
-		#return
-#
-	#var inst = found_scene.instantiate()
-	#if not inst:
-		#push_warning("Failed to instance hair scene for '%s'.".format(hair_name))
-		#return
-#
-	#inst.name = "Hair_%s".format(key)
-	#avatar.add_child(inst)
-	#_current_hair = inst
+
 func _apply_new_hair(hair_name: String) -> void:
 	var curr_hair_node: Node = null
 	var curr_hair = AvatarState.hair_style
-	for mesh in avatar.get_children():
-		if mesh.name.contains(curr_hair):
-			curr_hair_node = mesh
-		
-	var new_hair_nodepath: NodePath = _find_res(hair_name, Options.HAIR)
-	var new_hair_node: PackedScene = load(new_hair_nodepath)
 	
-	if curr_hair_node != null and not new_hair_nodepath.is_empty():
+	# Find the current hair node by name
+	for mesh in avatar.get_children():
+		if mesh.name.to_lower().contains(curr_hair.to_lower()):
+			curr_hair_node = mesh
+			break
+	
+	var new_hair_node: PackedScene = null
+	var new_hair_nodepath: NodePath = _find_res(hair_name, Options.HAIR)
+	
+	if !new_hair_nodepath.is_empty():
+		new_hair_node = load(new_hair_nodepath)
+	else:
+		print("No valid path found for new hair: " + hair_name)
+		return
+	
+	# If the current hair node is found and valid, remove it
+	if curr_hair_node != null and is_instance_valid(curr_hair_node):
 		avatar.remove_child(curr_hair_node)
-	avatar.add_child(new_hair_node.instantiate())
+		curr_hair_node.queue_free()  # Ensure it's properly freed
+	
+	# If the new hair node is valid, instantiate and add it
+	if new_hair_node != null:
+		var new_hair_instance = new_hair_node.instantiate()
+		avatar.add_child(new_hair_instance)
+		AvatarState.hair_style = hair_name  # Update the AvatarState
+	else:
+		print("Selected option does not have a valid mesh for: " + hair_name)
 	
 func _find_res(res_key: String, option_type: Options) -> NodePath:
 	# TODO: use json to store the resources for each option
+	res_key = res_key.to_lower()
 	if res_key == "bob":
 		return "res://assets/hair/Hair_bob.tscn"
 	elif res_key == "long":

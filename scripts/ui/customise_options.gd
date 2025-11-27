@@ -2,7 +2,7 @@ extends Control
 
 @onready var tab_container = $TabContainer
 
-signal option_selected
+signal option_selected(option: String)
 
 var _connected_buttons: Array = []
 
@@ -22,11 +22,12 @@ func _update_buttons() -> void:
 
 	var current_tab_options = _get_current_tab_options(tab_container.current_tab)
 	for btn in current_tab_options:
-		btn.pressed.connect(_on_option_pressed)
+		btn.pressed.connect(_on_option_pressed.bind(btn.name))
 		_connected_buttons.append(btn)
 
 func _on_option_pressed(option_name: String) -> void:
-	emit_signal("option_selected")
+	print("Option selected: " + option_name)
+	emit_signal("option_selected", option_name)
 
 func _get_current_tab_options(current_tab_idx: int) -> Array:
 	var current_tab_options: Array[Button] = []
