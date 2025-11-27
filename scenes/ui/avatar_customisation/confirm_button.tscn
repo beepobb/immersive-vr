@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://8qrddcp4lkwn"]
+
+[ext_resource type="Script" uid="uid://byexeskpxihty" path="res://scenes/ui/avatar_customisation/confirm_button.gd" id="1_60dqx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjafk"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ConfirmButton" type="Button"]
+custom_minimum_size = Vector2(200, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qjafk")
+text = "Save Avatar"
+script = ExtResource("1_60dqx")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

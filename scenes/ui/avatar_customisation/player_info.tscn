@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0i4q7htoevmm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvjl7"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enjed"]
+bg_color = Color(0.23529412, 0.23529412, 0.23529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1tix"]
+bg_color = Color(0.23529412, 0.23529412, 0.23529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78l2f"]
+bg_color = Color(0.23529412, 0.23529412, 0.23529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7kw6"]
+bg_color = Color(0.2357319, 0.23573193, 0.2357319, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PlayerInfo" type="Panel"]
+custom_minimum_size = Vector2(300, 335)
+offset_right = 300.0
+offset_bottom = 335.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lvjl7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="DisplayName" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DisplayName"]
+layout_mode = 2
+text = "Display Name"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/DisplayName"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_enjed")
+
+[node name="Gender" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Gender"]
+layout_mode = 2
+text = "Gender"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Gender"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_u1tix")
+item_count = 2
+popup/item_0/text = "Male"
+popup/item_0/id = 0
+popup/item_1/text = "Female"
+popup/item_1/id = 1
+
+[node name="Age" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Age"]
+layout_mode = 2
+text = "Age"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Age"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_78l2f")
+
+[node name="ButtonMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/ButtonMargin"]
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_a7kw6")
+text = "Randomise"

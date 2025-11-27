@@ -6,12 +6,16 @@ extends Control
 @onready var confirm_button    = %ConfirmButton
 
 var selected_env : String = ""   # store chosen environment
+var selected_env_scene: String = ""
+var logger = Logger.new()
 
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_pressed)
 
-	clarity_card.pressed.connect(_on_clarity_selected)
-	dialogue_card.pressed.connect(_on_dialogue_selected)
+	for card in [clarity_card, dialogue_card]:
+		card.pressed.connect(func(c=card):
+			_on_card_selected(c)
+		)
 
 	confirm_button.pressed.connect(_on_confirm_pressed)
 
@@ -60,15 +64,14 @@ func _on_back_pressed() -> void:
 	get_node("/root/MainPreview").show_customizer_page()
 
 
-func _on_clarity_selected() -> void:
-	selected_env = "ClarityRoom"
-	# _highlight_selected(clarity_card)
-
-
-func _on_dialogue_selected() -> void:
-	selected_env = "DialogueCafe"
-	# _highlight_selected(dialogue_card)
-
+func _on_card_selected(card: Button) -> void:
+	selected_env = card.env_title
+	#_highlight_selected(clarity_card)
+	match selected_env:
+		"Clarity Room":
+			selected_env_scene = "res://scenes/environment/therapy_room.tscn"
+		"Dialogue Cafe":
+			selected_env_scene = ""
 
 func _highlight_selected(selected_button: Button) -> void:
 	clarity_card.modulate  = Color(1, 1, 1, 1)
@@ -84,7 +87,6 @@ func _on_confirm_pressed() -> void:
 		
 	# Save environment globally
 	AvatarState.environment_id = selected_env
-
-	#get_tree().change_scene_to_file("res://VR/LoadEnvironment.tscn")
-	get_tree().change_scene_to_file("res://VR/LoadEnvironment.tscn")
-	#I don't have a loadenvironment file btw
+	
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	

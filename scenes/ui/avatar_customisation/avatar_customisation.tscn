@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://x0k1ixl4v7o1"]
+
+[ext_resource type="Script" uid="uid://rjytshw5b0hg" path="res://scripts/ui/avatar_customisation/avatar_customisation.gd" id="1_dselv"]
+[ext_resource type="PackedScene" uid="uid://d3q3s14fe7ha6" path="res://scenes/ui/avatar_customisation/preview_stage.tscn" id="2_mb1fd"]
+[ext_resource type="PackedScene" uid="uid://d3ghauap52tfs" path="res://scenes/ui/avatar_customisation/avatar_test.tscn" id="3_7dm38"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_s6nat"]
+[ext_resource type="PackedScene" uid="uid://dqqxcdvew5r7c" path="res://scenes/ui/avatar_customisation/avatar_customisation_header.tscn" id="5_ccjlr"]
+[ext_resource type="PackedScene" uid="uid://cfnb7ltqxxlt8" path="res://scenes/ui/avatar_customisation/customise_options.tscn" id="6_cd73f"]
+[ext_resource type="PackedScene" uid="uid://c0i4q7htoevmm" path="res://scenes/ui/avatar_customisation/player_info.tscn" id="7_j5rkx"]
+[ext_resource type="PackedScene" uid="uid://cifcm62bjtidk" path="res://scenes/ui/avatar_customisation/option_tabs.tscn" id="8_pwh4q"]
+[ext_resource type="PackedScene" uid="uid://8qrddcp4lkwn" path="res://scenes/ui/avatar_customisation/confirm_button.tscn" id="9_tw658"]
+
+[node name="AvatarCustomisation" type="Node3D"]
+script = ExtResource("1_dselv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
+fov = 30.9375
+
+[node name="PreviewStage" parent="." instance=ExtResource("2_mb1fd")]
+
+[node name="AvatarTest" parent="." instance=ExtResource("3_7dm38")]
+
+[node name="AvatarCustomisationViewports" type="Node3D" parent="."]
+
+[node name="Header" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+screen_size = Vector2(3.5, 0.2)
+scene = ExtResource("5_ccjlr")
+viewport_size = Vector2(1280, 64)
+
+[node name="CustomiseOptions" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 2, 1.1, 0)
+screen_size = Vector2(1.25, 1.6)
+scene = ExtResource("6_cd73f")
+viewport_size = Vector2(550, 650)
+scene_properties_keys = PackedStringArray("customise_options.gd")
+
+[node name="PlayerInfo" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -2, 1.2, 0)
+screen_size = Vector2(1, 1.2)
+scene = ExtResource("7_j5rkx")
+viewport_size = Vector2(300, 335)
+
+[node name="OptionTabs" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 2, 2, 0)
+screen_size = Vector2(1.25, 0.12)
+scene = ExtResource("8_pwh4q")
+viewport_size = Vector2(626, 55)
+scene_properties_keys = PackedStringArray("option_tabs.gd")
+
+[node name="SaveAvatar" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 2, 0.100000024, 0)
+screen_size = Vector2(0.8, 0.15)
+scene = ExtResource("9_tw658")
+viewport_size = Vector2(200, 33)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://dskwobcin0gfq"]
 
-[ext_resource type="Theme" path="res://assets/themes/AvatarUITheme.tres" id="1_2tv6e"]
+[ext_resource type="Theme" uid="uid://busw2t6mbwy12" path="res://assets/themes/AvatarUITheme.tres" id="1_2tv6e"]
 [ext_resource type="Script" uid="uid://c3dmpkiukrc5c" path="res://scripts/ui/avatar_customiser.gd" id="2_dqpe6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pd2dv"]
@@ -214,11 +214,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 24
 text = "Avatar Customization"
+metadata/_edit_group_ = true
 
 [node name="Label2" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/Header/MarginContainer/TitleGroup"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Design your avatar’s appearance to match your preference."
+metadata/_edit_group_ = true
 
 [node name="ContentMarginContainer" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
