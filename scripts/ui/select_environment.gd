@@ -5,13 +5,11 @@ extends Control
 @onready var dialogue_card : Button = %DialogueCafeCard
 @onready var confirm_button    = %ConfirmButton
 
-var selected_env : String = ""   # store chosen environment
-
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_pressed)
 
-	clarity_card.pressed.connect(_on_clarity_selected)
-	dialogue_card.pressed.connect(_on_dialogue_selected)
+	for card in [clarity_card, dialogue_card]:
+		card.pressed.connect(_on_card_selected.bind(card))
 
 	confirm_button.pressed.connect(_on_confirm_pressed)
 
@@ -57,18 +55,21 @@ func _hover_out(card: Control) -> void:
 # ---------------- SELECTION / NAVIGATION ----------------
 
 func _on_back_pressed() -> void:
-	get_node("/root/MainPreview").show_customizer_page()
+	pass
 
 
-func _on_clarity_selected() -> void:
-	selected_env = "ClarityRoom"
+func _on_card_selected(card: Button) -> void:
+	var selected_env : String = card.env_title
+	var selected_env_scene: String = ""
+	
 	# _highlight_selected(clarity_card)
-
-
-func _on_dialogue_selected() -> void:
-	selected_env = "DialogueCafe"
-	# _highlight_selected(dialogue_card)
-
+	match selected_env:
+		"Clarity Room":
+			selected_env_scene = "res://scenes/environment/therapy_room.tscn"
+		"Dialogue Cafe":
+			selected_env_scene = ""
+	AvatarState.environment_id = selected_env_scene
+	print(AvatarState.environment_id)
 
 func _highlight_selected(selected_button: Button) -> void:
 	clarity_card.modulate  = Color(1, 1, 1, 1)
@@ -78,13 +79,24 @@ func _highlight_selected(selected_button: Button) -> void:
 
 
 func _on_confirm_pressed() -> void:
-	if selected_env == "":
+	if AvatarState.environment_id.is_empty():
 		print("No environment selected!")
 		return
-		
-	# Save environment globally
-	AvatarState.environment_id = selected_env
+	
+	# Remove itself from the scene before changing scenes
+	print("Removing UI node: ", self.name)
+	queue_free()  # This removes the current UI node
 
-	#get_tree().change_scene_to_file("res://VR/LoadEnvironment.tscn")
-	get_tree().change_scene_to_file("res://VR/LoadEnvironment.tscn")
-	#I don't have a loadenvironment file btw
+	# Defer scene change to allow the current frame to process
+	call_deferred("_load_environment_scene")
+
+
+func _load_environment_scene() -> void:
+	# Load the environment scene (new scene)
+	var env_scene = load("res://scenes/environment.tscn") as PackedScene
+	get_tree().change_scene_to_packed(env_scene)
+
+	# Now that the environment scene is loaded, emit the signal to load the specific environment
+	env_scene.emit_signal("load_environment", AvatarState.environment_id)
+
+	# TODO: disable confirm button until environment is selected

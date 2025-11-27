@@ -1,6 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://bmuvspj8m7g8k"]
 
 [ext_resource type="PackedScene" uid="uid://cp2k77y1vnak6" path="res://assets/models/furniture/big_sofa.fbx" id="1_0gap5"]
+[ext_resource type="Texture2D" uid="uid://btr3kicguwvub" path="res://textures/Wood083B_2K_Color.jpg" id="1_j3cbe"]
 [ext_resource type="PackedScene" uid="uid://c1d0v1uky2a55" path="res://assets/models/furniture/long_table.fbx" id="2_j3cbe"]
 [ext_resource type="PackedScene" uid="uid://8sr21i2f0te8" path="res://assets/models/furniture/paper_cup.fbx" id="3_ly6ct"]
 [ext_resource type="PackedScene" uid="uid://belbke5vshk35" path="res://assets/models/furniture/rug.fbx" id="4_7byvo"]
@@ -37,11 +38,8 @@ size = Vector3(5, 0, 4)
 [sub_resource type="PlaneMesh" id="PlaneMesh_85yof"]
 size = Vector2(5, 4)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ffxv4"]
-load_path = "res://.godot/imported/Wood083B_2K_Color.jpg-1b4f02ec22e1c430abbe614fbba48983.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14vil"]
-albedo_texture = SubResource("CompressedTexture2D_ffxv4")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ly6ct"]
+albedo_texture = ExtResource("1_j3cbe")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v64ko"]
 size = Vector3(2, 1, 1)
@@ -89,8 +87,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 shape = SubResource("BoxShape3D_81oxi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
 mesh = SubResource("BoxMesh_iqhfg")
+skeleton = NodePath("../CollisionShape3D")
 
 [node name="Wall2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
@@ -98,8 +97,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2"]
 shape = SubResource("BoxShape3D_81oxi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall2/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall2"]
 mesh = SubResource("BoxMesh_iqhfg")
+skeleton = NodePath("../CollisionShape3D")
 
 [node name="Wall3" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5, 2, 0)
@@ -107,8 +107,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3"]
 shape = SubResource("BoxShape3D_hkkc5")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall3/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall3"]
 mesh = SubResource("BoxMesh_332pn")
+skeleton = NodePath("../CollisionShape3D")
 
 [node name="Wall4" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5, 2, 0)
@@ -116,8 +117,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4"]
 shape = SubResource("BoxShape3D_hkkc5")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall4/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall4"]
 mesh = SubResource("BoxMesh_332pn")
+skeleton = NodePath("../CollisionShape3D")
 
 [node name="Ceiling" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
@@ -125,17 +127,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
 shape = SubResource("BoxShape3D_gkvj7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling"]
 mesh = SubResource("BoxMesh_mgn7f")
+skeleton = NodePath("../CollisionShape3D")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_ffxv4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_85yof")
-surface_material_override/0 = SubResource("StandardMaterial3D_14vil")
+skeleton = NodePath("../CollisionShape3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_ly6ct")
 
 [node name="big_sofa" parent="." instance=ExtResource("1_0gap5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6670275, 0, -1.350483)

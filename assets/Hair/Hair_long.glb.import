@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bh4d7hu5gcago"
-path="res://.godot/imported/Hair_long.glb-20a4bf6a609c6bb4c5a5524712a26a0c.scn"
+path="res://.godot/imported/Hair_long.glb-0bd3677c82cacd41c7ae8f016ddb491c.scn"
 
 [deps]
 
-source_file="res://assets/hair/Hair_long.glb"
-dest_files=["res://.godot/imported/Hair_long.glb-20a4bf6a609c6bb4c5a5524712a26a0c.scn"]
+source_file="res://assets/Hair/Hair_long.glb"
+dest_files=["res://.godot/imported/Hair_long.glb-0bd3677c82cacd41c7ae8f016ddb491c.scn"]
 
 [params]
 

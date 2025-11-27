@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ru56qu5hhojy"
-path.s3tc="res://.godot/imported/AvatarTest_brown_eye.png-e478d0193aa09effa15aa21d9f8d9ef6.s3tc.ctex"
+path.s3tc="res://.godot/imported/AvatarTest_brown_eye.png-eddf2151754195b865b0877c33f876ac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/avatar/AvatarTest_brown_eye.png"
-dest_files=["res://.godot/imported/AvatarTest_brown_eye.png-e478d0193aa09effa15aa21d9f8d9ef6.s3tc.ctex"]
+source_file="res://assets/Avatar/AvatarTest_brown_eye.png"
+dest_files=["res://.godot/imported/AvatarTest_brown_eye.png-eddf2151754195b865b0877c33f876ac.s3tc.ctex"]
 
 [params]
 

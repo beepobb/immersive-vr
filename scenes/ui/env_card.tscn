@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://2mrox5h8n372"]
+
+[ext_resource type="Script" uid="uid://daqqlsg5wymbo" path="res://scripts/ui/env_card.gd" id="1_ddhac"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xm0ny"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o42r8"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.74509805)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a1an"]
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 0.8156863)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p03ge"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kposy"]
+bg_color = Color(0.07058824, 0.07058824, 0.07058824, 0.65882355)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(400, 420)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -880.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xm0ny")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o42r8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2a1an")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p03ge")
+script = ExtResource("1_ddhac")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+expand_mode = 4
+
+[node name="InfoOverlay" type="Panel" parent="TextureRect"]
+custom_minimum_size = Vector2(360, 120)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_bottom = 0.9
+offset_top = -120.0
+offset_right = 360.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kposy")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/InfoOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/InfoOverlay/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NameLabel" type="Label" parent="TextureRect/InfoOverlay/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Environment Name"
+
+[node name="DescLabel" type="Label" parent="TextureRect/InfoOverlay/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(330, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Description of the environment here"
+autowrap_mode = 3
