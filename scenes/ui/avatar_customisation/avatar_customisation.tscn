@@ -57,4 +57,4 @@ transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 2, 0.100
 screen_size = Vector2(0.8, 0.15)
 scene = ExtResource("9_tw658")
 viewport_size = Vector2(200, 33)
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("confirm_button.gd")

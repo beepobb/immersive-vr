@@ -20,4 +20,4 @@ func _ready():
 func _load_environment(environment) -> void:
 	var scene = load(environment).instantiate()
 	scene.position = Vector3(0.0, 0.25, 0)
-	get_tree().add_tree(scene)
+	get_tree().current_scene.add_child(scene)

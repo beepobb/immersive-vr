@@ -62,7 +62,7 @@ func _on_card_selected(card: Button) -> void:
 	var selected_env : String = card.env_title
 	var selected_env_scene: String = ""
 	
-	#_highlight_selected(clarity_card)
+	# _highlight_selected(clarity_card)
 	match selected_env:
 		"Clarity Room":
 			selected_env_scene = "res://scenes/environment/therapy_room.tscn"
@@ -82,9 +82,21 @@ func _on_confirm_pressed() -> void:
 	if AvatarState.environment_id.is_empty():
 		print("No environment selected!")
 		return
-		
+	
+	# Remove itself from the scene before changing scenes
+	print("Removing UI node: ", self.name)
+	queue_free()  # This removes the current UI node
+
+	# Defer scene change to allow the current frame to process
+	call_deferred("_load_environment_scene")
+
+
+func _load_environment_scene() -> void:
+	# Load the environment scene (new scene)
 	var env_scene = load("res://scenes/environment.tscn") as PackedScene
 	get_tree().change_scene_to_packed(env_scene)
+
+	# Now that the environment scene is loaded, emit the signal to load the specific environment
 	env_scene.emit_signal("load_environment", AvatarState.environment_id)
-	# TODO: disable confirm button until env is selected
-	
+
+	# TODO: disable confirm button until environment is selected
