@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://dyy4iqkeucdnw"]
+
+[ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_hlc4h"]
+[ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="2_0psjf"]
+[ext_resource type="PackedScene" uid="uid://bmuvspj8m7g8k" path="res://scenes/environment/therapy_room.tscn" id="3_d5dl1"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="4_hlc4h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0psjf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yw8f4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtak5"]
+albedo_color = Color(0.22334495, 0.80703425, 0.7329061, 1)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_hlc4h")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1bvp3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.26166698, 0.9651582, 0, -0.9651582, -0.26166698, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_ig7tw")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_7dm0k")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99919295, 0.040166616, 0, -0.040166616, 0.99919295, 0, 1.365, 2.5)
+fov = 71.401505
+
+[node name="XROrigin3D" parent="." instance=ExtResource("2_0psjf")]
+
+[node name="therapy_room" parent="." instance=ExtResource("3_d5dl1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="PickableObject" parent="." instance=ExtResource("4_hlc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7757607, 1.4743235, 0.31622654)
+
+[node name="CollisionShape3D" parent="PickableObject" index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_0psjf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_yw8f4")
+skeleton = NodePath("../CollisionShape3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_jtak5")
+
+[editable path="PickableObject"]
