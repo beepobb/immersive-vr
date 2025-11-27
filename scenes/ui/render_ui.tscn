@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb1a15xabs5cj"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_x05j1"]
+
+[node name="RenderUI" type="Node3D"]
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("2_x05j1")]
+screen_size = Vector2(3.55, 2)
+scene = null
+viewport_size = Vector2(1920, 1080)
+scene_properties_keys = PackedStringArray()
