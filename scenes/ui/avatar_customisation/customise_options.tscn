@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfnb7ltqxxlt8"]
 
-[ext_resource type="Script" uid="uid://bdqg71fc2oevm" path="res://scripts/ui/customise_options.gd" id="1_vqv38"]
+[ext_resource type="Script" uid="uid://bc02n64160ovo" path="res://scripts/ui/customise_options.gd" id="1_vqv38"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lfx5"]
 bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
@@ -24,11 +24,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7lfx5")
-current_tab = 3
+current_tab = 0
 tabs_visible = false
 
 [node name="BodyType" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -136,6 +135,7 @@ theme_override_constants/v_separation = 20
 columns = 3
 
 [node name="Hair" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 

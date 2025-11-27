@@ -2,13 +2,13 @@ extends Control
 
 @onready var tab_container = $TabContainer
 
-signal option_selected(option: String)
+signal option_selected
 
 var _connected_buttons: Array = []
 
 func _ready() -> void:
 	_update_buttons()
-	tab_container.tab_changed.connect(Callable(self, "_on_tab_changed"))
+	tab_container.tab_changed.connect(_on_tab_changed)
 
 func _on_tab_changed(_tab_idx: int) -> void:
 	_update_buttons()
@@ -16,18 +16,17 @@ func _on_tab_changed(_tab_idx: int) -> void:
 func _update_buttons() -> void:
 	# Disconnect previously connected buttons
 	for btn in _connected_buttons:
-		if btn.pressed.is_connected(Callable(self, "_on_option_pressed")):
-			btn.pressed.disconnect(Callable(self, "_on_option_pressed"))
+		if btn.pressed.is_connected(_on_option_pressed):
+			btn.pressed.disconnect(_on_option_pressed)
 	_connected_buttons.clear()
 
 	var current_tab_options = _get_current_tab_options(tab_container.current_tab)
 	for btn in current_tab_options:
-		# bind the button name (string) so handlers receive a simple identifier
-		btn.pressed.connect(Callable(self, "_on_option_pressed"), [btn.name])
+		btn.pressed.connect(_on_option_pressed)
 		_connected_buttons.append(btn)
 
 func _on_option_pressed(option_name: String) -> void:
-	emit_signal("option_selected", option_name)
+	emit_signal("option_selected")
 
 func _get_current_tab_options(current_tab_idx: int) -> Array:
 	var current_tab_options: Array[Button] = []
