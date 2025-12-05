@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c488t4wmhkqb5"
-path.s3tc="res://.godot/imported/Hair_bob_bob02_diffuse.png-4dd48e587e4c4f2fb019bd3eacba6e7d.s3tc.ctex"
+path.s3tc="res://.godot/imported/Hair_bob_bob02_diffuse.png-e51a5ceec3c05b89a5a13591c9189c26.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Hair_bob_bob02_diffuse.png"
-dest_files=["res://.godot/imported/Hair_bob_bob02_diffuse.png-4dd48e587e4c4f2fb019bd3eacba6e7d.s3tc.ctex"]
+source_file="res://assets/Hair/Hair_bob_bob02_diffuse.png"
+dest_files=["res://.godot/imported/Hair_bob_bob02_diffuse.png-e51a5ceec3c05b89a5a13591c9189c26.s3tc.ctex"]
 
 [params]
 
