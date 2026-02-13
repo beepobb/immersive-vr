@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bmuvspj8m7g8k"]
+[gd_scene load_steps=41 format=3 uid="uid://bmuvspj8m7g8k"]
 
 [ext_resource type="PackedScene" uid="uid://cp2k77y1vnak6" path="res://assets/models/furniture/big_sofa.fbx" id="1_0gap5"]
 [ext_resource type="Texture2D" uid="uid://btr3kicguwvub" path="res://textures/Wood083B_2K_Color.jpg" id="1_j3cbe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cfoo4xoyuwkmt" path="res://assets/models/furniture/big_sofa_interaction.gd" id="3_7byvo"]
 [ext_resource type="PackedScene" uid="uid://8sr21i2f0te8" path="res://assets/models/furniture/paper_cup.fbx" id="3_ly6ct"]
 [ext_resource type="PackedScene" uid="uid://belbke5vshk35" path="res://assets/models/furniture/rug.fbx" id="4_7byvo"]
+[ext_resource type="Texture2D" uid="uid://cbymoi8yx6m1i" path="res://assets/icons/SitPoint.png" id="4_lc1cb"]
 [ext_resource type="PackedScene" uid="uid://c0hmn2v3is8n4" path="res://assets/models/furniture/small_chair.fbx" id="5_idmh4"]
 [ext_resource type="PackedScene" uid="uid://rn77yxp2ka28" path="res://assets/models/furniture/big_plant.fbx" id="6_lc1cb"]
 [ext_resource type="PackedScene" uid="uid://ojb056wyvvbb" path="res://assets/models/furniture/books.fbx" id="7_rm08n"]
@@ -175,6 +176,13 @@ debug_color = Color(18.821728, 0, 4.7359314, 0.41960785)
 
 [node name="SeatTarget" type="Marker3D" parent="big_sofa/SitPoint"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.309636, 0.2648834, 0.6790614)
+
+[node name="InteractIcon" type="Sprite3D" parent="big_sofa/SitPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5442505, 0)
+visible = false
+pixel_size = 0.001
+billboard = 1
+texture = ExtResource("4_lc1cb")
 
 [node name="long_table" parent="." instance=ExtResource("2_j3cbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5964534, 0, 0)
@@ -397,7 +405,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("CapsuleShape3D_wr0db")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.97001326, -0.00053253234, 0.24305171, -0.13909823, 0.8188278, 0.5569316, -0.19931407, -0.57403904, 0.7941997, 0.5226898, 2.2131958, 0.9390869)
+transform = Transform3D(0.9872971, 0.071059935, 0.14210975, -0.13909821, 0.8188278, 0.5569316, -0.076787874, -0.56962407, 0.81831056, 0.5226898, 2.2131958, 2.3167725)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
