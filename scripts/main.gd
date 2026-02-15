@@ -11,9 +11,12 @@ func _ready():
 			
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		
-		get_viewport().use_xr = NOTIFICATION_WM_CLOSE_REQUEST
+		get_viewport().use_xr = true
 	else:
 		print("OpenXR not initialised, please check of your headset is connected")
+		
+	if (OS.get_name() == "Android"):
+		OS.request_permissions()
 	
 	load_environment.connect(_load_environment)
 	
