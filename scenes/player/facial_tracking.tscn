@@ -16,10 +16,10 @@ script = ExtResource("1_uvn5p")
 environment = SubResource("Environment_11l3f")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1172697646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.257913, -0.21483135)
+transform = Transform3D(-1, 0, -8.742278e-08, -1.8496971e-08, 0.97736055, 0.21158068, 8.5443574e-08, 0.21158068, -0.97736055, 0, 2.0614667, -0.22437239)
 
 [node name="metaHumanHead_52shapekeys_01" parent="." unique_id=639620420 instance=ExtResource("1_11l3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23910403, -1.1170778)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.23910403, 0.7631309)
 
 [node name="Face" type="XRFaceModifier3D" parent="metaHumanHead_52shapekeys_01" unique_id=1084399239]
 target = NodePath("../grp_blendShapes_01/grp_head/head_lod0_ORIGINAL")
