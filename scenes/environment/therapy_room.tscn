@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bmuvspj8m7g8k"]
+[gd_scene load_steps=38 format=3 uid="uid://bmuvspj8m7g8k"]
 
 [ext_resource type="PackedScene" uid="uid://cp2k77y1vnak6" path="res://assets/models/furniture/big_sofa.fbx" id="1_0gap5"]
 [ext_resource type="Texture2D" uid="uid://btr3kicguwvub" path="res://textures/Wood083B_2K_Color.jpg" id="1_j3cbe"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://6kuuux6nvdwi" path="res://assets/models/furniture/small_plant.fbx" id="10_3pp7k"]
 [ext_resource type="PackedScene" uid="uid://bys5ilxc2sphj" path="res://assets/models/furniture/small_table.fbx" id="11_ooxdj"]
 [ext_resource type="PackedScene" uid="uid://iis2fs8g6w04" path="res://assets/models/furniture/tissue_box.fbx" id="12_bmmv4"]
+[ext_resource type="Script" uid="uid://cs7e6pwuqi3v0" path="res://scenes/environment/test.gd" id="15_7byvo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_81oxi"]
 size = Vector3(5, 4, 0.01)
@@ -79,6 +80,9 @@ height = 0.49206543
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4wjy"]
 size = Vector3(1, 0.056762695, 0.119384766)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ly6ct"]
+radius = 0.2
 
 [node name="therapy_room" type="Node3D"]
 
@@ -163,8 +167,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1508789, 0, 0)
 
 [node name="Marker" parent="big_sofa/InteractionPoints/Area3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1280365, 0.37609863, 0)
-visible = true
-pixel_size = 0.001
 
 [node name="long_table" parent="." instance=ExtResource("2_j3cbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5964534, 0, 0)
@@ -268,5 +270,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7572278, 0.47286874, 0.082
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tissue_box/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.027404785, -0.00061035156)
 shape = SubResource("BoxShape3D_w4wjy")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("15_7byvo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.042511, 0)
+shape = SubResource("CapsuleShape3D_ly6ct")
+debug_color = Color(0.975699, 0.01573558, 0.4095841, 0.41960785)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02407837, 1.6035461, 2.0528564)
 
 [editable path="big_sofa/InteractionPoints"]
