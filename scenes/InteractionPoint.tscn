@@ -1,33 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://7564l6mm4k37"]
+[gd_scene load_steps=4 format=3 uid="uid://7564l6mm4k37"]
 
-[ext_resource type="PackedScene" uid="uid://bmuvspj8m7g8k" path="res://scenes/environment/therapy_room.tscn" id="1_n2ul1"]
-[ext_resource type="Script" uid="uid://cfoo4xoyuwkmt" path="res://assets/models/furniture/big_sofa_interaction.gd" id="2_1bij5"]
-[ext_resource type="Script" uid="uid://f7ok4uuunqwt" path="res://scenes/InteractArea_bigsofa.gd" id="3_ii3rl"]
-[ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="4_d2ipl"]
-[ext_resource type="Script" uid="uid://m4eutoy8hjnt" path="res://scenes/interactor.gd" id="5_1p5l6"]
+[ext_resource type="Script" uid="uid://2nn4la45nwbm" path="res://scenes/Interactables.gd" id="1_g0555"]
+[ext_resource type="Texture2D" uid="uid://2yrlvdkw2jes" path="res://textures/STENCIL.jpg" id="1_n2ul1"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ake4x"]
-size = Vector3(2.1395874, 1, 1.1376953)
+[sub_resource type="BoxShape3D" id="BoxShape3D_g0555"]
+size = Vector3(2.1845703, 1, 1)
 
-[node name="Interactables_Therapy" type="Node3D"]
+[node name="InteractionPoints" type="Node3D"]
+script = ExtResource("1_g0555")
 
-[node name="therapy_room" parent="." instance=ExtResource("1_n2ul1")]
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="big_sofa" parent="therapy_room" index="6"]
-script = ExtResource("2_1bij5")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_g0555")
 
-[node name="Area3D" type="Area3D" parent="therapy_room/big_sofa" index="2"]
-script = ExtResource("3_ii3rl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="therapy_room/big_sofa/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017181396, 0.49938965, -0.0107421875)
-shape = SubResource("BoxShape3D_ake4x")
-debug_color = Color(0.65398556, 0.1141408, 0.26908466, 0.41960785)
-
-[node name="XROrigin3D" parent="." instance=ExtResource("4_d2ipl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0521698, 0)
-
-[node name="Interactor" type="Node" parent="XROrigin3D"]
-script = ExtResource("5_1p5l6")
-
-[editable path="therapy_room"]
+[node name="Marker" type="Sprite3D" parent="Area3D"]
+pixel_size = 0.001
+billboard = 1
+texture = ExtResource("1_n2ul1")
