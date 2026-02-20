@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cp2k77y1vnak6" path="res://assets/models/furniture/big_sofa.fbx" id="1_0gap5"]
 [ext_resource type="Texture2D" uid="uid://btr3kicguwvub" path="res://textures/Wood083B_2K_Color.jpg" id="1_j3cbe"]
 [ext_resource type="PackedScene" uid="uid://c1d0v1uky2a55" path="res://assets/models/furniture/long_table.fbx" id="2_j3cbe"]
-[ext_resource type="Script" uid="uid://cfoo4xoyuwkmt" path="res://assets/models/furniture/big_sofa_interaction.gd" id="3_7byvo"]
+[ext_resource type="PackedScene" uid="uid://7564l6mm4k37" path="res://scenes/InteractionPoint.tscn" id="3_7byvo"]
 [ext_resource type="PackedScene" uid="uid://8sr21i2f0te8" path="res://assets/models/furniture/paper_cup.fbx" id="3_ly6ct"]
 [ext_resource type="PackedScene" uid="uid://belbke5vshk35" path="res://assets/models/furniture/rug.fbx" id="4_7byvo"]
 [ext_resource type="PackedScene" uid="uid://c0hmn2v3is8n4" path="res://assets/models/furniture/small_chair.fbx" id="5_idmh4"]
@@ -116,6 +116,7 @@ skeleton = NodePath("../CollisionShape3D")
 
 [node name="Wall4" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5, 2, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4"]
 shape = SubResource("BoxShape3D_hkkc5")
@@ -147,13 +148,23 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ly6ct")
 
 [node name="big_sofa" parent="." instance=ExtResource("1_0gap5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6670275, 0, -1.350483)
-script = ExtResource("3_7byvo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="big_sofa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="big_sofa/StaticBody3D"]
 shape = SubResource("BoxShape3D_v64ko")
+
+[node name="InteractionPoints" parent="big_sofa" instance=ExtResource("3_7byvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17124939, 0.5709839, 0)
+
+[node name="CollisionShape3D" parent="big_sofa/InteractionPoints/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1508789, 0, 0)
+
+[node name="Marker" parent="big_sofa/InteractionPoints/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1280365, 0.37609863, 0)
+visible = true
+pixel_size = 0.001
 
 [node name="long_table" parent="." instance=ExtResource("2_j3cbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5964534, 0, 0)
@@ -257,3 +268,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7572278, 0.47286874, 0.082
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tissue_box/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.027404785, -0.00061035156)
 shape = SubResource("BoxShape3D_w4wjy")
+
+[editable path="big_sofa/InteractionPoints"]
