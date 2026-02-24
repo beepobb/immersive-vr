@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://7564l6mm4k37"]
 
-[ext_resource type="Script" uid="uid://2nn4la45nwbm" path="res://scenes/Interactables.gd" id="1_g0555"]
+[ext_resource type="Script" uid="uid://2nn4la45nwbm" path="res://scenes/Interactions/Interactables.gd" id="1_g0555"]
 [ext_resource type="Texture2D" uid="uid://2yrlvdkw2jes" path="res://textures/STENCIL.jpg" id="1_n2ul1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g0555"]
@@ -18,3 +18,5 @@ shape = SubResource("BoxShape3D_g0555")
 pixel_size = 0.001
 billboard = 1
 texture = ExtResource("1_n2ul1")
+
+[node name="SnapPoint" type="Marker3D" parent="."]
