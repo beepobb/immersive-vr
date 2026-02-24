@@ -15,9 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Immersive VR"
-run/main_scene="uid://b0uy3mf2m2qny"
+run/main_scene="uid://ori1njgdxcyw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+driver/enable_input=true
 
 [autoload]
 
@@ -33,6 +37,10 @@ window/size/viewport_height=720
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
 
 [xr]
 
