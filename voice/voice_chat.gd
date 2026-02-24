@@ -1,67 +1,84 @@
 extends Node
 
+# =========================================================
+# NO-UI VOICE CHAT (Godot 4.x)
+# - ENet voice relay
+# - Mic capture via AudioEffectCapture
+# - Sends 16kHz mono PCM16
+# - Plays back via AudioStreamGenerator per peer
+#
+# MULTI-INSTANCE FRIENDLY:
+# - If you run multiple instances from Godot:
+#     Instance #1 hosts, Instance #2+ joins 127.0.0.1
+# - You can override with CLI:
+#     --voice_host
+#     --voice_client=IP
+# =========================================================
+
 const PORT: int = 7777
 const MAX_CLIENTS: int = 16
 
 const MIC_BUS_NAME: String = "MicCapture"
 const CHUNK_SECONDS: float = 0.02
-const TARGET_VOICE_RATE: int = 16000
+const TARGET_RATE: int = 16000
 
-@export var input_gain: float = 1.6
 @export var voice_enabled: bool = true
-@export var debug_mic: bool = true
+@export var input_gain: float = 1.5
+@export var debug_logs: bool = true
+@export var debug_mic_every_sec: bool = true
 
-var _capture_effect: AudioEffectCapture = null
+# Default when auto-deciding client
+@export var default_server_ip: String = "127.0.0.1"
+
+var _capture: AudioEffectCapture = null
 var _mic_player: AudioStreamPlayer = null
 
 var _mix_rate: int = 48000
-var _chunk_frames_mix: int = 960
-
-var _signals_connected: bool = false
-var _voice_network_ready: bool = false
+var _chunk_frames: int = 960
+var _network_ready: bool = false
 
 var _debug_elapsed: float = 0.0
 var _last_rms: float = 0.0
-var _last_sent_bytes: int = 0
 
-# peer_id -> {"player": AudioStreamPlayer, "playback": AudioStreamGeneratorPlayback}
-var _remote_streams: Dictionary = {}
+var _remote_players: Dictionary = {}   # peer_id -> AudioStreamPlayer
+var _remote_playbacks: Dictionary = {} # peer_id -> AudioStreamGeneratorPlayback
 
 func _ready() -> void:
-	print("VOICE: starting...")
-
-	if not _ensure_input_enabled():
-		return
+	_wire_signals()
 
 	await get_tree().process_frame
 
-	_force_select_input_device()
-	_setup_mic_capture_chain()
-	_setup_mic_player()
-	_wire_multiplayer_signals()
+	# Audio input enabled?
+	if not bool(ProjectSettings.get_setting("audio/driver/enable_input")):
+		push_error("Enable Project Settings > Audio > Driver > Enable Input, then restart Godot.")
+		# Still allow networking to run, but mic won't work.
+	else:
+		_force_select_input_device()
+		_setup_mic()
 
 	_mix_rate = int(AudioServer.get_mix_rate())
-	if _mix_rate <= 0:
-		push_error("VOICE: Audio failed to init (dummy driver). Fix mac audio output first.")
-		return
+	_chunk_frames = max(1, int(round(float(_mix_rate) * CHUNK_SECONDS)))
 
-	_chunk_frames_mix = max(1, int(round(float(_mix_rate) * CHUNK_SECONDS)))
+	if debug_logs:
+		print("Voice init | mix_rate=", _mix_rate, " chunk_frames=", _chunk_frames)
 
-	print("VOICE: init OK | mix_rate=", _mix_rate,
-		" chunk_frames=", _chunk_frames_mix,
-		" input_device=", AudioServer.get_input_device()
-	)
-
-	_auto_network_start_from_args()
+	_auto_start_network()
 
 func _process(delta: float) -> void:
-	if _capture_effect == null:
+	if _capture == null:
+		# Still print network state occasionally
+		if debug_mic_every_sec:
+			_debug_elapsed += delta
+			if _debug_elapsed >= 1.0:
+				_debug_elapsed = 0.0
+				if debug_logs:
+					print("No mic capture. net_ready=", _network_ready, " peers=", multiplayer.get_peers())
 		return
 
 	var sent_any: bool = false
 
-	while _capture_effect.get_frames_available() >= _chunk_frames_mix:
-		var frames: PackedVector2Array = _capture_effect.get_buffer(_chunk_frames_mix)
+	while _capture.get_frames_available() >= _chunk_frames:
+		var frames: PackedVector2Array = _capture.get_buffer(_chunk_frames)
 		if frames.is_empty():
 			break
 
@@ -69,97 +86,136 @@ func _process(delta: float) -> void:
 
 		if not voice_enabled:
 			continue
-		if not _voice_network_ready:
+		if not _network_ready:
 			continue
 		if multiplayer.multiplayer_peer == null:
 			continue
 
-		var payload: PackedByteArray = _encode_pcm16_mono(frames, _mix_rate, TARGET_VOICE_RATE, input_gain)
+		var payload: PackedByteArray = _encode(frames, _mix_rate, TARGET_RATE, input_gain)
 		if payload.is_empty():
 			continue
 
-		_last_sent_bytes = payload.size()
-		_send_voice_payload(payload)
+		_send(payload)
 		sent_any = true
 
-	if debug_mic:
+	if debug_mic_every_sec:
 		_debug_elapsed += delta
 		if _debug_elapsed >= 1.0:
 			_debug_elapsed = 0.0
-			print("VOICE: rms=", snappedf(_last_rms, 0.001),
-				" sending=", sent_any,
-				" bytes=", _last_sent_bytes,
-				" net_ready=", _voice_network_ready,
-				" conn=", _conn_status(),
-				" is_server=", multiplayer.is_server(),
-				" my_id=", multiplayer.get_unique_id()
-			)
+			if debug_logs:
+				print(
+					"MIC rms=", snappedf(_last_rms, 0.001),
+					" sending=", sent_any,
+					" net_ready=", _network_ready,
+					" peers=", multiplayer.get_peers()
+				)
 
-func _auto_network_start_from_args() -> void:
+# ============================
+# AUTO START NETWORK
+# ============================
+func _auto_start_network() -> void:
 	var args: PackedStringArray = OS.get_cmdline_args()
 
-	if args.has("--host"):
-		host_game()
-		return
-
+	# Explicit CLI override
 	for a in args:
-		var s: String = String(a)
-		if s.begins_with("--join="):
-			var parts: PackedStringArray = s.split("=", false, 2)
-			var ip: String = ""
-			if parts.size() >= 2:
-				ip = String(parts[1]).strip_edges()
-			if ip == "":
-				ip = "127.0.0.1"
+		if a == "--voice_host":
+			if debug_logs:
+				print("CLI: host")
+			host_game()
+			return
+		if a.begins_with("--voice_client="):
+			var ip: String = a.split("=", false, 2)[1]
+			if debug_logs:
+				print("CLI: client -> ", ip)
 			join_game(ip)
 			return
 
-	print("VOICE: No args. Run with --host or --join=IP")
+	# Godot multiple instances: OS.get_process_id() differs, but not index.
+	# Better: use feature tag set by Godot when running multiple instances:
+	# It appends "--instance-id N" in args sometimes; we parse it.
+	var instance_id: int = -1
+	for a2 in args:
+		if a2 == "--instance-id":
+			# next arg should be the id
+			# but cmdline comes as tokens; easiest safe fallback: ignore if missing
+			pass
+		if a2.begins_with("--instance-id="):
+			instance_id = int(a2.split("=", false, 2)[1])
+			break
 
-func _conn_status() -> String:
-	var p: MultiplayerPeer = multiplayer.multiplayer_peer
-	if p == null:
-		return "NO_PEER"
-	return str(p.get_connection_status())
+	# If no instance-id provided, just default to HOST (single run)
+	if instance_id == -1:
+		if debug_logs:
+			print("Auto: single instance -> HOST")
+		host_game()
+		return
 
+	# Instance 1 hosts, others join
+	if instance_id == 1:
+		if debug_logs:
+			print("Auto: instance 1 -> HOST")
+		host_game()
+	else:
+		if debug_logs:
+			print("Auto: instance ", instance_id, " -> CLIENT ", default_server_ip)
+		join_game(default_server_ip)
+
+# ============================
+# HOST / JOIN
+# ============================
 func host_game() -> void:
-	var peer := ENetMultiplayerPeer.new()
+	# If already hosting/joined, don't do it twice
+	if multiplayer.multiplayer_peer != null:
+		return
+
+	var peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
 	var err: int = peer.create_server(PORT, MAX_CLIENTS)
 	if err != OK:
-		push_error("VOICE: Host failed: " + str(err))
+		push_error("Couldn't create an ENet host. Host failed: " + str(err))
 		return
 
 	multiplayer.multiplayer_peer = peer
-	_voice_network_ready = true
-	print("VOICE: Hosting on port ", PORT)
+	_network_ready = true
+
+	if debug_logs:
+		print("Hosting on port ", PORT, " | my_peer_id=", multiplayer.get_unique_id())
 
 func join_game(ip: String) -> void:
-	var peer := ENetMultiplayerPeer.new()
+	# If already hosting/joined, don't do it twice
+	if multiplayer.multiplayer_peer != null:
+		return
+
+	var peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
 	var err: int = peer.create_client(ip, PORT)
 	if err != OK:
-		push_error("VOICE: Join failed: " + str(err))
+		push_error("Join failed: " + str(err))
 		return
 
 	multiplayer.multiplayer_peer = peer
-	_voice_network_ready = false
-	print("VOICE: Joining ", ip, ":", PORT)
+	_network_ready = false
 
-func _send_voice_payload(payload: PackedByteArray) -> void:
-	var peer: MultiplayerPeer = multiplayer.multiplayer_peer
-	if peer == null:
+	if debug_logs:
+		print("Joining ", ip, ":", PORT)
+
+# ============================
+# SEND / RECEIVE
+# ============================
+func _send(payload: PackedByteArray) -> void:
+	var mp: MultiplayerPeer = multiplayer.multiplayer_peer
+	if mp == null:
 		return
-	if peer.get_connection_status() != MultiplayerPeer.CONNECTION_CONNECTED:
+	if mp.get_connection_status() != MultiplayerPeer.CONNECTION_CONNECTED:
 		return
 
 	if multiplayer.is_server():
 		var sender_id: int = multiplayer.get_unique_id()
 		for peer_id in multiplayer.get_peers():
-			_voice_from_server.rpc_id(peer_id, sender_id, TARGET_VOICE_RATE, payload)
+			_voice_from_server.rpc_id(peer_id, sender_id, payload)
 	else:
-		_voice_to_server.rpc_id(1, TARGET_VOICE_RATE, payload)
+		_voice_to_server.rpc_id(1, payload)
 
-@rpc("any_peer", "call_remote", "unreliable", 1)
-func _voice_to_server(sample_rate: int, payload: PackedByteArray) -> void:
+@rpc("any_peer", "call_remote", "unreliable")
+func _voice_to_server(payload: PackedByteArray) -> void:
 	if not multiplayer.is_server():
 		return
 
@@ -167,20 +223,21 @@ func _voice_to_server(sample_rate: int, payload: PackedByteArray) -> void:
 	for peer_id in multiplayer.get_peers():
 		if peer_id == sender_id:
 			continue
-		_voice_from_server.rpc_id(peer_id, sender_id, sample_rate, payload)
+		_voice_from_server.rpc_id(peer_id, sender_id, payload)
 
-@rpc("authority", "call_remote", "unreliable", 1)
-func _voice_from_server(sender_id: int, sample_rate: int, payload: PackedByteArray) -> void:
-	if sample_rate != TARGET_VOICE_RATE:
-		return
-	_play_remote_payload(sender_id, payload)
+@rpc("authority", "call_remote", "unreliable")
+func _voice_from_server(sender_id: int, payload: PackedByteArray) -> void:
+	_play_remote(sender_id, payload)
 
-func _play_remote_payload(sender_id: int, payload: PackedByteArray) -> void:
-	var playback: AudioStreamGeneratorPlayback = _get_or_create_remote_playback(sender_id)
+# ============================
+# PLAYBACK
+# ============================
+func _play_remote(sender_id: int, payload: PackedByteArray) -> void:
+	var playback: AudioStreamGeneratorPlayback = _get_or_create_playback(sender_id)
 	if playback == null:
 		return
 
-	var samples: PackedFloat32Array = _decode_pcm16_mono(payload)
+	var samples: PackedFloat32Array = _decode(payload)
 	if samples.is_empty():
 		return
 
@@ -193,60 +250,67 @@ func _play_remote_payload(sender_id: int, payload: PackedByteArray) -> void:
 		var s: float = samples[i]
 		playback.push_frame(Vector2(s, s))
 
-func _get_or_create_remote_playback(peer_id: int) -> AudioStreamGeneratorPlayback:
-	if _remote_streams.has(peer_id):
-		return _remote_streams[peer_id]["playback"] as AudioStreamGeneratorPlayback
+	if debug_logs:
+		print("Voice recv from ", sender_id, " bytes=", payload.size(), " pushed=", n)
+
+func _get_or_create_playback(peer_id: int) -> AudioStreamGeneratorPlayback:
+	if _remote_playbacks.has(peer_id):
+		return _remote_playbacks[peer_id] as AudioStreamGeneratorPlayback
 
 	var player: AudioStreamPlayer = AudioStreamPlayer.new()
 	player.name = "RemoteVoice_%s" % str(peer_id)
 	player.bus = "Master"
 
-	var generator: AudioStreamGenerator = AudioStreamGenerator.new()
-	generator.mix_rate = TARGET_VOICE_RATE
-	generator.buffer_length = 0.4
-	player.stream = generator
+	var gen: AudioStreamGenerator = AudioStreamGenerator.new()
+	gen.mix_rate = TARGET_RATE
+	gen.buffer_length = 0.5
 
+	player.stream = gen
 	add_child(player)
 	player.play()
 
 	var pb: AudioStreamGeneratorPlayback = player.get_stream_playback() as AudioStreamGeneratorPlayback
-	_remote_streams[peer_id] = {"player": player, "playback": pb}
-	print("VOICE: created remote playback for peer ", peer_id)
+
+	_remote_players[peer_id] = player
+	_remote_playbacks[peer_id] = pb
 	return pb
 
-func _remove_remote_stream(peer_id: int) -> void:
-	if not _remote_streams.has(peer_id):
-		return
-	var player: AudioStreamPlayer = _remote_streams[peer_id]["player"] as AudioStreamPlayer
-	if is_instance_valid(player):
-		player.queue_free()
-	_remote_streams.erase(peer_id)
+func _remove_remote(peer_id: int) -> void:
+	if _remote_players.has(peer_id):
+		var p: AudioStreamPlayer = _remote_players[peer_id] as AudioStreamPlayer
+		if is_instance_valid(p):
+			p.queue_free()
+		_remote_players.erase(peer_id)
 
-func _setup_mic_capture_chain() -> void:
-	var idx: int = AudioServer.get_bus_index(MIC_BUS_NAME)
-	if idx == -1:
+	if _remote_playbacks.has(peer_id):
+		_remote_playbacks.erase(peer_id)
+
+# ============================
+# MIC SETUP
+# ============================
+func _setup_mic() -> void:
+	var bus_idx: int = AudioServer.get_bus_index(MIC_BUS_NAME)
+	if bus_idx == -1:
 		AudioServer.add_bus(AudioServer.get_bus_count())
-		idx = AudioServer.get_bus_count() - 1
-		AudioServer.set_bus_name(idx, MIC_BUS_NAME)
+		bus_idx = AudioServer.get_bus_count() - 1
+		AudioServer.set_bus_name(bus_idx, MIC_BUS_NAME)
 
-	AudioServer.set_bus_volume_db(idx, -80.0)
-	AudioServer.set_bus_send(idx, "Master")
+	AudioServer.set_bus_volume_db(bus_idx, -80.0)
+	AudioServer.set_bus_send(bus_idx, "Master")
 
-	_capture_effect = null
-
-	var effect_count: int = AudioServer.get_bus_effect_count(idx)
-	for i in range(effect_count):
-		var fx: AudioEffect = AudioServer.get_bus_effect(idx, i)
+	_capture = null
+	var fx_count: int = AudioServer.get_bus_effect_count(bus_idx)
+	for i in range(fx_count):
+		var fx: AudioEffect = AudioServer.get_bus_effect(bus_idx, i)
 		if fx is AudioEffectCapture:
-			_capture_effect = fx as AudioEffectCapture
+			_capture = fx as AudioEffectCapture
 			break
 
-	if _capture_effect == null:
-		_capture_effect = AudioEffectCapture.new()
-		_capture_effect.buffer_length = 0.5
-		AudioServer.add_bus_effect(idx, _capture_effect, 0)
+	if _capture == null:
+		_capture = AudioEffectCapture.new()
+		_capture.buffer_length = 0.5
+		AudioServer.add_bus_effect(bus_idx, _capture, 0)
 
-func _setup_mic_player() -> void:
 	_mic_player = AudioStreamPlayer.new()
 	_mic_player.name = "MicInputPlayer"
 	_mic_player.stream = AudioStreamMicrophone.new()
@@ -254,55 +318,69 @@ func _setup_mic_player() -> void:
 	add_child(_mic_player)
 	_mic_player.play()
 
-func _wire_multiplayer_signals() -> void:
-	if _signals_connected:
-		return
-	_signals_connected = true
-
-	multiplayer.peer_connected.connect(_on_peer_connected)
-	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
-	multiplayer.connected_to_server.connect(_on_connected_to_server)
-	multiplayer.connection_failed.connect(_on_connection_failed)
-	multiplayer.server_disconnected.connect(_on_server_disconnected)
-
-func _on_peer_connected(id: int) -> void:
-	print("VOICE: peer connected: ", id)
-
-func _on_peer_disconnected(id: int) -> void:
-	print("VOICE: peer disconnected: ", id)
-	_remove_remote_stream(id)
-
-func _on_connected_to_server() -> void:
-	_voice_network_ready = true
-	print("VOICE: connected as ", multiplayer.get_unique_id())
-
-func _on_connection_failed() -> void:
-	_voice_network_ready = false
-	print("VOICE: connection failed")
-
-func _on_server_disconnected() -> void:
-	_voice_network_ready = false
-	print("VOICE: server disconnected")
-	for k in _remote_streams.keys():
-		_remove_remote_stream(int(k))
-
-func _ensure_input_enabled() -> bool:
-	var enabled: bool = bool(ProjectSettings.get_setting("audio/driver/enable_input"))
-	if not enabled:
-		push_error("VOICE: Enable Project Settings > Audio > Driver > Enable Input, then restart editor.")
-		return false
-	return true
-
 func _force_select_input_device() -> void:
 	var devices: PackedStringArray = AudioServer.get_input_device_list()
 	if devices.is_empty():
-		print("VOICE: No input devices visible (macOS mic permission likely).")
+		if debug_logs:
+			print("No input devices visible to Godot.")
 		return
 
-	AudioServer.set_input_device(String(devices[0]))
-	print("VOICE: Selected input device:", AudioServer.get_input_device())
+	var preferred: String = ""
+	for d in devices:
+		var dev_name: String = String(d)
+		var lower: String = dev_name.to_lower()
+		if lower.find("macbook") != -1 or lower.find("built") != -1:
+			preferred = dev_name
+			break
 
-func _encode_pcm16_mono(frames: PackedVector2Array, src_rate: int, dst_rate: int, gain: float) -> PackedByteArray:
+	if preferred == "":
+		preferred = String(devices[0])
+
+	AudioServer.set_input_device(preferred)
+
+	if debug_logs:
+		print("Selected input device: ", AudioServer.get_input_device())
+
+# ============================
+# SIGNALS
+# ============================
+func _wire_signals() -> void:
+	multiplayer.connected_to_server.connect(_on_connected_to_server)
+	multiplayer.connection_failed.connect(_on_connection_failed)
+	multiplayer.server_disconnected.connect(_on_server_disconnected)
+	multiplayer.peer_connected.connect(_on_peer_connected)
+	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
+
+func _on_connected_to_server() -> void:
+	_network_ready = true
+	if debug_logs:
+		print("Connected to server | my_peer_id=", multiplayer.get_unique_id())
+
+func _on_connection_failed() -> void:
+	_network_ready = false
+	if debug_logs:
+		print("Connection failed")
+
+func _on_server_disconnected() -> void:
+	_network_ready = false
+	if debug_logs:
+		print("Server disconnected")
+	for k in _remote_players.keys():
+		_remove_remote(int(k))
+
+func _on_peer_connected(id: int) -> void:
+	if debug_logs:
+		print("Peer connected: ", id)
+
+func _on_peer_disconnected(id: int) -> void:
+	if debug_logs:
+		print("Peer disconnected: ", id)
+	_remove_remote(id)
+
+# ============================
+# ENCODE / DECODE / RMS
+# ============================
+func _encode(frames: PackedVector2Array, src_rate: int, dst_rate: int, gain: float) -> PackedByteArray:
 	var out: PackedByteArray = PackedByteArray()
 	if frames.is_empty():
 		return out
@@ -321,12 +399,13 @@ func _encode_pcm16_mono(frames: PackedVector2Array, src_rate: int, dst_rate: int
 
 		out.append(s16 & 0xFF)
 		out.append((s16 >> 8) & 0xFF)
+
 		idx += step
 
 	return out
 
-func _decode_pcm16_mono(payload: PackedByteArray) -> PackedFloat32Array:
-	var count: int = payload.size() >> 1
+func _decode(payload: PackedByteArray) -> PackedFloat32Array:
+	var count: int = int(payload.size() / 2)
 	var out: PackedFloat32Array = PackedFloat32Array()
 	out.resize(count)
 
