@@ -6,4 +6,3 @@
 
 [node name="VoiceChat" type="Node" parent="."]
 script = ExtResource("1_c7hde")
-auto_start_mode = 1
