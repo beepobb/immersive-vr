@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://jg1qkgdrf47o"]
+[gd_scene format=3 uid="uid://jg1qkgdrf47o"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_k04qm"]
+[ext_resource type="Script" uid="uid://c2mkif0jkvrut" path="res://scenes/player/xr_setup.gd" id="1_x2gul"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_7ul40"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="3_vi16e"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_x2gul"]
@@ -8,28 +9,39 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7e1ug"]
 [ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="8_2118c"]
 
-[node name="XROrigin3D" type="XROrigin3D"]
+[node name="XROrigin3D" type="XROrigin3D" unique_id=2144242128 node_paths=PackedStringArray("left_controller", "right_controller", "left_pointer", "right_pointer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+current = true
+script = ExtResource("1_x2gul")
+left_controller = NodePath("LeftController")
+right_controller = NodePath("RightController")
+left_pointer = NodePath("LeftController/FunctionPointer")
+right_pointer = NodePath("RightController/FunctionPointer")
 
-[node name="XRCamera3D" type="XRCamera3D" parent="."]
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1681466104]
 
-[node name="LeftController" type="XRController3D" parent="."]
+[node name="LeftController" type="XRController3D" parent="." unique_id=97431025]
 tracker = &"left_hand"
 
-[node name="LeftHand" parent="LeftController" instance=ExtResource("1_k04qm")]
+[node name="LeftHand" parent="LeftController" unique_id=2036101982 instance=ExtResource("1_k04qm")]
 
-[node name="FunctionPointer" parent="LeftController" instance=ExtResource("2_7ul40")]
+[node name="FunctionPointer" parent="LeftController" unique_id=776773420 instance=ExtResource("2_7ul40")]
+show_target = true
+collision_mask = 5242881
 
-[node name="MovementDirect" parent="LeftController" instance=ExtResource("3_x2gul")]
+[node name="MovementDirect" parent="LeftController" unique_id=1135656926 instance=ExtResource("3_x2gul")]
 
-[node name="RightController" type="XRController3D" parent="."]
+[node name="RightController" type="XRController3D" parent="." unique_id=347197856]
 tracker = &"right_hand"
 
-[node name="RightHand" parent="RightController" instance=ExtResource("3_vi16e")]
+[node name="RightHand" parent="RightController" unique_id=1523000000 instance=ExtResource("3_vi16e")]
 
-[node name="FunctionPointer" parent="RightController" instance=ExtResource("2_7ul40")]
+[node name="FunctionPointer" parent="RightController" unique_id=1065736563 instance=ExtResource("2_7ul40")]
 
-[node name="MovementTurn" parent="RightController" instance=ExtResource("5_kfx4a")]
+[node name="MovementTurn" parent="RightController" unique_id=100444920 instance=ExtResource("5_kfx4a")]
 
-[node name="PlayerBody" parent="." instance=ExtResource("6_7e1ug")]
+[node name="PlayerBody" parent="." unique_id=670210313 instance=ExtResource("6_7e1ug")]
+collision_layer = 2
+collision_mask = 1
 
-[node name="MovementJog" parent="." instance=ExtResource("8_2118c")]
+[node name="MovementJog" parent="." unique_id=1699336177 instance=ExtResource("8_2118c")]
