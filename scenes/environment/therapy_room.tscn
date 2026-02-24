@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bmuvspj8m7g8k"]
+[gd_scene format=4 uid="uid://bmuvspj8m7g8k"]
 
 [ext_resource type="PackedScene" uid="uid://cp2k77y1vnak6" path="res://assets/models/furniture/big_sofa.fbx" id="1_0gap5"]
 [ext_resource type="Texture2D" uid="uid://btr3kicguwvub" path="res://textures/Wood083B_2K_Color.jpg" id="1_j3cbe"]
@@ -13,7 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://6kuuux6nvdwi" path="res://assets/models/furniture/small_plant.fbx" id="10_3pp7k"]
 [ext_resource type="Script" uid="uid://dflq2er4qmdkx" path="res://scenes/environment/select_highlight.gd" id="11_rm08n"]
 [ext_resource type="PackedScene" uid="uid://iis2fs8g6w04" path="res://assets/models/furniture/tissue_box.fbx" id="12_bmmv4"]
-[ext_resource type="Script" uid="uid://cs7e6pwuqi3v0" path="res://scenes/environment/test.gd" id="15_7byvo"]
+[ext_resource type="Material" uid="uid://ckvf7pq0yemjk" path="res://outline_material.tres" id="12_wr0db"]
+[ext_resource type="Material" uid="uid://b2ev18m1qnnwn" path="res://selection_material.tres" id="13_3pp7k"]
+[ext_resource type="Texture2D" uid="uid://ddbl1prt43xic" path="res://textures/dcmap_willisau_riale_diff.jpg" id="13_jcqbw"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="13_ly6ct"]
+[ext_resource type="Texture2D" uid="uid://c5rhmh7t3fhpo" path="res://textures/Rattan.jpg" id="14_3pp7k"]
+[ext_resource type="Texture2D" uid="uid://d05qiy2r7liv8" path="res://textures/Wood083B_2K_NormalDX.jpg" id="15_ooxdj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_81oxi"]
 size = Vector3(5, 4, 0.01)
@@ -179,10 +184,10 @@ shadow_mesh = SubResource("ArrayMesh_dwypu")
 height = 0.49206543
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4wjy"]
-size = Vector3(1, 0.056762695, 0.119384766)
+size = Vector3(0.22460938, 0.05230713, 0.11663818)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ly6ct"]
-radius = 0.2
+[sub_resource type="BoxShape3D" id="BoxShape3D_03dbg"]
+size = Vector3(1, 0.01, 1)
 
 [node name="therapy_room" type="Node3D" unique_id=1812520422]
 
@@ -269,17 +274,11 @@ collision_mask = 2
 transform = Transform3D(0.9999827, 0, 0, 0, 0.9999827, 0, 0, 0, 0.9999827, 0, 0, -0.008544922)
 shape = SubResource("BoxShape3D_v64ko")
 
-[node name="InteractionPoints" parent="big_sofa" instance=ExtResource("3_7byvo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17124939, 0.5709839, 0)
+[node name="LongTableGroup" type="Node3D" parent="." unique_id=2132069170]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 2.1945744, 0, -0.98544526)
 
-[node name="CollisionShape3D" parent="big_sofa/InteractionPoints/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1508789, 0, 0)
-
-[node name="Marker" parent="big_sofa/InteractionPoints/Area3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1280365, 0.37609863, 0)
-
-[node name="long_table" parent="." instance=ExtResource("2_j3cbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5964534, 0, 0)
+[node name="small_plant" parent="LongTableGroup" unique_id=1454106037 instance=ExtResource("10_3pp7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352, 0.92148614, 0.023549557)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="LongTableGroup/small_plant" unique_id=527262410]
 collision_mask = 2
@@ -298,19 +297,11 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LongTableGroup/paper_cup/StaticBody3D" unique_id=2072066875]
 shape = SubResource("BoxShape3D_qn7k8")
 
-[node name="rug" parent="." instance=ExtResource("4_7byvo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.743117, 0.011852862, 0.020166278)
+[node name="long_table" parent="LongTableGroup" unique_id=411735622 instance=ExtResource("2_j3cbe")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="rug"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rug/StaticBody3D"]
-shape = SubResource("BoxShape3D_03dbg")
-
-[node name="small_chair" parent="." instance=ExtResource("5_idmh4")]
-transform = Transform3D(-0.626046, 0, -0.7797863, 0, 1, 0, 0.7797863, 0, -0.626046, 0.50806487, 0, 0.24923706)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="small_chair"]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.021068633, 0.388287, 0.026242554)
+[node name="StaticBody3D" type="StaticBody3D" parent="LongTableGroup/long_table" unique_id=983272791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2966125, 0.45445776, 0)
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LongTableGroup/long_table/StaticBody3D" unique_id=2012808344]
 shape = SubResource("BoxShape3D_gcxrx")
@@ -380,8 +371,11 @@ outline_material = ExtResource("12_wr0db")
 selection_material = ExtResource("13_3pp7k")
 static_body = NodePath("StaticBody3D")
 
-[node name="small_table" parent="." instance=ExtResource("11_ooxdj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7217947, 0.016852977, 0.023310304)
+[node name="Round Table" type="MeshInstance3D" parent="SmallTableGroup/small_table" unique_id=271791390]
+transform = Transform3D(0, -100, -3.5292223e-06, -2.9802322e-06, 0, 118.42105, -100, 2.9802322e-06, 0, 0, 0, 0)
+material_overlay = ExtResource("13_3pp7k")
+mesh = SubResource("ArrayMesh_20qj0")
+skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SmallTableGroup/small_table" unique_id=829277826]
 collision_mask = 2
@@ -390,8 +384,8 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24261475, 0)
 shape = SubResource("CylinderShape3D_tu5he")
 
-[node name="tissue_box" parent="." instance=ExtResource("12_bmmv4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7572278, 0.47286874, 0.08230817)
+[node name="tissue_box" parent="SmallTableGroup" unique_id=107720295 instance=ExtResource("12_bmmv4")]
+transform = Transform3D(0.9999992, 0, 0, 0, 0.9999992, 0, 0, 0, 0.9999992, 0, 0.45322353, -0.011436164)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SmallTableGroup/tissue_box" unique_id=1316251233]
 collision_mask = 2
@@ -400,15 +394,13 @@ collision_mask = 2
 transform = Transform3D(0.9999657, 0, 0, 0, 0.9999657, 0, 0, 0, 0.9999657, 0, 0, 0)
 shape = SubResource("BoxShape3D_w4wjy")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("15_7byvo")
+[node name="PickableObject" parent="SmallTableGroup/tissue_box" unique_id=1788598405 instance=ExtResource("13_ly6ct")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.042511, 0)
-shape = SubResource("CapsuleShape3D_ly6ct")
-debug_color = Color(0.975699, 0.01573558, 0.4095841, 0.41960785)
+[node name="rug" parent="SmallTableGroup" unique_id=732214572 instance=ExtResource("4_7byvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035, 0.011852862, 0.020166278)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02407837, 1.6035461, 2.0528564)
+[node name="StaticBody3D" type="StaticBody3D" parent="SmallTableGroup/rug" unique_id=504169150]
+collision_mask = 2
 
-[editable path="big_sofa/InteractionPoints"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SmallTableGroup/rug/StaticBody3D" unique_id=44698704]
+shape = SubResource("BoxShape3D_03dbg")
