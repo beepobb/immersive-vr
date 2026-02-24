@@ -1,0 +1,62 @@
+{
+	"items": [
+		{
+			"id": "middle_african_female",
+			"name": "Middle African Female",
+			"texture": "res://Assets/Skin/Female/Middle african_middleage_darkskinned_female_diffuse.png",
+			"thumb": "res://Assets/Skin/thumbs/middleage_african_female.png"
+		},
+		{
+			"id": "middle_asian_female",
+			"name": "Middle Asian Female",
+			"texture": "res://Assets/Skin/Female/Middle asian_middleage_lightskinned_female_diffuse2.png",
+			"thumb": "res://Assets/Skin/thumbs/middleage_asian_female.png"
+		},
+		{
+			"id": "middle_caucasian_female",
+			"name": "Middle Caucasian Female",
+			"texture": "res://Assets/Skin/Female/Middle causcasian_middleage_lightskinned_female_diffuse.png",
+			"thumb": "res://Assets/Skin/thumbs/middleage_caucasian_female.png"
+		},
+		{
+			"id": "old_african_female",
+			"name": "Old African Female",
+			"texture": "res://Assets/Skin/Female/Old african_old_darkskinned_female_diffuse.png",
+			"thumb": "res://Assets/Skin/thumbs/old_african_female.png"
+		},
+		{
+			"id": "old_asian_female",
+			"name": "Old Asian Female",
+			"texture": "res://Assets/Skin/Female/Old asian_old_lightskinned_female_diffuse2.png",
+			"thumb": "res://Assets/Skin/thumbs/old_asian_female.png"
+		},
+		{
+			"id": "old_caucasian_female",
+			"name": "Old Caucasian Female",
+			"texture": "res://Assets/Skin/Female/Old caucasian_old_lightskinned_female_diffuse.png",
+			"thumb": "res://Assets/Skin/thumbs/old_caucasian_female.png"
+		},
+		{
+			"id": "young_african_female",
+			"name": "Young African Female",
+			"texture": "res://Assets/Skin/Female/Young african_young_darkskinned_female_diffuse.png",
+			"thumb": "res://Assets/Skin/thumbs/young_african_female.png"
+		},
+		{
+			"id": "young_asian_female",
+			"name": "Young Asian Female",
+			"texture": "res://Assets/Skin/Female/Young asian_young_lightskinned_female_diffuse3.png",
+			"thumb": "res://Assets/Skin/thumbs/young_asian_female.png"
+		},
+		{
+			"id": "young_caucasian_female",
+			"name": "Young Caucasian Female",
+			"texture": "res://Assets/Skin/Female/Young caucasian_young_lightskinned_female_diffuse.png",
+			"thumb": "res://Assets/Skin/thumbs/young_caucasian_female.png"
+		}
+	],
+	"root": "res://Assets/Skin/Female",
+	"thumb_root": "res://Assets/Skin/thumbs",
+	"type": "skin",
+	"version": 1
+}

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfnb7ltqxxlt8"]
 
-[ext_resource type="Script" uid="uid://bc02n64160ovo" path="res://scripts/ui/customise_options.gd" id="1_vqv38"]
+[ext_resource type="Script" uid="uid://bc02n64160ovo" path="res://Scripts/ui/customise_options.gd" id="1_vqv38"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lfx5"]
 bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
@@ -24,10 +24,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7lfx5")
-current_tab = 0
+current_tab = 3
 tabs_visible = false
 
 [node name="BodyType" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -87,15 +88,21 @@ theme_override_constants/separation = 20
 layout_mode = 2
 text = "Skin Tone"
 
+[node name="SkinColorPicker" type="ColorPickerButton" parent="TabContainer/Skin/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Skin/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+horizontal_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="TabContainer/Skin/MarginContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
+theme_override_constants/v_separation = 40
 columns = 3
 
 [node name="Outfit" type="TabBar" parent="TabContainer"]
@@ -135,7 +142,6 @@ theme_override_constants/v_separation = 20
 columns = 3
 
 [node name="Hair" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
@@ -162,29 +168,12 @@ text = "Hairstyles"
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Hair/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="TabContainer/Hair/MarginContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
 columns = 3
-
-[node name="Ponytail" type="Button" parent="TabContainer/Hair/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-text = "Ponytail"
-
-[node name="Bob" type="Button" parent="TabContainer/Hair/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-text = "Bob"
-
-[node name="Long" type="Button" parent="TabContainer/Hair/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-text = "Long
-"
 
 [node name="Face" type="TabBar" parent="TabContainer"]
 visible = false
@@ -223,6 +212,7 @@ theme_override_constants/v_separation = 20
 columns = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

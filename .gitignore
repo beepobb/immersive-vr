@@ -23,4 +23,19 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# Godot cache / build leftovers
+*.tmp
+*.log
+
+# Blender backup files
+*.blend1
+*.blend2
+
+# Large test exports (if temporary)
+*Export.glb
+
 # End of https://www.toptal.com/developers/gitignore/api/godot

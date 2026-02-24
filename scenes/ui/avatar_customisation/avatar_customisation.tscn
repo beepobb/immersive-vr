@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://x0k1ixl4v7o1"]
 
-[ext_resource type="Script" uid="uid://cgf1v5rf8v2aw" path="res://scripts/ui/avatar_customisation/avatar_customisation.gd" id="1_dselv"]
+[ext_resource type="Script" uid="uid://cgf1v5rf8v2aw" path="res://Scripts/ui/avatar_customisation/avatar_customisation.gd" id="1_dselv"]
 [ext_resource type="PackedScene" uid="uid://d3q3s14fe7ha6" path="res://scenes/ui/avatar_customisation/preview_stage.tscn" id="2_mb1fd"]
 [ext_resource type="PackedScene" uid="uid://d3ghauap52tfs" path="res://scenes/ui/avatar_customisation/avatar_test.tscn" id="3_7dm38"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_s6nat"]

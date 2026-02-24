@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://belbke5vshk35"
-path="res://.godot/imported/rug.fbx-3c4748ca92036f16337e2e596d003954.scn"
+path="res://.godot/imported/rug.fbx-9ef3a65b9b3702bb3b8eac5de785d1c8.scn"
 
 [deps]
 
-source_file="res://assets/models/furniture/rug.fbx"
-dest_files=["res://.godot/imported/rug.fbx-3c4748ca92036f16337e2e596d003954.scn"]
+source_file="res://Assets/models/furniture/rug.fbx"
+dest_files=["res://.godot/imported/rug.fbx-9ef3a65b9b3702bb3b8eac5de785d1c8.scn"]
 
 [params]
 

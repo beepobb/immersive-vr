@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c0hmn2v3is8n4"
-path="res://.godot/imported/small_chair.fbx-480832d78f64ef904c0c06f36bc1748e.scn"
+path="res://.godot/imported/small_chair.fbx-546514970a72df07ab4c7b6e681be131.scn"
 
 [deps]
 
-source_file="res://assets/models/furniture/small_chair.fbx"
-dest_files=["res://.godot/imported/small_chair.fbx-480832d78f64ef904c0c06f36bc1748e.scn"]
+source_file="res://Assets/models/furniture/small_chair.fbx"
+dest_files=["res://.godot/imported/small_chair.fbx-546514970a72df07ab4c7b6e681be131.scn"]
 
 [params]
 

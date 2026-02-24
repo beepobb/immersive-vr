@@ -1,0 +1,188 @@
+{
+	"items": [
+		{
+			"id": "cortu_cargo_pants",
+			"name": "Cortu Cargo Pants",
+			"node_path": "Human_cortu_cargo_pants",
+			"thumb": "res://Assets/Outfit/thumbs/cortu_cargo_pants.png"
+		},
+		{
+			"id": "cortu_jeans_shorts",
+			"name": "Cortu Jeans Shorts",
+			"node_path": "Human_cortu_jeans_shorts",
+			"thumb": "res://Assets/Outfit/thumbs/cortu_jeans_shorts.png"
+		},
+		{
+			"id": "elvs_asymmetrical_skirt",
+			"name": "Elvs Asymmetrical Skirt",
+			"node_path": "Human_elvs_asymmetrical_skirt",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_asymmetrical_skirt.png"
+		},
+		{
+			"id": "elvs_crude_t-shirt_male",
+			"name": "Elvs Crude T Shirt Male",
+			"node_path": "Human_elvs_crude_t-shirt_male",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_crude_t-shirt_male.png"
+		},
+		{
+			"id": "elvs_disco_mini_skirt",
+			"name": "Elvs Disco Mini Skirt",
+			"node_path": "Human_elvs_disco_mini_skirt",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_disco_mini_skirt.png"
+		},
+		{
+			"id": "elvs_disco_pants_skinny",
+			"name": "Elvs Disco Pants Skinny",
+			"node_path": "Human_elvs_disco_pants_skinny",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_disco_pants_skinny.png"
+		},
+		{
+			"id": "elvs_gored_elephant_pants",
+			"name": "Elvs Gored Elephant Pants",
+			"node_path": "Human_elvs_gored_elephant_pants",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_gored_elephant_pants.png"
+		},
+		{
+			"id": "elvs_gored_midi_skirt",
+			"name": "Elvs Gored Midi Skirt",
+			"node_path": "Human_elvs_gored_midi_skirt",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_gored_midi_skirt.png"
+		},
+		{
+			"id": "elvs_hooded_sweat_jacket1",
+			"name": "Elvs Hooded Sweat Jacket 1",
+			"node_path": "Human_elvs_hooded_sweat_jacket1",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_hooded_sweat_jacket1.png"
+		},
+		{
+			"id": "elvs_jeans_bootcut",
+			"name": "Elvs Jeans Bootcut",
+			"node_path": "Human_elvs_jeans_bootcut",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_jeans_bootcut.png"
+		},
+		{
+			"id": "elvs_jeans_straight_leg",
+			"name": "Elvs Jeans Straight Leg",
+			"node_path": "Human_elvs_jeans_straight_leg",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_jeans_straight_leg.png"
+		},
+		{
+			"id": "elvs_male_boho_top1",
+			"name": "Elvs Male Boho Top 1",
+			"node_path": "Human_elvs_male_boho_top1",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_male_boho_top1.png"
+		},
+		{
+			"id": "elvs_male_shirt_tie_tucked1",
+			"name": "Elvs Male Shirt Tie Tucked 1",
+			"node_path": "Human_elvs_male_shirt_tie_tucked1",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_male_shirt_tie_tucked1.png"
+		},
+		{
+			"id": "elvs_male_trouser",
+			"name": "Elvs Male Trouser",
+			"node_path": "Human_elvs_male_trouser",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_male_trouser.png"
+		},
+		{
+			"id": "elvs_male_trouser_short_1",
+			"name": "Elvs Male Trouser Short 1",
+			"node_path": "Human_elvs_male_trouser_short_1",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_male_trouser_short_1.png"
+		},
+		{
+			"id": "elvs_male_trouser_with_chain",
+			"name": "Elvs Male Trouser With Chain",
+			"node_path": "Human_elvs_male_trouser_with_chain",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_male_trouser_with_chain.png"
+		},
+		{
+			"id": "elvs_pencil_skirt",
+			"name": "Elvs Pencil Skirt",
+			"node_path": "Human_elvs_pencil_skirt",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_pencil_skirt.png"
+		},
+		{
+			"id": "ews_striped_shirt",
+			"name": "Ews Striped Shirt",
+			"node_path": "Human_ews_striped_shirt",
+			"thumb": "res://Assets/Outfit/thumbs/ews_striped_shirt.png"
+		},
+		{
+			"id": "janexx_old_female_sweater",
+			"name": "Janexx Old Female Sweater",
+			"node_path": "Human_janexx_old_female_sweater",
+			"thumb": "res://Assets/Outfit/thumbs/janexx_old_female_sweater.png"
+		},
+		{
+			"id": "joepal_crude_t-shirt_female",
+			"name": "Joepal Crude T Shirt Female",
+			"node_path": "Human_joepal_crude_t-shirt_female",
+			"thumb": "res://Assets/Outfit/thumbs/joepal_crude_t-shirt_female.png"
+		},
+		{
+			"id": "mindfront_female_trousers_1",
+			"name": "Mindfront Female Trousers 1",
+			"node_path": "Human_mindfront_female_trousers_1",
+			"thumb": ""
+		},
+		{
+			"id": "mindfront_knitted_sweater_01",
+			"name": "Mindfront Knitted Sweater 01",
+			"node_path": "Human_mindfront_knitted_sweater_01",
+			"thumb": "res://Assets/Outfit/thumbs/mindfront_knitted_sweater_01.png"
+		},
+		{
+			"id": "mindfront_knitted_sweater_02",
+			"name": "Mindfront Knitted Sweater 02",
+			"node_path": "Human_mindfront_knitted_sweater_02",
+			"thumb": "res://Assets/Outfit/thumbs/mindfront_knitted_sweater_02.png"
+		},
+		{
+			"id": "mindfront_male_trousers_1",
+			"name": "Mindfront Male Trousers 1",
+			"node_path": "Human_mindfront_male_trousers_1",
+			"thumb": "res://Assets/Outfit/thumbs/mindfront_male_trousers_1.png"
+		},
+		{
+			"id": "namuhekam_male_polo_shirt",
+			"name": "Namuhekam Male Polo Shirt",
+			"node_path": "Human_namuhekam_male_polo_shirt",
+			"thumb": "res://Assets/Outfit/thumbs/namuhekam_male_polo_shirt.png"
+		},
+		{
+			"id": "punkduck_deathnote_t-shirt",
+			"name": "Punkduck Deathnote T Shirt",
+			"node_path": "Human_punkduck_deathnote_t-shirt",
+			"thumb": "res://Assets/Outfit/thumbs/punkduck_deathnote_t-shirt.png"
+		},
+		{
+			"id": "punkduck_off-shoulder_long-sleeve_top",
+			"name": "Punkduck Off Shoulder Long Sleeve Top",
+			"node_path": "Human_punkduck_off-shoulder_long-sleeve_top",
+			"thumb": "res://Assets/Outfit/thumbs/punkduck_off-shoulder_long-sleeve_top.png"
+		},
+		{
+			"id": "skalldyrssuppe_tube_top_funky_colors",
+			"name": "Skalldyrssuppe Tube Top Funky Colors",
+			"node_path": "Human_skalldyrssuppe_tube_top_funky_colors",
+			"thumb": "res://Assets/Outfit/thumbs/skalldyrssuppe_tube_top_funky_colors.png"
+		},
+		{
+			"id": "toigo_fisherman_sweater",
+			"name": "Toigo Fisherman Sweater",
+			"node_path": "Human_toigo_fisherman_sweater",
+			"thumb": "res://Assets/Outfit/thumbs/toigo_fisherman_sweater.png"
+		},
+		{
+			"id": "toigo_turtleneck_halter_top",
+			"name": "Toigo Turtleneck Halter Top",
+			"node_path": "Human_toigo_turtleneck_halter_top",
+			"thumb": "res://Assets/Outfit/thumbs/toigo_turtleneck_halter_top.png"
+		}
+	],
+	"scene": "res://Assets/Outfit/outfit_export.tscn",
+	"thumb_root": "res://Assets/Outfit/thumbs",
+	"type": "outfit",
+	"version": 1
+}

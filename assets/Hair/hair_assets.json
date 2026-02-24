@@ -1,0 +1,128 @@
+{
+	"items": [
+		{
+			"id": "human_culturalibre_hair_182",
+			"name": "Culturalibre Hair",
+			"scene": "res://Assets/Hair/human_culturalibre_hair_182.tscn",
+			"thumb": "res://Assets/Hair/thumbs/culturalibre_hair_18.png"
+		},
+		{
+			"id": "human_elvs_50s_updo_2",
+			"name": "Elvs 50s Updo",
+			"scene": "res://Assets/Hair/human_elvs_50s_updo_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/elvs_50s_updo.png"
+		},
+		{
+			"id": "human_elvs_french_braid_variation_2",
+			"name": "Elvs French Braid Variation",
+			"scene": "res://Assets/Hair/human_elvs_french_braid_variation_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/elvs_french_braid_variation.png"
+		},
+		{
+			"id": "human_elvs_hazel_hair_2",
+			"name": "Elvs Hazel Hair",
+			"scene": "res://Assets/Hair/human_elvs_hazel_hair_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/elvs_hazel_hair.png"
+		},
+		{
+			"id": "human_elvs_keylth_hair_2",
+			"name": "Elvs Keylth Hair",
+			"scene": "res://Assets/Hair/human_elvs_keylth_hair_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/elvs_keylth_hair.png"
+		},
+		{
+			"id": "human_elvs_lara_hair_2",
+			"name": "Elvs Lara Hair",
+			"scene": "res://Assets/Hair/human_elvs_lara_hair_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/elvs_lara_hair.png"
+		},
+		{
+			"id": "human_elvs_reverse_french_braid_bun_2",
+			"name": "Elvs Reverse French Braid Bun",
+			"scene": "res://Assets/Hair/human_elvs_reverse_french_braid_bun_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/elvs_reverse_french_braid_bun.png"
+		},
+		{
+			"id": "human_elvs_short_side_do_2",
+			"name": "Elvs Short Side Do",
+			"scene": "res://Assets/Hair/human_elvs_short_side_do_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/elvs_short_side_do.png"
+		},
+		{
+			"id": "human_elvs_unkempt_french_braid_2",
+			"name": "Elvs Unkempt French Braid",
+			"scene": "res://Assets/Hair/human_elvs_unkempt_french_braid_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/elvs_unkempt_french_braid.png"
+		},
+		{
+			"id": "human_faydaen_hair_12",
+			"name": "Faydaen Hair",
+			"scene": "res://Assets/Hair/human_faydaen_hair_12.tscn",
+			"thumb": "res://Assets/Hair/thumbs/faydaen_hair_1.png"
+		},
+		{
+			"id": "human_grinsegold_wig_bow_tie_2",
+			"name": "Grinsegold Wig Bow Tie",
+			"scene": "res://Assets/Hair/human_grinsegold_wig_bow_tie_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/grinsegold_wig_bow_tie.png"
+		},
+		{
+			"id": "human_grinsegold_wig_bun_blonde_braids_2",
+			"name": "Grinsegold Wig Bun Blonde Braids",
+			"scene": "res://Assets/Hair/human_grinsegold_wig_bun_blonde_braids_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/grinsegold_wig_bun_blonde_braids.png"
+		},
+		{
+			"id": "hair_bob",
+			"name": "Hair Bob",
+			"scene": "res://Assets/Hair/Hair_bob.tscn",
+			"thumb": "res://Assets/Hair/thumbs/hair_bob.png"
+		},
+		{
+			"id": "hair_long",
+			"name": "Hair Long",
+			"scene": "res://Assets/Hair/Hair_long.tscn",
+			"thumb": "res://Assets/Hair/thumbs/hair_long.png"
+		},
+		{
+			"id": "hair_ponytail",
+			"name": "Hair Ponytail",
+			"scene": "res://Assets/Hair/Hair_ponytail.tscn",
+			"thumb": "res://Assets/Hair/thumbs/hair_ponytail.png"
+		},
+		{
+			"id": "human_learning_anime_hair_2",
+			"name": "Learning Anime Hair",
+			"scene": "res://Assets/Hair/human_learning_anime_hair_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/learning_anime_hair.png"
+		},
+		{
+			"id": "human_littleright_bobcut_hair_2",
+			"name": "Littleright Bobcut Hair",
+			"scene": "res://Assets/Hair/human_littleright_bobcut_hair_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/littleright_bobcut_hair.png"
+		},
+		{
+			"id": "human_rehmanpolanski_hair_bun_brown_2",
+			"name": "Rehmanpolanski Hair Bun Brown",
+			"scene": "res://Assets/Hair/human_rehmanpolanski_hair_bun_brown_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/rehmanpolanski_hair_bun_brown.png"
+		},
+		{
+			"id": "human_toigo_blunt_bob_2",
+			"name": "Toigo Blunt Bob",
+			"scene": "res://Assets/Hair/human_toigo_blunt_bob_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/toigo_blunt_bob.png"
+		},
+		{
+			"id": "human_toigo_curled_under_bob_with_bangs_2",
+			"name": "Toigo Curled Under Bob With Bangs",
+			"scene": "res://Assets/Hair/human_toigo_curled_under_bob_with_bangs_2.tscn",
+			"thumb": "res://Assets/Hair/thumbs/toigo_curled_under_bob_with_bangs.png"
+		}
+	],
+	"root": "res://Assets/Hair",
+	"thumb_root": "res://Assets/Hair/thumbs",
+	"type": "hair",
+	"version": 1
+}
