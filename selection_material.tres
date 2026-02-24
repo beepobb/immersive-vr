@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b2ev18m1qnnwn"]
+
+[ext_resource type="Shader" uid="uid://c75kdy1gxq5me" path="res://perfect_outline.gdshader" id="1_y1c6v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1c6v"]
+transparency = 1
+albedo_color = Color(0.07723928, 0.1890266, 0.3058951, 0.84313726)
+
+[resource]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_y1c6v")
+shader = ExtResource("1_y1c6v")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 8.0
