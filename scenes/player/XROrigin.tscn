@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://jg1qkgdrf47o"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_k04qm"]
-[ext_resource type="Script" uid="uid://c2mkif0jkvrut" path="res://scenes/player/xr_setup.gd" id="1_x2gul"]
+[ext_resource type="Script" uid="uid://c2mkif0jkvrut" path="res://scripts/xr_setup.gd" id="1_x2gul"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_7ul40"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="3_vi16e"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_x2gul"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="8_2118c"]
 
 [node name="XROrigin3D" type="XROrigin3D" unique_id=2144242128 node_paths=PackedStringArray("left_controller", "right_controller", "left_pointer", "right_pointer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 current = true
 script = ExtResource("1_x2gul")
 left_controller = NodePath("LeftController")

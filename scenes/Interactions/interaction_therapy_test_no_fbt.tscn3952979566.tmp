@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bhjl1xn387x22"]
+
+[ext_resource type="Script" uid="uid://batf0baivtblk" path="res://scenes/Interactions/interaction_therapy_test_no_fbt.gd" id="1_28nik"]
+[ext_resource type="PackedScene" uid="uid://bmuvspj8m7g8k" path="res://scenes/environment/therapy_room.tscn" id="1_ggovq"]
+[ext_resource type="PackedScene" uid="uid://wt2ghbamq5g4" path="res://scenes/Interactions/player_root.tscn" id="3_28nik"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ggovq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_ggovq")
+
+[sub_resource type="Environment" id="Environment_x58p4"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="InteractionTherapy_Test_NoFBT" type="Node3D" unique_id=480833073 node_paths=PackedStringArray("player")]
+script = ExtResource("1_28nik")
+player = NodePath("PlayerRoot")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1648596131]
+environment = SubResource("Environment_x58p4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=461260275]
+transform = Transform3D(1, 0, 0, 0, -0.26166698, 0.9651582, 0, -0.9651582, -0.26166698, 0, 0, 0)
+shadow_enabled = true
+
+[node name="therapy_room" parent="." unique_id=1812520422 instance=ExtResource("1_ggovq")]
+
+[node name="PlayerRoot" parent="." unique_id=755103789 instance=ExtResource("3_28nik")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=280737569]
+transform = Transform3D(0.9451087, 0.07673434, -0.3176183, 0, 0.9720348, 0.23483677, 0.3267561, -0.22194627, 0.9186786, -1.41839, 2.7283854, 2.0754948)
