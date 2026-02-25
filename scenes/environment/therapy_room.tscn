@@ -1,24 +1,24 @@
 [gd_scene format=4 uid="uid://bmuvspj8m7g8k"]
 
 [ext_resource type="PackedScene" uid="uid://cp2k77y1vnak6" path="res://assets/models/furniture/big_sofa.fbx" id="1_0gap5"]
-[ext_resource type="Texture2D" uid="uid://btr3kicguwvub" path="res://textures/Wood083B_2K_Color.jpg" id="1_j3cbe"]
+[ext_resource type="Texture2D" uid="uid://btr3kicguwvub" path="res://assets/textures/Wood083B_2K_Color.jpg" id="1_j3cbe"]
 [ext_resource type="PackedScene" uid="uid://c1d0v1uky2a55" path="res://assets/models/furniture/long_table.fbx" id="2_j3cbe"]
 [ext_resource type="PackedScene" uid="uid://8sr21i2f0te8" path="res://assets/models/furniture/paper_cup.fbx" id="3_ly6ct"]
+[ext_resource type="Script" uid="uid://dflq2er4qmdkx" path="res://scripts/select_highlight.gd" id="3_wr0db"]
 [ext_resource type="PackedScene" uid="uid://belbke5vshk35" path="res://assets/models/furniture/rug.fbx" id="4_7byvo"]
+[ext_resource type="Material" uid="uid://ckvf7pq0yemjk" path="res://assets/materials/outline_material.tres" id="4_jcqbw"]
+[ext_resource type="Material" uid="uid://b2ev18m1qnnwn" path="res://assets/materials/selection_material.tres" id="5_3pp7k"]
 [ext_resource type="PackedScene" uid="uid://c0hmn2v3is8n4" path="res://assets/models/furniture/small_chair.fbx" id="5_idmh4"]
 [ext_resource type="PackedScene" uid="uid://rn77yxp2ka28" path="res://assets/models/furniture/big_plant.fbx" id="6_lc1cb"]
 [ext_resource type="PackedScene" uid="uid://ojb056wyvvbb" path="res://assets/models/furniture/books.fbx" id="7_rm08n"]
 [ext_resource type="PackedScene" uid="uid://5xqlg4h3upb6" path="res://assets/models/furniture/coffee_machine.fbx" id="8_wr0db"]
 [ext_resource type="PackedScene" uid="uid://cj8uqtripbfdq" path="res://assets/models/furniture/lamp.fbx" id="9_jcqbw"]
 [ext_resource type="PackedScene" uid="uid://6kuuux6nvdwi" path="res://assets/models/furniture/small_plant.fbx" id="10_3pp7k"]
-[ext_resource type="Script" uid="uid://dflq2er4qmdkx" path="res://scenes/environment/select_highlight.gd" id="11_rm08n"]
 [ext_resource type="PackedScene" uid="uid://iis2fs8g6w04" path="res://assets/models/furniture/tissue_box.fbx" id="12_bmmv4"]
-[ext_resource type="Material" uid="uid://ckvf7pq0yemjk" path="res://outline_material.tres" id="12_wr0db"]
-[ext_resource type="Material" uid="uid://b2ev18m1qnnwn" path="res://selection_material.tres" id="13_3pp7k"]
-[ext_resource type="Texture2D" uid="uid://ddbl1prt43xic" path="res://textures/dcmap_willisau_riale_diff.jpg" id="13_jcqbw"]
+[ext_resource type="Texture2D" uid="uid://ddbl1prt43xic" path="res://assets/textures/dcmap_willisau_riale_diff.jpg" id="13_jcqbw"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="13_ly6ct"]
-[ext_resource type="Texture2D" uid="uid://c5rhmh7t3fhpo" path="res://textures/Rattan.jpg" id="14_3pp7k"]
-[ext_resource type="Texture2D" uid="uid://d05qiy2r7liv8" path="res://textures/Wood083B_2K_NormalDX.jpg" id="15_ooxdj"]
+[ext_resource type="Texture2D" uid="uid://c5rhmh7t3fhpo" path="res://assets/textures/Rattan.jpg" id="14_3pp7k"]
+[ext_resource type="Texture2D" uid="uid://d05qiy2r7liv8" path="res://assets/textures/Wood083B_2K_NormalDX.jpg" id="15_ooxdj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_81oxi"]
 size = Vector3(5, 4, 0.01)
@@ -67,8 +67,11 @@ size = Vector3(0.2, 0.25, 0.35)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7xfrd"]
 size = Vector3(0.42218018, 0.31829834, 0.20336914)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0p55a"]
-size = Vector3(0.5628174, 0.8029297, 0.5678345)
+[sub_resource type="BoxShape3D" id="BoxShape3D_jcqbw"]
+size = Vector3(0.52124023, 0.45751953, 0.5062866)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wr0db"]
+size = Vector3(0.49365234, 0.3986206, 0.09753418)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_54j4h"]
 height = 2.5
@@ -263,8 +266,16 @@ mesh = SubResource("PlaneMesh_85yof")
 skeleton = NodePath("../CollisionShape3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_ly6ct")
 
-[node name="big_sofa" parent="." unique_id=1464096961 instance=ExtResource("1_0gap5")]
+[node name="big_sofa" parent="." unique_id=1464096961 node_paths=PackedStringArray("mesh", "static_body") instance=ExtResource("1_0gap5")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, 0, -3)
+script = ExtResource("3_wr0db")
+mesh = NodePath("Cloud Sofa")
+outline_material = ExtResource("4_jcqbw")
+selection_material = ExtResource("5_3pp7k")
+static_body = NodePath("StaticBody3D")
+
+[node name="Cloud Sofa" parent="big_sofa" index="0" unique_id=1053568049]
+transform = Transform3D(118.2358, 0, 0, 0, -4.070651e-06, 124.66728, 0, -93.12564, -5.44938e-06, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="big_sofa" unique_id=1718836745]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -326,16 +337,37 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0519104, 0.15377808, 0.018188477)
 shape = SubResource("BoxShape3D_7xfrd")
 
-[node name="small_chair" parent="." unique_id=1615747693 instance=ExtResource("5_idmh4")]
-transform = Transform3D(-0.5365349, 0, 1.7076973, 0, 1.79, 0, -1.7076973, 0, -0.5365349, -2.494366, 0, -0.8990613)
+[node name="small_chair" parent="." unique_id=1615747693 node_paths=PackedStringArray("mesh", "static_body", "teleport_marker") instance=ExtResource("5_idmh4")]
+transform = Transform3D(-0.612216, 0, 1.6820498, 0, 1.79, 0, -1.6820498, 0, -0.612216, -2.494366, 0, -0.8990613)
+script = ExtResource("3_wr0db")
+mesh = NodePath("Small Chair")
+outline_material = ExtResource("4_jcqbw")
+selection_material = ExtResource("5_3pp7k")
+static_body = NodePath("StaticBody3D")
+teleport_marker = NodePath("Marker3D")
+
+[node name="Small Chair" parent="small_chair" index="0" unique_id=958679768]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="small_chair" unique_id=1307453369]
+transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, 0.004635513, 0.22613296, 0.4524899)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="small_chair" unique_id=1181340347]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.021068633, 0.388287, 0.026242554)
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.021068573, 0.38828704, 0.026242554)
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="small_chair/StaticBody3D" unique_id=876060672]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.029765606, 0.023535162, -0.028075248)
-shape = SubResource("BoxShape3D_0p55a")
+transform = Transform3D(1, 0, -1.9669537e-06, 0, 1, 0, 1.9669537e-06, 0, 1, -0.022686362, -0.15526767, -0.0063064694)
+shape = SubResource("BoxShape3D_jcqbw")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="small_chair" unique_id=1122843150]
+transform = Transform3D(100.00002, 0, 0, 0, -4.3711398e-06, 100.00002, 0, -100.00002, -4.3711398e-06, 0, -6.659737e-08, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="small_chair/StaticBody3D2" unique_id=2120970747]
+transform = Transform3D(0.010000002, 3.3087225e-24, -1.4462883e-31, -7.343939e-25, 0.002219569, -0.009750565, -3.2261908e-24, 0.009750565, 0.002219569, 3.3620745e-06, 0.002210701, 0.0061824284)
+shape = SubResource("BoxShape3D_wr0db")
 
 [node name="big_plant" parent="." unique_id=1722065230 instance=ExtResource("6_lc1cb")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 2.769161, 0, -3.3588533)
@@ -364,16 +396,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3892825, 0)
 [node name="SmallTableGroup" type="Node3D" parent="." unique_id=1524702534]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.020579338, 0, -0.83365667)
 
-[node name="small_table" type="Node3D" parent="SmallTableGroup" unique_id=1626196343 node_paths=PackedStringArray("mesh", "static_body")]
-script = ExtResource("11_rm08n")
-mesh = NodePath("Round Table")
-outline_material = ExtResource("12_wr0db")
-selection_material = ExtResource("13_3pp7k")
-static_body = NodePath("StaticBody3D")
+[node name="small_table" type="Node3D" parent="SmallTableGroup" unique_id=1626196343]
 
 [node name="Round Table" type="MeshInstance3D" parent="SmallTableGroup/small_table" unique_id=271791390]
 transform = Transform3D(0, -100, -3.5292223e-06, -2.9802322e-06, 0, 118.42105, -100, 2.9802322e-06, 0, 0, 0, 0)
-material_overlay = ExtResource("13_3pp7k")
 mesh = SubResource("ArrayMesh_20qj0")
 skeleton = NodePath("")
 
@@ -404,3 +430,6 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SmallTableGroup/rug/StaticBody3D" unique_id=44698704]
 shape = SubResource("BoxShape3D_03dbg")
+
+[editable path="big_sofa"]
+[editable path="small_chair"]

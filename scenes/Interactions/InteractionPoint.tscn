@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://7564l6mm4k37"]
+[gd_scene format=3 uid="uid://7564l6mm4k37"]
 
 [ext_resource type="Script" uid="uid://2nn4la45nwbm" path="res://scenes/Interactions/Interactables.gd" id="1_g0555"]
-[ext_resource type="Texture2D" uid="uid://2yrlvdkw2jes" path="res://textures/STENCIL.jpg" id="1_n2ul1"]
+[ext_resource type="Texture2D" uid="uid://2yrlvdkw2jes" path="res://assets/textures/STENCIL.jpg" id="1_n2ul1"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g0555"]
 size = Vector3(2.1845703, 1, 1)
