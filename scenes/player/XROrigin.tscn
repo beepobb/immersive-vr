@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jg1qkgdrf47o"]
+[gd_scene format=3 uid="uid://jg1qkgdrf47o"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_k04qm"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_7ul40"]
@@ -7,29 +7,134 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_kfx4a"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7e1ug"]
 [ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="8_2118c"]
+[ext_resource type="PackedScene" uid="uid://bb860ifn1rxps" path="res://assets/X Bot.fbx" id="8_x2gul"]
 
-[node name="XROrigin3D" type="XROrigin3D"]
+[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_x2gul"]
 
-[node name="XRCamera3D" type="XRCamera3D" parent="."]
+[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_kfx4a"]
 
-[node name="LeftController" type="XRController3D" parent="."]
+[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_7e1ug"]
+
+[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_8px4q"]
+
+[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_2118c"]
+
+[node name="XROrigin3D" type="XROrigin3D" unique_id=1503267807]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=2037867909]
+
+[node name="Target" type="Marker3D" parent="XRCamera3D" unique_id=683046994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7766447, 0.16283971)
+
+[node name="LeftController" type="XRController3D" parent="." unique_id=1722520529]
 tracker = &"left_hand"
 
-[node name="LeftHand" parent="LeftController" instance=ExtResource("1_k04qm")]
+[node name="LeftHand" parent="LeftController" unique_id=759549420 instance=ExtResource("1_k04qm")]
 
-[node name="FunctionPointer" parent="LeftController" instance=ExtResource("2_7ul40")]
+[node name="FunctionPointer" parent="LeftController" unique_id=1768594125 instance=ExtResource("2_7ul40")]
 
-[node name="MovementDirect" parent="LeftController" instance=ExtResource("3_x2gul")]
+[node name="MovementDirect" parent="LeftController" unique_id=1424597202 instance=ExtResource("3_x2gul")]
 
-[node name="RightController" type="XRController3D" parent="."]
+[node name="Target" type="Marker3D" parent="LeftController" unique_id=245992039]
+
+[node name="Pole" type="Marker3D" parent="LeftController/Target" unique_id=2005305365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14443953, -0.46805692, 0.1471172)
+
+[node name="RightController" type="XRController3D" parent="." unique_id=2121946272]
 tracker = &"right_hand"
 
-[node name="RightHand" parent="RightController" instance=ExtResource("3_vi16e")]
+[node name="RightHand" parent="RightController" unique_id=670448450 instance=ExtResource("3_vi16e")]
 
-[node name="FunctionPointer" parent="RightController" instance=ExtResource("2_7ul40")]
+[node name="FunctionPointer" parent="RightController" unique_id=379320216 instance=ExtResource("2_7ul40")]
 
-[node name="MovementTurn" parent="RightController" instance=ExtResource("5_kfx4a")]
+[node name="MovementTurn" parent="RightController" unique_id=807471930 instance=ExtResource("5_kfx4a")]
 
-[node name="PlayerBody" parent="." instance=ExtResource("6_7e1ug")]
+[node name="PlayerBody" parent="." unique_id=1156645439 instance=ExtResource("6_7e1ug")]
 
-[node name="MovementJog" parent="." instance=ExtResource("8_2118c")]
+[node name="MovementJog" parent="." unique_id=413540329 instance=ExtResource("8_2118c")]
+
+[node name="AvatarRoot" type="Node3D" parent="." unique_id=1623042168]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="X Bot" parent="AvatarRoot" unique_id=1941485306 instance=ExtResource("8_x2gul")]
+transform = Transform3D(0.923, 0, 0, 0, 0.923, 0, 0, 0, 0.923, 0, 0, 0)
+
+[node name="Skeleton3D" parent="AvatarRoot/X Bot" index="0" unique_id=739839460]
+bones/11/rotation = Quaternion(0.25328454, 0.061618283, -0.2282103, 0.93806726)
+bones/13/rotation = Quaternion(-0.0016647386, -0.00080778124, 0.0069197505, 0.9999744)
+bones/15/rotation = Quaternion(-6.059341e-07, 9.9535276e-11, -0.00016426753, 1)
+bones/16/rotation = Quaternion(-6.084827e-20, 0, 0.00025564426, 1)
+bones/17/rotation = Quaternion(-1.010017e-20, 0, -8.792197e-05, 1)
+bones/19/rotation = Quaternion(-9.78174e-07, 4.9085347e-10, -0.0005018059, 0.9999999)
+bones/20/rotation = Quaternion(-1.7667906e-20, -2.646978e-23, 0.00084987143, 0.99999964)
+bones/21/rotation = Quaternion(-2.5239809e-19, 5.293956e-23, -0.000321842, 0.99999994)
+bones/23/rotation = Quaternion(6.963166e-08, 1.085061e-11, 0.0001558293, 1)
+bones/24/rotation = Quaternion(-3.761026e-20, 0, -0.0002215151, 1)
+bones/25/rotation = Quaternion(2.317801e-20, 6.617445e-24, -0.0001128051, 1)
+bones/27/rotation = Quaternion(4.6707196e-06, 2.430471e-09, 0.000520363, 0.9999999)
+bones/28/rotation = Quaternion(4.8573726e-21, -6.617445e-24, 0.00084623165, 0.99999964)
+bones/29/rotation = Quaternion(-1.2429584e-21, 8.271806e-25, -0.0004967778, 0.9999999)
+bones/37/rotation = Quaternion(-0.0015313593, 0.0007452554, -0.006073121, 0.99998015)
+bones/45/rotation = Quaternion(-4.2758992e-07, -8.846624e-12, 2.0689502e-05, 1)
+bones/55/rotation = Quaternion(2.704767e-09, 0.0103564765, 0.9999464, 2.6115273e-07)
+bones/60/rotation = Quaternion(2.8191485e-09, 0.01036796, 0.9999463, 2.71895e-07)
+
+[node name="LHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/X Bot/Skeleton3D" index="2" unique_id=284305114]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../LeftController/Target")
+settings/0/pole_node = NodePath("../../../../LeftController/Target/Pole")
+settings/0/root_bone_name = "mixamorig_LeftShoulder"
+settings/0/root_bone = 31
+settings/0/middle_bone_name = "mixamorig_LeftForeArm"
+settings/0/middle_bone = 33
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "mixamorig_LeftHand"
+settings/0/end_bone = 34
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.1
+
+[node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/X Bot/Skeleton3D" index="3" unique_id=1887893785]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig_LeftHand"
+settings/0/apply_bone = 34
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../LeftController/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="SpineCCDIK3D" type="CCDIK3D" parent="AvatarRoot/X Bot/Skeleton3D" index="4" unique_id=29249617]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../XRCamera3D/Target")
+settings/0/root_bone_name = "mixamorig_Spine"
+settings/0/root_bone = 1
+settings/0/end_bone_name = "mixamorig_Head"
+settings/0/end_bone = 5
+settings/0/extend_end_bone = false
+settings/0/joint_count = 5
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = SubResource("JointLimitationCone3D_x2gul")
+settings/0/joints/0/limitation/right_axis = 0
+settings/0/joints/0/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = SubResource("JointLimitationCone3D_kfx4a")
+settings/0/joints/1/limitation/right_axis = 0
+settings/0/joints/1/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = SubResource("JointLimitationCone3D_7e1ug")
+settings/0/joints/2/limitation/right_axis = 0
+settings/0/joints/2/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/3/rotation_axis = 3
+settings/0/joints/3/limitation = SubResource("JointLimitationCone3D_8px4q")
+settings/0/joints/3/limitation/right_axis = 0
+settings/0/joints/3/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/4/rotation_axis = 3
+settings/0/joints/4/limitation = SubResource("JointLimitationCone3D_2118c")
+settings/0/joints/4/limitation/right_axis = 0
+settings/0/joints/4/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+
+[editable path="AvatarRoot/X Bot"]

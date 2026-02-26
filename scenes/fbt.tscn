@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://w8y2sr1j63vt"]
 
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_b28tf"]
-[ext_resource type="Script" uid="uid://d16o7bwcufv2e" path="res://scenes/calibration.gd" id="2_eraqd"]
+[ext_resource type="Script" uid="uid://o17r2om0r7y1" path="res://scripts/calibration.gd" id="2_eraqd"]
 [ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="3_7032y"]
 
 [sub_resource type="Environment" id="Environment_b5v5u"]
@@ -12,8 +12,10 @@ size = Vector3(50, 0, 50)
 [sub_resource type="BoxMesh" id="BoxMesh_eraqd"]
 size = Vector3(50, 0, 50)
 
-[node name="FBT" type="Node3D" unique_id=736141873]
+[node name="FBT" type="Node3D" unique_id=736141873 node_paths=PackedStringArray("spectator_viewport", "spectator_rect")]
 script = ExtResource("1_b28tf")
+spectator_viewport = NodePath("SpectatorViewport")
+spectator_rect = NodePath("SpectatorRect/SpectatorRect")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1607267524]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -32,17 +34,33 @@ shape = SubResource("BoxShape3D_3jhem")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D" unique_id=1151103520]
 mesh = SubResource("BoxMesh_eraqd")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=653808258]
-transform = Transform3D(1, 0, 0, 0, 0.95144945, 0.307805, 0, -0.307805, 0.95144945, 0, 1.9891701, 2.2899752)
-
-[node name="Calibration" type="Node3D" parent="." unique_id=561612349 node_paths=PackedStringArray("hmd", "left_hand", "right_hand", "waist", "left_foot", "right_foot")]
+[node name="Calibration" type="Node3D" parent="." unique_id=561612349 node_paths=PackedStringArray("hmd", "left_hand", "right_hand")]
 script = ExtResource("2_eraqd")
 hmd = NodePath("../XROrigin3D/XRCamera3D")
 left_hand = NodePath("../XROrigin3D/LeftController")
 right_hand = NodePath("../XROrigin3D/RightController")
-waist = NodePath("../XROrigin3D/Waist")
-left_foot = NodePath("../XROrigin3D/LeftFoot")
-right_foot = NodePath("../XROrigin3D/RightFoot")
 eye_offset = 0.15
 
+[node name="SpectatorViewport" type="SubViewport" parent="." unique_id=127186124]
+unique_name_in_owner = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SpectatorViewport" unique_id=996030434]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.2244513, 1.3884366, 0)
+current = true
+
+[node name="SpectatorRect" type="CanvasLayer" parent="." unique_id=116054874]
+
+[node name="SpectatorRect" type="TextureRect" parent="SpectatorRect" unique_id=1467097561]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
 [editable path="XROrigin3D"]
+[editable path="XROrigin3D/AvatarRoot/X Bot"]
