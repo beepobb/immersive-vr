@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0uy3mf2m2qny"]
+[gd_scene format=3 uid="uid://b0uy3mf2m2qny"]
 
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://x0k1ixl4v7o1" path="res://scenes/ui/avatar_customisation/avatar_customisation.tscn" id="3_sugp2"]
@@ -23,32 +23,32 @@ size = Vector3(5, 0.1, 5)
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
 size = Vector3(5, 0.1, 5)
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=511043291]
 script = ExtResource("1_0xm2m")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1174593052]
 environment = SubResource("Environment_1bvp3")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=443200332]
 transform = Transform3D(1, 0, 0, 0, -0.26166698, 0.9651582, 0, -0.9651582, -0.26166698, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1148736423]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1599976607]
 shape = SubResource("BoxShape3D_7dm0k")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1736659510]
 mesh = SubResource("BoxMesh_ig7tw")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=610698305]
 transform = Transform3D(1, 0, 0, 0, 0.99919295, 0.040166616, 0, -0.040166616, 0.99919295, 0, 1.365, 2.5)
 fov = 71.401505
 
-[node name="XROrigin3D" parent="." instance=ExtResource("4_jyhfs")]
+[node name="XROrigin3D" parent="." unique_id=264913021 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 
-[node name="AvatarCustomisation" parent="." instance=ExtResource("3_sugp2")]
+[node name="AvatarCustomisation" parent="." unique_id=40066197 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)

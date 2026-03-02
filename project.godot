@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 AvatarState="*res://scripts/ui/avatar_state.gd"
 XRToolsUserSettings="*uid://bnquuwe2vribm"
 XRToolsRumbleManager="*uid://dg2csioke0tji"
+HighLevelNetworkHandler="*uid://bobd77kfhgqf7"
 
 [display]
 
