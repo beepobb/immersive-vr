@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddngwsb4cp72k"]
+
+[ext_resource type="PackedScene" uid="uid://boekx5l6omfes" path="res://assets/models/cafe furniture/cashier.glb" id="1_ui2eu"]
+
+[node name="cashier" instance=ExtResource("1_ui2eu")]
+
+[node name="CASHIER" parent="." index="0"]
+transform = Transform3D(1.4305117e-07, 0, -1, 0, 1, 0, 0.8, 0, 1.7881395e-07, 0, 0, 0)

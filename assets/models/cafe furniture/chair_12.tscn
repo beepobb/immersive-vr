@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5l5g72sgk82b"]
+
+[ext_resource type="PackedScene" uid="uid://bpaeotmhxgu47" path="res://assets/models/cafe furniture/CHAIR1.glb" id="1_ibrvw"]
+
+[node name="CHAIR12" instance=ExtResource("1_ibrvw")]
+
+[node name="CHAIR1" parent="." index="0"]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)

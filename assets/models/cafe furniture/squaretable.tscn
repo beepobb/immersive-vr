@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://656xdlqaryk"]
+
+[ext_resource type="PackedScene" uid="uid://do5gqe4voh3i4" path="res://assets/models/cafe furniture/squaretable.glb" id="1_j0xwj"]
+
+[node name="squaretable" instance=ExtResource("1_j0xwj")]
+
+[node name="SQUARE TABLE" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)

@@ -16,13 +16,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Immersive VR"
 run/main_scene="uid://b0uy3mf2m2qny"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 AvatarState="*res://scripts/ui/avatar_state.gd"
-XRToolsUserSettings="*uid://bnquuwe2vribm"
+XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 XRToolsRumbleManager="*uid://dg2csioke0tji"
 XrSimulator="*uid://ctltchlf2j2r4"
 

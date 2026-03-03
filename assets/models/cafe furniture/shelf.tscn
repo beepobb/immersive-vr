@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj5ed5mwrh80b"]
+
+[ext_resource type="PackedScene" uid="uid://de0qdjn7hrgdw" path="res://assets/models/cafe furniture/shelf.glb" id="1_t2bok"]
+
+[node name="shelf" instance=ExtResource("1_t2bok")]
+
+[node name="SHELF" parent="." index="0"]
+transform = Transform3D(-2.384186e-09, 0.010000001, 1.4761097e-15, -5.960465e-10, -5.3290707e-17, -0.207744, -0.010000001, -2.384186e-09, 1.23825075e-08, 0, 0, 0)
