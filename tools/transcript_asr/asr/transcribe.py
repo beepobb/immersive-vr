@@ -18,7 +18,7 @@ def transcribe_file(
     audio_path: str | Path,
     model_size: str = "base",
     device: str = "cpu",
-    compute_type: str = "float16",
+    compute_type: str = "int8",
 ) -> Dict[str, Any]:
     """
     Offline English transcription.
@@ -35,7 +35,7 @@ def transcribe_file(
     segments_iter, info = model.transcribe(
         str(audio_path),
         language="en",
-        vad_filter=True,  # helps cut silence
+        vad_filter=False,  # helps cut silence
     )
 
     segments: List[Segment] = []
