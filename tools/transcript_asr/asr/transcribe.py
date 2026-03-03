@@ -18,7 +18,7 @@ def transcribe_file(
     audio_path: str | Path,
     model_size: str = "base",
     device: str = "cpu",
-    compute_type: str = "int8",
+    compute_type: str = "float16",
 ) -> Dict[str, Any]:
     """
     Offline English transcription.
