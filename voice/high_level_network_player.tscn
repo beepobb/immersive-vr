@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://brc5463ol3r5s"]
+
+[ext_resource type="Script" uid="uid://c6ny8tl0kvxu5" path="res://voice/high_level_network_player.gd" id="1_pyacq"]
+[ext_resource type="Texture2D" uid="uid://cufxnru0cegtw" path="res://assets/icons/icon.svg" id="2_oc4h8"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hur53"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyacq"]
+size = Vector2(128.00378, 128)
+
+[node name="HighLevelNetworkPlayer" type="CharacterBody2D"]
+script = ExtResource("1_pyacq")
+metadata/_edit_horizontal_guides_ = [567.0]
+
+[node name="MultiplayerSpawner" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_hur53")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oc4h8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.0018892, 0.0029331031)
+rotation = 0.0019529399
+shape = SubResource("RectangleShape2D_pyacq")
