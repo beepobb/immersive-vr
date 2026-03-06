@@ -25,3 +25,7 @@ texture = ExtResource("2_oc4h8")
 position = Vector2(1.0018892, 0.0029331031)
 rotation = 0.0019529399
 shape = SubResource("RectangleShape2D_pyacq")
+
+[node name="VoiceSendTimer" type="Timer" parent="."]
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="."]
