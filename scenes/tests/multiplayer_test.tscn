@@ -35,9 +35,6 @@ network_player = ExtResource("3_xucra")
 [node name="Players" type="Node3D" parent="." unique_id=1824640923]
 unique_name_in_owner = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1642475206]
-transform = Transform3D(1, 0, 0, 0, 0.9964032, 0.08473871, 0, -0.08473871, 0.9964032, 0, 2.561367, 2.9309053)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1127741220]
 environment = SubResource("Environment_dmo61")
 

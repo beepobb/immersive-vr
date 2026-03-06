@@ -213,6 +213,7 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 
 			# Halt if running in the debugger
 			# gdlint:ignore=expression-not-assigned
+
 			breakpoint
 
 			# Terminate with a non-zero error code to indicate failure
