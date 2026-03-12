@@ -159,3 +159,5 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_nqhx4")
 theme_override_styles/focus = SubResource("StyleBoxFlat_7o7l0")
 text = "Confirm
 "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/EnvCards/ClarityRoomCard" to="." method="_on_clarity_room_card_pressed"]

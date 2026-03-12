@@ -6,11 +6,12 @@ extends Node3D
 @onready var save_avatar = $AvatarCustomisationViewports/SaveAvatar
 
 var current_tab: String
-var _current_hair: Node = null
 
 enum Options {BODYTYPE, SKIN, OUTFIT, HAIR, FACE}
 
 func _ready():
+	AvatarState.apply_to_avatar($AvatarTest)
+
 	if option_tabs:
 		option_tabs.tab_selected.connect(_on_tab_selected)
 	else:
@@ -20,6 +21,9 @@ func _ready():
 		customise_options.option_selected.connect(_on_option_selected)
 	else:
 		push_warning("CustomiseOptions scene instance not found as child of viewport.")
+
+	if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
+		HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
 
 func _on_tab_selected(tab_index: int) -> void:
 	if customise_options:
@@ -63,17 +67,17 @@ func _apply_new_hair(hair_name: String) -> void:
 	# If the current hair node is found and valid, remove it
 	if curr_hair_node != null and is_instance_valid(curr_hair_node):
 		avatar.remove_child(curr_hair_node)
-		curr_hair_node.queue_free()  # Ensure it's properly freed
+		curr_hair_node.queue_free() # Ensure it's properly freed
 	
 	# If the new hair node is valid, instantiate and add it
 	if new_hair_node != null:
 		var new_hair_instance = new_hair_node.instantiate()
 		avatar.add_child(new_hair_instance)
-		AvatarState.hair_style = hair_name  # Update the AvatarState
+		AvatarState.hair_style = hair_name # Update the AvatarState
 	else:
 		print("Selected option does not have a valid mesh for: " + hair_name)
 	
-func _find_res(res_key: String, option_type: Options) -> NodePath:
+func _find_res(res_key: String, _option_type: Options) -> NodePath:
 	# TODO: use json to store the resources for each option
 	res_key = res_key.to_lower()
 	if res_key == "bob":
@@ -81,3 +85,6 @@ func _find_res(res_key: String, option_type: Options) -> NodePath:
 	elif res_key == "long":
 		return "res://assets/hair/Hair_long.tscn"
 	return ""
+
+func _on_session_ended(message: String) -> void:
+	AvatarState.return_to_home(self , message)

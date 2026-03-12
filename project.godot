@@ -19,6 +19,11 @@ run/main_scene="uid://b0uy3mf2m2qny"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://v0ai42434bhp"
+driver/enable_input=true
+
 [autoload]
 
 AvatarState="*res://scripts/ui/avatar_state.gd"
@@ -26,6 +31,7 @@ XRToolsUserSettings="*uid://bnquuwe2vribm"
 XRToolsRumbleManager="*uid://dg2csioke0tji"
 HighLevelNetworkHandler="*uid://bobd77kfhgqf7"
 XrSimulator="uid://ctltchlf2j2r4"
+Roles="*uid://cw2861o87gt4h"
 
 [display]
 

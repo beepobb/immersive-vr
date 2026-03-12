@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_8ldoj"]
 [ext_resource type="PackedScene" uid="uid://b0bp58uaimq4u" path="res://zone_base.tscn" id="1_ein8w"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_asi28"]
 [ext_resource type="PackedScene" uid="uid://cffhyue0c2whs" path="res://scenes/ui/lobby/room_info.tscn" id="2_ein8w"]
 [ext_resource type="PackedScene" uid="uid://b0ygtfhgx8s0" path="res://scenes/ui/lobby/time_date_display.tscn" id="4_g30ku"]
 [ext_resource type="PackedScene" uid="uid://cqnof3vlou2xh" path="res://scenes/ui/lobby/avatar_env.tscn" id="5_asim1"]
+[ext_resource type="PackedScene" uid="uid://dbnkofu6ipe70" path="res://scenes/ui/lobby/player_card.tscn" id="5_yy71y"]
 [ext_resource type="PackedScene" uid="uid://coawq8882oqan" path="res://assets/Avatar/AvatarTest.glb" id="6_mcopp"]
 [ext_resource type="Script" uid="uid://8y5l23xo83v1" path="res://scripts/ui/lobby/lobby_manager.gd" id="8_ein8w"]
 
@@ -55,6 +57,8 @@ shadow_enabled = true
 [node name="XROrigin3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42523694, 2.0248902)
 
+[node name="FunctionPointer" parent="XROrigin3D/LeftHand/LeftHand" parent_id_path=PackedInt32Array(1085876639) index="2" unique_id=971532273 instance=ExtResource("2_asi28")]
+
 [node name="PreviewStage" type="Node3D" parent="." index="3" unique_id=520018037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012192726, -0.005928993, 0.0038318634)
 
@@ -66,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.999, 0)
 shape = SubResource("CylinderShape3D_iy8d8")
 
 [node name="Wall" type="MeshInstance3D" parent="PreviewStage/StaticBody3D" index="1" unique_id=419511581]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03142339, 43.00776, -0.0007176399)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031424105, 43.01001, -0.0007555485)
 material_override = SubResource("StandardMaterial3D_s5j51")
 mesh = SubResource("CylinderMesh_is1y2")
 skeleton = NodePath("../..")
@@ -81,14 +85,14 @@ mesh = SubResource("CylinderMesh_6m3d6")
 
 [node name="UI" type="Node3D" parent="." index="4" unique_id=1114705087]
 
-[node name="LeftPanel" parent="UI" index="0" unique_id=489379600 node_paths=PackedStringArray("participant_label") instance=ExtResource("1_8ldoj")]
-transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6481855, 1.8237463, 0.17728353)
-screen_size = Vector2(1, 1.2)
+[node name="LeftPanel" parent="UI" index="0" unique_id=489379600 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.8223463, 0.1778158)
+screen_size = Vector2(0.96, 1.39)
 scene = ExtResource("2_ein8w")
-viewport_size = Vector2(454, 542)
+viewport_size = Vector2(454, 564.85)
 unshaded = true
-scene_properties_keys = PackedStringArray("room_info.gd", "participant_label")
-participant_label = NodePath("Viewport/RoomInfo/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/Participants")
+scene_properties_keys = PackedStringArray("room_info.gd", "player_card")
+player_card = ExtResource("5_yy71y")
 
 [node name="DateTime" parent="UI" index="1" unique_id=1348865060 instance=ExtResource("1_8ldoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8827243, 0)
@@ -99,9 +103,9 @@ scene_properties_keys = PackedStringArray()
 
 [node name="RightPanel" parent="UI" index="2" unique_id=1614598740 instance=ExtResource("1_8ldoj")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.648, 1.8480567, 0)
-screen_size = Vector2(1.05, 1.4)
+screen_size = Vector2(0.895, 1.36)
 scene = ExtResource("5_asim1")
-viewport_size = Vector2(560, 765)
+viewport_size = Vector2(540, 800)
 unshaded = true
 scene_properties_keys = PackedStringArray()
 

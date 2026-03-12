@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://gs3tsr0uye82"]
+
+[ext_resource type="PackedScene" uid="uid://b0bp58uaimq4u" path="res://zone_base.tscn" id="1_tp5gg"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_xl5kh"]
+[ext_resource type="PackedScene" uid="uid://x0k1ixl4v7o1" path="res://scenes/ui/avatar_customisation/avatar_customisation.tscn" id="2_xn82h"]
+
+[sub_resource type="Environment" id="Environment_tp5gg"]
+
+[node name="AvatarCustomissss" unique_id=1701868660 instance=ExtResource("1_tp5gg")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="0" unique_id=1919346733]
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.43963745, -0.42129853, 0.793238, -0.23815751, 0.79687357, 0.5552239, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1" unique_id=535828065]
+environment = SubResource("Environment_tp5gg")
+
+[node name="XROrigin3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="FunctionPointer" parent="XROrigin3D/LeftHand" index="1" unique_id=610807845 instance=ExtResource("2_xl5kh")]
+
+[node name="AvatarCustomisation" parent="." index="3" unique_id=371794598 instance=ExtResource("2_xn82h")]

@@ -66,9 +66,9 @@ light_energy = 5.0
 
 [node name="Viewport2Din3D" parent="." index="4" unique_id=1565969855 instance=ExtResource("1_1ey7h")]
 transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0, 1.8076751, -0.97050357)
-screen_size = Vector2(0.5, 0.4)
+screen_size = Vector2(1.1, 1.0)
 scene = ExtResource("4_2ayvv")
-viewport_size = Vector2(110, 82)
+viewport_size = Vector2(360, 344)
 unshaded = true
 scene_properties_keys = PackedStringArray("server_ui.gd", "target_scene")
 target_scene = "uid://cu6ifuf2vc8gv"
