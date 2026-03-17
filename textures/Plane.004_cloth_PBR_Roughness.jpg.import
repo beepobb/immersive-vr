@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0u4uqm6xgvx7"
 path.s3tc="res://.godot/imported/Plane.004_cloth_PBR_Roughness.jpg-01c990c2c6b9a0c9c4a63d7895459a3f.s3tc.ctex"
+path.etc2="res://.godot/imported/Plane.004_cloth_PBR_Roughness.jpg-01c990c2c6b9a0c9c4a63d7895459a3f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Plane.004_cloth_PBR_Roughness.jpg"
-dest_files=["res://.godot/imported/Plane.004_cloth_PBR_Roughness.jpg-01c990c2c6b9a0c9c4a63d7895459a3f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Plane.004_cloth_PBR_Roughness.jpg-01c990c2c6b9a0c9c4a63d7895459a3f.s3tc.ctex", "res://.godot/imported/Plane.004_cloth_PBR_Roughness.jpg-01c990c2c6b9a0c9c4a63d7895459a3f.etc2.ctex"]
 
 [params]
 

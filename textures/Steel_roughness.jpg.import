@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://g67jr300xjme"
 path.s3tc="res://.godot/imported/Steel_roughness.jpg-6ab85169f6618757d81ffd70783518a6.s3tc.ctex"
+path.etc2="res://.godot/imported/Steel_roughness.jpg-6ab85169f6618757d81ffd70783518a6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Steel_roughness.jpg"
-dest_files=["res://.godot/imported/Steel_roughness.jpg-6ab85169f6618757d81ffd70783518a6.s3tc.ctex"]
+dest_files=["res://.godot/imported/Steel_roughness.jpg-6ab85169f6618757d81ffd70783518a6.s3tc.ctex", "res://.godot/imported/Steel_roughness.jpg-6ab85169f6618757d81ffd70783518a6.etc2.ctex"]
 
 [params]
 
