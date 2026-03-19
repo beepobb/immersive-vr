@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bo6xy6hi1wgbj"
-path.s3tc="res://.godot/imported/Outfit Export_offshoulder_top_normals.png-0faf5a62684c053d2383d14f88216f2f.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_offshoulder_top_normals.png-3ca8f80a46a177b3734cac847d2fb121.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_offshoulder_top_normals.png"
-dest_files=["res://.godot/imported/Outfit Export_offshoulder_top_normals.png-0faf5a62684c053d2383d14f88216f2f.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_offshoulder_top_normals.png"
+dest_files=["res://.godot/imported/Outfit Export_offshoulder_top_normals.png-3ca8f80a46a177b3734cac847d2fb121.s3tc.ctex"]
 
 [params]
 

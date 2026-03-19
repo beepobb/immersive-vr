@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs3au1i70ptu0"
-path="res://.godot/imported/elvs_disco_pants_skinny.png-09f31b65776e9f5a3598b919cce70cb2.ctex"
+path="res://.godot/imported/elvs_disco_pants_skinny.png-784fe69bb3040147951e6cd27b924a9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/elvs_disco_pants_skinny.png"
-dest_files=["res://.godot/imported/elvs_disco_pants_skinny.png-09f31b65776e9f5a3598b919cce70cb2.ctex"]
+source_file="res://assets/Outfit/thumbs/elvs_disco_pants_skinny.png"
+dest_files=["res://.godot/imported/elvs_disco_pants_skinny.png-784fe69bb3040147951e6cd27b924a9b.ctex"]
 
 [params]
 

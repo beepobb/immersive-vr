@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmcmbi1b8icgy"
-path="res://.godot/imported/namuhekam_male_polo_shirt.png-28181d504d60f4160077dff3b163e420.ctex"
+path="res://.godot/imported/namuhekam_male_polo_shirt.png-639a094f314c848a499821a6412d8244.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/namuhekam_male_polo_shirt.png"
-dest_files=["res://.godot/imported/namuhekam_male_polo_shirt.png-28181d504d60f4160077dff3b163e420.ctex"]
+source_file="res://assets/Outfit/thumbs/namuhekam_male_polo_shirt.png"
+dest_files=["res://.godot/imported/namuhekam_male_polo_shirt.png-639a094f314c848a499821a6412d8244.ctex"]
 
 [params]
 

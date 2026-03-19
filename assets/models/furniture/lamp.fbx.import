@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cj8uqtripbfdq"
-path="res://.godot/imported/lamp.fbx-55823af795ccbf175c24d71a2844a72e.scn"
+path="res://.godot/imported/lamp.fbx-bd4ee06636a6fb8ba2f80ac1b33a6bca.scn"
 
 [deps]
 
-source_file="res://Assets/models/furniture/lamp.fbx"
-dest_files=["res://.godot/imported/lamp.fbx-55823af795ccbf175c24d71a2844a72e.scn"]
+source_file="res://assets/models/furniture/lamp.fbx"
+dest_files=["res://.godot/imported/lamp.fbx-bd4ee06636a6fb8ba2f80ac1b33a6bca.scn"]
 
 [params]
 

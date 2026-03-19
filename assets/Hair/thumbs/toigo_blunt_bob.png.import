@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjyqv2gdcl0b8"
-path="res://.godot/imported/toigo_blunt_bob.png-c2c300ce3d87724f354315360e243f56.ctex"
+path="res://.godot/imported/toigo_blunt_bob.png-8f7fe1d521b75a58f14014719ee946d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hair/thumbs/toigo_blunt_bob.png"
-dest_files=["res://.godot/imported/toigo_blunt_bob.png-c2c300ce3d87724f354315360e243f56.ctex"]
+source_file="res://assets/Hair/thumbs/toigo_blunt_bob.png"
+dest_files=["res://.godot/imported/toigo_blunt_bob.png-8f7fe1d521b75a58f14014719ee946d6.ctex"]
 
 [params]
 

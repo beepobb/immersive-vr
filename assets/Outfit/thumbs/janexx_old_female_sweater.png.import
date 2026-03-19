@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvcm0y04qb6nl"
-path="res://.godot/imported/janexx_old_female_sweater.png-9be92f8e4a1e37191da8a8771c208122.ctex"
+path="res://.godot/imported/janexx_old_female_sweater.png-99e3f288172fed670497f41af52587a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/janexx_old_female_sweater.png"
-dest_files=["res://.godot/imported/janexx_old_female_sweater.png-9be92f8e4a1e37191da8a8771c208122.ctex"]
+source_file="res://assets/Outfit/thumbs/janexx_old_female_sweater.png"
+dest_files=["res://.godot/imported/janexx_old_female_sweater.png-99e3f288172fed670497f41af52587a5.ctex"]
 
 [params]
 

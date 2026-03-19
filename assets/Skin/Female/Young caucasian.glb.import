@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bhjtxahxwlhd1"
-path="res://.godot/imported/Young caucasian.glb-7ffe95ee186fe89ab7f1f26a3894ce0c.scn"
+path="res://.godot/imported/Young caucasian.glb-4041f7accb1a89f39688a8aa1fbb4396.scn"
 
 [deps]
 
-source_file="res://Assets/Skin/Female/Young caucasian.glb"
-dest_files=["res://.godot/imported/Young caucasian.glb-7ffe95ee186fe89ab7f1f26a3894ce0c.scn"]
+source_file="res://assets/Skin/Female/Young caucasian.glb"
+dest_files=["res://.godot/imported/Young caucasian.glb-4041f7accb1a89f39688a8aa1fbb4396.scn"]
 
 [params]
 

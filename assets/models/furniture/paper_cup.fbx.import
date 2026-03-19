@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://8sr21i2f0te8"
-path="res://.godot/imported/paper_cup.fbx-7cec6573a342c679c27f4f05a8082219.scn"
+path="res://.godot/imported/paper_cup.fbx-7b21bb6e56ddfe8f16a6d310f2f8bfe9.scn"
 
 [deps]
 
-source_file="res://Assets/models/furniture/paper_cup.fbx"
-dest_files=["res://.godot/imported/paper_cup.fbx-7cec6573a342c679c27f4f05a8082219.scn"]
+source_file="res://assets/models/furniture/paper_cup.fbx"
+dest_files=["res://.godot/imported/paper_cup.fbx-7b21bb6e56ddfe8f16a6d310f2f8bfe9.scn"]
 
 [params]
 

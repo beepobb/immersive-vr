@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dpuo60fs4olwg"
-path="res://.godot/imported/Human_elvs_lara_hair.glb-d308f62a266e72c826efa48ab98e4ca6.scn"
+path="res://.godot/imported/Human_elvs_lara_hair.glb-cf1644f654f2a45864c23b142b23b05d.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Human_elvs_lara_hair.glb"
-dest_files=["res://.godot/imported/Human_elvs_lara_hair.glb-d308f62a266e72c826efa48ab98e4ca6.scn"]
+source_file="res://assets/Hair/Human_elvs_lara_hair.glb"
+dest_files=["res://.godot/imported/Human_elvs_lara_hair.glb-cf1644f654f2a45864c23b142b23b05d.scn"]
 
 [params]
 

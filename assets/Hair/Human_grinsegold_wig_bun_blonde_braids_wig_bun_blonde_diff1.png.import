@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c56umx8f7xm6t"
-path.s3tc="res://.godot/imported/Human_grinsegold_wig_bun_blonde_braids_wig_bun_blonde_diff1.png-53d4343933cb89f1eca0381c8a55a5aa.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_grinsegold_wig_bun_blonde_braids_wig_bun_blonde_diff1.png-a418f2bf4e11a7216fa3d6d370c35e70.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Hair/Human_grinsegold_wig_bun_blonde_braids_wig_bun_blonde_diff1.png"
-dest_files=["res://.godot/imported/Human_grinsegold_wig_bun_blonde_braids_wig_bun_blonde_diff1.png-53d4343933cb89f1eca0381c8a55a5aa.s3tc.ctex"]
+source_file="res://assets/Hair/Human_grinsegold_wig_bun_blonde_braids_wig_bun_blonde_diff1.png"
+dest_files=["res://.godot/imported/Human_grinsegold_wig_bun_blonde_braids_wig_bun_blonde_diff1.png-a418f2bf4e11a7216fa3d6d370c35e70.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buw7axmbqeswy"
-path.s3tc="res://.godot/imported/Human_culturalibre_hair_18_hair_08.png-7cc557a18f5bfcf7863a623b4bef4ada.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_culturalibre_hair_18_hair_08.png-f229ec665d574b4d3115ca2f05837d17.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Hair/Human_culturalibre_hair_18_hair_08.png"
-dest_files=["res://.godot/imported/Human_culturalibre_hair_18_hair_08.png-7cc557a18f5bfcf7863a623b4bef4ada.s3tc.ctex"]
+source_file="res://assets/Hair/Human_culturalibre_hair_18_hair_08.png"
+dest_files=["res://.godot/imported/Human_culturalibre_hair_18_hair_08.png-f229ec665d574b4d3115ca2f05837d17.s3tc.ctex"]
 
 [params]
 

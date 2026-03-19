@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qj5opu1ijtx5"
-path.s3tc="res://.godot/imported/Outfit Export_jean_shorts_norm.png-ac9237c3a8a4efff09ab72fbcf48d2fb.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_jean_shorts_norm.png-875e7b613b84f7fcebd27fa31fd4fef9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_jean_shorts_norm.png"
-dest_files=["res://.godot/imported/Outfit Export_jean_shorts_norm.png-ac9237c3a8a4efff09ab72fbcf48d2fb.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_jean_shorts_norm.png"
+dest_files=["res://.godot/imported/Outfit Export_jean_shorts_norm.png-875e7b613b84f7fcebd27fa31fd4fef9.s3tc.ctex"]
 
 [params]
 

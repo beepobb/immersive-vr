@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ug23krfkc7hc"
-path.s3tc="res://.godot/imported/Outfit Export_CrudeFemaleTshirtDiffuse.png-72f664abacdb1571e721dd209b7bda31.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_CrudeFemaleTshirtDiffuse.png-cfec24266a332846ab15f898f390e9a0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_CrudeFemaleTshirtDiffuse.png"
-dest_files=["res://.godot/imported/Outfit Export_CrudeFemaleTshirtDiffuse.png-72f664abacdb1571e721dd209b7bda31.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_CrudeFemaleTshirtDiffuse.png"
+dest_files=["res://.godot/imported/Outfit Export_CrudeFemaleTshirtDiffuse.png-cfec24266a332846ab15f898f390e9a0.s3tc.ctex"]
 
 [params]
 

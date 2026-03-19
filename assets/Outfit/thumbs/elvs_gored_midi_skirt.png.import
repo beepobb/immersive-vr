@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dygxvv7a3nt43"
-path="res://.godot/imported/elvs_gored_midi_skirt.png-59142dc9f498821e944f4c132d37e727.ctex"
+path="res://.godot/imported/elvs_gored_midi_skirt.png-46f4fb1037fc09e64e86577f3c1b05ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/elvs_gored_midi_skirt.png"
-dest_files=["res://.godot/imported/elvs_gored_midi_skirt.png-59142dc9f498821e944f4c132d37e727.ctex"]
+source_file="res://assets/Outfit/thumbs/elvs_gored_midi_skirt.png"
+dest_files=["res://.godot/imported/elvs_gored_midi_skirt.png-46f4fb1037fc09e64e86577f3c1b05ea.ctex"]
 
 [params]
 

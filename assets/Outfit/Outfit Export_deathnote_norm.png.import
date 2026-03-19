@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4jh4r1p0b4cg"
-path.s3tc="res://.godot/imported/Outfit Export_deathnote_norm.png-0ef516154eba8b0231eedfcce079f2c2.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_deathnote_norm.png-6dd82c36786743451178232904031364.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_deathnote_norm.png"
-dest_files=["res://.godot/imported/Outfit Export_deathnote_norm.png-0ef516154eba8b0231eedfcce079f2c2.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_deathnote_norm.png"
+dest_files=["res://.godot/imported/Outfit Export_deathnote_norm.png-6dd82c36786743451178232904031364.s3tc.ctex"]
 
 [params]
 

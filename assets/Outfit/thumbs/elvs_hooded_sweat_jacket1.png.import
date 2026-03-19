@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn6hb2ehu5d7y"
-path="res://.godot/imported/elvs_hooded_sweat_jacket1.png-a485423ae26631c0e703d415ebacd78c.ctex"
+path="res://.godot/imported/elvs_hooded_sweat_jacket1.png-477cc57e0f51f05c6c1cb3532fb4c92a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/elvs_hooded_sweat_jacket1.png"
-dest_files=["res://.godot/imported/elvs_hooded_sweat_jacket1.png-a485423ae26631c0e703d415ebacd78c.ctex"]
+source_file="res://assets/Outfit/thumbs/elvs_hooded_sweat_jacket1.png"
+dest_files=["res://.godot/imported/elvs_hooded_sweat_jacket1.png-477cc57e0f51f05c6c1cb3532fb4c92a.ctex"]
 
 [params]
 

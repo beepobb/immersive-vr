@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://rcmc3j6bfwv6"
-path="res://.godot/imported/Human_grinsegold_wig_bun_blonde_braids.glb-36251bdeb825df18edfc262232720bc2.scn"
+path="res://.godot/imported/Human_grinsegold_wig_bun_blonde_braids.glb-6a75ddb0852a5a571cbc8c3ca192ef69.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Human_grinsegold_wig_bun_blonde_braids.glb"
-dest_files=["res://.godot/imported/Human_grinsegold_wig_bun_blonde_braids.glb-36251bdeb825df18edfc262232720bc2.scn"]
+source_file="res://assets/Hair/Human_grinsegold_wig_bun_blonde_braids.glb"
+dest_files=["res://.godot/imported/Human_grinsegold_wig_bun_blonde_braids.glb-6a75ddb0852a5a571cbc8c3ca192ef69.scn"]
 
 [params]
 

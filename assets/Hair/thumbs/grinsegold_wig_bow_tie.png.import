@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu060kmkhtkah"
-path="res://.godot/imported/grinsegold_wig_bow_tie.png-3f6c255d8a40a3e5ce486be7d95bee46.ctex"
+path="res://.godot/imported/grinsegold_wig_bow_tie.png-16d88cc071b6f860fb655d456a89404c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hair/thumbs/grinsegold_wig_bow_tie.png"
-dest_files=["res://.godot/imported/grinsegold_wig_bow_tie.png-3f6c255d8a40a3e5ce486be7d95bee46.ctex"]
+source_file="res://assets/Hair/thumbs/grinsegold_wig_bow_tie.png"
+dest_files=["res://.godot/imported/grinsegold_wig_bow_tie.png-16d88cc071b6f860fb655d456a89404c.ctex"]
 
 [params]
 

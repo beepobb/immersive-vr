@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtwg5ie2ev46d"
-path="res://.godot/imported/elvs_jeans_bootcut.png-e42267f476ee39c24af68bcd78a55aaa.ctex"
+path="res://.godot/imported/elvs_jeans_bootcut.png-ee58d5f16c791c9729c4f91a3362ee98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/elvs_jeans_bootcut.png"
-dest_files=["res://.godot/imported/elvs_jeans_bootcut.png-e42267f476ee39c24af68bcd78a55aaa.ctex"]
+source_file="res://assets/Outfit/thumbs/elvs_jeans_bootcut.png"
+dest_files=["res://.godot/imported/elvs_jeans_bootcut.png-ee58d5f16c791c9729c4f91a3362ee98.ctex"]
 
 [params]
 

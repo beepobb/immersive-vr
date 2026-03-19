@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ctods3qwyn0sh"
-path="res://.godot/imported/Human_littleright_bobcut_hair.glb-b5bef375c2b2b8ad86a5eb18a3cf3509.scn"
+path="res://.godot/imported/Human_littleright_bobcut_hair.glb-b3f8c68ea350e65e5030a9808f41aaf3.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Human_littleright_bobcut_hair.glb"
-dest_files=["res://.godot/imported/Human_littleright_bobcut_hair.glb-b5bef375c2b2b8ad86a5eb18a3cf3509.scn"]
+source_file="res://assets/Hair/Human_littleright_bobcut_hair.glb"
+dest_files=["res://.godot/imported/Human_littleright_bobcut_hair.glb-b3f8c68ea350e65e5030a9808f41aaf3.scn"]
 
 [params]
 

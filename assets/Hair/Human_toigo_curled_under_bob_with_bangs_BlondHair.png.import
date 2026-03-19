@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c48b0y1wux7q"
-path.s3tc="res://.godot/imported/Human_toigo_curled_under_bob_with_bangs_BlondHair.png-4294a12582e962181d51ffab225a530b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_toigo_curled_under_bob_with_bangs_BlondHair.png-f7eb8589736388de9b473c304afbd7d8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Hair/Human_toigo_curled_under_bob_with_bangs_BlondHair.png"
-dest_files=["res://.godot/imported/Human_toigo_curled_under_bob_with_bangs_BlondHair.png-4294a12582e962181d51ffab225a530b.s3tc.ctex"]
+source_file="res://assets/Hair/Human_toigo_curled_under_bob_with_bangs_BlondHair.png"
+dest_files=["res://.godot/imported/Human_toigo_curled_under_bob_with_bangs_BlondHair.png-f7eb8589736388de9b473c304afbd7d8.s3tc.ctex"]
 
 [params]
 

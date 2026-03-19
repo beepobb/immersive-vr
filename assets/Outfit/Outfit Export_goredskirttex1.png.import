@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djqn8lwyfqgwo"
-path.s3tc="res://.godot/imported/Outfit Export_goredskirttex1.png-6539459d0d0e572a4a1efe6753408b58.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_goredskirttex1.png-939af396b6702776442068490ddae54b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_goredskirttex1.png"
-dest_files=["res://.godot/imported/Outfit Export_goredskirttex1.png-6539459d0d0e572a4a1efe6753408b58.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_goredskirttex1.png"
+dest_files=["res://.godot/imported/Outfit Export_goredskirttex1.png-939af396b6702776442068490ddae54b.s3tc.ctex"]
 
 [params]
 

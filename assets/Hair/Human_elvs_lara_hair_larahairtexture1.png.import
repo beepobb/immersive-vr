@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cctlh3blhyvpu"
-path.s3tc="res://.godot/imported/Human_elvs_lara_hair_larahairtexture1.png-f7e335293dd2d35bffa52dcb1405f8a5.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_elvs_lara_hair_larahairtexture1.png-5d9b14295317b18a6df82e5614477419.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Hair/Human_elvs_lara_hair_larahairtexture1.png"
-dest_files=["res://.godot/imported/Human_elvs_lara_hair_larahairtexture1.png-f7e335293dd2d35bffa52dcb1405f8a5.s3tc.ctex"]
+source_file="res://assets/Hair/Human_elvs_lara_hair_larahairtexture1.png"
+dest_files=["res://.godot/imported/Human_elvs_lara_hair_larahairtexture1.png-5d9b14295317b18a6df82e5614477419.s3tc.ctex"]
 
 [params]
 

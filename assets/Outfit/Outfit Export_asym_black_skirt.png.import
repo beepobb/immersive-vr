@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dm07u4ja1x1x2"
-path.s3tc="res://.godot/imported/Outfit Export_asym_black_skirt.png-263cecf5015fe2fcd495b7a78fb40215.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_asym_black_skirt.png-8af104ecb608cb38c0e194ecf6feb92b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_asym_black_skirt.png"
-dest_files=["res://.godot/imported/Outfit Export_asym_black_skirt.png-263cecf5015fe2fcd495b7a78fb40215.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_asym_black_skirt.png"
+dest_files=["res://.godot/imported/Outfit Export_asym_black_skirt.png-8af104ecb608cb38c0e194ecf6feb92b.s3tc.ctex"]
 
 [params]
 

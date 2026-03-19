@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsbloawsfaahs"
-path="res://.godot/imported/cortu_cargo_pants.png-68c876514c56c65f4ff9d4bee73152e1.ctex"
+path="res://.godot/imported/cortu_cargo_pants.png-43fcfdaf6c51159f9accdfc654da1577.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/cortu_cargo_pants.png"
-dest_files=["res://.godot/imported/cortu_cargo_pants.png-68c876514c56c65f4ff9d4bee73152e1.ctex"]
+source_file="res://assets/Outfit/thumbs/cortu_cargo_pants.png"
+dest_files=["res://.godot/imported/cortu_cargo_pants.png-43fcfdaf6c51159f9accdfc654da1577.ctex"]
 
 [params]
 

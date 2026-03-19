@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c0qsr80edwsfw"
-path="res://.godot/imported/Hair_bob.glb-feef4c2d22bc30f6d11bdc6606398ced.scn"
+path="res://.godot/imported/Hair_bob.glb-15f1b6b6ab4f5199ae8f0271677f63bf.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Hair_bob.glb"
-dest_files=["res://.godot/imported/Hair_bob.glb-feef4c2d22bc30f6d11bdc6606398ced.scn"]
+source_file="res://assets/Hair/Hair_bob.glb"
+dest_files=["res://.godot/imported/Hair_bob.glb-15f1b6b6ab4f5199ae8f0271677f63bf.scn"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://h406v67q0qk3"
-path.s3tc="res://.godot/imported/Outfit Export_Polo_Base_Color.png-e38ae876329caf32c48f4884396e54d7.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_Polo_Base_Color.png-acbbd1a1e5dd060f093533d575840591.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_Polo_Base_Color.png"
-dest_files=["res://.godot/imported/Outfit Export_Polo_Base_Color.png-e38ae876329caf32c48f4884396e54d7.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_Polo_Base_Color.png"
+dest_files=["res://.godot/imported/Outfit Export_Polo_Base_Color.png-acbbd1a1e5dd060f093533d575840591.s3tc.ctex"]
 
 [params]
 

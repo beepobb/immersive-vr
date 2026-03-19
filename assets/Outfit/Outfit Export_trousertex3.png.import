@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cg2va4qdwihnr"
-path.s3tc="res://.godot/imported/Outfit Export_trousertex3.png-81d8bb7c45147abfe859a7ac9c85a452.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_trousertex3.png-65f9c1811e93b3ed0b2c6bfdd4ad430e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_trousertex3.png"
-dest_files=["res://.godot/imported/Outfit Export_trousertex3.png-81d8bb7c45147abfe859a7ac9c85a452.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_trousertex3.png"
+dest_files=["res://.godot/imported/Outfit Export_trousertex3.png-65f9c1811e93b3ed0b2c6bfdd4ad430e.s3tc.ctex"]
 
 [params]
 

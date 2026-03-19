@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bak48t75lr1jo"
-path="res://.godot/imported/toigo_turtleneck_halter_top.png-ca73c81a287b8540f419845449d59c19.ctex"
+path="res://.godot/imported/toigo_turtleneck_halter_top.png-f407f23513c62bc17502f82c9b764131.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/toigo_turtleneck_halter_top.png"
-dest_files=["res://.godot/imported/toigo_turtleneck_halter_top.png-ca73c81a287b8540f419845449d59c19.ctex"]
+source_file="res://assets/Outfit/thumbs/toigo_turtleneck_halter_top.png"
+dest_files=["res://.godot/imported/toigo_turtleneck_halter_top.png-f407f23513c62bc17502f82c9b764131.ctex"]
 
 [params]
 

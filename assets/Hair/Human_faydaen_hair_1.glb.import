@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d3t5mbu3woq20"
-path="res://.godot/imported/Human_faydaen_hair_1.glb-c3c41b6507d2dc669e702befb7335024.scn"
+path="res://.godot/imported/Human_faydaen_hair_1.glb-f2f9ab1afd748680312b43091fe58f51.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Human_faydaen_hair_1.glb"
-dest_files=["res://.godot/imported/Human_faydaen_hair_1.glb-c3c41b6507d2dc669e702befb7335024.scn"]
+source_file="res://assets/Hair/Human_faydaen_hair_1.glb"
+dest_files=["res://.godot/imported/Human_faydaen_hair_1.glb-f2f9ab1afd748680312b43091fe58f51.scn"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpjkn52guut11"
-path="res://.godot/imported/rehmanpolanski_hair_bun_brown.png-e94a8edbdb5f45aab362d6a27b39363d.ctex"
+path="res://.godot/imported/rehmanpolanski_hair_bun_brown.png-fd5f58980c46c94c79a13b532cd4e8df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hair/thumbs/rehmanpolanski_hair_bun_brown.png"
-dest_files=["res://.godot/imported/rehmanpolanski_hair_bun_brown.png-e94a8edbdb5f45aab362d6a27b39363d.ctex"]
+source_file="res://assets/Hair/thumbs/rehmanpolanski_hair_bun_brown.png"
+dest_files=["res://.godot/imported/rehmanpolanski_hair_bun_brown.png-fd5f58980c46c94c79a13b532cd4e8df.ctex"]
 
 [params]
 

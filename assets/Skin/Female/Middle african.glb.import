@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://5rb74r33otr4"
-path="res://.godot/imported/Middle african.glb-41d9649a013cf25aa5e587812be3a2a5.scn"
+path="res://.godot/imported/Middle african.glb-da921ed1293df739d3d451ff299d31f8.scn"
 
 [deps]
 
-source_file="res://Assets/Skin/Female/Middle african.glb"
-dest_files=["res://.godot/imported/Middle african.glb-41d9649a013cf25aa5e587812be3a2a5.scn"]
+source_file="res://assets/Skin/Female/Middle african.glb"
+dest_files=["res://.godot/imported/Middle african.glb-da921ed1293df739d3d451ff299d31f8.scn"]
 
 [params]
 

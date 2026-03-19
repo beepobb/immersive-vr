@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bme5na1ph6t6t"
-path="res://.godot/imported/punkduck_off-shoulder_long-sleeve_top.png-92a428618b40b79e326ee87f43c8086f.ctex"
+path="res://.godot/imported/punkduck_off-shoulder_long-sleeve_top.png-b97e4a98a328c7df9f14f416a908b276.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/punkduck_off-shoulder_long-sleeve_top.png"
-dest_files=["res://.godot/imported/punkduck_off-shoulder_long-sleeve_top.png-92a428618b40b79e326ee87f43c8086f.ctex"]
+source_file="res://assets/Outfit/thumbs/punkduck_off-shoulder_long-sleeve_top.png"
+dest_files=["res://.godot/imported/punkduck_off-shoulder_long-sleeve_top.png-b97e4a98a328c7df9f14f416a908b276.ctex"]
 
 [params]
 

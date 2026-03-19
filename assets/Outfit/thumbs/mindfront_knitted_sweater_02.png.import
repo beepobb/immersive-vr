@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jo2jq6k4ob4m"
-path="res://.godot/imported/mindfront_knitted_sweater_02.png-f3982331e325fa3f751d250c1d2f1ba3.ctex"
+path="res://.godot/imported/mindfront_knitted_sweater_02.png-df62a2d4d40d573bac799a62ee1cf2e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/mindfront_knitted_sweater_02.png"
-dest_files=["res://.godot/imported/mindfront_knitted_sweater_02.png-f3982331e325fa3f751d250c1d2f1ba3.ctex"]
+source_file="res://assets/Outfit/thumbs/mindfront_knitted_sweater_02.png"
+dest_files=["res://.godot/imported/mindfront_knitted_sweater_02.png-df62a2d4d40d573bac799a62ee1cf2e8.ctex"]
 
 [params]
 

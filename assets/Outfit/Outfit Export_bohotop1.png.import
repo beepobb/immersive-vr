@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://y6l1nfjjp6v4"
-path.s3tc="res://.godot/imported/Outfit Export_bohotop1.png-95a13b4d8f4ad4cfcbc137e3b1a5aaf2.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_bohotop1.png-9cd26b37f93b5a392ab88cb7a13693b3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_bohotop1.png"
-dest_files=["res://.godot/imported/Outfit Export_bohotop1.png-95a13b4d8f4ad4cfcbc137e3b1a5aaf2.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_bohotop1.png"
+dest_files=["res://.godot/imported/Outfit Export_bohotop1.png-9cd26b37f93b5a392ab88cb7a13693b3.s3tc.ctex"]
 
 [params]
 

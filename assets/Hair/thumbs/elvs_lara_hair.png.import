@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciysg4pqxhlrw"
-path="res://.godot/imported/elvs_lara_hair.png-ce33834edbe34c15d914e667c3ef7ab8.ctex"
+path="res://.godot/imported/elvs_lara_hair.png-5fc2591679a24dde7c34ca4e0c400e8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hair/thumbs/elvs_lara_hair.png"
-dest_files=["res://.godot/imported/elvs_lara_hair.png-ce33834edbe34c15d914e667c3ef7ab8.ctex"]
+source_file="res://assets/Hair/thumbs/elvs_lara_hair.png"
+dest_files=["res://.godot/imported/elvs_lara_hair.png-5fc2591679a24dde7c34ca4e0c400e8c.ctex"]
 
 [params]
 

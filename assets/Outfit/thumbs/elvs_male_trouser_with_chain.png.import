@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djbegjqnr67wf"
-path="res://.godot/imported/elvs_male_trouser_with_chain.png-11cfb99d1bc05b4dedacaf67c5d43b16.ctex"
+path="res://.godot/imported/elvs_male_trouser_with_chain.png-343a761d52f7ed4d8539238cf3fa4422.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/elvs_male_trouser_with_chain.png"
-dest_files=["res://.godot/imported/elvs_male_trouser_with_chain.png-11cfb99d1bc05b4dedacaf67c5d43b16.ctex"]
+source_file="res://assets/Outfit/thumbs/elvs_male_trouser_with_chain.png"
+dest_files=["res://.godot/imported/elvs_male_trouser_with_chain.png-343a761d52f7ed4d8539238cf3fa4422.ctex"]
 
 [params]
 

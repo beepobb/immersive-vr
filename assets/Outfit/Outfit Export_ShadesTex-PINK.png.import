@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://63xltfnl76wm"
-path.s3tc="res://.godot/imported/Outfit Export_ShadesTex-PINK.png-bb11626ec8a7ef680913eb7f4916e14c.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_ShadesTex-PINK.png-418ed9ff4473694db5ffc7adc7cb7298.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_ShadesTex-PINK.png"
-dest_files=["res://.godot/imported/Outfit Export_ShadesTex-PINK.png-bb11626ec8a7ef680913eb7f4916e14c.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_ShadesTex-PINK.png"
+dest_files=["res://.godot/imported/Outfit Export_ShadesTex-PINK.png-418ed9ff4473694db5ffc7adc7cb7298.s3tc.ctex"]
 
 [params]
 

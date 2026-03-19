@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brju32i6q4nee"
-path="res://.godot/imported/middleage_asian_female.png-6d47fd2dd32ff790dbce7f0eaedca573.ctex"
+path="res://.godot/imported/middleage_asian_female.png-fb044bfc2ceecec1c641d2323b000eca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Skin/thumbs/middleage_asian_female.png"
-dest_files=["res://.godot/imported/middleage_asian_female.png-6d47fd2dd32ff790dbce7f0eaedca573.ctex"]
+source_file="res://assets/Skin/thumbs/middleage_asian_female.png"
+dest_files=["res://.godot/imported/middleage_asian_female.png-fb044bfc2ceecec1c641d2323b000eca.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dpbx51rxj7llh"
-path="res://.godot/imported/Human_elvs_hazel_hair.glb-f240344b29f601a8752bfb40d78efbf7.scn"
+path="res://.godot/imported/Human_elvs_hazel_hair.glb-d5d3fca38bfb31d8ecd16a0c4b93424e.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Human_elvs_hazel_hair.glb"
-dest_files=["res://.godot/imported/Human_elvs_hazel_hair.glb-f240344b29f601a8752bfb40d78efbf7.scn"]
+source_file="res://assets/Hair/Human_elvs_hazel_hair.glb"
+dest_files=["res://.godot/imported/Human_elvs_hazel_hair.glb-d5d3fca38bfb31d8ecd16a0c4b93424e.scn"]
 
 [params]
 

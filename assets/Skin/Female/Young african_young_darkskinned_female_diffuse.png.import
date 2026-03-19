@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcetflcaiq65x"
-path.s3tc="res://.godot/imported/Young african_young_darkskinned_female_diffuse.png-31e24d485546e380aae758af4719ad21.s3tc.ctex"
+path.s3tc="res://.godot/imported/Young african_young_darkskinned_female_diffuse.png-05a3a95ee35ab11f28d0ee9a3e16d411.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Skin/Female/Young african_young_darkskinned_female_diffuse.png"
-dest_files=["res://.godot/imported/Young african_young_darkskinned_female_diffuse.png-31e24d485546e380aae758af4719ad21.s3tc.ctex"]
+source_file="res://assets/Skin/Female/Young african_young_darkskinned_female_diffuse.png"
+dest_files=["res://.godot/imported/Young african_young_darkskinned_female_diffuse.png-05a3a95ee35ab11f28d0ee9a3e16d411.s3tc.ctex"]
 
 [params]
 

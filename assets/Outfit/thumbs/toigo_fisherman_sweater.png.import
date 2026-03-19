@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn2usrrcbeqgr"
-path="res://.godot/imported/toigo_fisherman_sweater.png-b5fdb85d0c6ca8dd5f2f58c330c56c4e.ctex"
+path="res://.godot/imported/toigo_fisherman_sweater.png-1e39a8d573db534988c26ad94903eeee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Outfit/thumbs/toigo_fisherman_sweater.png"
-dest_files=["res://.godot/imported/toigo_fisherman_sweater.png-b5fdb85d0c6ca8dd5f2f58c330c56c4e.ctex"]
+source_file="res://assets/Outfit/thumbs/toigo_fisherman_sweater.png"
+dest_files=["res://.godot/imported/toigo_fisherman_sweater.png-1e39a8d573db534988c26ad94903eeee.ctex"]
 
 [params]
 

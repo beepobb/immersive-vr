@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coe8gtllef6nn"
-path.s3tc="res://.godot/imported/Outfit Export_Worn_out_sweater_normal.png-2d60e248166a29e362ccaa3b6dcca090.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_Worn_out_sweater_normal.png-0220db6b3c5e8cd6fae0f109d09c3383.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_Worn_out_sweater_normal.png"
-dest_files=["res://.godot/imported/Outfit Export_Worn_out_sweater_normal.png-2d60e248166a29e362ccaa3b6dcca090.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_Worn_out_sweater_normal.png"
+dest_files=["res://.godot/imported/Outfit Export_Worn_out_sweater_normal.png-0220db6b3c5e8cd6fae0f109d09c3383.s3tc.ctex"]
 
 [params]
 

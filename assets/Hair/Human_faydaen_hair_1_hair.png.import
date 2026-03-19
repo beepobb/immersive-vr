@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0l2ady4ph0p7"
-path.s3tc="res://.godot/imported/Human_faydaen_hair_1_hair.png-b313f5dd3a6d0e79640ca0c64f4fa581.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_faydaen_hair_1_hair.png-6dbfd5ad9d90fbcf1c57022093ba63bd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Hair/Human_faydaen_hair_1_hair.png"
-dest_files=["res://.godot/imported/Human_faydaen_hair_1_hair.png-b313f5dd3a6d0e79640ca0c64f4fa581.s3tc.ctex"]
+source_file="res://assets/Hair/Human_faydaen_hair_1_hair.png"
+dest_files=["res://.godot/imported/Human_faydaen_hair_1_hair.png-6dbfd5ad9d90fbcf1c57022093ba63bd.s3tc.ctex"]
 
 [params]
 

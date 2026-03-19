@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcpjiuyur8cxm"
-path.s3tc="res://.godot/imported/Outfit Export_clothtexturevintagelv.png-48c2ae9d695f9f9e88a567ef666a1046.s3tc.ctex"
+path.s3tc="res://.godot/imported/Outfit Export_clothtexturevintagelv.png-a102826b258c8a864da34f26a237e03a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Outfit/Outfit Export_clothtexturevintagelv.png"
-dest_files=["res://.godot/imported/Outfit Export_clothtexturevintagelv.png-48c2ae9d695f9f9e88a567ef666a1046.s3tc.ctex"]
+source_file="res://assets/Outfit/Outfit Export_clothtexturevintagelv.png"
+dest_files=["res://.godot/imported/Outfit Export_clothtexturevintagelv.png-a102826b258c8a864da34f26a237e03a.s3tc.ctex"]
 
 [params]
 

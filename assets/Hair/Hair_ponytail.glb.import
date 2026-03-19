@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://di45844qr55rr"
-path="res://.godot/imported/Hair_ponytail.glb-54720c14cf422081b09786da628daeab.scn"
+path="res://.godot/imported/Hair_ponytail.glb-495f8506fffb04b1ee32f1f4005e7d8d.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Hair_ponytail.glb"
-dest_files=["res://.godot/imported/Hair_ponytail.glb-54720c14cf422081b09786da628daeab.scn"]
+source_file="res://assets/Hair/Hair_ponytail.glb"
+dest_files=["res://.godot/imported/Hair_ponytail.glb-495f8506fffb04b1ee32f1f4005e7d8d.scn"]
 
 [params]
 

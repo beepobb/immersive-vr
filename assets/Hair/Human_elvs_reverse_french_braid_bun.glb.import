@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b1cxvx3ia1ar2"
-path="res://.godot/imported/Human_elvs_reverse_french_braid_bun.glb-4f232a8c87cc242dcd76a8a0488ce0df.scn"
+path="res://.godot/imported/Human_elvs_reverse_french_braid_bun.glb-b6f2fb471e223f3e2f4e3fca576378cb.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Human_elvs_reverse_french_braid_bun.glb"
-dest_files=["res://.godot/imported/Human_elvs_reverse_french_braid_bun.glb-4f232a8c87cc242dcd76a8a0488ce0df.scn"]
+source_file="res://assets/Hair/Human_elvs_reverse_french_braid_bun.glb"
+dest_files=["res://.godot/imported/Human_elvs_reverse_french_braid_bun.glb-b6f2fb471e223f3e2f4e3fca576378cb.scn"]
 
 [params]
 
