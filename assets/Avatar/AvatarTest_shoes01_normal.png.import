@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b24xj3rsq18xq"
 path.s3tc="res://.godot/imported/AvatarTest_shoes01_normal.png-3639dedc97968821801e9f05aecb1529.s3tc.ctex"
+path.etc2="res://.godot/imported/AvatarTest_shoes01_normal.png-3639dedc97968821801e9f05aecb1529.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Avatar/AvatarTest_shoes01_normal.png"
-dest_files=["res://.godot/imported/AvatarTest_shoes01_normal.png-3639dedc97968821801e9f05aecb1529.s3tc.ctex"]
+dest_files=["res://.godot/imported/AvatarTest_shoes01_normal.png-3639dedc97968821801e9f05aecb1529.s3tc.ctex", "res://.godot/imported/AvatarTest_shoes01_normal.png-3639dedc97968821801e9f05aecb1529.etc2.ctex"]
 
 [params]
 
