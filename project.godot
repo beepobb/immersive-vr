@@ -25,6 +25,10 @@ AvatarState="*res://scripts/ui/avatar_state.gd"
 XRToolsUserSettings="*uid://bnquuwe2vribm"
 XRToolsRumbleManager="*uid://dg2csioke0tji"
 
+[debug_draw_3d]
+
+settings/addon_root_folder="res://addons/debug_draw_3d"
+
 [display]
 
 window/size/viewport_width=1280

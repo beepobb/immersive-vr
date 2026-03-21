@@ -42,13 +42,13 @@ func _process(delta: float) -> void:
 	if (!avatar_loaded and hmd.global_position.y > 0):
 		load_player_scaled()
 	
-	if (avatar_loaded and !body_axes_initialised):
-		save_body_axes()
+	#if (avatar_loaded and !body_axes_initialised):
+		#save_body_axes()
 	
 func load_player_scaled() -> void:
 	player_eye_height = hmd.global_position.y
 	
-	var player = avatar_scene.instantiate()
+	var player = get_node_or_null("../XROrigin3D/AvatarRoot/X Bot")
 	# all avatar scene need skeleton3d node to be first child
 	var player_skeleton: Skeleton3D = player.get_child(0)
 	var lfoot_bone_idx: int = player_skeleton.find_bone(lfoot_bone_name)
@@ -81,8 +81,6 @@ func load_player_scaled() -> void:
 	
 	# Load avatar into scene scaled to player height
 	player.scale = Vector3.ONE * avatar_scale
-	add_child(player)
-	
 	avatar_loaded = true
 	
 func save_body_axes() -> void:
