@@ -36,11 +36,13 @@ var body_axes_initialised: bool = false
 func _ready() -> void:
 	if (hmd == null):
 		push_error("HMD not found. Aborting...")
+	print(XRServer.tracker_added.connect(poop))
+
+func poop(n, t):
+	print(n)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if (!avatar_loaded and hmd.global_position.y > 0):
-		load_player_scaled()
+
 	
 	#if (avatar_loaded and !body_axes_initialised):
 		#save_body_axes()

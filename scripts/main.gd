@@ -16,7 +16,12 @@ func _ready():
 		print("OpenXR not initialised, please check of your headset is connected")
 	
 	load_environment.connect(_load_environment)
+	var trackers = XRServer.get_trackers(255)
+	for tracker in trackers:
+		print(tracker)
+
 	
+		
 func _load_environment(environment) -> void:
 	var scene = load(environment).instantiate()
 	scene.position = Vector3(0.0, 0.25, 0)

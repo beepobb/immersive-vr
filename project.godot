@@ -22,8 +22,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 AvatarState="*res://scripts/ui/avatar_state.gd"
-XRToolsUserSettings="*uid://bnquuwe2vribm"
-XRToolsRumbleManager="*uid://dg2csioke0tji"
+XRToolsUserSettings="*uid://bqgb8i74tm0t"
+XRToolsRumbleManager="*uid://by853dk86g1qw"
+
+[debug]
+
+settings/stdout/verbose_stdout=true
 
 [debug_draw_3d]
 
@@ -44,3 +48,4 @@ openxr/enabled=true
 shaders/enabled=true
 openxr/size/viewport_height=648
 openxr/size/viewport_width=1152
+openxr/stdout/verbose_stdout=true
