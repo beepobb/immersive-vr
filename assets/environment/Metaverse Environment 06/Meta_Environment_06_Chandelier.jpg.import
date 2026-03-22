@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ldtjojqff041"
-path.s3tc="res://.godot/imported/female_casualsuit02_male_casualsuit03_normal.png-ca04b60f0161ce950872137b4a78711e.s3tc.ctex"
+uid="uid://b2314oaedu7l"
+path.s3tc="res://.godot/imported/Meta_Environment_06_Chandelier.jpg-3114870db7fbffec3350b900979798c4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f0e654f1f4e976d4929ecad892860560"
+"md5": "fb2d221d378f82892ccfc20d64990fbd"
 }
 
 [deps]
 
-source_file="res://assets/outfit/female_casualsuit02_male_casualsuit03_normal.png"
-dest_files=["res://.godot/imported/female_casualsuit02_male_casualsuit03_normal.png-ca04b60f0161ce950872137b4a78711e.s3tc.ctex"]
+source_file="res://assets/environment/Metaverse Environment 06/Meta_Environment_06_Chandelier.jpg"
+dest_files=["res://.godot/imported/Meta_Environment_06_Chandelier.jpg-3114870db7fbffec3350b900979798c4.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://assets/outfit/female_casualsuit02_male_casualsuit03_normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

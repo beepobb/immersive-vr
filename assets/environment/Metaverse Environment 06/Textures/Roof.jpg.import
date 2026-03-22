@@ -2,20 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b46xig2if4ugl"
-path.s3tc="res://.godot/imported/female_casualsuit02_male_casualsuit03_diffuse.png-e933cfaa4dd6ac373c57a1797c913d25.s3tc.ctex"
+uid="uid://cfso2v030u8fm"
+path.s3tc="res://.godot/imported/Roof.jpg-7f0e987633bc1da8d97d0bbf114d89e1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "86a92db3bd129656aef2628335d72027"
-}
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/outfit/female_casualsuit02_male_casualsuit03_diffuse.png"
-dest_files=["res://.godot/imported/female_casualsuit02_male_casualsuit03_diffuse.png-e933cfaa4dd6ac373c57a1797c913d25.s3tc.ctex"]
+source_file="res://assets/environment/Metaverse Environment 06/textures/Roof.jpg"
+dest_files=["res://.godot/imported/Roof.jpg-7f0e987633bc1da8d97d0bbf114d89e1.s3tc.ctex"]
 
 [params]
 

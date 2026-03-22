@@ -4,7 +4,7 @@ extends Node3D
 #@onready var option_tabs = $AvatarCustomisationViewports/OptionTabs/Viewport/OptionTabs
 #@onready var customise_options = $AvatarCustomisationViewports/CustomiseOptions/Viewport/CustomiseOptions
 #@onready var save_avatar = $AvatarCustomisationViewports/SaveAvatar
-@export var default_outfit_id: String = "male_casualsuit02"
+@export var default_outfit_id: String = ""
 var option_tabs: Node = null #remove
 var customise_options: Node = null #remove
 var save_avatar: Node = null  # remove
@@ -55,15 +55,7 @@ func _ready():
 	# Set current_tab immediately (avoid empty current_tab)
 	var tab_container = customise_options.get_node("TabContainer")
 	current_tab = tab_container.get_child(tab_container.current_tab).name
-	# Apply a default outfit so the avatar isn't nude on start
-	_apply_default_outfit()
-	# ------ Humanizer ------- #
-	var human: MeshInstance3D = $AvatarTest/Human_rig/Skeleton3D/Human
-	
-	print("Blend shape count: ", human.get_blend_shape_count())
-	
-	for i in range(human.get_blend_shape_count()):
-		print(i, ": ", human.get_blend_shape_name(i))
+
 #func _ready():
 	
 	#_load_hair_manifest()
@@ -173,20 +165,6 @@ func _apply_new_hair(hair_id: String) -> void:
 func set_hair(hair_id: String) -> void:
 	_apply_new_hair(hair_id)
 	AvatarState.hair_style = hair_id
-
- # ----------- Default outfit ---------- #
-func _apply_default_outfit() -> void:
-	if outfit_map.is_empty():
-		push_warning("Outfit map is empty; cannot apply default outfit.")
-		return
-
-	var outfit_id := default_outfit_id.to_lower()
-
-	if outfit_map.has(outfit_id):
-		_apply_outfit(outfit_id)
-		AvatarState.outfit = outfit_id
-	else:
-		push_warning("Default outfit id not found: " + default_outfit_id)
 	
  # ----------- Load Outfit ---------- #
 func _load_outfit_manifest() -> void:

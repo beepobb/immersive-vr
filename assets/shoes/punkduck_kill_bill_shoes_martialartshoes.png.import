@@ -2,34 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD:assets/shoes/punkduck_kill_bill_shoes_martialartshoes.png.import
-uid="uid://ch8jndvaht032"
-path.s3tc="res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes.png-e4050d27e6f7015bf05a558ae0578156.s3tc.ctex"
-=======
-uid="uid://clkat7whpmrxx"
-path.s3tc="res://.godot/imported/Outfit Export_F_Trousers_01.png-2c88a60d27269265abae35d2c4e47785.s3tc.ctex"
->>>>>>> 71b13d1d83f4155fae9336a1abf37a10f4482701:assets/Outfit/Outfit Export_F_Trousers_01.png.import
+uid="uid://bwdtwhpsoyxdd"
+path="res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes.png-e4050d27e6f7015bf05a558ae0578156.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "56441dc0090f7ac04aadfa74e89542f1"
+"vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:assets/shoes/punkduck_kill_bill_shoes_martialartshoes.png.import
 source_file="res://assets/shoes/punkduck_kill_bill_shoes_martialartshoes.png"
-dest_files=["res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes.png-e4050d27e6f7015bf05a558ae0578156.s3tc.ctex"]
-=======
-source_file="res://assets/Outfit/Outfit Export_F_Trousers_01.png"
-dest_files=["res://.godot/imported/Outfit Export_F_Trousers_01.png-2c88a60d27269265abae35d2c4e47785.s3tc.ctex"]
->>>>>>> 71b13d1d83f4155fae9336a1abf37a10f4482701:assets/Outfit/Outfit Export_F_Trousers_01.png.import
+dest_files=["res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes.png-e4050d27e6f7015bf05a558ae0578156.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -37,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -51,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

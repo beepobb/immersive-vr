@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://davt2nnhorlq4"
-path.s3tc="res://.godot/imported/Outfit Export_cargo_pants_diff.png-e2532ca4e07450d9f15412664f9d1910.s3tc.ctex"
+path.s3tc="res://.godot/imported/young_lightskinned_female_diffuse.png-65c523e4c49312f36ceabe907325d5d0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Outfit/Outfit Export_cargo_pants_diff.png"
-dest_files=["res://.godot/imported/Outfit Export_cargo_pants_diff.png-e2532ca4e07450d9f15412664f9d1910.s3tc.ctex"]
+source_file="res://addons/humanizer/data/assets/equipment/body/Default/young_caucasian_female/young_lightskinned_female_diffuse.png"
+dest_files=["res://.godot/imported/young_lightskinned_female_diffuse.png-65c523e4c49312f36ceabe907325d5d0.s3tc.ctex"]
 
 [params]
 

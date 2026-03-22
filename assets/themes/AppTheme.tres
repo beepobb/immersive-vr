@@ -1377,7 +1377,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2uji"]
-bg_color = Color(0.10980392, 0.10980392, 0.11764706, 0.6)
+bg_color = Color(0.23621571, 0, 0.07305781, 0.6)
 
 [resource]
 /fonts/Back = null

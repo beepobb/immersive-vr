@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0i4q7htoevmm"]
 
-[ext_resource type="Script" uid="uid://br6gces0ggu3n" path="res://scenes/ui/avatar_customisation/player_info.gd" id="1_cdabj"]
-[ext_resource type="Theme" uid="uid://14kqmrsu81bn" path="res://assets/themes/AppTheme.tres" id="2_yps8v"]
+[ext_resource type="Theme" uid="uid://cy44qeiqj8cft" path="res://assets/themes/ui_theme.tres" id="1_7jq38"]
+[ext_resource type="Script" uid="uid://br6gces0ggu3n" path="res://scripts/ui/avatar_customisation/player_info.gd" id="1_cdabj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enjed"]
 bg_color = Color(0.23529412, 0.23529412, 0.23529412, 1)
@@ -23,7 +23,7 @@ corner_radius_bottom_left = 5
 custom_minimum_size = Vector2(300, 335)
 offset_right = 300.0
 offset_bottom = 335.0
-theme = ExtResource("2_yps8v")
+theme = ExtResource("1_7jq38")
 script = ExtResource("1_cdabj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -33,7 +33,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_yps8v")
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 25
@@ -48,10 +47,12 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DisplayName"]
 layout_mode = 2
+theme = ExtResource("1_7jq38")
 text = "Display Name"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/DisplayName"]
 layout_mode = 2
+theme = ExtResource("1_7jq38")
 theme_override_styles/normal = SubResource("StyleBoxFlat_enjed")
 
 [node name="Gender" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -59,11 +60,12 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Gender"]
 layout_mode = 2
+theme = ExtResource("1_7jq38")
 text = "Gender"
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Gender"]
 layout_mode = 2
-theme = ExtResource("2_yps8v")
+theme = ExtResource("1_7jq38")
 theme_override_styles/normal = SubResource("StyleBoxFlat_u1tix")
 item_count = 2
 popup/item_0/text = "Female"
@@ -76,10 +78,12 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Age"]
 layout_mode = 2
+theme = ExtResource("1_7jq38")
 text = "Age"
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Age"]
 layout_mode = 2
+theme = ExtResource("1_7jq38")
 theme_override_styles/normal = SubResource("StyleBoxFlat_78l2f")
 item_count = 3
 popup/item_0/text = "Young"
@@ -98,5 +102,6 @@ theme_override_constants/margin_bottom = 15
 custom_minimum_size = Vector2(120, 35)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_7jq38")
 theme_override_styles/normal = SubResource("StyleBoxFlat_a7kw6")
 text = "Random"

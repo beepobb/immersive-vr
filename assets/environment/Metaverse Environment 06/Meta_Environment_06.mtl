@@ -1,0 +1,122 @@
+# Blender 4.4.1 MTL File: 'Meta Environment 06.blend'
+# www.blender.org
+
+newmtl Ceiling
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Ceiling.jpg
+map_Ke C:/Ceiling.jpg
+
+newmtl Chair
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd D:/Aniruddh/Work/Metaverse Environment & Homes/Meta Environment 06/Bake/High/Chair.png
+map_Ke D:/Aniruddh/Work/Metaverse Environment & Homes/Meta Environment 06/Bake/High/Chair.png
+
+newmtl Chandelier
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Chandelier.jpg
+map_Ke C:/Chandelier.jpg
+
+newmtl Door
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd D:/Aniruddh/Work/Metaverse Environment & Homes/Meta Environment 06/Bake/Low/Door.jpg
+map_Ke D:/Aniruddh/Work/Metaverse Environment & Homes/Meta Environment 06/Bake/Low/Door.jpg
+
+newmtl Glass
+Ns 902.500000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.100000
+illum 6
+
+newmtl Ground
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd D:/Aniruddh/Work/Metaverse Environment & Homes/Meta Environment 06/Bake/Low/Ground.jpg
+map_Ke D:/Aniruddh/Work/Metaverse Environment & Homes/Meta Environment 06/Bake/Low/Ground.jpg
+
+newmtl Material
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 1.000000 1.000000 1.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Material.002
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 1.000000 1.000000 1.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Rock_01
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Rock_01.jpg
+map_Ke C:/Rock_01.jpg
+
+newmtl Rock_02
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Rock_02.jpg
+map_Ke C:/Rock_02.jpg
+
+newmtl Roof
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd D:/Aniruddh/Work/Metaverse Environment & Homes/Meta Environment 06/Bake/Low/Roof.jpg
+map_Ke D:/Aniruddh/Work/Metaverse Environment & Homes/Meta Environment 06/Bake/Low/Roof.jpg
+
+newmtl Sofa_02
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Sofa_02.jpg
+map_Ke C:/Sofa_02.jpg
