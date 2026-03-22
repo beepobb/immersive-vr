@@ -1,0 +1,179 @@
+[gd_scene load_steps=11 format=3 uid="uid://cjv6rwbef7so7"]
+
+[ext_resource type="Script" uid="uid://q2wwgnsbtek8" path="res://scenes/ui/landing_page/landing_page.gd" id="1_dubbj"]
+[ext_resource type="Texture2D" uid="uid://bpp8gwg8iqepo" path="res://assets/icons/Landing_page.jpg" id="2_jwi8v"]
+[ext_resource type="Texture2D" uid="uid://bigw8ctdosklb" path="res://assets/icons/Quit_logo.png" id="3_w3m5x"]
+[ext_resource type="Script" uid="uid://b8xuc50vdmgqp" path="res://scenes/ui/back_to_login.gd" id="4_7ekvu"]
+[ext_resource type="Texture2D" uid="uid://5nnxky2rjtm2" path="res://assets/icons/Setting_logo.png" id="5_gy4lm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixa04"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phija"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pn33"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud2db"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.078431375, 0.32156864, 0.6509804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_111qg"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.08627451, 0.31764707, 0.654902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[node name="LandingPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dubbj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(649, 360)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ixa04")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+custom_minimum_size = Vector2(854, 720)
+layout_mode = 2
+texture = ExtResource("2_jwi8v")
+expand_mode = 2
+
+[node name="QuitDialog" type="ConfirmationDialog" parent="PanelContainer"]
+oversampling_override = 1.0
+title = "Exit Venture"
+initial_position = 2
+size = Vector2i(226, 100)
+ok_button_text = "Yes"
+dialog_text = "Do you really want to Quit?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Top" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/Top"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Top/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1080
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/Top/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("3_w3m5x")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/Top/MarginContainer/HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_phija")
+script = ExtResource("4_7ekvu")
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/Top/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("5_gy4lm")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/Top/MarginContainer/HBoxContainer/TextureRect2"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3pn33")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 800
+theme_override_constants/margin_top = 400
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+text = "Enter Session ID to Start or Join Session"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.34781754, 0.3478167, 0.34781688, 0.6)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ud2db")
+placeholder_text = "Session ID"
+alignment = 1
+
+[node name="Start Session Button" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_111qg")
+text = "Start Session"

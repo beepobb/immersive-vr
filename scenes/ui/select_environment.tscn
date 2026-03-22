@@ -1,10 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://su3nynakebv7"]
 
-[ext_resource type="Script" uid="uid://s7cwluiugetv" path="res://Scripts/ui/select_environment.gd" id="2_ax1qv"]
+[ext_resource type="Script" uid="uid://s7cwluiugetv" path="res://scripts/ui/select_environment.gd" id="2_ax1qv"]
 [ext_resource type="PackedScene" uid="uid://2mrox5h8n372" path="res://scenes/ui/env_card.tscn" id="3_0q6cc"]
-[ext_resource type="Texture2D" uid="uid://x0ut125aewrt" path="res://Assets/ui/card/TherapyRoom.jpg" id="4_ad32r"]
-[ext_resource type="Texture2D" uid="uid://b5opfjy07ffv0" path="res://Assets/ui/card/Cafe01.jpg" id="5_4is2f"]
-
+[ext_resource type="Texture2D" uid="uid://x0ut125aewrt" path="res://assets/ui/card/TherapyRoom.jpg" id="4_ad32r"]
+[ext_resource type="Texture2D" uid="uid://b5opfjy07ffv0" path="res://assets/ui/card/Cafe01.jpg" id="5_4is2f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ybak"]
 bg_color = Color(0.19973174, 0.19973177, 0.19973162, 1)
@@ -90,7 +89,6 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
-metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2

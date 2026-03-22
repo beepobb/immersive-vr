@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf3euwt46axwi"
-path.s3tc="res://.godot/imported/middleage_lightskinned_female_diffuse.png-a20bd90726fcd14a0328db175685095f.s3tc.ctex"
+uid="uid://srck6ydj4hcw"
+path.s3tc="res://.godot/imported/Outfit Export_Worn_out_sweater_diffuse.png-aa7303ec41e5591c4d985595f5c75640.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/humanizer/data/assets/equipment/body/Default/middleage_caucasian_female/middleage_lightskinned_female_diffuse.png"
-dest_files=["res://.godot/imported/middleage_lightskinned_female_diffuse.png-a20bd90726fcd14a0328db175685095f.s3tc.ctex"]
+source_file="res://Assets/Outfit/Outfit Export_Worn_out_sweater_diffuse.png"
+dest_files=["res://.godot/imported/Outfit Export_Worn_out_sweater_diffuse.png-e0f1f49c6b97a521c5db86533aa4555f.s3tc.ctex"]
 
 [params]
 

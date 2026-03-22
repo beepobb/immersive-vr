@@ -2,8 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD:assets/shoes/punkduck_kill_bill_shoes_martialartshoes.png.import
 uid="uid://ch8jndvaht032"
 path.s3tc="res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes.png-e4050d27e6f7015bf05a558ae0578156.s3tc.ctex"
+=======
+uid="uid://clkat7whpmrxx"
+path.s3tc="res://.godot/imported/Outfit Export_F_Trousers_01.png-2c88a60d27269265abae35d2c4e47785.s3tc.ctex"
+>>>>>>> 71b13d1d83f4155fae9336a1abf37a10f4482701:assets/Outfit/Outfit Export_F_Trousers_01.png.import
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +19,13 @@ generator_parameters={
 
 [deps]
 
+<<<<<<< HEAD:assets/shoes/punkduck_kill_bill_shoes_martialartshoes.png.import
 source_file="res://assets/shoes/punkduck_kill_bill_shoes_martialartshoes.png"
 dest_files=["res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes.png-e4050d27e6f7015bf05a558ae0578156.s3tc.ctex"]
+=======
+source_file="res://assets/Outfit/Outfit Export_F_Trousers_01.png"
+dest_files=["res://.godot/imported/Outfit Export_F_Trousers_01.png-2c88a60d27269265abae35d2c4e47785.s3tc.ctex"]
+>>>>>>> 71b13d1d83f4155fae9336a1abf37a10f4482701:assets/Outfit/Outfit Export_F_Trousers_01.png.import
 
 [params]
 
