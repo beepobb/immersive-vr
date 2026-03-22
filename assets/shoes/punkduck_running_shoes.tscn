@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr3i5khvh1nne"]
+
+[ext_resource type="PackedScene" uid="uid://bpiluagwcrne" path="res://assets/shoes/punkduck_running_shoes.glb" id="1_h24o7"]
+
+[node name="punkduck_running_shoes" instance=ExtResource("1_h24o7")]

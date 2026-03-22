@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7bk4q4ir63p"
-path.s3tc="res://.godot/imported/Human_elvs_50s_updo_normals.png-7be23a192c57880bcfc5d22160156237.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_elvs_50s_updo_normals.png-4e33d8dd6c24e3f5a279139e45c1c45a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Hair/Human_elvs_50s_updo_normals.png"
-dest_files=["res://.godot/imported/Human_elvs_50s_updo_normals.png-7be23a192c57880bcfc5d22160156237.s3tc.ctex"]
+source_file="res://assets/hair/Human_elvs_50s_updo_normals.png"
+dest_files=["res://.godot/imported/Human_elvs_50s_updo_normals.png-4e33d8dd6c24e3f5a279139e45c1c45a.s3tc.ctex"]
 
 [params]
 

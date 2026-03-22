@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjetsorcp4e22"
-path.s3tc="res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_diffuse.png-e4d4a0880cd54abb36e7892ed3afb552.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_diffuse.png-4cfbd5563dc3eb0fc9ecaecb428330d6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Hair/Human_elvs_hazel_hair_elvs_hazel_hair_diffuse.png"
-dest_files=["res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_diffuse.png-e4d4a0880cd54abb36e7892ed3afb552.s3tc.ctex"]
+source_file="res://assets/hair/Human_elvs_hazel_hair_elvs_hazel_hair_diffuse.png"
+dest_files=["res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_diffuse.png-4cfbd5563dc3eb0fc9ecaecb428330d6.s3tc.ctex"]
 
 [params]
 

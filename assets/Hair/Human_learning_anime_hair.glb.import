@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cmnt4u3bcg6bo"
-path="res://.godot/imported/Human_learning_anime_hair.glb-8e072c25f20a49ccd52fe571f616a567.scn"
+path="res://.godot/imported/Human_learning_anime_hair.glb-7fe007de9793833a0fe7991388c14603.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Human_learning_anime_hair.glb"
-dest_files=["res://.godot/imported/Human_learning_anime_hair.glb-8e072c25f20a49ccd52fe571f616a567.scn"]
+source_file="res://assets/hair/Human_learning_anime_hair.glb"
+dest_files=["res://.godot/imported/Human_learning_anime_hair.glb-7fe007de9793833a0fe7991388c14603.scn"]
 
 [params]
 

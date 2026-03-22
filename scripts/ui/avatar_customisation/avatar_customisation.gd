@@ -1,24 +1,31 @@
 extends Node3D
 
-@onready var avatar: Node = $AvatarTest/Armature/Skeleton3D
+@onready var avatar: Node = $AvatarTest/Human_rig/Skeleton3D
 #@onready var option_tabs = $AvatarCustomisationViewports/OptionTabs/Viewport/OptionTabs
 #@onready var customise_options = $AvatarCustomisationViewports/CustomiseOptions/Viewport/CustomiseOptions
 #@onready var save_avatar = $AvatarCustomisationViewports/SaveAvatar
+@export var default_outfit_id: String = "male_casualsuit02"
 var option_tabs: Node = null #remove
 var customise_options: Node = null #remove
 var save_avatar: Node = null  # remove
 
 var current_tab: String
 
+const HAIR_JSON_PATH := "res://assets/hair/hair_assets.json"
 var _current_hair: Node = null
-const HAIR_JSON_PATH := "res://Assets/Hair/hair_assets.json"
 var hair_map: Dictionary = {}   # hair_id -> scene path
 
-var skin_tex_map: Dictionary = {}  # skin_id -> texture path
-const SKIN_JSON_PATH := "res://Assets/Skin/skin_assets.json"
 @export var body_mesh_path: NodePath = NodePath("Human") 
 
-enum Options {BODYTYPE, SKIN, OUTFIT, HAIR, FACE}
+const OUTFIT_JSON_PATH := "res://assets/outfit/outfit_assets.json"
+var outfit_map: Dictionary = {}   # id -> scene path
+var _current_outfit: Node = null
+
+var _current_shoes: Node = null
+const SHOES_JSON_PATH := "res://assets/shoes/shoes_assets.json"
+var shoes_map: Dictionary = {}   # shoes_id -> scene path
+
+enum Options {BODYTYPE, SKIN, OUTFIT, HAIR, SHOES}
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -38,15 +45,25 @@ func _ready():
 		return
 
 	_load_hair_manifest()
-	_load_skin_manifest()
+	_load_outfit_manifest()
+	_load_shoes_manifest()
 
 	option_tabs.tab_selected.connect(_on_tab_selected)
 	customise_options.option_selected.connect(_on_option_selected)
-
+	for n in avatar.find_children("*", "MeshInstance3D", true, false):
+		print(n.name)
 	# Set current_tab immediately (avoid empty current_tab)
 	var tab_container = customise_options.get_node("TabContainer")
 	current_tab = tab_container.get_child(tab_container.current_tab).name
-
+	# Apply a default outfit so the avatar isn't nude on start
+	_apply_default_outfit()
+	# ------ Humanizer ------- #
+	var human: MeshInstance3D = $AvatarTest/Human_rig/Skeleton3D/Human
+	
+	print("Blend shape count: ", human.get_blend_shape_count())
+	
+	for i in range(human.get_blend_shape_count()):
+		print(i, ": ", human.get_blend_shape_name(i))
 #func _ready():
 	
 	#_load_hair_manifest()
@@ -83,27 +100,8 @@ func _load_hair_manifest() -> void:
 			hair_map[String(item["id"]).to_lower()] = String(item["scene"])
 
 	print("Hair map loaded:", hair_map.size())
-# ---------- Load Skin ----------- #
-func _load_skin_manifest() -> void:
-	var f := FileAccess.open(SKIN_JSON_PATH, FileAccess.READ)
-	if f == null:
-		push_error("Cannot open skin JSON: " + SKIN_JSON_PATH)
-		return
-
-	var data = JSON.parse_string(f.get_as_text())
-	f.close()
-
-	if typeof(data) != TYPE_DICTIONARY or !data.has("items"):
-		push_error("skin_assets.json format invalid (expected { items: [...] }).")
-		return
-
-	skin_tex_map.clear()
-	for item in data["items"]:
-		if typeof(item) == TYPE_DICTIONARY and item.has("id") and item.has("texture"):
-			skin_tex_map[String(item["id"]).to_lower()] = String(item["texture"])
-
-	print("Skin texture map loaded:", skin_tex_map.size())
 	
+# ---------- SET SKIN ----------- #
 func set_skin_color(color: Color) -> void:
 	var body_mesh := avatar.get_node_or_null(body_mesh_path) as MeshInstance3D
 	if body_mesh == null:
@@ -119,30 +117,7 @@ func set_skin_color(color: Color) -> void:
 
 	new_mat.albedo_color = color
 	body_mesh.set_surface_override_material(0, new_mat)
-	
- # ----------- Apply Skin ---------- #
-func _apply_skin_texture(skin_id: String) -> void:
-	var key := skin_id.to_lower()
-	var tex_path := String(skin_tex_map.get(key, ""))
-	if tex_path == "":
-		push_warning("No texture found for skin id: " + skin_id)
-		return
 
-	var tex := load(tex_path) as Texture2D
-	if tex == null:
-		push_warning("Failed to load skin texture: " + tex_path)
-		return
-
-	var body_mesh := avatar.get_node_or_null(body_mesh_path) as MeshInstance3D
-	if body_mesh == null:
-		push_error("Body mesh not found. Set 'body_mesh_path' in Inspector.")
-		return
-
-	var mat := body_mesh.get_active_material(0)
-	var new_mat: StandardMaterial3D = (mat.duplicate() as StandardMaterial3D) if mat is StandardMaterial3D else StandardMaterial3D.new()
-
-	new_mat.albedo_texture = tex
-	body_mesh.set_surface_override_material(0, new_mat)
 	
 func _on_option_selected(option_value) -> void:
 	if current_tab == "BodyType":
@@ -156,16 +131,23 @@ func _on_option_selected(option_value) -> void:
 			push_warning("Skin option was not a Color: " + str(option_value))
 
 	elif current_tab == "Outfit":
-		AvatarState.outfit = String(option_value)
+		var outfit_id := String(option_value).to_lower()
+		print("Applying outfit:", outfit_id)
+		_apply_outfit(outfit_id)
+		AvatarState.outfit = outfit_id
 
 	elif current_tab == "Hair":
 		var hair_id := String(option_value)
 		print("Applying new hair: " + hair_id)
 		_apply_new_hair(hair_id)
 		AvatarState.hair_style = hair_id
+	
+	elif current_tab == "Shoes":
+		var shoes_id := String(option_value)
+		print("Applying new shoes: " + shoes_id)
+		_apply_new_shoes(shoes_id)
+		AvatarState.shoes = shoes_id
 
-	elif current_tab == "Face":
-		AvatarState.face_type = String(option_value)
 	
  # ----------- Apply Hair ---------- #
 func _apply_new_hair(hair_id: String) -> void:
@@ -187,12 +169,133 @@ func _apply_new_hair(hair_id: String) -> void:
 	avatar.add_child(_current_hair)
 
 	AvatarState.hair_style = hair_id
+
+func set_hair(hair_id: String) -> void:
+	_apply_new_hair(hair_id)
+	AvatarState.hair_style = hair_id
+
+ # ----------- Default outfit ---------- #
+func _apply_default_outfit() -> void:
+	if outfit_map.is_empty():
+		push_warning("Outfit map is empty; cannot apply default outfit.")
+		return
+
+	var outfit_id := default_outfit_id.to_lower()
+
+	if outfit_map.has(outfit_id):
+		_apply_outfit(outfit_id)
+		AvatarState.outfit = outfit_id
+	else:
+		push_warning("Default outfit id not found: " + default_outfit_id)
 	
+ # ----------- Load Outfit ---------- #
+func _load_outfit_manifest() -> void:
+	var f := FileAccess.open(OUTFIT_JSON_PATH, FileAccess.READ)
+	if f == null:
+		push_error("Cannot open outfit JSON: " + OUTFIT_JSON_PATH)
+		return
+
+	var data = JSON.parse_string(f.get_as_text())
+	f.close()
+
+	if typeof(data) != TYPE_DICTIONARY or !data.has("items"):
+		push_error("Outfit JSON format invalid (expected { items: [...] }).")
+		return
+
+	outfit_map.clear()
+
+	for item in data["items"]:
+		if typeof(item) == TYPE_DICTIONARY and item.has("id") and item.has("scene"):
+			var id := String(item["id"]).to_lower()
+			var scene_path := String(item["scene"])
+			outfit_map[id] = scene_path
+
+	print("Outfit sets loaded:", outfit_map.size())
 	
+ # ----------- Apply Outfit ---------- #
+func _apply_outfit(outfit_id: String) -> void:
+	var key := outfit_id.to_lower()
+	var scene_path := String(outfit_map.get(key, ""))
+
+	if scene_path == "":
+		push_warning("Outfit id not found in map: " + key)
+		return
+
+	var ps := load(scene_path) as PackedScene
+	if ps == null:
+		push_warning("Failed to load outfit scene: " + scene_path)
+		return
+
+	var new_outfit := ps.instantiate()
+	if new_outfit == null:
+		push_warning("Failed to instantiate outfit scene: " + scene_path)
+		return
+
+	if _current_outfit != null and is_instance_valid(_current_outfit):
+		_current_outfit.queue_free()
+		_current_outfit = null
+
+	_current_outfit = new_outfit
+	avatar.add_child(_current_outfit)
+	print("Outfit set applied:", key)
+			
+func set_outfit(outfit_id: String) -> void:
+	_apply_outfit(outfit_id)
+	AvatarState.outfit = outfit_id.to_lower()
+	
+# --------- LOAD SHOES ----------- #
+func _load_shoes_manifest() -> void:
+	var f := FileAccess.open(SHOES_JSON_PATH, FileAccess.READ)
+	if f == null:
+		push_error("Cannot open shoes JSON: " + SHOES_JSON_PATH)
+		return
+
+	var data = JSON.parse_string(f.get_as_text())
+	f.close()
+
+	if typeof(data) != TYPE_DICTIONARY or !data.has("items"):
+		push_error("shoes_assets.json format invalid (expected { items: [...] }).")
+		return
+
+	shoes_map.clear()
+	for item in data["items"]:
+		if typeof(item) == TYPE_DICTIONARY and item.has("id") and item.has("scene"):
+			shoes_map[String(item["id"]).to_lower()] = String(item["scene"])
+
+	print("Shoes map loaded:", shoes_map.size())
+	
+# ----------- APPLY SHOES -------------- #
+func _apply_new_shoes(shoes_id: String) -> void:
+	var scene_path := _find_res(shoes_id, Options.SHOES)
+	if scene_path == "":
+		push_warning("No scene found for shoes id: " + shoes_id)
+		return
+
+	var ps: PackedScene = load(scene_path)
+	if ps == null:
+		push_warning("Failed to load shoes scene: " + scene_path)
+		return
+
+	if _current_shoes != null and is_instance_valid(_current_shoes):
+		_current_shoes.queue_free()
+		_current_shoes = null
+
+	_current_shoes = ps.instantiate()
+	avatar.add_child(_current_shoes)
+	AvatarState.shoes = shoes_id
+	
+func set_shoes(shoes_id: String) -> void:
+	_apply_new_shoes(shoes_id)
+	AvatarState.shoes = shoes_id.to_lower()
+
 func _find_res(res_key: String, option_type: Options) -> String:
 	res_key = res_key.to_lower()
 
 	if option_type == Options.HAIR and hair_map.has(res_key):
 		return hair_map[res_key]
+	
+	if option_type == Options.SHOES and shoes_map.has(res_key):
+		return shoes_map[res_key]
+
 
 	return ""

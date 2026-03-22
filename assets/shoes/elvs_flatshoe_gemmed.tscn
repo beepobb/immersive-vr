@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://gtdogjbwkuvg"]
+
+[ext_resource type="PackedScene" uid="uid://diovagaq3pmkm" path="res://assets/shoes/elvs_flatshoe_gemmed.glb" id="1_07k5c"]
+
+[node name="elvs_flatshoe_gemmed" instance=ExtResource("1_07k5c")]

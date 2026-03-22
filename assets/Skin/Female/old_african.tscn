@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://boshws3tg3hhl"]
 
-[ext_resource type="PackedScene" uid="uid://dxjskqy8eas6s" path="res://Assets/Skin/Female/Old african.glb" id="1_jkodb"]
+[ext_resource type="PackedScene" uid="uid://dxjskqy8eas6s" path="res://assets/skin/Female/Old african.glb" id="1_jkodb"]
 
 [node name="Old african" instance=ExtResource("1_jkodb")]

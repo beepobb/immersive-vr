@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhglxbq5kspci"
-path.s3tc="res://.godot/imported/Human_elvs_french_braid_variation_braid01_diffuse_mahogany.png-533fa6013e859cf4553faeee850154d8.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_elvs_french_braid_variation_braid01_diffuse_mahogany.png-7ca9930c946255f27536a9fb30931647.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Hair/Human_elvs_french_braid_variation_braid01_diffuse_mahogany.png"
-dest_files=["res://.godot/imported/Human_elvs_french_braid_variation_braid01_diffuse_mahogany.png-533fa6013e859cf4553faeee850154d8.s3tc.ctex"]
+source_file="res://assets/hair/Human_elvs_french_braid_variation_braid01_diffuse_mahogany.png"
+dest_files=["res://.godot/imported/Human_elvs_french_braid_variation_braid01_diffuse_mahogany.png-7ca9930c946255f27536a9fb30931647.s3tc.ctex"]
 
 [params]
 

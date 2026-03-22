@@ -1,48 +1,50 @@
 @tool
 extends EditorScript
 
-const OUTFIT_SCENE := "res://Assets/Outfit/outfit_export.tscn"
-const OUTPUT_JSON  := "res://Assets/Outfit/outfit_assets.json"
-
+const OUTFIT_DIR := "res://Assets/Outfit"
 const THUMB_DIR := "res://Assets/Outfit/thumbs"
-const NAME_PREFIX := "Human_"
+const OUTPUT_JSON := "res://Assets/Outfit/outfit_assets.json"
 
 func _run() -> void:
-	var ps := load(OUTFIT_SCENE) as PackedScene
-	if ps == null:
-		push_error("Cannot load: " + OUTFIT_SCENE)
-		return
-
-	var root := ps.instantiate()
-	if root == null:
-		push_error("Cannot instance: " + OUTFIT_SCENE)
+	var dir := DirAccess.open(OUTFIT_DIR)
+	if dir == null:
+		push_error("Cannot open outfit directory: " + OUTFIT_DIR)
 		return
 
 	var items: Array = []
 
-	for child in root.get_children():
-		if child is MeshInstance3D:
-			var n := child.name
-			if not n.begins_with(NAME_PREFIX):
+	dir.list_dir_begin()
+	var file_name := dir.get_next()
+
+	while file_name != "":
+		if not dir.current_is_dir() and file_name.ends_with(".tscn"):
+			if _should_skip_scene(file_name):
+				file_name = dir.get_next()
 				continue
 
-			var id := _make_id(n)
-			var pretty := _pretty_name(n)
-			var thumb := _find_best_thumb_path(id)  # <--- uses id tokens
+			var id := file_name.get_basename().to_lower()
+			var scene_path := OUTFIT_DIR.path_join(file_name)
+			var thumb_path := _thumb_for_id(id)
 
 			items.append({
 				"id": id,
-				"name": pretty,
-				"node_path": n,
-				"thumb": thumb
+				"name": _display_name_from_id(id),
+				"scene": scene_path,
+				"thumb": thumb_path
 			})
 
-	items.sort_custom(func(a, b): return String(a["name"]).to_lower() < String(b["name"]).to_lower())
+		file_name = dir.get_next()
+
+	dir.list_dir_end()
+
+	items.sort_custom(func(a, b):
+		return String(a["id"]).to_lower() < String(b["id"]).to_lower()
+	)
 
 	var manifest := {
-		"version": 1,
-		"type": "outfit",
-		"scene": OUTFIT_SCENE,
+		"version": 4,
+		"type": "outfit_set",
+		"root": OUTFIT_DIR,
 		"thumb_root": THUMB_DIR,
 		"items": items
 	}
@@ -55,43 +57,44 @@ func _run() -> void:
 	f.store_string(JSON.stringify(manifest, "\t"))
 	f.close()
 
-	print("Rebuilt outfit JSON:", OUTPUT_JSON, " (items:", items.size(), ")")
-	root.queue_free()
+	print("Rebuilt outfit set JSON: ", OUTPUT_JSON, " (items: ", items.size(), ")")
 
 
-func _make_id(node_name: String) -> String:
-	var s := node_name
-	if s.begins_with(NAME_PREFIX):
-		s = s.substr(NAME_PREFIX.length())
-	return s.to_lower().replace(" ", "_")
+func _should_skip_scene(file_name: String) -> bool:
+	var base := file_name.get_basename().to_lower()
+
+	if base == "outfit_export":
+		return true
+
+	if base == "thumbs":
+		return true
+
+	return false
 
 
-func _pretty_name(node_name: String) -> String:
-	var s := node_name
-	if s.begins_with(NAME_PREFIX):
-		s = s.substr(NAME_PREFIX.length())
-	return s.replace("_", " ").capitalize()
+func _thumb_for_id(id: String) -> String:
+	var png_path := THUMB_DIR.path_join(id + ".png")
+	if ResourceLoader.exists(png_path):
+		return png_path
 
+	var jpg_path := THUMB_DIR.path_join(id + ".jpg")
+	if ResourceLoader.exists(jpg_path):
+		return jpg_path
 
-func _find_best_thumb_path(outfit_id: String) -> String:
-	var expected := outfit_id.to_lower() + ".png"
+	var jpeg_path := THUMB_DIR.path_join(id + ".jpeg")
+	if ResourceLoader.exists(jpeg_path):
+		return jpeg_path
 
-	var dir := DirAccess.open(THUMB_DIR)
-	if dir == null:
-		push_warning("Cannot open thumb dir: " + THUMB_DIR)
-		return ""
-
-	dir.list_dir_begin()
-	while true:
-		var name := dir.get_next()
-		if name == "":
-			break
-		if dir.current_is_dir():
-			continue
-
-		if name.to_lower() == expected:
-			dir.list_dir_end()
-			return THUMB_DIR.path_join(name)
-
-	dir.list_dir_end()
 	return ""
+
+
+func _display_name_from_id(id: String) -> String:
+	var parts := id.split("_")
+	var words: Array[String] = []
+
+	for part in parts:
+		if part.is_empty():
+			continue
+		words.append(part.capitalize())
+
+	return " ".join(words)

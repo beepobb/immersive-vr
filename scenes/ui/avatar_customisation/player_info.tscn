@@ -1,11 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0i4q7htoevmm"]
+[gd_scene load_steps=7 format=3 uid="uid://c0i4q7htoevmm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvjl7"]
-bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[ext_resource type="Script" uid="uid://br6gces0ggu3n" path="res://scenes/ui/avatar_customisation/player_info.gd" id="1_cdabj"]
+[ext_resource type="Theme" uid="uid://14kqmrsu81bn" path="res://assets/themes/AppTheme.tres" id="2_yps8v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enjed"]
 bg_color = Color(0.23529412, 0.23529412, 0.23529412, 1)
@@ -27,7 +23,8 @@ corner_radius_bottom_left = 5
 custom_minimum_size = Vector2(300, 335)
 offset_right = 300.0
 offset_bottom = 335.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_lvjl7")
+theme = ExtResource("2_yps8v")
+script = ExtResource("1_cdabj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -36,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_yps8v")
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 25
@@ -64,13 +62,13 @@ layout_mode = 2
 text = "Gender"
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Gender"]
-custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
+theme = ExtResource("2_yps8v")
 theme_override_styles/normal = SubResource("StyleBoxFlat_u1tix")
 item_count = 2
-popup/item_0/text = "Male"
-popup/item_0/id = 0
-popup/item_1/text = "Female"
+popup/item_0/text = "Female"
+popup/item_0/id = 1
+popup/item_1/text = "Male"
 popup/item_1/id = 1
 
 [node name="Age" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -81,17 +79,24 @@ layout_mode = 2
 text = "Age"
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Age"]
-custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_78l2f")
+item_count = 3
+popup/item_0/text = "Young"
+popup/item_0/id = 0
+popup/item_1/text = "Adult"
+popup/item_1/id = 1
+popup/item_2/text = "Elderly"
+popup/item_2/id = 2
 
 [node name="ButtonMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/ButtonMargin"]
+[node name="RandomButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonMargin"]
 custom_minimum_size = Vector2(120, 35)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_a7kw6")
-text = "Randomise"
+text = "Random"

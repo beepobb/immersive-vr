@@ -1,26 +1,28 @@
 extends Control
 
 @onready var tab_container: TabContainer = $TabContainer
-@onready var skin_picker := $TabContainer/Skin/MarginContainer/VBoxContainer/SkinColorPicker
 
 signal option_selected(option) # or Variant
-const OUTFIT_JSON_PATH := "res://Assets/Outfit/outfit_assets.json"
+const OUTFIT_JSON_PATH := "res://assets/outfit/outfit_assets.json"
 var _outfit_built := false
 
-const HAIR_JSON_PATH := "res://Assets/Hair/hair_assets.json"
+const HAIR_JSON_PATH := "res://assets/hair/hair_assets.json"
 var _connected_buttons: Array[BaseButton] = []
 var _hair_built := false
+
+const SHOES_JSON_PATH := "res://assets/shoes/shoes_assets.json"
+var _shoes_built := false
 
 func _ready() -> void:
 	tab_container.tab_changed.connect(_on_tab_changed)
 	_refresh_current_tab()
-	skin_picker.color_changed.connect(_on_skin_color_changed)
+	_apply_glass_tabs(tab_container)
 
 func _on_skin_color_changed(color: Color) -> void:
 	emit_signal("option_selected", color)
 	
-func _on_tab_changed(_tab_idx: int) -> void:
-	_refresh_current_tab()
+func _on_tab_changed(_idx: int) -> void:
+	call_deferred("_refresh_current_tab")
 
 func _refresh_current_tab() -> void:
 	var tab := tab_container.get_current_tab_control()
@@ -34,6 +36,10 @@ func _refresh_current_tab() -> void:
 	if tab.name == "Outfit" and !_outfit_built:
 		_build_buttons_from_json(tab, OUTFIT_JSON_PATH)
 		_outfit_built = true
+		
+	if tab.name == "Shoes" and !_shoes_built:
+		_build_buttons_from_json(tab, SHOES_JSON_PATH)
+		_shoes_built = true
 
 	if tab.name == "Skin":
 		_build_skin_palette(tab)  # build every time (simple + safe)
@@ -140,10 +146,14 @@ func _load_items(path: String) -> Array:
 	return data["items"]
 
 func _update_buttons() -> void:
-	# Disconnect previously connected buttons
+	# Disconnect previously connected buttons (SAFE)
 	for btn in _connected_buttons:
+		if !is_instance_valid(btn) or btn.is_queued_for_deletion():
+			continue
+		# Only disconnect if we previously connected it
 		if btn.pressed.is_connected(_on_option_pressed):
 			btn.pressed.disconnect(_on_option_pressed)
+
 	_connected_buttons.clear()
 
 	var current_tab := tab_container.get_current_tab_control()
@@ -168,7 +178,49 @@ func _collect_buttons_recursive(node: Node, out: Array) -> void:
 			out.append(child)
 		else:
 			_collect_buttons_recursive(child, out)
+			
+func _clear_option_buttons(container: Node) -> void:
+	for c in container.get_children():
+		c.queue_free()
 
+	_connected_buttons.clear()  # IMPORTANT
+## ----- THeme
+func _apply_glass_tabs(tab_control: Control) -> void:
+	# Unselected tab
+	var unselected := StyleBoxFlat.new()
+	unselected.bg_color = Color(0.05, 0.07, 0.10, 0.25) # translucent
+	unselected.border_color = Color(1, 1, 1, 0.10)
+	unselected.border_width_left = 1
+	unselected.border_width_top = 1
+	unselected.border_width_right = 1
+	unselected.border_width_bottom = 1
+	unselected.corner_radius_top_left = 14
+	unselected.corner_radius_top_right = 14
+	unselected.content_margin_left = 12
+	unselected.content_margin_right = 12
+	unselected.content_margin_top = 8
+	unselected.content_margin_bottom = 8
+
+	# Selected tab (slightly stronger)
+	var selected := unselected.duplicate()
+	selected.bg_color = Color(0.08, 0.10, 0.14, 0.38)
+	selected.border_color = Color(1, 1, 1, 0.18)
+
+	# Hover tab (optional)
+	var hovered := unselected.duplicate()
+	hovered.bg_color = Color(0.08, 0.10, 0.14, 0.32)
+
+	# These keys work for TabBar in Godot 4.x.
+	# If your node is TabContainer, still try these first; Godot will ignore unknown keys.
+	tab_control.add_theme_stylebox_override("tab_unselected", unselected)
+	tab_control.add_theme_stylebox_override("tab_selected", selected)
+	tab_control.add_theme_stylebox_override("tab_hovered", hovered)
+
+	# Optional: text colors
+	tab_control.add_theme_color_override("font_unselected_color", Color(1, 1, 1, 0.70))
+	tab_control.add_theme_color_override("font_selected_color", Color(1, 1, 1, 0.92))
+	tab_control.add_theme_color_override("font_hovered_color", Color(1, 1, 1, 0.85))
+	
 func _on_option_pressed(option_value) -> void:
 	print("Option selected: ", option_value)
 	emit_signal("option_selected", option_value)

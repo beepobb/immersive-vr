@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ow42cmuxvic2"]
+
+[ext_resource type="PackedScene" uid="uid://jcnuvaukev4f" path="res://assets/shoes/dressupdoc_maryjane.glb" id="1_wjme0"]
+
+[node name="dressupdoc_maryjane" instance=ExtResource("1_wjme0")]

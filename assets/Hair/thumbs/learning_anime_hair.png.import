@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnolh7iqv1i40"
-path="res://.godot/imported/learning_anime_hair.png-150278ea3f35c1dbb78761e592e650a3.ctex"
+path="res://.godot/imported/learning_anime_hair.png-9c245915fbae7ac7c677796d3ca20d2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hair/thumbs/learning_anime_hair.png"
-dest_files=["res://.godot/imported/learning_anime_hair.png-150278ea3f35c1dbb78761e592e650a3.ctex"]
+source_file="res://assets/hair/thumbs/learning_anime_hair.png"
+dest_files=["res://.godot/imported/learning_anime_hair.png-9c245915fbae7ac7c677796d3ca20d2a.ctex"]
 
 [params]
 

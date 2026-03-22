@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0f80xpbk14rq"
-path="res://.godot/imported/toigo_curled_under_bob_with_bangs.png-562115d936757bc8f43261f1104a7be6.ctex"
+path="res://.godot/imported/toigo_curled_under_bob_with_bangs.png-28088170eb2b7d51344da8ef616c1165.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hair/thumbs/toigo_curled_under_bob_with_bangs.png"
-dest_files=["res://.godot/imported/toigo_curled_under_bob_with_bangs.png-562115d936757bc8f43261f1104a7be6.ctex"]
+source_file="res://assets/hair/thumbs/toigo_curled_under_bob_with_bangs.png"
+dest_files=["res://.godot/imported/toigo_curled_under_bob_with_bangs.png-28088170eb2b7d51344da8ef616c1165.ctex"]
 
 [params]
 

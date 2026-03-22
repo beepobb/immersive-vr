@@ -29,7 +29,7 @@ func _run() -> void:
 	f.store_string(json_text)
 	f.close()
 
-	print("✅ Rebuilt hair JSON:", OUTPUT_JSON, " (items:", items.size(), ")")
+	print("Rebuilt hair JSON:", OUTPUT_JSON, " (items:", items.size(), ")")
 
 
 func _scan_dir_recursive(path: String, out_items: Array) -> void:

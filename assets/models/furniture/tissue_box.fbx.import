@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://iis2fs8g6w04"
-path="res://.godot/imported/tissue_box.fbx-1606e46d0886ba55e7d05daaad788090.scn"
+path="res://.godot/imported/tissue_box.fbx-c4836568ef223c48f31aed75634cd3d9.scn"
 
 [deps]
 
-source_file="res://Assets/models/furniture/tissue_box.fbx"
-dest_files=["res://.godot/imported/tissue_box.fbx-1606e46d0886ba55e7d05daaad788090.scn"]
+source_file="res://assets/models/furniture/tissue_box.fbx"
+dest_files=["res://.godot/imported/tissue_box.fbx-c4836568ef223c48f31aed75634cd3d9.scn"]
 
 [params]
 

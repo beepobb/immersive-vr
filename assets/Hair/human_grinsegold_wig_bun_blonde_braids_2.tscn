@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cngmma2mdjlpp"]
-
-[ext_resource type="PackedScene" uid="uid://rcmc3j6bfwv6" path="res://Assets/Hair/Human_grinsegold_wig_bun_blonde_braids.glb" id="1_mcrep"]
-
-[node name="Human_grinsegold_wig_bun_blonde_braids2" instance=ExtResource("1_mcrep")]

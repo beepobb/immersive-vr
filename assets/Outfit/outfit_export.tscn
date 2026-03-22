@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://do44hjootu4kd"]
-
-[ext_resource type="PackedScene" uid="uid://dl8wogyn5pkda" path="res://Assets/Outfit/Outfit Export.glb" id="1_4nxtd"]
-
-[node name="Outfit Export" instance=ExtResource("1_4nxtd")]

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0sjfojosve6r"]
-
-[ext_resource type="PackedScene" uid="uid://dpuo60fs4olwg" path="res://Assets/Hair/Human_elvs_lara_hair.glb" id="1_17ue2"]
-
-[node name="Human_elvs_lara_hair2" instance=ExtResource("1_17ue2")]

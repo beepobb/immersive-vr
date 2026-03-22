@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://sr0dhwmg4a37"
-path="res://.godot/imported/Middle causcasian.glb-5513b5b0632958eb032750a4a5b2a335.scn"
+path="res://.godot/imported/Middle causcasian.glb-f7cfda92fad9470c6e1e5deac571ac82.scn"
 
 [deps]
 
-source_file="res://Assets/Skin/Female/Middle causcasian.glb"
-dest_files=["res://.godot/imported/Middle causcasian.glb-5513b5b0632958eb032750a4a5b2a335.scn"]
+source_file="res://assets/skin/Female/Middle causcasian.glb"
+dest_files=["res://.godot/imported/Middle causcasian.glb-f7cfda92fad9470c6e1e5deac571ac82.scn"]
 
 [params]
 

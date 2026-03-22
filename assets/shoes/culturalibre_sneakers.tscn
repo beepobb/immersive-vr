@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfge71a8btkga"]
+
+[ext_resource type="PackedScene" uid="uid://cgoxn05drkbr3" path="res://assets/shoes/culturalibre_sneakers.glb" id="1_jpj8e"]
+
+[node name="culturalibre_sneakers" instance=ExtResource("1_jpj8e")]

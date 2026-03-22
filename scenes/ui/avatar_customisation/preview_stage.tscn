@@ -6,7 +6,7 @@ radius = 18.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ge06a"]
 cull_mode = 1
-albedo_color = Color(0.36282933, 0.36282954, 0.36282936, 1)
+albedo_color = Color(0.585062, 0.5850621, 0.5850618, 1)
 metallic = 0.51
 roughness = 0.2
 
@@ -30,6 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.9995, 0)
 shape = SubResource("CylinderShape3D_oc5dj")
+debug_color = Color(0.0696862, 0.5492804, 0.92280966, 0.41960785)
 
 [node name="Wall" type="MeshInstance3D" parent="StaticBody3D"]
 material_override = SubResource("StandardMaterial3D_ge06a")
@@ -42,4 +43,12 @@ mesh = SubResource("CylinderMesh_ge06a")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 14, 0)
+light_energy = 5.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.023582647, 0.99946856, 0.022503853, -0.9653394, 0.028618507, -0.25942403, -0.2599302, -0.015605949, 0.9655013, -0.19074726, 0.519953, 3.8652182)
+light_energy = 3.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(0.9966045, -3.479641e-09, -0.08233858, 0.046558894, 0.8247783, 0.5635366, 0.06791106, -0.5654566, 0.8219776, -7.3635287, 10.757101, 6.480135)
 light_energy = 5.0

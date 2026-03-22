@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dxjskqy8eas6s"
-path="res://.godot/imported/Old african.glb-0f9aed5101bdd72732452f34f6c2ac7d.scn"
+path="res://.godot/imported/Old african.glb-a900e44aaf8cc9787490e880c699d82f.scn"
 
 [deps]
 
-source_file="res://Assets/Skin/Female/Old african.glb"
-dest_files=["res://.godot/imported/Old african.glb-0f9aed5101bdd72732452f34f6c2ac7d.scn"]
+source_file="res://assets/skin/Female/Old african.glb"
+dest_files=["res://.godot/imported/Old african.glb-a900e44aaf8cc9787490e880c699d82f.scn"]
 
 [params]
 

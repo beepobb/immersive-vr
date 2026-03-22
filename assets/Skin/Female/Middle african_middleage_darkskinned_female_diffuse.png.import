@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhrk8k3cbvuwu"
-path.s3tc="res://.godot/imported/Middle african_middleage_darkskinned_female_diffuse.png-48e21cbbfb6223db428582a6536b454f.s3tc.ctex"
+path.s3tc="res://.godot/imported/Middle african_middleage_darkskinned_female_diffuse.png-259a752daee1b260b85b176f6b973c12.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Skin/Female/Middle african_middleage_darkskinned_female_diffuse.png"
-dest_files=["res://.godot/imported/Middle african_middleage_darkskinned_female_diffuse.png-48e21cbbfb6223db428582a6536b454f.s3tc.ctex"]
+source_file="res://assets/skin/Female/Middle african_middleage_darkskinned_female_diffuse.png"
+dest_files=["res://.godot/imported/Middle african_middleage_darkskinned_female_diffuse.png-259a752daee1b260b85b176f6b973c12.s3tc.ctex"]
 
 [params]
 

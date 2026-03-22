@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://chqh2p8sqafmg"]
-
-[ext_resource type="PackedScene" uid="uid://b1cxvx3ia1ar2" path="res://Assets/Hair/Human_elvs_reverse_french_braid_bun.glb" id="1_702ga"]
-
-[node name="Human_elvs_reverse_french_braid_bun2" instance=ExtResource("1_702ga")]

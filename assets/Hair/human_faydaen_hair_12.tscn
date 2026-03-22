@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cydv0c5dnct42"]
-
-[ext_resource type="PackedScene" uid="uid://d3t5mbu3woq20" path="res://Assets/Hair/Human_faydaen_hair_1.glb" id="1_gcnsm"]
-
-[node name="Human_faydaen_hair_12" instance=ExtResource("1_gcnsm")]

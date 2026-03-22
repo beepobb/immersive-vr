@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cbi4yb2asjiag"
-path="res://.godot/imported/Human_elvs_keylth_hair.glb-b1251d03c9547e233cd8087c56ac8c5d.scn"
+path="res://.godot/imported/Human_elvs_keylth_hair.glb-fae6b66fca8bddb4ca0611a7d710dc34.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Human_elvs_keylth_hair.glb"
-dest_files=["res://.godot/imported/Human_elvs_keylth_hair.glb-b1251d03c9547e233cd8087c56ac8c5d.scn"]
+source_file="res://assets/hair/Human_elvs_keylth_hair.glb"
+dest_files=["res://.godot/imported/Human_elvs_keylth_hair.glb-fae6b66fca8bddb4ca0611a7d710dc34.scn"]
 
 [params]
 

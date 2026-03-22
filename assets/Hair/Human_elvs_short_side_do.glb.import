@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c4e75d1p771wc"
-path="res://.godot/imported/Human_elvs_short_side_do.glb-e1f42c45a209f6912bdea7e185709622.scn"
+path="res://.godot/imported/Human_elvs_short_side_do.glb-f1e4330705114b99b6915b799ee23f1d.scn"
 
 [deps]
 
-source_file="res://Assets/Hair/Human_elvs_short_side_do.glb"
-dest_files=["res://.godot/imported/Human_elvs_short_side_do.glb-e1f42c45a209f6912bdea7e185709622.scn"]
+source_file="res://assets/hair/Human_elvs_short_side_do.glb"
+dest_files=["res://.godot/imported/Human_elvs_short_side_do.glb-f1e4330705114b99b6915b799ee23f1d.scn"]
 
 [params]
 

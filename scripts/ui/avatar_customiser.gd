@@ -6,48 +6,50 @@ extends Control
 @onready var skin_tab:   Button = %SkinTab
 @onready var outfit_tab: Button = %OutfitTab
 @onready var hair_tab:   Button = %HairTab
-@onready var face_tab:   Button = %FaceTab
+@onready var shoes_tab:   Button = %ShoesTab
 
 var bottom_tabs: Array[Button] = []
 var main_preview: Node = null
 
 #Hair Path
-const HAIR_JSON_PATH := "res://Assets/Hair/hair_assets.json"
+const HAIR_JSON_PATH := "res://assets/hair/hair_assets.json"
 var hair_items: Array = []
 @onready var hair_grid: GridContainer = %HairGrid
 
-#Skin Path
-const SKIN_JSON_PATH := "res://Assets/Skin/skin_assets.json"
-var skin_items: Array = []
-@onready var skin_grid: GridContainer = %SkinGrid
+# Outfit Path
+const OUTFIT_JSON_PATH := "res://assets/outfit/outfit_assets.json"
+var outfit_items: Array = []
+@onready var outfit_grid: GridContainer = %OutfitGrid
+
+# Shoes Path
+const SHOES_JSON_PATH := "res://assets/shoes/shoes_assets.json"
+var shoes_items: Array = []
+@onready var shoes_grid: GridContainer = %ShoesGrid
 
 
 func _ready() -> void:
+	print("AVATAR_CUSTOMISER READY RUNNING")
 	main_preview = get_tree().current_scene
 
-	bottom_tabs = [body_tab, skin_tab, outfit_tab, hair_tab, face_tab]
+	bottom_tabs = [body_tab, skin_tab, outfit_tab, hair_tab, shoes_tab]
 
 	body_tab.pressed.connect(   func(): _on_bottom_tab_pressed(1) )
 	skin_tab.pressed.connect(   func(): _on_bottom_tab_pressed(2) )
 	outfit_tab.pressed.connect( func(): _on_bottom_tab_pressed(3) )
 	hair_tab.pressed.connect(   func(): _on_bottom_tab_pressed(0) )
-	face_tab.pressed.connect(   func(): _on_bottom_tab_pressed(4) )
+	shoes_tab.pressed.connect(   func(): _on_bottom_tab_pressed(4) )
 	#Load Hair Buttons
 	_load_hair_items()
 	_build_hair_buttons()
 	
-	#Load Skin Buttons
-	_load_skin_items()
-	_build_skin_buttons()
-
-	_on_bottom_tab_pressed(1)
-	print("Skin JSON exists:", ResourceLoader.exists(SKIN_JSON_PATH))
-	print("SkinGrid:", skin_grid)
-	print("Skin items:", skin_items.size())
-	if skin_items.size() > 0:
-		print("Skin first item has texture?:", skin_items[0].has("texture"), " keys=", skin_items[0].keys())
-
-
+	# Load Outfit Buttons
+	_load_outfit_items()
+	_build_outfit_buttons()
+	
+	# Load Shoes Buttons
+	_load_shoes_items()
+	_build_shoes_buttons()
+	
 func _on_bottom_tab_pressed(target_index: int) -> void:
 	right_tabs.current_tab = target_index
 
@@ -59,10 +61,10 @@ func _on_bottom_tab_pressed(target_index: int) -> void:
 		2: skin_tab.button_pressed   = true
 		3: outfit_tab.button_pressed = true
 		0: hair_tab.button_pressed   = true
-		4: face_tab.button_pressed   = true
+		4: shoes_tab.button_pressed   = true
 
 
-# ------------ Hair -------------- #
+# ------------ HAIR -------------- #
 func _load_hair_items() -> void: # Load hair json
 	var f := FileAccess.open(HAIR_JSON_PATH, FileAccess.READ)
 	if f == null:
@@ -141,69 +143,179 @@ func _apply_hair(hair_id: String) -> void:
 
 	push_error("Main scene has no set_hair(hair_id) or _apply_new_hair(hair_id).")
 
-# ------------ Skin -------------- #
-func _load_skin_items() -> void:
-	var f := FileAccess.open(SKIN_JSON_PATH, FileAccess.READ)
+# ------------ OUTFIT -------------- #
+func _load_outfit_items() -> void:
+	var f := FileAccess.open(OUTFIT_JSON_PATH, FileAccess.READ)
 	if f == null:
-		push_error("Cannot open skin JSON: " + SKIN_JSON_PATH)
+		push_error("Cannot open outfit JSON: " + OUTFIT_JSON_PATH)
 		return
 
 	var data = JSON.parse_string(f.get_as_text())
 	f.close()
 
 	if typeof(data) != TYPE_DICTIONARY or !data.has("items"):
-		push_error("skin_assets.json invalid. Expected { 'items': [ ... ] }")
+		push_error("outfit_assets.json invalid. Expected { 'items': [ ... ] }")
 		return
 
-	skin_items = data["items"]
-
-
-func _build_skin_buttons() -> void:
-	if skin_grid == null:
-		push_error("SkinGrid not found. Add a GridContainer named SkinGrid.")
+	outfit_items = data["items"]
+	
+func _build_outfit_buttons() -> void:
+	if outfit_grid == null:
+		push_error("OutfitGrid not found.")
 		return
 
-	for c in skin_grid.get_children():
+	for c in outfit_grid.get_children():
 		c.queue_free()
 
-	for item in skin_items:
+	for item in outfit_items:
 		if typeof(item) != TYPE_DICTIONARY:
 			continue
 
-		var skin_id := String(item.get("id", "")).to_lower()
+		var outfit_id := String(item.get("id", "")).to_lower()
+		var display_name := String(item.get("name", outfit_id))
 		var thumb_path := String(item.get("thumb", ""))
 
-		if skin_id == "":
+		if outfit_id == "":
 			continue
 
 		var box := VBoxContainer.new()
-		box.custom_minimum_size = Vector2(100, 130)
+		box.custom_minimum_size = Vector2(170, 210)
 
 		var btn := TextureButton.new()
-		btn.custom_minimum_size = Vector2(100, 130)
+		btn.custom_minimum_size = Vector2(170, 170)
+		btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		btn.size_flags_vertical = Control.SIZE_EXPAND_FILL
 
 		if thumb_path != "" and ResourceLoader.exists(thumb_path):
 			btn.texture_normal = load(thumb_path)
+		else:
+			push_warning("Missing outfit thumbnail: " + outfit_id)
 
 		btn.pressed.connect(func():
-			_apply_skin(skin_id)
+			_apply_outfit(outfit_id)
 		)
-		box.custom_minimum_size = Vector2(50, 50)
+
+		var label := Label.new()
+		label.text = display_name
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+
 		box.add_child(btn)
-		skin_grid.add_child(box)
+		box.add_child(label)
+		outfit_grid.add_child(box)
 		
-func _apply_skin(skin_id: String) -> void:
-	if main_preview and main_preview.has_method("set_skin"):
-		main_preview.set_skin(skin_id)
+func _apply_outfit(outfit_id: String) -> void:
+	if main_preview and main_preview.has_method("set_outfit"):
+		main_preview.set_outfit(outfit_id)
 		return
 
-	# fallback: your current state setter
-	if main_preview and main_preview.has_method("_on_option_selected"):
-		main_preview._on_option_selected(skin_id)
+	if main_preview and main_preview.has_method("_apply_outfit"):
+		main_preview._apply_outfit(outfit_id)
 		return
 
-	push_error("Main scene has no set_skin(skin_id).")
+	push_error("Main scene has no set_outfit(outfit_id)")
+	
 
+# ------------ SHOES -------------- #
+func _load_shoes_items() -> void:
+	print("Opening shoes JSON:", SHOES_JSON_PATH)
+
+	var f := FileAccess.open(SHOES_JSON_PATH, FileAccess.READ)
+	if f == null:
+		push_error("Cannot open shoes JSON: " + SHOES_JSON_PATH)
+		return
+
+	var text := f.get_as_text()
+	f.close()
+
+	print("Shoes JSON text length:", text.length())
+
+	var data = JSON.parse_string(text)
+
+	if typeof(data) != TYPE_DICTIONARY:
+		push_error("Shoes JSON parsed, but not a dictionary.")
+		print("Parsed type:", typeof(data))
+		return
+
+	if !data.has("items"):
+		push_error("shoes_assets.json invalid. Missing 'items'")
+		print("Parsed keys:", data.keys())
+		return
+
+	shoes_items = data["items"]
+	print("Shoes items assigned:", shoes_items.size())
+	
+func _build_shoes_buttons() -> void:
+	print("Building shoes buttons...")
+	print("ShoesGrid node:", shoes_grid)
+
+	if shoes_grid == null:
+		push_error("ShoesGrid not found. Add a GridContainer named ShoesGrid.")
+		return
+
+	for c in shoes_grid.get_children():
+		c.queue_free()
+
+	print("ShoesGrid cleared. Child count now:", shoes_grid.get_child_count())
+
+	for item in shoes_items:
+		if typeof(item) != TYPE_DICTIONARY:
+			print("Skipping non-dictionary shoes item:", item)
+			continue
+
+		var shoes_id := String(item.get("id", "")).to_lower()
+		var display_name := String(item.get("name", shoes_id))
+		var thumb_path := String(item.get("thumb", ""))
+
+		print("Building shoe:", shoes_id, " thumb=", thumb_path)
+
+		if shoes_id == "":
+			print("Skipping shoes item with empty id")
+			continue
+
+		var box := VBoxContainer.new()
+		box.custom_minimum_size = Vector2(170, 210)
+
+		var btn := TextureButton.new()
+		btn.custom_minimum_size = Vector2(170, 170)
+		btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		btn.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+		if thumb_path != "" and ResourceLoader.exists(thumb_path):
+			btn.texture_normal = load(thumb_path)
+			print("Loaded thumbnail for:", shoes_id)
+		else:
+			push_warning("Missing thumbnail for shoes: " + shoes_id)
+
+		btn.pressed.connect(func():
+			print("Pressed shoes button:", shoes_id)
+			_apply_shoes(shoes_id)
+		)
+
+		var label := Label.new()
+		label.text = display_name
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+
+		box.add_child(btn)
+		box.add_child(label)
+		shoes_grid.add_child(box)
+
+	print("Finished building shoes buttons. Final child count:", shoes_grid.get_child_count())
+		
+func _apply_shoes(shoes_id: String) -> void:
+	if main_preview and main_preview.has_method("set_shoes"):
+		main_preview.set_shoes(shoes_id)
+		return
+
+	if main_preview and main_preview.has_method("_apply_new_shoes"):
+		main_preview._apply_new_shoes(shoes_id)
+		return
+
+	push_error("Main scene has no set_shoes(shoes_id)")
+	
 # ---------- Save & continue ----------
 
 func _on_save_avatar_pressed() -> void:

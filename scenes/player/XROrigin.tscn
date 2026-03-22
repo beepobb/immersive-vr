@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="8_2118c"]
 
 [node name="XROrigin3D" type="XROrigin3D"]
+current = true
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
+current = true
 
 [node name="LeftController" type="XRController3D" parent="."]
 tracker = &"left_hand"
