@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_asi28"]
 [ext_resource type="PackedScene" uid="uid://cffhyue0c2whs" path="res://scenes/ui/lobby/room_info.tscn" id="2_ein8w"]
 [ext_resource type="PackedScene" uid="uid://b0ygtfhgx8s0" path="res://scenes/ui/lobby/time_date_display.tscn" id="4_g30ku"]
-[ext_resource type="PackedScene" uid="uid://cqnof3vlou2xh" path="res://scenes/ui/lobby/avatar_env.tscn" id="5_asim1"]
 [ext_resource type="PackedScene" uid="uid://dbnkofu6ipe70" path="res://scenes/ui/lobby/player_card.tscn" id="5_yy71y"]
 [ext_resource type="PackedScene" uid="uid://coawq8882oqan" path="res://assets/Avatar/AvatarTest.glb" id="6_mcopp"]
+[ext_resource type="PackedScene" uid="uid://cjo2n1yw7ll28" path="res://scenes/ui/lobby/selected_env_preview.tscn" id="7_tprm0"]
 [ext_resource type="Script" uid="uid://8y5l23xo83v1" path="res://scripts/ui/lobby/lobby_manager.gd" id="8_ein8w"]
+[ext_resource type="PackedScene" uid="uid://tp33cmnql5ut" path="res://scenes/ui/lobby/customise_options.tscn" id="8_tprm0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iy8d8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -51,7 +52,7 @@ height = 0.1
 environment = SubResource("Environment_is1y2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=306475170]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.36951593, -0.21743852, 0.90342593, -0.33683532, 0.8747688, 0.3483124, 0, 0, 0)
 shadow_enabled = true
 
 [node name="XROrigin3D" parent="." index="2"]
@@ -85,8 +86,10 @@ mesh = SubResource("CylinderMesh_6m3d6")
 
 [node name="UI" type="Node3D" parent="." index="4" unique_id=1114705087]
 
-[node name="LeftPanel" parent="UI" index="0" unique_id=489379600 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.8223463, 0.1778158)
+[node name="LeftPanel" type="Node" parent="UI" index="0" unique_id=519481310]
+
+[node name="ServerInfo" parent="UI/LeftPanel" index="0" unique_id=489379600 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.6867613, 0.1778158)
 screen_size = Vector2(0.96, 1.39)
 scene = ExtResource("2_ein8w")
 viewport_size = Vector2(454, 564.85)
@@ -94,19 +97,26 @@ unshaded = true
 scene_properties_keys = PackedStringArray("room_info.gd", "player_card")
 player_card = ExtResource("5_yy71y")
 
-[node name="DateTime" parent="UI" index="1" unique_id=1348865060 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8827243, 0)
-screen_size = Vector2(1, 0.2)
+[node name="DateTime" parent="UI/LeftPanel/ServerInfo" index="3" unique_id=1348865060 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.86755836, 0)
+screen_size = Vector2(0.92, 0.2)
 scene = ExtResource("4_g30ku")
 viewport_size = Vector2(576, 118)
 scene_properties_keys = PackedStringArray()
 
-[node name="RightPanel" parent="UI" index="2" unique_id=1614598740 instance=ExtResource("1_8ldoj")]
+[node name="EnvPreview" parent="UI" index="1" unique_id=1614598740 instance=ExtResource("1_8ldoj")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.648, 1.8480567, 0)
-screen_size = Vector2(0.895, 1.36)
-scene = ExtResource("5_asim1")
-viewport_size = Vector2(540, 800)
+screen_size = Vector2(0.935, 1.07)
+scene = ExtResource("7_tprm0")
+viewport_size = Vector2(579, 657)
 unshaded = true
+scene_properties_keys = PackedStringArray()
+
+[node name="CustomiseOptions" parent="UI" index="2" unique_id=1983447249 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0123959, 0)
+screen_size = Vector2(0.92, 0.2)
+scene = ExtResource("8_tprm0")
+viewport_size = Vector2(576, 118)
 scene_properties_keys = PackedStringArray()
 
 [node name="AvatarTest" parent="." index="5" unique_id=917422586 instance=ExtResource("6_mcopp")]

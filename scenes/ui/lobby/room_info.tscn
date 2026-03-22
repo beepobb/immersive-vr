@@ -102,7 +102,7 @@ layout_mode = 2
 size_flags_vertical = 3
 vertical_scroll_mode = 3
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=122739118]
+[node name="PlayerList" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=122739118]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

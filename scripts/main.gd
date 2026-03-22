@@ -1,5 +1,7 @@
 extends Node3D
 
+const EnvironmentCatalog = preload("res://scripts/ui/environment_catalog.gd")
+
 var xr_interface: XRInterface
 signal load_environment(environment)
 
@@ -28,12 +30,13 @@ func _load_environment(environment) -> void:
 	get_tree().current_scene.add_child(scene)
 
 func _load_selected_environment() -> void:
-	var selected_environment = AvatarState.environment_id
-	if selected_environment.is_empty():
-		return
+	var selected_environment_id = AvatarState.environment_id
+	if selected_environment_id.is_empty():
+		selected_environment_id = EnvironmentCatalog.get_default_environment_id()
 
-	if selected_environment == "res://scenes/environment/therapy_room.tscn" and has_node("therapy_room"):
-		return
+	var selected_environment = EnvironmentCatalog.get_environment_scene_path(selected_environment_id)
+	if selected_environment.is_empty():
+		selected_environment = EnvironmentCatalog.get_environment_scene_path(EnvironmentCatalog.get_default_environment_id())
 
 	var default_room = get_node_or_null("therapy_room")
 	if default_room:

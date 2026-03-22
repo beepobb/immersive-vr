@@ -1,4 +1,13 @@
-[gd_scene format=3 uid="uid://b0ygtfhgx8s0"]
+[gd_scene format=3 uid="uid://tp33cmnql5ut"]
+
+[ext_resource type="Script" uid="uid://cmlmdook4bs5c" path="res://scripts/ui/lobby/avatar_env.gd" id="1_cfl4j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lnmw"]
+bg_color = Color(0.05882353, 0.015686275, 0.043137256, 0.3647059)
+corner_radius_top_left = 1064
+corner_radius_top_right = 1064
+corner_radius_bottom_right = 1064
+corner_radius_bottom_left = 1064
 
 [node name="PanelContainer" type="PanelContainer" unique_id=404461692]
 anchors_preset = 5
@@ -6,6 +15,8 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_bottom = 118.0
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7lnmw")
+script = ExtResource("1_cfl4j")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=465541747]
 layout_mode = 2
@@ -20,10 +31,10 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_constants/margin_right = 20
 
-[node name="Date" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=1656260224]
+[node name="CustomiseAvatarButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=1444816816]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
-text = "19 Feb 2026"
+text = "Customise Avatar"
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=698319823]
 layout_mode = 2
@@ -32,7 +43,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/margin_left = 20
 
-[node name="Time" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2" unique_id=1763461980]
+[node name="ChangeEnvironmentButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2" unique_id=1249677222]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
-text = "12:00 PM"
+text = "Change Environment"

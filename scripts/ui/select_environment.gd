@@ -1,21 +1,19 @@
 extends Control
 
+const EnvironmentCatalog = preload("res://scripts/ui/environment_catalog.gd")
+
 @onready var back_button = %BackButton
-@onready var clarity_card: Button = %ClarityRoomCard
-@onready var dialogue_card: Button = %DialogueCafeCard
+@onready var env_cards: HBoxContainer = %EnvCards
 @onready var confirm_button = %ConfirmButton
+
+var card_scene: PackedScene = preload("res://scenes/ui/env_card.tscn")
+var card_lookup: Dictionary = {}
 
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_pressed)
-
-	for card in [clarity_card, dialogue_card]:
-		card.pressed.connect(_on_card_selected.bind(card))
+	_build_environment_cards()
 
 	confirm_button.pressed.connect(_on_confirm_pressed)
-
-	# --- Hover setup for both cards ---
-	_setup_hover(clarity_card)
-	_setup_hover(dialogue_card)
 
 	if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
 		HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
@@ -61,24 +59,41 @@ func _on_back_pressed() -> void:
 	AvatarState.return_to_lobby(self )
 
 
-func _on_card_selected(card: Button) -> void:
-	var selected_env: String = card.env_title
-	var selected_env_scene: String = ""
-	
-	# _highlight_selected(clarity_card)
-	match selected_env:
-		"Clarity Room":
-			selected_env_scene = "res://scenes/environment/therapy_room.tscn"
-		"Dialogue Cafe":
-			selected_env_scene = ""
-	AvatarState.environment_id = selected_env_scene
+func _build_environment_cards() -> void:
+	card_lookup.clear()
+	for child in env_cards.get_children():
+		child.queue_free()
+
+	for environment in EnvironmentCatalog.get_environments():
+		var environment_id = String(environment.get("id", ""))
+		var card = card_scene.instantiate()
+		env_cards.add_child(card)
+		card.set_environment_data(
+			environment_id,
+			String(environment.get("name", "")),
+			String(environment.get("description", "")),
+			EnvironmentCatalog.get_environment_thumbnail(environment_id)
+		)
+		card.pressed.connect(_on_card_selected.bind(environment_id))
+		_setup_hover(card)
+		card_lookup[environment_id] = card
+
+	var selected_environment_id = AvatarState.environment_id
+	if selected_environment_id.is_empty() and not EnvironmentCatalog.get_environment_ids().is_empty():
+		selected_environment_id = EnvironmentCatalog.get_default_environment_id()
+
+	if not selected_environment_id.is_empty():
+		_on_card_selected(selected_environment_id)
+
+func _on_card_selected(environment_id: String) -> void:
+	AvatarState.environment_id = environment_id
+	_highlight_selected(environment_id)
 	print(AvatarState.environment_id)
 
-func _highlight_selected(selected_button: Button) -> void:
-	clarity_card.modulate = Color(1, 1, 1, 1)
-	dialogue_card.modulate = Color(1, 1, 1, 1)
-
-	selected_button.modulate = Color(1.2, 1.2, 1.2)
+func _highlight_selected(selected_environment_id: String) -> void:
+	for environment_id in card_lookup.keys():
+		var card: Button = card_lookup[environment_id]
+		card.modulate = Color(1.15, 1.15, 1.15, 1) if String(environment_id) == selected_environment_id else Color(1, 1, 1, 1)
 
 
 func _on_confirm_pressed() -> void:
@@ -90,7 +105,3 @@ func _on_confirm_pressed() -> void:
 
 func _on_session_ended(message: String) -> void:
 	AvatarState.return_to_home(self , message)
-
-
-func _on_clarity_room_card_pressed() -> void:
-	print("Therapy Room pressed")

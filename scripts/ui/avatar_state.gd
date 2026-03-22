@@ -35,7 +35,11 @@ func reset() -> void:
 	environment_id = ""
 	pending_notice = ""
 
-func apply_to_avatar(avatar: Node3D) -> void:
+func apply_to_avatar(avatar: Node3D, state: Dictionary = {}) -> void:
+	var resolved_hair_style = String(state.get("hair_style", hair_style))
+	if resolved_hair_style.is_empty():
+		resolved_hair_style = "ponytail"
+
 	# Example: apply hair to a freshly instanced avatar in VR
 	var hair_bob = avatar.get_node_or_null("Armature/Skeleton3D/Human_bob02")
 	var hair_long = avatar.get_node_or_null("Armature/Skeleton3D/Human_long02")
@@ -45,7 +49,7 @@ func apply_to_avatar(avatar: Node3D) -> void:
 	if hair_long: hair_long.visible = false
 	if hair_pony: hair_pony.visible = false
 
-	match hair_style:
+	match resolved_hair_style:
 		"bob":
 			if hair_bob: hair_bob.visible = true
 		"long":

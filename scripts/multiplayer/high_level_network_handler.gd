@@ -24,6 +24,8 @@ var server_last_seen := {} # Track when each server was last seen
 var discovered_sessions := {} # {room_code: session_info}
 var session_max_players := DEFAULT_MAX_PLAYERS
 var current_room_code := ""
+var lobby_players_by_peer_id: Dictionary = {}
+var lobby_selected_environment_id: String = ""
 
 signal server_found(ip: String, name: String, port: int)
 signal server_lost(server_key: String)
@@ -34,6 +36,14 @@ signal cleanup_players() # Emitted when all players should be removed
 signal connection_error(message: String) # Emitted when connection fails with error message
 signal session_state_changed(session_state: Dictionary)
 signal session_ended(message: String)
+
+func save_lobby_state(players_state: Dictionary, environment_id: String) -> void:
+	lobby_players_by_peer_id = players_state.duplicate(true)
+	lobby_selected_environment_id = environment_id
+
+func clear_lobby_state() -> void:
+	lobby_players_by_peer_id.clear()
+	lobby_selected_environment_id = ""
 
 func _process(delta: float) -> void:
 	# THERAPIST: Send "I am here" packets
@@ -320,6 +330,7 @@ func _reset_session_details() -> void:
 	broadcast_timer = 0.0
 	current_room_code = ""
 	session_max_players = DEFAULT_MAX_PLAYERS
+	clear_lobby_state()
 
 func _generate_room_code() -> String:
 	var generator := RandomNumberGenerator.new()

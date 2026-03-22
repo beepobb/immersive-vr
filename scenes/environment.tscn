@@ -1,75 +1,94 @@
-[gd_scene format=3 uid="uid://cslqxbri076ey"]
+[gd_scene format=3 uid="uid://dyy4iqkeucdnw"]
 
 [ext_resource type="PackedScene" uid="uid://b0bp58uaimq4u" path="res://zone_base.tscn" id="1_ifhar"]
-[ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="2_v7m8w"]
-[ext_resource type="PackedScene" uid="uid://bmuvspj8m7g8k" path="res://scenes/environment/therapy_room.tscn" id="3_gq42c"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="4_nedsq"]
+[ext_resource type="Script" uid="uid://cncvrq0yb88s8" path="res://scripts/environment_scene.gd" id="5_envsc"]
+[ext_resource type="Script" uid="uid://cpcbeittqo0m1" path="res://scripts/ui/in_call/session_controls.gd" id="6_xw8dn"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkdj2"]
+[sub_resource type="BoxMesh" id="BoxMesh_yw8f4"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jtak5"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3drpd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a3oai"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ysate"]
+albedo_color = Color(0.22334495, 0.80703425, 0.7329061, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hlc4h"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
 [sub_resource type="Sky" id="Sky_h2yge"]
-sky_material = SubResource("ProceduralSkyMaterial_kkdj2")
+sky_material = SubResource("ProceduralSkyMaterial_hlc4h")
 
-[sub_resource type="Environment" id="Environment_ql6th"]
+[sub_resource type="Environment" id="Environment_0psjf"]
 background_mode = 2
 sky = SubResource("Sky_h2yge")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_hkcno"]
-size = Vector3(5, 0.1, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_08uja"]
-size = Vector3(5, 0.1, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2ahhe"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_dev38"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwmsd"]
-albedo_color = Color(0.22334495, 0.80703425, 0.7329061, 1)
-
 [node name="ZoneBase" unique_id=1701868660 instance=ExtResource("1_ifhar")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1" unique_id=802758477]
-environment = SubResource("Environment_ql6th")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="2" unique_id=526279688]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=268355773]
 transform = Transform3D(1, 0, 0, 0, -0.26166698, 0.9651582, 0, -0.9651582, -0.26166698, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Floor" type="StaticBody3D" parent="." index="3" unique_id=428668094]
+[node name="Floor" type="StaticBody3D" parent="." index="2" unique_id=1340280671]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" index="0" unique_id=1258607606]
-mesh = SubResource("BoxMesh_hkcno")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" index="0" unique_id=99004688]
+mesh = SubResource("BoxMesh_yw8f4")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" index="1" unique_id=767921530]
-shape = SubResource("BoxShape3D_08uja")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" index="1" unique_id=1734829383]
+shape = SubResource("BoxShape3D_jtak5")
 
-[node name="Camera3D" type="Camera3D" parent="." index="4" unique_id=1496199196]
+[node name="Camera3D" type="Camera3D" parent="." index="3" unique_id=450445892]
 transform = Transform3D(1, 0, 0, 0, 0.99919295, 0.040166616, 0, -0.040166616, 0.99919295, 0, 1.365, 2.5)
 fov = 71.401505
 
-[node name="XROrigin3D2" parent="." index="5" unique_id=1695068535 instance=ExtResource("2_v7m8w")]
+[node name="EnvironmentRoot" type="Node3D" parent="." index="4" unique_id=268919684]
+unique_name_in_owner = true
 
-[node name="therapy_room" parent="." index="6" unique_id=1861717953 instance=ExtResource("3_gq42c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-
-[node name="PickableObject" parent="." index="7" unique_id=1788150678 instance=ExtResource("4_nedsq")]
+[node name="PickableObject" parent="." index="5" unique_id=791530754 instance=ExtResource("4_nedsq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7757607, 1.4743235, 0.31622654)
 
 [node name="CollisionShape3D" parent="PickableObject" index="0"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-shape = SubResource("BoxShape3D_2ahhe")
+shape = SubResource("BoxShape3D_3drpd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject" index="1" unique_id=2121200405]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject" index="1" unique_id=1077210829]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-mesh = SubResource("BoxMesh_dev38")
+mesh = SubResource("BoxMesh_a3oai")
 skeleton = NodePath("../CollisionShape3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_lwmsd")
+surface_material_override/0 = SubResource("StandardMaterial3D_ysate")
+
+[node name="InCallUI" type="CanvasLayer" parent="." index="6" unique_id=1502874837]
+script = ExtResource("6_xw8dn")
+
+[node name="MarginContainer" type="MarginContainer" parent="InCallUI" index="0" unique_id=1034408080]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -260.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 84.0
+grow_horizontal = 0
+
+[node name="EndCallButton" type="Button" parent="InCallUI/MarginContainer" index="0" unique_id=609564869]
+unique_name_in_owner = true
+layout_mode = 2
+text = "End Call"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="7" unique_id=1820235016]
+environment = SubResource("Environment_0psjf")
+
+[node name="EnvironmentManager" type="Node3D" parent="." index="8" unique_id=474109882]
+script = ExtResource("5_envsc")
 
 [editable path="PickableObject"]
