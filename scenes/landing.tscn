@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://j4ymsp3wk8sq"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_mfct4"]
+[ext_resource type="PackedScene" uid="uid://c1om7hy82l0tf" path="res://assets/environment/Metaverse Environment 06/Meta_Environment_06.glb" id="2_b236o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b236o"]
+size = Vector3(35, 0.72940063, 35)
+
+[node name="Home" unique_id=1393675028 instance=ExtResource("1_mfct4")]
+
+[node name="XROrigin3D" parent="." index="0" unique_id=1695068535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.260822, -12.945386)
+
+[node name="Meta_Environment_06" parent="." index="1" unique_id=633845369 instance=ExtResource("2_b236o")]
+
+[node name="Floor" type="StaticBody3D" parent="Meta_Environment_06" index="16" unique_id=1510166325]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meta_Environment_06/Floor" index="0" unique_id=1525428779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8321533, -0.13529967, 0)
+shape = SubResource("BoxShape3D_b236o")
