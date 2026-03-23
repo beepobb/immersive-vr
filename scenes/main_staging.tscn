@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://bbc4gj5tvc75d"]
 
 [ext_resource type="PackedScene" uid="uid://bnqnnnet4dw12" path="res://addons/godot-xr-tools/staging/staging.tscn" id="1_vok4l"]
-[ext_resource type="Texture2D" uid="uid://2g365u7mnqkr" path="res://textures/2K-american_oak_1_metallic.jpg" id="2_k1qkh"]
+[ext_resource type="Texture2D" uid="uid://dtnlantogrp5d" path="res://assets/splash.png" id="2_k1qkh"]
 
 [node name="MainStaging" unique_id=1880280215 instance=ExtResource("1_vok4l")]
-main_scene = "uid://s0fcey5wdy04"
-prompt_for_continue = false
+main_scene = "uid://j4ymsp3wk8sq"
 
 [node name="LoadingScreen" parent="." index="2"]
 splash_screen = ExtResource("2_k1qkh")

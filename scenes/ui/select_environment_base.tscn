@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6r2yv2ur53ig"]
 
-[ext_resource type="PackedScene" uid="uid://b0bp58uaimq4u" path="res://zone_base.tscn" id="1_ifhar"]
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://base_scene.tscn" id="1_ifhar"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_c3k1h"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_v7m8w"]
 [ext_resource type="PackedScene" uid="uid://su3nynakebv7" path="res://scenes/ui/select_environment.tscn" id="3_c3k1h"]
