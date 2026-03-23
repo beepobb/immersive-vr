@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_0xm2m"]
 [ext_resource type="Script" path="res://scenes/camera_3d.gd" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://b0c8u6ke3gr3j" path="res://assets/environment/Metaverse Environment 06/meta_environment_06.tscn" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://c1om7hy82l0tf" path="res://assets/environment/Metaverse Environment 06/Meta_Environment_06.glb" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://x0k1ixl4v7o1" path="res://scenes/ui/avatar_customisation/avatar_customisation.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="4_jyhfs"]
 
