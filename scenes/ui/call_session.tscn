@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://bhxqvs03757sp"]
+[gd_scene load_steps=4 format=3 uid="uid://bhxqvs03757sp"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_edm0i"]
+[ext_resource type="PackedScene" uid="uid://cqfpc2fjvnc50" path="res://scenes/ui/session_header.tscn" id="2_ak1aj"]
+[ext_resource type="PackedScene" uid="uid://smghto5qc2dr" path="res://scenes/ui/end_session.tscn" id="3_ak1aj"]
 
 [node name="CallSession" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31218636, 0.7695452)
+
+[node name="CallViewport" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3485917, 0.6407912, 0)
+
+[node name="SessionHeader" parent="CallViewport" instance=ExtResource("1_edm0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.275, -0.058, 0)
+screen_size = Vector2(1, 0.2)
+scene = ExtResource("2_ak1aj")
+viewport_size = Vector2(800, 180)
+scene_properties_keys = PackedStringArray("session_header.gd", "session_id", "employee_id")
+session_id = "Meeting #17"
+employee_id = "Unicorn123"
+
+[node name="EndSession" parent="CallViewport" instance=ExtResource("1_edm0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32699937, -0.71783626, 0)
+screen_size = Vector2(0.5, 0.08)
+scene = ExtResource("3_ak1aj")
+viewport_size = Vector2(290, 48)
+input_gamepad = true
+scene_properties_keys = PackedStringArray()
