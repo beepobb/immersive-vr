@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwc1ku6qudi04"
 path.s3tc="res://.godot/imported/punkduck_cycling_shoes_cyclingshoes.png-d0078fffb68f4f84cd4a21cd896b180e.s3tc.ctex"
+path.etc2="res://.godot/imported/punkduck_cycling_shoes_cyclingshoes.png-d0078fffb68f4f84cd4a21cd896b180e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/shoes/punkduck_cycling_shoes_cyclingshoes.png"
-dest_files=["res://.godot/imported/punkduck_cycling_shoes_cyclingshoes.png-d0078fffb68f4f84cd4a21cd896b180e.s3tc.ctex"]
+dest_files=["res://.godot/imported/punkduck_cycling_shoes_cyclingshoes.png-d0078fffb68f4f84cd4a21cd896b180e.s3tc.ctex", "res://.godot/imported/punkduck_cycling_shoes_cyclingshoes.png-d0078fffb68f4f84cd4a21cd896b180e.etc2.ctex"]
 
 [params]
 

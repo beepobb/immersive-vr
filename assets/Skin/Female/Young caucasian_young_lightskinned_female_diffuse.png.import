@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c135iowfblhx2"
-path.s3tc="res://.godot/imported/Young caucasian_young_lightskinned_female_diffuse.png-8b29652c5e232bf993cb6847639591fe.s3tc.ctex"
+path.s3tc="res://.godot/imported/Young caucasian_young_lightskinned_female_diffuse.png-e973825f4175758f266d711c96ac667e.s3tc.ctex"
+path.etc2="res://.godot/imported/Young caucasian_young_lightskinned_female_diffuse.png-e973825f4175758f266d711c96ac667e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/skin/Female/Young caucasian_young_lightskinned_female_diffuse.png"
-dest_files=["res://.godot/imported/Young caucasian_young_lightskinned_female_diffuse.png-8b29652c5e232bf993cb6847639591fe.s3tc.ctex"]
+source_file="res://assets/Skin/Female/Young caucasian_young_lightskinned_female_diffuse.png"
+dest_files=["res://.godot/imported/Young caucasian_young_lightskinned_female_diffuse.png-e973825f4175758f266d711c96ac667e.s3tc.ctex", "res://.godot/imported/Young caucasian_young_lightskinned_female_diffuse.png-e973825f4175758f266d711c96ac667e.etc2.ctex"]
 
 [params]
 

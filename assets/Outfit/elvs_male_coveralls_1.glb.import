@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dywweutwxk7a7"
-path="res://.godot/imported/elvs_male_coveralls_1.glb-836b215e7a4b33a9e1299d6a16c77a60.scn"
+path="res://.godot/imported/elvs_male_coveralls_1.glb-46f3649d00d79ed200e9cef5fbb8fc01.scn"
 
 [deps]
 
-source_file="res://assets/outfit/elvs_male_coveralls_1.glb"
-dest_files=["res://.godot/imported/elvs_male_coveralls_1.glb-836b215e7a4b33a9e1299d6a16c77a60.scn"]
+source_file="res://assets/Outfit/elvs_male_coveralls_1.glb"
+dest_files=["res://.godot/imported/elvs_male_coveralls_1.glb-46f3649d00d79ed200e9cef5fbb8fc01.scn"]
 
 [params]
 

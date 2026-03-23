@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwkuc2av8s3ic"
 path.s3tc="res://.godot/imported/dressupdoc_domsjeans_shoesJeanDomsTexture.png-24f4fc684cb64551473750e9509bfc85.s3tc.ctex"
+path.etc2="res://.godot/imported/dressupdoc_domsjeans_shoesJeanDomsTexture.png-24f4fc684cb64551473750e9509bfc85.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/shoes/dressupdoc_domsjeans_shoesJeanDomsTexture.png"
-dest_files=["res://.godot/imported/dressupdoc_domsjeans_shoesJeanDomsTexture.png-24f4fc684cb64551473750e9509bfc85.s3tc.ctex"]
+dest_files=["res://.godot/imported/dressupdoc_domsjeans_shoesJeanDomsTexture.png-24f4fc684cb64551473750e9509bfc85.s3tc.ctex", "res://.godot/imported/dressupdoc_domsjeans_shoesJeanDomsTexture.png-24f4fc684cb64551473750e9509bfc85.etc2.ctex"]
 
 [params]
 

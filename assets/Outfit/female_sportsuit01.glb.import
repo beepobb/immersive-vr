@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b2c18yg1kquco"
-path="res://.godot/imported/female_sportsuit01.glb-853a71657f5dd46575f5c91106d4b776.scn"
+path="res://.godot/imported/female_sportsuit01.glb-c73cea4292f4048ae6b0100c6d86ec3c.scn"
 
 [deps]
 
-source_file="res://assets/outfit/female_sportsuit01.glb"
-dest_files=["res://.godot/imported/female_sportsuit01.glb-853a71657f5dd46575f5c91106d4b776.scn"]
+source_file="res://assets/Outfit/female_sportsuit01.glb"
+dest_files=["res://.godot/imported/female_sportsuit01.glb-c73cea4292f4048ae6b0100c6d86ec3c.scn"]
 
 [params]
 

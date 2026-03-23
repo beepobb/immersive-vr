@@ -3,17 +3,18 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ognj4ufqpwno"
-path.s3tc="res://.godot/imported/Ceiling.jpg-8daf5840494635215eda146d90063169.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ceiling.jpg-690c582ba781b3acd57f5ae3fc0b4c07.s3tc.ctex"
+path.etc2="res://.godot/imported/Ceiling.jpg-690c582ba781b3acd57f5ae3fc0b4c07.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
 
 [deps]
 
-source_file="res://assets/environment/Metaverse Environment 06/textures/Ceiling.jpg"
-dest_files=["res://.godot/imported/Ceiling.jpg-8daf5840494635215eda146d90063169.s3tc.ctex"]
+source_file="res://assets/environment/Metaverse Environment 06/Textures/Ceiling.jpg"
+dest_files=["res://.godot/imported/Ceiling.jpg-690c582ba781b3acd57f5ae3fc0b4c07.s3tc.ctex", "res://.godot/imported/Ceiling.jpg-690c582ba781b3acd57f5ae3fc0b4c07.etc2.ctex"]
 
 [params]
 

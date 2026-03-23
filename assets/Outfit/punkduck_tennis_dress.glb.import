@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://4jtq2jop0ckt"
-path="res://.godot/imported/punkduck_tennis_dress.glb-b43f565d9bd7a238e23e3fae76cfe416.scn"
+path="res://.godot/imported/punkduck_tennis_dress.glb-f04be8d75a98fb1f13453627bfd9120b.scn"
 
 [deps]
 
-source_file="res://assets/outfit/punkduck_tennis_dress.glb"
-dest_files=["res://.godot/imported/punkduck_tennis_dress.glb-b43f565d9bd7a238e23e3fae76cfe416.scn"]
+source_file="res://assets/Outfit/punkduck_tennis_dress.glb"
+dest_files=["res://.godot/imported/punkduck_tennis_dress.glb-f04be8d75a98fb1f13453627bfd9120b.scn"]
 
 [params]
 

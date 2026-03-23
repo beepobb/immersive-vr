@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://kol7anekkqf2"
 path.s3tc="res://.godot/imported/elvs_flatshoe_plain_flatshoes_normals.png-4be67c76aa0dd8a5ae9c2030e8ab9208.s3tc.ctex"
+path.etc2="res://.godot/imported/elvs_flatshoe_plain_flatshoes_normals.png-4be67c76aa0dd8a5ae9c2030e8ab9208.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/shoes/elvs_flatshoe_plain_flatshoes_normals.png"
-dest_files=["res://.godot/imported/elvs_flatshoe_plain_flatshoes_normals.png-4be67c76aa0dd8a5ae9c2030e8ab9208.s3tc.ctex"]
+dest_files=["res://.godot/imported/elvs_flatshoe_plain_flatshoes_normals.png-4be67c76aa0dd8a5ae9c2030e8ab9208.s3tc.ctex", "res://.godot/imported/elvs_flatshoe_plain_flatshoes_normals.png-4be67c76aa0dd8a5ae9c2030e8ab9208.etc2.ctex"]
 
 [params]
 

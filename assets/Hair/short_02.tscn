@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://fmgrw2e0sqn1"]
+[gd_scene format=3 uid="uid://fmgrw2e0sqn1"]
 
 [ext_resource type="PackedScene" uid="uid://dfp3nqokkffun" path="res://assets/hair/short02.glb" id="1_x4di3"]
 

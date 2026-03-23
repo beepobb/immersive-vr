@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clxgmry2bftg1"
-path.s3tc="res://.godot/imported/Human_littleright_bobcut_hair_hairtex.png-c7d69d700fb74ac426e387b668eded8f.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_littleright_bobcut_hair_hairtex.png-0ba1d300a35964a5da49cf7cd3b62db8.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_littleright_bobcut_hair_hairtex.png-0ba1d300a35964a5da49cf7cd3b62db8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Human_littleright_bobcut_hair_hairtex.png"
-dest_files=["res://.godot/imported/Human_littleright_bobcut_hair_hairtex.png-c7d69d700fb74ac426e387b668eded8f.s3tc.ctex"]
+source_file="res://assets/Hair/Human_littleright_bobcut_hair_hairtex.png"
+dest_files=["res://.godot/imported/Human_littleright_bobcut_hair_hairtex.png-0ba1d300a35964a5da49cf7cd3b62db8.s3tc.ctex", "res://.godot/imported/Human_littleright_bobcut_hair_hairtex.png-0ba1d300a35964a5da49cf7cd3b62db8.etc2.ctex"]
 
 [params]
 

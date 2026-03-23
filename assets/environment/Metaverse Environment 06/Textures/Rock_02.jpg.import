@@ -3,17 +3,18 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxky14gs44r81"
-path.s3tc="res://.godot/imported/Rock_02.jpg-96394123d4e7cdaf178da79301d4ea06.s3tc.ctex"
+path.s3tc="res://.godot/imported/Rock_02.jpg-a005c3a50333fe1c37c5de615b9b6843.s3tc.ctex"
+path.etc2="res://.godot/imported/Rock_02.jpg-a005c3a50333fe1c37c5de615b9b6843.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
 
 [deps]
 
-source_file="res://assets/environment/Metaverse Environment 06/textures/Rock_02.jpg"
-dest_files=["res://.godot/imported/Rock_02.jpg-96394123d4e7cdaf178da79301d4ea06.s3tc.ctex"]
+source_file="res://assets/environment/Metaverse Environment 06/Textures/Rock_02.jpg"
+dest_files=["res://.godot/imported/Rock_02.jpg-a005c3a50333fe1c37c5de615b9b6843.s3tc.ctex", "res://.godot/imported/Rock_02.jpg-a005c3a50333fe1c37c5de615b9b6843.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://4elnxo61snr8"
 path.s3tc="res://.godot/imported/AvatarTest01_harvey_midtoned_female_diffuse.png-0e1cff7b715fe21ad51b2defeb89590f.s3tc.ctex"
+path.etc2="res://.godot/imported/AvatarTest01_harvey_midtoned_female_diffuse.png-0e1cff7b715fe21ad51b2defeb89590f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Avatar/AvatarTest01_harvey_midtoned_female_diffuse.png"
-dest_files=["res://.godot/imported/AvatarTest01_harvey_midtoned_female_diffuse.png-0e1cff7b715fe21ad51b2defeb89590f.s3tc.ctex"]
+dest_files=["res://.godot/imported/AvatarTest01_harvey_midtoned_female_diffuse.png-0e1cff7b715fe21ad51b2defeb89590f.s3tc.ctex", "res://.godot/imported/AvatarTest01_harvey_midtoned_female_diffuse.png-0e1cff7b715fe21ad51b2defeb89590f.etc2.ctex"]
 
 [params]
 

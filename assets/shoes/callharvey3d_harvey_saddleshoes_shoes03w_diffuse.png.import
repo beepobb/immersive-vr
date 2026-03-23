@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi6t8xns1h0wt"
 path.s3tc="res://.godot/imported/callharvey3d_harvey_saddleshoes_shoes03w_diffuse.png-a13ee9d784266d2cd35a33bbe4b5d68e.s3tc.ctex"
+path.etc2="res://.godot/imported/callharvey3d_harvey_saddleshoes_shoes03w_diffuse.png-a13ee9d784266d2cd35a33bbe4b5d68e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/shoes/callharvey3d_harvey_saddleshoes_shoes03w_diffuse.png"
-dest_files=["res://.godot/imported/callharvey3d_harvey_saddleshoes_shoes03w_diffuse.png-a13ee9d784266d2cd35a33bbe4b5d68e.s3tc.ctex"]
+dest_files=["res://.godot/imported/callharvey3d_harvey_saddleshoes_shoes03w_diffuse.png-a13ee9d784266d2cd35a33bbe4b5d68e.s3tc.ctex", "res://.godot/imported/callharvey3d_harvey_saddleshoes_shoes03w_diffuse.png-a13ee9d784266d2cd35a33bbe4b5d68e.etc2.ctex"]
 
 [params]
 

@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xc63sjx3cv1w"
-path.s3tc="res://.godot/imported/punkduck_tennis_dress_tennisdress_normals.png-b937c9f535eee3881552fa845028b126.s3tc.ctex"
+path.s3tc="res://.godot/imported/punkduck_tennis_dress_tennisdress_normals.png-d4a898d13eb2f35a32d6f1f3beb71267.s3tc.ctex"
+path.etc2="res://.godot/imported/punkduck_tennis_dress_tennisdress_normals.png-d4a898d13eb2f35a32d6f1f3beb71267.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/punkduck_tennis_dress_tennisdress_normals.png"
-dest_files=["res://.godot/imported/punkduck_tennis_dress_tennisdress_normals.png-b937c9f535eee3881552fa845028b126.s3tc.ctex"]
+source_file="res://assets/Outfit/punkduck_tennis_dress_tennisdress_normals.png"
+dest_files=["res://.godot/imported/punkduck_tennis_dress_tennisdress_normals.png-d4a898d13eb2f35a32d6f1f3beb71267.s3tc.ctex", "res://.godot/imported/punkduck_tennis_dress_tennisdress_normals.png-d4a898d13eb2f35a32d6f1f3beb71267.etc2.ctex"]
 
 [params]
 

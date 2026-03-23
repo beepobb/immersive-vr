@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmlnkuvhchqti"
-path.s3tc="res://.godot/imported/cortu_short_messy_hair_short_messy_diff.png-b018aa23f50d5ebe670fb27521af04b6.s3tc.ctex"
+path.s3tc="res://.godot/imported/cortu_short_messy_hair_short_messy_diff.png-308949f4238b65db83bc01a6a5222811.s3tc.ctex"
+path.etc2="res://.godot/imported/cortu_short_messy_hair_short_messy_diff.png-308949f4238b65db83bc01a6a5222811.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/cortu_short_messy_hair_short_messy_diff.png"
-dest_files=["res://.godot/imported/cortu_short_messy_hair_short_messy_diff.png-b018aa23f50d5ebe670fb27521af04b6.s3tc.ctex"]
+source_file="res://assets/Hair/cortu_short_messy_hair_short_messy_diff.png"
+dest_files=["res://.godot/imported/cortu_short_messy_hair_short_messy_diff.png-308949f4238b65db83bc01a6a5222811.s3tc.ctex", "res://.godot/imported/cortu_short_messy_hair_short_messy_diff.png-308949f4238b65db83bc01a6a5222811.etc2.ctex"]
 
 [params]
 

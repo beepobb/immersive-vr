@@ -3,17 +3,18 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cduxpukk7ttp4"
-path.s3tc="res://.godot/imported/Circle.003.jpg-3149f849684bb66555f920fb2cadd64c.s3tc.ctex"
+path.s3tc="res://.godot/imported/Circle.003.jpg-aaca4c550aae0e904f5f9d5506615fd2.s3tc.ctex"
+path.etc2="res://.godot/imported/Circle.003.jpg-aaca4c550aae0e904f5f9d5506615fd2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
 
 [deps]
 
-source_file="res://assets/environment/Metaverse Environment 06/textures/Circle.003.jpg"
-dest_files=["res://.godot/imported/Circle.003.jpg-3149f849684bb66555f920fb2cadd64c.s3tc.ctex"]
+source_file="res://assets/environment/Metaverse Environment 06/Textures/Circle.003.jpg"
+dest_files=["res://.godot/imported/Circle.003.jpg-aaca4c550aae0e904f5f9d5506615fd2.s3tc.ctex", "res://.godot/imported/Circle.003.jpg-aaca4c550aae0e904f5f9d5506615fd2.etc2.ctex"]
 
 [params]
 

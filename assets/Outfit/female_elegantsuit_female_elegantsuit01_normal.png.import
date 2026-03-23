@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxhi4adf7usoi"
-path.s3tc="res://.godot/imported/female_elegantsuit_female_elegantsuit01_normal.png-94e29448d0468ec5a6e27b8b56b6c207.s3tc.ctex"
+path.s3tc="res://.godot/imported/female_elegantsuit_female_elegantsuit01_normal.png-8124dec50a5f076444069183df9bc737.s3tc.ctex"
+path.etc2="res://.godot/imported/female_elegantsuit_female_elegantsuit01_normal.png-8124dec50a5f076444069183df9bc737.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/female_elegantsuit_female_elegantsuit01_normal.png"
-dest_files=["res://.godot/imported/female_elegantsuit_female_elegantsuit01_normal.png-94e29448d0468ec5a6e27b8b56b6c207.s3tc.ctex"]
+source_file="res://assets/Outfit/female_elegantsuit_female_elegantsuit01_normal.png"
+dest_files=["res://.godot/imported/female_elegantsuit_female_elegantsuit01_normal.png-8124dec50a5f076444069183df9bc737.s3tc.ctex", "res://.godot/imported/female_elegantsuit_female_elegantsuit01_normal.png-8124dec50a5f076444069183df9bc737.etc2.ctex"]
 
 [params]
 

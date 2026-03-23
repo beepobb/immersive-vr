@@ -3,17 +3,18 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjgn10ores7u7"
-path.s3tc="res://.godot/imported/Sofa_02.jpg-7f860a86514a95b84d00baf37fa55ca8.s3tc.ctex"
+path.s3tc="res://.godot/imported/Sofa_02.jpg-e0569d9d4014025b60c2522e787bf869.s3tc.ctex"
+path.etc2="res://.godot/imported/Sofa_02.jpg-e0569d9d4014025b60c2522e787bf869.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
 
 [deps]
 
-source_file="res://assets/environment/Metaverse Environment 06/textures/Sofa_02.jpg"
-dest_files=["res://.godot/imported/Sofa_02.jpg-7f860a86514a95b84d00baf37fa55ca8.s3tc.ctex"]
+source_file="res://assets/environment/Metaverse Environment 06/Textures/Sofa_02.jpg"
+dest_files=["res://.godot/imported/Sofa_02.jpg-e0569d9d4014025b60c2522e787bf869.s3tc.ctex", "res://.godot/imported/Sofa_02.jpg-e0569d9d4014025b60c2522e787bf869.etc2.ctex"]
 
 [params]
 

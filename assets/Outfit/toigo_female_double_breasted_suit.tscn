@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhojtodald3h7"]
+[gd_scene format=3 uid="uid://dhojtodald3h7"]
 
 [ext_resource type="PackedScene" uid="uid://cwg2s7cxivi4a" path="res://assets/outfit/toigo_female_double-breasted_suit.glb" id="1_i5xn1"]
 

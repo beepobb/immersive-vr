@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://738r5dcha15f"
-path="res://.godot/imported/cortu_short_messy_hair.glb-90ea63387596c29f7c24a322c2de60a4.scn"
+path="res://.godot/imported/cortu_short_messy_hair.glb-efcd9b72f7f90430ede075c1c72ff487.scn"
 
 [deps]
 
-source_file="res://assets/hair/cortu_short_messy_hair.glb"
-dest_files=["res://.godot/imported/cortu_short_messy_hair.glb-90ea63387596c29f7c24a322c2de60a4.scn"]
+source_file="res://assets/Hair/cortu_short_messy_hair.glb"
+dest_files=["res://.godot/imported/cortu_short_messy_hair.glb-efcd9b72f7f90430ede075c1c72ff487.scn"]
 
 [params]
 

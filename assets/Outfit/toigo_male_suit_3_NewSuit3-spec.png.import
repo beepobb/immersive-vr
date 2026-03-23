@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c13uqshk6jg6e"
-path.s3tc="res://.godot/imported/toigo_male_suit_3_NewSuit3-spec.png-0bd43420c8fdc5c239dbec682edbf164.s3tc.ctex"
+path.s3tc="res://.godot/imported/toigo_male_suit_3_NewSuit3-spec.png-6430ebb6e80ca4669f8e8f88411fa8d3.s3tc.ctex"
+path.etc2="res://.godot/imported/toigo_male_suit_3_NewSuit3-spec.png-6430ebb6e80ca4669f8e8f88411fa8d3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/toigo_male_suit_3_NewSuit3-spec.png"
-dest_files=["res://.godot/imported/toigo_male_suit_3_NewSuit3-spec.png-0bd43420c8fdc5c239dbec682edbf164.s3tc.ctex"]
+source_file="res://assets/Outfit/toigo_male_suit_3_NewSuit3-spec.png"
+dest_files=["res://.godot/imported/toigo_male_suit_3_NewSuit3-spec.png-6430ebb6e80ca4669f8e8f88411fa8d3.s3tc.ctex", "res://.godot/imported/toigo_male_suit_3_NewSuit3-spec.png-6430ebb6e80ca4669f8e8f88411fa8d3.etc2.ctex"]
 
 [params]
 

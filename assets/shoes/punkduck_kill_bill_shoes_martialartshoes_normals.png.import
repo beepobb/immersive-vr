@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://i0y5x2iqb6a"
 path.s3tc="res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes_normals.png-b51f7dd9057d53e0579d2fe409ce55f7.s3tc.ctex"
+path.etc2="res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes_normals.png-b51f7dd9057d53e0579d2fe409ce55f7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/shoes/punkduck_kill_bill_shoes_martialartshoes_normals.png"
-dest_files=["res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes_normals.png-b51f7dd9057d53e0579d2fe409ce55f7.s3tc.ctex"]
+dest_files=["res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes_normals.png-b51f7dd9057d53e0579d2fe409ce55f7.s3tc.ctex", "res://.godot/imported/punkduck_kill_bill_shoes_martialartshoes_normals.png-b51f7dd9057d53e0579d2fe409ce55f7.etc2.ctex"]
 
 [params]
 

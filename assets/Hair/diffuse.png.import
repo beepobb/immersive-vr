@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu7stts23hkmv"
-path.s3tc="res://.godot/imported/diffuse.png-233b7da5e2cf8e909bad373aa3f4f08e.s3tc.ctex"
+path.s3tc="res://.godot/imported/diffuse.png-bb62ac1e15c7b1feb3a8f9bb57036045.s3tc.ctex"
+path.etc2="res://.godot/imported/diffuse.png-bb62ac1e15c7b1feb3a8f9bb57036045.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/diffuse.png"
-dest_files=["res://.godot/imported/diffuse.png-233b7da5e2cf8e909bad373aa3f4f08e.s3tc.ctex"]
+source_file="res://assets/Hair/diffuse.png"
+dest_files=["res://.godot/imported/diffuse.png-bb62ac1e15c7b1feb3a8f9bb57036045.s3tc.ctex", "res://.godot/imported/diffuse.png-bb62ac1e15c7b1feb3a8f9bb57036045.etc2.ctex"]
 
 [params]
 

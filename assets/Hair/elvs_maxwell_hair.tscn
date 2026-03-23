@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv6e6iaimcgdu"]
+[gd_scene format=3 uid="uid://cv6e6iaimcgdu"]
 
 [ext_resource type="PackedScene" uid="uid://8pkhvywxhqce" path="res://assets/hair/elvs_maxwell_hair.glb" id="1_axbqk"]
 

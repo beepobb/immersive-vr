@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b02j3cf1drsn3"
-path="res://.godot/imported/female_casualsuit02.glb-23e0795e78551402c8093c12c8685f60.scn"
+path="res://.godot/imported/female_casualsuit02.glb-448056230850fd7eafed7a5847e5dbde.scn"
 
 [deps]
 
-source_file="res://assets/outfit/female_casualsuit02.glb"
-dest_files=["res://.godot/imported/female_casualsuit02.glb-23e0795e78551402c8093c12c8685f60.scn"]
+source_file="res://assets/Outfit/female_casualsuit02.glb"
+dest_files=["res://.godot/imported/female_casualsuit02.glb-448056230850fd7eafed7a5847e5dbde.scn"]
 
 [params]
 

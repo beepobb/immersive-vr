@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dei3o7dbfbrn4"
-path.s3tc="res://.godot/imported/toigo_female_suit_MHSuitsFem-diff.png-a35efb44dbe70eff6ee841f32eef2ba5.s3tc.ctex"
+path.s3tc="res://.godot/imported/toigo_female_suit_MHSuitsFem-diff.png-4826d928cb9e1a3ae1e204b5a1d230ac.s3tc.ctex"
+path.etc2="res://.godot/imported/toigo_female_suit_MHSuitsFem-diff.png-4826d928cb9e1a3ae1e204b5a1d230ac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/toigo_female_suit_MHSuitsFem-diff.png"
-dest_files=["res://.godot/imported/toigo_female_suit_MHSuitsFem-diff.png-a35efb44dbe70eff6ee841f32eef2ba5.s3tc.ctex"]
+source_file="res://assets/Outfit/toigo_female_suit_MHSuitsFem-diff.png"
+dest_files=["res://.godot/imported/toigo_female_suit_MHSuitsFem-diff.png-4826d928cb9e1a3ae1e204b5a1d230ac.s3tc.ctex", "res://.godot/imported/toigo_female_suit_MHSuitsFem-diff.png-4826d928cb9e1a3ae1e204b5a1d230ac.etc2.ctex"]
 
 [params]
 

@@ -3,17 +3,18 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ct3x18ojvkh41"
-path.s3tc="res://.godot/imported/Chandelier.jpg-996117bc80f3ad3117f5406170015f6c.s3tc.ctex"
+path.s3tc="res://.godot/imported/Chandelier.jpg-08657676e4081ec27d1cf7900c0de1e6.s3tc.ctex"
+path.etc2="res://.godot/imported/Chandelier.jpg-08657676e4081ec27d1cf7900c0de1e6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
 
 [deps]
 
-source_file="res://assets/environment/Metaverse Environment 06/textures/Chandelier.jpg"
-dest_files=["res://.godot/imported/Chandelier.jpg-996117bc80f3ad3117f5406170015f6c.s3tc.ctex"]
+source_file="res://assets/environment/Metaverse Environment 06/Textures/Chandelier.jpg"
+dest_files=["res://.godot/imported/Chandelier.jpg-08657676e4081ec27d1cf7900c0de1e6.s3tc.ctex", "res://.godot/imported/Chandelier.jpg-08657676e4081ec27d1cf7900c0de1e6.etc2.ctex"]
 
 [params]
 

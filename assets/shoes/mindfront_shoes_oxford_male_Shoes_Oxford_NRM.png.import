@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dld4nafj5fvfj"
 path.s3tc="res://.godot/imported/mindfront_shoes_oxford_male_Shoes_Oxford_NRM.png-04dbb509ed194fe5dce79b59d1f42e02.s3tc.ctex"
+path.etc2="res://.godot/imported/mindfront_shoes_oxford_male_Shoes_Oxford_NRM.png-04dbb509ed194fe5dce79b59d1f42e02.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/shoes/mindfront_shoes_oxford_male_Shoes_Oxford_NRM.png"
-dest_files=["res://.godot/imported/mindfront_shoes_oxford_male_Shoes_Oxford_NRM.png-04dbb509ed194fe5dce79b59d1f42e02.s3tc.ctex"]
+dest_files=["res://.godot/imported/mindfront_shoes_oxford_male_Shoes_Oxford_NRM.png-04dbb509ed194fe5dce79b59d1f42e02.s3tc.ctex", "res://.godot/imported/mindfront_shoes_oxford_male_Shoes_Oxford_NRM.png-04dbb509ed194fe5dce79b59d1f42e02.etc2.ctex"]
 
 [params]
 

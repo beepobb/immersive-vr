@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjdflhf7habfb"]
+[gd_scene format=3 uid="uid://bjdflhf7habfb"]
 
 [ext_resource type="PackedScene" uid="uid://f40b1t5if3xd" path="res://assets/outfit/toigo_male_suit_tie_and_jacket.glb" id="1_o07qp"]
 

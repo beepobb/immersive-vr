@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://db65o6wdx8hui"
-path="res://.godot/imported/elvs_racing_fire_suit_male1.glb-7a4d4684f5861f3e8d36e2007f4508fc.scn"
+path="res://.godot/imported/elvs_racing_fire_suit_male1.glb-0aed9e08ff8226f78bfb53bc819f2d83.scn"
 
 [deps]
 
-source_file="res://assets/outfit/elvs_racing_fire_suit_male1.glb"
-dest_files=["res://.godot/imported/elvs_racing_fire_suit_male1.glb-7a4d4684f5861f3e8d36e2007f4508fc.scn"]
+source_file="res://assets/Outfit/elvs_racing_fire_suit_male1.glb"
+dest_files=["res://.godot/imported/elvs_racing_fire_suit_male1.glb-0aed9e08ff8226f78bfb53bc819f2d83.scn"]
 
 [params]
 

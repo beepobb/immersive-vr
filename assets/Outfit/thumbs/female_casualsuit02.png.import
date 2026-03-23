@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4vjunk2kqxwp"
-path="res://.godot/imported/female_casualsuit02.png-339c8f32873855c2ac435a3039e2e149.ctex"
+path="res://.godot/imported/female_casualsuit02.png-c90ad2bacb5e813db95d1954d56e1e40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/outfit/thumbs/female_casualsuit02.png"
-dest_files=["res://.godot/imported/female_casualsuit02.png-339c8f32873855c2ac435a3039e2e149.ctex"]
+source_file="res://assets/Outfit/thumbs/female_casualsuit02.png"
+dest_files=["res://.godot/imported/female_casualsuit02.png-c90ad2bacb5e813db95d1954d56e1e40.ctex"]
 
 [params]
 

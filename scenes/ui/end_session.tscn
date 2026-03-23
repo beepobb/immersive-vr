@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://smghto5qc2dr"]
+[gd_scene format=4 uid="uid://smghto5qc2dr"]
 
 [ext_resource type="Texture2D" uid="uid://bhmxcjk2kkvtg" path="res://assets/ui/icons/mic.png" id="1_4iyu1"]
 [ext_resource type="Texture2D" uid="uid://djoeu47kngl12" path="res://assets/ui/icons/more (1).png" id="4_ldjxf"]

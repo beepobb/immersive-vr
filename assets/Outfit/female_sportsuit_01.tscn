@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://vobc75u5dr6d"]
+[gd_scene format=3 uid="uid://vobc75u5dr6d"]
 
 [ext_resource type="PackedScene" uid="uid://b2c18yg1kquco" path="res://assets/outfit/female_sportsuit01.glb" id="1_i8jje"]
 

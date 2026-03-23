@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ooq7fo34625g"
-path.s3tc="res://.godot/imported/Human_grinsegold_wig_bow_tie_normal.png-e66af155a4ff51ba5a7bcbfe1108b467.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_grinsegold_wig_bow_tie_normal.png-75b156312f2a4106a8632b9c77e176f4.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_grinsegold_wig_bow_tie_normal.png-75b156312f2a4106a8632b9c77e176f4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Human_grinsegold_wig_bow_tie_normal.png"
-dest_files=["res://.godot/imported/Human_grinsegold_wig_bow_tie_normal.png-e66af155a4ff51ba5a7bcbfe1108b467.s3tc.ctex"]
+source_file="res://assets/Hair/Human_grinsegold_wig_bow_tie_normal.png"
+dest_files=["res://.godot/imported/Human_grinsegold_wig_bow_tie_normal.png-75b156312f2a4106a8632b9c77e176f4.s3tc.ctex", "res://.godot/imported/Human_grinsegold_wig_bow_tie_normal.png-75b156312f2a4106a8632b9c77e176f4.etc2.ctex"]
 
 [params]
 

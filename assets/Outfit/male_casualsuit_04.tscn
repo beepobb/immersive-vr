@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgm4wdhh37o5a"]
+[gd_scene format=3 uid="uid://cgm4wdhh37o5a"]
 
 [ext_resource type="PackedScene" uid="uid://7lahus2jw2ty" path="res://assets/outfit/male_casualsuit04.glb" id="1_qalmx"]
 

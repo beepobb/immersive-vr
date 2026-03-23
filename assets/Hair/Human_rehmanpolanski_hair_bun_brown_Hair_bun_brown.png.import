@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkx6mfp6i6hib"
-path.s3tc="res://.godot/imported/Human_rehmanpolanski_hair_bun_brown_Hair_bun_brown.png-008d62d51602efaa02ba287dd963b4d3.s3tc.ctex"
+path.s3tc="res://.godot/imported/Human_rehmanpolanski_hair_bun_brown_Hair_bun_brown.png-38bc0b72929f4c021ded803b27316fac.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_rehmanpolanski_hair_bun_brown_Hair_bun_brown.png-38bc0b72929f4c021ded803b27316fac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Human_rehmanpolanski_hair_bun_brown_Hair_bun_brown.png"
-dest_files=["res://.godot/imported/Human_rehmanpolanski_hair_bun_brown_Hair_bun_brown.png-008d62d51602efaa02ba287dd963b4d3.s3tc.ctex"]
+source_file="res://assets/Hair/Human_rehmanpolanski_hair_bun_brown_Hair_bun_brown.png"
+dest_files=["res://.godot/imported/Human_rehmanpolanski_hair_bun_brown_Hair_bun_brown.png-38bc0b72929f4c021ded803b27316fac.s3tc.ctex", "res://.godot/imported/Human_rehmanpolanski_hair_bun_brown_Hair_bun_brown.png-38bc0b72929f4c021ded803b27316fac.etc2.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dvtihh2d4r1nb"
-path="res://.godot/imported/culturalibre_hair_06.glb-6238db0d301963a85919aa0972287516.scn"
+path="res://.godot/imported/culturalibre_hair_06.glb-30f4622156bd30ee001df705ca3ef182.scn"
 
 [deps]
 
-source_file="res://assets/hair/culturalibre_hair_06.glb"
-dest_files=["res://.godot/imported/culturalibre_hair_06.glb-6238db0d301963a85919aa0972287516.scn"]
+source_file="res://assets/Hair/culturalibre_hair_06.glb"
+dest_files=["res://.godot/imported/culturalibre_hair_06.glb-30f4622156bd30ee001df705ca3ef182.scn"]
 
 [params]
 

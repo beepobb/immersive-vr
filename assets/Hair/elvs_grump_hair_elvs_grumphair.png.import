@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpicyq57ats0s"
-path.s3tc="res://.godot/imported/elvs_grump_hair_elvs_grumphair.png-8b20f32ab8d6d18c6e43129c40d4674a.s3tc.ctex"
+path.s3tc="res://.godot/imported/elvs_grump_hair_elvs_grumphair.png-85c762594e0f6bb013662a87c1029a6c.s3tc.ctex"
+path.etc2="res://.godot/imported/elvs_grump_hair_elvs_grumphair.png-85c762594e0f6bb013662a87c1029a6c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/elvs_grump_hair_elvs_grumphair.png"
-dest_files=["res://.godot/imported/elvs_grump_hair_elvs_grumphair.png-8b20f32ab8d6d18c6e43129c40d4674a.s3tc.ctex"]
+source_file="res://assets/Hair/elvs_grump_hair_elvs_grumphair.png"
+dest_files=["res://.godot/imported/elvs_grump_hair_elvs_grumphair.png-85c762594e0f6bb013662a87c1029a6c.s3tc.ctex", "res://.godot/imported/elvs_grump_hair_elvs_grumphair.png-85c762594e0f6bb013662a87c1029a6c.etc2.ctex"]
 
 [params]
 

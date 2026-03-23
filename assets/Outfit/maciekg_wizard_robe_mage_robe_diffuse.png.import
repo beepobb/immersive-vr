@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgu00aib655wx"
-path.s3tc="res://.godot/imported/maciekg_wizard_robe_mage_robe_diffuse.png-e796e2ee30fd576b078e261cd241f6a5.s3tc.ctex"
+path.s3tc="res://.godot/imported/maciekg_wizard_robe_mage_robe_diffuse.png-69d0f0acb9cda8578e2a2c72859ee846.s3tc.ctex"
+path.etc2="res://.godot/imported/maciekg_wizard_robe_mage_robe_diffuse.png-69d0f0acb9cda8578e2a2c72859ee846.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/maciekg_wizard_robe_mage_robe_diffuse.png"
-dest_files=["res://.godot/imported/maciekg_wizard_robe_mage_robe_diffuse.png-e796e2ee30fd576b078e261cd241f6a5.s3tc.ctex"]
+source_file="res://assets/Outfit/maciekg_wizard_robe_mage_robe_diffuse.png"
+dest_files=["res://.godot/imported/maciekg_wizard_robe_mage_robe_diffuse.png-69d0f0acb9cda8578e2a2c72859ee846.s3tc.ctex", "res://.godot/imported/maciekg_wizard_robe_mage_robe_diffuse.png-69d0f0acb9cda8578e2a2c72859ee846.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxs6brl1tlbcr"
 path.s3tc="res://.godot/imported/mindfront_shoes_monk_strap_male_Shoes_Monk_Strap.png-322482701b2efe6c5870f13011cad293.s3tc.ctex"
+path.etc2="res://.godot/imported/mindfront_shoes_monk_strap_male_Shoes_Monk_Strap.png-322482701b2efe6c5870f13011cad293.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/shoes/mindfront_shoes_monk_strap_male_Shoes_Monk_Strap.png"
-dest_files=["res://.godot/imported/mindfront_shoes_monk_strap_male_Shoes_Monk_Strap.png-322482701b2efe6c5870f13011cad293.s3tc.ctex"]
+dest_files=["res://.godot/imported/mindfront_shoes_monk_strap_male_Shoes_Monk_Strap.png-322482701b2efe6c5870f13011cad293.s3tc.ctex", "res://.godot/imported/mindfront_shoes_monk_strap_male_Shoes_Monk_Strap.png-322482701b2efe6c5870f13011cad293.etc2.ctex"]
 
 [params]
 

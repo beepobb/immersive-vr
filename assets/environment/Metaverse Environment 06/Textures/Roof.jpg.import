@@ -3,17 +3,18 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfso2v030u8fm"
-path.s3tc="res://.godot/imported/Roof.jpg-7f0e987633bc1da8d97d0bbf114d89e1.s3tc.ctex"
+path.s3tc="res://.godot/imported/Roof.jpg-22618da1d007e68eb0775684ad02a2f2.s3tc.ctex"
+path.etc2="res://.godot/imported/Roof.jpg-22618da1d007e68eb0775684ad02a2f2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
 
 [deps]
 
-source_file="res://assets/environment/Metaverse Environment 06/textures/Roof.jpg"
-dest_files=["res://.godot/imported/Roof.jpg-7f0e987633bc1da8d97d0bbf114d89e1.s3tc.ctex"]
+source_file="res://assets/environment/Metaverse Environment 06/Textures/Roof.jpg"
+dest_files=["res://.godot/imported/Roof.jpg-22618da1d007e68eb0775684ad02a2f2.s3tc.ctex", "res://.godot/imported/Roof.jpg-22618da1d007e68eb0775684ad02a2f2.etc2.ctex"]
 
 [params]
 

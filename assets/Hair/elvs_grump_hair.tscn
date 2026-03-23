@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcm4e2f12h0du"]
+[gd_scene format=3 uid="uid://bcm4e2f12h0du"]
 
 [ext_resource type="PackedScene" uid="uid://d2p30tm3xpnoh" path="res://assets/hair/elvs_grump_hair.glb" id="1_gistu"]
 

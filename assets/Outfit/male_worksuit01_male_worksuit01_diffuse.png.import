@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdvy4wy8k5x15"
-path.s3tc="res://.godot/imported/male_worksuit01_male_worksuit01_diffuse.png-99b00a1065e17312a74de945e2234476.s3tc.ctex"
+path.s3tc="res://.godot/imported/male_worksuit01_male_worksuit01_diffuse.png-91d90e0cbfba5eb68d5128bb98e848f6.s3tc.ctex"
+path.etc2="res://.godot/imported/male_worksuit01_male_worksuit01_diffuse.png-91d90e0cbfba5eb68d5128bb98e848f6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/male_worksuit01_male_worksuit01_diffuse.png"
-dest_files=["res://.godot/imported/male_worksuit01_male_worksuit01_diffuse.png-99b00a1065e17312a74de945e2234476.s3tc.ctex"]
+source_file="res://assets/Outfit/male_worksuit01_male_worksuit01_diffuse.png"
+dest_files=["res://.godot/imported/male_worksuit01_male_worksuit01_diffuse.png-91d90e0cbfba5eb68d5128bb98e848f6.s3tc.ctex", "res://.godot/imported/male_worksuit01_male_worksuit01_diffuse.png-91d90e0cbfba5eb68d5128bb98e848f6.etc2.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvu3uf1kxyf31"]
+[gd_scene format=3 uid="uid://dvu3uf1kxyf31"]
 
 [ext_resource type="PackedScene" uid="uid://dywweutwxk7a7" path="res://assets/outfit/elvs_male_coveralls_1.glb" id="1_loxih"]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceacsaifntmic"
-path="res://.godot/imported/elvs_male_coveralls_1.png-4d47d28519819cc723143b699158a91d.ctex"
+path="res://.godot/imported/elvs_male_coveralls_1.png-26abf94a4a03628cf020426ee97c5f42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/outfit/thumbs/elvs_male_coveralls_1.png"
-dest_files=["res://.godot/imported/elvs_male_coveralls_1.png-4d47d28519819cc723143b699158a91d.ctex"]
+source_file="res://assets/Outfit/thumbs/elvs_male_coveralls_1.png"
+dest_files=["res://.godot/imported/elvs_male_coveralls_1.png-26abf94a4a03628cf020426ee97c5f42.ctex"]
 
 [params]
 

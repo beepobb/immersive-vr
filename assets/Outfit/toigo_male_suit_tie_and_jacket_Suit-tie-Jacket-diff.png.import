@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyuxi10nb3ncc"
-path.s3tc="res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-diff.png-ad38464c2cbf35db0a67c1202f36c773.s3tc.ctex"
+path.s3tc="res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-diff.png-c2ecd96f18a54d21ceea48818e838220.s3tc.ctex"
+path.etc2="res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-diff.png-c2ecd96f18a54d21ceea48818e838220.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-diff.png"
-dest_files=["res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-diff.png-ad38464c2cbf35db0a67c1202f36c773.s3tc.ctex"]
+source_file="res://assets/Outfit/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-diff.png"
+dest_files=["res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-diff.png-c2ecd96f18a54d21ceea48818e838220.s3tc.ctex", "res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-diff.png-c2ecd96f18a54d21ceea48818e838220.etc2.ctex"]
 
 [params]
 

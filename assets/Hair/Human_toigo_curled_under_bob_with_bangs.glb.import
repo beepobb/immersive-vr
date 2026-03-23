@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c5p6pxjf5n1u2"
-path="res://.godot/imported/Human_toigo_curled_under_bob_with_bangs.glb-561a8b83d5ab3f131f86c550ad404af9.scn"
+path="res://.godot/imported/Human_toigo_curled_under_bob_with_bangs.glb-7a717569faa86a6884d652da2c2539e4.scn"
 
 [deps]
 
-source_file="res://assets/hair/Human_toigo_curled_under_bob_with_bangs.glb"
-dest_files=["res://.godot/imported/Human_toigo_curled_under_bob_with_bangs.glb-561a8b83d5ab3f131f86c550ad404af9.scn"]
+source_file="res://assets/Hair/Human_toigo_curled_under_bob_with_bangs.glb"
+dest_files=["res://.godot/imported/Human_toigo_curled_under_bob_with_bangs.glb-7a717569faa86a6884d652da2c2539e4.scn"]
 
 [params]
 

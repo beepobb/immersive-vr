@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bybctyosyxkqk"
-path="res://.godot/imported/maciekg_wizard_robe.png-c733db9f23704e4792388ed89d048377.ctex"
+path="res://.godot/imported/maciekg_wizard_robe.png-5c022f2d63194e98426b87f8369b4c74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/outfit/thumbs/maciekg_wizard_robe.png"
-dest_files=["res://.godot/imported/maciekg_wizard_robe.png-c733db9f23704e4792388ed89d048377.ctex"]
+source_file="res://assets/Outfit/thumbs/maciekg_wizard_robe.png"
+dest_files=["res://.godot/imported/maciekg_wizard_robe.png-5c022f2d63194e98426b87f8369b4c74.ctex"]
 
 [params]
 

@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccpsj1mc8tf6r"
-path.s3tc="res://.godot/imported/toigo_male_double-breasted_suit_DB-suit-spec.png-cbc11e665d2cbfa2cf2c40e07733be09.s3tc.ctex"
+path.s3tc="res://.godot/imported/toigo_male_double-breasted_suit_DB-suit-spec.png-9cea3c36fc4e3b96507678fce99d9889.s3tc.ctex"
+path.etc2="res://.godot/imported/toigo_male_double-breasted_suit_DB-suit-spec.png-9cea3c36fc4e3b96507678fce99d9889.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/toigo_male_double-breasted_suit_DB-suit-spec.png"
-dest_files=["res://.godot/imported/toigo_male_double-breasted_suit_DB-suit-spec.png-cbc11e665d2cbfa2cf2c40e07733be09.s3tc.ctex"]
+source_file="res://assets/Outfit/toigo_male_double-breasted_suit_DB-suit-spec.png"
+dest_files=["res://.godot/imported/toigo_male_double-breasted_suit_DB-suit-spec.png-9cea3c36fc4e3b96507678fce99d9889.s3tc.ctex", "res://.godot/imported/toigo_male_double-breasted_suit_DB-suit-spec.png-9cea3c36fc4e3b96507678fce99d9889.etc2.ctex"]
 
 [params]
 

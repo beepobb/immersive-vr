@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1t3g0y46buly"
-path.s3tc="res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-bump.png-304c30a696b4f488944e87c40da2a398.s3tc.ctex"
+path.s3tc="res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-bump.png-c815745992b3314c456001d9ee92dc45.s3tc.ctex"
+path.etc2="res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-bump.png-c815745992b3314c456001d9ee92dc45.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-bump.png"
-dest_files=["res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-bump.png-304c30a696b4f488944e87c40da2a398.s3tc.ctex"]
+source_file="res://assets/Outfit/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-bump.png"
+dest_files=["res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-bump.png-c815745992b3314c456001d9ee92dc45.s3tc.ctex", "res://.godot/imported/toigo_male_suit_tie_and_jacket_Suit-tie-Jacket-bump.png-c815745992b3314c456001d9ee92dc45.etc2.ctex"]
 
 [params]
 

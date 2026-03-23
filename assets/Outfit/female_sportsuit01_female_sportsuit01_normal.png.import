@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj2v31l1b4el6"
-path.s3tc="res://.godot/imported/female_sportsuit01_female_sportsuit01_normal.png-bfaa599edab6bd427211347f36f74583.s3tc.ctex"
+path.s3tc="res://.godot/imported/female_sportsuit01_female_sportsuit01_normal.png-2fcd46c455327b8a5730d48a25ee6364.s3tc.ctex"
+path.etc2="res://.godot/imported/female_sportsuit01_female_sportsuit01_normal.png-2fcd46c455327b8a5730d48a25ee6364.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/female_sportsuit01_female_sportsuit01_normal.png"
-dest_files=["res://.godot/imported/female_sportsuit01_female_sportsuit01_normal.png-bfaa599edab6bd427211347f36f74583.s3tc.ctex"]
+source_file="res://assets/Outfit/female_sportsuit01_female_sportsuit01_normal.png"
+dest_files=["res://.godot/imported/female_sportsuit01_female_sportsuit01_normal.png-2fcd46c455327b8a5730d48a25ee6364.s3tc.ctex", "res://.godot/imported/female_sportsuit01_female_sportsuit01_normal.png-2fcd46c455327b8a5730d48a25ee6364.etc2.ctex"]
 
 [params]
 

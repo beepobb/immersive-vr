@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnng0syxasa3s"
-path.s3tc="res://.godot/imported/elvs_male_coveralls_1_overallstexture1.png-e2d93ef2d0fa2fe02c7dfce588ca6b7c.s3tc.ctex"
+path.s3tc="res://.godot/imported/elvs_male_coveralls_1_overallstexture1.png-784a2b8905168971fdce0527f52eaeae.s3tc.ctex"
+path.etc2="res://.godot/imported/elvs_male_coveralls_1_overallstexture1.png-784a2b8905168971fdce0527f52eaeae.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/elvs_male_coveralls_1_overallstexture1.png"
-dest_files=["res://.godot/imported/elvs_male_coveralls_1_overallstexture1.png-e2d93ef2d0fa2fe02c7dfce588ca6b7c.s3tc.ctex"]
+source_file="res://assets/Outfit/elvs_male_coveralls_1_overallstexture1.png"
+dest_files=["res://.godot/imported/elvs_male_coveralls_1_overallstexture1.png-784a2b8905168971fdce0527f52eaeae.s3tc.ctex", "res://.godot/imported/elvs_male_coveralls_1_overallstexture1.png-784a2b8905168971fdce0527f52eaeae.etc2.ctex"]
 
 [params]
 

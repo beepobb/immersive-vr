@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqfwortl71i1s"]
+[gd_scene format=3 uid="uid://cqfwortl71i1s"]
 
 [ext_resource type="PackedScene" uid="uid://f6cvsaoceeo0" path="res://assets/outfit/female_elegantsuit.glb" id="1_d81dv"]
 
