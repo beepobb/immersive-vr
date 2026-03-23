@@ -1,10 +1,8 @@
 extends Node3D
 
-<< << << < HEAD
 @export var DESKTOP_DEBUG := true # remove later
-== == == =
 const EnvironmentCatalog = preload("res://scripts/ui/environment_catalog.gd")
->> >> >> > feature / multiplayer
+
 
 var xr_interface: XRInterface
 signal load_environment(environment)
@@ -37,8 +35,8 @@ func _ready():
 		
 	load_environment.connect(_load_environment)
 
-	if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
-		HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
+	# if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
+	# 	HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
 
 	if not AvatarState.environment_id.is_empty():
 		_load_selected_environment()

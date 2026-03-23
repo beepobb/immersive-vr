@@ -27,12 +27,12 @@ driver/enable_input=true
 [autoload]
 
 AvatarState="*res://scripts/ui/avatar_state.gd"
-EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
 XRToolsUserSettings="*uid://bnquuwe2vribm"
 XRToolsRumbleManager="*uid://dg2csioke0tji"
-HighLevelNetworkHandler="*uid://bobd77kfhgqf7"
+EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
 XrSimulator="uid://ctltchlf2j2r4"
 Roles="*uid://cw2861o87gt4h"
+HighLevelNetworkHandler="*uid://bobd77kfhgqf7"
 
 [display]
 
@@ -47,9 +47,6 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 theme/custom="uid://14kqmrsu81bn"
 
-[rendering]
-
-textures/vram_compression/import_etc2_astc=true
 [layer_names]
 
 3d_physics/layer_1="Static World"
@@ -64,6 +61,10 @@ textures/vram_compression/import_etc2_astc=true
 3d_physics/layer_21="Pointable Objects"
 3d_physics/layer_22="Hand Pose Areas"
 3d_physics/layer_23="UI Objects"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
 
 [xr]
 
