@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg0frue4ck057"
 path.s3tc="res://.godot/imported/Blue canvas background, free public domain CC0 photo.jpg-566157ed91d1f6be6901a98b75f82762.s3tc.ctex"
-path.etc2="res://.godot/imported/Blue canvas background, free public domain CC0 photo.jpg-566157ed91d1f6be6901a98b75f82762.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Blue canvas background, free public domain CC0 photo.jpg"
-dest_files=["res://.godot/imported/Blue canvas background, free public domain CC0 photo.jpg-566157ed91d1f6be6901a98b75f82762.s3tc.ctex", "res://.godot/imported/Blue canvas background, free public domain CC0 photo.jpg-566157ed91d1f6be6901a98b75f82762.etc2.ctex"]
+dest_files=["res://.godot/imported/Blue canvas background, free public domain CC0 photo.jpg-566157ed91d1f6be6901a98b75f82762.s3tc.ctex"]
 
 [params]
 

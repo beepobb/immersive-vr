@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcdx8lyfw3jok"]
+
+[ext_resource type="PackedScene" uid="uid://d3kxbkacijlbm" path="res://assets/hair/cortu_shaggy_green_hair.glb" id="1_odjvp"]
+
+[node name="cortu_shaggy_green_hair" instance=ExtResource("1_odjvp")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgluc7ootbmvv"]
+
+[ext_resource type="PackedScene" uid="uid://cbi4yb2asjiag" path="res://assets/hair/Human_elvs_keylth_hair.glb" id="1_80pgo"]
+
+[node name="Human_elvs_keylth_hair2" instance=ExtResource("1_80pgo")]

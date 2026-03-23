@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://n1hcbtxj07kq"]
+
+[ext_resource type="Texture2D" uid="uid://cvtupmg7yq1k6" path="res://assets/icons/Settins_button.png" id="1_234rl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5psj0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.47058824)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+rotation = -0.0005908409
+theme_override_styles/panel = SubResource("StyleBoxFlat_5psj0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Settings_button" type="TextureButton" parent="Panel/MarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_234rl")

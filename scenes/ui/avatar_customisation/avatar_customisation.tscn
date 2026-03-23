@@ -35,14 +35,21 @@ transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 2, 1.1, 
 screen_size = Vector2(1.25, 1.6)
 scene = ExtResource("6_cd73f")
 viewport_size = Vector2(550, 650)
+transparent = 2
 scene_properties_keys = PackedStringArray("customise_options.gd")
 
 [node name="PlayerInfo" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
-transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -2, 1.2, 0)
-screen_size = Vector2(1, 1.2)
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -1.9253719, 1.2001951, -0.0032420158)
+screen_size = Vector2(1, 1.3)
 scene = ExtResource("7_j5rkx")
 viewport_size = Vector2(300, 335)
-scene_properties_keys = PackedStringArray()
+transparent = 2
+scene_properties_keys = PackedStringArray("player_info.gd", "outfit_json_path", "hair_json_path", "shoes_json_path", "apply_default_preset_on_ready", "randomise_avatar_parts")
+outfit_json_path = "res://assets/outfit/outfit_assets.json"
+hair_json_path = "res://assets/hair/hair_assets.json"
+shoes_json_path = "res://assets/shoes/shoes_assets.json"
+apply_default_preset_on_ready = true
+randomise_avatar_parts = true
 
 [node name="OptionTabs" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 2, 2, 0)
@@ -57,4 +64,5 @@ transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 2, 0.100
 screen_size = Vector2(0.8, 0.15)
 scene = ExtResource("9_tw658")
 viewport_size = Vector2(200, 33)
+transparent = 2
 scene_properties_keys = PackedStringArray("confirm_button.gd")

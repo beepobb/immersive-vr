@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt1oe8wvhuqdn"
 path.s3tc="res://.godot/imported/Plane_cloth_PBR_Alpha.jpg-057a55755bc5ad2fc720b47dcd6b10f0.s3tc.ctex"
-path.etc2="res://.godot/imported/Plane_cloth_PBR_Alpha.jpg-057a55755bc5ad2fc720b47dcd6b10f0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Plane_cloth_PBR_Alpha.jpg"
-dest_files=["res://.godot/imported/Plane_cloth_PBR_Alpha.jpg-057a55755bc5ad2fc720b47dcd6b10f0.s3tc.ctex", "res://.godot/imported/Plane_cloth_PBR_Alpha.jpg-057a55755bc5ad2fc720b47dcd6b10f0.etc2.ctex"]
+dest_files=["res://.godot/imported/Plane_cloth_PBR_Alpha.jpg-057a55755bc5ad2fc720b47dcd6b10f0.s3tc.ctex"]
 
 [params]
 

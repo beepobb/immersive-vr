@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgd886lw8n8de"]
+
+[ext_resource type="PackedScene" uid="uid://bfgux54qu4c4o" path="res://assets/shoes/dressupdoc_balletflat.glb" id="1_cg6tb"]
+
+[node name="dressupdoc_balletflat" instance=ExtResource("1_cg6tb")]

@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2g365u7mnqkr"
 path.s3tc="res://.godot/imported/2K-american_oak_1_metallic.jpg-8e38394e2574f5039c394cf22ce039fa.s3tc.ctex"
-path.etc2="res://.godot/imported/2K-american_oak_1_metallic.jpg-8e38394e2574f5039c394cf22ce039fa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/2K-american_oak_1_metallic.jpg"
-dest_files=["res://.godot/imported/2K-american_oak_1_metallic.jpg-8e38394e2574f5039c394cf22ce039fa.s3tc.ctex", "res://.godot/imported/2K-american_oak_1_metallic.jpg-8e38394e2574f5039c394cf22ce039fa.etc2.ctex"]
+dest_files=["res://.godot/imported/2K-american_oak_1_metallic.jpg-8e38394e2574f5039c394cf22ce039fa.s3tc.ctex"]
 
 [params]
 

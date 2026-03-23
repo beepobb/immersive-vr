@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvr0atyh0tsbt"]
+
+[ext_resource type="PackedScene" uid="uid://cmr11nct4rhoj" path="res://assets/shoes/elvs_flatshoe_pointy.glb" id="1_2wmvk"]
+
+[node name="elvs_flatshoe_pointy" instance=ExtResource("1_2wmvk")]

@@ -1,0 +1,116 @@
+{
+	"items": [
+		{
+			"id": "callharvey_3d_harvey_saddleshoes",
+			"name": "Callharvey 3d Harvey Saddleshoes",
+			"scene": "res://assets/shoes/callharvey_3d_harvey_saddleshoes.tscn",
+			"thumb": "res://assets/shoes/thumbs/callharvey3d_harvey_saddleshoes.png"
+		},
+		{
+			"id": "culturalibre_sneakers",
+			"name": "Culturalibre Sneakers",
+			"scene": "res://assets/shoes/culturalibre_sneakers.tscn",
+			"thumb": "res://assets/shoes/thumbs/culturalibre_sneakers.png"
+		},
+		{
+			"id": "dressupdoc_balletflat",
+			"name": "Dressupdoc Balletflat",
+			"scene": "res://assets/shoes/dressupdoc_balletflat.tscn",
+			"thumb": "res://assets/shoes/thumbs/dressupdoc_balletflat.png"
+		},
+		{
+			"id": "dressupdoc_domsjeans",
+			"name": "Dressupdoc Domsjeans",
+			"scene": "res://assets/shoes/dressupdoc_domsjeans.tscn",
+			"thumb": "res://assets/shoes/thumbs/dressupdoc_domsjeans.png"
+		},
+		{
+			"id": "dressupdoc_maryjane",
+			"name": "Dressupdoc Maryjane",
+			"scene": "res://assets/shoes/dressupdoc_maryjane.tscn",
+			"thumb": "res://assets/shoes/thumbs/dressupdoc_maryjane.png"
+		},
+		{
+			"id": "elvs_flatshoe_bow",
+			"name": "Elvs Flatshoe Bow",
+			"scene": "res://assets/shoes/elvs_flatshoe_bow.tscn",
+			"thumb": "res://assets/shoes/thumbs/elvs_flatshoe_bow.png"
+		},
+		{
+			"id": "elvs_flatshoe_buckle",
+			"name": "Elvs Flatshoe Buckle",
+			"scene": "res://assets/shoes/elvs_flatshoe_buckle.tscn",
+			"thumb": "res://assets/shoes/thumbs/elvs_flatshoe_buckle.png"
+		},
+		{
+			"id": "elvs_flatshoe_gemmed",
+			"name": "Elvs Flatshoe Gemmed",
+			"scene": "res://assets/shoes/elvs_flatshoe_gemmed.tscn",
+			"thumb": "res://assets/shoes/thumbs/elvs_flatshoe_gemmed.png"
+		},
+		{
+			"id": "elvs_flatshoe_plain",
+			"name": "Elvs Flatshoe Plain",
+			"scene": "res://assets/shoes/elvs_flatshoe_plain.tscn",
+			"thumb": "res://assets/shoes/thumbs/elvs_flatshoe_plain.png"
+		},
+		{
+			"id": "elvs_flatshoe_pointy",
+			"name": "Elvs Flatshoe Pointy",
+			"scene": "res://assets/shoes/elvs_flatshoe_pointy.tscn",
+			"thumb": "res://assets/shoes/thumbs/elvs_flatshoe_pointy.png"
+		},
+		{
+			"id": "elvs_male_flip_flop_sandals",
+			"name": "Elvs Male Flip Flop Sandals",
+			"scene": "res://assets/shoes/elvs_male_flip_flop_sandals.tscn",
+			"thumb": "res://assets/shoes/thumbs/elvs_male_flip_flop_sandals.png"
+		},
+		{
+			"id": "elvs_zombie_killer_sneakers",
+			"name": "Elvs Zombie Killer Sneakers",
+			"scene": "res://assets/shoes/elvs_zombie_killer_sneakers.tscn",
+			"thumb": "res://assets/shoes/thumbs/elvs_zombie_killer_sneakers.png"
+		},
+		{
+			"id": "mindfront_shoes_monk_strap_male",
+			"name": "Mindfront Shoes Monk Strap Male",
+			"scene": "res://assets/shoes/mindfront_shoes_monk_strap_male.tscn",
+			"thumb": "res://assets/shoes/thumbs/mindfront_shoes_monk_strap_male.png"
+		},
+		{
+			"id": "mindfront_shoes_oxford_male",
+			"name": "Mindfront Shoes Oxford Male",
+			"scene": "res://assets/shoes/mindfront_shoes_oxford_male.tscn",
+			"thumb": "res://assets/shoes/thumbs/mindfront_shoes_oxford_male.png"
+		},
+		{
+			"id": "punkduck_comfortable_sneakers",
+			"name": "Punkduck Comfortable Sneakers",
+			"scene": "res://assets/shoes/punkduck_comfortable_sneakers.tscn",
+			"thumb": "res://assets/shoes/thumbs/punkduck_comfortable_sneakers.png"
+		},
+		{
+			"id": "punkduck_cycling_shoes",
+			"name": "Punkduck Cycling Shoes",
+			"scene": "res://assets/shoes/punkduck_cycling_shoes.tscn",
+			"thumb": "res://assets/shoes/thumbs/punkduck_cycling_shoes.png"
+		},
+		{
+			"id": "punkduck_kill_bill_shoes",
+			"name": "Punkduck Kill Bill Shoes",
+			"scene": "res://assets/shoes/punkduck_kill_bill_shoes.tscn",
+			"thumb": "res://assets/shoes/thumbs/punkduck_kill_bill_shoes.png"
+		},
+		{
+			"id": "punkduck_running_shoes",
+			"name": "Punkduck Running Shoes",
+			"scene": "res://assets/shoes/punkduck_running_shoes.tscn",
+			"thumb": "res://assets/shoes/thumbs/punkduck_running_shoes.png"
+		}
+	],
+	"root": "res://assets/shoes",
+	"thumb_root": "res://assets/shoes/thumbs",
+	"type": "shoes",
+	"version": 1
+}

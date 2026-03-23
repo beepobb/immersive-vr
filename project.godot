@@ -37,6 +37,9 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+[gui]
+
+theme/custom="uid://14kqmrsu81bn"
 
 [xr]
 
@@ -44,5 +47,4 @@ openxr/enabled=true
 shaders/enabled=true
 openxr/size/viewport_height=648
 openxr/size/viewport_width=1152
-openxr/extensions/htc/passthrough=true
 openxr/extensions/htc/face_tracking=true

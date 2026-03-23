@@ -1,11 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://8qrddcp4lkwn"]
+[gd_scene load_steps=6 format=3 uid="uid://8qrddcp4lkwn"]
 
 [ext_resource type="Script" uid="uid://byexeskpxihty" path="res://scenes/ui/avatar_customisation/confirm_button.gd" id="1_60dqx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjafk"]
 content_margin_top = 5.0
 content_margin_bottom = 5.0
-bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+bg_color = Color(0.10514546, 0.5311519, 0.9999997, 0.8)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60dqx"]
+bg_color = Color(0, 0.4, 0.8, 0.8666667)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ynmn"]
+bg_color = Color(0.2, 0.6156863, 1, 0.8666667)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4g7t"]
+bg_color = Color(0.039215688, 0.5176471, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -16,6 +37,9 @@ custom_minimum_size = Vector2(200, 0)
 offset_right = 8.0
 offset_bottom = 8.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_qjafk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60dqx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ynmn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_l4g7t")
 text = "Save Avatar"
 script = ExtResource("1_60dqx")
 

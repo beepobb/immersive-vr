@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://btsvk81rkdngs"
 path.s3tc="res://.godot/imported/Tapis_16_Normal_4K.jpg-7f82373703c1d945ebc76a282c2cb75d.s3tc.ctex"
-path.etc2="res://.godot/imported/Tapis_16_Normal_4K.jpg-7f82373703c1d945ebc76a282c2cb75d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Tapis_16_Normal_4K.jpg"
-dest_files=["res://.godot/imported/Tapis_16_Normal_4K.jpg-7f82373703c1d945ebc76a282c2cb75d.s3tc.ctex", "res://.godot/imported/Tapis_16_Normal_4K.jpg-7f82373703c1d945ebc76a282c2cb75d.etc2.ctex"]
+dest_files=["res://.godot/imported/Tapis_16_Normal_4K.jpg-7f82373703c1d945ebc76a282c2cb75d.s3tc.ctex"]
 
 [params]
 

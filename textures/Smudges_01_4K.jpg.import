@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpqlacjlns4dl"
 path.s3tc="res://.godot/imported/Smudges_01_4K.jpg-ebd6a0f8dc362103be29f065253b4396.s3tc.ctex"
-path.etc2="res://.godot/imported/Smudges_01_4K.jpg-ebd6a0f8dc362103be29f065253b4396.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Smudges_01_4K.jpg"
-dest_files=["res://.godot/imported/Smudges_01_4K.jpg-ebd6a0f8dc362103be29f065253b4396.s3tc.ctex", "res://.godot/imported/Smudges_01_4K.jpg-ebd6a0f8dc362103be29f065253b4396.etc2.ctex"]
+dest_files=["res://.godot/imported/Smudges_01_4K.jpg-ebd6a0f8dc362103be29f065253b4396.s3tc.ctex"]
 
 [params]
 

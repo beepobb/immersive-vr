@@ -1,21 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0uy3mf2m2qny"]
+[gd_scene load_steps=8 format=3 uid="uid://b0uy3mf2m2qny"]
 
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://hwod88bnukm0" path="res://scenes/camera_3d.gd" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b0c8u6ke3gr3j" path="res://assets/environment/Metaverse Environment 06/meta_environment_06.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://x0k1ixl4v7o1" path="res://scenes/ui/avatar_customisation/avatar_customisation.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="4_jyhfs"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_h2yge"]
-sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
-
-[sub_resource type="Environment" id="Environment_1bvp3"]
-background_mode = 2
-sky = SubResource("Sky_h2yge")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
 size = Vector3(5, 0.1, 5)
@@ -26,11 +15,10 @@ size = Vector3(5, 0.1, 5)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_0xm2m")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1bvp3")
+[node name="Meta_Environment_06" parent="." instance=ExtResource("2_tbgi4")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.26166698, 0.9651582, 0, -0.9651582, -0.26166698, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.8373277, 0.54670125, 0, -0.54670125, 0.8373277, 0.16378927, 2.593715, 1.5139986)
 shadow_enabled = true
 
 [node name="Floor" type="StaticBody3D" parent="."]
@@ -40,15 +28,24 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
 shape = SubResource("BoxShape3D_7dm0k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10510419, 0)
 mesh = SubResource("BoxMesh_ig7tw")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99919295, 0.040166616, 0, -0.040166616, 0.99919295, 0, 1.365, 2.5)
+transform = Transform3D(1, 0, 0, 0, 0.99919295, 0.040166616, 0, -0.040166616, 0.99919295, 0, 0, 0)
+visible = false
 fov = 71.401505
+script = ExtResource("2_jyhfs")
+enabled = false
 
 [node name="XROrigin3D" parent="." instance=ExtResource("4_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.5)
 
 [node name="AvatarCustomisation" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11441243, 0.59931767, -0.00058078766)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.94327486, 0.33201295, 0, -0.33201295, 0.94327486, 0, 2.6259708, 3.3279872)
+spot_range = 7.448
+spot_attenuation = -0.35
