@@ -67,6 +67,9 @@ func _ready():
 	#	customise_options.option_selected.connect(_on_option_selected)
 
 
+	if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
+		HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
+
 func _on_tab_selected(tab_index: int) -> void:
 	if customise_options:
 		var tab_container = customise_options.get_node("TabContainer")
@@ -277,3 +280,6 @@ func _find_res(res_key: String, option_type: Options) -> String:
 
 
 	return ""
+
+func _on_session_ended(message: String) -> void:
+	AvatarState.return_to_home(self , message)

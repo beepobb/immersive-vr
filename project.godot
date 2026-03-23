@@ -19,11 +19,20 @@ run/main_scene="uid://b0uy3mf2m2qny"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://v0ai42434bhp"
+driver/enable_input=true
+
 [autoload]
 
 AvatarState="*res://scripts/ui/avatar_state.gd"
+EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
 XRToolsUserSettings="*uid://bnquuwe2vribm"
 XRToolsRumbleManager="*uid://dg2csioke0tji"
+HighLevelNetworkHandler="*uid://bobd77kfhgqf7"
+XrSimulator="uid://ctltchlf2j2r4"
+Roles="*uid://cw2861o87gt4h"
 
 [display]
 
@@ -41,6 +50,20 @@ theme/custom="uid://14kqmrsu81bn"
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+[layer_names]
+
+3d_physics/layer_1="Static World"
+3d_physics/layer_2="Dynamic World"
+3d_physics/layer_3="Pickable Objects"
+3d_physics/layer_4="Wall Walking"
+3d_physics/layer_5="Grappling Target"
+3d_physics/layer_17="Held Objects"
+3d_physics/layer_18="Player Hands"
+3d_physics/layer_19="Grab Handles"
+3d_physics/layer_20="Player Body"
+3d_physics/layer_21="Pointable Objects"
+3d_physics/layer_22="Hand Pose Areas"
+3d_physics/layer_23="UI Objects"
 
 [xr]
 

@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://cu6ifuf2vc8gv"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_8ldoj"]
+[ext_resource type="PackedScene" uid="uid://b0bp58uaimq4u" path="res://zone_base.tscn" id="1_ein8w"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_asi28"]
+[ext_resource type="PackedScene" uid="uid://cffhyue0c2whs" path="res://scenes/ui/lobby/room_info.tscn" id="2_ein8w"]
+[ext_resource type="PackedScene" uid="uid://b0ygtfhgx8s0" path="res://scenes/ui/lobby/time_date_display.tscn" id="4_g30ku"]
+[ext_resource type="PackedScene" uid="uid://dbnkofu6ipe70" path="res://scenes/ui/lobby/player_card.tscn" id="5_yy71y"]
+[ext_resource type="PackedScene" uid="uid://coawq8882oqan" path="res://assets/Avatar/AvatarTest.glb" id="6_mcopp"]
+[ext_resource type="PackedScene" uid="uid://cjo2n1yw7ll28" path="res://scenes/ui/lobby/selected_env_preview.tscn" id="7_tprm0"]
+[ext_resource type="Script" uid="uid://8y5l23xo83v1" path="res://scripts/ui/lobby/lobby_manager.gd" id="8_ein8w"]
+[ext_resource type="PackedScene" uid="uid://tp33cmnql5ut" path="res://scenes/ui/lobby/customise_options.tscn" id="8_tprm0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iy8d8"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_s5j51"]
+sky_material = SubResource("ProceduralSkyMaterial_iy8d8")
+
+[sub_resource type="Environment" id="Environment_is1y2"]
+background_mode = 2
+sky = SubResource("Sky_s5j51")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_iy8d8"]
+height = 0.001
+radius = 100.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5j51"]
+cull_mode = 1
+albedo_color = Color(0.39668927, 0.34168243, 0.667454, 1)
+metallic = 0.51
+roughness = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_is1y2"]
+top_radius = 100.0
+bottom_radius = 100.0
+height = 100.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lerhf"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6m3d6"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.1
+
+[node name="Lobby" unique_id=1701868660 instance=ExtResource("1_ein8w")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=2055827521]
+environment = SubResource("Environment_is1y2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=306475170]
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.36951593, -0.21743852, 0.90342593, -0.33683532, 0.8747688, 0.3483124, 0, 0, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42523694, 2.0248902)
+
+[node name="FunctionPointer" parent="XROrigin3D/LeftHand/LeftHand" parent_id_path=PackedInt32Array(1085876639) index="2" unique_id=971532273 instance=ExtResource("2_asi28")]
+
+[node name="PreviewStage" type="Node3D" parent="." index="3" unique_id=520018037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012192726, -0.005928993, 0.0038318634)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PreviewStage" index="0" unique_id=990210411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PreviewStage/StaticBody3D" index="0" unique_id=1433446497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.999, 0)
+shape = SubResource("CylinderShape3D_iy8d8")
+
+[node name="Wall" type="MeshInstance3D" parent="PreviewStage/StaticBody3D" index="1" unique_id=419511581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031424105, 43.01001, -0.0007555485)
+material_override = SubResource("StandardMaterial3D_s5j51")
+mesh = SubResource("CylinderMesh_is1y2")
+skeleton = NodePath("../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PreviewStage" index="1" unique_id=1050848053]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 14, 0)
+light_energy = 5.0
+
+[node name="Floor" type="MeshInstance3D" parent="PreviewStage" index="2" unique_id=597980599]
+material_override = SubResource("StandardMaterial3D_lerhf")
+mesh = SubResource("CylinderMesh_6m3d6")
+
+[node name="UI" type="Node3D" parent="." index="4" unique_id=1114705087]
+
+[node name="LeftPanel" type="Node" parent="UI" index="0" unique_id=519481310]
+
+[node name="ServerInfo" parent="UI/LeftPanel" index="0" unique_id=489379600 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.6867613, 0.1778158)
+screen_size = Vector2(0.96, 1.39)
+scene = ExtResource("2_ein8w")
+viewport_size = Vector2(454, 564.85)
+unshaded = true
+scene_properties_keys = PackedStringArray("room_info.gd", "player_card")
+player_card = ExtResource("5_yy71y")
+
+[node name="DateTime" parent="UI/LeftPanel/ServerInfo" index="3" unique_id=1348865060 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.86755836, 0)
+screen_size = Vector2(0.92, 0.2)
+scene = ExtResource("4_g30ku")
+viewport_size = Vector2(576, 118)
+scene_properties_keys = PackedStringArray()
+
+[node name="EnvPreview" parent="UI" index="1" unique_id=1614598740 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.648, 1.8480567, 0)
+screen_size = Vector2(0.935, 1.07)
+scene = ExtResource("7_tprm0")
+viewport_size = Vector2(579, 657)
+unshaded = true
+scene_properties_keys = PackedStringArray()
+
+[node name="CustomiseOptions" parent="UI" index="2" unique_id=1983447249 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0123959, 0)
+screen_size = Vector2(0.92, 0.2)
+scene = ExtResource("8_tprm0")
+viewport_size = Vector2(576, 118)
+scene_properties_keys = PackedStringArray()
+
+[node name="AvatarTest" parent="." index="5" unique_id=917422586 instance=ExtResource("6_mcopp")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="LobbyManager" type="Node3D" parent="." index="6" unique_id=500149902]
+script = ExtResource("8_ein8w")

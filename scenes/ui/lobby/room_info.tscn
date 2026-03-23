@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://cffhyue0c2whs"]
+
+[ext_resource type="Script" uid="uid://c85ry15yjevhh" path="res://scripts/ui/lobby/room_info.gd" id="1_vqedg"]
+[ext_resource type="PackedScene" uid="uid://dbnkofu6ipe70" path="res://scenes/ui/lobby/player_card.tscn" id="2_mkfc2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_musdo"]
+bg_color = Color(0, 0, 0, 0.39607844)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 10
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5ruuo"]
+properties/0/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/RoomName:text")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="RoomInfo" type="VBoxContainer" unique_id=1238086633]
+offset_right = 454.0
+offset_bottom = 564.85
+theme_override_constants/separation = 20
+script = ExtResource("1_vqedg")
+player_card = ExtResource("2_mkfc2")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=214614607]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_musdo")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=694550004]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1721599265]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="RoomName" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=315176461]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Player 1's Room"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1964477914]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1768768601]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1480532672]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer2" unique_id=786054385]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Room Code:"
+
+[node name="RoomCode" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer2" unique_id=622844808]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "JS378GD"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1848255658]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer2" unique_id=1162853856]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2" unique_id=395782452]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Participants:"
+
+[node name="Participants" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2" unique_id=1536252969]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "2/2"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1701296853]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 3
+
+[node name="PlayerList" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=122739118]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/v_separation = 10
+
+[node name="LobbyStatus" type="Label" parent="." unique_id=139841331]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(454, 23)
+layout_mode = 2
+text = "Waiting for players"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ActionButtons" type="HBoxContainer" parent="." unique_id=1624523993]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="StartCallButton" type="Button" parent="ActionButtons" unique_id=1301398036]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Start Call"
+
+[node name="ReadyButton" type="Button" parent="ActionButtons" unique_id=24623102]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mark Ready"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1014921946]
+replication_config = SubResource("SceneReplicationConfig_5ruuo")
