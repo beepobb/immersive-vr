@@ -239,8 +239,7 @@ func _local_avatar_state() -> Dictionary:
 		"body_type": AvatarState.body_type,
 		"skin_tone": AvatarState.skin_tone,
 		"outfit": AvatarState.outfit,
-		"hair_style": AvatarState.hair_style,
-		"face_type": AvatarState.face_type,
+		"hair_style": AvatarState.hair_style
 	}
 
 func _default_avatar_state() -> Dictionary:
@@ -248,8 +247,7 @@ func _default_avatar_state() -> Dictionary:
 		"body_type": "medium",
 		"skin_tone": "default",
 		"outfit": "default",
-		"hair_style": "ponytail",
-		"face_type": "default",
+		"hair_style": "ponytail"
 	}
 
 func _ensure_players_have_avatar_state() -> void:

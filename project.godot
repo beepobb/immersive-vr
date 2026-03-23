@@ -26,7 +26,7 @@ driver/enable_input=true
 
 [autoload]
 
-AvatarState="*res://scripts/ui/avatar_state.gd"
+AvatarState="*res://scripts/ui/avatar_customisation/avatar_state.gd"
 XRToolsUserSettings="*uid://bnquuwe2vribm"
 XRToolsRumbleManager="*uid://dg2csioke0tji"
 EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
