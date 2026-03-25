@@ -1,14 +1,18 @@
 extends Node2D
 
-@export var audioManager: PackedScene 
+@export var Character: PackedScene 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var s = audioManager.instantiate()
-	s.setupAudio(1)
+	var s = Character.instantiate()
 	add_child(s)
+	s.get_node("AudioManager").setupAudio(multiplayer.get_unique_id())
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_host_button_down() -> void:
+	pass # Replace with function body.

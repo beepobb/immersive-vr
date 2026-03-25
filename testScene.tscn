@@ -1,12 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://fagyi5meyibp"]
+[gd_scene load_steps=5 format=3 uid="uid://fagyi5meyibp"]
 
 [ext_resource type="Script" uid="uid://lvxiaojmlo0s" path="res://testSceneManager.gd" id="1_vixnb"]
-[ext_resource type="PackedScene" uid="uid://tdkwwwb8hb68" path="res://AudioManager.tscn" id="2_5lntk"]
+[ext_resource type="PackedScene" uid="uid://dpsqe58pjubtr" path="res://character.tscn" id="2_vixnb"]
+[ext_resource type="Script" uid="uid://1sd55f8ydd6h" path="res://Server.gd" id="3_5lntk"]
+[ext_resource type="Script" uid="uid://bekqr7x0yndso" path="res://Client.gd" id="4_w2vy6"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vixnb")
-audioManager = ExtResource("2_5lntk")
+Character = ExtResource("2_vixnb")
 
-[node name="AudioManager" parent="." instance=ExtResource("2_5lntk")]
+[node name="Server" type="Node" parent="."]
+script = ExtResource("3_5lntk")
+playerscene = ExtResource("2_vixnb")
+gameSpawnLocation = NodePath("../GameSpawnLocation")
 
-[node name="Character" type="Node2D" parent="."]
+[node name="Host" type="Button" parent="Server"]
+offset_left = 845.0
+offset_top = 55.0
+offset_right = 1239.0
+offset_bottom = 168.0
+text = "Host Server"
+
+[node name="Client" type="Node" parent="."]
+script = ExtResource("4_w2vy6")
+playerscene = ExtResource("2_vixnb")
+gameSpawnLocation = NodePath("../GameSpawnLocation")
+
+[node name="ConnectToServer" type="Button" parent="Client"]
+offset_left = 43.0
+offset_top = 51.0
+offset_right = 437.0
+offset_bottom = 147.0
+text = "Connect To Server 
+"
+
+[node name="GameSpawnLocation" type="Node" parent="."]
+
+[connection signal="button_down" from="Server/Host" to="." method="_on_host_button_down"]
+[connection signal="button_down" from="Client/ConnectToServer" to="Client" method="_on_connect_to_server_button_down"]
