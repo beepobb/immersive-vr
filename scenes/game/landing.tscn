@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://c448mnwge3gri"]
+
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_wb32k"]
+[ext_resource type="PackedScene" uid="uid://c1om7hy82l0tf" path="res://assets/environment/Metaverse Environment 06/Meta_Environment_06.glb" id="2_aa8c8"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_6mb2d"]
+[ext_resource type="PackedScene" uid="uid://djf6chbkic057" path="res://scenes/game/login.tscn" id="4_uiwtx"]
+[ext_resource type="Shader" uid="uid://d3piotbc3wsbh" path="res://addons/godot-xr-tools/objects/frosted_glass.gdshader" id="5_qol65"]
+[ext_resource type="Script" uid="uid://rubqgvi88mov" path="res://scripts/login_manager.gd" id="6_hme5u"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pi8sn"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tgr88"]
+sky_material = SubResource("ProceduralSkyMaterial_pi8sn")
+
+[sub_resource type="Environment" id="Environment_rkiv8"]
+background_mode = 2
+sky = SubResource("Sky_tgr88")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aa7bn"]
+size = Vector3(35, 0.72940063, 35)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wb3kh"]
+shader = ExtResource("5_qol65")
+shader_parameter/amount = 1.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_j5a8f"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_wb3kh")
+size = Vector2(16, 9)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_n1tvp"]
+viewport_path = NodePath("Viewport2Din3D/Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqbsr"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_n1tvp")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s05ho"]
+resource_local_to_scene = true
+size = Vector3(16, 9, 0.02)
+
+[node name="Landing" unique_id=621000924 instance=ExtResource("1_wb32k")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="0" unique_id=1131209945]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1" unique_id=933854703]
+environment = SubResource("Environment_rkiv8")
+
+[node name="PlayerLoader" parent="." index="2" unique_id=1066474312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 2.991116)
+moving = false
+
+[node name="Meta_Environment_06" parent="." index="3" unique_id=633845369 instance=ExtResource("2_aa8c8")]
+
+[node name="Chandelier" parent="Meta_Environment_06" index="3" unique_id=790593452]
+visible = false
+
+[node name="Floor" type="StaticBody3D" parent="Meta_Environment_06" index="16" unique_id=381991259]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meta_Environment_06/Floor" index="0" unique_id=708315327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8321533, -0.13529967, 0)
+shape = SubResource("BoxShape3D_aa7bn")
+
+[node name="Viewport2Din3D" parent="." index="4" unique_id=1198679933 instance=ExtResource("3_6mb2d")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.7529643, 0.82140136)
+screen_size = Vector2(16, 9)
+scene = ExtResource("4_uiwtx")
+viewport_size = Vector2(1280, 720)
+unshaded = true
+scene_properties_keys = PackedStringArray("login.gd")
+
+[node name="Viewport" parent="Viewport2Din3D" index="0" unique_id=685546755]
+size = Vector2i(1280, 720)
+
+[node name="Screen" parent="Viewport2Din3D" index="1" unique_id=1759021397]
+mesh = SubResource("QuadMesh_j5a8f")
+surface_material_override/0 = SubResource("StandardMaterial3D_kqbsr")
+
+[node name="StaticBody3D" parent="Viewport2Din3D" index="2" unique_id=205961441]
+screen_size = Vector2(16, 9)
+viewport_size = Vector2(1280, 720)
+
+[node name="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D" index="0" unique_id=414472958]
+shape = SubResource("BoxShape3D_s05ho")
+
+[node name="LoginManager" type="Node3D" parent="." index="5" unique_id=1409937660]
+script = ExtResource("6_hme5u")
+log_in = ExtResource("4_uiwtx")
+
+[editable path="Meta_Environment_06"]
+[editable path="Viewport2Din3D"]

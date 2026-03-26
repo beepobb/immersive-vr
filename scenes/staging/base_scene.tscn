@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bj11hgjjit1h8"]
+
+[ext_resource type="Script" uid="uid://ckmwck0f0wxpr" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_qcxwf"]
+[ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="2_2puwf"]
+[ext_resource type="Script" uid="uid://bxkxnd5thm3pp" path="res://scripts/player_loader.gd" id="3_2puwf"]
+[ext_resource type="PackedScene" uid="uid://d4f2ujpi1mdbm" path="res://scenes/player/static_player.tscn" id="3_vjcsa"]
+
+[node name="BaseScene" type="Node3D" unique_id=621000924]
+script = ExtResource("1_qcxwf")
+
+[node name="PlayerLoader" type="Node3D" parent="." unique_id=1066474312]
+script = ExtResource("3_2puwf")
+static_player = ExtResource("3_vjcsa")
+moving_player = ExtResource("2_2puwf")
