@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://7cfusl23cbu7"]
+[gd_scene format=3 uid="uid://7cfusl23cbu7"]
 
-[ext_resource type="Script" uid="uid://bwoh4ij40r5so" path="res://scenes/ui/log_in.gd" id="1_slcsw"]
+[ext_resource type="Script" uid="uid://bwoh4ij40r5so" path="res://scenes/ui/log_in/log_in.gd" id="1_slcsw"]
 [ext_resource type="Texture2D" uid="uid://qnuve3m130bf" path="res://assets/icons/Venture Logo.jpg" id="1_vjcw6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixa04"]

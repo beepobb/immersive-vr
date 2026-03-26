@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://cu6ifuf2vc8gv"]
 
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_8ldoj"]
-[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://base_scene.tscn" id="1_ein8w"]
-[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_asi28"]
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_ein8w"]
 [ext_resource type="PackedScene" uid="uid://cffhyue0c2whs" path="res://scenes/ui/lobby/room_info.tscn" id="2_ein8w"]
 [ext_resource type="PackedScene" uid="uid://b0ygtfhgx8s0" path="res://scenes/ui/lobby/time_date_display.tscn" id="4_g30ku"]
 [ext_resource type="PackedScene" uid="uid://dbnkofu6ipe70" path="res://scenes/ui/lobby/player_card.tscn" id="5_yy71y"]
@@ -55,12 +54,7 @@ environment = SubResource("Environment_is1y2")
 transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.36951593, -0.21743852, 0.90342593, -0.33683532, 0.8747688, 0.3483124, 0, 0, 0)
 shadow_enabled = true
 
-[node name="XROrigin3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42523694, 2.0248902)
-
-[node name="FunctionPointer" parent="XROrigin3D/LeftHand/LeftHand" parent_id_path=PackedInt32Array(1085876639) index="2" unique_id=971532273 instance=ExtResource("2_asi28")]
-
-[node name="PreviewStage" type="Node3D" parent="." index="3" unique_id=520018037]
+[node name="PreviewStage" type="Node3D" parent="." index="2" unique_id=520018037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012192726, -0.005928993, 0.0038318634)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PreviewStage" index="0" unique_id=990210411]
@@ -84,7 +78,7 @@ light_energy = 5.0
 material_override = SubResource("StandardMaterial3D_lerhf")
 mesh = SubResource("CylinderMesh_6m3d6")
 
-[node name="UI" type="Node3D" parent="." index="4" unique_id=1114705087]
+[node name="UI" type="Node3D" parent="." index="3" unique_id=1114705087]
 
 [node name="LeftPanel" type="Node" parent="UI" index="0" unique_id=519481310]
 
@@ -102,7 +96,6 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.86755836
 screen_size = Vector2(0.92, 0.2)
 scene = ExtResource("4_g30ku")
 viewport_size = Vector2(576, 118)
-scene_properties_keys = PackedStringArray()
 
 [node name="EnvPreview" parent="UI" index="1" unique_id=1614598740 instance=ExtResource("1_8ldoj")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.648, 1.8480567, 0)
@@ -110,17 +103,21 @@ screen_size = Vector2(0.935, 1.07)
 scene = ExtResource("7_tprm0")
 viewport_size = Vector2(579, 657)
 unshaded = true
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("selected_env_preview.gd")
 
 [node name="CustomiseOptions" parent="UI" index="2" unique_id=1983447249 instance=ExtResource("1_8ldoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0123959, 0)
 screen_size = Vector2(0.92, 0.2)
 scene = ExtResource("8_tprm0")
 viewport_size = Vector2(576, 118)
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("avatar_env.gd")
 
-[node name="AvatarTest" parent="." index="5" unique_id=917422586 instance=ExtResource("6_mcopp")]
+[node name="AvatarTest" parent="." index="4" unique_id=917422586 instance=ExtResource("6_mcopp")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="LobbyManager" type="Node3D" parent="." index="6" unique_id=500149902]
+[node name="LobbyManager" type="Node3D" parent="." index="5" unique_id=500149902]
 script = ExtResource("8_ein8w")
+
+[node name="PlayerLoader" parent="." index="6" unique_id=1066474312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6547549, 2.6929336)
+moving = false

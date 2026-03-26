@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://bj11hgjjit1h8"]
-
-[ext_resource type="Script" uid="uid://ckmwck0f0wxpr" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_qcxwf"]
-[ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="2_2puwf"]
-
-[node name="BaseScene" type="Node3D" unique_id=621000924]
-script = ExtResource("1_qcxwf")
-
-[node name="XROrigin3D" parent="." unique_id=1695068535 instance=ExtResource("2_2puwf")]

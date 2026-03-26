@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dxj7htjfusv51"]
+
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_wkxb3"]
+[ext_resource type="PackedScene" uid="uid://c1om7hy82l0tf" path="res://assets/environment/Metaverse Environment 06/Meta_Environment_06.glb" id="2_xa3pu"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_u3dp7"]
+[ext_resource type="PackedScene" uid="uid://c80okq4yeqntk" path="res://scenes/ui/lobby/server_ui.tscn" id="4_sktvb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pi8sn"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tgr88"]
+sky_material = SubResource("ProceduralSkyMaterial_pi8sn")
+
+[sub_resource type="Environment" id="Environment_rkiv8"]
+background_mode = 2
+sky = SubResource("Sky_tgr88")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aa7bn"]
+size = Vector3(35, 0.72940063, 35)
+
+[node name="Home" unique_id=621000924 instance=ExtResource("1_wkxb3")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="0" unique_id=1131209945]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1" unique_id=933854703]
+environment = SubResource("Environment_rkiv8")
+
+[node name="PlayerLoader" parent="." index="2" unique_id=1066474312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 2.991116)
+
+[node name="Meta_Environment_06" parent="." index="3" unique_id=633845369 instance=ExtResource("2_xa3pu")]
+
+[node name="Chandelier" parent="Meta_Environment_06" index="3" unique_id=790593452]
+visible = false
+
+[node name="Floor" type="StaticBody3D" parent="Meta_Environment_06" index="16" unique_id=381991259]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meta_Environment_06/Floor" index="0" unique_id=708315327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8321533, -0.13529967, 0)
+shape = SubResource("BoxShape3D_aa7bn")
+
+[node name="Viewport2Din3D" parent="." index="4" unique_id=1027545802 instance=ExtResource("3_u3dp7")]
+transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0, 2.4749763, -0.97050357)
+screen_size = Vector2(1.1, 1)
+scene = ExtResource("4_sktvb")
+viewport_size = Vector2(360, 344)
+unshaded = true
+scene_properties_keys = PackedStringArray("server_ui.gd", "target_scene")
+target_scene = "uid://cu6ifuf2vc8gv"
+
+[editable path="Meta_Environment_06"]
