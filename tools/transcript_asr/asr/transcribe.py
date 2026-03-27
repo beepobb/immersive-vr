@@ -16,7 +16,7 @@ class Segment:
 
 def transcribe_file(
     audio_path: str | Path,
-    model_size: str = "base",
+    model_size: str = "medium",
     device: str = "cpu",
     compute_type: str = "int8",
 ) -> Dict[str, Any]:
