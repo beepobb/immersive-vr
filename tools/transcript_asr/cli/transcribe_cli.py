@@ -38,6 +38,6 @@ if __name__ == "__main__":
     raise SystemExit(main())
 
 # to run:
-# python -m cli.transcribe_cli -i data/NAMEHEREXXX.m4a -o outputs --model base
+# python -m cli.transcribe_cli -i data/NAMEHEREXXX.m4a -o outputs --model medium
 # types of model in increasing accuracy:
 # tiny, base, small, medium, large-v3
