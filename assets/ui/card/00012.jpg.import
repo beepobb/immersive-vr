@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x0ut125aewrt"
-path="res://.godot/imported/TherapyRoom.jpg-fe79b6014a4a097064c96fc0a4c51e8c.ctex"
+uid="uid://cjssi1ef244dg"
+path="res://.godot/imported/00012.jpg-3940018bb315570a968860237db2db80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/card/TherapyRoom.jpg"
-dest_files=["res://.godot/imported/TherapyRoom.jpg-fe79b6014a4a097064c96fc0a4c51e8c.ctex"]
+source_file="res://assets/ui/card/00012.jpg"
+dest_files=["res://.godot/imported/00012.jpg-3940018bb315570a968860237db2db80.ctex"]
 
 [params]
 

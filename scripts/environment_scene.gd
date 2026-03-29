@@ -72,11 +72,11 @@ func _spawn_remote_avatars() -> void:
 		var avatar_instance = AvatarScene.instantiate() as Node3D
 		if avatar_instance == null:
 			continue
-
+	
 		avatar_instance.name = "RemoteAvatar_%d" % peer_id_int
 		avatar_instance.position = Vector3(1.5 + (remote_index * 0.9), 0.0, -0.75)
 		add_child(avatar_instance)
-		AvatarState.apply_to_avatar(avatar_instance, avatar_state)
+		AvatarState.apply_to_avatar(avatar_state)
 
 		spawned_remote_avatars.append(avatar_instance)
 		remote_index += 1

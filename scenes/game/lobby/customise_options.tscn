@@ -9,7 +9,7 @@ corner_radius_top_right = 1064
 corner_radius_bottom_right = 1064
 corner_radius_bottom_left = 1064
 
-[node name="PanelContainer" type="PanelContainer" unique_id=404461692]
+[node name="PanelContainer" type="PanelContainer" unique_id=404461692 node_paths=PackedStringArray("customise_avatar_button", "change_environment_button")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -17,6 +17,8 @@ offset_bottom = 118.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7lnmw")
 script = ExtResource("1_cfl4j")
+customise_avatar_button = NodePath("MarginContainer/HBoxContainer/MarginContainer/CustomiseAvatarButton")
+change_environment_button = NodePath("MarginContainer/HBoxContainer/MarginContainer2/ChangeEnvironmentButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=465541747]
 layout_mode = 2
@@ -32,7 +34,6 @@ layout_mode = 2
 theme_override_constants/margin_right = 20
 
 [node name="CustomiseAvatarButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=1444816816]
-unique_name_in_owner = true
 layout_mode = 2
 text = "Customise Avatar"
 
@@ -44,6 +45,8 @@ layout_mode = 2
 theme_override_constants/margin_left = 20
 
 [node name="ChangeEnvironmentButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2" unique_id=1249677222]
-unique_name_in_owner = true
 layout_mode = 2
 text = "Change Environment"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/CustomiseAvatarButton" to="." method="_on_customise_avatar_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer2/ChangeEnvironmentButton" to="." method="_on_change_environment_button_pressed"]

@@ -1,19 +1,19 @@
 extends Node
 
-const DEFAULT_ENVIRONMENT_ID := "clarity_room"
+const DEFAULT_ENVIRONMENT_ID := "desert"
 
 const ENVIRONMENTS := {
-	"clarity_room": {
-		"name": "Clarity Room",
+	"desert": {
+		"name": "Desert",
 		"description": "A minimalist therapy room with soft lighting and neutral tones that foster calm, focus, and open communication.",
-		"thumbnail": "res://assets/ui/card/TherapyRoom.jpg",
-		"scene_path": "res://scenes/environment/therapy_room.tscn",
+		"thumbnail": "res://assets/ui/card/010001.jpg",
+		"scene_path": "res://scenes/environment/sand.tscn",
 	},
-	"cafe": {
-		"name": "Cafe",
+	"apartment": {
+		"name": "Apartment",
 		"description": "This is a cafe.",
-		"thumbnail": "res://assets/ui/card/Cafe01.jpg",
-		"scene_path": "res://scenes/environment.tscn"
+		"thumbnail": "res://assets/ui/card/00012.jpg",
+		"scene_path": "res://scenes/environment/apartment.tscn"
 	}
 }
 
@@ -31,7 +31,7 @@ static func get_environments() -> Array[Dictionary]:
 	return environments
 
 static func get_environment(environment_id: String) -> Dictionary:
-	var normalized_id = environment_id.strip_edges()
+	var normalized_id = environment_id.strip_edges().to_lower()
 	if normalized_id.is_empty() or not ENVIRONMENTS.has(normalized_id):
 		normalized_id = DEFAULT_ENVIRONMENT_ID
 

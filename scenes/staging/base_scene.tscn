@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="2_2puwf"]
 [ext_resource type="Script" uid="uid://bxkxnd5thm3pp" path="res://scripts/player_loader.gd" id="3_2puwf"]
 [ext_resource type="PackedScene" uid="uid://d4f2ujpi1mdbm" path="res://scenes/player/static_player.tscn" id="3_vjcsa"]
+[ext_resource type="PackedScene" uid="uid://u5kj43ox0jbg" path="res://assets/Avatar/AvatarTest.glb" id="5_afqh5"]
 
 [node name="BaseScene" type="Node3D" unique_id=621000924]
 script = ExtResource("1_qcxwf")
@@ -12,3 +13,4 @@ script = ExtResource("1_qcxwf")
 script = ExtResource("3_2puwf")
 static_player = ExtResource("3_vjcsa")
 moving_player = ExtResource("2_2puwf")
+default_avatar = ExtResource("5_afqh5")

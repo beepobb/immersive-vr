@@ -174,16 +174,22 @@ func _emit_ui_update() -> void:
 	update_lobby_ui.emit(get_lobby_state())
 
 func _restore_persisted_lobby_state() -> void:
-	selected_environment_id = _get_selected_environment()
+	var avatar_environment_id := AvatarState.environment_id.strip_edges()
+	var persisted_environment_id := HighLevelNetworkHandler.lobby_selected_environment_id.strip_edges()
 
-	if not HighLevelNetworkHandler.lobby_selected_environment_id.is_empty():
-		selected_environment_id = HighLevelNetworkHandler.lobby_selected_environment_id
+	if not avatar_environment_id.is_empty():
+		selected_environment_id = avatar_environment_id
+	elif not persisted_environment_id.is_empty():
+		selected_environment_id = persisted_environment_id
+	else:
+		selected_environment_id = EnvironmentCatalog.get_default_environment_id()
 
 	if not HighLevelNetworkHandler.lobby_players_by_peer_id.is_empty():
 		players_by_peer_id = HighLevelNetworkHandler.lobby_players_by_peer_id.duplicate(true)
 	_ensure_players_have_avatar_state()
 
 	AvatarState.environment_id = selected_environment_id
+	_persist_lobby_state()
 
 func _reconcile_connected_peers() -> void:
 	var connected_peer_ids: Array = multiplayer.get_peers()

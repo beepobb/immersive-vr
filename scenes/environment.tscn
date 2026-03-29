@@ -33,6 +33,9 @@ glow_enabled = true
 
 [node name="BaseScene" unique_id=621000924 instance=ExtResource("1_00014")]
 
+[node name="PlayerLoader" parent="." index="0" unique_id=1066474312]
+in_call = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=991987366]
 transform = Transform3D(1, 0, 0, 0, -0.26166698, 0.9651582, 0, -0.9651582, -0.26166698, 0, 0, 0)
 shadow_enabled = true
