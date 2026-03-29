@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cjo2n1yw7ll28"]
 
-[ext_resource type="Texture2D" uid="uid://bc77i61mu8ikl" path="res://textures/0.jpg" id="1_6jbv2"]
 [ext_resource type="Script" uid="uid://bb2wxnma3lc3u" path="res://scripts/ui/lobby/selected_env_preview.gd" id="2_5h24u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr2r2"]
@@ -44,7 +43,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_6jbv2")
 expand_mode = 2
 stretch_mode = 6
 
@@ -54,5 +52,8 @@ layout_mode = 2
 [node name="Description" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1041997165]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_font_sizes/normal_font_size = 18
 text = "Example description of the Clarity Room
 Example description of the Clarity Room"

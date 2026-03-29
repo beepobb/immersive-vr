@@ -4,7 +4,7 @@ extends Node
 const HOME_SCENE_PATH := "res://scenes/game/lobby/home.tscn"
 const LOBBY_SCENE_PATH := "res://scenes/game/lobby/lobby.tscn"
 const AVATAR_CUSTOMISATION_SCENE_PATH := "res://scenes/game/avatar_customisation/avatar_customisation.tscn"
-const SELECT_ENVIRONMENT_SCENE_PATH := "res://scenes/game/environment/select_environment.tscn"
+const SELECT_ENVIRONMENT_SCENE_PATH := "res://scenes/game/select_environment/select_environment.tscn"
 const IN_CALL_SCENE_PATH := "res://scenes/environment.tscn"
 
 const DEFAULT_VISUAL_PRESETS := {

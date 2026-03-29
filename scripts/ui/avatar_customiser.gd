@@ -31,13 +31,21 @@ func _ready() -> void:
 	print("AVATAR_CUSTOMISER READY RUNNING")
 	main_preview = get_tree().current_scene
 
-	bottom_tabs = [body_tab, skin_tab, outfit_tab, hair_tab, shoes_tab]
+	bottom_tabs = []
+	for tab in [body_tab, skin_tab, outfit_tab, hair_tab, shoes_tab]:
+		if tab != null:
+			bottom_tabs.append(tab)
 
-	body_tab.pressed.connect(func(): _on_bottom_tab_pressed(1))
-	skin_tab.pressed.connect(func(): _on_bottom_tab_pressed(2))
-	outfit_tab.pressed.connect(func(): _on_bottom_tab_pressed(3))
-	hair_tab.pressed.connect(func(): _on_bottom_tab_pressed(0))
-	shoes_tab.pressed.connect(func(): _on_bottom_tab_pressed(4))
+	if body_tab != null:
+		body_tab.pressed.connect(func(): _on_bottom_tab_pressed(1))
+	if skin_tab != null:
+		skin_tab.pressed.connect(func(): _on_bottom_tab_pressed(2))
+	if outfit_tab != null:
+		outfit_tab.pressed.connect(func(): _on_bottom_tab_pressed(3))
+	if hair_tab != null:
+		hair_tab.pressed.connect(func(): _on_bottom_tab_pressed(0))
+	if shoes_tab != null:
+		shoes_tab.pressed.connect(func(): _on_bottom_tab_pressed(4))
 	#Load Hair Buttons
 	_load_hair_items()
 	_build_hair_buttons()
@@ -54,14 +62,25 @@ func _on_bottom_tab_pressed(target_index: int) -> void:
 	right_tabs.current_tab = target_index
 
 	for tab in bottom_tabs:
-		tab.button_pressed = false
+		if tab != null:
+			tab.button_pressed = false
 
 	match target_index:
-		1: body_tab.button_pressed = true
-		2: skin_tab.button_pressed = true
-		3: outfit_tab.button_pressed = true
-		0: hair_tab.button_pressed = true
-		4: shoes_tab.button_pressed = true
+		1:
+			if body_tab != null:
+				body_tab.button_pressed = true
+		2:
+			if skin_tab != null:
+				skin_tab.button_pressed = true
+		3:
+			if outfit_tab != null:
+				outfit_tab.button_pressed = true
+		0:
+			if hair_tab != null:
+				hair_tab.button_pressed = true
+		4:
+			if shoes_tab != null:
+				shoes_tab.button_pressed = true
 
 
 # ------------ HAIR -------------- #

@@ -58,7 +58,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-expand_mode = 4
+expand_mode = 5
+stretch_mode = 6
 
 [node name="InfoOverlay" type="Panel" parent="TextureRect" unique_id=1973988534]
 custom_minimum_size = Vector2(360, 120)
