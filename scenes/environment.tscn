@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_00014"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="2_g4tgr"]
 [ext_resource type="Script" uid="uid://cpcbeittqo0m1" path="res://scripts/ui/in_call/session_controls.gd" id="3_dm4p5"]
-[ext_resource type="Script" path="res://scripts/environment_scene.gd" id="4_pk5nr"]
+[ext_resource type="Script" uid="uid://cncvrq0yb88s8" path="res://scripts/environment_scene.gd" id="4_pk5nr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_poig3"]
 size = Vector3(5, 0.1, 5)

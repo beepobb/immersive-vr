@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://t3hhmdlpuc3n"]
+[gd_scene format=3 uid="uid://t3hhmdlpuc3n"]
 
 [ext_resource type="PackedScene" uid="uid://di45844qr55rr" path="res://assets/hair/Hair_ponytail.glb" id="1_w8w3r"]
 

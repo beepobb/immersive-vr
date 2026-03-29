@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://8qrddcp4lkwn"]
+[gd_scene format=3 uid="uid://8qrddcp4lkwn"]
 
-[ext_resource type="Script" uid="uid://byexeskpxihty" path="res://scenes/ui/avatar_customisation/confirm_button.gd" id="1_60dqx"]
+[ext_resource type="Script" uid="uid://byexeskpxihty" path="res://scenes/game/avatar_customisation/confirm_button.gd" id="1_60dqx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjafk"]
 content_margin_top = 5.0
@@ -32,7 +32,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="ConfirmButton" type="Button"]
+[node name="ConfirmButton" type="Button" unique_id=133104596]
 custom_minimum_size = Vector2(200, 0)
 offset_right = 8.0
 offset_bottom = 8.0

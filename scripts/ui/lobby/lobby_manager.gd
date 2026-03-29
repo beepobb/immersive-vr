@@ -8,9 +8,13 @@ signal start_call_requested(environment_id)
 var players_by_peer_id: Dictionary = {} # {peer_id: {peer_id, role, ready}}
 var selected_environment_id: String = ""
 
+@onready var avatarRoot: Node3D = get_node_or_null("../AvatarTest") as Node3D
+
 func _ready() -> void:
 	add_to_group("lobby_manager")
 	_restore_persisted_lobby_state()
+	AvatarState.avatar = avatarRoot
+	AvatarState.apply_to_avatar()
 
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
@@ -236,7 +240,6 @@ func _make_player_state(peer_id: int, role: int, is_ready: bool) -> Dictionary:
 
 func _local_avatar_state() -> Dictionary:
 	return {
-		"body_type": AvatarState.body_type,
 		"skin_tone": AvatarState.skin_tone,
 		"outfit": AvatarState.outfit,
 		"hair_style": AvatarState.hair_style
@@ -244,10 +247,9 @@ func _local_avatar_state() -> Dictionary:
 
 func _default_avatar_state() -> Dictionary:
 	return {
-		"body_type": "medium",
-		"skin_tone": "default",
-		"outfit": "default",
-		"hair_style": "ponytail"
+		"skin_tone": "",
+		"outfit": "",
+		"hair_style": ""
 	}
 
 func _ensure_players_have_avatar_state() -> void:

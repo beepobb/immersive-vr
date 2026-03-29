@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccpjb3rbritd2"]
+[gd_scene format=3 uid="uid://ccpjb3rbritd2"]
 
-[ext_resource type="Script" uid="uid://bif6ly3f8g0th" path="res://scenes/ui/landing_page/exit.gd" id="1_0b7pw"]
+[ext_resource type="Script" uid="uid://bif6ly3f8g0th" path="res://scenes/game/landing_page/exit.gd" id="1_0b7pw"]
 [ext_resource type="Texture2D" uid="uid://1axyobbu08jx" path="res://assets/icons/back_logo.png" id="2_yse7m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5psj0"]

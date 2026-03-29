@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djf6chbkic057"]
 
-[ext_resource type="Script" uid="uid://by7lfe6k583qh" path="res://scripts/login.gd" id="1_bvvwm"]
-[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_cau7c"]
+[ext_resource type="Script" path="res://scripts/login.gd" id="1_bvvwm"]
+[ext_resource type="Theme" path="res://assets/themes/ui_theme.tres" id="1_cau7c"]
 [ext_resource type="Texture2D" uid="uid://c1tbun7xeglj6" path="res://assets/icons/Capstone Term 8.png" id="2_3n56f"]
 [ext_resource type="FontFile" uid="uid://c7axq0o6n2gww" path="res://assets/font/Poppins/Poppins-SemiBold.ttf" id="2_xlo4h"]
 

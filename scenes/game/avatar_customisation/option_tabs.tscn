@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cifcm62bjtidk"]
+[gd_scene format=3 uid="uid://cifcm62bjtidk"]
 
 [ext_resource type="Script" uid="uid://cdsd8beik62kt" path="res://scripts/ui/avatar_customisation/option_tabs.gd" id="1_uqvoq"]
 
@@ -25,18 +25,6 @@ corner_radius_bottom_left = 24
 bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
 corner_radius_top_left = 24
 corner_radius_bottom_left = 24
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56t7g"]
-bg_color = Color(0.10980392, 0.10980392, 0.11764706, 0.5019608)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqvoq"]
-bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5ncg"]
-bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgwpw"]
-bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxbqf"]
 bg_color = Color(0.10980392, 0.10980392, 0.11764706, 0.5019608)
@@ -86,12 +74,12 @@ bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 
-[node name="OptionTabs" type="HBoxContainer"]
+[node name="OptionTabs" type="HBoxContainer" unique_id=1550266906]
 offset_right = 626.0
 offset_bottom = 55.0
 script = ExtResource("1_uqvoq")
 
-[node name="BodyTab" type="Button" parent="."]
+[node name="Skin" type="Button" parent="." unique_id=702016832]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
@@ -99,20 +87,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3hsv1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mhfsl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1aak")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8mvbp")
-text = "Body
+text = "Skin
 "
 
-[node name="SkinTab" type="Button" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_56t7g")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_uqvoq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_j5ncg")
-theme_override_styles/focus = SubResource("StyleBoxFlat_lgwpw")
-text = "Skin"
-
-[node name="OutfitTab" type="Button" parent="."]
+[node name="OutfitTab" type="Button" parent="." unique_id=988848351]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
@@ -122,7 +100,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8mxhm")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u7p00")
 text = "Outfit"
 
-[node name="HairTab" type="Button" parent="."]
+[node name="HairTab" type="Button" parent="." unique_id=1635316852]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
@@ -132,7 +110,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_nakv3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_cdywj")
 text = "Hair"
 
-[node name="ShoesTab" type="Button" parent="."]
+[node name="ShoesTab" type="Button" parent="." unique_id=1941561530]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2

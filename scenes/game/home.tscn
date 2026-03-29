@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_wkxb3"]
 [ext_resource type="PackedScene" uid="uid://c1om7hy82l0tf" path="res://assets/environment/Metaverse Environment 06/Meta_Environment_06.glb" id="2_xa3pu"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_u3dp7"]
-[ext_resource type="PackedScene" uid="uid://c80okq4yeqntk" path="res://scenes/ui/lobby/server_ui.tscn" id="4_sktvb"]
+[ext_resource type="PackedScene" uid="uid://c80okq4yeqntk" path="res://scenes/game/lobby/server_ui.tscn" id="4_sktvb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pi8sn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,11 +29,11 @@ size = Vector3(35, 0.72940063, 35)
 environment = SubResource("Environment_rkiv8")
 
 [node name="PlayerLoader" parent="." index="2" unique_id=1066474312]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 2.991116)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6, 0)
 
 [node name="Meta_Environment_06" parent="." index="3" unique_id=633845369 instance=ExtResource("2_xa3pu")]
 
-[node name="Chandelier" parent="Meta_Environment_06" index="3" unique_id=790593452]
+[node name="Chandelier" parent="Meta_Environment_06" index="3" unique_id=1195417286]
 visible = false
 
 [node name="Floor" type="StaticBody3D" parent="Meta_Environment_06" index="16" unique_id=381991259]

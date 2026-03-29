@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjv6rwbef7so7"]
+[gd_scene format=3 uid="uid://cjv6rwbef7so7"]
 
-[ext_resource type="Script" uid="uid://q2wwgnsbtek8" path="res://scenes/ui/landing_page/landing_page.gd" id="1_dubbj"]
+[ext_resource type="Script" uid="uid://q2wwgnsbtek8" path="res://scenes/game/landing_page/landing_page.gd" id="1_dubbj"]
 [ext_resource type="Texture2D" uid="uid://bpp8gwg8iqepo" path="res://assets/icons/Landing_page.jpg" id="2_jwi8v"]
-[ext_resource type="Texture2D" uid="uid://bigw8ctdosklb" path="res://assets/icons/Quit_logo.png" id="3_w3m5x"]
-[ext_resource type="Script" uid="uid://b8xuc50vdmgqp" path="res://scenes/ui/back_to_login.gd" id="4_7ekvu"]
+[ext_resource type="Texture2D" path="res://assets/icons/Quit_logo.png" id="3_w3m5x"]
+[ext_resource type="Script" path="res://scenes/log_in/back_to_login.gd" id="4_7ekvu"]
 [ext_resource type="Texture2D" uid="uid://5nnxky2rjtm2" path="res://assets/icons/Setting_logo.png" id="5_gy4lm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixa04"]

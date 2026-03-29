@@ -15,7 +15,7 @@ func _ready() -> void:
 	_update_login_state()
 
 func _update_login_state() -> void:
-	var ok := username_edit.text.strip_edges() != "" and password_edit.text.strip_edges() != ""
+	var _ok := username_edit.text.strip_edges() != "" and password_edit.text.strip_edges() != ""
 	# TODO
 
 func _on_login_pressed() -> void:
