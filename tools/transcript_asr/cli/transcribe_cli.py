@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import time
 from pathlib import Path
 
 from asr.transcribe import transcribe_file
@@ -18,7 +19,9 @@ def main() -> int:
     out_dir = Path(args.outdir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    start = time.time()
     result = transcribe_file(in_path, model_size=args.model)
+    end = time.time()
 
     # Write outputs
     base_name = in_path.stem  # e.g., "test1"
@@ -31,11 +34,14 @@ def main() -> int:
 
     print(f"Saved: {transcript_path.resolve()}")
     print(f"Saved: {segments_path.resolve()}")
+    print(f"Total time: {end - start:.2f} seconds ({(end - start)/60:.2f} mins)")
+
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
 # to run:
 # python -m cli.transcribe_cli -i data/NAMEHEREXXX.m4a -o outputs --model medium
