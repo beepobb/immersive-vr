@@ -29,7 +29,7 @@ AvatarState="*res://scripts/ui/avatar_customisation/avatar_state.gd"
 XRToolsUserSettings="*uid://bnquuwe2vribm"
 XRToolsRumbleManager="*uid://dg2csioke0tji"
 EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
-XrSimulator="uid://ctltchlf2j2r4"
+XrSimulator="*uid://ctltchlf2j2r4"
 HighLevelNetworkHandler="*uid://bobd77kfhgqf7"
 Roles="*uid://yyfwsn2nm8l1"
 

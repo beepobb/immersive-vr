@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b6r2yv2ur53ig"]
 
-[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://base_scene.tscn" id="1_ifhar"]
-[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_c3k1h"]
-[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_v7m8w"]
-[ext_resource type="PackedScene" uid="uid://su3nynakebv7" path="res://scenes/ui/select_environment.tscn" id="3_c3k1h"]
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_6ciwq"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_7qg1p"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_ik25h"]
+[ext_resource type="PackedScene" uid="uid://su3nynakebv7" path="res://scenes/game/select_environment/select_environment_base.tscn" id="4_c54et"]
 
 [sub_resource type="Environment" id="Environment_c3k1h"]
 
@@ -12,20 +12,20 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_gq42c"]
 size = Vector3(1, 0.050854493, 1)
 
-[node name="ZoneBase" unique_id=1701868660 instance=ExtResource("1_ifhar")]
+[node name="SelectEnvironment" unique_id=1701868660 instance=ExtResource("1_6ciwq")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="0" unique_id=2018259210]
 transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.4678115, -0.5252165, 0.71084464, -0.17650065, 0.7325623, 0.65741915, 0, 4.013606, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1" unique_id=1329531857]
+[node name="XROrigin3D_LeftHand#FunctionPointer" parent="." index="1" unique_id=1009897522 instance=ExtResource("2_7qg1p")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2" unique_id=1329531857]
 environment = SubResource("Environment_c3k1h")
 
-[node name="FunctionPointer" parent="XROrigin3D/LeftHand" index="1" unique_id=1009897522 instance=ExtResource("2_v7m8w")]
-
-[node name="Viewport2Din3D" parent="." index="3" unique_id=914641774 instance=ExtResource("2_c3k1h")]
+[node name="Viewport2Din3D" parent="." index="3" unique_id=914641774 instance=ExtResource("3_ik25h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2343969, -2.3572798)
-scene = ExtResource("3_c3k1h")
+scene = ExtResource("4_c54et")
 viewport_size = Vector2(1280, 754)
 scene_properties_keys = PackedStringArray("select_environment.gd")
 

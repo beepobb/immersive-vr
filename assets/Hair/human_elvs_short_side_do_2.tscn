@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://0w3g77ndblyl"]
+[gd_scene format=3 uid="uid://0w3g77ndblyl"]
 
 [ext_resource type="PackedScene" uid="uid://c4e75d1p771wc" path="res://assets/hair/Human_elvs_short_side_do.glb" id="1_y7ywi"]
 

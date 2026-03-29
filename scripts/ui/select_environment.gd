@@ -6,7 +6,7 @@ const EnvironmentCatalog = preload("res://scripts/ui/environment_catalog.gd")
 @onready var env_cards: HBoxContainer = %EnvCards
 @onready var confirm_button = %ConfirmButton
 
-var card_scene: PackedScene = preload("res://scenes/ui/env_card.tscn")
+var card_scene: PackedScene = preload("res://scenes/game/select_environment/env_card.tscn")
 var card_lookup: Dictionary = {}
 
 func _ready() -> void:

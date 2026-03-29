@@ -1,7 +1,7 @@
 extends Node3D
 
 const EnvironmentCatalog = preload("res://scripts/ui/environment_catalog.gd")
-const AvatarScene = preload("res://scenes/ui/avatar_customisation/avatar_test.tscn")
+const AvatarScene = preload("res://scenes/game/avatar_customisation/avatar_test.tscn")
 
 @onready var environment_root: Node3D = %EnvironmentRoot
 @onready var xr_origin: Node3D = get_node_or_null("XROrigin3D")

@@ -8,5 +8,5 @@ func _ready():
 	quit_dialog.get_cancel_button().text = "No"
 
 func _on_quit_confirmed():
-	get_tree().change_scene_to_file("res://scenes/ui/log_in.tscn")
+	get_tree().change_scene_to_file("res:/scenes/log_in/log_in.tscn")
 	# or get_tree().quit()

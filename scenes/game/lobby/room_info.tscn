@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cffhyue0c2whs"]
 
 [ext_resource type="Script" uid="uid://c85ry15yjevhh" path="res://scripts/ui/lobby/room_info.gd" id="1_vqedg"]
-[ext_resource type="PackedScene" uid="uid://dbnkofu6ipe70" path="res://scenes/ui/lobby/player_card.tscn" id="2_mkfc2"]
+[ext_resource type="PackedScene" uid="uid://dbnkofu6ipe70" path="res://scenes/game/lobby/player_card.tscn" id="2_mkfc2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_musdo"]
 bg_color = Color(0, 0, 0, 0.39607844)

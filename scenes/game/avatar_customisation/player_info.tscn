@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0i4q7htoevmm"]
+[gd_scene format=3 uid="uid://c0i4q7htoevmm"]
 
-[ext_resource type="Theme" uid="uid://cy44qeiqj8cft" path="res://assets/themes/ui_theme.tres" id="1_7jq38"]
+[ext_resource type="Theme" uid="uid://ddpglc2l8slow" path="res://assets/themes/ui_theme.tres" id="1_7jq38"]
 [ext_resource type="Script" uid="uid://br6gces0ggu3n" path="res://scripts/ui/avatar_customisation/player_info.gd" id="1_cdabj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enjed"]

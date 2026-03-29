@@ -9,4 +9,4 @@ func _on_log_in_pressed() -> void:
 		return
 
 	# Request loading the next scene
-	scene_base.load_scene("res://home.tscn")
+	scene_base.load_scene("res://scenes/game/home.tscn")

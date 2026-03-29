@@ -3,18 +3,17 @@ extends Control
 @onready var tab_container: TabContainer = $TabContainer
 
 signal option_selected(option) # or Variant
-const OUTFIT_JSON_PATH := "res://assets/outfit/outfit_assets.json"
 var _outfit_built := false
 
-const HAIR_JSON_PATH := "res://assets/hair/hair_assets.json"
 var _connected_buttons: Array[BaseButton] = []
 var _hair_built := false
 
-const SHOES_JSON_PATH := "res://assets/shoes/shoes_assets.json"
 var _shoes_built := false
+var appearance_service = AvatarAppearanceService.new()
 
 func _ready() -> void:
 	tab_container.tab_changed.connect(_on_tab_changed)
+	appearance_service.load_manifests()
 	_refresh_current_tab()
 	_apply_glass_tabs(tab_container)
 
@@ -30,15 +29,15 @@ func _refresh_current_tab() -> void:
 		return
 
 	if tab.name == "Hair" and !_hair_built:
-		_build_buttons_from_json(tab, HAIR_JSON_PATH)
+		_build_buttons_from_json(tab, appearance_service.hair_map)
 		_hair_built = true
 
 	if tab.name == "Outfit" and !_outfit_built:
-		_build_buttons_from_json(tab, OUTFIT_JSON_PATH)
+		_build_buttons_from_json(tab, appearance_service.outfit_map)
 		_outfit_built = true
 		
 	if tab.name == "Shoes" and !_shoes_built:
-		_build_buttons_from_json(tab, SHOES_JSON_PATH)
+		_build_buttons_from_json(tab, appearance_service.shoes_map)
 		_shoes_built = true
 
 	if tab.name == "Skin":
@@ -78,7 +77,7 @@ func _make_rect_stylebox(color: Color) -> StyleBoxFlat:
 	sb.corner_radius_bottom_right = 8
 	return sb
 
-func _build_buttons_from_json(tab: Control, json_path: String) -> void:
+func _build_buttons_from_json(tab: Control, map: Array) -> void:
 	var grid := tab.get_node_or_null("MarginContainer/VBoxContainer/ScrollContainer/GridContainer")
 	if grid == null:
 		push_error("GridContainer not found in tab: " + tab.name)
@@ -87,12 +86,7 @@ func _build_buttons_from_json(tab: Control, json_path: String) -> void:
 	for c in grid.get_children():
 		c.queue_free()
 
-	var items := _load_items(json_path)
-	if items.is_empty():
-		push_warning("No items loaded from JSON: " + json_path)
-		return
-
-	for item in items:
+	for item in map:
 		if typeof(item) != TYPE_DICTIONARY:
 			continue
 
@@ -128,22 +122,6 @@ func _build_buttons_from_json(tab: Control, json_path: String) -> void:
 		box.add_child(btn)
 		grid.add_child(box)
 	
-	
-func _load_items(path: String) -> Array:
-	var f := FileAccess.open(path, FileAccess.READ)
-	if f == null:
-		push_error("Cannot open JSON: " + path)
-		return []
-
-	var data = JSON.parse_string(f.get_as_text())
-	f.close()
-
-	if typeof(data) != TYPE_DICTIONARY or !data.has("items"):
-		push_error("JSON format invalid (expected { items: [...] }): " + path)
-		return []
-
-	return data["items"]
-
 func _update_buttons() -> void:
 	# Disconnect previously connected buttons (SAFE)
 	for btn in _connected_buttons:

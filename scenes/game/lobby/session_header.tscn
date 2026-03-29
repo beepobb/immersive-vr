@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqfpc2fjvnc50"]
 
-[ext_resource type="Script" uid="uid://cr887c3ytb04e" path="res://scenes/ui/session_header.gd" id="1_4eopn"]
-[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_74ayn"]
+[ext_resource type="Script" uid="uid://cr887c3ytb04e" path="res://scenes/game/lobby/session_header.gd" id="1_4eopn"]
+[ext_resource type="Theme" uid="uid://ddpglc2l8slow" path="res://assets/themes/ui_theme.tres" id="1_74ayn"]
 [ext_resource type="Texture2D" uid="uid://dwxtkusfhxegc" path="res://assets/icons/record.png" id="2_kykny"]
 
 [node name="SessionHeader" type="Control"]

@@ -110,8 +110,8 @@ func _broadcast_presence() -> void:
 	var result = udp_broadcaster.put_packet(packet)
 	if result != OK:
 		printerr("Failed to broadcast packet: ", result)
-	else:
-		print("Broadcasting room ", current_room_code, " from IP: ", local_ip, ":", PORT)
+	# else:
+	# 	print("Broadcasting room ", current_room_code, " from IP: ", local_ip, ":", PORT)
 
 # --- PATIENT LOGIC (Client) ---
 func start_listening() -> bool:
