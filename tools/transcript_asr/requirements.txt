@@ -67,4 +67,4 @@ fastapi
 uvicorn
 python-multipart
 faster-whisper
-
+python-docx
