@@ -41,6 +41,7 @@ func _ready():
 	if not AvatarState.environment_id.is_empty():
 		_load_selected_environment()
 	
+		
 func _load_environment(environment) -> void:
 	var scene = load(environment).instantiate()
 	scene.position = Vector3(0.0, 0.25, 0)

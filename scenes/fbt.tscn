@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://w8y2sr1j63vt"]
+
+[ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_b28tf"]
+[ext_resource type="Script" uid="uid://o17r2om0r7y1" path="res://scripts/calibration.gd" id="2_eraqd"]
+[ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="3_7032y"]
+
+[sub_resource type="Environment" id="Environment_b5v5u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3jhem"]
+size = Vector3(50, 0.1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eraqd"]
+size = Vector3(50, 0.1, 50)
+
+[node name="FBT" type="Node3D" unique_id=736141873]
+script = ExtResource("1_b28tf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1607267524]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1224671918]
+environment = SubResource("Environment_b5v5u")
+
+[node name="XROrigin3D" parent="." unique_id=1503267807 instance=ExtResource("3_7032y")]
+
+[node name="RightController" parent="XROrigin3D" index="2" unique_id=2121946272]
+transform = Transform3D(-4.3711385e-08, -0.0069812606, -0.99997586, 0, 0.99997574, -0.0069812615, 0.99999994, -3.051606e-10, -4.3710333e-08, 0.798, 1.448, 0)
+show_when_tracked = true
+
+[node name="Target" parent="XROrigin3D/LAnkle" parent_id_path=PackedInt32Array(1503267807, 1653117457) index="1" unique_id=2740982]
+transform = Transform3D(-0.9435124, -0.1617229, -0.28918865, -0.30881038, 0.74553406, 0.5906057, 0.12008552, 0.64654815, -0.7533624, 0, 0, 0)
+
+[node name="Target" parent="XROrigin3D/RAnkle" parent_id_path=PackedInt32Array(1503267807, 995186668) index="1" unique_id=760069603]
+transform = Transform3D(-0.9435124, 0.1617229, 0.2891886, 0.30881038, 0.74553406, 0.59060556, -0.12008552, 0.64654815, -0.7533623, 0, -0.015, 0.065)
+
+[node name="AvatarRoot" parent="XROrigin3D" index="8" unique_id=1623042168]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="XROrigin3D/AvatarRoot/X Bot" parent_id_path=PackedInt32Array(1503267807, 1941485306) index="0" unique_id=35034531]
+bones/1/position = Vector3(-4.2558305e-12, 0.101824366, -2.5587171e-17)
+bones/2/position = Vector3(-1.5881868e-22, 0.10002675, -2.7755576e-17)
+bones/2/rotation = Quaternion(-2.0816682e-17, 6.617445e-24, 6.2038546e-25, 1)
+bones/3/position = Vector3(1.1375433e-16, 0.093220904, 2.823681e-09)
+bones/4/position = Vector3(4.1474883e-12, 0.16865322, 5.551115e-16)
+bones/4/rotation = Quaternion(3.469447e-18, -1.6543612e-24, 3.1019273e-24, 1)
+bones/5/rotation = Quaternion(1.0408341e-17, -8.271806e-24, 5.9970594e-24, 1)
+bones/6/rotation = Quaternion(-3.469447e-18, 1.6543612e-24, -2.4815418e-24, 1)
+bones/8/position = Vector3(3.469447e-17, 0.108381756, 0)
+bones/8/rotation = Quaternion(-0.024616241, 0.0025622922, -0.10349857, 0.99432164)
+bones/9/position = Vector3(-8.133634e-08, 0.27841517, 4.440892e-16)
+bones/9/rotation = Quaternion(-3.3087225e-24, -1.1832914e-30, 1.323489e-23, 1)
+bones/10/position = Vector3(1.4592737e-07, 0.2832884, 4.472539e-08)
+bones/10/rotation = Quaternion(-3.3087225e-24, 0, 0, 1)
+bones/11/position = Vector3(0.026818512, 0.024648057, 0.01573984)
+bones/12/position = Vector3(-2.0469737e-16, 0.041889854, 0)
+bones/13/position = Vector3(-2.5240227e-16, 0.03416271, 6.661338e-16)
+bones/14/position = Vector3(-8.413409e-17, 0.025749775, -8.881784e-16)
+bones/15/position = Vector3(0.022598324, 0.09108284, 0.0051786215)
+bones/16/position = Vector3(-8.326673e-17, 0.037, -2.6867397e-14)
+bones/17/position = Vector3(-3.4278136e-15, 0.0285, -8.856471e-12)
+bones/18/position = Vector3(7.910339e-15, 0.027721906, 6.0544902e-12)
+bones/18/rotation = Quaternion(8.661557e-08, 0.0010026923, 8.705833e-05, 0.99999946)
+bones/19/position = Vector3(-2.6468743e-07, 0.095325015, 3.9855692e-07)
+bones/20/position = Vector3(-1.0408341e-16, 0.037, -9.325873e-15)
+bones/21/position = Vector3(-2.5049407e-15, 0.0295, -1.5410317e-10)
+bones/22/position = Vector3(1.1587953e-15, 0.029466288, 7.219292e-11)
+bones/22/rotation = Quaternion(1.54985e-07, 0.0009288143, 0.00016639447, 0.9999995)
+bones/23/position = Vector3(-0.018651359, 0.09103592, 0.00043069635)
+bones/24/position = Vector3(-5.551115e-17, 0.03379273, 2.5757174e-14)
+bones/25/position = Vector3(2.6090241e-15, 0.028896846, 8.149703e-12)
+bones/26/position = Vector3(4.7323256e-15, 0.026388157, 5.664136e-12)
+bones/26/rotation = Quaternion(-1.3396479e-07, 0.00014607504, -0.0007992863, 0.99999964)
+bones/27/position = Vector3(-0.0380628, 0.08076675, 0.004867037)
+bones/28/position = Vector3(-6.938894e-17, 0.036, 8.437695e-15)
+bones/29/position = Vector3(-5.1347815e-16, 0.021, -2.116376e-10)
+bones/30/position = Vector3(1.2490009e-15, 0.02115781, 1.4407675e-10)
+bones/30/rotation = Quaternion(-6.4206525e-08, 0.0015694817, -4.1285293e-05, 0.99999875)
+bones/32/position = Vector3(-4.8572257e-17, 0.108377054, 2.220446e-16)
+bones/33/position = Vector3(1.0408341e-16, 0.2784152, 0)
+bones/33/rotation = Quaternion(-5.293956e-23, -5.04871e-29, 0, 1)
+bones/34/position = Vector3(5.438735e-08, 0.28328836, -5.5642486e-09)
+bones/34/rotation = Quaternion(7.222825e-35, 5.04871e-29, 2.646978e-23, 1)
+bones/36/position = Vector3(8.673617e-18, 0.041870944, -2.220446e-16)
+bones/37/position = Vector3(-2.4286129e-17, 0.034183882, 4.440892e-16)
+bones/38/position = Vector3(1.07552856e-16, 0.025805814, 2.220446e-16)
+bones/40/position = Vector3(-4.8572257e-17, 0.037, 6.661338e-16)
+bones/41/position = Vector3(-7.181755e-15, 0.0285, -6.661338e-16)
+bones/42/position = Vector3(8.590351e-15, 0.027748656, 2.4424907e-15)
+bones/42/rotation = Quaternion(1.05946105e-08, -0.0003775633, -1.3069539e-05, 0.99999994)
+bones/44/position = Vector3(-2.0816682e-17, 0.037, 6.661338e-16)
+bones/45/position = Vector3(-2.873396e-14, 0.0295, -2.220446e-16)
+bones/46/position = Vector3(-8.709006e-14, 0.029528635, -1.5543122e-15)
+bones/46/rotation = Quaternion(-2.6759446e-08, -0.0010241407, 2.7984759e-05, 0.99999946)
+bones/47/rotation = Quaternion(6.248996e-07, 3.4776487e-12, 6.3132775e-06, 1)
+bones/48/position = Vector3(-2.7755576e-17, 0.0315, -1.110223e-15)
+bones/48/rotation = Quaternion(-1.0588081e-22, 8.077936e-28, -4.2351647e-22, 1)
+bones/49/position = Vector3(2.6432891e-08, 0.0295, 5.2098583e-09)
+bones/49/rotation = Quaternion(-1.6862256e-27, 8.077936e-28, 8.4703295e-22, 1)
+bones/50/position = Vector3(-2.327433e-07, 0.026443165, -1.4607577e-08)
+bones/52/position = Vector3(-1.3877788e-17, 0.036, 2.220446e-16)
+bones/53/position = Vector3(2.4286129e-15, 0.021, 4.440892e-16)
+bones/54/position = Vector3(1.1032841e-14, 0.021255312, -1.3322676e-15)
+bones/56/position = Vector3(6.197272e-11, 0.44371462, -1.6644672e-15)
+bones/57/position = Vector3(-5.5383004e-11, 0.44527814, 1.8735014e-16)
+bones/58/position = Vector3(0, 0.13816866, 5.551115e-17)
+bones/59/position = Vector3(2.7755576e-17, 0.09278121, 4.2463456e-17)
+bones/59/rotation = Quaternion(-2.7964134e-17, 0.011608068, -6.5252396e-19, 0.99993265)
+bones/61/position = Vector3(6.468265e-11, 0.4437139, 3.807718e-16)
+bones/62/position = Vector3(-5.5477706e-11, 0.44527847, -2.0816682e-16)
+bones/63/position = Vector3(1.3877788e-17, 0.13816865, -1.3877788e-17)
+bones/64/position = Vector3(4.1633363e-17, 0.092781365, -2.3356086e-17)
+bones/64/rotation = Quaternion(-2.5345011e-17, -0.011869166, 1.4562052e-19, 0.99992955)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1213084053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=432309524]
+shape = SubResource("BoxShape3D_3jhem")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D" unique_id=1151103520]
+mesh = SubResource("BoxMesh_eraqd")
+
+[node name="Calibration" type="Node3D" parent="." unique_id=561612349 node_paths=PackedStringArray("hmd", "left_hand", "right_hand", "waist", "left_foot", "right_foot")]
+script = ExtResource("2_eraqd")
+hmd = NodePath("../XROrigin3D/XRCamera3D")
+left_hand = NodePath("../XROrigin3D/LeftController")
+right_hand = NodePath("../XROrigin3D/RightController")
+waist = NodePath("../XROrigin3D/Waist")
+left_foot = NodePath("../XROrigin3D/LAnkle")
+right_foot = NodePath("../XROrigin3D/RAnkle")
+eye_offset = 0.15
+
+[editable path="XROrigin3D"]
+[editable path="XROrigin3D/AvatarRoot/X Bot"]

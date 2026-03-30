@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://clujaf3u776a3"]
 
-[ext_resource type="Script" uid="uid://2j34n1agirqg" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="1"]
-[ext_resource type="Script" uid="uid://ti4mql76l8l2" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="2"]
-[ext_resource type="Shader" uid="uid://d3piotbc3wsbh" path="res://addons/godot-xr-tools/objects/frosted_glass.gdshader" id="2_4gj7x"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wb3kh"]
-render_priority = 0
-shader = ExtResource("2_4gj7x")
+[ext_resource type="Script" uid="uid://eavk7267igp7" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="1"]
+[ext_resource type="Script" uid="uid://cpl5yiyf1ypft" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="2"]
 
 [sub_resource type="QuadMesh" id="1"]
 resource_local_to_scene = true
