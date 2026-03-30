@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfso4a57opxgp"]
+
+[ext_resource type="PackedScene" uid="uid://d0m54681oklx" path="res://assets/skin/Female/Old caucasian.glb" id="1_i8kyr"]
+
+[node name="Old caucasian" instance=ExtResource("1_i8kyr")]

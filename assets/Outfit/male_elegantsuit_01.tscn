@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cl8ypdlb1j56m"]
+
+[ext_resource type="PackedScene" uid="uid://hsft1a4fp2qy" path="res://assets/outfit/male_elegantsuit01.glb" id="1_q70rp"]
+
+[node name="male_elegantsuit01" instance=ExtResource("1_q70rp")]

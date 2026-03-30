@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://chskbwcvloc41"
 path.s3tc="res://.godot/imported/NRecHallTable_Roughness.jpg-e3f3ae4fad6de208276e668e68ae7bc9.s3tc.ctex"
+path.etc2="res://.godot/imported/NRecHallTable_Roughness.jpg-e3f3ae4fad6de208276e668e68ae7bc9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/NRecHallTable_Roughness.jpg"
-dest_files=["res://.godot/imported/NRecHallTable_Roughness.jpg-e3f3ae4fad6de208276e668e68ae7bc9.s3tc.ctex"]
+dest_files=["res://.godot/imported/NRecHallTable_Roughness.jpg-e3f3ae4fad6de208276e668e68ae7bc9.s3tc.ctex", "res://.godot/imported/NRecHallTable_Roughness.jpg-e3f3ae4fad6de208276e668e68ae7bc9.etc2.ctex"]
 
 [params]
 

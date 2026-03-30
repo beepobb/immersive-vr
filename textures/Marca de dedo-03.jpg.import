@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhp8pd2qgi3dq"
 path.s3tc="res://.godot/imported/Marca de dedo-03.jpg-155fbcbcc7ce72f9860cfa5718bb5001.s3tc.ctex"
+path.etc2="res://.godot/imported/Marca de dedo-03.jpg-155fbcbcc7ce72f9860cfa5718bb5001.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Marca de dedo-03.jpg"
-dest_files=["res://.godot/imported/Marca de dedo-03.jpg-155fbcbcc7ce72f9860cfa5718bb5001.s3tc.ctex"]
+dest_files=["res://.godot/imported/Marca de dedo-03.jpg-155fbcbcc7ce72f9860cfa5718bb5001.s3tc.ctex", "res://.godot/imported/Marca de dedo-03.jpg-155fbcbcc7ce72f9860cfa5718bb5001.etc2.ctex"]
 
 [params]
 

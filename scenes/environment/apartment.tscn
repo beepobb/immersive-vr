@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cfpcgy0me5t01"]
+
+[ext_resource type="PackedScene" uid="uid://bovkaw4ltf7to" path="res://assets/environment/Meta Home 06/Meta_Home_06.glb" id="1_pt7l7"]
+
+[node name="Apartment" type="Node3D" unique_id=1061293725]
+
+[node name="Meta_Home_06" parent="." unique_id=1403275623 instance=ExtResource("1_pt7l7")]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://t3hhmdlpuc3n"]
+
+[ext_resource type="PackedScene" uid="uid://di45844qr55rr" path="res://assets/hair/Hair_ponytail.glb" id="1_w8w3r"]
+
+[node name="Hair_ponytail" instance=ExtResource("1_w8w3r")]

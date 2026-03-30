@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b6r2yv2ur53ig"]
+
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_6ciwq"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_ik25h"]
+[ext_resource type="PackedScene" uid="uid://su3nynakebv7" path="res://scenes/game/select_environment/select_environment_base.tscn" id="4_c54et"]
+
+[sub_resource type="Environment" id="Environment_c3k1h"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_v7m8w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gq42c"]
+size = Vector3(1, 0.050854493, 1)
+
+[node name="SelectEnvironment" unique_id=1701868660 instance=ExtResource("1_6ciwq")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="0" unique_id=2018259210]
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.4678115, -0.5252165, 0.71084464, -0.17650065, 0.7325623, 0.65741915, 0, 4.013606, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1" unique_id=1329531857]
+environment = SubResource("Environment_c3k1h")
+
+[node name="Viewport2Din3D" parent="." index="2" unique_id=914641774 instance=ExtResource("3_ik25h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2343969, -2.3572798)
+scene = ExtResource("4_c54et")
+viewport_size = Vector2(1280, 754)
+scene_properties_keys = PackedStringArray("select_environment.gd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3" unique_id=1372962019]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" index="0" unique_id=40848163]
+transform = Transform3D(20, 0, 0, 0, -8.742278e-07, 20, 0, -20, -8.742278e-07, 0, 0, 0)
+mesh = SubResource("QuadMesh_v7m8w")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=1211004008]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_gq42c")
+
+[node name="PlayerLoader" parent="." index="4" unique_id=1066474312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5166464, 0)

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cj3oau364gkdh"]
+
+[ext_resource type="PackedScene" uid="uid://dvmxc8i6apny0" path="res://assets/hair/Human_culturalibre_hair_18.glb" id="1_u806w"]
+
+[node name="Human_culturalibre_hair_182" instance=ExtResource("1_u806w")]

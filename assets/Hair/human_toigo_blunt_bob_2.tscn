@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dhmoo82souaf1"]
+
+[ext_resource type="PackedScene" uid="uid://vmmhvu0itfer" path="res://assets/hair/Human_toigo_blunt_bob.glb" id="1_n2v22"]
+
+[node name="Human_toigo_blunt_bob2" instance=ExtResource("1_n2v22")]

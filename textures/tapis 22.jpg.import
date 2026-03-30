@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmin2pac0ndlc"
 path.s3tc="res://.godot/imported/tapis 22.jpg-5d3a762e4aa1da1f2ecb6d93d2167abd.s3tc.ctex"
+path.etc2="res://.godot/imported/tapis 22.jpg-5d3a762e4aa1da1f2ecb6d93d2167abd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/tapis 22.jpg"
-dest_files=["res://.godot/imported/tapis 22.jpg-5d3a762e4aa1da1f2ecb6d93d2167abd.s3tc.ctex"]
+dest_files=["res://.godot/imported/tapis 22.jpg-5d3a762e4aa1da1f2ecb6d93d2167abd.s3tc.ctex", "res://.godot/imported/tapis 22.jpg-5d3a762e4aa1da1f2ecb6d93d2167abd.etc2.ctex"]
 
 [params]
 

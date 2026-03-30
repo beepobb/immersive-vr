@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bepns63chv3cw"]
+
+[ext_resource type="PackedScene" uid="uid://738r5dcha15f" path="res://assets/hair/cortu_short_messy_hair.glb" id="1_8nwgs"]
+
+[node name="cortu_short_messy_hair" instance=ExtResource("1_8nwgs")]

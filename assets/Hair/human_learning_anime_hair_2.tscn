@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cjyqmb3112nv5"]
+
+[ext_resource type="PackedScene" uid="uid://cmnt4u3bcg6bo" path="res://assets/hair/Human_learning_anime_hair.glb" id="1_rvqo3"]
+
+[node name="Human_learning_anime_hair2" instance=ExtResource("1_rvqo3")]

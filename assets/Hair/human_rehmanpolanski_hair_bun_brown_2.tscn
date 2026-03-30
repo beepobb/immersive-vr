@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://u7hnof21ie28"]
+
+[ext_resource type="PackedScene" uid="uid://borecng4ntiqc" path="res://assets/hair/Human_rehmanpolanski_hair_bun_brown.glb" id="1_1wryv"]
+
+[node name="Human_rehmanpolanski_hair_bun_brown2" instance=ExtResource("1_1wryv")]

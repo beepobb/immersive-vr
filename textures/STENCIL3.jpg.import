@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc5litk4v3p4x"
 path.s3tc="res://.godot/imported/STENCIL3.jpg-7240c7e9f4e039be563ce8ee60d71b08.s3tc.ctex"
+path.etc2="res://.godot/imported/STENCIL3.jpg-7240c7e9f4e039be563ce8ee60d71b08.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/STENCIL3.jpg"
-dest_files=["res://.godot/imported/STENCIL3.jpg-7240c7e9f4e039be563ce8ee60d71b08.s3tc.ctex"]
+dest_files=["res://.godot/imported/STENCIL3.jpg-7240c7e9f4e039be563ce8ee60d71b08.s3tc.ctex", "res://.godot/imported/STENCIL3.jpg-7240c7e9f4e039be563ce8ee60d71b08.etc2.ctex"]
 
 [params]
 

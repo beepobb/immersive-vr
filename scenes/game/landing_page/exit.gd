@@ -1,0 +1,9 @@
+extends Control
+
+@onready var exit_button: TextureButton = $Panel/MarginContainer/Exit_button
+
+func _ready() -> void:
+	exit_button.pressed.connect(_on_exit_button_pressed)
+
+func _on_exit_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/log_in/log_in.tscn")

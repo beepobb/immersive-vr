@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bymtjs80kqvvm"]
+
+[ext_resource type="PackedScene" uid="uid://clap5mqi1o4mp" path="res://assets/shoes/mindfront_shoes_oxford_male.glb" id="1_rmkdr"]
+
+[node name="mindfront_shoes_oxford_male" instance=ExtResource("1_rmkdr")]

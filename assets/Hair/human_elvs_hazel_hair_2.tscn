@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://j026ac57qjft"]
+
+[ext_resource type="PackedScene" uid="uid://dpbx51rxj7llh" path="res://assets/hair/Human_elvs_hazel_hair.glb" id="1_qcymv"]
+
+[node name="Human_elvs_hazel_hair2" instance=ExtResource("1_qcymv")]

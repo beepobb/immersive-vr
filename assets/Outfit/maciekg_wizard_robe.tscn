@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dfqrwqgaixme7"]
+
+[ext_resource type="PackedScene" uid="uid://dyyn6ca0vgwic" path="res://assets/outfit/maciekg_wizard_robe.glb" id="1_cdo32"]
+
+[node name="maciekg_wizard_robe" instance=ExtResource("1_cdo32")]

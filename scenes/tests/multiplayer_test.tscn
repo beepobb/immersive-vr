@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cyj3gcfxyi42t"]
+
+[ext_resource type="Script" uid="uid://bdame5nr8g0oa" path="res://scripts/multiplayer/high_level_multiplayer_spawner.gd" id="1_8yat0"]
+[ext_resource type="PackedScene" uid="uid://cgn6fxo4lkwee" path="res://scenes/tests/spawn_points.tscn" id="3_1apo0"]
+[ext_resource type="PackedScene" uid="uid://dk0qbary77diu" path="res://scenes/tests/dummy_player.tscn" id="3_xucra"]
+[ext_resource type="PackedScene" uid="uid://bmuvspj8m7g8k" path="res://scenes/environment/therapy_room.tscn" id="4_xtxt4"]
+[ext_resource type="PackedScene" uid="uid://dra6hcye3wb2e" path="res://scenes/tests/high_level_ui.tscn" id="6_dmo61"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xucra"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_xucra")
+
+[sub_resource type="Environment" id="Environment_dmo61"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="MultiplayerTest" type="Node3D" unique_id=983121164]
+
+[node name="SpawnPoints" parent="." unique_id=986426591 instance=ExtResource("3_1apo0")]
+unique_name_in_owner = true
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=121250314]
+_spawnable_scenes = PackedStringArray("uid://dk0qbary77diu")
+spawn_path = NodePath("../Players")
+script = ExtResource("1_8yat0")
+network_player = ExtResource("3_xucra")
+
+[node name="therapy_room" parent="." unique_id=1812520422 instance=ExtResource("4_xtxt4")]
+
+[node name="Players" type="Node3D" parent="." unique_id=1824640923]
+unique_name_in_owner = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1127741220]
+environment = SubResource("Environment_dmo61")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=386842963]
+transform = Transform3D(1, 0, 0, 0, -0.26166698, 0.9651582, 0, -0.9651582, -0.26166698, 0, 0, 0)
+shadow_enabled = true
+
+[node name="HighLevelUI" parent="." unique_id=714482125 instance=ExtResource("6_dmo61")]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dpa5b7hrakew0"]
+
+[ext_resource type="PackedScene" uid="uid://ctods3qwyn0sh" path="res://assets/hair/Human_littleright_bobcut_hair.glb" id="1_w8a1u"]
+
+[node name="Human_littleright_bobcut_hair2" instance=ExtResource("1_w8a1u")]

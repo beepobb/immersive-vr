@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://7cfusl23cbu7"]
+
+[ext_resource type="Script" uid="uid://bwoh4ij40r5so" path="res://scenes/game/log_in/log_in.gd" id="1_slcsw"]
+[ext_resource type="Texture2D" uid="uid://qnuve3m130bf" path="res://assets/icons/Venture Logo.jpg" id="1_vjcw6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixa04"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[node name="LogIn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_slcsw")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(649, 360)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ixa04")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="LeftSide" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(346, 640)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Sign In" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Sign In"
+
+[node name="Spacer" type="Control" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Choose your Role" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide"]
+layout_mode = 2
+text = "Choose your Role"
+
+[node name="RoleButtons" type="HBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Patient" type="Button" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide/RoleButtons"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+text = "Patient"
+
+[node name="Therapist" type="Button" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide/RoleButtons"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+text = "Therapist"
+
+[node name="Username" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide"]
+layout_mode = 2
+text = "Username"
+
+[node name="Username_input" type="LineEdit" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide"]
+layout_mode = 2
+
+[node name="Password" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide"]
+layout_mode = 2
+text = "Password"
+
+[node name="Password_input" type="LineEdit" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide"]
+layout_mode = 2
+
+[node name="LogIn" type="Button" parent="PanelContainer/HBoxContainer/MarginContainer/LeftSide"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Login"
+
+[node name="RightSide" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(854, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/RightSide"]
+custom_minimum_size = Vector2(854, 720)
+layout_mode = 2
+texture = ExtResource("1_vjcw6")
+expand_mode = 2

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bahu2jcxwnh5x"]
+
+[ext_resource type="PackedScene" uid="uid://o7v51mto1ha1" path="res://assets/shoes/elvs_zombie_killer_sneakers.glb" id="1_mgrlt"]
+
+[node name="elvs_zombie_killer_sneakers" instance=ExtResource("1_mgrlt")]

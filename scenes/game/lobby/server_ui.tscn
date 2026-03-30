@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c80okq4yeqntk"]
+
+[ext_resource type="Script" uid="uid://bmhjcr8dflul6" path="res://scripts/ui/lobby/server_ui.gd" id="1_l2pos"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=828575562]
+offset_right = 360.0
+offset_bottom = 344.0
+theme_override_constants/separation = 16
+script = ExtResource("1_l2pos")
+target_scene = "uid://cu6ifuf2vc8gv"
+
+[node name="RoleLabel" type="Label" parent="." unique_id=210494175]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Select Role"
+horizontal_alignment = 1
+
+[node name="RoleButtons" type="HBoxContainer" parent="." unique_id=1854494024]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TherapistRoleButton" type="Button" parent="RoleButtons" unique_id=214754910]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Therapist"
+
+[node name="PatientRoleButton" type="Button" parent="RoleButtons" unique_id=902214129]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+text = "Patient"
+
+[node name="Label" type="Label" parent="." unique_id=1714701313]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Room Code"
+horizontal_alignment = 1
+
+[node name="RoomCodeInput" type="LineEdit" parent="." unique_id=1103766289]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+placeholder_text = "Enter Room Code"
+max_length = 6
+
+[node name="Host" type="Button" parent="." unique_id=1197240754]
+layout_mode = 2
+text = "Create Room"
+
+[node name="Join" type="Button" parent="." unique_id=687066490]
+layout_mode = 2
+text = "Join Room"
+
+[node name="StatusLabel" type="Label" parent="." unique_id=307080765]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 23)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
