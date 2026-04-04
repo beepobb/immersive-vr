@@ -1,0 +1,72 @@
+# Blender 4.3.2 MTL File: 'MetaVerse_Env_02.blend'
+# www.blender.org
+
+newmtl Furniture.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd G:/Aniruddh/Meta Homes/New Folder/D Baked/Furniture.001_c.jpg
+map_Ns G:/Aniruddh/Meta Homes/New Folder/D Baked/Furniture.001_r.jpg
+map_Ke G:/Aniruddh/Meta Homes/New Folder/D Baked/Furniture.001_c.jpg
+
+newmtl Furniture.002
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd G:/Aniruddh/Meta Homes/New Folder/D Baked/Furniture.042_c.jpg
+map_Ns G:/Aniruddh/Meta Homes/New Folder/D Baked/Furniture.001_r.jpg
+map_Ke G:/Aniruddh/Meta Homes/New Folder/D Baked/Furniture.042_c.jpg
+
+newmtl Golden_Eagle
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd G:/Aniruddh/Meta Homes/New Folder/textures/Golden_Eagle (2).png
+map_d G:/Aniruddh/Meta Homes/New Folder/textures/Golden_Eagle (2).png
+
+newmtl Platform
+Ns 810.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.050000 0.050000 0.050000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd G:/Aniruddh/Meta Homes/New Folder/D Baked/Circle.001_c.jpg
+map_Ke G:/Aniruddh/Meta Homes/New Folder/D Baked/Circle.001_c.jpg
+
+newmtl Table
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd G:/Aniruddh/Meta Homes/New Folder/D Baked/Circle_c.jpg
+map_Ns G:/Aniruddh/Meta Homes/New Folder/D Baked/Circle_r.jpg
+map_Ke G:/Aniruddh/Meta Homes/New Folder/D Baked/Circle_c.jpg
+
+newmtl ground
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd G:/Aniruddh/Meta Homes/New Folder/D Baked/Sand Dunes in Desert Terrain.001_c.jpg
+map_Ke G:/Aniruddh/Meta Homes/New Folder/D Baked/Sand Dunes in Desert Terrain.001_c.jpg
+
+newmtl sky
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd G:/Aniruddh/Meta Homes/New Folder/D Baked/Sky.jpg
+map_Ke G:/Aniruddh/Meta Homes/New Folder/D Baked/Sky.jpg

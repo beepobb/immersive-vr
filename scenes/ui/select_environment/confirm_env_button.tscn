@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://pqe224nmdhdj"]
+
+[ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="1_xdm33"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx8s0"]
+bg_color = Color(0, 0.47843137, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4278797, 0.6633168, 0.999999, 1)
+border_blend = true
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mwg2"]
+bg_color = Color(0, 0.4, 0.8392157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.42745098, 0.6627451, 1, 1)
+border_blend = true
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh6sf"]
+bg_color = Color(0.101960786, 0.54901963, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.42745098, 0.6627451, 1, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iah7s"]
+bg_color = Color(0.2, 0.6117647, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5019608, 0.7490196, 1, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[node name="ConfirmButton" type="Button"]
+custom_minimum_size = Vector2(150, 50)
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_xdm33")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_fx8s0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5mwg2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lh6sf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iah7s")
+text = "Confirm
+"

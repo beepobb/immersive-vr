@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://d3ghauap52tfs" path="res://scenes/ui/avatar_customisation/avatar_test.tscn" id="1_i3m6c"]
 [ext_resource type="PackedScene" uid="uid://d3q3s14fe7ha6" path="res://scenes/ui/avatar_customisation/preview_stage.tscn" id="2_6ix2i"]
 [ext_resource type="PackedScene" uid="uid://dskwobcin0gfq" path="res://scenes/archive/avatar_customisation.tscn" id="3_58vre"]
-[ext_resource type="PackedScene" uid="uid://su3nynakebv7" path="res://scenes/ui/select_environment.tscn" id="4_k8kk3"]
+[ext_resource type="PackedScene" uid="uid://su3nynakebv7" path="res://scenes/ui/select_environment/select_environment.tscn" id="4_k8kk3"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k8kk3"]
 

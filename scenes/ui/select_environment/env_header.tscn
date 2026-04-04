@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn4xw3ejwujxl"]
+
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_04g20"]
+[ext_resource type="FontFile" uid="uid://b8k617a8y14dt" path="res://tools/Poppins/Poppins-Bold.ttf" id="2_2m2ot"]
+[ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="3_prakw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7vw70"]
+
+[node name="EnvHeader" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 73.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="HBoxContainer"]
+material = SubResource("ShaderMaterial_7vw70")
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+theme = ExtResource("1_04g20")
+theme_override_font_sizes/font_size = 50
+text = "←"
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/BackButton"]
+layout_mode = 0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/BackButton/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/BackButton/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8156863)
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = ExtResource("2_2m2ot")
+theme_override_font_sizes/font_size = 32
+text = "Select Your Virtual Environment"
+
+[node name="Label2" type="Label" parent="HBoxContainer/BackButton/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0.05490196, 0.05490196, 0.05490196, 0.8352941)
+theme_override_fonts/font = ExtResource("3_prakw")
+theme_override_font_sizes/font_size = 24
+text = "Click to choose your preferred environment for the session"

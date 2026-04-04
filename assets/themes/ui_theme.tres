@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cemhuq212tawr"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cemhuq212tawr"]
 
 [sub_resource type="StyleBoxFlat" id="button_hover"]
 bg_color = Color(1, 1, 1, 0.22)
@@ -13,16 +13,17 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="button"]
-bg_color = Color(1, 1, 1, 0.14)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 0.18)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+bg_color = Color(0.6116128, 0.66128355, 0.7509397, 0.8784314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9287528, 0.93932474, 0.9582972, 0.8784314)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="input_focus"]
 bg_color = Color(1, 1, 1, 0.18)
@@ -48,12 +49,25 @@ corner_radius_top_right = 14
 corner_radius_bottom_right = 14
 corner_radius_bottom_left = 14
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_id6vg"]
+bg_color = Color(0.7607843, 0.8392157, 0.9490196, 0.23921569)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
 [sub_resource type="StyleBoxFlat" id="panel"]
-content_margin_left = 20.0
+content_margin_left = 12.0
 content_margin_top = 18.0
-content_margin_right = 20.0
+content_margin_right = 12.0
 content_margin_bottom = 18.0
-bg_color = Color(0.101960786, 0.12156863, 0.16078432, 0.47843137)
+bg_color = Color(0.7176471, 0.75686276, 0.827451, 0.5568628)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -96,6 +110,7 @@ LineEdit/styles/focus = SubResource("input_focus")
 LineEdit/styles/normal = SubResource("input")
 OptionButton/styles/focus = SubResource("input_focus")
 OptionButton/styles/normal = SubResource("input")
+Panel/styles/panel = SubResource("StyleBoxFlat_id6vg")
 PanelContainer/styles/panel = SubResource("panel")
 TabContainer/styles/panel = SubResource("panel")
 TabContainer/styles/tab_selected = SubResource("tab_sel")

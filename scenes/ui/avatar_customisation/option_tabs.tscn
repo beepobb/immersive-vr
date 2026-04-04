@@ -1,13 +1,40 @@
-[gd_scene load_steps=22 format=3 uid="uid://cifcm62bjtidk"]
+[gd_scene load_steps=25 format=3 uid="uid://cifcm62bjtidk"]
 
+[ext_resource type="Shader" uid="uid://ob0cuxaigsn3" path="res://scenes/ui/avatar_customisation/glass_shader.gdshader" id="1_1cbjt"]
 [ext_resource type="Script" uid="uid://cdsd8beik62kt" path="res://scripts/ui/avatar_customisation/option_tabs.gd" id="1_uqvoq"]
+[ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="3_nyom5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nyom5"]
+shader = ExtResource("1_1cbjt")
+shader_parameter/tint_color = Color(0.76, 0.84, 0.95, 0.24)
+shader_parameter/cloud_scale = 1.2
+shader_parameter/grain_scale = 20.0
+shader_parameter/cloud_strength = 0.16
+shader_parameter/grain_strength = 0.035
+shader_parameter/warp_strength = 0.02
+shader_parameter/top_glow = 0.11
+shader_parameter/center_haze = 0.06
+shader_parameter/outer_edge_width = 0.035
+shader_parameter/inner_edge_width = 0.07
+shader_parameter/outer_highlight = 0.22
+shader_parameter/inner_highlight = 0.1
+shader_parameter/inner_shadow = 0.1
+shader_parameter/rim_blue_strength = 0.06
+shader_parameter/corner_radius = 22.0
+shader_parameter/corner_softness = 1.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hsv1"]
 content_margin_left = 16.0
 content_margin_top = 16.0
 content_margin_right = 16.0
 content_margin_bottom = 16.0
-bg_color = Color(0.10980392, 0.10980392, 0.11764706, 0.5019608)
+bg_color = Color(0.6117647, 0.6627451, 0.7490196, 0.8784314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7744211, 0.8074931, 0.8633373, 0.8784314)
+border_blend = true
 corner_radius_top_left = 24
 corner_radius_bottom_left = 24
 
@@ -27,7 +54,13 @@ corner_radius_top_left = 24
 corner_radius_bottom_left = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56t7g"]
-bg_color = Color(0.10980392, 0.10980392, 0.11764706, 0.5019608)
+bg_color = Color(0.2361075, 0.23610958, 0.25092304, 0.85490197)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.44846684, 0.44848937, 0.4709974, 0.90588236)
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqvoq"]
 bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
@@ -87,6 +120,7 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 
 [node name="OptionTabs" type="HBoxContainer"]
+material = SubResource("ShaderMaterial_nyom5")
 offset_right = 626.0
 offset_bottom = 55.0
 script = ExtResource("1_uqvoq")
@@ -95,6 +129,9 @@ script = ExtResource("1_uqvoq")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_nyom5")
+theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_3hsv1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mhfsl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1aak")
@@ -106,6 +143,8 @@ text = "Body
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nyom5")
+theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_56t7g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_uqvoq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j5ncg")
@@ -116,6 +155,8 @@ text = "Skin"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nyom5")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_rxbqf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1cbjt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8mxhm")
@@ -126,6 +167,8 @@ text = "Outfit"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nyom5")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ytbdc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y6s8w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nakv3")
@@ -136,6 +179,8 @@ text = "Hair"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nyom5")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_owq5e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lo5ah")
 theme_override_styles/hover = SubResource("StyleBoxFlat_u8loy")

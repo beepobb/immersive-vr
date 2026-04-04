@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://m3kfh03rvjir"]
+
+[ext_resource type="PackedScene" uid="uid://dn2dk8snuf7ak" path="res://assets/environment/Metaverse Environment 02/MetaVerse_Env_02.glb" id="1_bm3y1"]
+[ext_resource type="PackedScene" uid="uid://dowcirifdtgie" path="res://assets/environment/Metaverse Environment 02/bird_mr_final.tscn" id="2_i3a05"]
+
+[node name="MetaVerse_Env_02" instance=ExtResource("1_bm3y1")]
+
+[node name="Golden_Eagle" parent="." index="4"]
+transform = Transform3D(-4.9778013e-05, 3.2140168e-05, 2.5366548e-06, -3.216961e-05, -4.9823604e-05, -2.2093438e-13, 2.1310482e-06, -1.3759544e-06, 5.925235e-05, -38.662086, 37.23961, 79.44902)
+
+[node name="bird_MR_Final" parent="." index="8" instance=ExtResource("2_i3a05")]

@@ -1,51 +1,50 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0uy3mf2m2qny"]
+[gd_scene load_steps=9 format=3 uid="uid://b0uy3mf2m2qny"]
 
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://hwod88bnukm0" path="res://scenes/camera_3d.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b0c8u6ke3gr3j" path="res://assets/environment/Metaverse Environment 06/meta_environment_06.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://x0k1ixl4v7o1" path="res://scenes/ui/avatar_customisation/avatar_customisation.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://ijodgw1rcrfq" path="res://scenes/environment/circular_hall.tscn" id="6_tefeu"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
-size = Vector3(5, 0.1, 5)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lln8e"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0.50140655, 0.5014065, 0.5014065, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
-size = Vector3(5, 0.1, 5)
+[sub_resource type="CylinderMesh" id="CylinderMesh_tefeu"]
+material = SubResource("StandardMaterial3D_lln8e")
+bottom_radius = 0.7
+height = 0.3
+radial_segments = 7
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_0xm2m")
 
 [node name="Meta_Environment_06" parent="." instance=ExtResource("2_tbgi4")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.8373277, 0.54670125, 0, -0.54670125, 0.8373277, 0.16378927, 2.593715, 1.5139986)
-shadow_enabled = true
-
-[node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("BoxShape3D_7dm0k")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10510419, 0)
-mesh = SubResource("BoxMesh_ig7tw")
-skeleton = NodePath("../CollisionShape3D")
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99919295, 0.040166616, 0, -0.040166616, 0.99919295, 0, 0, 0)
+transform = Transform3D(-0.6695584, -0.029834135, 0.74216, 0, 0.999193, 0.04016662, -0.7427594, 0.026893899, -0.6690181, -1.0070435, -0.6118622, 2.421795)
 visible = false
 fov = 71.401505
 script = ExtResource("2_jyhfs")
 enabled = false
 
 [node name="XROrigin3D" parent="." instance=ExtResource("4_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.5)
+transform = Transform3D(0.91450125, 0, 0.404583, 0, 1, 0, -0.404583, 0, 0.91450125, 0.33939397, 1.1865305, 0.7491245)
 
 [node name="AvatarCustomisation" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11441243, 0.59931767, -0.00058078766)
+transform = Transform3D(0.91578174, 0, 0.40167612, 0, 1, 0, -0.40167612, 0, 0.91578174, -1.003865, 0.38131344, -3.6316433)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.94327486, 0.33201295, 0, -0.33201295, 0.94327486, 0, 2.6259708, 3.3279872)
-spot_range = 7.448
+transform = Transform3D(0.9215111, 0, 0.3883521, 0, 1, 0, -0.3883521, 0, 0.9215111, -0.48480588, 3.0390596, -0.95120513)
+spot_range = 6.0
 spot_attenuation = -0.35
+
+[node name="Room" parent="." instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 8.742278e-08, 0, -8.742278e-08, 1, 0, 0, 0, -1, 0.002533555, 0.056016445, -0.011479706)
+
+[node name="Platform3" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(0.92151093, -6.8617183e-09, 0.38835204, -6.861711e-09, 1, 3.395081e-08, -0.38835204, -3.3950812e-08, 0.92151093, -2.0841026, 0.22077262, 2.1038792)
+mesh = SubResource("CylinderMesh_tefeu")

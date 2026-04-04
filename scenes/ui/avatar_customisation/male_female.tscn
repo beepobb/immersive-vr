@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl41sy5fl77cl"]
+
+[ext_resource type="Texture2D" uid="uid://cf0m0efnw7smh" path="res://assets/ui/icons/man.png" id="1_g0yrq"]
+
+[node name="Male" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_g0yrq")
+icon_alignment = 1
+expand_icon = true

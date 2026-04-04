@@ -1,22 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0c8u6ke3gr3j"]
+[gd_scene load_steps=2 format=3 uid="uid://b0c8u6ke3gr3j"]
 
 [ext_resource type="PackedScene" uid="uid://djhwtfpxbmept" path="res://assets/environment/Metaverse Environment 06/Meta_Environment_06.blend" id="1_rq058"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrlxx"]
-albedo_color = Color(0.8862745, 0.8039216, 0.7137255, 1)
-roughness = 0.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_kkxny"]
-top_radius = 0.91
-bottom_radius = 3.0
-height = 0.3
-
 [node name="Meta_Environment_06" instance=ExtResource("1_rq058")]
 
-[node name="Floor" type="MeshInstance3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005140543, 0.4082811, 0.0032156706)
-material_override = SubResource("StandardMaterial3D_rrlxx")
-mesh = SubResource("CylinderMesh_kkxny")
+[node name="Table" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09142053, 0)
+visible = false
 
-[node name="Ground" parent="." index="9"]
+[node name="Chandelier" parent="." index="3"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.424193, 0)
+visible = false
+
+[node name="Chair" parent="." index="4"]
+visible = false
+
+[node name="Table_Big" parent="." index="5"]
+visible = false
+
+[node name="Photoframes" parent="." index="6"]
+visible = false
+
+[node name="Sofa_02" parent="." index="7"]
+visible = false
+
+[node name="Ground" parent="." index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00037431717, 0, -0.01585579)
+visible = false
+
+[node name="Door" parent="." index="9"]
+visible = false
+
+[node name="Ceiling" parent="." index="10"]
+visible = false
+
+[node name="Glass" parent="." index="11"]
+visible = false
+
+[node name="Sofa_01" parent="." index="12"]
+visible = false
+
+[node name="Roof" parent="." index="13"]
+visible = false
