@@ -13,7 +13,7 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="button"]
-bg_color = Color(0.6116128, 0.66128355, 0.7509397, 0.8784314)
+bg_color = Color(0, 0, 0, 0.72156864)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2

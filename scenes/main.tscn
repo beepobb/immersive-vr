@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0uy3mf2m2qny"]
+[gd_scene load_steps=8 format=3 uid="uid://b0uy3mf2m2qny"]
 
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://hwod88bnukm0" path="res://scenes/camera_3d.gd" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://b0c8u6ke3gr3j" path="res://assets/environment/Metaverse Environment 06/meta_environment_06.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://x0k1ixl4v7o1" path="res://scenes/ui/avatar_customisation/avatar_customisation.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://ijodgw1rcrfq" path="res://scenes/environment/circular_hall.tscn" id="6_tefeu"]
@@ -20,9 +19,6 @@ radial_segments = 7
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_0xm2m")
-
-[node name="Meta_Environment_06" parent="." instance=ExtResource("2_tbgi4")]
-visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.6695584, -0.029834135, 0.74216, 0, 0.999193, 0.04016662, -0.7427594, 0.026893899, -0.6690181, -1.0070435, -0.6118622, 2.421795)
@@ -42,9 +38,11 @@ transform = Transform3D(0.9215111, 0, 0.3883521, 0, 1, 0, -0.3883521, 0, 0.92151
 spot_range = 6.0
 spot_attenuation = -0.35
 
-[node name="Room" parent="." instance=ExtResource("6_tefeu")]
+[node name="EnvironmentRoot" type="Node3D" parent="."]
+
+[node name="Room" parent="EnvironmentRoot" instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 8.742278e-08, 0, -8.742278e-08, 1, 0, 0, 0, -1, 0.002533555, 0.056016445, -0.011479706)
 
-[node name="Platform3" type="MeshInstance3D" parent="Room"]
+[node name="Platform3" type="MeshInstance3D" parent="EnvironmentRoot/Room"]
 transform = Transform3D(0.92151093, -6.8617183e-09, 0.38835204, -6.861711e-09, 1, 3.395081e-08, -0.38835204, -3.3950812e-08, 0.92151093, -2.0841026, 0.22077262, 2.1038792)
 mesh = SubResource("CylinderMesh_tefeu")

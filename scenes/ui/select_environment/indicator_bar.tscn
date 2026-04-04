@@ -1,4 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ybm36ivsjvoj"]
+[gd_scene load_steps=7 format=3 uid="uid://ybm36ivsjvoj"]
+
+[ext_resource type="Script" uid="uid://dt0a6uxobytt3" path="res://scripts/ui/select_environment/indicator_bar.gd" id="1_1bvyl"]
+[ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="2_i5fdy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0r6g"]
 bg_color = Color(0.10980392, 0.10980392, 0.11764706, 0.5019608)
@@ -27,7 +30,7 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5fdy"]
-bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
+bg_color = Color(0.3879521, 0.38795832, 0.40190157, 0.6)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -52,7 +55,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="Footer" type="VBoxContainer"]
+[node name="indicator_bar" type="VBoxContainer"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -65,6 +68,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_1bvyl")
 
 [node name="BottomNavBar" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -79,7 +83,19 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_o0r6g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1bvyl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i5fdy")
 theme_override_styles/focus = SubResource("StyleBoxFlat_x1ytl")
-text = "←"
+
+[node name="Label" type="Label" parent="BottomNavBar/PrevButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i5fdy")
+theme_override_font_sizes/font_size = 32
+text = "❮"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="BottomNavBar"]
 layout_mode = 2
@@ -116,6 +132,22 @@ layout_mode = 2
 [node name="NextButton" type="Button" parent="BottomNavBar"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_o0r6g")
-text = "→"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1bvyl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i5fdy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x1ytl")
+text = " "
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="BottomNavBar/NextButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "❯"
+horizontal_alignment = 1
+vertical_alignment = 1

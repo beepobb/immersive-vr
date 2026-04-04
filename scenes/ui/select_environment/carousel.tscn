@@ -1,13 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://gail3i3os4a"]
+[gd_scene load_steps=11 format=3 uid="uid://gail3i3os4a"]
 
 [ext_resource type="Shader" uid="uid://ob0cuxaigsn3" path="res://scenes/ui/avatar_customisation/glass_shader.gdshader" id="1_ju34m"]
-[ext_resource type="Script" uid="uid://d0boivqr5j7pw" path="res://scripts/ui/select_environment/select_environment_test.gd" id="2_mjrjj"]
-[ext_resource type="Texture2D" uid="uid://by1igi04vtnp3" path="res://assets/themes/glass_panel_9slice.png" id="3_uot6r"]
-[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="4_hy1jn"]
-[ext_resource type="FontFile" uid="uid://b8k617a8y14dt" path="res://tools/Poppins/Poppins-Bold.ttf" id="5_n5e2i"]
-[ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="6_6fs8o"]
+[ext_resource type="Script" uid="uid://d0boivqr5j7pw" path="res://scripts/ui/select_environment/carousel.gd" id="2_mjrjj"]
+[ext_resource type="Texture2D" uid="uid://mews21ttgdjb" path="res://assets/ui/card/open_room.jpg" id="5_4v3e6"]
 [ext_resource type="PackedScene" uid="uid://2mrox5h8n372" path="res://scenes/ui/select_environment/env_card.tscn" id="7_xx3y1"]
-[ext_resource type="Texture2D" uid="uid://x0ut125aewrt" path="res://assets/ui/card/TherapyRoom.jpg" id="8_d27dw"]
 [ext_resource type="Texture2D" uid="uid://b5opfjy07ffv0" path="res://assets/ui/card/Cafe01.jpg" id="9_blirw"]
 [ext_resource type="Texture2D" uid="uid://cxn4jpl5qayv1" path="res://assets/ui/card/water_house.jpg" id="10_nmqty"]
 [ext_resource type="Texture2D" uid="uid://dw27v3m88e263" path="res://assets/ui/card/park.jpg" id="11_xl8r7"]
@@ -35,202 +31,30 @@ shader_parameter/corner_softness = 1.5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0udtx"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52udh"]
-bg_color = Color(0.10980392, 0.10980392, 0.11764706, 0.5019608)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.49149686, 0.49152333, 0.5126989, 0.5019608)
-border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cgme"]
-bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.49019608, 0.49019608, 0.5137255, 0.5019608)
-border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_il0xa"]
-bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.49019608, 0.49019608, 0.5137255, 0.5019608)
-border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4op6p"]
-bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.49019608, 0.49019608, 0.5137255, 0.5019608)
-border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx8s0"]
-bg_color = Color(0, 0.47843137, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.4278797, 0.6633168, 0.999999, 1)
-border_blend = true
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mwg2"]
-bg_color = Color(0, 0.4, 0.8392157, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.42745098, 0.6627451, 1, 1)
-border_blend = true
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh6sf"]
-bg_color = Color(0.101960786, 0.54901963, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.42745098, 0.6627451, 1, 1)
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iah7s"]
-bg_color = Color(0.2, 0.6117647, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.5019608, 0.7490196, 1, 1)
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
-
-[node name="SelectEnvironment" type="Panel"]
+[node name="Carousel" type="Panel"]
 material = SubResource("ShaderMaterial_5y57f")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -217.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0udtx")
 script = ExtResource("2_mjrjj")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_uot6r")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+offset_right = 1400.0
+offset_bottom = 504.0
 theme_override_constants/separation = 60
 
-[node name="Header" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/Header"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(65, 60)
-layout_mode = 0
-offset_right = 60.0
-offset_bottom = 64.0
-theme = ExtResource("4_hy1jn")
-theme_override_font_sizes/font_size = 32
-text = "←"
-
-[node name="HeaderMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/Header"]
-layout_mode = 0
-offset_left = 80.0
-offset_right = 572.0
-offset_bottom = 64.0
-theme_override_constants/margin_left = 250
-theme_override_constants/margin_right = 250
-
-[node name="TitleGroup" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Header/HeaderMargin"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Header/HeaderMargin/TitleGroup"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.64705884)
-theme_override_fonts/font = ExtResource("5_n5e2i")
-theme_override_font_sizes/font_size = 24
-text = "Select Your Virtual Environment"
-horizontal_alignment = 1
-
-[node name="Subtitle" type="Label" parent="MarginContainer/VBoxContainer/Header/HeaderMargin/TitleGroup"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_6fs8o")
-theme_override_font_sizes/font_size = 18
-text = "Click to preview and choose your preferred environment"
-horizontal_alignment = 1
-
-[node name="Carousel" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 420)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/Carousel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="EnvCards" type="Control" parent="MarginContainer/VBoxContainer/Carousel/CenterContainer"]
+[node name="EnvCards" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(1400, 320)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ClarityRoomCard" parent="MarginContainer/VBoxContainer/Carousel/CenterContainer/EnvCards" instance=ExtResource("7_xx3y1")]
+[node name="ClarityRoomCard" parent="VBoxContainer/EnvCards" instance=ExtResource("7_xx3y1")]
 unique_name_in_owner = true
 layout_mode = 0
 anchors_preset = 0
@@ -241,11 +65,11 @@ offset_right = 400.0
 offset_bottom = 490.0
 grow_horizontal = 1
 grow_vertical = 1
-env_title = "Clarity Room"
-env_description = "A minimalist therapy room with soft lighting and neutral tones that foster calm, focus, and open communication."
-env_photo = ExtResource("8_d27dw")
+env_title = "Horizon Sanctuary "
+env_description = "A spacious circular sanctuary surrounded by panoramic mountain views. Designed for grounding, focus, and peaceful dialogue."
+env_photo = ExtResource("5_4v3e6")
 
-[node name="DialogueCafeCard" parent="MarginContainer/VBoxContainer/Carousel/CenterContainer/EnvCards" instance=ExtResource("7_xx3y1")]
+[node name="DialogueCafeCard" parent="VBoxContainer/EnvCards" instance=ExtResource("7_xx3y1")]
 unique_name_in_owner = true
 layout_mode = 0
 anchors_preset = 0
@@ -257,11 +81,11 @@ offset_right = 580.0
 offset_bottom = 455.0
 grow_horizontal = 1
 grow_vertical = 1
-env_title = "Dialogue Cafe"
-env_description = "A cozy café with warm lighting, designed to create a relaxed and professional space for open conversation."
+env_title = "Clarity Room"
+env_description = "A minimalist therapy room with soft lighting and neutral tones that foster calm, focus, and open communication."
 env_photo = ExtResource("9_blirw")
 
-[node name="WaterCard" parent="MarginContainer/VBoxContainer/Carousel/CenterContainer/EnvCards" instance=ExtResource("7_xx3y1")]
+[node name="WaterCard" parent="VBoxContainer/EnvCards" instance=ExtResource("7_xx3y1")]
 unique_name_in_owner = true
 layout_mode = 0
 anchors_preset = 0
@@ -272,11 +96,11 @@ offset_right = 870.0
 offset_bottom = 420.0
 grow_horizontal = 1
 grow_vertical = 1
-env_title = "Water House"
-env_description = "A cozy café with warm lighting, designed to create a relaxed and professional space for open conversation."
+env_title = "Floating Haven"
+env_description = "A modern home surrounded by calm waters. Offers a serene, private escape with a soothing atmosphere."
 env_photo = ExtResource("10_nmqty")
 
-[node name="ParkCard" parent="MarginContainer/VBoxContainer/Carousel/CenterContainer/EnvCards" instance=ExtResource("7_xx3y1")]
+[node name="ParkCard" parent="VBoxContainer/EnvCards" instance=ExtResource("7_xx3y1")]
 unique_name_in_owner = true
 layout_mode = 0
 anchors_preset = 0
@@ -288,11 +112,11 @@ offset_right = 1200.0
 offset_bottom = 455.0
 grow_horizontal = 1
 grow_vertical = 1
-env_title = "Park"
-env_description = "A cozy café with warm lighting, designed to create a relaxed and professional space for open conversation."
+env_title = "Tranquil Park"
+env_description = "A gentle outdoor park with greenery and winding paths. Ideal for relaxed, natural conversations in a refreshing setting."
 env_photo = ExtResource("11_xl8r7")
 
-[node name="DesertCard" parent="MarginContainer/VBoxContainer/Carousel/CenterContainer/EnvCards" instance=ExtResource("7_xx3y1")]
+[node name="DesertCard" parent="VBoxContainer/EnvCards" instance=ExtResource("7_xx3y1")]
 unique_name_in_owner = true
 layout_mode = 0
 anchors_preset = 0
@@ -304,79 +128,6 @@ offset_right = 1380.0
 offset_bottom = 490.0
 grow_horizontal = 1
 grow_vertical = 1
-env_title = "Desert"
-env_description = "A cozy café with warm lighting, designed to create a relaxed and professional space for open conversation."
+env_title = "Desert Serenity"
+env_description = "A quiet, open desert space with warm sunlight and soft sands. Perfect for calm reflection and uninterrupted conversations."
 env_photo = ExtResource("12_fqk6g")
-
-[node name="Footer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-size_flags_horizontal = 4
-alignment = 1
-
-[node name="BottomNavBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Footer"]
-layout_mode = 2
-
-[node name="PrevButton" type="Button" parent="MarginContainer/VBoxContainer/Footer/BottomNavBar"]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_52udh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1cgme")
-theme_override_styles/hover = SubResource("StyleBoxFlat_il0xa")
-theme_override_styles/focus = SubResource("StyleBoxFlat_4op6p")
-text = "←"
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Footer/BottomNavBar"]
-layout_mode = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_right = 40
-
-[node name="IndicatorRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Footer/BottomNavBar/MarginContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="Bar1" type="Panel" parent="MarginContainer/VBoxContainer/Footer/BottomNavBar/MarginContainer/IndicatorRow"]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="Bar2" type="Panel" parent="MarginContainer/VBoxContainer/Footer/BottomNavBar/MarginContainer/IndicatorRow"]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="Bar3" type="Panel" parent="MarginContainer/VBoxContainer/Footer/BottomNavBar/MarginContainer/IndicatorRow"]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="Bar4" type="Panel" parent="MarginContainer/VBoxContainer/Footer/BottomNavBar/MarginContainer/IndicatorRow"]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="Bar5" type="Panel" parent="MarginContainer/VBoxContainer/Footer/BottomNavBar/MarginContainer/IndicatorRow"]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/Footer/BottomNavBar"]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_52udh")
-text = "→"
-
-[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/Footer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("6_6fs8o")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_fx8s0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5mwg2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_lh6sf")
-theme_override_styles/focus = SubResource("StyleBoxFlat_iah7s")
-text = "Confirm
-"
