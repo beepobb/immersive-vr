@@ -7,7 +7,7 @@ func _on_pressed() -> void:
 	else:
 		push_warning("ConfirmButton: AvatarCustomisation not found, using current GameState values.")
 
-	GameState.return_to_lobby(self , "Avatar saved.")
+	GameState.return_to_lobby("Avatar saved.")
 
 func _find_avatar_customisation_parent() -> Node:
 	var current: Node = self

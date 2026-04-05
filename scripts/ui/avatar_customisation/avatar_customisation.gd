@@ -148,7 +148,7 @@ func _on_option_selected(option_value) -> void:
 		_apply_and_set_new_shoes(shoes_id)
 
 func _on_session_ended(message: String) -> void:
-	GameState.return_to_home(self , message)
+	GameState.return_to_home(message)
 
 func apply_and_set_id(type: Options, id: String) -> void:
 	match type:

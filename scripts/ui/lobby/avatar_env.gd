@@ -4,10 +4,14 @@ extends PanelContainer
 @onready var change_environment_button: Button = $MarginContainer/HBoxContainer/MarginContainer2/ChangeEnvironmentButton
 
 func _ready() -> void:
+	change_environment_button.disabled = false
+	customise_avatar_button.disabled = false
 	change_environment_button.visible = Roles.user_role == Roles.Role.THERAPIST
 
 func _on_change_environment_button_pressed() -> void:
-	GameState.load_scene(self , GameState.SELECT_ENVIRONMENT_SCENE_PATH)
+	change_environment_button.disabled = true
+	GameState.load_scene(GameState.SELECT_ENVIRONMENT_SCENE_PATH)
 
 func _on_customise_avatar_button_pressed() -> void:
-	GameState.load_scene(self , GameState.AVATAR_CUSTOMISATION_SCENE_PATH)
+	customise_avatar_button.disabled = true
+	GameState.load_scene(GameState.AVATAR_CUSTOMISATION_SCENE_PATH)

@@ -53,7 +53,7 @@ func _hover_out(card: Control) -> void:
 # ---------------- SELECTION / NAVIGATION ----------------
 
 func _on_back_pressed() -> void:
-	GameState.return_to_lobby(self )
+	GameState.return_to_lobby()
 
 
 func _build_environment_cards() -> void:
@@ -97,7 +97,7 @@ func _on_confirm_pressed() -> void:
 		return
 
 	GameState.set_environment_id(selected_environment_id, multiplayer.is_server())
-	GameState.return_to_lobby(self , "Environment saved for the next call.")
+	GameState.return_to_lobby("Environment saved for the next call.")
 
 func _on_session_ended(message: String) -> void:
-	GameState.return_to_home(self , message)
+	GameState.return_to_home(message)

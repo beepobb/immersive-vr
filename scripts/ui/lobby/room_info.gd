@@ -99,4 +99,5 @@ func update_start_call_button_state(players: Array) -> void:
 	start_call_button.disabled = not (has_eligible_players and all_ready)
 
 func _on_start_call_pressed() -> void:
-	GameState.start_call.rpc()
+	GameState.load_scene(GameState.IN_CALL_SCENE_PATH)
+	GameState.start_call_for_clients()

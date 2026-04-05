@@ -63,4 +63,4 @@ func _load_selected_environment() -> void:
 	_load_environment(selected_environment)
 
 func _on_session_ended(message: String) -> void:
-	GameState.return_to_home(self , message)
+	GameState.return_to_home(message)

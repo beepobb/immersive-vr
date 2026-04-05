@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bnqnnnet4dw12" path="res://addons/godot-xr-tools/staging/staging.tscn" id="1_vok4l"]
 [ext_resource type="Texture2D" uid="uid://dtnlantogrp5d" path="res://assets/splash.png" id="2_k1qkh"]
 
-[node name="MainStaging" unique_id=1880280215 instance=ExtResource("1_vok4l")]
+[node name="MainStaging" unique_id=1880280215 groups=["xr_staging"] instance=ExtResource("1_vok4l")]
 main_scene = "uid://dxj7htjfusv51"
 prompt_for_continue = false
 

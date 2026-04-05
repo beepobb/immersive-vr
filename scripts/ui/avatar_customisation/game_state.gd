@@ -6,7 +6,6 @@ const LOBBY_SCENE_PATH := "res://scenes/game/lobby/lobby.tscn"
 const AVATAR_CUSTOMISATION_SCENE_PATH := "res://scenes/game/avatar_customisation/avatar_customisation.tscn"
 const SELECT_ENVIRONMENT_SCENE_PATH := "res://scenes/game/select_environment/select_environment.tscn"
 const IN_CALL_SCENE_PATH := "res://scenes/environment.tscn"
-const IN_CALL_SCENE = preload(IN_CALL_SCENE_PATH)
 
 const DEFAULT_VISUAL_PRESETS := {
 	"male": {
@@ -132,47 +131,41 @@ func consume_notice() -> String:
 	pending_notice = ""
 	return message
 
-func load_scene(requester: Node, scene_path: String, notice: String = "") -> void:
+func load_scene(scene_path: String, notice: String = "") -> void:
 	if not notice.is_empty():
 		set_notice(notice)
+	
+	var staging = get_tree().get_first_node_in_group("xr_staging")
+	
+	if staging:
+		staging.load_scene(scene_path)
+	else:
+		push_error("XRToolsStaging not found! Scene load aborted.")
 
-	var scene_base = XRTools.find_xr_ancestor(requester, "*", "XRToolsSceneBase")
-	if scene_base:
-		scene_base.load_scene(scene_path)
-		return
+func return_to_home(notice: String = "") -> void:
+	load_scene(HOME_SCENE_PATH, notice)
 
-	requester.get_tree().call_deferred("change_scene_to_file", scene_path)
+func return_to_lobby(notice: String = "") -> void:
+	load_scene(LOBBY_SCENE_PATH, notice)
 
-func return_to_home(requester: Node, notice: String = "") -> void:
-	load_scene(requester, HOME_SCENE_PATH, notice)
-
-func return_to_lobby(requester: Node, notice: String = "") -> void:
-	load_scene(requester, LOBBY_SCENE_PATH, notice)
-
-func end_call_session(notice: String = "Call ended.") -> void:
+func end_call_session(notice: String) -> void:
 	if not multiplayer.is_server():
 		return
 
 	_cleanup_call_state()
-	_broadcast_end_call_cleanup.rpc(notice)
 	await get_tree().process_frame
 	await get_tree().process_frame
 	var peer := multiplayer.multiplayer_peer
 	if peer:
 		peer.close()
 		multiplayer.multiplayer_peer = null
+	return_to_home(notice)
 
 func _cleanup_call_state() -> void:
 	peer_roles.clear()
 	peer_ready.clear()
 	environment_id = ""
 	pending_notice = ""
-
-@rpc("any_peer", "call_local")
-func _broadcast_end_call_cleanup(notice: String) -> void:
-	if not notice.is_empty():
-		set_notice(notice)
-	load_scene(self , HOME_SCENE_PATH, notice)
 
 func set_environment_id(new_environment_id: String, broadcast: bool = false) -> void:
 	environment_id = new_environment_id
@@ -292,6 +285,16 @@ func _role_to_text(role_value: int) -> String:
 		return "Therapist"
 	return "Patient"
 
-@rpc("any_peer", "call_local")
-func start_call():
-	get_tree().change_scene_to_packed(IN_CALL_SCENE)
+@rpc("authority", "call_remote")
+func start_call() -> void:
+	GameState.load_scene(IN_CALL_SCENE_PATH)
+
+func start_call_for_clients():
+	if !multiplayer.is_server():
+		return
+		
+	print("Server starting call for clients...")
+	
+	for peer_id in multiplayer.get_peers():
+		print("Calling peer:", peer_id)
+		start_call.rpc_id(peer_id)

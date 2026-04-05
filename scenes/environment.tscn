@@ -25,7 +25,8 @@ sky = SubResource("Sky_h2yge")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="BaseScene" unique_id=621000924 instance=ExtResource("1_00014")]
+[node name="Environment" unique_id=621000924 instance=ExtResource("1_00014")]
+in_call = true
 
 [node name="PlayerLoader" parent="." index="0" unique_id=1066474312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1.647852)
