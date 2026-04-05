@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c3bbj8ddfqi8a" path="res://scenes/environment/meta_env_06.tscn" id="2_wb32k"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_6mb2d"]
 [ext_resource type="PackedScene" uid="uid://djf6chbkic057" path="res://scenes/game/login.tscn" id="4_uiwtx"]
-[ext_resource type="Script" path="res://scripts/login_manager.gd" id="6_hme5u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pi8sn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,21 +18,21 @@ sky = SubResource("Sky_tgr88")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="QuadMesh" id="QuadMesh_aa8c8"]
+[sub_resource type="QuadMesh" id="QuadMesh_8dejb"]
 resource_local_to_scene = true
 size = Vector2(16, 9)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6mb2d"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_nxntk"]
 viewport_path = NodePath("Viewport2Din3D/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uiwtx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wb32k"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_6mb2d")
+albedo_texture = SubResource("ViewportTexture_nxntk")
 texture_filter = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qol65"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_aa8c8"]
 resource_local_to_scene = true
 size = Vector3(16, 9, 0.02)
 
@@ -55,25 +54,22 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.7529643, 0.8214013
 screen_size = Vector2(16, 9)
 scene = ExtResource("4_uiwtx")
 viewport_size = Vector2(1280, 720)
+transparent = 1
 unshaded = true
 scene_properties_keys = PackedStringArray("login.gd")
 
-[node name="Viewport" parent="Viewport2Din3D" index="0" unique_id=685546755]
+[node name="Viewport" parent="Viewport2Din3D" index="0"]
 size = Vector2i(1280, 720)
 
-[node name="Screen" parent="Viewport2Din3D" index="1" unique_id=1759021397]
-mesh = SubResource("QuadMesh_aa8c8")
-surface_material_override/0 = SubResource("StandardMaterial3D_uiwtx")
+[node name="Screen" parent="Viewport2Din3D" index="1"]
+mesh = SubResource("QuadMesh_8dejb")
+surface_material_override/0 = SubResource("StandardMaterial3D_wb32k")
 
-[node name="StaticBody3D" parent="Viewport2Din3D" index="2" unique_id=205961441]
+[node name="StaticBody3D" parent="Viewport2Din3D" index="2"]
 screen_size = Vector2(16, 9)
 viewport_size = Vector2(1280, 720)
 
-[node name="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D" index="0" unique_id=414472958]
-shape = SubResource("BoxShape3D_qol65")
-
-[node name="LoginManager" type="Node3D" parent="." index="5" unique_id=1409937660]
-script = ExtResource("6_hme5u")
-log_in = ExtResource("4_uiwtx")
+[node name="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_aa8c8")
 
 [editable path="Viewport2Din3D"]

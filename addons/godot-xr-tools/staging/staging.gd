@@ -213,7 +213,6 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 
 			# Halt if running in the debugger
 			# gdlint:ignore=expression-not-assigned
-
 			breakpoint
 
 			# Terminate with a non-zero error code to indicate failure
@@ -240,7 +239,6 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 	var new_scene : PackedScene = ResourceLoader.load_threaded_get(p_scene_path)
 
 	# Setup our new scene
-
 	current_scene = new_scene.instantiate()
 	current_scene_path = p_scene_path
 	$Scene.add_child(current_scene)

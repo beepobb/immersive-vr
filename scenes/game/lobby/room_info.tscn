@@ -11,11 +11,6 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 corner_detail = 10
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5ruuo"]
-properties/0/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/RoomName:text")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-
 [node name="RoomInfo" type="VBoxContainer" unique_id=1238086633]
 offset_right = 454.0
 offset_bottom = 564.85
@@ -48,30 +43,6 @@ text = "Player 1's Room"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1964477914]
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1768768601]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 10
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1480532672]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer2" unique_id=786054385]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Room Code:"
-
-[node name="RoomCode" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer2" unique_id=622844808]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 10
-text = "JS378GD"
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1848255658]
 layout_mode = 2
@@ -133,7 +104,4 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Mark Ready"
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1014921946]
-replication_config = SubResource("SceneReplicationConfig_5ruuo")
+text = "Ready"

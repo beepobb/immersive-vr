@@ -8,14 +8,15 @@ const STATUS_DEFAULT_COLOR := Color(1, 1, 1, 1)
 @export var role_label: Label
 @export var status_label: Label
 
-func set_labels(player_name: String, role: String, status: String) -> void:
+func prepare_card(player_name: String, role: String, status: bool) -> void:
 	name_label.text = player_name
 	role_label.text = role
-	status_label.text = status
+	set_status(status)
 
-	if role == "Patient" and status != "Ready":
-		status_label.add_theme_color_override("font_color", STATUS_ALERT_COLOR)
-	elif status == "Ready":
+func set_status(status: bool):
+	if status:
+		status_label.text = "Ready"
 		status_label.add_theme_color_override("font_color", STATUS_READY_COLOR)
 	else:
-		status_label.add_theme_color_override("font_color", STATUS_DEFAULT_COLOR)
+		status_label.text = "Not Ready"
+		status_label.add_theme_color_override("font_color", STATUS_ALERT_COLOR)

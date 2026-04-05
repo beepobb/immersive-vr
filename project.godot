@@ -15,6 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Immersive VR"
+run/main_scene="uid://y4gr3837ddrv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,13 +26,12 @@ driver/enable_input=true
 
 [autoload]
 
-AvatarState="*res://scripts/ui/avatar_customisation/avatar_state.gd"
-XRToolsUserSettings="*uid://bnquuwe2vribm"
-XRToolsRumbleManager="*uid://dg2csioke0tji"
+XRToolsUserSettings="*uid://bqgb8i74tm0t"
+XRToolsRumbleManager="*uid://by853dk86g1qw"
 EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
 XrSimulator="*uid://ctltchlf2j2r4"
-HighLevelNetworkHandler="*uid://bobd77kfhgqf7"
 Roles="*uid://yyfwsn2nm8l1"
+GameState="*res://scripts/ui/avatar_customisation/game_state.gd"
 
 [debug_draw_3d]
 

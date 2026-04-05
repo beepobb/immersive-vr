@@ -5,9 +5,9 @@ func _on_pressed() -> void:
 	if avatar_customisation != null and avatar_customisation.has_method("save_current_customisations"):
 		avatar_customisation.save_current_customisations()
 	else:
-		push_warning("ConfirmButton: AvatarCustomisation not found, using current AvatarState values.")
+		push_warning("ConfirmButton: AvatarCustomisation not found, using current GameState values.")
 
-	AvatarState.return_to_lobby(self , "Avatar saved.")
+	GameState.return_to_lobby(self , "Avatar saved.")
 
 func _find_avatar_customisation_parent() -> Node:
 	var current: Node = self

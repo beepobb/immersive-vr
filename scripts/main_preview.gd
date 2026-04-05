@@ -16,7 +16,7 @@ var rotating: bool = false
 
 func _ready() -> void:
 	# Use saved hair if we already have one, otherwise default to ponytail
-	var initial_style: String =  AvatarState.hair_style
+	var initial_style: String =  GameState.hair_style
 	if initial_style == "" or initial_style == null:
 		initial_style = "ponytail"
 	set_hair(initial_style)
@@ -48,7 +48,7 @@ func _input(event: InputEvent) -> void:
 
 func set_hair(style: String) -> void:
 	# --- save choice globally so VR can use it later ---
-	AvatarState.hair_style = style
+	GameState.hair_style = style
 
 	# Hide all first
 	if hair_bob:

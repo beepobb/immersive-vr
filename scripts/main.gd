@@ -38,7 +38,7 @@ func _ready():
 	# if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
 	# 	HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
 
-	if not AvatarState.environment_id.is_empty():
+	if not GameState.environment_id.is_empty():
 		_load_selected_environment()
 	
 		
@@ -48,7 +48,7 @@ func _load_environment(environment) -> void:
 	get_tree().current_scene.add_child(scene)
 
 func _load_selected_environment() -> void:
-	var selected_environment_id = AvatarState.environment_id
+	var selected_environment_id = GameState.environment_id
 	if selected_environment_id.is_empty():
 		selected_environment_id = EnvironmentCatalog.get_default_environment_id()
 
@@ -63,4 +63,4 @@ func _load_selected_environment() -> void:
 	_load_environment(selected_environment)
 
 func _on_session_ended(message: String) -> void:
-	AvatarState.return_to_home(self , message)
+	GameState.return_to_home(self , message)

@@ -28,7 +28,7 @@ func _on_gender_selected(index: int) -> void:
 		return
 
 	var gender_text := gender_option.get_item_text(index).strip_edges().to_lower()
-	AvatarState.gender = gender_text
+	GameState.gender = gender_text
 
 
 func _on_randomise_pressed() -> void:
@@ -73,7 +73,7 @@ func _randomise_age() -> void:
 	age_option.select(index)
 
 func _apply_random_avatar_parts_for_selected_gender() -> void:
-	var gender_text = AvatarState.gender
+	var gender_text = GameState.gender
 	appearance_service.load_manifests()
 
 	var random_outfit_id := _pick_random_asset_id(appearance_service.outfit_map, gender_text)

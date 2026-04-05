@@ -10,18 +10,18 @@ extends Node3D
 var current_tab: String
 var appearance_service := AvatarAppearanceService.new()
 
-var current_skin_tone: String = AvatarState.skin_tone
+var current_skin_tone: String = GameState.skin_tone
 
 var _current_hair: Node = null
-var current_hair_id: String = AvatarState.hair_style
+var current_hair_id: String = GameState.hair_style
 
 @export var body_mesh_path: NodePath = NodePath("Human")
 
 var _current_outfit: Node = null
-var current_outfit_id: String = AvatarState.outfit
+var current_outfit_id: String = GameState.outfit
 
 var _current_shoes: Node = null
-var current_shoe_id: String = AvatarState.shoes
+var current_shoe_id: String = GameState.shoes
 
 enum Options {SKIN, OUTFIT, HAIR, SHOES}
 
@@ -43,8 +43,8 @@ func _ready():
 		return
 
 	appearance_service.load_manifests()
-	AvatarState.avatar = avatarRoot
-	AvatarState.apply_to_avatar()
+	GameState.avatar = avatarRoot
+	GameState.apply_to_avatar()
 
 	# set up signals
 	option_tabs.tab_selected.connect(_on_tab_selected)
@@ -71,8 +71,8 @@ func _ready():
 	#	customise_options.option_selected.connect(_on_option_selected)
 
 
-	if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
-		HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
+	# if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
+	# 	HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
 
 func _on_tab_selected(tab_index: int) -> void:
 	if customise_options:
@@ -123,7 +123,7 @@ func _apply_and_set_new_shoes(shoes_id: String) -> void:
 	current_shoe_id = shoes_id
 
 func save_current_customisations() -> void:
-	AvatarState.update_customisations(current_hair_id, current_outfit_id, current_shoe_id, current_skin_tone)
+	GameState.update_customisations(current_hair_id, current_outfit_id, current_shoe_id, current_skin_tone)
 
 func _on_option_selected(option_value) -> void:
 	if current_tab == "Skin":
@@ -148,7 +148,7 @@ func _on_option_selected(option_value) -> void:
 		_apply_and_set_new_shoes(shoes_id)
 
 func _on_session_ended(message: String) -> void:
-	AvatarState.return_to_home(self , message)
+	GameState.return_to_home(self , message)
 
 func apply_and_set_id(type: Options, id: String) -> void:
 	match type:
