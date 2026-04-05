@@ -9,6 +9,8 @@ var connection_timer := Timer.new()
 
 func _ready() -> void:
 	# Add and configure a timer for connection fallback
+	host_button.disabled = false
+	join_button.disabled = false
 	connection_timer.one_shot = true
 	connection_timer.wait_time = 2.0 # seconds
 	add_child(connection_timer)
@@ -19,6 +21,8 @@ func _ready() -> void:
 	multiplayer.connection_failed.connect(_on_connection_failed)
 
 func _on_host_pressed() -> void:
+	# prevent double click
+	host_button.disabled = true
 	var peer = ENetMultiplayerPeer.new()
 	var err = peer.create_server(PORT, 2)
 	if err != OK:
@@ -30,6 +34,8 @@ func _on_host_pressed() -> void:
 	load_lobby()
 
 func _on_join_pressed() -> void:
+	# prevent double click
+	join_button.disabled = true
 	var ip := "127.0.0.1"
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_client(ip, PORT)
