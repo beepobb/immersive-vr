@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkrg6bbfifh85"]
+
+[ext_resource type="PackedScene" uid="uid://begebghtokvud" path="res://assets/environment/Bird For Flock Animation/bird_MR_Final.FBX" id="1_ebry4"]
+[ext_resource type="Texture2D" uid="uid://ci85mq2rn1baj" path="res://assets/environment/Bird For Flock Animation/Bird_Textures_Pointcache/maps/Bird.png" id="2_uydgh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uye2x"]
+albedo_texture = ExtResource("2_uydgh")
+
+[node name="bird_MR_Final" instance=ExtResource("1_ebry4")]
+
+[node name="Bird01" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uye2x")

@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://ncmxwoiw3wmq"]
 
-[ext_resource type="Script" uid="uid://i43nsuunxt83" path="res://scripts/ui/disclaimer_popup.gd" id="1_2arxp"]
+[ext_resource type="Script" uid="uid://i43nsuunxt83" path="res://scripts/ui/call_session/disclaimer_popup.gd" id="1_2arxp"]
 [ext_resource type="Theme" uid="uid://bmfg6htq2wf10" path="res://assets/themes/ui_theme_glass_embossed.tres" id="1_85ws6"]
 [ext_resource type="FontFile" uid="uid://b8k617a8y14dt" path="res://tools/Poppins/Poppins-Bold.ttf" id="3_d2g55"]
 [ext_resource type="FontFile" uid="uid://biiqrru7g2ssj" path="res://tools/Poppins/Poppins-Regular.ttf" id="4_7s1o6"]
 [ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="5_1cfsq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2arxp"]
-bg_color = Color(0.22352941, 0.22352941, 0.22352941, 0.7294118)
+bg_color = Color(0.34033927, 0.34033936, 0.3403391, 0.7294118)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -129,7 +129,8 @@ script = ExtResource("1_2arxp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-color = Color(0, 0, 0, 0.4)
+mouse_filter = 2
+color = Color(1, 1, 1, 0.4)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

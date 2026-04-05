@@ -18,6 +18,7 @@ var disclaimer_popup: Node3D = null
 var disclaimer_popup_scene := preload("res://scenes/ui/call_session/disclaimer_viewports.tscn")
 
 func _ready() -> void:
+	UIButtonAudio.setup_buttons(self) 
 	main = get_node_or_null("/root/Main")
 	if main != null:
 		avatar_customisation = main.get_node_or_null("AvatarCustomisation")
@@ -141,8 +142,9 @@ func _load_selected_environment() -> void:
 	env_scene.position = Vector3.ZERO
 	loaded_environment = env_scene
 
+	_set_environment_interaction_enabled(false)
+
 	hide()
-	print("About to show disclaimer popup")
 	_show_disclaimer_popup()
 
 func _on_back_pressed() -> void:
@@ -201,22 +203,20 @@ func _show_disclaimer_popup() -> void:
 		if not popup.declined.is_connected(_on_disclaimer_declined):
 			popup.declined.connect(_on_disclaimer_declined)
 
+func _set_environment_interaction_enabled(enabled: bool) -> void:
+	if loaded_environment == null or not is_instance_valid(loaded_environment):
+		return
+
+	loaded_environment.process_mode = Node.PROCESS_MODE_INHERIT if enabled else Node.PROCESS_MODE_DISABLED
+
 func _on_disclaimer_accepted() -> void:
 	print("Disclaimer accepted")
-
-	if disclaimer_popup != null and is_instance_valid(disclaimer_popup):
-		disclaimer_popup.queue_free()
-		disclaimer_popup = null
-
+	_set_environment_interaction_enabled(true)
 	queue_free()
 
 
 func _on_disclaimer_declined() -> void:
 	print("Disclaimer declined")
-
-	if disclaimer_popup != null and is_instance_valid(disclaimer_popup):
-		disclaimer_popup.queue_free()
-		disclaimer_popup = null
 
 	if loaded_environment != null and is_instance_valid(loaded_environment):
 		loaded_environment.queue_free()

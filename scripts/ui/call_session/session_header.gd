@@ -1,14 +1,10 @@
 extends Control
 
-@export var session_id: String = "Meeting #17"
-@export var employee_id: String = "Unicorn123"
-
-# Later, replace these with:
-# session_label.text = SessionManager.current_session_id
-# user_label.text = "Employee ID: %s" % PlayerData.employee_id
+@export var session_id: String = "Session #17"
+@export var number_of_people: int = 1
 
 @onready var session_label: Label = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/SessionLabel
-@onready var user_label: Label = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/UserLabel
+@onready var people_label: Label = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/People
 @onready var time_label: Label = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/TimeLabel
 @onready var date_label: Label = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/DateLabel
 
@@ -17,8 +13,8 @@ var session_start_unix: int = 0
 func _ready() -> void:
 	session_start_unix = int(Time.get_unix_time_from_system())
 
-	session_label.text = session_id
-	user_label.text = "Employee ID: %s" % employee_id
+	session_label.text = "Session ID: %s" % session_id
+	people_label.text = "No. of People: %d" % number_of_people
 
 	var now := Time.get_datetime_dict_from_system()
 	date_label.text = "Date: %02d %s %04d" % [

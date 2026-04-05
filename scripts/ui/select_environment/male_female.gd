@@ -34,6 +34,7 @@ var shoes_items: Array = []
 var selected_gender: String = "female"
 
 func _ready() -> void:
+	UIButtonAudio.setup_buttons(self) 
 	randomize()
 
 	_resolve_avatar_customisation()

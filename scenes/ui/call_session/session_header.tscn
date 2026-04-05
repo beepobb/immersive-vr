@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqfpc2fjvnc50"]
+[gd_scene load_steps=5 format=3 uid="uid://cqfpc2fjvnc50"]
 
-[ext_resource type="Script" uid="uid://cr887c3ytb04e" path="res://scripts/session_header.gd" id="1_4eopn"]
+[ext_resource type="Script" uid="uid://cr887c3ytb04e" path="res://scripts/ui/call_session/session_header.gd" id="1_4eopn"]
 [ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_74ayn"]
 [ext_resource type="Texture2D" uid="uid://dwxtkusfhxegc" path="res://assets/icons/record.png" id="2_kykny"]
+[ext_resource type="Texture2D" uid="uid://dwruef6lqf8ye" path="res://assets/icons/user (3).png" id="3_c8d8d"]
 
 [node name="SessionHeader" type="Control"]
 layout_mode = 3
@@ -11,6 +12,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_74ayn")
 script = ExtResource("1_4eopn")
+session_id = null
+number_of_people = null
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -34,14 +37,26 @@ layout_mode = 2
 
 [node name="SessionLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Meeting #17"
+text = "Session ID:"
 
-[node name="UserLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "User: Unicorn123"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_c8d8d")
+stretch_mode = 5
+
+[node name="People" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "No. of People: "
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+
+[node name="DateLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Date:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -54,7 +69,3 @@ stretch_mode = 5
 [node name="TimeLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 text = "00:00:00"
-
-[node name="DateLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Date:"

@@ -19,6 +19,7 @@ var _button_base_modulate: Dictionary = {}
 
 
 func _ready() -> void:
+	UIButtonAudio.setup_buttons(self) 
 	tab_container.tab_changed.connect(_on_tab_changed)
 	_refresh_current_tab()
 	_apply_glass_tabs(tab_container)

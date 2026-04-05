@@ -1,0 +1,119 @@
+[gd_scene load_steps=12 format=3 uid="uid://xnrbegu8gmxh"]
+
+[ext_resource type="Script" uid="uid://brrqx43vp16js" path="res://scenes/ui/call_session/radial_menu.gd" id="1_x1isn"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g7ec8"]
+top_radius = 0.12
+bottom_radius = 0.12
+height = 0.002
+
+[sub_resource type="QuadMesh" id="QuadMesh_g7ec8"]
+size = Vector2(0.08, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1isn"]
+transparency = 1
+albedo_color = Color(0.30588236, 0.30588236, 0.30588236, 0.972549)
+metallic = 0.87
+
+[sub_resource type="QuadMesh" id="QuadMesh_x1isn"]
+size = Vector2(0.08, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qi7s"]
+transparency = 1
+albedo_color = Color(0.30588236, 0.30588236, 0.30588236, 0.972549)
+metallic = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_1qi7s"]
+size = Vector2(0.08, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jw6d"]
+transparency = 1
+albedo_color = Color(0.30588236, 0.30588236, 0.30588236, 0.972549)
+metallic = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_8jw6d"]
+size = Vector2(0.08, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1k85"]
+transparency = 1
+albedo_color = Color(0.30588236, 0.30588236, 0.30588236, 0.972549)
+metallic = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n1k85"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.002
+
+[node name="RadialMenuRoot" type="Node3D"]
+script = ExtResource("1_x1isn")
+
+[node name="Billboard" type="Node3D" parent="."]
+
+[node name="Ring" type="MeshInstance3D" parent="Billboard"]
+mesh = SubResource("CylinderMesh_g7ec8")
+
+[node name="SliceContainer" type="Node3D" parent="Billboard"]
+
+[node name="EndCall" type="Node3D" parent="Billboard/SliceContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, -0.08)
+
+[node name="SliceMesh" type="MeshInstance3D" parent="Billboard/SliceContainer/EndCall"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_g7ec8")
+surface_material_override/0 = SubResource("StandardMaterial3D_x1isn")
+
+[node name="Label3D" type="Label3D" parent="Billboard/SliceContainer/EndCall"]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 0.005, 0.03)
+text = "End Call"
+font_size = 12
+outline_size = 6
+
+[node name="Help" type="Node3D" parent="Billboard/SliceContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.002, 0)
+
+[node name="SliceMesh" type="MeshInstance3D" parent="Billboard/SliceContainer/Help"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_x1isn")
+surface_material_override/0 = SubResource("StandardMaterial3D_1qi7s")
+
+[node name="Label3D" type="Label3D" parent="Billboard/SliceContainer/Help"]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 0.005, 0.03)
+text = "Help"
+font_size = 12
+outline_size = 6
+
+[node name="Avatar" type="Node3D" parent="Billboard/SliceContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.002, 0)
+
+[node name="SliceMesh" type="MeshInstance3D" parent="Billboard/SliceContainer/Avatar"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.004510328, -6.3180923e-06, 0.007940434)
+mesh = SubResource("QuadMesh_1qi7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_8jw6d")
+
+[node name="Label3D" type="Label3D" parent="Billboard/SliceContainer/Avatar"]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 0.005, 0.03)
+text = "Avatar"
+font_size = 12
+outline_size = 6
+
+[node name="Settings" type="Node3D" parent="Billboard/SliceContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0.08)
+
+[node name="SliceMesh" type="MeshInstance3D" parent="Billboard/SliceContainer/Settings"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_8jw6d")
+surface_material_override/0 = SubResource("StandardMaterial3D_n1k85")
+
+[node name="Label3D" type="Label3D" parent="Billboard/SliceContainer/Settings"]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 0.005, 0.03)
+text = "Settings"
+font_size = 12
+outline_size = 6
+
+[node name="CenterCircle" type="MeshInstance3D" parent="Billboard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 0)
+mesh = SubResource("CylinderMesh_n1k85")
+
+[node name="CenterText" type="Label3D" parent="Billboard"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

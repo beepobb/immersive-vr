@@ -38,6 +38,7 @@ const TRANSITION_TIME := 0.28
 const OUTSIDE_OFFSET := 120.0
 
 func _ready() -> void:
+	UIButtonAudio.setup_buttons(self) 
 	card_slots = [
 		clarity_card,
 		dialogue_card,

@@ -28,6 +28,7 @@ var shoes_items: Array = []
 
 
 func _ready() -> void:
+	UIButtonAudio.setup_buttons(self) 
 	print("AVATAR_CUSTOMISER READY RUNNING")
 	main_preview = get_tree().current_scene
 

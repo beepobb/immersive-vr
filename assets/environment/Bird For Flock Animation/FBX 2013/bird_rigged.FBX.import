@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drot005xn2dde"
-path="res://.godot/imported/bird_rigged.fbx-22225fc0c53e36527aad53169db98640.scn"
+uid="uid://bqtkj50o5bny3"
+path="res://.godot/imported/bird_rigged.FBX-a7c63b5c3d925157e8d92ecdeba22a2f.scn"
 
 [deps]
 
-source_file="res://assets/environment/Bird For Flock Animation/bird_rigged.fbx"
-dest_files=["res://.godot/imported/bird_rigged.fbx-22225fc0c53e36527aad53169db98640.scn"]
+source_file="res://assets/environment/Bird For Flock Animation/FBX 2013/bird_rigged.FBX"
+dest_files=["res://.godot/imported/bird_rigged.FBX-a7c63b5c3d925157e8d92ecdeba22a2f.scn"]
 
 [params]
 

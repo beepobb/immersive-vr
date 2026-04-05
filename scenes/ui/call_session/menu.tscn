@@ -1,0 +1,199 @@
+[gd_scene load_steps=20 format=3 uid="uid://c0hlsnw7beun3"]
+
+[ext_resource type="Script" uid="uid://dh3ju880ty6fy" path="res://scenes/ui/call_session/menu.gd" id="1_wbjo0"]
+[ext_resource type="Texture2D" uid="uid://jbivyob5nw44" path="res://assets/icons/menu.png" id="2_mho6x"]
+[ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="3_2cged"]
+[ext_resource type="Texture2D" uid="uid://cgaiwv3gs6q4j" path="res://assets/icons/phone-call-end.png" id="3_5hfqt"]
+[ext_resource type="Texture2D" uid="uid://dwruef6lqf8ye" path="res://assets/icons/user (3).png" id="4_s8n45"]
+[ext_resource type="Texture2D" uid="uid://6biobhg8g3ce" path="res://assets/icons/help-web-button.png" id="5_d2x3t"]
+[ext_resource type="Texture2D" uid="uid://nmq4xbf6auol" path="res://assets/icons/settings.png" id="6_fon3s"]
+[ext_resource type="Texture2D" uid="uid://n0ab027k4mt1" path="res://scenes/ui/call_session/controller_help.png" id="8_s8n45"]
+[ext_resource type="Texture2D" uid="uid://clp2dkggudyrn" path="res://assets/icons/close.png" id="9_d2x3t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds825"]
+bg_color = Color(0.105882354, 0.105882354, 0.10980392, 0.72156864)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5729885, 0.57298815, 0.57298833, 0.72156864)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvmdk"]
+bg_color = Color(0, 0, 0, 0.72156864)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0sbo"]
+bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dbf3"]
+bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6btrf"]
+bg_color = Color(0.5921569, 0.14901961, 0.12156863, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mho6x"]
+bg_color = Color(0.3890342, 0.08764308, 0.06320709, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hfqt"]
+bg_color = Color(0.7490196, 0.20784314, 0.17254902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8n45"]
+bg_color = Color(0.7607843, 0.7607843, 0.76862746, 0.4745098)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2x3t"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fon3s"]
+bg_color = Color(0, 0.47843137, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="MenuRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wbjo0")
+
+[node name="MenuButton" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ds825")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xvmdk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t0sbo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4dbf3")
+icon = ExtResource("2_mho6x")
+icon_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="EndCallButton" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2cged")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6btrf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mho6x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5hfqt")
+text = " End Call"
+icon = ExtResource("3_5hfqt")
+
+[node name="AvatarButton" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2cged")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s8n45")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d2x3t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fon3s")
+text = "Avatar"
+icon = ExtResource("4_s8n45")
+
+[node name="HelpButton" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2cged")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s8n45")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d2x3t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fon3s")
+text = "Help"
+icon = ExtResource("5_d2x3t")
+
+[node name="SettingsButton" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2cged")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s8n45")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d2x3t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fon3s")
+text = "Settings"
+icon = ExtResource("6_fon3s")
+
+[node name="HelpPopup" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="HelpPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.73333335)
+
+[node name="PanelContainer" type="PanelContainer" parent="HelpPopup"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HelpPopup/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("8_s8n45")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpPopup/PanelContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="HelpPopup/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="ExitButton" type="Button" parent="HelpPopup/PanelContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2cged")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s8n45")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d2x3t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fon3s")
+icon = ExtResource("9_d2x3t")
+icon_alignment = 1
