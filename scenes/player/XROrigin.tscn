@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jg1qkgdrf47o"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_k04qm"]
+[ext_resource type="Script" uid="uid://cr4ye0kyb54an" path="res://scenes/player/player.gd" id="1_kfx4a"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_7ul40"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="3_vi16e"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_x2gul"]
@@ -26,7 +27,13 @@ albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_2118c"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7e1ug"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="XROrigin3D" type="XROrigin3D" unique_id=1503267807]
+script = ExtResource("1_kfx4a")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=2037867909]
 
@@ -34,7 +41,6 @@ albedo_color = Color(0, 1, 1, 1)
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.7400453, 0)
 
 [node name="LeftController" type="XRController3D" parent="." unique_id=1722520529]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.798, 1.448, 0)
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftController" unique_id=759549420 instance=ExtResource("1_k04qm")]
@@ -52,7 +58,7 @@ transform = Transform3D(0.18580386, -2.0891815e-08, 0.98258686, -0.9825868, -9.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071, -0.204, -0.056)
 
 [node name="RightController" type="XRController3D" parent="." unique_id=2121946272]
-transform = Transform3D(-4.371138e-08, -0.00698126, -0.99997586, 0, 0.9999756, -0.006981262, 0.9999998, -3.0516056e-10, -4.3710333e-08, 0.798, 1.448, 0)
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
 tracker = &"right_hand"
 
 [node name="RightHand" parent="RightController" unique_id=670448450 instance=ExtResource("3_vi16e")]
@@ -108,10 +114,11 @@ player_calibrate_height = false
 
 [node name="AvatarRoot" type="Node3D" parent="." unique_id=1623042168]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+visible = false
 
 [node name="X Bot" parent="AvatarRoot" unique_id=1941485306 instance=ExtResource("8_x2gul")]
 
-[node name="Skeleton3D" parent="AvatarRoot/X Bot" index="0" unique_id=35034531]
+[node name="Skeleton3D" parent="AvatarRoot/X Bot" index="0" unique_id=63022117]
 bones/11/rotation = Quaternion(0.25328454, 0.061618283, -0.2282103, 0.93806726)
 bones/13/rotation = Quaternion(-0.0016647386, -0.00080778124, 0.0069197505, 0.9999744)
 bones/15/rotation = Quaternion(-6.059341e-07, 9.9535276e-11, -0.00016426753, 1)
@@ -331,5 +338,8 @@ settings/0/copy = 6
 settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=96480807]
+replication_config = SubResource("SceneReplicationConfig_7e1ug")
 
 [editable path="AvatarRoot/X Bot"]

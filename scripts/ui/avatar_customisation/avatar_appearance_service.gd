@@ -24,7 +24,6 @@ func load_manifests() -> void:
 	hair_id_scene_map = generate_id_scene_map(hair_map)
 	outfit_id_scene_map = generate_id_scene_map(outfit_map)
 	shoes_id_scene_map = generate_id_scene_map(shoes_map)
-	print(hair_map)
 
 # used to apply option (replace current part with new part)
 func replace_part(attachment_root: Node, current_part: Node, item_id: String, part_type: PartType) -> Node:
@@ -33,7 +32,6 @@ func replace_part(attachment_root: Node, current_part: Node, item_id: String, pa
 
 	var key := item_id.strip_edges().to_lower()
 
-	print(key)
 	var scene_path := find_scene_path(key, part_type)
 	if scene_path.is_empty():
 		push_warning("AvatarAppearanceService: no scene found for id '%s'" % key)
@@ -121,7 +119,6 @@ func apply_skin_color(body_mesh: MeshInstance3D, color: Color) -> void:
 
 func find_scene_path(item_id: String, part_type: PartType) -> String:
 	if part_type == PartType.HAIR:
-		print(item_id)
 		return hair_id_scene_map.get(item_id, "")
 	if part_type == PartType.OUTFIT:
 		return outfit_id_scene_map.get(item_id, "")
@@ -137,8 +134,6 @@ func _load_manifest_array(json_path: String, label: String) -> Array:
 
 	var data = JSON.parse_string(file.get_as_text())
 	file.close()
-
-	print("%s array loaded:" % label.capitalize(), data["items"].size())
 
 	return data["items"]
 

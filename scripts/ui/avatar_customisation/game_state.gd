@@ -1,11 +1,12 @@
-# AvatarState.gd
+# GameState.gd
 extends Node
 
-const HOME_SCENE_PATH := "res://scenes/game/lobby/home.tscn"
+const HOME_SCENE_PATH := "res://scenes/game/home.tscn"
 const LOBBY_SCENE_PATH := "res://scenes/game/lobby/lobby.tscn"
 const AVATAR_CUSTOMISATION_SCENE_PATH := "res://scenes/game/avatar_customisation/avatar_customisation.tscn"
 const SELECT_ENVIRONMENT_SCENE_PATH := "res://scenes/game/select_environment/select_environment.tscn"
 const IN_CALL_SCENE_PATH := "res://scenes/environment.tscn"
+const IN_CALL_SCENE = preload(IN_CALL_SCENE_PATH)
 
 const DEFAULT_VISUAL_PRESETS := {
 	"male": {
@@ -19,6 +20,10 @@ const DEFAULT_VISUAL_PRESETS := {
 		"shoes": "dressupdoc_maryjane"
 	}
 }
+
+# game states
+var peer_roles: Dictionary = {}
+var peer_ready: Dictionary = {}
 
 var avatar: Node3D
 
@@ -37,8 +42,12 @@ var shoes: String = ""
 var environment_id: String = "" # "clarity_room", "dialogue_cafe", etc.
 var pending_notice: String = ""
 
+signal roster_updated(players: Array)
+signal environment_updated(environment_id: String)
+
 var _appearance_service := AvatarAppearanceService.new()
 var _manifests_loaded := false
+var _lobby_network_connected := false
 
 func reset() -> void:
 	display_name = ""
@@ -56,7 +65,6 @@ func update_customisations(hair_id: String, outfit_id: String, shoe_id: String, 
 
 func set_default_options() -> void:
 	var preset: Dictionary = DEFAULT_VISUAL_PRESETS.get(gender.to_lower(), {})
-	print(preset)
 	hair_style = preset.get("hair")
 	shoes = preset.get("shoes")
 	outfit = preset.get("outfit")
@@ -133,10 +141,157 @@ func load_scene(requester: Node, scene_path: String, notice: String = "") -> voi
 		scene_base.load_scene(scene_path)
 		return
 
-	requester.get_tree().change_scene_to_file(scene_path)
+	requester.get_tree().call_deferred("change_scene_to_file", scene_path)
 
 func return_to_home(requester: Node, notice: String = "") -> void:
 	load_scene(requester, HOME_SCENE_PATH, notice)
 
 func return_to_lobby(requester: Node, notice: String = "") -> void:
 	load_scene(requester, LOBBY_SCENE_PATH, notice)
+
+func end_call_session(notice: String = "Call ended.") -> void:
+	if not multiplayer.is_server():
+		return
+
+	_cleanup_call_state()
+	_broadcast_end_call_cleanup.rpc(notice)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	var peer := multiplayer.multiplayer_peer
+	if peer:
+		peer.close()
+		multiplayer.multiplayer_peer = null
+
+func _cleanup_call_state() -> void:
+	peer_roles.clear()
+	peer_ready.clear()
+	environment_id = ""
+	pending_notice = ""
+
+@rpc("any_peer", "call_local")
+func _broadcast_end_call_cleanup(notice: String) -> void:
+	if not notice.is_empty():
+		set_notice(notice)
+	load_scene(self , HOME_SCENE_PATH, notice)
+
+func set_environment_id(new_environment_id: String, broadcast: bool = false) -> void:
+	environment_id = new_environment_id
+	if not broadcast:
+		environment_updated.emit(environment_id)
+
+	if broadcast and multiplayer.is_server():
+		sync_environment.rpc(environment_id)
+
+func initialize_lobby_network(user_role: int) -> void:
+	if not _lobby_network_connected:
+		if not multiplayer.peer_connected.is_connected(_on_peer_connected):
+			multiplayer.peer_connected.connect(_on_peer_connected)
+		if not multiplayer.peer_disconnected.is_connected(_on_peer_disconnected):
+			multiplayer.peer_disconnected.connect(_on_peer_disconnected)
+		_lobby_network_connected = true
+
+	if multiplayer.is_server():
+		if peer_roles.is_empty():
+			var host_id := multiplayer.get_unique_id()
+			peer_roles[host_id] = user_role
+			peer_ready[host_id] = true
+		_broadcast_roster()
+		return
+
+	rpc_id(1, "register_role", int(user_role))
+
+@rpc("any_peer")
+func register_role(role: int) -> void:
+	if not multiplayer.is_server():
+		return
+
+	var sender_id := multiplayer.get_remote_sender_id()
+	peer_roles[sender_id] = role
+	if not peer_ready.has(sender_id):
+		peer_ready[sender_id] = false
+	_broadcast_roster()
+
+@rpc("any_peer")
+func request_roster() -> void:
+	if not multiplayer.is_server():
+		return
+
+	var requester_id := multiplayer.get_remote_sender_id()
+	sync_player_cards.rpc_id(requester_id, get_roster_payload())
+
+@rpc("any_peer")
+func request_environment() -> void:
+	if not multiplayer.is_server():
+		return
+
+	var requester_id := multiplayer.get_remote_sender_id()
+	sync_environment.rpc_id(requester_id, environment_id)
+
+func submit_ready_state(ready_state: bool) -> void:
+	var local_peer_id := multiplayer.get_unique_id()
+
+	if multiplayer.is_server():
+		peer_ready[local_peer_id] = ready_state
+		_broadcast_roster()
+		return
+
+	rpc_id(1, "set_ready_state", ready_state)
+
+@rpc("any_peer")
+func set_ready_state(ready_state: bool) -> void:
+	if not multiplayer.is_server():
+		return
+
+	var sender_id := multiplayer.get_remote_sender_id()
+	if not peer_roles.has(sender_id):
+		return
+
+	peer_ready[sender_id] = ready_state
+	_broadcast_roster()
+
+@rpc("any_peer", "call_local")
+func sync_player_cards(players: Array) -> void:
+	roster_updated.emit(players)
+
+@rpc("any_peer", "call_local")
+func sync_environment(env_id) -> void:
+	set_environment_id(String(env_id), false)
+
+func get_roster_payload() -> Array:
+	var payload: Array = []
+	for peer_id in peer_roles.keys():
+		var role_value := int(peer_roles[peer_id])
+		payload.append({
+			"id": int(peer_id),
+			"name": "Player " + str(peer_id),
+			"role": _role_to_text(role_value),
+			"ready": bool(peer_ready.get(peer_id, false)),
+		})
+	return payload
+
+func _on_peer_connected(peer_id: int) -> void:
+	print("Peer connected:", peer_id)
+	if multiplayer.is_server():
+		_broadcast_roster()
+
+func _on_peer_disconnected(peer_id: int) -> void:
+	print("Peer disconnected:", peer_id)
+	if not multiplayer.is_server():
+		return
+	peer_roles.erase(peer_id)
+	peer_ready.erase(peer_id)
+	_broadcast_roster()
+
+func _broadcast_roster() -> void:
+	if not multiplayer.is_server():
+		return
+	sync_player_cards.rpc(get_roster_payload())
+
+func _role_to_text(role_value: int) -> String:
+	if role_value == int(Roles.Role.THERAPIST):
+		return "Therapist"
+	return "Patient"
+
+@rpc("any_peer", "call_local")
+func start_call():
+	get_tree().change_scene_to_packed(IN_CALL_SCENE)

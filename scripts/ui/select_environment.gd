@@ -8,16 +8,13 @@ const EnvironmentCatalog = preload("res://scripts/ui/environment_catalog.gd")
 
 var card_scene: PackedScene = preload("res://scenes/game/select_environment/env_card.tscn")
 var card_lookup: Dictionary = {}
+var selected_environment_id: String = ""
 
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_pressed)
 	_build_environment_cards()
 
 	confirm_button.pressed.connect(_on_confirm_pressed)
-
-	if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
-		HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
-
 
 # ---------------- HOVER LOGIC ----------------
 
@@ -56,7 +53,7 @@ func _hover_out(card: Control) -> void:
 # ---------------- SELECTION / NAVIGATION ----------------
 
 func _on_back_pressed() -> void:
-	AvatarState.return_to_lobby(self )
+	GameState.return_to_lobby(self )
 
 
 func _build_environment_cards() -> void:
@@ -78,30 +75,29 @@ func _build_environment_cards() -> void:
 		_setup_hover(card)
 		card_lookup[environment_id] = card
 
-	var selected_environment_id = AvatarState.environment_id
+	selected_environment_id = GameState.environment_id
 	if selected_environment_id.is_empty() and not EnvironmentCatalog.get_environment_ids().is_empty():
 		selected_environment_id = EnvironmentCatalog.get_default_environment_id()
 
 	if not selected_environment_id.is_empty():
-		_on_card_selected(selected_environment_id)
+		_highlight_selected(selected_environment_id)
 
 func _on_card_selected(environment_id: String) -> void:
-	AvatarState.environment_id = environment_id
+	selected_environment_id = environment_id
 	_highlight_selected(environment_id)
-	print(AvatarState.environment_id)
 
-func _highlight_selected(selected_environment_id: String) -> void:
+func _highlight_selected(highlighted_environment_id: String) -> void:
 	for environment_id in card_lookup.keys():
 		var card: Button = card_lookup[environment_id]
-		card.modulate = Color(1.15, 1.15, 1.15, 1) if String(environment_id) == selected_environment_id else Color(1, 1, 1, 1)
-
+		card.modulate = Color(1.15, 1.15, 1.15, 1) if String(environment_id) == highlighted_environment_id else Color(1, 1, 1, 1)
 
 func _on_confirm_pressed() -> void:
-	if AvatarState.environment_id.is_empty():
+	if selected_environment_id.is_empty():
 		print("No environment selected!")
 		return
 
-	AvatarState.return_to_lobby(self , "Environment saved for the next call.")
+	GameState.set_environment_id(selected_environment_id, multiplayer.is_server())
+	GameState.return_to_lobby(self , "Environment saved for the next call.")
 
 func _on_session_ended(message: String) -> void:
-	AvatarState.return_to_home(self , message)
+	GameState.return_to_home(self , message)

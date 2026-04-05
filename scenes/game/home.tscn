@@ -31,10 +31,10 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6, 0)
 [node name="meta_env_06" parent="." index="3" unique_id=849864874 instance=ExtResource("2_wkxb3")]
 
 [node name="Viewport2Din3D" parent="." index="4" unique_id=1027545802 instance=ExtResource("3_u3dp7")]
-transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0, 2.4749763, -0.97050357)
-screen_size = Vector2(1.1, 1)
+transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0, 1.474319, -1.5012294)
+screen_size = Vector2(1.66, 0.49)
 scene = ExtResource("4_sktvb")
-viewport_size = Vector2(360, 344)
+viewport_size = Vector2(360, 117)
+transparent = 1
 unshaded = true
-scene_properties_keys = PackedStringArray("server_ui.gd", "target_scene")
-target_scene = "uid://cu6ifuf2vc8gv"
+scene_properties_keys = PackedStringArray("server_ui.gd")

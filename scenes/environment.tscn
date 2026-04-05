@@ -5,12 +5,6 @@
 [ext_resource type="Script" uid="uid://cpcbeittqo0m1" path="res://scripts/ui/in_call/session_controls.gd" id="3_dm4p5"]
 [ext_resource type="Script" uid="uid://cncvrq0yb88s8" path="res://scripts/environment_scene.gd" id="4_pk5nr"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_poig3"]
-size = Vector3(5, 0.1, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2eiut"]
-size = Vector3(5, 0.1, 5)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_oqxhg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4sbom"]
@@ -34,30 +28,17 @@ glow_enabled = true
 [node name="BaseScene" unique_id=621000924 instance=ExtResource("1_00014")]
 
 [node name="PlayerLoader" parent="." index="0" unique_id=1066474312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1.647852)
 in_call = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=991987366]
 transform = Transform3D(1, 0, 0, 0, -0.26166698, 0.9651582, 0, -0.9651582, -0.26166698, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Floor" type="StaticBody3D" parent="." index="2" unique_id=1511173629]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" index="0" unique_id=891727260]
-mesh = SubResource("BoxMesh_poig3")
-skeleton = NodePath("../CollisionShape3D")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" index="1" unique_id=1639614355]
-shape = SubResource("BoxShape3D_2eiut")
-
-[node name="Camera3D" type="Camera3D" parent="." index="3" unique_id=160489180]
-transform = Transform3D(1, 0, 0, 0, 0.99919295, 0.040166616, 0, -0.040166616, 0.99919295, 0, 1.365, 2.5)
-fov = 71.401505
-
-[node name="EnvironmentRoot" type="Node3D" parent="." index="4" unique_id=1926923436]
+[node name="EnvironmentRoot" type="Node3D" parent="." index="2" unique_id=1926923436]
 unique_name_in_owner = true
 
-[node name="PickableObject" parent="." index="5" unique_id=923608892 instance=ExtResource("2_g4tgr")]
+[node name="PickableObject" parent="." index="3" unique_id=923608892 instance=ExtResource("2_g4tgr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7757607, 1.4743235, 0.31622654)
 
 [node name="CollisionShape3D" parent="PickableObject" index="0"]
@@ -70,7 +51,7 @@ mesh = SubResource("BoxMesh_4sbom")
 skeleton = NodePath("../CollisionShape3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_2bfpd")
 
-[node name="InCallUI" type="CanvasLayer" parent="." index="6" unique_id=833653870]
+[node name="InCallUI" type="CanvasLayer" parent="." index="4" unique_id=833653870]
 script = ExtResource("3_dm4p5")
 
 [node name="MarginContainer" type="MarginContainer" parent="InCallUI" index="0" unique_id=974221837]
@@ -88,10 +69,15 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "End Call"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="7" unique_id=1423901652]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5" unique_id=1423901652]
 environment = SubResource("Environment_3gbvy")
 
-[node name="EnvironmentManager" type="Node3D" parent="." index="8" unique_id=1796291922]
+[node name="EnvironmentManager" type="Node3D" parent="." index="6" unique_id=1796291922]
 script = ExtResource("4_pk5nr")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." index="7" unique_id=585296081]
+_spawnable_scenes = PackedStringArray("uid://jg1qkgdrf47o")
+spawn_path = NodePath("../PlayerLoader")
+spawn_limit = 2
 
 [editable path="PickableObject"]

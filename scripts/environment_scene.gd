@@ -5,24 +5,31 @@ const AvatarScene = preload("res://scenes/game/avatar_customisation/avatar_test.
 
 @onready var environment_root: Node3D = %EnvironmentRoot
 @onready var xr_origin: Node3D = get_node_or_null("XROrigin3D")
-
-var spawned_remote_avatars: Array[Node3D] = []
+@onready var player_loader: Node = $"../PlayerLoader"
 
 func _ready() -> void:
-	if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
-		HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
-
 	_load_selected_environment()
-	_spawn_call_avatars()
+	if not multiplayer.is_server():
+		return
+	multiplayer.peer_connected.connect(add_player)
+	multiplayer.peer_disconnected.connect(del_player)
+	# Wait until the whole scene tree is ready so MultiplayerSpawner sees these adds.
+	call_deferred("_spawn_existing_players")
 
+func _spawn_existing_players() -> void:
+	add_player(1)
+	for id in multiplayer.get_peers():
+		add_player(id)
+	
 func _load_selected_environment() -> void:
-	var selected_environment_id = AvatarState.environment_id
+	var selected_environment_id = GameState.environment_id
 	var selected_scene_path = EnvironmentCatalog.get_environment_scene_path(selected_environment_id)
 	if selected_scene_path.is_empty():
 		selected_scene_path = EnvironmentCatalog.get_environment_scene_path(EnvironmentCatalog.get_default_environment_id())
 
 	for child in environment_root.get_children():
 		child.queue_free()
+
 
 	var selected_scene = load(selected_scene_path) as PackedScene
 	if selected_scene == null:
@@ -33,59 +40,24 @@ func _load_selected_environment() -> void:
 	environment_instance.position = Vector3(0.0, 0.25, 0.0)
 	environment_root.add_child(environment_instance)
 
-func _spawn_call_avatars() -> void:
-	_spawn_local_avatar()
-	_spawn_remote_avatars()
-
-func _spawn_local_avatar() -> void:
-	if xr_origin == null:
-		push_warning("XROrigin3D not found. Local avatar cannot be spawned.")
+func add_player(id):
+	if not multiplayer.is_server():
 		return
-
-	var existing_avatar = xr_origin.get_node_or_null("LocalAvatar")
-	if existing_avatar != null:
-		existing_avatar.queue_free()
-
-	var avatar_instance = AvatarScene.instantiate() as Node3D
-	if avatar_instance == null:
-		push_warning("Unable to instantiate local avatar scene.")
+	var node_name := str(id)
+	if player_loader.has_node(node_name):
 		return
+	var scene = load("res://scenes/player/XROrigin.tscn")
+	var player: XROrigin3D = scene.instantiate()
+	player.name = node_name # important for syncing
+	var spawn_pos := Vector3(randf_range(-3.0, 3.0), 0.0, 0)
+	player.position = spawn_pos
+	player_loader.add_child(player)
 
-	avatar_instance.name = "LocalAvatar"
-	xr_origin.add_child(avatar_instance)
-	AvatarState.apply_to_avatar(avatar_instance)
-
-func _spawn_remote_avatars() -> void:
-	_clear_remote_avatars()
-
-	if HighLevelNetworkHandler.lobby_players_by_peer_id.is_empty():
-		return
-
-	var local_peer_id = multiplayer.get_unique_id()
-	var remote_index = 0
-	for peer_id in HighLevelNetworkHandler.lobby_players_by_peer_id.keys():
-		var peer_id_int = int(peer_id)
-		if peer_id_int == local_peer_id:
-			continue
-
-		var avatar_state = Dictionary(HighLevelNetworkHandler.lobby_players_by_peer_id[peer_id])
-		var avatar_instance = AvatarScene.instantiate() as Node3D
-		if avatar_instance == null:
-			continue
+func del_player(id):
+	print("delete player: " + str(id))
 	
-		avatar_instance.name = "RemoteAvatar_%d" % peer_id_int
-		avatar_instance.position = Vector3(1.5 + (remote_index * 0.9), 0.0, -0.75)
-		add_child(avatar_instance)
-		AvatarState.apply_to_avatar(avatar_state)
-
-		spawned_remote_avatars.append(avatar_instance)
-		remote_index += 1
-
-func _clear_remote_avatars() -> void:
-	for avatar_node in spawned_remote_avatars:
-		if is_instance_valid(avatar_node):
-			avatar_node.queue_free()
-	spawned_remote_avatars.clear()
-
-func _on_session_ended(message: String) -> void:
-	AvatarState.return_to_home(self , message)
+func _exit_tree() -> void:
+	if not multiplayer.is_server():
+		return
+	multiplayer.peer_connected.disconnect(add_player)
+	multiplayer.peer_disconnected.disconnect(del_player)

@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://hkd6d88xjdoj"]
-
-[ext_resource type="PackedScene" uid="uid://cbppc18jtfe6c" path="res://assets/environment/Metaverse Environment 02/MetaVerse_Env_02.glb" id="1_ouxpg"]
-
-[node name="Sand" type="Node3D" unique_id=2020921092]
-
-[node name="MetaVerse_Env_02" parent="." unique_id=310796103 instance=ExtResource("1_ouxpg")]

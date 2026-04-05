@@ -5,6 +5,11 @@ var user_role: Role = Role.PATIENT
 
 func set_role(role: Role) -> void:
 	user_role = role
-
-func get_role_name(role: int = user_role) -> String:
-	return "Therapist" if role == Role.THERAPIST else "Patient"
+	
+func get_role_text() -> String:
+	if user_role == Role.THERAPIST:
+		return "Therapist"
+	if user_role == Role.PATIENT:
+		return "Patient"
+	push_error("Role is invalid")
+	return ""

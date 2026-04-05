@@ -7,13 +7,13 @@ const ENVIRONMENTS := {
 		"name": "Desert",
 		"description": "A minimalist therapy room with soft lighting and neutral tones that foster calm, focus, and open communication.",
 		"thumbnail": "res://assets/ui/card/010001.jpg",
-		"scene_path": "res://scenes/environment/sand.tscn",
+		"scene_path": "res://scenes/environment/sand.scn",
 	},
 	"apartment": {
 		"name": "Apartment",
 		"description": "This is a cafe.",
 		"thumbnail": "res://assets/ui/card/00012.jpg",
-		"scene_path": "res://scenes/environment/apartment.tscn"
+		"scene_path": "res://scenes/environment/apartment.scn"
 	}
 }
 
