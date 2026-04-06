@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://6bpfp3ofngk0"]
+[gd_scene load_steps=2 format=3 uid="uid://6bpfp3ofngk0"]
 
 [ext_resource type="PackedScene" uid="uid://c5p6pxjf5n1u2" path="res://assets/hair/Human_toigo_curled_under_bob_with_bangs.glb" id="1_6es27"]
 

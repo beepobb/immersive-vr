@@ -31,7 +31,8 @@ XRToolsRumbleManager="*uid://by853dk86g1qw"
 EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
 XrSimulator="*uid://ctltchlf2j2r4"
 Roles="*uid://yyfwsn2nm8l1"
-GameState="*res://scripts/ui/avatar_customisation/game_state.gd"
+UIButtonAudio="*uid://cjtcvbt77gqm"
+GameState="*res://scripts/game_state.gd"
 
 [debug_draw_3d]
 

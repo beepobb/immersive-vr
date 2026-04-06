@@ -1,17 +1,19 @@
-extends PanelContainer
+extends Button
 
-@onready var customise_avatar_button: Button = $MarginContainer/HBoxContainer/MarginContainer/CustomiseAvatarButton
-@onready var change_environment_button: Button = $MarginContainer/HBoxContainer/MarginContainer2/ChangeEnvironmentButton
+@onready var customise_avatar_button: Button = self
 
 func _ready() -> void:
-	change_environment_button.disabled = false
+	UIButtonAudio.setup_buttons(self )
 	customise_avatar_button.disabled = false
-	change_environment_button.visible = Roles.user_role == Roles.Role.THERAPIST
+	customise_avatar_button.focus_mode = Control.FOCUS_NONE
+	if not customise_avatar_button.mouse_exited.is_connected(_on_customise_mouse_exited):
+		customise_avatar_button.mouse_exited.connect(_on_customise_mouse_exited)
 
-func _on_change_environment_button_pressed() -> void:
-	change_environment_button.disabled = true
-	GameState.load_scene(GameState.SELECT_ENVIRONMENT_SCENE_PATH)
-
-func _on_customise_avatar_button_pressed() -> void:
+func _on_pressed() -> void:
+	UIButtonAudio.play_click()
 	customise_avatar_button.disabled = true
+	print("loading avatar_customisation scene")
 	GameState.load_scene(GameState.AVATAR_CUSTOMISATION_SCENE_PATH)
+
+func _on_customise_mouse_exited() -> void:
+	customise_avatar_button.release_focus()

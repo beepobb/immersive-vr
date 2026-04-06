@@ -25,9 +25,12 @@ var current_shoe_id: String = GameState.shoes
 
 enum Options {SKIN, OUTFIT, HAIR, SHOES}
 
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+@onready var back_button: Button = $AvatarCustomisationViewports/Header/Viewport/AvatarCustomisationHeader/HBoxContainer/BackButton
 
+func _ready():
+	UIButtonAudio.setup_buttons(self )
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	back_button.connect("pressed", _on_back_button_pressed)
 	# Desktop overlay first (DebugUI) - remove
 	option_tabs = get_node_or_null("../DebugUI/Root/OptionTabs")
 	customise_options = get_node_or_null("../DebugUI/Root/CustomiseOptions")
@@ -59,21 +62,6 @@ func _ready():
 	_current_outfit = parts[1]
 	_current_shoes = parts[2]
 
-
-#func _ready():
-	
-	#_load_hair_manifest()
-
-	#if option_tabs:
-	#	option_tabs.tab_selected.connect(_on_tab_selected)
-
-	#if customise_options:
-	#	customise_options.option_selected.connect(_on_option_selected)
-
-
-	# if not HighLevelNetworkHandler.session_ended.is_connected(_on_session_ended):
-	# 	HighLevelNetworkHandler.session_ended.connect(_on_session_ended)
-
 func _on_tab_selected(tab_index: int) -> void:
 	if customise_options:
 		var tab_container = customise_options.get_node("TabContainer")
@@ -84,6 +72,7 @@ func _apply_new_skin_color(color: Color) -> void:
 	var body_mesh := avatar.get_node_or_null(body_mesh_path) as MeshInstance3D
 	appearance_service.apply_skin_color(body_mesh, color)
 	current_skin_tone = color.to_html()
+	print("Skin: " + current_skin_tone)
 
 func _apply_and_set_new_hair(hair_id: String) -> void:
 	if not is_instance_valid(_current_hair):
@@ -107,8 +96,6 @@ func _apply_and_set_new_outfit(outfit_id: String) -> void:
 		key,
 		AvatarAppearanceService.PartType.OUTFIT
 	)
-	print("Outfit set applied:", key)
-
 	current_outfit_id = outfit_id
 	if not is_instance_valid(_current_shoes):
 		_current_shoes = null
@@ -161,3 +148,6 @@ func apply_and_set_id(type: Options, id: String) -> void:
 		Options.OUTFIT:
 			_apply_and_set_new_outfit(id)
 			current_outfit_id = id
+
+func _on_back_button_pressed() -> void:
+	GameState.return_to_lobby()

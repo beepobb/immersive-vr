@@ -7,6 +7,7 @@ extends Node3D
 @export var in_call: bool = false
 var player: Node3D
 var avatar: Node3D
+@export var spawn_point = Vector3.ZERO
 
 func _ready() -> void:
 	if in_call:
@@ -22,11 +23,15 @@ func _ready() -> void:
 		player = static_player.instantiate()
 	
 	var local_peer_id := multiplayer.get_unique_id()
-	if local_peer_id <= 0:
-		local_peer_id = 1
-	player.name = "XROrigin3D"
-	player.position = Vector3.ZERO
+	var has_network_peer := multiplayer.multiplayer_peer != null
+	if has_network_peer and local_peer_id > 0:
+		# player.gd reads name as peer id to decide local movement authority.
+		player.name = str(local_peer_id)
+	else:
+		# XRToolsSceneBase offline fallback looks for PlayerLoader/XROrigin3D.
+		player.name = "XROrigin3D"
 	add_child(player)
+	player.global_position = spawn_point
 
 func _trace_player_position(tag: String) -> void:
 	if player == null:

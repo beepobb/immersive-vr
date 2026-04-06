@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d0qnyf1x50stm"]
+[gd_scene load_steps=2 format=3 uid="uid://d0qnyf1x50stm"]
 
 [ext_resource type="PackedScene" uid="uid://dvtihh2d4r1nb" path="res://assets/hair/culturalibre_hair_06.glb" id="1_vo3gf"]
 

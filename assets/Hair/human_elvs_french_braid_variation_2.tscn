@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://81evnpu2yoji"]
+[gd_scene load_steps=2 format=3 uid="uid://81evnpu2yoji"]
 
 [ext_resource type="PackedScene" uid="uid://bgwm8xs4rvmh" path="res://assets/hair/Human_elvs_french_braid_variation.glb" id="1_0xfj6"]
 

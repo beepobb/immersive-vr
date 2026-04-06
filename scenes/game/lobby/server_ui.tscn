@@ -1,24 +1,31 @@
 [gd_scene format=3 uid="uid://c80okq4yeqntk"]
 
 [ext_resource type="Script" uid="uid://bmhjcr8dflul6" path="res://scripts/ui/lobby/server_ui.gd" id="1_l2pos"]
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="2_l6mjv"]
 
 [node name="VBoxContainer" type="VBoxContainer" unique_id=828575562]
-offset_right = 360.0
-offset_bottom = 117.0
-theme_override_constants/separation = 16
+offset_right = 40.0
+offset_bottom = 97.0
+theme_override_constants/separation = 10
 script = ExtResource("1_l2pos")
 
 [node name="Host" type="Button" parent="." unique_id=1197240754]
+clip_contents = true
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme = ExtResource("2_l6mjv")
 text = "Host"
 
 [node name="Join" type="Button" parent="." unique_id=687066490]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme = ExtResource("2_l6mjv")
 text = "Join"
 
 [node name="StatusLabel" type="Label" parent="." unique_id=307080765]
-custom_minimum_size = Vector2(360, 23)
+custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
+theme = ExtResource("2_l6mjv")
 horizontal_alignment = 1
 autowrap_mode = 3
 

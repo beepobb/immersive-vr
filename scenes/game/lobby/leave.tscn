@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dpvf32trmgdmm"]
+
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_dw6av"]
+[ext_resource type="Script" uid="uid://bsxk8jbjuwb2p" path="res://scenes/game/lobby/leave.gd" id="2_dw6av"]
+[ext_resource type="Texture2D" uid="uid://cjv2bqv8g4kcu" path="res://assets/ui/icons/door_open.png" id="3_dw6av"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dw6av"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7ja5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3lvu3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k11wr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hsvdd"]
+
+[node name="LeaveLobby" type="Button" unique_id=1995690849]
+offset_right = 339.0
+offset_bottom = 118.0
+theme = ExtResource("1_dw6av")
+theme_override_colors/font_focus_color = Color(0.07450981, 0.4862745, 0.70980394, 1)
+theme_override_colors/font_hover_color = Color(0.07501093, 0.48471403, 0.7084362, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.055538677, 0.4258756, 0.62530494, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dw6av")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u7ja5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3lvu3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k11wr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hsvdd")
+script = ExtResource("2_dw6av")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=465541747]
+layout_mode = 0
+offset_right = 421.0
+offset_bottom = 118.0
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_right = 35
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1943709672]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=1894133309]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=658284959]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+texture = ExtResource("3_dw6av")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=854203471]
+layout_mode = 2
+theme = ExtResource("1_dw6av")
+theme_override_font_sizes/font_size = 30
+text = "Leave Lobby"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

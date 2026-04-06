@@ -71,6 +71,21 @@ func _get_in_call_player_root(authority_peer_id: int = -1) -> XROrigin3D:
 	return player_loader.get_node_or_null("XROrigin3D") as XROrigin3D
 
 
+func _get_local_player_root() -> XROrigin3D:
+	var player_loader := get_node_or_null("PlayerLoader")
+	if player_loader == null:
+		return null
+
+	var local_peer_id := multiplayer.get_unique_id()
+	if local_peer_id > 0:
+		var local_player := player_loader.get_node_or_null(str(local_peer_id)) as XROrigin3D
+		if local_player:
+			return local_player
+
+	# Keep backward compatibility with scenes that still use a single local player root.
+	return player_loader.get_node_or_null("XROrigin3D") as XROrigin3D
+
+
 func _get_in_call_camera(authority_peer_id: int = -1) -> XRCamera3D:
 	var authority_player := _get_in_call_player_root(authority_peer_id)
 	if authority_player == null:
@@ -86,7 +101,13 @@ func center_player_on(p_transform: Transform3D):
 #So we get our current camera transform in local space
 	var camera_transform
 	if not in_call:
-		camera_transform = $PlayerLoader/XROrigin3D/XRCamera3D.transform
+		var local_player := _get_local_player_root()
+		if local_player == null:
+			return
+		var local_camera := local_player.get_node_or_null("XRCamera3D") as XRCamera3D
+		if local_camera == null:
+			return
+		camera_transform = local_camera.transform
 	else:
 		var authority_camera := _get_in_call_camera()
 		if authority_camera == null:
@@ -105,7 +126,10 @@ func center_player_on(p_transform: Transform3D):
 
 #And now update our origin point
 	if not in_call:
-		$PlayerLoader/XROrigin3D.global_transform = (p_transform * transform.inverse()).orthonormalized()
+		var local_player := _get_local_player_root()
+		if local_player == null:
+			return
+		local_player.global_transform = (p_transform * transform.inverse()).orthonormalized()
 	else:
 		var authority_player := _get_in_call_player_root()
 		if authority_player == null:
@@ -114,14 +138,15 @@ func center_player_on(p_transform: Transform3D):
 #If we have a player body, we need to set its starting position too.
 	var player_body: XRToolsPlayerBody
 	if not in_call:
-		player_body = XRToolsPlayerBody.find_instance($PlayerLoader/XROrigin3D)
+		var local_player := _get_local_player_root()
+		if local_player:
+			player_body = XRToolsPlayerBody.find_instance(local_player)
 	else:
 		var authority_player := _get_in_call_player_root()
 		if authority_player:
 			player_body = XRToolsPlayerBody.find_instance(authority_player)
 	if player_body:
 		player_body.global_transform = p_transform
-
 
 ## This method is called when the scene is loaded, but before it becomes visible.
 ##
@@ -140,8 +165,12 @@ func scene_loaded(user_data = null):
 #Make sure our camera becomes the current camera
 # if in call environment, set authority camera to true
 	if not in_call:
-		$PlayerLoader/XROrigin3D/XRCamera3D.current = true
-		$PlayerLoader/XROrigin3D.current = true
+		var local_player := _get_local_player_root()
+		if local_player:
+			var local_camera := local_player.get_node_or_null("XRCamera3D") as XRCamera3D
+			if local_camera:
+				local_camera.current = true
+			local_player.current = true
 	else:
 		var authority_id: int = multiplayer.get_unique_id()
 		var authority_player := _get_in_call_player_root(authority_id)
@@ -168,7 +197,10 @@ func scene_loaded(user_data = null):
 #- Transform3D to spawn at
 	var spawn_transform: Transform3D
 	if not in_call:
-		spawn_transform = $PlayerLoader/XROrigin3D.global_transform
+		var local_player := _get_local_player_root()
+		if local_player == null:
+			return
+		spawn_transform = local_player.global_transform
 	else:
 		var authority_player := _get_in_call_player_root(multiplayer.get_unique_id())
 		if authority_player == null:

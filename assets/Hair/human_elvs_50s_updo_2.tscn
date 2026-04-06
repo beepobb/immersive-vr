@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://t4gec0npm1ak"]
+[gd_scene load_steps=2 format=3 uid="uid://t4gec0npm1ak"]
 
 [ext_resource type="PackedScene" uid="uid://8fb763eiamos" path="res://assets/hair/Human_elvs_50s_updo.glb" id="1_wnc2r"]
 

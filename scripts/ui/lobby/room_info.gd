@@ -17,6 +17,7 @@ var last_lobby_state := {}
 var is_ready_local := false
 
 func _ready() -> void:
+	UIButtonAudio.setup_buttons(self )
 	GameState.roster_updated.connect(sync_player_cards)
 	start_call_button.pressed.connect(_on_start_call_pressed)
 	ready_button.pressed.connect(_on_ready_button_pressed)
@@ -63,10 +64,30 @@ func sync_player_cards(players: Array) -> void:
 		if player_id == multiplayer.get_unique_id():
 			is_ready_local = bool(player_data.get("ready", false))
 			ready_button.text = "Cancel" if is_ready_local else "Ready"
+
+	_update_participants_label(players)
 	
 	update_start_call_button_state(players)
 
+func _update_participants_label(players: Array) -> void:
+	var participants_count := 0
+	for player_data in players:
+		if int(player_data.get("id", 0)) != 0:
+			participants_count += 1
+
+	var max_participants := 2
+	var current_label := participant_label.text.strip_edges()
+	var separator_index := current_label.find("/")
+	if separator_index >= 0:
+		var configured_max := int(current_label.substr(separator_index + 1, current_label.length()))
+		if configured_max > 0:
+			max_participants = configured_max
+
+	participant_label.text = "%d/%d" % [participants_count, max_participants]
+
 func _on_ready_button_pressed() -> void:
+	UIButtonAudio.play_click()
+
 	var card = null
 	var id = multiplayer.get_unique_id()
 	for c in player_list.get_children():
@@ -99,5 +120,6 @@ func update_start_call_button_state(players: Array) -> void:
 	start_call_button.disabled = not (has_eligible_players and all_ready)
 
 func _on_start_call_pressed() -> void:
+	UIButtonAudio.play_click()
 	GameState.load_scene(GameState.IN_CALL_SCENE_PATH)
 	GameState.start_call_for_clients()

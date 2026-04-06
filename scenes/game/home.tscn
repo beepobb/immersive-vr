@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dxj7htjfusv51"]
 
 [ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_wkxb3"]
-[ext_resource type="PackedScene" uid="uid://c3bbj8ddfqi8a" path="res://scenes/environment/meta_env_06.tscn" id="2_wkxb3"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_u3dp7"]
 [ext_resource type="PackedScene" uid="uid://c80okq4yeqntk" path="res://scenes/game/lobby/server_ui.tscn" id="4_sktvb"]
+[ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="4_wkxb3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pi8sn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,15 +26,19 @@ glow_enabled = true
 environment = SubResource("Environment_rkiv8")
 
 [node name="PlayerLoader" parent="." index="2" unique_id=1066474312]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+moving = false
+spawn_point = Vector3(0, 1.6, 0)
 
-[node name="meta_env_06" parent="." index="3" unique_id=849864874 instance=ExtResource("2_wkxb3")]
-
-[node name="HostJoin" parent="." index="4" unique_id=1027545802 instance=ExtResource("3_u3dp7")]
+[node name="HostJoin" parent="." index="3" unique_id=1027545802 instance=ExtResource("3_u3dp7")]
 transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0, 1.474319, -1.5012294)
 screen_size = Vector2(1.66, 0.49)
 scene = ExtResource("4_sktvb")
-viewport_size = Vector2(360, 117)
+viewport_size = Vector2(400, 140)
 transparent = 1
 unshaded = true
 scene_properties_keys = PackedStringArray("server_ui.gd")
+
+[node name="EnvironmentRoot" type="Node" parent="." index="4" unique_id=1182028565]
+
+[node name="Room" parent="EnvironmentRoot" index="0" unique_id=1212729777 instance=ExtResource("4_wkxb3")]

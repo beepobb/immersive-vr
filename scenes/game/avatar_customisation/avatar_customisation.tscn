@@ -2,77 +2,54 @@
 
 [ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_ex4w4"]
 [ext_resource type="PackedScene" uid="uid://x0k1ixl4v7o1" path="res://scenes/game/avatar_customisation/avatar_customisation_base.tscn" id="2_515di"]
+[ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="3_515di"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ex4w4"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_515di"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_515di"]
-sky_material = SubResource("ProceduralSkyMaterial_ex4w4")
+[sub_resource type="Sky" id="Sky_qvcbg"]
+sky_material = SubResource("ProceduralSkyMaterial_515di")
 
-[sub_resource type="Environment" id="Environment_qvcbg"]
+[sub_resource type="Environment" id="Environment_kxn41"]
 background_mode = 2
-sky = SubResource("Sky_515di")
+sky = SubResource("Sky_qvcbg")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ex4w4"]
-height = 0.001
-radius = 100.0
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_515di"]
-cull_mode = 1
-albedo_color = Color(0.39668927, 0.34168243, 0.667454, 1)
-metallic = 0.51
-roughness = 0.2
+albedo_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qvcbg"]
-top_radius = 100.0
-bottom_radius = 100.0
-height = 100.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxn41"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_w4k52"]
-top_radius = 1.0
-bottom_radius = 1.0
-height = 0.1
+material = SubResource("StandardMaterial3D_515di")
+bottom_radius = 0.7
+height = 0.3
+radial_segments = 7
 
 [node name="AvatarCustomisation" unique_id=621000924 instance=ExtResource("1_ex4w4")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=228439676]
-environment = SubResource("Environment_qvcbg")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=1811613669]
+environment = SubResource("Environment_kxn41")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=605546865]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 0.46255854, -0.5039966, 0.72940177, -0.1898411, 0.7473201, 0.6367676, 0, 1.4049793, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=891171652]
+transform = Transform3D(-0.86602545, -0.43301275, 0.24999993, 0.49866748, -0.78448105, 0.36867368, 0.036479793, 0.44394758, 0.8953099, 0, 3.0599432, 3.1913033)
 shadow_enabled = true
 
 [node name="PlayerLoader" parent="." index="2" unique_id=1066474312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
 moving = false
+spawn_point = Vector3(0, 1.7, 0.82)
 
-[node name="PreviewStage" type="Node3D" parent="." index="3" unique_id=456487586]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012192726, -0.005928993, 0.0038318634)
+[node name="AvatarCustomisationBase" parent="." index="3" unique_id=371794598 instance=ExtResource("2_515di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.38)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PreviewStage" index="0" unique_id=117229152]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+[node name="EnvironmentRoot" type="Node" parent="." index="4" unique_id=1091448256]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PreviewStage/StaticBody3D" index="0" unique_id=1112462121]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.999, 0)
-shape = SubResource("CylinderShape3D_ex4w4")
+[node name="Room" parent="EnvironmentRoot" index="0" unique_id=1188904861 instance=ExtResource("3_515di")]
 
-[node name="Wall" type="MeshInstance3D" parent="PreviewStage/StaticBody3D" index="1" unique_id=754715651]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031424105, 43.01001, -0.0007555485)
-material_override = SubResource("StandardMaterial3D_515di")
+[node name="Platform3" type="MeshInstance3D" parent="EnvironmentRoot/Room" index="7" unique_id=314558742]
+transform = Transform3D(0.6809509, 0, -0.7323291, 0, 1, 0, 0.7323291, 0, 0.6809509, -1.2996643, 0.24240884, 1.392212)
 mesh = SubResource("CylinderMesh_qvcbg")
-skeleton = NodePath("../..")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="PreviewStage" index="1" unique_id=1132806566]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 14, 0)
-light_energy = 5.0
-
-[node name="Floor" type="MeshInstance3D" parent="PreviewStage" index="2" unique_id=566090644]
-material_override = SubResource("StandardMaterial3D_kxn41")
-mesh = SubResource("CylinderMesh_w4k52")
-
-[node name="AvatarCustomisationBase" parent="." index="4" unique_id=371794598 instance=ExtResource("2_515di")]
+[node name="Camera3D" type="Camera3D" parent="." index="5" unique_id=1676589494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0.82)

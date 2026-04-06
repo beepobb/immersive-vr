@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dogmml0yme3hc"]
+[gd_scene load_steps=2 format=3 uid="uid://dogmml0yme3hc"]
 
 [ext_resource type="PackedScene" uid="uid://dx063se4c75bv" path="res://assets/hair/Human_grinsegold_wig_bow_tie.glb" id="1_6p4hc"]
 

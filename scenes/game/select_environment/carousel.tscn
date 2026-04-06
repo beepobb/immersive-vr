@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://gail3i3os4a"]
+
+[ext_resource type="Shader" uid="uid://blqgy7raqhbpd" path="res://scenes/game/avatar_customisation/glass_shader.gdshader" id="1_ju34m"]
+[ext_resource type="Script" uid="uid://chmoqcoey5wga" path="res://scripts/carousel.gd" id="2_mjrjj"]
+[ext_resource type="Texture2D" uid="uid://mews21ttgdjb" path="res://assets/ui/card/open_room.jpg" id="5_4v3e6"]
+[ext_resource type="PackedScene" uid="uid://cqavbs7htoo51" path="res://scenes/game/select_environment/env_card.tscn" id="7_xx3y1"]
+[ext_resource type="Texture2D" uid="uid://b5opfjy07ffv0" path="res://assets/ui/card/Cafe01.jpg" id="9_blirw"]
+[ext_resource type="Texture2D" uid="uid://cxn4jpl5qayv1" path="res://assets/ui/card/water_house.jpg" id="10_nmqty"]
+[ext_resource type="Texture2D" uid="uid://dw27v3m88e263" path="res://assets/ui/card/park.jpg" id="11_xl8r7"]
+[ext_resource type="Texture2D" uid="uid://ce85mqebqoubj" path="res://assets/ui/card/desert.jpg" id="12_fqk6g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5y57f"]
+shader = ExtResource("1_ju34m")
+shader_parameter/tint_color = Color(0.76, 0.84, 0.95, 0.24)
+shader_parameter/cloud_scale = 1.2
+shader_parameter/grain_scale = 20.0
+shader_parameter/cloud_strength = 0.16
+shader_parameter/grain_strength = 0.035
+shader_parameter/warp_strength = 0.02
+shader_parameter/top_glow = 0.11
+shader_parameter/center_haze = 0.06
+shader_parameter/outer_edge_width = 0.035
+shader_parameter/inner_edge_width = 0.07
+shader_parameter/outer_highlight = 0.22
+shader_parameter/inner_highlight = 0.1
+shader_parameter/inner_shadow = 0.1
+shader_parameter/rim_blue_strength = 0.06
+shader_parameter/corner_radius = 22.0
+shader_parameter/corner_softness = 1.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0udtx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Carousel" type="Panel" unique_id=148473399]
+material = SubResource("ShaderMaterial_5y57f")
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.69900006
+offset_bottom = -0.2800293
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0udtx")
+script = ExtResource("2_mjrjj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=303592431]
+layout_mode = 1
+offset_right = 1400.0
+offset_bottom = 504.0
+theme_override_constants/separation = 60
+
+[node name="EnvCards" type="Control" parent="VBoxContainer" unique_id=1316020599]
+custom_minimum_size = Vector2(1400, 320)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ClarityRoomCard" parent="VBoxContainer/EnvCards" unique_id=471485675 instance=ExtResource("7_xx3y1")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 70.0
+offset_right = 400.0
+offset_bottom = 490.0
+grow_horizontal = 1
+grow_vertical = 1
+env_title = "Horizon Sanctuary "
+env_description = "A spacious circular sanctuary surrounded by panoramic mountain views. Designed for grounding, focus, and peaceful dialogue."
+env_photo = ExtResource("5_4v3e6")
+
+[node name="DialogueCafeCard" parent="VBoxContainer/EnvCards" unique_id=390839924 instance=ExtResource("7_xx3y1")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 180.0
+offset_top = 35.0
+offset_right = 580.0
+offset_bottom = 455.0
+grow_horizontal = 1
+grow_vertical = 1
+env_title = "Clarity Room"
+env_description = "A minimalist therapy room with soft lighting and neutral tones that foster calm, focus, and open communication."
+env_photo = ExtResource("9_blirw")
+
+[node name="WaterCard" parent="VBoxContainer/EnvCards" unique_id=1457120025 instance=ExtResource("7_xx3y1")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 470.0
+offset_right = 870.0
+offset_bottom = 420.0
+grow_horizontal = 1
+grow_vertical = 1
+env_title = "Floating Haven"
+env_description = "A modern home surrounded by calm waters. Offers a serene, private escape with a soothing atmosphere."
+env_photo = ExtResource("10_nmqty")
+
+[node name="ParkCard" parent="VBoxContainer/EnvCards" unique_id=1433416192 instance=ExtResource("7_xx3y1")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 800.0
+offset_top = 35.0
+offset_right = 1200.0
+offset_bottom = 455.0
+grow_horizontal = 1
+grow_vertical = 1
+env_title = "Tranquil Park"
+env_description = "A gentle outdoor park with greenery and winding paths. Ideal for relaxed, natural conversations in a refreshing setting."
+env_photo = ExtResource("11_xl8r7")
+
+[node name="DesertCard" parent="VBoxContainer/EnvCards" unique_id=916622320 instance=ExtResource("7_xx3y1")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 980.0
+offset_top = 70.0
+offset_right = 1380.0
+offset_bottom = 490.0
+grow_horizontal = 1
+grow_vertical = 1
+env_title = "Desert Serenity"
+env_description = "A quiet, open desert space with warm sunlight and soft sands. Perfect for calm reflection and uninterrupted conversations."
+env_photo = ExtResource("12_fqk6g")

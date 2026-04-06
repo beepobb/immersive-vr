@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://de0ksgrkdi7cq"]
+
+[ext_resource type="PackedScene" uid="uid://dsgrm6pw5mvp5" path="res://assets/environment/Bird For Flock Animation/bird.glb" id="1_66ihq"]
+[ext_resource type="Script" uid="uid://cigv72xbmoosh" path="res://assets/models/bird.gd" id="2_6to7x"]
+[ext_resource type="Texture2D" uid="uid://ci85mq2rn1baj" path="res://assets/environment/Bird For Flock Animation/Bird_Textures_Pointcache/maps/Bird.png" id="3_mfvtc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xti2y"]
+albedo_texture = ExtResource("3_mfvtc")
+
+[node name="bird" instance=ExtResource("1_66ihq")]
+script = ExtResource("2_6to7x")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(0.5055706, -0.49436647, 0.50557095, -0.49436647)
+bones/1/position = Vector3(3.3934007, 0.003825673, -1.2719906e-07)
+bones/1/rotation = Quaternion(2.3516802e-09, -2.1841487e-07, 0.011204217, 0.99993724)
+bones/2/rotation = Quaternion(0.0012626074, 0.9999992, -4.3514106e-08, -1.9485753e-07)
+bones/3/rotation = Quaternion(-0.061229743, -0.63394433, 0.04825155, 0.76943964)
+bones/4/position = Vector3(1.3777194, -5.038375e-06, -2.1470942e-06)
+bones/4/rotation = Quaternion(0.042031296, -0.24559744, -0.007695481, 0.9684297)
+bones/5/position = Vector3(2.2257178, 1.7561808e-05, -1.2864641e-06)
+bones/5/rotation = Quaternion(-0.109480105, 0.23822726, -0.11475193, 0.9581722)
+bones/6/position = Vector3(0.22111797, 0.2844647, -0.5557523)
+bones/6/rotation = Quaternion(0.02024406, 0.9681584, 0.07528266, 0.2378906)
+bones/7/position = Vector3(0.3931432, -1.5200974e-05, 1.3204349)
+bones/7/rotation = Quaternion(0.0395229, 0.99853486, -0.016241573, 0.033201654)
+bones/8/position = Vector3(-1.6759514, 3.188281e-06, -1.4645969)
+bones/8/rotation = Quaternion(-0.0555785, 0.8612068, -0.14854243, 0.48287585)
+
+[node name="Bird01_001" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xti2y")

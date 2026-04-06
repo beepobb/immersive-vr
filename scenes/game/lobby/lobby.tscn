@@ -4,10 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_ein8w"]
 [ext_resource type="PackedScene" uid="uid://cffhyue0c2whs" path="res://scenes/game/lobby/room_info.tscn" id="2_ein8w"]
 [ext_resource type="PackedScene" uid="uid://dbnkofu6ipe70" path="res://scenes/game/lobby/player_card.tscn" id="5_yy71y"]
-[ext_resource type="PackedScene" uid="uid://u5kj43ox0jbg" path="res://assets/Avatar/AvatarTest.glb" id="6_mcopp"]
+[ext_resource type="PackedScene" uid="uid://b16xpdpjtl72k" path="res://assets/Avatar/AvatarTest.glb" id="6_mcopp"]
+[ext_resource type="PackedScene" uid="uid://dpvf32trmgdmm" path="res://scenes/game/lobby/leave.tscn" id="7_mw24c"]
 [ext_resource type="PackedScene" uid="uid://cjo2n1yw7ll28" path="res://scenes/game/lobby/selected_env_preview.tscn" id="7_tprm0"]
 [ext_resource type="Script" uid="uid://8y5l23xo83v1" path="res://scripts/ui/lobby/lobby_manager.gd" id="8_ein8w"]
-[ext_resource type="PackedScene" uid="uid://tp33cmnql5ut" path="res://scenes/game/lobby/customise_options.tscn" id="8_tprm0"]
+[ext_resource type="PackedScene" uid="uid://tp33cmnql5ut" path="res://scenes/game/lobby/customise_avatar.tscn" id="8_tprm0"]
+[ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="9_p2j6g"]
+[ext_resource type="PackedScene" uid="uid://c8mkjqu5ta77d" path="res://scenes/game/disclaimer_viewport.tscn" id="10_flkj0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iy8d8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,24 +25,7 @@ sky = SubResource("Sky_s5j51")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_iy8d8"]
-height = 0.001
-radius = 100.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5j51"]
-cull_mode = 1
-albedo_color = Color(0.39668927, 0.34168243, 0.667454, 1)
-metallic = 0.51
-roughness = 0.2
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_is1y2"]
-top_radius = 100.0
-bottom_radius = 100.0
-height = 100.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lerhf"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_6m3d6"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_flkj0"]
 top_radius = 1.0
 bottom_radius = 1.0
 height = 0.1
@@ -49,39 +35,11 @@ height = 0.1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=2055827521]
 environment = SubResource("Environment_is1y2")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=306475170]
-transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.36951593, -0.21743852, 0.90342593, -0.33683532, 0.8747688, 0.3483124, 0, 0, 0)
-shadow_enabled = true
-
-[node name="PreviewStage" type="Node3D" parent="." index="2" unique_id=520018037]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012192726, -0.005928993, 0.0038318634)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PreviewStage" index="0" unique_id=990210411]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PreviewStage/StaticBody3D" index="0" unique_id=1433446497]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.999, 0)
-shape = SubResource("CylinderShape3D_iy8d8")
-
-[node name="Wall" type="MeshInstance3D" parent="PreviewStage/StaticBody3D" index="1" unique_id=419511581]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031424105, 43.01001, -0.0007555485)
-material_override = SubResource("StandardMaterial3D_s5j51")
-mesh = SubResource("CylinderMesh_is1y2")
-skeleton = NodePath("../..")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="PreviewStage" index="1" unique_id=1050848053]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 14, 0)
-light_energy = 5.0
-
-[node name="Floor" type="MeshInstance3D" parent="PreviewStage" index="2" unique_id=597980599]
-material_override = SubResource("StandardMaterial3D_lerhf")
-mesh = SubResource("CylinderMesh_6m3d6")
-
-[node name="UI" type="Node3D" parent="." index="3" unique_id=1114705087]
+[node name="UI" type="Node3D" parent="." index="1" unique_id=1114705087]
 unique_name_in_owner = true
 
 [node name="ServerInfo" parent="UI" index="0" unique_id=489379600 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.6867613, 0.1778158)
+transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.7789513, 1.1024626)
 screen_size = Vector2(0.96, 1.39)
 scene = ExtResource("2_ein8w")
 viewport_size = Vector2(454, 564.85)
@@ -91,28 +49,50 @@ scene_properties_keys = PackedStringArray("room_info.gd", "player_card")
 player_card = ExtResource("5_yy71y")
 
 [node name="EnvPreview" parent="UI" index="1" unique_id=1614598740 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.648, 1.8480567, 0)
-screen_size = Vector2(0.935, 1.07)
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.5514731, 1.848, 1.102)
+screen_size = Vector2(0.935, 1.39)
 scene = ExtResource("7_tprm0")
-viewport_size = Vector2(579, 657)
+viewport_size = Vector2(540, 782)
 transparent = 1
 unshaded = true
 scene_properties_keys = PackedStringArray("selected_env_preview.gd")
 
 [node name="CustomiseOptions" parent="UI" index="2" unique_id=1983447249 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0123959, 0)
-screen_size = Vector2(0.92, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5503063, 1)
+screen_size = Vector2(0.6, 0.18)
 scene = ExtResource("8_tprm0")
-viewport_size = Vector2(576, 118)
+viewport_size = Vector2(421, 118)
 transparent = 1
 scene_properties_keys = PackedStringArray("avatar_env.gd")
 
-[node name="AvatarTest" parent="." index="4" unique_id=917422586 instance=ExtResource("6_mcopp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+[node name="Leave" parent="UI" index="3" unique_id=2106558892 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -1.9282403, 2.5994353, 1.1024626)
+screen_size = Vector2(0.47, 0.16)
+scene = ExtResource("7_mw24c")
+viewport_size = Vector2(339, 118)
+transparent = 1
+scene_properties_keys = PackedStringArray("avatar_env.gd")
 
-[node name="LobbyManager" type="Node3D" parent="." index="5" unique_id=500149902]
+[node name="AvatarTest" parent="." index="2" unique_id=917422586 instance=ExtResource("6_mcopp")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.05955869, 0)
+
+[node name="LobbyManager" type="Node3D" parent="." index="3" unique_id=500149902]
 script = ExtResource("8_ein8w")
 
-[node name="PlayerLoader" parent="." index="6" unique_id=1066474312]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6547549, 2.6929336)
+[node name="PlayerLoader" parent="." index="4" unique_id=1066474312]
 moving = false
+spawn_point = Vector3(0, 1.8, 3.2)
+
+[node name="EnvironmentRoot" type="Node" parent="." index="5" unique_id=1157440965]
+
+[node name="Room" parent="EnvironmentRoot" index="0" unique_id=1582964686 instance=ExtResource("9_p2j6g")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnvironmentRoot/Room" index="7" unique_id=951373658]
+mesh = SubResource("CylinderMesh_flkj0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="6" unique_id=579464998]
+light_energy = 0.4
+
+[node name="DisclaimerViewports" parent="." index="7" unique_id=1862570522 instance=ExtResource("10_flkj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9644252, 0.54913306)
+visible = false

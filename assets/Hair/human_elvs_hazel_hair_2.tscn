@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://j026ac57qjft"]
+[gd_scene load_steps=2 format=3 uid="uid://j026ac57qjft"]
 
 [ext_resource type="PackedScene" uid="uid://dpbx51rxj7llh" path="res://assets/hair/Human_elvs_hazel_hair.glb" id="1_qcymv"]
 

@@ -8,6 +8,7 @@ const PORT := 7001
 var connection_timer := Timer.new()
 
 func _ready() -> void:
+	UIButtonAudio.setup_buttons(self)
 	# Add and configure a timer for connection fallback
 	host_button.disabled = false
 	join_button.disabled = false

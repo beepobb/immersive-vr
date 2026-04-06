@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c6dlp8cojwphn"]
+[gd_scene load_steps=2 format=3 uid="uid://c6dlp8cojwphn"]
 
 [ext_resource type="PackedScene" uid="uid://ce6nwq8n6y0xt" path="res://assets/hair/cortu_strawberry_cloud_hair.glb" id="1_vkrcy"]
 

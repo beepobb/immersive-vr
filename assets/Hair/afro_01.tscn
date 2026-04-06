@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cedfb1ntsowh"]
+[gd_scene load_steps=2 format=3 uid="uid://cedfb1ntsowh"]
 
 [ext_resource type="PackedScene" uid="uid://prid53yte3d5" path="res://assets/hair/afro01.glb" id="1_n5osi"]
 

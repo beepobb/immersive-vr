@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dfqrwqgaixme7"]
+[gd_scene load_steps=2 format=3 uid="uid://dfqrwqgaixme7"]
 
 [ext_resource type="PackedScene" uid="uid://dyyn6ca0vgwic" path="res://assets/outfit/maciekg_wizard_robe.glb" id="1_cdo32"]
 

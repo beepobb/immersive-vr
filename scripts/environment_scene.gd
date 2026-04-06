@@ -15,7 +15,7 @@ func _ready() -> void:
 	multiplayer.peer_disconnected.connect(del_player)
 	# Wait until the whole scene tree is ready so MultiplayerSpawner sees these adds.
 	call_deferred("_spawn_existing_players")
-
+	
 func _spawn_existing_players() -> void:
 	add_player(1)
 	for id in multiplayer.get_peers():

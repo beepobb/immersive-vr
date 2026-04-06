@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cjyqmb3112nv5"]
+[gd_scene load_steps=2 format=3 uid="uid://cjyqmb3112nv5"]
 
 [ext_resource type="PackedScene" uid="uid://cmnt4u3bcg6bo" path="res://assets/hair/Human_learning_anime_hair.glb" id="1_rvqo3"]
 

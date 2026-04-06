@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://ybm36ivsjvoj"]
+
+[ext_resource type="Script" uid="uid://dgejo1fsn5imb" path="res://scripts/indicator_bar.gd" id="1_1bvyl"]
+[ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="2_i5fdy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0r6g"]
+bg_color = Color(0.10980392, 0.10980392, 0.11764706, 0.5019608)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.49149686, 0.49152333, 0.5126989, 0.5019608)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvyl"]
+bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.49019608, 0.49019608, 0.5137255, 0.5019608)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5fdy"]
+bg_color = Color(0.68595296, 0.68593544, 0.69941664, 0.63529414)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.49019608, 0.49019608, 0.5137255, 0.5019608)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1ytl"]
+bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.49019608, 0.49019608, 0.5137255, 0.5019608)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="indicator_bar" type="VBoxContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -369.0
+offset_top = -54.0
+offset_right = 369.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_1bvyl")
+
+[node name="BottomNavBar" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="PrevButton" type="Button" parent="BottomNavBar"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_o0r6g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1bvyl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i5fdy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x1ytl")
+
+[node name="Label" type="Label" parent="BottomNavBar/PrevButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i5fdy")
+theme_override_font_sizes/font_size = 32
+text = "❮"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="BottomNavBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="IndicatorRow" type="HBoxContainer" parent="BottomNavBar/MarginContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Bar1" type="Panel" parent="BottomNavBar/MarginContainer/IndicatorRow"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Bar2" type="Panel" parent="BottomNavBar/MarginContainer/IndicatorRow"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Bar3" type="Panel" parent="BottomNavBar/MarginContainer/IndicatorRow"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Bar4" type="Panel" parent="BottomNavBar/MarginContainer/IndicatorRow"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Bar5" type="Panel" parent="BottomNavBar/MarginContainer/IndicatorRow"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="NextButton" type="Button" parent="BottomNavBar"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_o0r6g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1bvyl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i5fdy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x1ytl")
+text = " "
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="BottomNavBar/NextButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "❯"
+horizontal_alignment = 1
+vertical_alignment = 1

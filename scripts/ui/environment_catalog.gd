@@ -3,17 +3,35 @@ extends Node
 const DEFAULT_ENVIRONMENT_ID := "desert"
 
 const ENVIRONMENTS := {
-	"desert": {
-		"name": "Desert",
-		"description": "A minimalist therapy room with soft lighting and neutral tones that foster calm, focus, and open communication.",
-		"thumbnail": "res://assets/ui/card/010001.jpg",
-		"scene_path": "res://scenes/environment/sand.scn",
+	"sphere_room": {
+		"name": "Horizon Sanctuary",
+		"description": "A spacious circular sanctuary surrounded by panoramic mountain views. Designed for grounding, focus, and peaceful dialogue.",
+		"thumbnail": "res://assets/ui/card/open_room.jpg",
+		"scene_path": "res://scenes/environment/circular_hall.tscn",
 	},
-	"apartment": {
-		"name": "Apartment",
-		"description": "This is a cafe.",
-		"thumbnail": "res://assets/ui/card/00012.jpg",
-		"scene_path": "res://scenes/environment/apartment.scn"
+	"therapy_room": {
+		"name": "Clarity Room",
+		"description": "A minimalist therapy room with soft lighting and neutral tones that foster calm, focus, and open communication.",
+		"thumbnail": "res://assets/ui/card/therapy_room.jpg",
+		"scene_path": "res://scenes/environment/meta_env_06.tscn",
+	},
+	"water_house": {
+		"name": "Floating Haven",
+		"description": "A modern home surrounded by calm waters. Offers a serene, private escape with a soothing atmosphere.",
+		"thumbnail": "res://assets/ui/card/water_house.jpg",
+		"scene_path": "res://scenes/environment/apartment.scn",
+	},
+	"park": {
+		"name": "Tranquil Park",
+		"description": "A gentle outdoor park with greenery and winding paths. Ideal for relaxed, natural conversations in a refreshing setting.",
+		"thumbnail": "res://assets/ui/card/park.jpg",
+		"scene_path": "res://scenes/environment/meta_env_06.tscn",
+	},
+	"desert": {
+		"name": "Desert Serenity",
+		"description": "A quiet, open desert space with warm sunlight and soft sands. Perfect for calm reflection and uninterrupted conversations.",
+		"thumbnail": "res://assets/ui/card/desert.jpg",
+		"scene_path": "res://scenes/environment/sand.scn",
 	}
 }
 
