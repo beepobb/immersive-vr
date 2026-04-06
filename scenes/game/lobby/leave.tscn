@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpvf32trmgdmm"]
 
 [ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_dw6av"]
-[ext_resource type="Script" uid="uid://bsxk8jbjuwb2p" path="res://scenes/game/lobby/leave.gd" id="2_dw6av"]
+[ext_resource type="Script" uid="uid://bsxk8jbjuwb2p" path="res://scripts/ui/lobby/leave.gd" id="2_dw6av"]
 [ext_resource type="Texture2D" uid="uid://cjv2bqv8g4kcu" path="res://assets/ui/icons/door_open.png" id="3_dw6av"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dw6av"]

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_x2gul"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_kfx4a"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7e1ug"]
+[ext_resource type="PackedScene" uid="uid://cd2qni7yip51i" path="res://scenes/game/call/in_call_control_viewport.tscn" id="7_7e1ug"]
 [ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="8_2118c"]
 [ext_resource type="PackedScene" uid="uid://bb860ifn1rxps" path="res://assets/X Bot.fbx" id="8_x2gul"]
 
@@ -75,6 +76,9 @@ transform = Transform3D(0.18566667, 3.5595647e-08, -0.982613, 0.982613, -4.29513
 [node name="Pole" type="Marker3D" parent="RightController/Target" unique_id=1127663476]
 transform = Transform3D(1.0000002, 0, 0, -1.4901161e-08, 1, 0, 2.9802322e-08, 0, 1.0000002, 0.071, -0.204, -0.056)
 
+[node name="in_call_control_viewport" parent="RightController" unique_id=1876519974 instance=ExtResource("7_7e1ug")]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0.1, -0.399)
+
 [node name="Waist" type="XRController3D" parent="." unique_id=2128659618]
 tracker = &"/user/vive_tracker_htcx/role/waist"
 
@@ -117,7 +121,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="X Bot" parent="AvatarRoot" unique_id=1941485306 instance=ExtResource("8_x2gul")]
 
-[node name="Skeleton3D" parent="AvatarRoot/X Bot" index="0" unique_id=63022117]
+[node name="Skeleton3D" parent="AvatarRoot/X Bot" index="0" unique_id=1714165654]
 bones/11/rotation = Quaternion(0.25328454, 0.061618283, -0.2282103, 0.93806726)
 bones/13/rotation = Quaternion(-0.0016647386, -0.00080778124, 0.0069197505, 0.9999744)
 bones/15/rotation = Quaternion(-6.059341e-07, 9.9535276e-11, -0.00016426753, 1)

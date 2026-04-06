@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gail3i3os4a"]
 
-[ext_resource type="Shader" uid="uid://blqgy7raqhbpd" path="res://scenes/game/avatar_customisation/glass_shader.gdshader" id="1_ju34m"]
+[ext_resource type="Shader" uid="uid://blqgy7raqhbpd" path="res://assets/glass_shader.gdshader" id="1_ju34m"]
 [ext_resource type="Script" uid="uid://chmoqcoey5wga" path="res://scripts/carousel.gd" id="2_mjrjj"]
 [ext_resource type="Texture2D" uid="uid://mews21ttgdjb" path="res://assets/ui/card/open_room.jpg" id="5_4v3e6"]
 [ext_resource type="PackedScene" uid="uid://cqavbs7htoo51" path="res://scenes/game/select_environment/env_card.tscn" id="7_xx3y1"]

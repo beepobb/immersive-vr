@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_41ga7"]
 [ext_resource type="Script" uid="uid://bc02n64160ovo" path="res://scripts/ui/customise_options.gd" id="1_vqv38"]
 [ext_resource type="Texture2D" uid="uid://by1igi04vtnp3" path="res://assets/themes/glass_panel_9slice.png" id="4_oyj4w"]
-[ext_resource type="Shader" uid="uid://blqgy7raqhbpd" path="res://scenes/game/avatar_customisation/glass_shader.gdshader" id="5_f378y"]
+[ext_resource type="Shader" uid="uid://blqgy7raqhbpd" path="res://assets/glass_shader.gdshader" id="5_f378y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_41ga7"]
 shader = ExtResource("5_f378y")

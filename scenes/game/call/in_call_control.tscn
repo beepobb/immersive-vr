@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c6x64ghqhsaut"]
+
+[ext_resource type="PackedScene" uid="uid://cqfpc2fjvnc50" path="res://scenes/game/call/session_header.tscn" id="1_ifvtl"]
+[ext_resource type="PackedScene" uid="uid://ceeuw74kntix2" path="res://scenes/game/call/end_session.scn" id="2_5iv50"]
+
+[node name="Control" type="Control" unique_id=198231719]
+layout_mode = 3
+anchor_right = 0.379
+anchor_bottom = 0.246
+offset_right = -0.11999512
+offset_bottom = -0.120010376
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SessionHeader" parent="." unique_id=1253402062 instance=ExtResource("1_ifvtl")]
+layout_mode = 0
+
+[node name="CallSession" parent="." unique_id=1072259935 instance=ExtResource("2_5iv50")]
+layout_mode = 0
+offset_top = 107.0
+offset_right = 488.0
+offset_bottom = 177.0

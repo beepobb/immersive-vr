@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://daqqlsg5wymbo" path="res://scripts/ui/env_card.gd" id="1_ddhac"]
 [ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_dy8im"]
-[ext_resource type="Shader" uid="uid://blqgy7raqhbpd" path="res://scenes/game/avatar_customisation/glass_shader.gdshader" id="3_lh6qx"]
+[ext_resource type="Shader" uid="uid://blqgy7raqhbpd" path="res://assets/glass_shader.gdshader" id="3_lh6qx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xm0ny"]
 bg_color = Color(0.89411765, 0.92941177, 0.9764706, 0.4392157)
