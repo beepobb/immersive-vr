@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://w8y2sr1j63vt"]
+
+[ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_b28tf"]
+[ext_resource type="Script" uid="uid://o17r2om0r7y1" path="res://scripts/calibration.gd" id="2_eraqd"]
+[ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="3_7032y"]
+
+[sub_resource type="Environment" id="Environment_b5v5u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3jhem"]
+size = Vector3(50, 0.1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eraqd"]
+size = Vector3(50, 0.1, 50)
+
+[node name="FBT" type="Node3D" unique_id=736141873]
+script = ExtResource("1_b28tf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1607267524]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1224671918]
+environment = SubResource("Environment_b5v5u")
+
+[node name="XROrigin3D" parent="." unique_id=1503267807 instance=ExtResource("3_7032y")]
+
+[node name="RightController" parent="XROrigin3D" index="2" unique_id=2121946272]
+transform = Transform3D(-4.3711385e-08, -0.0069812606, -0.99997586, 0, 0.99997574, -0.0069812615, 0.99999994, -3.051606e-10, -4.3710333e-08, 0.798, 1.448, 0)
+show_when_tracked = true
+
+[node name="Target" parent="XROrigin3D/LAnkle" parent_id_path=PackedInt32Array(1503267807, 1653117457) index="1" unique_id=2740982]
+transform = Transform3D(-0.9435124, -0.1617229, -0.28918865, -0.30881038, 0.74553406, 0.5906057, 0.12008552, 0.64654815, -0.7533624, 0, 0, 0)
+
+[node name="Target" parent="XROrigin3D/RAnkle" parent_id_path=PackedInt32Array(1503267807, 995186668) index="1" unique_id=760069603]
+transform = Transform3D(-0.9435124, 0.1617229, 0.2891886, 0.30881038, 0.74553406, 0.59060556, -0.12008552, 0.64654815, -0.7533623, 0, -0.015, 0.065)
+
+[node name="AvatarRoot" parent="XROrigin3D" index="8" unique_id=1623042168]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1213084053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=432309524]
+shape = SubResource("BoxShape3D_3jhem")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D" unique_id=1151103520]
+mesh = SubResource("BoxMesh_eraqd")
+
+[node name="Calibration" type="Node3D" parent="." unique_id=561612349 node_paths=PackedStringArray("hmd", "left_hand", "right_hand", "waist", "left_foot", "right_foot")]
+script = ExtResource("2_eraqd")
+hmd = NodePath("../XROrigin3D/XRCamera3D")
+left_hand = NodePath("../XROrigin3D/LeftController")
+right_hand = NodePath("../XROrigin3D/RightController")
+waist = NodePath("../XROrigin3D/Waist")
+left_foot = NodePath("../XROrigin3D/LAnkle")
+right_foot = NodePath("../XROrigin3D/RAnkle")
+eye_offset = 0.15
+
+[editable path="XROrigin3D"]
+[editable path="XROrigin3D/AvatarRoot/AvatarTest"]

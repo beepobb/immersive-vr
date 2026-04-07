@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ekauohm8w17g"]
+
+[ext_resource type="PackedScene" uid="uid://cie7c0402ypag" path="res://assets/shoes/mindfront_shoes_monk_strap_male.glb" id="1_0k711"]
+
+[node name="mindfront_shoes_monk_strap_male" instance=ExtResource("1_0k711")]

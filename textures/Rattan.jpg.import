@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5rhmh7t3fhpo"
 path.s3tc="res://.godot/imported/Rattan.jpg-3bd2a8a16283298b6d228dd435e85785.s3tc.ctex"
+path.etc2="res://.godot/imported/Rattan.jpg-3bd2a8a16283298b6d228dd435e85785.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Rattan.jpg"
-dest_files=["res://.godot/imported/Rattan.jpg-3bd2a8a16283298b6d228dd435e85785.s3tc.ctex"]
+dest_files=["res://.godot/imported/Rattan.jpg-3bd2a8a16283298b6d228dd435e85785.s3tc.ctex", "res://.godot/imported/Rattan.jpg-3bd2a8a16283298b6d228dd435e85785.etc2.ctex"]
 
 [params]
 

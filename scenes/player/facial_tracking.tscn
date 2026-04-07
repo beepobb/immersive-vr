@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bl2kkuxujyj6q"]
+
+[ext_resource type="PackedScene" uid="uid://0rpgxarpuatj" path="res://assets/metaHumanHead_52shapekeys_01.fbx" id="1_11l3f"]
+[ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_uvn5p"]
+[ext_resource type="PackedScene" uid="uid://cvphrq4jx66v6" path="res://assets/Avatar/avatar w face bs/avg bald man2.glb" id="3_jedu7"]
+[ext_resource type="PackedScene" uid="uid://b28plfqfpqg3w" path="res://assets/Avatar/avatar w face bs/bald male face.glb" id="4_umyts"]
+[ext_resource type="PackedScene" uid="uid://dvo5j26ukn4fd" path="res://assets/Avatar/avatar w face bs/bald female .glb" id="5_qq7yf"]
+
+[sub_resource type="Environment" id="Environment_11l3f"]
+
+[node name="FacialTracking" type="Node3D"]
+script = ExtResource("1_uvn5p")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_11l3f")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, -1.8496971e-08, 0.97736055, 0.21158068, 8.5443574e-08, 0.21158068, -0.97736055, 0, 2.0614667, -0.22437239)
+visible = false
+
+[node name="metaHumanHead_52shapekeys_01" parent="." instance=ExtResource("1_11l3f")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.23910403, 0.7631309)
+visible = false
+
+[node name="Face" type="XRFaceModifier3D" parent="metaHumanHead_52shapekeys_01"]
+target = NodePath("../grp_blendShapes_01/grp_head/head_lod0_ORIGINAL")
+
+[node name="LeftEye" type="XRFaceModifier3D" parent="metaHumanHead_52shapekeys_01"]
+target = NodePath("../grp_blendShapes_01/grp_eyes/grp_eye_l/eyeLeft_ORIGINAL")
+
+[node name="RightEye" type="XRFaceModifier3D" parent="metaHumanHead_52shapekeys_01"]
+target = NodePath("../grp_blendShapes_01/grp_eyes/grp_eye_r/eyeRight_ORIGINAL")
+
+[node name="Mouth" type="XRFaceModifier3D" parent="metaHumanHead_52shapekeys_01"]
+target = NodePath("../grp_blendShapes_01/grp_mouth/teeth_ORIGINAL")
+
+[node name="male3" parent="." instance=ExtResource("3_jedu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11508149, -0.8145733, -1.1471765)
+visible = false
+
+[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="male3"]
+target = NodePath("../Human_rig/Skeleton3D/male1591")
+
+[node name="bald male face" parent="." instance=ExtResource("4_umyts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0987468, 0, -1.6349983)
+
+[node name="bald female " parent="." instance=ExtResource("5_qq7yf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18494439, 0, -1.1172895)
+
+[editable path="metaHumanHead_52shapekeys_01"]
+[editable path="male3"]
+[editable path="bald male face"]

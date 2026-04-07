@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bmhjo7ry0oi6b"]
+
+[ext_resource type="PackedScene" uid="uid://chu24fyrjk4sp" path="res://assets/environment/Bird For Flock Animation/bird_rigged.FBX" id="1_jbdjy"]
+
+[node name="bird_rigged" instance=ExtResource("1_jbdjy")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/0/rotation = Quaternion(-0.007922474, 0.7070625, -0.00792285, 0.7070623)
+bones/1/rotation = Quaternion(2.6713116e-09, -2.3840362e-07, 0.011204293, 0.99993724)
+bones/2/rotation = Quaternion(0.0012626044, 0.9999992, 3.0102143e-10, -2.384184e-07)
+bones/3/rotation = Quaternion(-0.061229512, -0.63394433, 0.048251454, 0.76943964)
+bones/4/rotation = Quaternion(0.042031236, -0.24559742, -0.007695236, 0.9684297)
+bones/5/rotation = Quaternion(-0.10947994, 0.23822726, -0.11475185, 0.95817226)
+bones/6/rotation = Quaternion(0.6339443, -0.06123, 0.7694397, -0.048250966)
+bones/7/rotation = Quaternion(0.04203121, -0.24559718, -0.0076952567, 0.96842974)
+bones/8/rotation = Quaternion(-0.109479785, 0.23822717, -0.11475169, 0.9581723)

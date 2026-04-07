@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d10t47p27lxvv"]
+
+[ext_resource type="PackedScene" uid="uid://digcgqs0wgeqs" path="res://assets/skin/Female/Young asian.glb" id="1_mbjx7"]
+
+[node name="Young asian" instance=ExtResource("1_mbjx7")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://8vbsfdly4o3k"]
+
+[ext_resource type="PackedScene" uid="uid://ono64hflan1f" path="res://assets/skin/Female/Middle asian.glb" id="1_djxyu"]
+
+[node name="Middle asian" instance=ExtResource("1_djxyu")]

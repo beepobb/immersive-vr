@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://pqe224nmdhdj"]
+
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_fserc"]
+[ext_resource type="Script" uid="uid://dvtfhkf2ffheu" path="res://scripts/confirm_env_button.gd" id="2_w2rh4"]
+
+[node name="ConfirmButton" type="Button" unique_id=1500905801]
+custom_minimum_size = Vector2(150, 50)
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = ExtResource("1_fserc")
+text = "Confirm
+"
+script = ExtResource("2_w2rh4")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b6r2yv2ur53ig"]
+
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_fbans"]
+[ext_resource type="PackedScene" uid="uid://d124jvs5kft71" path="res://scenes/game/select_environment/env_carousel.tscn" id="2_342er"]
+[ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="3_x7g7c"]
+
+[node name="SelectEnvironment" unique_id=621000924 instance=ExtResource("1_fbans")]
+
+[node name="PlayerLoader" parent="." index="0" unique_id=1066474312]
+moving = false
+spawn_point = Vector3(0, 1.8782375, 0)
+
+[node name="EnvCarousel" parent="." index="1" unique_id=1535981731 instance=ExtResource("2_342er")]
+
+[node name="EnvironmentRoot" type="Node" parent="." index="2" unique_id=127568069]
+
+[node name="Room" parent="EnvironmentRoot" index="0" unique_id=1989170780 instance=ExtResource("3_x7g7c")]
+
+[node name="Camera3D" type="Camera3D" parent="." index="3" unique_id=1456443042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8782375, 0)

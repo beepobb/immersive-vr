@@ -1,0 +1,249 @@
+[gd_scene format=3 uid="uid://cfnb7ltqxxlt8"]
+
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_41ga7"]
+[ext_resource type="Script" uid="uid://bc02n64160ovo" path="res://scripts/ui/customise_options.gd" id="1_vqv38"]
+[ext_resource type="Texture2D" uid="uid://by1igi04vtnp3" path="res://assets/themes/glass_panel_9slice.png" id="4_oyj4w"]
+[ext_resource type="Shader" uid="uid://blqgy7raqhbpd" path="res://assets/glass_shader.gdshader" id="5_f378y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_41ga7"]
+shader = ExtResource("5_f378y")
+shader_parameter/tint_color = Color(1, 1, 1, 0.8235294)
+shader_parameter/cloud_scale = 1.2
+shader_parameter/grain_scale = 20.0
+shader_parameter/cloud_strength = 0.16
+shader_parameter/grain_strength = 0.035
+shader_parameter/warp_strength = 0.02
+shader_parameter/top_glow = 0.11
+shader_parameter/center_haze = 0.11200000532
+shader_parameter/outer_edge_width = 0.11999999731779
+shader_parameter/inner_edge_width = 0.07
+shader_parameter/outer_highlight = 0.5
+shader_parameter/inner_highlight = 0.1
+shader_parameter/inner_shadow = 0.1
+shader_parameter/rim_blue_strength = 0.1690000080275
+shader_parameter/corner_radius = 34.7910016525725
+shader_parameter/corner_softness = 4.4150002064526195
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f378y"]
+shader = ExtResource("5_f378y")
+shader_parameter/tint_color = Color(0.17254902, 0.2, 0.18039216, 0.4862745)
+shader_parameter/cloud_scale = 1.2
+shader_parameter/grain_scale = 20.0
+shader_parameter/cloud_strength = 0.16
+shader_parameter/grain_strength = 0.035
+shader_parameter/warp_strength = 0.02
+shader_parameter/top_glow = 0.11
+shader_parameter/center_haze = 0.06
+shader_parameter/outer_edge_width = 0.035
+shader_parameter/inner_edge_width = 0.07
+shader_parameter/outer_highlight = 0.22
+shader_parameter/inner_highlight = 0.1
+shader_parameter/inner_shadow = 0.1
+shader_parameter/rim_blue_strength = 0.06
+shader_parameter/corner_radius = 22.0
+shader_parameter/corner_softness = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oyj4w"]
+shader = ExtResource("5_f378y")
+shader_parameter/tint_color = Color(0, 0, 0, 0.5921569)
+shader_parameter/cloud_scale = 10.0
+shader_parameter/grain_scale = 19.225000865687495
+shader_parameter/cloud_strength = 0.16
+shader_parameter/grain_strength = 0.035
+shader_parameter/warp_strength = 0.02
+shader_parameter/top_glow = 0.11
+shader_parameter/center_haze = 0.06
+shader_parameter/outer_edge_width = 0.035
+shader_parameter/inner_edge_width = 0.07
+shader_parameter/outer_highlight = 0.22
+shader_parameter/inner_highlight = 0.1
+shader_parameter/inner_shadow = 0.1
+shader_parameter/rim_blue_strength = 0.06
+shader_parameter/corner_radius = 22.0
+shader_parameter/corner_softness = 1.5
+
+[node name="CustomiseOptions" type="Control" unique_id=561538571]
+material = SubResource("ShaderMaterial_41ga7")
+layout_mode = 3
+anchors_preset = 0
+offset_right = 550.0
+offset_bottom = 650.0
+theme = ExtResource("1_41ga7")
+script = ExtResource("1_vqv38")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=654227486]
+material = SubResource("ShaderMaterial_f378y")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_oyj4w")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1424119565]
+material = SubResource("ShaderMaterial_oyj4w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_41ga7")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1747638313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="Skin" type="TabBar" parent="TabContainer" unique_id=1729185145]
+layout_mode = 2
+theme = ExtResource("1_41ga7")
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Skin" unique_id=743011529]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Skin/MarginContainer" unique_id=1271358887]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Skin/MarginContainer/VBoxContainer" unique_id=8559556]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Skin/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1820394195]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 40
+columns = 3
+
+[node name="Outfit" type="TabBar" parent="TabContainer" unique_id=1960359765]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_41ga7")
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Outfit" unique_id=1014397958]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Outfit/MarginContainer" unique_id=2092709995]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Outfit/MarginContainer/VBoxContainer" unique_id=1087089281]
+layout_mode = 2
+size_flags_vertical = 3
+scroll_horizontal_custom_step = 30.0
+scroll_vertical_custom_step = 20.0
+horizontal_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Outfit/MarginContainer/VBoxContainer/ScrollContainer" unique_id=918796000]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Hair" type="TabBar" parent="TabContainer" unique_id=1760095914]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_41ga7")
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Hair" unique_id=1027015226]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Hair/MarginContainer" unique_id=1805153308]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Hair/MarginContainer/VBoxContainer" unique_id=1658298310]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Hair/MarginContainer/VBoxContainer/ScrollContainer" unique_id=148538962]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 3
+
+[node name="Shoes" type="TabBar" parent="TabContainer" unique_id=478749973]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_41ga7")
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shoes" unique_id=1664496651]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Shoes/MarginContainer" unique_id=1870480123]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Shoes/MarginContainer/VBoxContainer" unique_id=134745480]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Shoes/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1276260180]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=504909344]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

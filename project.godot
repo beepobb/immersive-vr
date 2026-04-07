@@ -15,15 +15,29 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Immersive VR"
-run/main_scene="uid://b0uy3mf2m2qny"
+run/main_scene="uid://y4gr3837ddrv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://v0ai42434bhp"
+driver/enable_input=true
+driver/mix_rate=48000
+
 [autoload]
 
-AvatarState="*res://scripts/ui/avatar_state.gd"
-XRToolsUserSettings="*uid://bnquuwe2vribm"
-XRToolsRumbleManager="*uid://dg2csioke0tji"
+XRToolsUserSettings="*uid://bqgb8i74tm0t"
+XRToolsRumbleManager="*uid://by853dk86g1qw"
+EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
+XrSimulator="*uid://ctltchlf2j2r4"
+Roles="*uid://yyfwsn2nm8l1"
+UIButtonAudio="*uid://cjtcvbt77gqm"
+GameState="*res://scripts/game_state.gd"
+
+[debug_draw_3d]
+
+settings/addon_root_folder="res://addons/debug_draw_3d"
 
 [display]
 
@@ -34,9 +48,34 @@ window/size/viewport_height=720
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[gui]
+
+theme/custom="uid://14kqmrsu81bn"
+
+[layer_names]
+
+3d_physics/layer_1="Static World"
+3d_physics/layer_2="Dynamic World"
+3d_physics/layer_3="Pickable Objects"
+3d_physics/layer_4="Wall Walking"
+3d_physics/layer_5="Grappling Target"
+3d_physics/layer_17="Held Objects"
+3d_physics/layer_18="Player Hands"
+3d_physics/layer_19="Grab Handles"
+3d_physics/layer_20="Player Body"
+3d_physics/layer_21="Pointable Objects"
+3d_physics/layer_22="Hand Pose Areas"
+3d_physics/layer_23="UI Objects"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+
 [xr]
 
 openxr/enabled=true
 shaders/enabled=true
 openxr/size/viewport_height=648
 openxr/size/viewport_width=1152
+openxr/stdout/verbose_stdout=true
+openxr/extensions/htc/face_tracking=true

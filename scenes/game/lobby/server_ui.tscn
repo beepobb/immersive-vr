@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c80okq4yeqntk"]
+
+[ext_resource type="Script" uid="uid://bmhjcr8dflul6" path="res://scripts/ui/lobby/server_ui.gd" id="1_l2pos"]
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="2_l6mjv"]
+[ext_resource type="FontFile" uid="uid://biiqrru7g2ssj" path="res://tools/Poppins/Poppins-Regular.ttf" id="3_xtukd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtukd"]
+bg_color = Color(0.32941177, 0.32941177, 0.32941177, 0.94509804)
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=828575562]
+offset_right = 40.0
+offset_bottom = 97.0
+theme_override_constants/separation = 10
+script = ExtResource("1_l2pos")
+
+[node name="Panel" type="Panel" parent="." unique_id=637247996]
+custom_minimum_size = Vector2(400, 45)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_l6mjv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xtukd")
+
+[node name="LocalIP" type="Label" parent="Panel" unique_id=1940246330]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 0
+offset_top = 15.0
+offset_right = 400.0
+offset_bottom = 55.0
+theme = ExtResource("2_l6mjv")
+theme_override_fonts/font = ExtResource("3_xtukd")
+text = "IP: "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="IpInput" type="LineEdit" parent="." unique_id=1722152173]
+layout_mode = 2
+
+[node name="Host" type="Button" parent="." unique_id=1197240754]
+clip_contents = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("2_l6mjv")
+text = "Host"
+
+[node name="Join" type="Button" parent="." unique_id=687066490]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("2_l6mjv")
+text = "Join"
+
+[node name="StatusLabel" type="Label" parent="." unique_id=307080765]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme = ExtResource("2_l6mjv")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="editing_toggled" from="IpInput" to="." method="_on_ip_input_editing_toggled"]
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]

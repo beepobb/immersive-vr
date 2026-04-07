@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://codm82upxog47"
+path="res://.godot/imported/bird_rigged.obj-206eb17f75b63991b384bd08b1c3e975.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bird_rigged.obj-206eb17f75b63991b384bd08b1c3e975.mesh"]
+
+source_file="res://assets/environment/Bird For Flock Animation/bird_rigged.obj"
+dest_files=["res://.godot/imported/bird_rigged.obj-206eb17f75b63991b384bd08b1c3e975.mesh", "res://.godot/imported/bird_rigged.obj-206eb17f75b63991b384bd08b1c3e975.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

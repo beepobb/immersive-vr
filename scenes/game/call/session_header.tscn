@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cqfpc2fjvnc50"]
+
+[ext_resource type="Script" uid="uid://cr887c3ytb04e" path="res://scripts/ui/call_session/session_header.gd" id="1_4eopn"]
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_74ayn"]
+[ext_resource type="Texture2D" uid="uid://dwxtkusfhxegc" path="res://assets/icons/record.png" id="2_kykny"]
+
+[node name="SessionHeader" type="PanelContainer" unique_id=1253402062]
+offset_right = 488.0
+offset_bottom = 91.0
+theme = ExtResource("1_74ayn")
+script = ExtResource("1_4eopn")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=571366352]
+layout_mode = 2
+theme = ExtResource("1_74ayn")
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1398238462]
+layout_mode = 2
+theme = ExtResource("1_74ayn")
+theme_override_constants/separation = 88
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1346709981]
+layout_mode = 2
+theme = ExtResource("1_74ayn")
+theme_override_constants/separation = 21
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=1336483726]
+layout_mode = 2
+theme = ExtResource("1_74ayn")
+texture = ExtResource("2_kykny")
+stretch_mode = 5
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=1433427011]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("1_74ayn")
+theme_override_font_sizes/font_size = 24
+text = "00:00:00"
+
+[node name="DateLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=58890667]
+layout_mode = 2
+theme = ExtResource("1_74ayn")
+theme_override_font_sizes/font_size = 24
+text = "6 April 2026"

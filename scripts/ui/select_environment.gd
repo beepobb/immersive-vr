@@ -1,22 +1,20 @@
 extends Control
 
-@onready var back_button       = %BackButton
-@onready var clarity_card  : Button = %ClarityRoomCard
-@onready var dialogue_card : Button = %DialogueCafeCard
-@onready var confirm_button    = %ConfirmButton
+const EnvironmentCatalog = preload("res://scripts/ui/environment_catalog.gd")
+
+@onready var back_button = %BackButton
+@onready var env_cards: HBoxContainer = %EnvCards
+@onready var confirm_button = %ConfirmButton
+
+var card_scene: PackedScene = preload("res://scenes/game/select_environment/env_card.tscn")
+var card_lookup: Dictionary = {}
+var selected_environment_id: String = ""
 
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_pressed)
-
-	for card in [clarity_card, dialogue_card]:
-		card.pressed.connect(_on_card_selected.bind(card))
+	_build_environment_cards()
 
 	confirm_button.pressed.connect(_on_confirm_pressed)
-
-	# --- Hover setup for both cards ---
-	_setup_hover(clarity_card)
-	_setup_hover(dialogue_card)
-
 
 # ---------------- HOVER LOGIC ----------------
 
@@ -37,8 +35,8 @@ func _hover_in(card: Control) -> void:
 	t.tween_property(
 		card,
 		"scale",
-		Vector2(1.04, 1.04),   # how much to grow
-		0.12                   # duration (seconds)
+		Vector2(1.04, 1.04), # how much to grow
+		0.12 # duration (seconds)
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 
@@ -47,7 +45,7 @@ func _hover_out(card: Control) -> void:
 	t.tween_property(
 		card,
 		"scale",
-		Vector2.ONE,           # back to normal
+		Vector2.ONE, # back to normal
 		0.12
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
@@ -55,48 +53,51 @@ func _hover_out(card: Control) -> void:
 # ---------------- SELECTION / NAVIGATION ----------------
 
 func _on_back_pressed() -> void:
-	pass
+	GameState.return_to_lobby()
 
 
-func _on_card_selected(card: Button) -> void:
-	var selected_env : String = card.env_title
-	var selected_env_scene: String = ""
-	
-	# _highlight_selected(clarity_card)
-	match selected_env:
-		"Clarity Room":
-			selected_env_scene = "res://scenes/environment/therapy_room.tscn"
-		"Dialogue Cafe":
-			selected_env_scene = ""
-	AvatarState.environment_id = selected_env_scene
-	print(AvatarState.environment_id)
+func _build_environment_cards() -> void:
+	card_lookup.clear()
+	for child in env_cards.get_children():
+		child.queue_free()
 
-func _highlight_selected(selected_button: Button) -> void:
-	clarity_card.modulate  = Color(1, 1, 1, 1)
-	dialogue_card.modulate = Color(1, 1, 1, 1)
+	for environment in EnvironmentCatalog.get_environments():
+		var environment_id = String(environment.get("id", ""))
+		var card = card_scene.instantiate()
+		env_cards.add_child(card)
+		card.set_environment_data(
+			environment_id,
+			String(environment.get("name", "")),
+			String(environment.get("description", "")),
+			EnvironmentCatalog.get_environment_thumbnail(environment_id)
+		)
+		card.pressed.connect(_on_card_selected.bind(environment_id))
+		_setup_hover(card)
+		card_lookup[environment_id] = card
 
-	selected_button.modulate = Color(1.2, 1.2, 1.2)
+	selected_environment_id = GameState.environment_id
+	if selected_environment_id.is_empty() and not EnvironmentCatalog.get_environment_ids().is_empty():
+		selected_environment_id = EnvironmentCatalog.get_default_environment_id()
 
+	if not selected_environment_id.is_empty():
+		_highlight_selected(selected_environment_id)
+
+func _on_card_selected(environment_id: String) -> void:
+	selected_environment_id = environment_id
+	_highlight_selected(environment_id)
+
+func _highlight_selected(highlighted_environment_id: String) -> void:
+	for environment_id in card_lookup.keys():
+		var card: Button = card_lookup[environment_id]
+		card.modulate = Color(1.15, 1.15, 1.15, 1) if String(environment_id) == highlighted_environment_id else Color(1, 1, 1, 1)
 
 func _on_confirm_pressed() -> void:
-	if AvatarState.environment_id.is_empty():
+	if selected_environment_id.is_empty():
 		print("No environment selected!")
 		return
-	
-	# Remove itself from the scene before changing scenes
-	print("Removing UI node: ", self.name)
-	queue_free()  # This removes the current UI node
 
-	# Defer scene change to allow the current frame to process
-	call_deferred("_load_environment_scene")
+	GameState.set_environment_id(selected_environment_id, multiplayer.is_server())
+	GameState.return_to_lobby("Environment saved for the next call.")
 
-
-func _load_environment_scene() -> void:
-	# Load the environment scene (new scene)
-	var env_scene = load("res://scenes/environment.tscn") as PackedScene
-	get_tree().change_scene_to_packed(env_scene)
-
-	# Now that the environment scene is loaded, emit the signal to load the specific environment
-	env_scene.emit_signal("load_environment", AvatarState.environment_id)
-
-	# TODO: disable confirm button until environment is selected
+func _on_session_ended(message: String) -> void:
+	GameState.return_to_home(message)

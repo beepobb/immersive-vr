@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://chvwder5n4w1t"]
+
+[ext_resource type="PackedScene" uid="uid://dt7y8ilxneucd" path="res://assets/shoes/dressupdoc_domsjeans.glb" id="1_bw3bq"]
+
+[node name="dressupdoc_domsjeans" instance=ExtResource("1_bw3bq")]

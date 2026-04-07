@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://401n1y44iroo"]
+
+[ext_resource type="PackedScene" uid="uid://sr0dhwmg4a37" path="res://assets/skin/Female/Middle causcasian.glb" id="1_wm7cw"]
+
+[node name="Middle causcasian" instance=ExtResource("1_wm7cw")]

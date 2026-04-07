@@ -1,35 +1,316 @@
-[gd_scene load_steps=8 format=3 uid="uid://jg1qkgdrf47o"]
+[gd_scene format=3 uid="uid://jg1qkgdrf47o"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_k04qm"]
+[ext_resource type="Script" uid="uid://cr4ye0kyb54an" path="res://scenes/player/player.gd" id="1_kfx4a"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_7ul40"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="3_vi16e"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_x2gul"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_kfx4a"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7e1ug"]
+[ext_resource type="PackedScene" uid="uid://cd2qni7yip51i" path="res://scenes/game/call/in_call_control_viewport.tscn" id="7_7e1ug"]
 [ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="8_2118c"]
+[ext_resource type="PackedScene" uid="uid://b16xpdpjtl72k" path="res://assets/Avatar/AvatarTest.glb" id="10_7e1ug"]
 
-[node name="XROrigin3D" type="XROrigin3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2gul"]
+albedo_color = Color(0, 1, 1, 1)
 
-[node name="XRCamera3D" type="XRCamera3D" parent="."]
+[sub_resource type="SphereMesh" id="SphereMesh_kfx4a"]
 
-[node name="LeftController" type="XRController3D" parent="."]
+[sub_resource type="SphereMesh" id="SphereMesh_x2gul"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7e1ug"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_7e1ug"]
+
+[node name="XROrigin3D" type="XROrigin3D" unique_id=1503267807]
+script = ExtResource("1_kfx4a")
+in_call = true
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=2037867909]
+
+[node name="Target" type="Marker3D" parent="XRCamera3D" unique_id=683046994]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.7400453, 0)
+
+[node name="LeftController" type="XRController3D" parent="." unique_id=1722520529]
 tracker = &"left_hand"
 
-[node name="LeftHand" parent="LeftController" instance=ExtResource("1_k04qm")]
+[node name="LeftHand" parent="LeftController" unique_id=759549420 instance=ExtResource("1_k04qm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022, 0.05, -0.177)
 
-[node name="FunctionPointer" parent="LeftController" instance=ExtResource("2_7ul40")]
+[node name="FunctionPointer" parent="LeftController" unique_id=1768594125 instance=ExtResource("2_7ul40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
 
-[node name="MovementDirect" parent="LeftController" instance=ExtResource("3_x2gul")]
+[node name="MovementDirect" parent="LeftController" unique_id=1424597202 instance=ExtResource("3_x2gul")]
 
-[node name="RightController" type="XRController3D" parent="."]
+[node name="Target" type="Marker3D" parent="LeftController" unique_id=245992039]
+transform = Transform3D(0.18580386, -2.0891815e-08, 0.98258686, -0.9825868, -9.146643e-08, 0.18580383, 8.599192e-08, -0.9999999, -3.7522863e-08, 0, 0, 0)
+
+[node name="Pole" type="Marker3D" parent="LeftController/Target" unique_id=2005305365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071, -0.204, -0.056)
+
+[node name="RightController" type="XRController3D" parent="." unique_id=2121946272]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
 tracker = &"right_hand"
 
-[node name="RightHand" parent="RightController" instance=ExtResource("3_vi16e")]
+[node name="RightHand" parent="RightController" unique_id=670448450 instance=ExtResource("3_vi16e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 0.05, -0.177)
 
-[node name="FunctionPointer" parent="RightController" instance=ExtResource("2_7ul40")]
+[node name="FunctionPointer" parent="RightController" unique_id=379320216 instance=ExtResource("2_7ul40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
 
-[node name="MovementTurn" parent="RightController" instance=ExtResource("5_kfx4a")]
+[node name="MovementTurn" parent="RightController" unique_id=807471930 instance=ExtResource("5_kfx4a")]
 
-[node name="PlayerBody" parent="." instance=ExtResource("6_7e1ug")]
+[node name="Target" type="Marker3D" parent="RightController" unique_id=367184279]
+transform = Transform3D(0.18566667, 3.5595647e-08, -0.982613, 0.982613, -4.2951374e-08, 0.18566667, -3.559565e-08, -1.0000001, -4.295138e-08, 0, 0, 0)
 
-[node name="MovementJog" parent="." instance=ExtResource("8_2118c")]
+[node name="Pole" type="Marker3D" parent="RightController/Target" unique_id=1127663476]
+transform = Transform3D(1.0000002, 0, 0, -1.4901161e-08, 1, 0, 2.9802322e-08, 0, 1.0000002, 0.071, -0.204, -0.056)
+
+[node name="in_call_control_viewport" parent="RightController" unique_id=1876519974 instance=ExtResource("7_7e1ug")]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0.1, -0.399)
+
+[node name="Waist" type="XRController3D" parent="." unique_id=2128659618]
+tracker = &"/user/vive_tracker_htcx/role/waist"
+
+[node name="LAnkle" type="XRController3D" parent="." unique_id=1653117457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.081, 0.075, 0.027)
+tracker = &"/user/vive_tracker_htcx/role/left_ankle"
+
+[node name="Visual" type="MeshInstance3D" parent="LAnkle" unique_id=2096252396]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_x2gul")
+mesh = SubResource("SphereMesh_kfx4a")
+
+[node name="Target" type="Marker3D" parent="LAnkle" unique_id=2740982]
+transform = Transform3D(-0.9659258, -0.25881907, 6.1275436e-08, -0.18140866, 0.6770263, 0.71325046, -0.18460289, 0.68894696, -0.70090926, 0, 0, 0)
+
+[node name="Pole" type="Marker3D" parent="LAnkle/Target" unique_id=978475879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.048030674, -0.005936414, 0.4179113)
+
+[node name="RAnkle" type="XRController3D" parent="." unique_id=995186668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.081, 0.075187474, 0.027)
+tracker = &"/user/vive_tracker_htcx/role/right_ankle"
+
+[node name="Visual" type="MeshInstance3D" parent="RAnkle" unique_id=986151774]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("SphereMesh_x2gul")
+
+[node name="Target" type="Marker3D" parent="RAnkle" unique_id=760069603]
+transform = Transform3D(-0.9659258, 0.25881907, -6.127542e-08, 0.18140866, 0.6770263, 0.71325034, 0.18460289, 0.68894696, -0.70090914, 0, 0, 0)
+
+[node name="Pole" type="Marker3D" parent="RAnkle/Target" unique_id=649456851]
+transform = Transform3D(0.9999999, -1.7881393e-07, -4.4703484e-07, 1.4901161e-08, 1, -8.940697e-08, 1.4901161e-08, 0, 0.99999976, -0.048030674, -0.005936414, 0.4179113)
+
+[node name="PlayerBody" parent="." unique_id=1156645439 instance=ExtResource("6_7e1ug")]
+player_calibrate_height = false
+
+[node name="MovementJog" parent="." unique_id=413540329 instance=ExtResource("8_2118c")]
+
+[node name="AvatarRoot" type="Node3D" parent="." unique_id=1623042168]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="AvatarTest" parent="AvatarRoot" unique_id=1839210799 instance=ExtResource("10_7e1ug")]
+
+[node name="LHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="2" unique_id=284305114]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../LeftController/Target")
+settings/0/pole_node = NodePath("../../../../../LeftController/Target/Pole")
+settings/0/root_bone_name = "upperarm_l"
+settings/0/root_bone = 8
+settings/0/middle_bone_name = "lowerarm_l"
+settings/0/middle_bone = 9
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "hand_l"
+settings/0/end_bone = 10
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="3" unique_id=1887893785]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "hand_l"
+settings/0/apply_bone = 10
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../LeftController/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="LHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="4" unique_id=157048250]
+setting_count = 1
+settings/0/root_bone_name = "upperarm_l"
+settings/0/root_bone = 8
+settings/0/end_bone_name = "hand_l"
+settings/0/end_bone = 10
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="RHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="5" unique_id=1011673976]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../RightController/Target")
+settings/0/pole_node = NodePath("../../../../../RightController/Target/Pole")
+settings/0/root_bone_name = "upperarm_r"
+settings/0/root_bone = 27
+settings/0/middle_bone_name = "lowerarm_r"
+settings/0/middle_bone = 28
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "hand_r"
+settings/0/end_bone = 29
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="RHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="6" unique_id=1013371638]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "hand_r"
+settings/0/apply_bone = 29
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../RightController/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="RHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="7" unique_id=132739618]
+setting_count = 1
+settings/0/root_bone_name = "upperarm_r"
+settings/0/root_bone = 27
+settings/0/end_bone_name = "hand_r"
+settings/0/end_bone = 29
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="LATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="8" unique_id=684703358]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../LAnkle/Target")
+settings/0/pole_node = NodePath("../../../../../LAnkle/Target/Pole")
+settings/0/root_bone_name = "thigh_l"
+settings/0/root_bone = 47
+settings/0/middle_bone_name = "calf_l"
+settings/0/middle_bone = 48
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "foot_l"
+settings/0/end_bone = 49
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="LACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="9" unique_id=302248255]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "foot_l"
+settings/0/apply_bone = 49
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../LAnkle/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="LABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="10" unique_id=414744833]
+setting_count = 1
+settings/0/root_bone_name = "thigh_l"
+settings/0/root_bone = 47
+settings/0/end_bone_name = "foot_l"
+settings/0/end_bone = 49
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="RATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="11" unique_id=1363437693]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../RAnkle/Target")
+settings/0/pole_node = NodePath("../../../../../RAnkle/Target/Pole")
+settings/0/root_bone_name = "thigh_r"
+settings/0/root_bone = 51
+settings/0/middle_bone_name = "calf_r"
+settings/0/middle_bone = 52
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "foot_r"
+settings/0/end_bone = 53
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="RACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="12" unique_id=214328789]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "foot_r"
+settings/0/apply_bone = 53
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../RAnkle/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="RABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="13" unique_id=358631906]
+setting_count = 1
+settings/0/root_bone_name = "thigh_r"
+settings/0/root_bone = 51
+settings/0/end_bone_name = "foot_r"
+settings/0/end_bone = 53
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="CCDIK3D" type="CCDIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="14" unique_id=393676948]
+angular_delta_limit = 0.08726646259971647
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../XRCamera3D/Target")
+settings/0/root_bone_name = "spine_01"
+settings/0/root_bone = 2
+settings/0/end_bone_name = "head"
+settings/0/end_bone = 46
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.0
+settings/0/joint_count = 5
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+settings/0/joints/3/rotation_axis = 3
+settings/0/joints/3/limitation = null
+settings/0/joints/4/rotation_axis = 3
+settings/0/joints/4/limitation = null
+
+[node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="15" unique_id=1319298159]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig_Neck"
+settings/0/apply_bone = -1
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../XRCamera3D/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=96480807]
+replication_config = SubResource("SceneReplicationConfig_7e1ug")
+
+[node name="AudioRecorder" type="AudioStreamPlayer3D" parent="." unique_id=1974295745]
+stream = SubResource("AudioStreamMicrophone_7e1ug")
+autoplay = true
+bus = &"Record"
+
+[editable path="AvatarRoot/AvatarTest"]

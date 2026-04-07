@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://8qrddcp4lkwn"]
+
+[ext_resource type="Script" uid="uid://byexeskpxihty" path="res://scenes/game/avatar_customisation/confirm_button.gd" id="1_60dqx"]
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_rfkqc"]
+
+[node name="ConfirmButton" type="Button" unique_id=133104596]
+custom_minimum_size = Vector2(230, 40)
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_rfkqc")
+text = "Save Avatar"
+script = ExtResource("1_60dqx")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
