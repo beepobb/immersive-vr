@@ -1,29 +1,34 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import List, Dict, Any
 
 import torchaudio
+from dotenv import load_dotenv
 from pyannote.audio import Pipeline
 
-_PIPELINE = None
+load_dotenv()
 
-HF_TOKEN = "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"
+_PIPELINE = None
 
 
 def get_diarization_pipeline() -> Pipeline:
     global _PIPELINE
 
     if _PIPELINE is None:
-        if not HF_TOKEN:
-            raise RuntimeError("HF_TOKEN is not set.")
+        hf_token = os.getenv("HF_TOKEN")
+        if not hf_token:
+            raise RuntimeError(
+                "HF_TOKEN is not set. Copy .env.example to .env and add your Hugging Face token."
+            )
 
         print("DEBUG diarize.py loaded")
-        print("DEBUG HF_TOKEN present:", bool(HF_TOKEN))
+        print("DEBUG HF_TOKEN present:", bool(hf_token))
 
         _PIPELINE = Pipeline.from_pretrained(
             "pyannote/speaker-diarization-community-1",
-            token=HF_TOKEN,
+            token=hf_token,
         )
 
     return _PIPELINE
