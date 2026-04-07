@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dwdc0wqa151df"]
+[gd_scene format=3 uid="uid://dmojshdcgkd2b"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_trgn6"]
 height = 1.7
@@ -28,3 +28,5 @@ shape = SubResource("CapsuleShape3D_2ckpl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.315, -0.541)
 layers = 65537
 mesh = SubResource("SphereMesh_2ckpl")
+
+[node name="Camera3D" type="Camera3D" parent="MeshInstance3D2" unique_id=662669903]

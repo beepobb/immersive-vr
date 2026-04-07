@@ -6,11 +6,8 @@
 
 [node name="SelectEnvironment" unique_id=621000924 instance=ExtResource("1_fbans")]
 
-[node name="PlayerLoader" parent="." index="0" unique_id=1066474312]
-moving = false
-spawn_point = Vector3(0, 1.8782375, 0)
-
 [node name="EnvCarousel" parent="." index="1" unique_id=1535981731 instance=ExtResource("2_342er")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41852856, 0.029735923)
 
 [node name="EnvironmentRoot" type="Node" parent="." index="2" unique_id=127568069]
 
@@ -18,3 +15,7 @@ spawn_point = Vector3(0, 1.8782375, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." index="3" unique_id=1456443042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8782375, 0)
+
+[node name="PlayerLoader" parent="." index="4" unique_id=1066474312]
+moving = false
+spawn_point = Vector3(0, 1.8782375, 0)
