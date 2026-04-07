@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dx063se4c75bv"
-path="res://.godot/imported/Human_grinsegold_wig_bow_tie.glb-7ec227b61138598610bf9ec3796e4f44.scn"
+path="res://.godot/imported/Human_grinsegold_wig_bow_tie.glb-0158c5303352a93e519334f875deb07b.scn"
 
 [deps]
 
-source_file="res://assets/hair/Human_grinsegold_wig_bow_tie.glb"
-dest_files=["res://.godot/imported/Human_grinsegold_wig_bow_tie.glb-7ec227b61138598610bf9ec3796e4f44.scn"]
+source_file="res://assets/Hair/Human_grinsegold_wig_bow_tie.glb"
+dest_files=["res://.godot/imported/Human_grinsegold_wig_bow_tie.glb-0158c5303352a93e519334f875deb07b.scn"]
 
 [params]
 

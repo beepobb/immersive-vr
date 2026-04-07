@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c01xerddqgebq"
-path.s3tc="res://.godot/imported/Human_elvs_keylth_hair_keylthtex1.png-fae39bc929254a37e7a8ca6db34ece51.s3tc.ctex"
-path.etc2="res://.godot/imported/Human_elvs_keylth_hair_keylthtex1.png-fae39bc929254a37e7a8ca6db34ece51.etc2.ctex"
+path.s3tc="res://.godot/imported/Human_elvs_keylth_hair_keylthtex1.png-af111ff1b684189dd549932712a597a8.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_elvs_keylth_hair_keylthtex1.png-af111ff1b684189dd549932712a597a8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Human_elvs_keylth_hair_keylthtex1.png"
-dest_files=["res://.godot/imported/Human_elvs_keylth_hair_keylthtex1.png-fae39bc929254a37e7a8ca6db34ece51.s3tc.ctex", "res://.godot/imported/Human_elvs_keylth_hair_keylthtex1.png-fae39bc929254a37e7a8ca6db34ece51.etc2.ctex"]
+source_file="res://assets/Hair/Human_elvs_keylth_hair_keylthtex1.png"
+dest_files=["res://.godot/imported/Human_elvs_keylth_hair_keylthtex1.png-af111ff1b684189dd549932712a597a8.s3tc.ctex", "res://.godot/imported/Human_elvs_keylth_hair_keylthtex1.png-af111ff1b684189dd549932712a597a8.etc2.ctex"]
 
 [params]
 

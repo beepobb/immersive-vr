@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bevuymuu0ywxg"
-path.s3tc="res://.godot/imported/Human_learning_anime_hair_pink.png-56fc8f5e44d3cb1f7f06e02d019c9151.s3tc.ctex"
-path.etc2="res://.godot/imported/Human_learning_anime_hair_pink.png-56fc8f5e44d3cb1f7f06e02d019c9151.etc2.ctex"
+path.s3tc="res://.godot/imported/Human_learning_anime_hair_pink.png-5161863127aef72faa5e070b13c45fb2.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_learning_anime_hair_pink.png-5161863127aef72faa5e070b13c45fb2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Human_learning_anime_hair_pink.png"
-dest_files=["res://.godot/imported/Human_learning_anime_hair_pink.png-56fc8f5e44d3cb1f7f06e02d019c9151.s3tc.ctex", "res://.godot/imported/Human_learning_anime_hair_pink.png-56fc8f5e44d3cb1f7f06e02d019c9151.etc2.ctex"]
+source_file="res://assets/Hair/Human_learning_anime_hair_pink.png"
+dest_files=["res://.godot/imported/Human_learning_anime_hair_pink.png-5161863127aef72faa5e070b13c45fb2.s3tc.ctex", "res://.godot/imported/Human_learning_anime_hair_pink.png-5161863127aef72faa5e070b13c45fb2.etc2.ctex"]
 
 [params]
 

@@ -78,4 +78,3 @@ shaders/enabled=true
 openxr/size/viewport_height=648
 openxr/size/viewport_width=1152
 openxr/stdout/verbose_stdout=true
-openxr/extensions/htc/face_tracking=true

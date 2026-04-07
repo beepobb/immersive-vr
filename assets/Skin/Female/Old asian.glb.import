@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bug274m5jbb7k"
-path="res://.godot/imported/Old asian.glb-2e022c76043abcbfc412a354bd230912.scn"
+path="res://.godot/imported/Old asian.glb-9caf4d592fb15981c68f2f96ddfab43f.scn"
 
 [deps]
 
-source_file="res://assets/skin/Female/Old asian.glb"
-dest_files=["res://.godot/imported/Old asian.glb-2e022c76043abcbfc412a354bd230912.scn"]
+source_file="res://assets/Skin/Female/Old asian.glb"
+dest_files=["res://.godot/imported/Old asian.glb-9caf4d592fb15981c68f2f96ddfab43f.scn"]
 
 [params]
 

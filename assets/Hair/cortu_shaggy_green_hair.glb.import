@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d3kxbkacijlbm"
-path="res://.godot/imported/cortu_shaggy_green_hair.glb-123898b2e86a78d0de7e5d01561aee67.scn"
+path="res://.godot/imported/cortu_shaggy_green_hair.glb-8fea4c90029294e94f37513e2560b289.scn"
 
 [deps]
 
-source_file="res://assets/hair/cortu_shaggy_green_hair.glb"
-dest_files=["res://.godot/imported/cortu_shaggy_green_hair.glb-123898b2e86a78d0de7e5d01561aee67.scn"]
+source_file="res://assets/Hair/cortu_shaggy_green_hair.glb"
+dest_files=["res://.godot/imported/cortu_shaggy_green_hair.glb-8fea4c90029294e94f37513e2560b289.scn"]
 
 [params]
 

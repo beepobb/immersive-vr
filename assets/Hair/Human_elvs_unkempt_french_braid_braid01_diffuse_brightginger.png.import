@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2xw2ttj8nxlt"
-path.s3tc="res://.godot/imported/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png-7e90e7061c54ff85c5c2baa02d5228df.s3tc.ctex"
-path.etc2="res://.godot/imported/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png-7e90e7061c54ff85c5c2baa02d5228df.etc2.ctex"
+path.s3tc="res://.godot/imported/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png-baa1d31035cf1adac507c3247dd22b91.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png-baa1d31035cf1adac507c3247dd22b91.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png"
-dest_files=["res://.godot/imported/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png-7e90e7061c54ff85c5c2baa02d5228df.s3tc.ctex", "res://.godot/imported/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png-7e90e7061c54ff85c5c2baa02d5228df.etc2.ctex"]
+source_file="res://assets/Hair/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png"
+dest_files=["res://.godot/imported/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png-baa1d31035cf1adac507c3247dd22b91.s3tc.ctex", "res://.godot/imported/Human_elvs_unkempt_french_braid_braid01_diffuse_brightginger.png-baa1d31035cf1adac507c3247dd22b91.etc2.ctex"]
 
 [params]
 
