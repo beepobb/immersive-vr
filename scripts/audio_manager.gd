@@ -9,6 +9,7 @@ var playback: AudioStreamGeneratorPlayback
 var receiveBuffer := PackedFloat32Array()
 var receiveReadIndex: int = 0
 var captureEnabled: bool = false
+var recordTapPlayback: AudioStreamGeneratorPlayback
 
 func setupAudio(owner_id: int, local_peer_id: int) -> void:
 	# Keep authority aligned with the owning player node.
@@ -29,6 +30,10 @@ func setupAudio(owner_id: int, local_peer_id: int) -> void:
 	else:
 		push_error("AudioManager: outputPath is invalid: %s" % str(outputPath))
 
+	# On host therapist, tap remote playback samples into Record bus for full-call recording.
+	if multiplayer.multiplayer_peer != null and multiplayer.is_server() and Roles.user_role == Roles.Role.THERAPIST:
+		_setup_record_tap_player()
+
 func _process(_delta: float) -> void:
 	if captureEnabled:
 		processMic()
@@ -36,6 +41,12 @@ func _process(_delta: float) -> void:
 
 func processMic() -> void:
 	if effect == null:
+		return
+
+	var peer := multiplayer.multiplayer_peer
+	if peer == null:
+		return
+	if peer.get_connection_status() != MultiplayerPeer.CONNECTION_CONNECTED:
 		return
 
 	var stereoData := effect.get_buffer(effect.get_frames_available())
@@ -67,13 +78,36 @@ func processVoice() -> void:
 		receiveReadIndex = 0
 		return
 
-	var framesToPush: int = min(playback.get_frames_available(), availableSamples)
-	for i in range(framesToPush):
-		var sample = receiveBuffer[receiveReadIndex + i]
-		playback.push_frame(Vector2(sample, sample))
+	var framesToPush: int = mini(playback.get_frames_available(), availableSamples)
+	var tapFramesAvailable: int = framesToPush
+	if recordTapPlayback != null:
+		tapFramesAvailable = mini(tapFramesAvailable, recordTapPlayback.get_frames_available())
+	var framesToProcess: int = mini(framesToPush, tapFramesAvailable)
 
-	receiveReadIndex += framesToPush
+	if framesToProcess <= 0:
+		return
+
+	for i in range(framesToProcess):
+		var sample: float = receiveBuffer[receiveReadIndex + i]
+		playback.push_frame(Vector2(sample, sample))
+		if recordTapPlayback != null:
+			recordTapPlayback.push_frame(Vector2(sample, sample))
+
+	receiveReadIndex += framesToProcess
 
 @rpc("any_peer", "call_remote", "unreliable_ordered")
 func sendData(data: PackedFloat32Array) -> void:
 	receiveBuffer.append_array(data)
+
+func _setup_record_tap_player() -> void:
+	if recordTapPlayback != null:
+		return
+
+	var tap_player := AudioStreamPlayer.new()
+	tap_player.bus = &"Record"
+	var tap_stream := AudioStreamGenerator.new()
+	tap_stream.mix_rate = AudioServer.get_mix_rate()
+	tap_player.stream = tap_stream
+	add_child(tap_player)
+	tap_player.play()
+	recordTapPlayback = tap_player.get_stream_playback() as AudioStreamGeneratorPlayback

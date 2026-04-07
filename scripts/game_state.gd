@@ -7,6 +7,7 @@ const AVATAR_CUSTOMISATION_SCENE_PATH := "res://scenes/game/avatar_customisation
 const SELECT_ENVIRONMENT_SCENE_PATH := "res://scenes/game/select_environment/select_environment.tscn"
 const IN_CALL_SCENE_PATH := "res://scenes/game/call/environment.tscn"
 const CALL_SUMMARY_SCENE_PATH := "res://scenes/game/call/call_summary.tscn"
+const CallRecordingManager = preload("res://scripts/call_recording_manager.gd")
 
 const DEFAULT_VISUAL_PRESETS := {
 	"male": {
@@ -48,6 +49,7 @@ signal environment_updated(environment_id: String)
 var _appearance_service := AvatarAppearanceService.new()
 var _manifests_loaded := false
 var _lobby_network_connected := false
+var _call_recording_manager := CallRecordingManager.new()
 
 var recording
 var recording_path: String
@@ -69,10 +71,10 @@ func set_default_options() -> void:
 	shoes = preset.get("shoes")
 	outfit = preset.get("outfit")
 
-func get_gender_default_presets(gender: String):
-	if gender == "male":
+func get_gender_default_presets(selected_gender: String):
+	if selected_gender == "male":
 		return DEFAULT_VISUAL_PRESETS["male"]
-	if gender == "female":
+	if selected_gender == "female":
 		return DEFAULT_VISUAL_PRESETS["female"]
 
 #TODO: remove state if unnecessary
@@ -158,6 +160,7 @@ func return_to_lobby(notice: String = "") -> void:
 
 func leave_lobby(notice: String = "") -> void:
 	_cleanup_call_state()
+	_call_recording_manager.reset()
 	var peer := multiplayer.multiplayer_peer
 	if peer:
 		peer.close()
@@ -180,6 +183,11 @@ func end_call_session(notice: String) -> void:
 	GameState.entered_lobby = false
 	if not multiplayer.is_server():
 		return
+
+	var is_host_therapist := multiplayer.multiplayer_peer != null and multiplayer.is_server() and Roles.user_role == Roles.Role.THERAPIST
+	var recording_result := _call_recording_manager.stop_and_save_if_host(is_host_therapist)
+	recording = recording_result.get("recording")
+	recording_path = String(recording_result.get("path", ""))
 
 	_cleanup_call_state()
 	await get_tree().process_frame
@@ -317,10 +325,13 @@ func _role_to_text(role_value: int) -> String:
 @rpc("authority", "call_remote")
 func start_call() -> void:
 	load_scene(IN_CALL_SCENE_PATH)
+	var is_host_therapist := multiplayer.multiplayer_peer != null and multiplayer.is_server() and Roles.user_role == Roles.Role.THERAPIST
+	_call_recording_manager.start_if_host(is_host_therapist)
 
 func start_call_for_clients():
 	if !multiplayer.is_server():
 		return
+	start_call()
 		
 	print("Server starting call for clients...")
 	
@@ -331,3 +342,4 @@ func start_call_for_clients():
 func rest_recording_meta():
 	recording = null
 	recording_path = ""
+	_call_recording_manager.reset()
