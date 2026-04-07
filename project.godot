@@ -32,6 +32,8 @@ XRToolsRumbleManager="*uid://by853dk86g1qw"
 EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
 XrSimulator="*uid://ctltchlf2j2r4"
 GameState="*res://scripts/game_state.gd"
+UIButtonAudio="*uid://5m4lymlum1o0"
+Roles="*uid://bfkymv0c0ngqy"
 
 [debug_draw_3d]
 
@@ -72,7 +74,6 @@ textures/vram_compression/import_etc2_astc=true
 [xr]
 
 openxr/enabled=true
-openxr/default_action_map=""
 shaders/enabled=true
 openxr/size/viewport_height=648
 openxr/size/viewport_width=1152
