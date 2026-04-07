@@ -3,9 +3,11 @@ extends VBoxContainer
 const PORT := 7001
 
 @onready var ip_input: LineEdit = $MarginContainer2/VBoxContainer/IpInput
+@onready var text_label: Label = $MarginContainer2/VBoxContainer/TextLabel
 @onready var host_button: Button = $MarginContainer/HBoxContainer/Host
 @onready var join_button: Button = $MarginContainer/HBoxContainer/Join
-@onready var confirm_button: Button = $MarginContainer3/Confirm
+@onready var confirm_button: Button = $HBoxContainer/Confirm
+@onready var back_button: Button = $HBoxContainer/Back
 @onready var status_label: Label = $StatusLabel
 var get_input: bool = true
 var usr_input: String
@@ -16,6 +18,7 @@ func _ready() -> void:
 	UIButtonAudio.setup_buttons(self)
 	# Add and configure a timer for connection fallback
 	ip_input.hide()
+	text_label.hide()
 	host_button.show()
 	host_button.disabled = false
 	join_button.disabled = false
@@ -24,9 +27,9 @@ func _ready() -> void:
 	add_child(connection_timer)
 	connection_timer.timeout.connect(_on_connection_timeout)
 	
+	back_button.hide()
 	confirm_button.hide()
 	confirm_button.disabled = false
-	confirm_button.pressed.connect(_on_confirm_pressed)
 	
 	# Connect multiplayer signals
 	multiplayer.connected_to_server.connect(_on_connected)
@@ -52,6 +55,11 @@ func _on_host_pressed() -> void:
 func _on_join_pressed() -> void:
 	if get_input:
 		ip_input.show()
+		text_label.show()
+		host_button.hide()
+		join_button.hide()
+		confirm_button.show()
+		back_button.show()
 		get_input = false
 	else:
 		usr_input = ip_input.text
@@ -80,6 +88,17 @@ func _on_confirm_pressed() -> void:
 	Roles.set_role(Roles.Role.PATIENT)
 	_set_status("Connecting to " + usr_input)
 	connection_timer.start()
+	
+func _on_back_pressed() -> void:
+	ip_input.hide()
+	text_label.hide()
+	confirm_button.hide()
+	back_button.hide()
+
+	host_button.show()
+	join_button.show()
+
+	get_input = true
 
 func _on_connected() -> void:
 	connection_timer.stop()
