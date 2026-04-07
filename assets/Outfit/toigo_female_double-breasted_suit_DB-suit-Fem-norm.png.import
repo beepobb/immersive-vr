@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dok08r5woyntm"
-path.s3tc="res://.godot/imported/toigo_female_double-breasted_suit_DB-suit-Fem-norm.png-269a0132185573789fdcc2d76576cbd0.s3tc.ctex"
+path.s3tc="res://.godot/imported/toigo_female_double-breasted_suit_DB-suit-Fem-norm.png-4890d0638195c7b743b12426ac7294e1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/toigo_female_double-breasted_suit_DB-suit-Fem-norm.png"
-dest_files=["res://.godot/imported/toigo_female_double-breasted_suit_DB-suit-Fem-norm.png-269a0132185573789fdcc2d76576cbd0.s3tc.ctex"]
+source_file="res://assets/Outfit/toigo_female_double-breasted_suit_DB-suit-Fem-norm.png"
+dest_files=["res://.godot/imported/toigo_female_double-breasted_suit_DB-suit-Fem-norm.png-4890d0638195c7b743b12426ac7294e1.s3tc.ctex"]
 
 [params]
 

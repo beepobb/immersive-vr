@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://doia6rqdghean"
-path.s3tc="res://.godot/imported/elvs_racing_fire_suit_male1_normals1.png-dd0d1f8fe823b816842672e8e05e2624.s3tc.ctex"
+path.s3tc="res://.godot/imported/elvs_racing_fire_suit_male1_normals1.png-8f0249eed34548449ae25a10a256257d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/elvs_racing_fire_suit_male1_normals1.png"
-dest_files=["res://.godot/imported/elvs_racing_fire_suit_male1_normals1.png-dd0d1f8fe823b816842672e8e05e2624.s3tc.ctex"]
+source_file="res://assets/Outfit/elvs_racing_fire_suit_male1_normals1.png"
+dest_files=["res://.godot/imported/elvs_racing_fire_suit_male1_normals1.png-8f0249eed34548449ae25a10a256257d.s3tc.ctex"]
 
 [params]
 

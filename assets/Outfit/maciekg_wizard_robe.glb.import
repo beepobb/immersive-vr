@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dyyn6ca0vgwic"
-path="res://.godot/imported/maciekg_wizard_robe.glb-465dffe1a41330b788821d2089969919.scn"
+path="res://.godot/imported/maciekg_wizard_robe.glb-78831e7f6b0195c28b5fd5386a5d5054.scn"
 
 [deps]
 
-source_file="res://assets/outfit/maciekg_wizard_robe.glb"
-dest_files=["res://.godot/imported/maciekg_wizard_robe.glb-465dffe1a41330b788821d2089969919.scn"]
+source_file="res://assets/Outfit/maciekg_wizard_robe.glb"
+dest_files=["res://.godot/imported/maciekg_wizard_robe.glb-78831e7f6b0195c28b5fd5386a5d5054.scn"]
 
 [params]
 

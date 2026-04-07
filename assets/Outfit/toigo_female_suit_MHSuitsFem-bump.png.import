@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v7fg50l5nphg"
-path.s3tc="res://.godot/imported/toigo_female_suit_MHSuitsFem-bump.png-993e8283d9be7c1c846c0dfa57e95915.s3tc.ctex"
+path.s3tc="res://.godot/imported/toigo_female_suit_MHSuitsFem-bump.png-305e2a52ca812efb06bfa1a20374ad89.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/toigo_female_suit_MHSuitsFem-bump.png"
-dest_files=["res://.godot/imported/toigo_female_suit_MHSuitsFem-bump.png-993e8283d9be7c1c846c0dfa57e95915.s3tc.ctex"]
+source_file="res://assets/Outfit/toigo_female_suit_MHSuitsFem-bump.png"
+dest_files=["res://.godot/imported/toigo_female_suit_MHSuitsFem-bump.png-305e2a52ca812efb06bfa1a20374ad89.s3tc.ctex"]
 
 [params]
 

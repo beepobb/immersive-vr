@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://hsft1a4fp2qy"
-path="res://.godot/imported/male_elegantsuit01.glb-0939652cb2eaab0b4cf9c84766961ec8.scn"
+path="res://.godot/imported/male_elegantsuit01.glb-bf5fb85b57eb2794fb1e8e3fd634e51b.scn"
 
 [deps]
 
-source_file="res://assets/outfit/male_elegantsuit01.glb"
-dest_files=["res://.godot/imported/male_elegantsuit01.glb-0939652cb2eaab0b4cf9c84766961ec8.scn"]
+source_file="res://assets/Outfit/male_elegantsuit01.glb"
+dest_files=["res://.godot/imported/male_elegantsuit01.glb-bf5fb85b57eb2794fb1e8e3fd634e51b.scn"]
 
 [params]
 

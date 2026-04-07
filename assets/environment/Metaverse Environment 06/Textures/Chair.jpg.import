@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de1y7mfu8edy0"
-path.s3tc="res://.godot/imported/Chair.jpg-2c0cfaffdf517fe39ab91937f5640f7b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Chair.jpg-17597391023c3e95bf80c14a779bcb00.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://assets/environment/Metaverse Environment 06/textures/Chair.jpg"
-dest_files=["res://.godot/imported/Chair.jpg-2c0cfaffdf517fe39ab91937f5640f7b.s3tc.ctex"]
+source_file="res://assets/environment/Metaverse Environment 06/Textures/Chair.jpg"
+dest_files=["res://.godot/imported/Chair.jpg-17597391023c3e95bf80c14a779bcb00.s3tc.ctex"]
 
 [params]
 

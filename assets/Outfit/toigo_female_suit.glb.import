@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://l417nt4or0ea"
-path="res://.godot/imported/toigo_female_suit.glb-a994d7120535e4c01845563bcda8a86a.scn"
+path="res://.godot/imported/toigo_female_suit.glb-5c828f8c6680d045690b9fe1ac37dc85.scn"
 
 [deps]
 
-source_file="res://assets/outfit/toigo_female_suit.glb"
-dest_files=["res://.godot/imported/toigo_female_suit.glb-a994d7120535e4c01845563bcda8a86a.scn"]
+source_file="res://assets/Outfit/toigo_female_suit.glb"
+dest_files=["res://.godot/imported/toigo_female_suit.glb-5c828f8c6680d045690b9fe1ac37dc85.scn"]
 
 [params]
 

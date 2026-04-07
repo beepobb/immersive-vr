@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rp3f42563con"
-path.s3tc="res://.godot/imported/punkduck_tennis_dress_tennisdress.png-b569226ad5343dc5ff94698270c3952f.s3tc.ctex"
+path.s3tc="res://.godot/imported/punkduck_tennis_dress_tennisdress.png-0166d69492d5ce9962ba6a5e103f3540.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/punkduck_tennis_dress_tennisdress.png"
-dest_files=["res://.godot/imported/punkduck_tennis_dress_tennisdress.png-b569226ad5343dc5ff94698270c3952f.s3tc.ctex"]
+source_file="res://assets/Outfit/punkduck_tennis_dress_tennisdress.png"
+dest_files=["res://.godot/imported/punkduck_tennis_dress_tennisdress.png-0166d69492d5ce9962ba6a5e103f3540.s3tc.ctex"]
 
 [params]
 

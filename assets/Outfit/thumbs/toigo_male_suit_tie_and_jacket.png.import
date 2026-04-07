@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv6p1k282lm7w"
-path="res://.godot/imported/toigo_male_suit_tie_and_jacket.png-df3b9ad6b382e6acffca36d5ca37c7a1.ctex"
+path="res://.godot/imported/toigo_male_suit_tie_and_jacket.png-f150fbdaf4f3de499eff7139f6f6281e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/outfit/thumbs/toigo_male_suit_tie_and_jacket.png"
-dest_files=["res://.godot/imported/toigo_male_suit_tie_and_jacket.png-df3b9ad6b382e6acffca36d5ca37c7a1.ctex"]
+source_file="res://assets/Outfit/thumbs/toigo_male_suit_tie_and_jacket.png"
+dest_files=["res://.godot/imported/toigo_male_suit_tie_and_jacket.png-f150fbdaf4f3de499eff7139f6f6281e.ctex"]
 
 [params]
 

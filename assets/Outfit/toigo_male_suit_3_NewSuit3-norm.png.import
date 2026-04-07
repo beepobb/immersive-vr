@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgkk0h5xfrc12"
-path.s3tc="res://.godot/imported/toigo_male_suit_3_NewSuit3-norm.png-560482fa887267c72d3df5e355795069.s3tc.ctex"
+path.s3tc="res://.godot/imported/toigo_male_suit_3_NewSuit3-norm.png-34492e676e50aac7c1ef7341d92a1692.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/toigo_male_suit_3_NewSuit3-norm.png"
-dest_files=["res://.godot/imported/toigo_male_suit_3_NewSuit3-norm.png-560482fa887267c72d3df5e355795069.s3tc.ctex"]
+source_file="res://assets/Outfit/toigo_male_suit_3_NewSuit3-norm.png"
+dest_files=["res://.godot/imported/toigo_male_suit_3_NewSuit3-norm.png-34492e676e50aac7c1ef7341d92a1692.s3tc.ctex"]
 
 [params]
 

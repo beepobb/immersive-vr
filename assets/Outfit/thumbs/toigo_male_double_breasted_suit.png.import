@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dluq7ererdqkj"
-path="res://.godot/imported/toigo_male_double_breasted_suit.png-7a94be77b16449dc84a9a86233239576.ctex"
+path="res://.godot/imported/toigo_male_double_breasted_suit.png-c08d4ec42c71e4509d6065c521848fb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/outfit/thumbs/toigo_male_double_breasted_suit.png"
-dest_files=["res://.godot/imported/toigo_male_double_breasted_suit.png-7a94be77b16449dc84a9a86233239576.ctex"]
+source_file="res://assets/Outfit/thumbs/toigo_male_double_breasted_suit.png"
+dest_files=["res://.godot/imported/toigo_male_double_breasted_suit.png-c08d4ec42c71e4509d6065c521848fb6.ctex"]
 
 [params]
 

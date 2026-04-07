@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3hb8ypsj3ji8"
-path.s3tc="res://.godot/imported/female_casualsuit01_female_casualsuit01_diffuse.png-c2cfc5097723d27e4b6ea6a47cab32b3.s3tc.ctex"
+path.s3tc="res://.godot/imported/female_casualsuit01_female_casualsuit01_diffuse.png-c8b41c41adae1dec11a2e0015a02b09e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/outfit/female_casualsuit01_female_casualsuit01_diffuse.png"
-dest_files=["res://.godot/imported/female_casualsuit01_female_casualsuit01_diffuse.png-c2cfc5097723d27e4b6ea6a47cab32b3.s3tc.ctex"]
+source_file="res://assets/Outfit/female_casualsuit01_female_casualsuit01_diffuse.png"
+dest_files=["res://.godot/imported/female_casualsuit01_female_casualsuit01_diffuse.png-c8b41c41adae1dec11a2e0015a02b09e.s3tc.ctex"]
 
 [params]
 

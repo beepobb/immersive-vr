@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccmfhkksftfca"
-path="res://.godot/imported/elvs_racing_fire_suit_male1.png-5afee24d0a9d9a7cf053a295d6a77ab4.ctex"
+path="res://.godot/imported/elvs_racing_fire_suit_male1.png-e5e2d3e84f0ff691a9a1797f0a4f0717.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/outfit/thumbs/elvs_racing_fire_suit_male1.png"
-dest_files=["res://.godot/imported/elvs_racing_fire_suit_male1.png-5afee24d0a9d9a7cf053a295d6a77ab4.ctex"]
+source_file="res://assets/Outfit/thumbs/elvs_racing_fire_suit_male1.png"
+dest_files=["res://.godot/imported/elvs_racing_fire_suit_male1.png-e5e2d3e84f0ff691a9a1797f0a4f0717.ctex"]
 
 [params]
 

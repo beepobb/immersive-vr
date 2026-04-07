@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://drot005xn2dde"
-path="res://.godot/imported/bird_rigged.fbx-22225fc0c53e36527aad53169db98640.scn"
+path="res://.godot/imported/bird_rigged.FBX-3e9debc73b160d0199bc81945d474107.scn"
 
 [deps]
 
-source_file="res://assets/environment/Bird For Flock Animation/bird_rigged.fbx"
-dest_files=["res://.godot/imported/bird_rigged.fbx-22225fc0c53e36527aad53169db98640.scn"]
+source_file="res://assets/environment/Bird For Flock Animation/bird_rigged.FBX"
+dest_files=["res://.godot/imported/bird_rigged.FBX-3e9debc73b160d0199bc81945d474107.scn"]
 
 [params]
 

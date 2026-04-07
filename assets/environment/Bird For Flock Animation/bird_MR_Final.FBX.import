@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cai826s6ok638"
-path="res://.godot/imported/Bird_MR_final.fbx-d4817e2343a01252de3f86c9ca3d5067.scn"
+path="res://.godot/imported/bird_MR_Final.FBX-eabb060893d1a9a3478d77c6f7123a52.scn"
 
 [deps]
 
-source_file="res://assets/environment/Bird For Flock Animation/Bird_MR_final.fbx"
-dest_files=["res://.godot/imported/Bird_MR_final.fbx-d4817e2343a01252de3f86c9ca3d5067.scn"]
+source_file="res://assets/environment/Bird For Flock Animation/bird_MR_Final.FBX"
+dest_files=["res://.godot/imported/bird_MR_Final.FBX-eabb060893d1a9a3478d77c6f7123a52.scn"]
 
 [params]
 
