@@ -79,4 +79,4 @@ tools/transcript_asr/data/
 *.aac
 *.flac
 
-
+tools/transcript_asr/.env
