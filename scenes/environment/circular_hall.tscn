@@ -123,6 +123,7 @@ cap_bottom = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bf5l6"]
 albedo_texture = ExtResource("1_q0l47")
+metallic = 1.0
 
 [node name="Room" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
@@ -144,7 +145,7 @@ skeleton = NodePath("../CollisionShape3D")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7537305, 0)
 omni_range = 4096.0
-omni_attenuation = 0.02
+omni_attenuation = 0.066
 
 [node name="Sphere_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.8339385, 0, -0.5518576, 0, 1, 0, 0.5518576, 0, -0.8339385, 0, 0, 0)
@@ -167,7 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90972614, 0)
 mesh = SubResource("CylinderMesh_tipki")
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="."]
-transform = Transform3D(0.779163, 0, -0.6268214, 0, 1, 0, 0.6268214, 0, 0.779163, -0.025921822, 8.724416, -0.01094079)
+transform = Transform3D(0.779163, 0, -0.6268214, 0, 1, 0, 0.6268214, 0, 0.779163, -0.025921822, 8.254782, -0.01094079)
 transparency = 0.1
 flip_faces = true
 inner_radius = 12.8

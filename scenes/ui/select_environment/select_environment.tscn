@@ -14,28 +14,28 @@ script = ExtResource("1_tcr4p")
 transform = Transform3D(0.91136014, 0, 0.4116099, 0, 1, 0, -0.4116099, 0, 0.91136014, -0.21979588, 1.8082533, -0.11744094)
 
 [node name="Header" parent="." instance=ExtResource("1_vganu")]
-transform = Transform3D(0.9113602, 0, 0.41160992, 0, 1, 0, -0.41160992, 0, 0.9113602, -0.7525293, 3.2234983, -2.4660447)
+transform = Transform3D(0.9113602, 0, 0.41160992, 0, 1, 0, -0.41160992, 0, 0.9113602, -0.7525293, 3.1789782, -2.4660447)
 screen_size = Vector2(4, 0.25)
 scene = ExtResource("2_unrs5")
 viewport_size = Vector2(1350, 95)
 
 [node name="IndicatorBar" parent="." instance=ExtResource("1_vganu")]
-transform = Transform3D(0.9113602, 0, 0.41160992, 0, 1, 0, -0.41160992, 0, 0.9113602, -0.998628, 0.93923664, -2.26798)
+transform = Transform3D(0.9113602, 0, 0.41160992, 0, 1, 0, -0.41160992, 0, 0.9113602, -0.998628, 0.87831426, -2.26798)
 screen_size = Vector2(2.7, 0.2)
 scene = ExtResource("4_pece2")
 viewport_size = Vector2(738, 54)
 scene_properties_keys = PackedStringArray("indicator_bar.gd")
 
 [node name="Carousel" parent="." instance=ExtResource("1_vganu")]
-transform = Transform3D(0.9113602, 0, 0.41160992, 0, 1, 0, -0.41160992, 0, 0.9113602, -0.8315355, 1.9800291, -2.3408446)
+transform = Transform3D(0.9113602, 0, 0.41160992, 0, 1, 0, -0.41160992, 0, 0.9113602, -0.8315355, 1.8887126, -2.3408446)
 screen_size = Vector2(5, 1.8)
 scene = ExtResource("3_unrs5")
-viewport_size = Vector2(1500, 580)
+viewport_size = Vector2(1500, 550)
 scene_properties_keys = PackedStringArray("carousel.gd", "start_index")
 start_index = 0
 
 [node name="ConfirmButton" parent="." instance=ExtResource("1_vganu")]
-transform = Transform3D(0.9113602, 0, 0.41160992, 0, 1, 0, -0.41160992, 0, 0.9113602, -0.9162708, 0.64199233, -2.3134701)
+transform = Transform3D(0.9113602, 0, 0.41160992, 0, 1, 0, -0.41160992, 0, 0.9113602, -0.9162708, 0.58106995, -2.3134701)
 screen_size = Vector2(0.8, 0.2)
 scene = ExtResource("5_bk18p")
 viewport_size = Vector2(200, 50)

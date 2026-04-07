@@ -2,7 +2,7 @@ extends Button
 
 @onready var env_title_label: Label = $InfoOverlay/MarginContainer/VBoxContainer/NameLabel
 @onready var env_description_label: Label = $InfoOverlay/MarginContainer/VBoxContainer/DescLabel
-@onready var env_photo_texture: TextureRect = $TextureRect
+@onready var env_photo_texture: NinePatchRect = $TextureRect
 @onready var info_overlay: Control = $InfoOverlay
 @onready var blue_overlay: ColorRect = $BlueOverlay
 

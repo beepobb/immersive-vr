@@ -22,8 +22,8 @@ session_id = "Session #17"
 number_of_people = 1
 
 [node name="Menu" parent="CallViewport" instance=ExtResource("1_edm0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8492079, -0.06145799, -0.020092249)
-screen_size = Vector2(1.2, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8492079, -0.9483332, -0.020092249)
+screen_size = Vector2(1.5, 2)
 scene = ExtResource("3_5eiy1")
-viewport_size = Vector2(800, 100)
+viewport_size = Vector2(1280, 1700)
 scene_properties_keys = PackedStringArray("menu.gd")

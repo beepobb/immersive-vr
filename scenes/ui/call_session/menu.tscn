@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://c0hlsnw7beun3"]
 
-[ext_resource type="Script" uid="uid://dh3ju880ty6fy" path="res://scenes/ui/call_session/menu.gd" id="1_wbjo0"]
+[ext_resource type="Script" uid="uid://dh3ju880ty6fy" path="res://scripts/ui/call_session/menu.gd" id="1_wbjo0"]
 [ext_resource type="Texture2D" uid="uid://jbivyob5nw44" path="res://assets/icons/menu.png" id="2_mho6x"]
 [ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="3_2cged"]
 [ext_resource type="Texture2D" uid="uid://cgaiwv3gs6q4j" path="res://assets/icons/phone-call-end.png" id="3_5hfqt"]
@@ -152,7 +152,6 @@ text = "Settings"
 icon = ExtResource("6_fon3s")
 
 [node name="HelpPopup" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

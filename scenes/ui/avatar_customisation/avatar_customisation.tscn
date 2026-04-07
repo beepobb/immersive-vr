@@ -20,25 +20,25 @@ fov = 30.9375
 [node name="PreviewStage" parent="." instance=ExtResource("2_mb1fd")]
 
 [node name="AvatarTest" parent="." instance=ExtResource("3_7dm38")]
-transform = Transform3D(0.82927173, 0, 0.55884564, 0, 1, 0, -0.55884564, 0, 0.82927173, -1.6683217, 0.17764795, 0.9888679)
+transform = Transform3D(0.994445, 0, 0.10525728, 0, 1, 0, -0.10525728, 0, 0.994445, -1.3895555, 0.17764795, 1.3912798)
 
 [node name="AvatarCustomisationViewports" type="Node3D" parent="."]
 
 [node name="Header" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34113005, 2.8619375, 1.206579)
-screen_size = Vector2(4.1, 0.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34113005, 2.6794055, 1.206579)
+screen_size = Vector2(4.5, 0.4)
 scene = ExtResource("5_ccjlr")
-viewport_size = Vector2(1280, 90)
+viewport_size = Vector2(1300, 110)
 
 [node name="CustomiseOptions" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
-transform = Transform3D(0.98577696, 0, -0.16805935, 0, 1, 0, 0.16805935, 0, 0.98577696, 0.58309984, 1.2819833, 1.3587866)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0.58309984, 1.2819833, 1.5835409)
 screen_size = Vector2(1.25, 1.6)
 scene = ExtResource("6_cd73f")
 viewport_size = Vector2(550, 650)
 scene_properties_keys = PackedStringArray("customise_options.gd")
 
 [node name="MaleFemale" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
-transform = Transform3D(0.98814803, 0, -0.15350321, 0, 1, 0, 0.15350321, 0, 0.98814803, 1.5079296, 1.6875117, 1.5109062)
+transform = Transform3D(0.9999999, 0, -1.7484554e-07, 0, 1, 0, 1.7484554e-07, 0, 0.9999999, 1.5079296, 1.6875117, 1.7356606)
 screen_size = Vector2(0.5, 0.8)
 scene = ExtResource("7_dselv")
 viewport_size = Vector2(150, 200)
@@ -48,7 +48,7 @@ hair_json_path = "res://assets/hair/hair_assets.json"
 shoes_json_path = "res://assets/shoes/shoes_assets.json"
 
 [node name="OptionTabs" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
-transform = Transform3D(0.98577696, 0, -0.16805935, 0, 1, 0, 0.16805935, 0, 0.98577696, 0.58309984, 2.1819832, 1.3587866)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0.58309984, 2.1819832, 1.5835409)
 screen_size = Vector2(1.25, 0.12)
 scene = ExtResource("8_pwh4q")
 viewport_size = Vector2(626, 55)
@@ -56,7 +56,7 @@ input_gamepad = true
 scene_properties_keys = PackedStringArray("option_tabs.gd")
 
 [node name="SaveAvatar" parent="AvatarCustomisationViewports" instance=ExtResource("4_s6nat")]
-transform = Transform3D(0.98237866, 0, -0.1869013, 0, 1, 0, 0.1869013, 0, 0.98237866, 0.58309984, 0.28198326, 1.3587866)
+transform = Transform3D(0.99999994, 0, -1.7484554e-07, 0, 1, 0, 1.7484554e-07, 0, 0.99999994, 0.58309984, 0.28198326, 1.5835409)
 screen_size = Vector2(0.8, 0.15)
 scene = ExtResource("9_tw658")
 viewport_size = Vector2(200, 33)

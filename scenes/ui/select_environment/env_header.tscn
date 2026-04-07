@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="1_04g20"]
 [ext_resource type="FontFile" uid="uid://b8k617a8y14dt" path="res://tools/Poppins/Poppins-Bold.ttf" id="2_2m2ot"]
 [ext_resource type="Script" uid="uid://dpg33nl5bfhmr" path="res://scenes/ui/select_environment/back_button.gd" id="2_prakw"]
-[ext_resource type="FontFile" uid="uid://btmioendw24i3" path="res://tools/Poppins/Poppins-Medium.ttf" id="3_prakw"]
+[ext_resource type="FontFile" uid="uid://3cmsgjt8csyb" path="res://tools/Poppins/Poppins-SemiBold.ttf" id="4_2m2ot"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7vw70"]
 
@@ -55,6 +55,6 @@ theme_override_colors/font_shadow_color = Color(0.18431373, 0.18431373, 0.184313
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8156863)
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 5
-theme_override_fonts/font = ExtResource("3_prakw")
+theme_override_fonts/font = ExtResource("4_2m2ot")
 theme_override_font_sizes/font_size = 28
 text = "Click to choose your preferred environment for the session"
