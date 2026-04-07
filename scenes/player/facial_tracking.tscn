@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://0rpgxarpuatj" path="res://assets/metaHumanHead_52shapekeys_01.fbx" id="1_11l3f"]
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_uvn5p"]
 [ext_resource type="PackedScene" uid="uid://dcpwya54x55or" path="res://assets/Avatar/avatar w face bs/male3.glb" id="3_jedu7"]
-[ext_resource type="PackedScene" uid="uid://cqdx32vxp7phr" path="res://assets/Avatar/avatar w face bs/remy.glb" id="5_umyts"]
+[ext_resource type="PackedScene" uid="uid://2ry474x0ensh" path="res://assets/Avatar/avatar w face bs/bernard.glb" id="5_umyts"]
 [ext_resource type="PackedScene" uid="uid://cdk0sly1cyau2" path="res://assets/Avatar/avatar w face bs/megan.glb" id="7_56o05"]
 
 [sub_resource type="Environment" id="Environment_11l3f"]
@@ -50,13 +50,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6760569, 0.4117152, -2.9148
 [node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="megan"]
 target = NodePath("../Armature/Skeleton3D/Ch22_Body")
 
-[node name="remy" parent="." instance=ExtResource("5_umyts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6367028, -1.8017349, -1.860158)
+[node name="bernard" parent="." instance=ExtResource("5_umyts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58035, 0, -1.6319256)
 
-[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="remy"]
-target = NodePath("../Armature/Skeleton3D/Body")
+[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="bernard"]
+target = NodePath("../Armature/Skeleton3D/Ch31_Body")
 
 [editable path="metaHumanHead_52shapekeys_01"]
 [editable path="male3"]
 [editable path="megan"]
-[editable path="remy"]
+[editable path="bernard"]
