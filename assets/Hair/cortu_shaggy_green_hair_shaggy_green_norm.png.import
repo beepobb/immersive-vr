@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmaub6nvieipk"
+uid="uid://rqa6xuu7135q"
 path.s3tc="res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-1acc0229aee7b48aa62848ecdfec5b31.s3tc.ctex"
 path.etc2="res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-1acc0229aee7b48aa62848ecdfec5b31.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "7ca64f3e41e312a1083f694506ffe16f"
 }
 
 [deps]
@@ -31,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://assets/hair/cortu_shaggy_green_hair_shaggy_green_norm.png"
+roughness/src_normal="res://assets/Hair/cortu_shaggy_green_hair_shaggy_green_norm.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

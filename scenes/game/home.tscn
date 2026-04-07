@@ -26,8 +26,13 @@ glow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1" unique_id=933854703]
 environment = SubResource("Environment_rkiv8")
 
+[node name="PlayerLoader" parent="." index="2" unique_id=1066474312]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+moving = false
+spawn_point = Vector3(0, 1.6, 0)
+
 [node name="HostJoin" parent="." index="3" unique_id=1027545802 instance=ExtResource("3_u3dp7")]
-transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0, 1.474319, -1.3845763)
+transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0, 2.8, -1.385)
 screen_size = Vector2(1.75, 0.6)
 scene = ExtResource("4_sktvb")
 viewport_size = Vector2(400, 203)
@@ -40,11 +45,6 @@ scene_properties_keys = PackedStringArray("server_ui.gd")
 [node name="Room" parent="EnvironmentRoot" index="0" unique_id=1212729777 instance=ExtResource("4_wkxb3")]
 
 [node name="VirtualKeyboard" parent="." index="5" unique_id=1143409856 instance=ExtResource("5_xa3pu")]
-transform = Transform3D(1, 0, 0, 0, 0.7159121, 0.69819045, 0, -0.69819045, 0.7159121, 0, 0.933, -0.33)
+transform = Transform3D(1, 0, 0, 0, 0.7159121, 0.69819045, 0, -0.69819045, 0.7159121, 0, 2, -0.33)
 visible = false
 scene_properties_keys = PackedStringArray("virtual_keyboard_2d.gd")
-
-[node name="PlayerLoader" parent="." index="6" unique_id=1066474312]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
-moving = false
-spawn_point = Vector3(0, 1.6, 0)

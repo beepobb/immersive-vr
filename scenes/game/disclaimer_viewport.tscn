@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjxf5pppmtxwe" path="res://scripts/ui/call_session/disclaimer_viewports.gd" id="1_balkl"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_yymyn"]
-[ext_resource type="PackedScene" uid="uid://ncmxwoiw3wmq" path="res://scenes/environment/disclaimer_popup.tscn" id="3_0eto3"]
+[ext_resource type="PackedScene" uid="uid://ncmxwoiw3wmq" path="res://scenes/game/disclaimer_popup.tscn" id="3_0eto3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yymyn"]
 size = Vector3(3, 1.5, 0.1)
@@ -12,9 +12,9 @@ script = ExtResource("1_balkl")
 
 [node name="DisclaimerPopup" parent="." unique_id=278983125 instance=ExtResource("1_yymyn")]
 rotation_order = 5
-screen_size = Vector2(3, 1.5)
+screen_size = Vector2(2.48, 1.5)
 scene = ExtResource("3_0eto3")
-viewport_size = Vector2(1280, 720)
+viewport_size = Vector2(1280, 871)
 transparent = 1
 scene_properties_keys = PackedStringArray("disclaimer_popup.gd")
 

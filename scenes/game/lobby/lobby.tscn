@@ -25,11 +25,6 @@ sky = SubResource("Sky_s5j51")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_flkj0"]
-top_radius = 1.0
-bottom_radius = 1.0
-height = 0.1
-
 [node name="Lobby" unique_id=1701868660 instance=ExtResource("1_ein8w")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=2055827521]
@@ -37,6 +32,7 @@ environment = SubResource("Environment_is1y2")
 
 [node name="UI" type="Node3D" parent="." index="1" unique_id=1114705087]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, 0)
 
 [node name="ServerInfo" parent="UI" index="0" unique_id=489379600 instance=ExtResource("1_8ldoj")]
 transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.7789513, -0.4445969)
@@ -58,7 +54,7 @@ unshaded = true
 scene_properties_keys = PackedStringArray("selected_env_preview.gd")
 
 [node name="CustomiseOptions" parent="UI" index="2" unique_id=1983447249 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5503063, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.68, 0)
 screen_size = Vector2(0.6, 0.18)
 scene = ExtResource("8_tprm0")
 viewport_size = Vector2(421, 118)
@@ -66,7 +62,7 @@ transparent = 1
 scene_properties_keys = PackedStringArray("avatar_env.gd")
 
 [node name="Leave" parent="UI" index="3" unique_id=2106558892 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -1.9282403, 2.5994353, 1.1024626)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -1.928, 2.599, -0.348)
 screen_size = Vector2(0.47, 0.16)
 scene = ExtResource("7_mw24c")
 viewport_size = Vector2(339, 118)
@@ -74,30 +70,22 @@ transparent = 1
 scene_properties_keys = PackedStringArray("leave.gd")
 
 [node name="AvatarTest" parent="." index="2" unique_id=917422586 instance=ExtResource("6_mcopp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.06608647, -0.21754313)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.6, -0.218)
 
 [node name="LobbyManager" type="Node3D" parent="." index="3" unique_id=500149902]
 script = ExtResource("8_ein8w")
 
-[node name="Dummy" parent="." index="4" unique_id=2051652043]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.789475)
+[node name="PlayerLoader" parent="." index="4" unique_id=1066474312]
+moving = false
+spawn_point = Vector3(0, 1.8, 3.2)
 
 [node name="EnvironmentRoot" type="Node" parent="." index="5" unique_id=1157440965]
 
 [node name="Room" parent="EnvironmentRoot" index="0" unique_id=1582964686 instance=ExtResource("9_p2j6g")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="EnvironmentRoot/Room" index="7" unique_id=951373658]
-mesh = SubResource("CylinderMesh_flkj0")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="6" unique_id=579464998]
 light_energy = 0.4
 
 [node name="DisclaimerViewports" parent="." index="7" unique_id=1862570522 instance=ExtResource("10_flkj0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9644252, 0.54913306)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, 0.549)
 visible = false
-
-[node name="PlayerLoader" parent="." index="8" unique_id=1066474312]
-moving = false
-spawn_point = Vector3(0, 1.8, 3.2)
-
-[editable path="Dummy"]
