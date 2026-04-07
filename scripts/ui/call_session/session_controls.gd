@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends HBoxContainer
 
 @onready var end_call_button: Button = $"HBoxContainer/End Call"
 

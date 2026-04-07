@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="8_2118c"]
 [ext_resource type="PackedScene" uid="uid://b16xpdpjtl72k" path="res://assets/Avatar/AvatarTest.glb" id="10_7e1ug"]
 [ext_resource type="PackedScene" uid="uid://b37ap7blkr2og" path="res://assets/Remy.fbx" id="10_8px4q"]
+[ext_resource type="PackedScene" uid="uid://ckwle4bd44t16" path="res://scenes/audio_manager.tscn" id="12_2118c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2gul"]
 albedo_color = Color(0, 1, 1, 1)
@@ -24,7 +25,7 @@ properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_7e1ug"]
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_ljrr4"]
 
 [node name="XROrigin3D" type="XROrigin3D" unique_id=1503267807]
 script = ExtResource("1_kfx4a")
@@ -501,10 +502,11 @@ settings/0/additive = false
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=96480807]
 replication_config = SubResource("SceneReplicationConfig_7e1ug")
 
-[node name="AudioRecorder" type="AudioStreamPlayer3D" parent="." unique_id=1974295745]
-stream = SubResource("AudioStreamMicrophone_7e1ug")
+[node name="AudioManager" parent="." unique_id=1555394438 instance=ExtResource("12_2118c")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=691999784]
+stream = SubResource("AudioStreamGenerator_ljrr4")
 autoplay = true
-bus = &"Record"
 
 [connection signal="button_pressed" from="RightController" to="." method="_on_right_controller_button_pressed"]
 
