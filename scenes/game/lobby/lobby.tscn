@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cjo2n1yw7ll28" path="res://scenes/game/lobby/selected_env_preview.tscn" id="7_tprm0"]
 [ext_resource type="Script" uid="uid://8y5l23xo83v1" path="res://scripts/ui/lobby/lobby_manager.gd" id="8_ein8w"]
 [ext_resource type="PackedScene" uid="uid://tp33cmnql5ut" path="res://scenes/game/lobby/customise_avatar.tscn" id="8_tprm0"]
-[ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="9_p2j6g"]
+[ext_resource type="PackedScene" uid="uid://c6wjq0f3tu7tc" path="res://scenes/environment/circular_hall.tscn" id="9_p2j6g"]
 [ext_resource type="PackedScene" uid="uid://c8mkjqu5ta77d" path="res://scenes/game/disclaimer_viewport.tscn" id="10_flkj0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iy8d8"]
@@ -58,7 +58,7 @@ unshaded = true
 scene_properties_keys = PackedStringArray("selected_env_preview.gd")
 
 [node name="CustomiseOptions" parent="UI" index="2" unique_id=1983447249 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5503063, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36267567, 1)
 screen_size = Vector2(0.6, 0.18)
 scene = ExtResource("8_tprm0")
 viewport_size = Vector2(421, 118)
@@ -66,7 +66,7 @@ transparent = 1
 scene_properties_keys = PackedStringArray("avatar_env.gd")
 
 [node name="Leave" parent="UI" index="3" unique_id=2106558892 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -1.9282403, 2.5994353, 1.1024626)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -1.1810286, 2.5994353, 1.1024626)
 screen_size = Vector2(0.47, 0.16)
 scene = ExtResource("7_mw24c")
 viewport_size = Vector2(339, 118)
@@ -79,8 +79,9 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.06608647, -0.21754
 [node name="LobbyManager" type="Node3D" parent="." index="3" unique_id=500149902]
 script = ExtResource("8_ein8w")
 
-[node name="Dummy" parent="." index="4" unique_id=2051652043]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.789475)
+[node name="PlayerLoader" parent="." index="4" unique_id=1066474312]
+moving = false
+spawn_point = Vector3(0, 1.8, 3.2)
 
 [node name="EnvironmentRoot" type="Node" parent="." index="5" unique_id=1157440965]
 
@@ -95,9 +96,3 @@ light_energy = 0.4
 [node name="DisclaimerViewports" parent="." index="7" unique_id=1862570522 instance=ExtResource("10_flkj0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9644252, 0.54913306)
 visible = false
-
-[node name="PlayerLoader" parent="." index="8" unique_id=1066474312]
-moving = false
-spawn_point = Vector3(0, 1.8, 3.2)
-
-[editable path="Dummy"]

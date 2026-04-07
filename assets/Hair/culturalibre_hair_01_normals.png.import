@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bco1pvfuf4b4m"
-path.s3tc="res://.godot/imported/culturalibre_hair_01_normals.png-3380790fc4b5ffa7040cbfa096fe4e91.s3tc.ctex"
-path.etc2="res://.godot/imported/culturalibre_hair_01_normals.png-3380790fc4b5ffa7040cbfa096fe4e91.etc2.ctex"
+path.s3tc="res://.godot/imported/culturalibre_hair_01_normals.png-e7b4cc192c3913f473902d8f5bb2bdf2.s3tc.ctex"
+path.etc2="res://.godot/imported/culturalibre_hair_01_normals.png-e7b4cc192c3913f473902d8f5bb2bdf2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Hair/culturalibre_hair_01_normals.png"
-dest_files=["res://.godot/imported/culturalibre_hair_01_normals.png-3380790fc4b5ffa7040cbfa096fe4e91.s3tc.ctex", "res://.godot/imported/culturalibre_hair_01_normals.png-3380790fc4b5ffa7040cbfa096fe4e91.etc2.ctex"]
+source_file="res://assets/hair/culturalibre_hair_01_normals.png"
+dest_files=["res://.godot/imported/culturalibre_hair_01_normals.png-e7b4cc192c3913f473902d8f5bb2bdf2.s3tc.ctex", "res://.godot/imported/culturalibre_hair_01_normals.png-e7b4cc192c3913f473902d8f5bb2bdf2.etc2.ctex"]
 
 [params]
 

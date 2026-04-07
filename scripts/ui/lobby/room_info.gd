@@ -8,6 +8,7 @@ const STATUS_COLOR_ALERT := Color(0.95, 0.25, 0.25, 1)
 @onready var participant_label: Label = %Participants
 @onready var player_list: GridContainer = %PlayerList
 @onready var lobby_status_label: Label = %LobbyStatus
+@onready var ip_label: Label = %IPLabel
 @onready var start_call_button: Button = %StartCallButton
 @onready var ready_button: Button = %ReadyButton
 @export var player_card: PackedScene
@@ -21,6 +22,11 @@ func _ready() -> void:
 	GameState.roster_updated.connect(sync_player_cards)
 	start_call_button.pressed.connect(_on_start_call_pressed)
 	ready_button.pressed.connect(_on_ready_button_pressed)
+	var ip = IP.get_local_addresses()
+	for addr in ip:
+		if addr.begins_with("192.") or addr.begins_with("10.") or addr.begins_with("172."):
+			ip_label.text = "Local IP: " + addr
+			break	
 	setup_ui()
 	if multiplayer.is_server():
 		sync_player_cards(GameState.get_roster_payload())

@@ -1,10 +1,10 @@
 extends VBoxContainer
 
 const PORT := 7001
-@onready var ip_label: Label = $Panel/LocalIP
-@onready var ip_input: LineEdit = $IpInput
-@onready var host_button: Button = $Host
-@onready var join_button: Button = $Join
+
+@onready var ip_input: LineEdit = $MarginContainer2/VBoxContainer/IpInput
+@onready var host_button: Button = $MarginContainer/HBoxContainer/Host
+@onready var join_button: Button = $MarginContainer/HBoxContainer/Join
 @onready var status_label: Label = $StatusLabel
 var get_input: bool = true
 var usr_input: String
@@ -22,17 +22,14 @@ func _ready() -> void:
 	connection_timer.wait_time = 2.0 # seconds
 	add_child(connection_timer)
 	connection_timer.timeout.connect(_on_connection_timeout)
-	var ip = IP.get_local_addresses()
-	for addr in ip:
-		if addr.begins_with("192.") or addr.begins_with("10.") or addr.begins_with("172."):
-			ip_label.text = "Local IP: " + addr
 	
 	# Connect multiplayer signals
 	multiplayer.connected_to_server.connect(_on_connected)
 	multiplayer.connection_failed.connect(_on_connection_failed)
 	
 	keyboard = get_node_or_null("../../../VirtualKeyboard")
-	keyboard.hide()
+	if keyboard:
+		keyboard.hide()
 	
 func _on_host_pressed() -> void:
 	# prevent double click
@@ -50,8 +47,6 @@ func _on_host_pressed() -> void:
 func _on_join_pressed() -> void:
 	if get_input:
 		ip_input.show()
-		host_button.hide()
-		join_button.text = "Confirm"
 		get_input = false
 	else:
 		usr_input = ip_input.text

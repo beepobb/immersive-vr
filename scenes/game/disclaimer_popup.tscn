@@ -29,10 +29,10 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 0.6883929, 0.6419463, 1)
 border_blend = true
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 shadow_color = Color(0.20152658, 0.20152658, 0.20152658, 0.33333334)
 shadow_size = 2
 shadow_offset = Vector2(0, 2)
@@ -45,20 +45,20 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 0.6901961, 0.6431373, 1)
 border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 shadow_color = Color(0.2, 0.2, 0.2, 0.33333334)
 shadow_size = 2
 shadow_offset = Vector2(0, 0.2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2g55"]
 bg_color = Color(1, 0.27058825, 0.22745098, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="DisclaimerPopup" type="Control" unique_id=262766635]
 layout_mode = 3
@@ -101,6 +101,7 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2129443343]
 layout_mode = 2
+theme_override_constants/line_spacing = -25
 theme_override_fonts/font = ExtResource("4_7s1o6")
 theme_override_font_sizes/font_size = 32
 text = "This meeting will be recorded for the purpose of speech-to-text
@@ -117,7 +118,7 @@ theme_override_constants/separation = 200
 alignment = 1
 
 [node name="AcceptButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=695687798]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_1cfsq")
 theme_override_font_sizes/font_size = 24

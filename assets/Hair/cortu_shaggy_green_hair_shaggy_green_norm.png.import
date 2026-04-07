@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmaub6nvieipk"
-path.s3tc="res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-1acc0229aee7b48aa62848ecdfec5b31.s3tc.ctex"
-path.etc2="res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-1acc0229aee7b48aa62848ecdfec5b31.etc2.ctex"
+path.s3tc="res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-23c9892ce5b93d28f46ca6956693f8f1.s3tc.ctex"
+path.etc2="res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-23c9892ce5b93d28f46ca6956693f8f1.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Hair/cortu_shaggy_green_hair_shaggy_green_norm.png"
-dest_files=["res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-1acc0229aee7b48aa62848ecdfec5b31.s3tc.ctex", "res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-1acc0229aee7b48aa62848ecdfec5b31.etc2.ctex"]
+source_file="res://assets/hair/cortu_shaggy_green_hair_shaggy_green_norm.png"
+dest_files=["res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-23c9892ce5b93d28f46ca6956693f8f1.s3tc.ctex", "res://.godot/imported/cortu_shaggy_green_hair_shaggy_green_norm.png-23c9892ce5b93d28f46ca6956693f8f1.etc2.ctex"]
 
 [params]
 

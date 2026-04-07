@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://borecng4ntiqc"
-path="res://.godot/imported/Human_rehmanpolanski_hair_bun_brown.glb-c2154bb644fcfac1b824f06c2d7dbae1.scn"
+path="res://.godot/imported/Human_rehmanpolanski_hair_bun_brown.glb-2fea6a7ab3fc31627440bba361dda1dc.scn"
 
 [deps]
 
-source_file="res://assets/Hair/Human_rehmanpolanski_hair_bun_brown.glb"
-dest_files=["res://.godot/imported/Human_rehmanpolanski_hair_bun_brown.glb-c2154bb644fcfac1b824f06c2d7dbae1.scn"]
+source_file="res://assets/hair/Human_rehmanpolanski_hair_bun_brown.glb"
+dest_files=["res://.godot/imported/Human_rehmanpolanski_hair_bun_brown.glb-2fea6a7ab3fc31627440bba361dda1dc.scn"]
 
 [params]
 

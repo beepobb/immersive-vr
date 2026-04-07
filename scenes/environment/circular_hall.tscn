@@ -1,4 +1,4 @@
-[gd_scene format=4]
+[gd_scene format=4 uid="uid://c6wjq0f3tu7tc"]
 
 [ext_resource type="Texture2D" uid="uid://ybm1s8d12xd3" path="res://assets/themes/ligh_wood.jpg" id="1_laf4y"]
 [ext_resource type="Texture2D" uid="uid://chjpoappqnimb" path="res://assets/themes/shopping.webp" id="1_q0l47"]
@@ -124,29 +124,29 @@ cap_bottom = false
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bf5l6"]
 albedo_texture = ExtResource("1_q0l47")
 
-[node name="Room" type="Node3D"]
+[node name="Room" type="Node3D" unique_id=1594698241]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=2028595309]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.05, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1566856999]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0137372995, 0)
 shape = SubResource("CylinderShape3D_85g3d")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=487795800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05830851, -0.034037173, -0.008105278)
 mesh = SubResource("CylinderMesh_choun")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="Platform" type="MeshInstance3D" parent="."]
+[node name="Platform" type="MeshInstance3D" parent="." unique_id=1077231393]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7537305, 0)
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1683205837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.3527794, 0)
 omni_range = 4096.0
-omni_attenuation = 0.02
+omni_attenuation = 0.4
 
-[node name="Sphere_002" type="MeshInstance3D" parent="."]
+[node name="Sphere_002" type="MeshInstance3D" parent="." unique_id=473306590]
 transform = Transform3D(-0.8339385, 0, -0.5518576, 0, 1, 0, 0.5518576, 0, -0.8339385, 0, 0, 0)
 mesh = SubResource("ArrayMesh_bqbyl")
 skeleton = NodePath("")
@@ -154,7 +154,7 @@ metadata/extras = {
 "ant_landscape": {}
 }
 
-[node name="Sphere2" type="MeshInstance3D" parent="."]
+[node name="Sphere2" type="MeshInstance3D" parent="." unique_id=771211601]
 transform = Transform3D(0.25921738, 0, -0.96581906, 0, 1, 0, 0.96581906, 0, 0.25921738, 0, 0, 0)
 mesh = SubResource("ArrayMesh_bf5l6")
 skeleton = NodePath("")
@@ -162,11 +162,11 @@ metadata/extras = {
 "ant_landscape": {}
 }
 
-[node name="Wall" type="MeshInstance3D" parent="."]
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=794399934]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90972614, 0)
 mesh = SubResource("CylinderMesh_tipki")
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+[node name="CSGTorus3D" type="CSGTorus3D" parent="." unique_id=438620931]
 transform = Transform3D(0.779163, 0, -0.6268214, 0, 1, 0, 0.6268214, 0, 0.779163, -0.025921822, 8.724416, -0.01094079)
 transparency = 0.1
 flip_faces = true

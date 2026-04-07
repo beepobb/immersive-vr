@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ds5d2bv2eoxua"
-path="res://.godot/imported/cortu_short_messy_hair.png-ef8521c82be22874dd05394bfc430c37.ctex"
+path="res://.godot/imported/cortu_short_messy_hair.png-7ba016b769cff18a5c83b833241e8aa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Hair/thumbs/cortu_short_messy_hair.png"
-dest_files=["res://.godot/imported/cortu_short_messy_hair.png-ef8521c82be22874dd05394bfc430c37.ctex"]
+source_file="res://assets/hair/thumbs/cortu_short_messy_hair.png"
+dest_files=["res://.godot/imported/cortu_short_messy_hair.png-7ba016b769cff18a5c83b833241e8aa5.ctex"]
 
 [params]
 

@@ -33,6 +33,7 @@ var slot_modulates := [
 	Color(1.0, 1.0, 1.0, 1.0),
 	Color(0.45, 0.45, 0.45, 0.58),
 	Color(0.32, 0.32, 0.32, 0.38)
+
 ]
 
 const TRANSITION_TIME := 0.28
