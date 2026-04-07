@@ -5,6 +5,7 @@ const PORT := 7001
 @onready var ip_input: LineEdit = $MarginContainer2/VBoxContainer/IpInput
 @onready var host_button: Button = $MarginContainer/HBoxContainer/Host
 @onready var join_button: Button = $MarginContainer/HBoxContainer/Join
+@onready var confirm_button: Button = $MarginContainer3/Confirm
 @onready var status_label: Label = $StatusLabel
 var get_input: bool = true
 var usr_input: String
