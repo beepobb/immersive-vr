@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_u3dp7"]
 [ext_resource type="PackedScene" uid="uid://c80okq4yeqntk" path="res://scenes/game/lobby/server_ui.tscn" id="4_sktvb"]
 [ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="4_wkxb3"]
+[ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="5_xa3pu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pi8sn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,9 +33,9 @@ spawn_point = Vector3(0, 1.6, 0)
 
 [node name="HostJoin" parent="." index="3" unique_id=1027545802 instance=ExtResource("3_u3dp7")]
 transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0, 1.474319, -1.5012294)
-screen_size = Vector2(1.66, 0.49)
+screen_size = Vector2(1.75, 0.6)
 scene = ExtResource("4_sktvb")
-viewport_size = Vector2(400, 140)
+viewport_size = Vector2(400, 203)
 transparent = 1
 unshaded = true
 scene_properties_keys = PackedStringArray("server_ui.gd")
@@ -42,3 +43,8 @@ scene_properties_keys = PackedStringArray("server_ui.gd")
 [node name="EnvironmentRoot" type="Node" parent="." index="4" unique_id=1182028565]
 
 [node name="Room" parent="EnvironmentRoot" index="0" unique_id=1212729777 instance=ExtResource("4_wkxb3")]
+
+[node name="VirtualKeyboard" parent="." index="5" unique_id=1143409856 instance=ExtResource("5_xa3pu")]
+transform = Transform3D(1, 0, 0, 0, 0.7159121, 0.69819045, 0, -0.69819045, 0.7159121, 0, 0.933, -0.33)
+visible = false
+scene_properties_keys = PackedStringArray("virtual_keyboard_2d.gd")

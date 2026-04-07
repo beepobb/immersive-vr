@@ -59,7 +59,7 @@ func _get_in_call_player_root(authority_peer_id: int = -1) -> XROrigin3D:
 		return null
 
 	var peer_id := authority_peer_id
-	if peer_id <= 0:
+	if peer_id <= 0 and multiplayer.multiplayer_peer != null:
 		peer_id = multiplayer.get_unique_id()
 	if peer_id <= 0:
 		peer_id = get_multiplayer_authority()
@@ -76,7 +76,9 @@ func _get_local_player_root() -> XROrigin3D:
 	if player_loader == null:
 		return null
 
-	var local_peer_id := multiplayer.get_unique_id()
+	var local_peer_id := 0
+	if multiplayer.multiplayer_peer != null:
+		local_peer_id = multiplayer.get_unique_id()
 	if local_peer_id > 0:
 		var local_player := player_loader.get_node_or_null(str(local_peer_id)) as XROrigin3D
 		if local_player:
@@ -172,7 +174,9 @@ func scene_loaded(user_data = null):
 				local_camera.current = true
 			local_player.current = true
 	else:
-		var authority_id: int = multiplayer.get_unique_id()
+		var authority_id := -1
+		if multiplayer.multiplayer_peer != null:
+			authority_id = multiplayer.get_unique_id()
 		var authority_player := _get_in_call_player_root(authority_id)
 		var authority_camera := _get_in_call_camera(authority_id)
 		if authority_camera:
@@ -202,7 +206,10 @@ func scene_loaded(user_data = null):
 			return
 		spawn_transform = local_player.global_transform
 	else:
-		var authority_player := _get_in_call_player_root(multiplayer.get_unique_id())
+		var authority_id := -1
+		if multiplayer.multiplayer_peer != null:
+			authority_id = multiplayer.get_unique_id()
+		var authority_player := _get_in_call_player_root(authority_id)
 		if authority_player == null:
 			return
 		spawn_transform = authority_player.global_transform

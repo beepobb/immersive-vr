@@ -22,8 +22,10 @@ func _ready() -> void:
 	else:
 		player = static_player.instantiate()
 	
-	var local_peer_id := multiplayer.get_unique_id()
 	var has_network_peer := multiplayer.multiplayer_peer != null
+	var local_peer_id := 0
+	if has_network_peer:
+		local_peer_id = multiplayer.get_unique_id()
 	if has_network_peer and local_peer_id > 0:
 		# player.gd reads name as peer id to decide local movement authority.
 		player.name = str(local_peer_id)

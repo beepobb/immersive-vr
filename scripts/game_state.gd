@@ -5,7 +5,7 @@ const HOME_SCENE_PATH := "res://scenes/game/home.tscn"
 const LOBBY_SCENE_PATH := "res://scenes/game/lobby/lobby.tscn"
 const AVATAR_CUSTOMISATION_SCENE_PATH := "res://scenes/game/avatar_customisation/avatar_customisation.tscn"
 const SELECT_ENVIRONMENT_SCENE_PATH := "res://scenes/game/select_environment/select_environment.tscn"
-const IN_CALL_SCENE_PATH := "res://scenes/environment.tscn"
+const IN_CALL_SCENE_PATH := "res://scenes/game/call/environment.tscn"
 
 const DEFAULT_VISUAL_PRESETS := {
 	"male": {
@@ -93,7 +93,7 @@ func apply_to_avatar(state: Dictionary = {}) -> void:
 	_appearance_service.replace_part(attachment_root, null, selected_hair, AvatarAppearanceService.PartType.HAIR)
 	_appearance_service.replace_part(attachment_root, null, selected_outfit, AvatarAppearanceService.PartType.OUTFIT)
 	_appearance_service.replace_part(attachment_root, null, selected_shoes, AvatarAppearanceService.PartType.SHOES)
-
+	print("Appearance servicing")
 	var skin_value = _resolve_state_value(state, ["skin_tone"], skin_tone)
 	if skin_value is Color:
 		var body_mesh := avatar.get_node_or_null("Human_rig / Skeleton3D / Human") as MeshInstance3D
@@ -103,9 +103,6 @@ func apply_to_avatar(state: Dictionary = {}) -> void:
 					body_mesh = node as MeshInstance3D
 					break
 		_appearance_service.apply_skin_color(body_mesh, skin_value)
-		print("Color:")
-		print(skin_tone)
-		print("applied")
 	elif skin_value is String:
 		var skin_key := String(skin_value).strip_edges()
 		if !skin_key.begins_with("#"):
@@ -118,10 +115,7 @@ func apply_to_avatar(state: Dictionary = {}) -> void:
 					if String(node.name).to_lower() == "human":
 						mesh = node as MeshInstance3D
 						break
-			print(parsed_color)
 			_appearance_service.apply_skin_color(mesh, parsed_color)
-		print(skin_tone)
-		print("applied")
 	
 func _resolve_state_string(state: Dictionary, keys: Array, fallback: String) -> String:
 	var value = _resolve_state_value(state, keys, fallback)

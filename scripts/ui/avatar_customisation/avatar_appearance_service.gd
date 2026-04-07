@@ -52,13 +52,37 @@ func replace_part(attachment_root: Node, current_part: Node, item_id: String, pa
 
 	next_part.set_meta(META_PART_TYPE, int(part_type))
 	attachment_root.add_child(next_part)
+	_rebind_part_meshes_to_skeleton(next_part, attachment_root)
 	return next_part
+
+func _rebind_part_meshes_to_skeleton(part_root: Node, attachment_root: Node) -> void:
+	var target_skeleton := attachment_root as Skeleton3D
+	if target_skeleton == null:
+		for child in attachment_root.find_children("*", "Skeleton3D", true, false):
+			target_skeleton = child as Skeleton3D
+			break
+
+	if target_skeleton == null:
+		return
+
+	for node in part_root.find_children("*", "MeshInstance3D", true, false):
+		var mesh := node as MeshInstance3D
+		if mesh == null:
+			continue
+
+		var skeleton_path := mesh.get_path_to(target_skeleton)
+		if skeleton_path.is_empty():
+			continue
+
+		mesh.skeleton = skeleton_path
 
 func get_default_attachment_root(avatar: Node) -> Node:
 	if avatar == null:
 		return null
 
 	var explicit_root = avatar.get_node_or_null("Human_rig/Skeleton3D")
+	if explicit_root == null:
+		explicit_root = avatar.get_node_or_null("AvatarRoot/AvatarTest/Human_rig/Skeleton3D")
 	if explicit_root != null:
 		return explicit_root
 

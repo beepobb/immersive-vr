@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7e1ug"]
 [ext_resource type="PackedScene" uid="uid://cd2qni7yip51i" path="res://scenes/game/call/in_call_control_viewport.tscn" id="7_7e1ug"]
 [ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="8_2118c"]
-[ext_resource type="PackedScene" uid="uid://bb860ifn1rxps" path="res://assets/X Bot.fbx" id="8_x2gul"]
+[ext_resource type="PackedScene" uid="uid://b16xpdpjtl72k" path="res://assets/Avatar/AvatarTest.glb" id="10_7e1ug"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2gul"]
 albedo_color = Color(0, 1, 1, 1)
@@ -18,23 +18,16 @@ albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_x2gul"]
 
-[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_x2gul"]
-
-[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_kfx4a"]
-
-[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_7e1ug"]
-
-[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_8px4q"]
-
-[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_2118c"]
-
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7e1ug"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_7e1ug"]
+
 [node name="XROrigin3D" type="XROrigin3D" unique_id=1503267807]
 script = ExtResource("1_kfx4a")
+in_call = true
 
 [node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=2037867909]
 
@@ -119,98 +112,39 @@ player_calibrate_height = false
 [node name="AvatarRoot" type="Node3D" parent="." unique_id=1623042168]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="X Bot" parent="AvatarRoot" unique_id=1941485306 instance=ExtResource("8_x2gul")]
+[node name="AvatarTest" parent="AvatarRoot" unique_id=1839210799 instance=ExtResource("10_7e1ug")]
 
-[node name="Skeleton3D" parent="AvatarRoot/X Bot" index="0" unique_id=1714165654]
-bones/11/rotation = Quaternion(0.25328454, 0.061618283, -0.2282103, 0.93806726)
-bones/13/rotation = Quaternion(-0.0016647386, -0.00080778124, 0.0069197505, 0.9999744)
-bones/15/rotation = Quaternion(-6.059341e-07, 9.9535276e-11, -0.00016426753, 1)
-bones/16/rotation = Quaternion(-6.084827e-20, 0, 0.00025564426, 1)
-bones/17/rotation = Quaternion(-1.010017e-20, 0, -8.792197e-05, 1)
-bones/19/rotation = Quaternion(-9.78174e-07, 4.9085347e-10, -0.0005018059, 0.9999999)
-bones/20/rotation = Quaternion(-1.7667906e-20, -2.646978e-23, 0.00084987143, 0.99999964)
-bones/21/rotation = Quaternion(-2.5239809e-19, 5.293956e-23, -0.000321842, 0.99999994)
-bones/23/rotation = Quaternion(6.963166e-08, 1.085061e-11, 0.0001558293, 1)
-bones/24/rotation = Quaternion(-3.761026e-20, 0, -0.0002215151, 1)
-bones/25/rotation = Quaternion(2.317801e-20, 6.617445e-24, -0.0001128051, 1)
-bones/27/rotation = Quaternion(4.6707196e-06, 2.430471e-09, 0.000520363, 0.9999999)
-bones/28/rotation = Quaternion(4.8573726e-21, -6.617445e-24, 0.00084623165, 0.99999964)
-bones/29/rotation = Quaternion(-1.2429584e-21, 8.271806e-25, -0.0004967778, 0.9999999)
-bones/37/rotation = Quaternion(-0.0015313593, 0.0007452554, -0.006073121, 0.99998015)
-bones/45/rotation = Quaternion(-4.2758992e-07, -8.846624e-12, 2.0689502e-05, 1)
-bones/55/rotation = Quaternion(2.704767e-09, 0.0103564765, 0.9999464, 2.6115273e-07)
-bones/60/rotation = Quaternion(2.8191485e-09, 0.01036796, 0.9999463, 2.71895e-07)
-
-[node name="LHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/X Bot/Skeleton3D" index="2" unique_id=284305114]
+[node name="LHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="2" unique_id=284305114]
 setting_count = 1
-settings/0/target_node = NodePath("../../../../LeftController/Target")
-settings/0/pole_node = NodePath("../../../../LeftController/Target/Pole")
-settings/0/root_bone_name = "mixamorig_LeftArm"
-settings/0/root_bone = 32
-settings/0/middle_bone_name = "mixamorig_LeftForeArm"
-settings/0/middle_bone = 33
-settings/0/pole_direction = 0
-settings/0/end_bone_name = "mixamorig_LeftHand"
-settings/0/end_bone = 34
-settings/0/use_virtual_end = false
-settings/0/extend_end_bone = false
-
-[node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/X Bot/Skeleton3D" index="3" unique_id=1887893785]
-setting_count = 1
-settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_LeftHand"
-settings/0/apply_bone = 34
-settings/0/reference_type = 1
-settings/0/reference_node = NodePath("../../../../LeftController/Target")
-settings/0/copy = 6
-settings/0/axes = 7
-settings/0/invert = 0
-settings/0/additive = false
-
-[node name="LHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/X Bot/Skeleton3D" index="4" unique_id=157048250]
-setting_count = 1
-settings/0/root_bone_name = "mixamorig_LeftArm"
-settings/0/root_bone = 32
-settings/0/end_bone_name = "mixamorig_LeftHand"
-settings/0/end_bone = 34
-settings/0/extend_end_bone = true
-settings/0/end_bone_direction = 6
-settings/0/twist_from_rest = true
-settings/0/disperse_mode = 1
-settings/0/weight_position = 0.15
-settings/0/joint_count = 3
-
-[node name="RHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/X Bot/Skeleton3D" index="5" unique_id=1011673976]
-setting_count = 1
-settings/0/target_node = NodePath("../../../../RightController/Target")
-settings/0/pole_node = NodePath("../../../../RightController/Target/Pole")
-settings/0/root_bone_name = "mixamorig_RightArm"
+settings/0/target_node = NodePath("../../../../../LeftController/Target")
+settings/0/pole_node = NodePath("../../../../../LeftController/Target/Pole")
+settings/0/root_bone_name = "upperarm_l"
 settings/0/root_bone = 8
-settings/0/middle_bone_name = "mixamorig_RightForeArm"
+settings/0/middle_bone_name = "lowerarm_l"
 settings/0/middle_bone = 9
 settings/0/pole_direction = 0
-settings/0/end_bone_name = "mixamorig_RightHand"
+settings/0/end_bone_name = "hand_l"
 settings/0/end_bone = 10
 settings/0/use_virtual_end = false
 settings/0/extend_end_bone = false
 
-[node name="RHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/X Bot/Skeleton3D" index="6" unique_id=1013371638]
+[node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="3" unique_id=1887893785]
 setting_count = 1
 settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_RightHand"
+settings/0/apply_bone_name = "hand_l"
 settings/0/apply_bone = 10
 settings/0/reference_type = 1
-settings/0/reference_node = NodePath("../../../../RightController/Target")
+settings/0/reference_node = NodePath("../../../../../LeftController/Target")
 settings/0/copy = 6
 settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="RHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/X Bot/Skeleton3D" index="7" unique_id=132739618]
+[node name="LHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="4" unique_id=157048250]
 setting_count = 1
-settings/0/root_bone_name = "mixamorig_RightArm"
+settings/0/root_bone_name = "upperarm_l"
 settings/0/root_bone = 8
-settings/0/end_bone_name = "mixamorig_RightHand"
+settings/0/end_bone_name = "hand_l"
 settings/0/end_bone = 10
 settings/0/extend_end_bone = true
 settings/0/end_bone_direction = 6
@@ -219,38 +153,38 @@ settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
 settings/0/joint_count = 3
 
-[node name="LATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/X Bot/Skeleton3D" index="8" unique_id=684703358]
+[node name="RHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="5" unique_id=1011673976]
 setting_count = 1
-settings/0/target_node = NodePath("../../../../LAnkle/Target")
-settings/0/pole_node = NodePath("../../../../LAnkle/Target/Pole")
-settings/0/root_bone_name = "mixamorig_LeftUpLeg"
-settings/0/root_bone = 60
-settings/0/middle_bone_name = "mixamorig_LeftLeg"
-settings/0/middle_bone = 61
+settings/0/target_node = NodePath("../../../../../RightController/Target")
+settings/0/pole_node = NodePath("../../../../../RightController/Target/Pole")
+settings/0/root_bone_name = "upperarm_r"
+settings/0/root_bone = 27
+settings/0/middle_bone_name = "lowerarm_r"
+settings/0/middle_bone = 28
 settings/0/pole_direction = 0
-settings/0/end_bone_name = "mixamorig_LeftFoot"
-settings/0/end_bone = 62
+settings/0/end_bone_name = "hand_r"
+settings/0/end_bone = 29
 settings/0/use_virtual_end = false
 settings/0/extend_end_bone = false
 
-[node name="LACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/X Bot/Skeleton3D" index="9" unique_id=302248255]
+[node name="RHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="6" unique_id=1013371638]
 setting_count = 1
 settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_LeftFoot"
-settings/0/apply_bone = 62
+settings/0/apply_bone_name = "hand_r"
+settings/0/apply_bone = 29
 settings/0/reference_type = 1
-settings/0/reference_node = NodePath("../../../../LAnkle/Target")
+settings/0/reference_node = NodePath("../../../../../RightController/Target")
 settings/0/copy = 6
 settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="LABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/X Bot/Skeleton3D" index="10" unique_id=414744833]
+[node name="RHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="7" unique_id=132739618]
 setting_count = 1
-settings/0/root_bone_name = "mixamorig_LeftUpLeg"
-settings/0/root_bone = 60
-settings/0/end_bone_name = "mixamorig_LeftFoot"
-settings/0/end_bone = 62
+settings/0/root_bone_name = "upperarm_r"
+settings/0/root_bone = 27
+settings/0/end_bone_name = "hand_r"
+settings/0/end_bone = 29
 settings/0/extend_end_bone = true
 settings/0/end_bone_direction = 6
 settings/0/twist_from_rest = true
@@ -258,38 +192,38 @@ settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
 settings/0/joint_count = 3
 
-[node name="RATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/X Bot/Skeleton3D" index="11" unique_id=1363437693]
+[node name="LATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="8" unique_id=684703358]
 setting_count = 1
-settings/0/target_node = NodePath("../../../../RAnkle/Target")
-settings/0/pole_node = NodePath("../../../../RAnkle/Target/Pole")
-settings/0/root_bone_name = "mixamorig_RightUpLeg"
-settings/0/root_bone = 55
-settings/0/middle_bone_name = "mixamorig_RightLeg"
-settings/0/middle_bone = 56
+settings/0/target_node = NodePath("../../../../../LAnkle/Target")
+settings/0/pole_node = NodePath("../../../../../LAnkle/Target/Pole")
+settings/0/root_bone_name = "thigh_l"
+settings/0/root_bone = 47
+settings/0/middle_bone_name = "calf_l"
+settings/0/middle_bone = 48
 settings/0/pole_direction = 0
-settings/0/end_bone_name = "mixamorig_RightFoot"
-settings/0/end_bone = 57
+settings/0/end_bone_name = "foot_l"
+settings/0/end_bone = 49
 settings/0/use_virtual_end = false
 settings/0/extend_end_bone = false
 
-[node name="RACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/X Bot/Skeleton3D" index="12" unique_id=214328789]
+[node name="LACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="9" unique_id=302248255]
 setting_count = 1
 settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_RightFoot"
-settings/0/apply_bone = 57
+settings/0/apply_bone_name = "foot_l"
+settings/0/apply_bone = 49
 settings/0/reference_type = 1
-settings/0/reference_node = NodePath("../../../../RAnkle/Target")
+settings/0/reference_node = NodePath("../../../../../LAnkle/Target")
 settings/0/copy = 6
 settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="RABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/X Bot/Skeleton3D" index="13" unique_id=358631906]
+[node name="LABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="10" unique_id=414744833]
 setting_count = 1
-settings/0/root_bone_name = "mixamorig_RightUpLeg"
-settings/0/root_bone = 55
-settings/0/end_bone_name = "mixamorig_RightFoot"
-settings/0/end_bone = 57
+settings/0/root_bone_name = "thigh_l"
+settings/0/root_bone = 47
+settings/0/end_bone_name = "foot_l"
+settings/0/end_bone = 49
 settings/0/extend_end_bone = true
 settings/0/end_bone_direction = 6
 settings/0/twist_from_rest = true
@@ -297,46 +231,75 @@ settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
 settings/0/joint_count = 3
 
-[node name="CCDIK3D" type="CCDIK3D" parent="AvatarRoot/X Bot/Skeleton3D" index="14" unique_id=393676948]
+[node name="RATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="11" unique_id=1363437693]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../RAnkle/Target")
+settings/0/pole_node = NodePath("../../../../../RAnkle/Target/Pole")
+settings/0/root_bone_name = "thigh_r"
+settings/0/root_bone = 51
+settings/0/middle_bone_name = "calf_r"
+settings/0/middle_bone = 52
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "foot_r"
+settings/0/end_bone = 53
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="RACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="12" unique_id=214328789]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "foot_r"
+settings/0/apply_bone = 53
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../RAnkle/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="RABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="13" unique_id=358631906]
+setting_count = 1
+settings/0/root_bone_name = "thigh_r"
+settings/0/root_bone = 51
+settings/0/end_bone_name = "foot_r"
+settings/0/end_bone = 53
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="CCDIK3D" type="CCDIK3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="14" unique_id=393676948]
 angular_delta_limit = 0.08726646259971647
 setting_count = 1
-settings/0/target_node = NodePath("../../../../XRCamera3D/Target")
-settings/0/root_bone_name = "mixamorig_Spine"
-settings/0/root_bone = 1
-settings/0/end_bone_name = "mixamorig_Head"
-settings/0/end_bone = 5
+settings/0/target_node = NodePath("../../../../../XRCamera3D/Target")
+settings/0/root_bone_name = "spine_01"
+settings/0/root_bone = 2
+settings/0/end_bone_name = "head"
+settings/0/end_bone = 46
 settings/0/extend_end_bone = true
 settings/0/end_bone/direction = 6
 settings/0/end_bone/length = 0.0
 settings/0/joint_count = 5
 settings/0/joints/0/rotation_axis = 3
-settings/0/joints/0/limitation = SubResource("JointLimitationCone3D_x2gul")
-settings/0/joints/0/limitation/right_axis = 0
-settings/0/joints/0/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/0/limitation = null
 settings/0/joints/1/rotation_axis = 3
-settings/0/joints/1/limitation = SubResource("JointLimitationCone3D_kfx4a")
-settings/0/joints/1/limitation/right_axis = 0
-settings/0/joints/1/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/1/limitation = null
 settings/0/joints/2/rotation_axis = 3
-settings/0/joints/2/limitation = SubResource("JointLimitationCone3D_7e1ug")
-settings/0/joints/2/limitation/right_axis = 0
-settings/0/joints/2/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/2/limitation = null
 settings/0/joints/3/rotation_axis = 3
-settings/0/joints/3/limitation = SubResource("JointLimitationCone3D_8px4q")
-settings/0/joints/3/limitation/right_axis = 0
-settings/0/joints/3/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/3/limitation = null
 settings/0/joints/4/rotation_axis = 3
-settings/0/joints/4/limitation = SubResource("JointLimitationCone3D_2118c")
-settings/0/joints/4/limitation/right_axis = 0
-settings/0/joints/4/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/4/limitation = null
 
-[node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/X Bot/Skeleton3D" index="15" unique_id=1319298159]
+[node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/AvatarTest/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1839210799, 1593878217) index="15" unique_id=1319298159]
 setting_count = 1
 settings/0/amount = 1.0
 settings/0/apply_bone_name = "mixamorig_Neck"
-settings/0/apply_bone = 4
+settings/0/apply_bone = -1
 settings/0/reference_type = 1
-settings/0/reference_node = NodePath("../../../../XRCamera3D/Target")
+settings/0/reference_node = NodePath("../../../../../XRCamera3D/Target")
 settings/0/copy = 6
 settings/0/axes = 7
 settings/0/invert = 0
@@ -345,4 +308,9 @@ settings/0/additive = false
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=96480807]
 replication_config = SubResource("SceneReplicationConfig_7e1ug")
 
-[editable path="AvatarRoot/X Bot"]
+[node name="AudioRecorder" type="AudioStreamPlayer3D" parent="." unique_id=1974295745]
+stream = SubResource("AudioStreamMicrophone_7e1ug")
+autoplay = true
+bus = &"Record"
+
+[editable path="AvatarRoot/AvatarTest"]

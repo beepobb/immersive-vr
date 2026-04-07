@@ -57,7 +57,11 @@ func del_player(id):
 	print("delete player: " + str(id))
 	
 func _exit_tree() -> void:
+	if multiplayer.multiplayer_peer == null:
+		return
 	if not multiplayer.is_server():
 		return
-	multiplayer.peer_connected.disconnect(add_player)
-	multiplayer.peer_disconnected.disconnect(del_player)
+	if multiplayer.peer_connected.is_connected(add_player):
+		multiplayer.peer_connected.disconnect(add_player)
+	if multiplayer.peer_disconnected.is_connected(del_player):
+		multiplayer.peer_disconnected.disconnect(del_player)

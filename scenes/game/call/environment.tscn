@@ -21,7 +21,6 @@ glow_enabled = true
 in_call = true
 
 [node name="PlayerLoader" parent="." index="0" unique_id=1066474312]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1.647852)
 in_call = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=991987366]
