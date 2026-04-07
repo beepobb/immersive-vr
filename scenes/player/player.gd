@@ -22,6 +22,20 @@ func _configure_local_player(is_local_player: bool) -> void:
 		if child is XRToolsMovementProvider:
 			child.enabled = is_local_player
 
+	# Important: only local avatar should bind to real XR trackers.
+	# Remote avatars must be driven only by MultiplayerSynchronizer.
+	_set_tracker_binding("LeftController", is_local_player, "left_hand")
+	_set_tracker_binding("RightController", is_local_player, "right_hand")
+	_set_tracker_binding("Waist", is_local_player, "/user/vive_tracker_htcx/role/waist")
+	_set_tracker_binding("LAnkle", is_local_player, "/user/vive_tracker_htcx/role/left_ankle")
+	_set_tracker_binding("RAnkle", is_local_player, "/user/vive_tracker_htcx/role/right_ankle")
+
+
+func _set_tracker_binding(node_name: String, is_local_player: bool, tracker_path: String) -> void:
+	var c := get_node_or_null(node_name)
+	if c and c is XRController3D:
+		c.tracker = StringName(tracker_path) if is_local_player else &""
+
 
 func _get_descendants(node: Node) -> Array[Node]:
 	var descendants: Array[Node] = []
@@ -34,6 +48,7 @@ func _ready():
 	var sync := get_node("MultiplayerSynchronizer")
 	var local_peer_id := multiplayer.get_unique_id()
 	_is_local_player = get_multiplayer_authority() == local_peer_id
+	_configure_local_player(_is_local_player)
 	$XRCamera3D.current = _is_local_player
 	print(
 		"Player body auth=" + str(get_multiplayer_authority()) +
@@ -52,10 +67,10 @@ func _ready():
 		#GameState.avatar = self
 		#GameState.apply_to_avatar()
 
-func _on_right_controller_button_pressed(name: String) -> void:
+func _on_right_controller_button_pressed(action_name: String) -> void:
 	if not _is_local_player:
 		return
-	if name == "ax_button":
+	if action_name == "ax_button":
 		if $RightController/in_call_control_viewport.visible == false:
 			$RightController/in_call_control_viewport.show()
 			$LeftController/FunctionPointer.show()
