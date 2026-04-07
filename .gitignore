@@ -67,5 +67,14 @@ mono_crash.*.json
 
 # End of https://www.toptal.com/developers/gitignore/api/godot
 
-*.apk
-android/
+# Transcript ASR module
+tools/transcript_asr/.venv/
+tools/transcript_asr/outputs/
+tools/transcript_asr/data/
+
+# Audio files (extra safety)
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
