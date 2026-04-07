@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://de0ksgrkdi7cq"]
+[gd_scene format=3 uid="uid://ddyv7o0bysya"]
 
 [ext_resource type="PackedScene" uid="uid://dsgrm6pw5mvp5" path="res://assets/environment/Bird For Flock Animation/bird.glb" id="1_66ihq"]
 [ext_resource type="Script" uid="uid://cigv72xbmoosh" path="res://assets/models/bird.gd" id="2_6to7x"]

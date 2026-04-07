@@ -24,6 +24,10 @@ func _ready() -> void:
 	add_child(connection_timer)
 	connection_timer.timeout.connect(_on_connection_timeout)
 	
+	confirm_button.hide()
+	confirm_button.disabled = false
+	confirm_button.pressed.connect(_on_confirm_pressed)
+	
 	# Connect multiplayer signals
 	multiplayer.connected_to_server.connect(_on_connected)
 	multiplayer.connection_failed.connect(_on_connection_failed)
@@ -61,6 +65,21 @@ func _on_join_pressed() -> void:
 		Roles.set_role(Roles.Role.PATIENT)
 		_set_status("Connecting to " + usr_input)
 		connection_timer.start()
+		
+func _on_confirm_pressed() -> void:
+	usr_input = ip_input.text
+	if usr_input == "":
+		return
+
+	print(usr_input)
+	confirm_button.disabled = true
+
+	var peer = ENetMultiplayerPeer.new()
+	peer.create_client(usr_input, PORT)
+	multiplayer.multiplayer_peer = peer
+	Roles.set_role(Roles.Role.PATIENT)
+	_set_status("Connecting to " + usr_input)
+	connection_timer.start()
 
 func _on_connected() -> void:
 	connection_timer.stop()
@@ -70,13 +89,13 @@ func _on_connected() -> void:
 func _on_connection_failed() -> void:
 	connection_timer.stop()
 	_set_status("Connection failed! No host found.")
-	join_button.disabled = false
+	confirm_button.disabled = false
 
 func _on_connection_timeout() -> void:
 	var peer := multiplayer.multiplayer_peer
 	if peer and peer.get_connection_status() != MultiplayerPeer.CONNECTION_CONNECTED:
 		_set_status("Failed to connect: no host available.")
-	join_button.disabled = false
+	confirm_button.disabled = false
 	
 func load_lobby() -> void:
 	var scene_base := XRTools.find_xr_ancestor(self , "*", "XRToolsSceneBase")

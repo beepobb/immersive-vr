@@ -32,8 +32,8 @@ XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
 EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
 XrSimulator="*uid://ctltchlf2j2r4"
 GameState="*res://scripts/game_state.gd"
-UIButtonAudio="*uid://5m4lymlum1o0"
-Roles="*uid://bfkymv0c0ngqy"
+UIButtonAudio="*res://scripts/ui/ui_button_audio.gd"
+Roles="*res://scripts/roles.gd"
 
 [debug_draw_3d]
 
