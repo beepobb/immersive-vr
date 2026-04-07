@@ -163,7 +163,6 @@ async def transcribe_audio(
         if temp_path and os.path.exists(temp_path):
             os.remove(temp_path)
 
-
 @app.post("/transcribe-docx")
 async def transcribe_audio_to_docx(
     background_tasks: BackgroundTasks,
@@ -191,17 +190,29 @@ async def transcribe_audio_to_docx(
                 result.get("segments", []),
                 speaker_turns
             )
+
             result["speaker_turns"] = speaker_turns
             result["speaker_segments"] = speaker_segments
 
             if speaker_segments:
                 transcript_lines = []
+
+                speaker_map = {
+                    "SPEAKER_00": "Speaker 1",
+                    "SPEAKER_01": "Speaker 2",
+                    "SPEAKER_02": "Speaker 3",
+                    "SPEAKER_03": "Speaker 4",
+                }
+
                 for seg in speaker_segments:
-                    speaker = seg.get("speaker", "UNKNOWN")
+                    raw_speaker = seg.get("speaker", "UNKNOWN")
+                    speaker = speaker_map.get(raw_speaker, raw_speaker)
                     text = seg.get("text", "").strip()
+
                     if text:
                         transcript_lines.append(f"{speaker}: {text}")
-                transcript_text = "\n".join(transcript_lines).strip()
+
+                transcript_text = "\n\n".join(transcript_lines).strip()
 
         if not transcript_text:
             raise HTTPException(status_code=500, detail="No transcript text generated")

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" format=4 uid="uid://14kqmrsu81bn"]
+[gd_resource type="Theme" load_steps=30 format=4 uid="uid://14kqmrsu81bn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asdm2"]
 content_margin_left = 20.0
@@ -207,15 +207,6 @@ data = PackedByteArray("d09GMgABAAAAALU4ABEAAAABjRQAALTXAAEAAAAAAAAAAAAAAAAAAAAA
 font_name = "Open Sans SemiBold"
 style_name = "SemiBold"
 font_weight = 600
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
 cache/0/16/0/ascent = 18.0
 cache/0/16/0/descent = 5.0
 cache/0/16/0/underline_position = 1.609375
