@@ -45,9 +45,10 @@ func _ready():
 		" is_local=" + str(is_local_player)
 	)
 
-	if in_call and is_local_player:
-		GameState.avatar = self
-		GameState.apply_to_avatar()
+	# for makehuman
+	#if in_call and is_local_player:
+		#GameState.avatar = self
+		#GameState.apply_to_avatar()
 
 	_setup_recording(is_local_player)
 
@@ -129,3 +130,11 @@ func _build_patient_recording_path() -> String:
 		now.second,
 	]
 	return "user://therapy_session_patient_%s.wav" % datetime_stamp
+
+
+func _on_right_controller_button_pressed(name: String) -> void:
+	if name == "ax_button":
+		if $RightController/in_call_control_viewport.visible == false:
+			$RightController/in_call_control_viewport.show()
+		else:
+			$RightController/in_call_control_viewport.hide()

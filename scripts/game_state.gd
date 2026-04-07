@@ -6,6 +6,7 @@ const LOBBY_SCENE_PATH := "res://scenes/game/lobby/lobby.tscn"
 const AVATAR_CUSTOMISATION_SCENE_PATH := "res://scenes/game/avatar_customisation/avatar_customisation.tscn"
 const SELECT_ENVIRONMENT_SCENE_PATH := "res://scenes/game/select_environment/select_environment.tscn"
 const IN_CALL_SCENE_PATH := "res://scenes/game/call/environment.tscn"
+const CALL_SUMMARY_SCENE_PATH := "res://scenes/game/call/call_summary.tscn"
 
 const DEFAULT_VISUAL_PRESETS := {
 	"male": {
@@ -47,6 +48,9 @@ signal environment_updated(environment_id: String)
 var _appearance_service := AvatarAppearanceService.new()
 var _manifests_loaded := false
 var _lobby_network_connected := false
+
+var recording
+var recording_path: String
 
 func reset() -> void:
 	gender = "female"
@@ -184,7 +188,7 @@ func end_call_session(notice: String) -> void:
 	if peer:
 		peer.close()
 		multiplayer.multiplayer_peer = null
-	return_to_home(notice)
+	load_scene(CALL_SUMMARY_SCENE_PATH, notice)
 
 func _cleanup_call_state() -> void:
 	peer_roles.clear()
@@ -312,7 +316,7 @@ func _role_to_text(role_value: int) -> String:
 
 @rpc("authority", "call_remote")
 func start_call() -> void:
-	GameState.load_scene(IN_CALL_SCENE_PATH)
+	load_scene(IN_CALL_SCENE_PATH)
 
 func start_call_for_clients():
 	if !multiplayer.is_server():
@@ -323,3 +327,7 @@ func start_call_for_clients():
 	for peer_id in multiplayer.get_peers():
 		print("Calling peer:", peer_id)
 		start_call.rpc_id(peer_id)
+		
+func rest_recording_meta():
+	recording = null
+	recording_path = ""

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cqfpc2fjvnc50" path="res://scenes/game/call/session_header.tscn" id="1_ifvtl"]
 [ext_resource type="PackedScene" uid="uid://ceeuw74kntix2" path="res://scenes/game/call/end_session.scn" id="2_5iv50"]
+[ext_resource type="Script" uid="uid://cpcbeittqo0m1" path="res://scripts/ui/call_session/session_controls.gd" id="3_5iv50"]
 
 [node name="Control" type="Control" unique_id=198231719]
 layout_mode = 3
@@ -20,3 +21,6 @@ layout_mode = 0
 offset_top = 107.0
 offset_right = 488.0
 offset_bottom = 177.0
+script = ExtResource("3_5iv50")
+
+[editable path="CallSession"]

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var end_call_button: Button = %EndCallButton
+@onready var end_call_button: Button = $"HBoxContainer/End Call"
 
 func _ready() -> void:
 	var is_therapist = Roles.user_role == Roles.Role.THERAPIST

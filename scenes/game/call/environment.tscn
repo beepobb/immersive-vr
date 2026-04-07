@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dwv36ohpotvy3"]
 
 [ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_00014"]
-[ext_resource type="Script" uid="uid://cpcbeittqo0m1" path="res://scripts/ui/call_session/session_controls.gd" id="3_dm4p5"]
 [ext_resource type="Script" uid="uid://cncvrq0yb88s8" path="res://scripts/environment_scene.gd" id="4_pk5nr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3jj1w"]
@@ -30,31 +29,13 @@ shadow_enabled = true
 [node name="EnvironmentRoot" type="Node3D" parent="." index="2" unique_id=1926923436]
 unique_name_in_owner = true
 
-[node name="InCallUI" type="CanvasLayer" parent="." index="3" unique_id=833653870]
-script = ExtResource("3_dm4p5")
-
-[node name="MarginContainer" type="MarginContainer" parent="InCallUI" index="0" unique_id=974221837]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -260.0
-offset_top = 24.0
-offset_right = -24.0
-offset_bottom = 84.0
-grow_horizontal = 0
-
-[node name="EndCallButton" type="Button" parent="InCallUI/MarginContainer" index="0" unique_id=1394318328]
-unique_name_in_owner = true
-layout_mode = 2
-text = "End Call"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="4" unique_id=1423901652]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="3" unique_id=1423901652]
 environment = SubResource("Environment_3gbvy")
 
-[node name="EnvironmentManager" type="Node3D" parent="." index="5" unique_id=1796291922]
+[node name="EnvironmentManager" type="Node3D" parent="." index="4" unique_id=1796291922]
 script = ExtResource("4_pk5nr")
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." index="6" unique_id=585296081]
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." index="5" unique_id=585296081]
 _spawnable_scenes = PackedStringArray("uid://jg1qkgdrf47o")
 spawn_path = NodePath("../PlayerLoader")
 spawn_limit = 2

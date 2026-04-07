@@ -34,7 +34,7 @@ func _ready() -> void:
 		player.name = "XROrigin3D"
 	add_child(player)
 	player.global_position = spawn_point
-
+	
 func _trace_player_position(tag: String) -> void:
 	if player == null:
 		print("[%s] player is null" % tag)

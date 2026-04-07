@@ -14,6 +14,7 @@ tracker = &"left_hand"
 [node name="LeftHand" parent="LeftHand" unique_id=609038539 instance=ExtResource("1_3lhtu")]
 
 [node name="FunctionPointer" parent="LeftHand" unique_id=195987231 instance=ExtResource("2_stpnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
 
 [node name="RightHand" type="XRController3D" parent="." unique_id=605090538]
 tracker = &"right_hand"
@@ -21,3 +22,4 @@ tracker = &"right_hand"
 [node name="RightHand" parent="RightHand" unique_id=131269226 instance=ExtResource("3_qns8v")]
 
 [node name="FunctionPointer" parent="RightHand" unique_id=325838450 instance=ExtResource("2_stpnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
