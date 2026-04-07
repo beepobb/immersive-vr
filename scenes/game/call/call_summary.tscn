@@ -7,8 +7,13 @@
 
 [node name="CallSummary" unique_id=621000924 instance=ExtResource("1_8ddht")]
 
+[node name="PlayerLoader" parent="." index="0" unique_id=1066474312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 0)
+moving = false
+spawn_point = Vector3(0, 1.74, 0)
+
 [node name="Viewport2Din3D" parent="." index="1" unique_id=651325637 instance=ExtResource("2_nn4wk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04929644, 1.2739626, -1.4814885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049, 2.8, -1.481)
 screen_size = Vector2(1.28, 0.72)
 scene = ExtResource("3_r2qld")
 viewport_size = Vector2(1280, 720)
@@ -17,8 +22,3 @@ scene_properties_keys = PackedStringArray("end_call_summary.gd", "circular_hall_
 circular_hall_scene_path = "res://scenes/environment/circular_hall.tscn"
 
 [node name="Room" parent="." index="2" unique_id=1972015303 instance=ExtResource("4_g3pbj")]
-
-[node name="PlayerLoader" parent="." index="3" unique_id=1066474312]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 0)
-moving = false
-spawn_point = Vector3(0, 1.74, 0)

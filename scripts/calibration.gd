@@ -9,11 +9,11 @@ extends Node3D
 @export var right_foot: XRController3D
 
 @export_group("Calibration")
-@export var avatar_scene: PackedScene = preload("res://assets/X Bot.fbx")
+@export var avatar_scene: PackedScene = preload("res://assets/Remy.fbx")
 @export var lfoot_bone_name: String = "mixamorig_LeftFoot"
 @export var head_bone_name: String = "mixamorig_Head"
 @export var eye_offset: float = 0.0
-var fallback_avatar: PackedScene = preload("res://assets/X Bot.fbx")
+var fallback_avatar: PackedScene = preload("res://assets/Remy.fbx")
 var fallback: bool = false
 var player_eye_height: float = 0.0
 var avatar_eye_height: float = 0.0
@@ -36,25 +36,24 @@ var body_axes_initialised: bool = false
 func _ready() -> void:
 	if (hmd == null):
 		push_error("HMD not found. Aborting...")
-	print(XRServer.tracker_added.connect(poop))
-
-func poop(n, t):
-	print(n)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-
+	await get_tree().process_frame
+	load_player_scaled()
 	
 	#if (avatar_loaded and !body_axes_initialised):
 		#save_body_axes()
 	
 func load_player_scaled() -> void:
 	player_eye_height = hmd.global_position.y
+	print(player_eye_height)
 	
-	var player = get_node_or_null("../XROrigin3D/AvatarRoot/X Bot")
+	var player = get_node_or_null("../XROrigin3D/AvatarRoot/Remy")
 	# all avatar scene need skeleton3d node to be first child
 	var player_skeleton: Skeleton3D = player.get_child(0)
 	var lfoot_bone_idx: int = player_skeleton.find_bone(lfoot_bone_name)
 	var head_bone_idx: int = player_skeleton.find_bone(head_bone_name)
+	print(player)
+	print(lfoot_bone_idx)
 	
 	if (lfoot_bone_idx == -1):
 		push_warning("Left foot bone name is invalid. Using default avatar...")

@@ -2,7 +2,6 @@ extends Node3D
 
 @onready var avatarRoot: Node3D = get_node_or_null("../AvatarTest") as Node3D
 @onready var lobby_ui_root: Node3D = get_node_or_null("../UI") as Node3D
-@onready var platform: Node3D = get_node_or_null("../EnvironmentRoot/Room/MeshInstance3D")
 @onready var disclaimer: Node3D = get_node_or_null("../DisclaimerViewports")
 
 var disclaimer_popup: Node3D = null
@@ -18,7 +17,6 @@ func _ready() -> void:
 		_set_lobby_mouse_input_enabled(false)
 		avatarRoot.hide()
 		lobby_ui_root.hide()
-		platform.hide()
 		disclaimer.show()
 		if disclaimer.has_signal("accepted"):
 			if not disclaimer.accepted.is_connected(_on_disclaimer_accepted):
@@ -28,7 +26,6 @@ func _ready() -> void:
 		call_deferred("_hide_disclaimer_on_return")
 		avatarRoot.show()
 		lobby_ui_root.show()
-		platform.show()
 		_set_lobby_mouse_input_enabled(true)
 
 func _hide_disclaimer_on_return() -> void:
@@ -56,4 +53,3 @@ func _on_disclaimer_accepted() -> void:
 	disclaimer.hide()
 	avatarRoot.show()
 	lobby_ui_root.show()
-	platform.show()

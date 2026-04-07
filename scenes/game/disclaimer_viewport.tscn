@@ -12,9 +12,9 @@ script = ExtResource("1_balkl")
 
 [node name="DisclaimerPopup" parent="." unique_id=278983125 instance=ExtResource("1_yymyn")]
 rotation_order = 5
-screen_size = Vector2(3, 1.5)
+screen_size = Vector2(2.48, 1.5)
 scene = ExtResource("3_0eto3")
-viewport_size = Vector2(1280, 720)
+viewport_size = Vector2(1280, 871)
 transparent = 1
 scene_properties_keys = PackedStringArray("disclaimer_popup.gd")
 

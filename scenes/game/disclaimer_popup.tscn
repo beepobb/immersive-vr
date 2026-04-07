@@ -62,9 +62,9 @@ corner_radius_bottom_left = 20
 
 [node name="DisclaimerPopup" type="Control" unique_id=262766635]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.21
+offset_bottom = -0.2000122
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2arxp")
@@ -76,11 +76,8 @@ color = Color(1, 1, 1, 0.4)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1778366704]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1274.0
+offset_bottom = 865.0
 theme = ExtResource("1_85ws6")
 theme_override_styles/panel = SubResource("StyleBoxFlat_2arxp")
 
