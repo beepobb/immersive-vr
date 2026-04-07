@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl2kkuxujyj6q"]
+[gd_scene load_steps=9 format=3 uid="uid://bl2kkuxujyj6q"]
 
 [ext_resource type="PackedScene" uid="uid://0rpgxarpuatj" path="res://assets/metaHumanHead_52shapekeys_01.fbx" id="1_11l3f"]
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_uvn5p"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b28plfqfpqg3w" path="res://assets/Avatar/avatar w face bs/bald male face.glb" id="4_umyts"]
 [ext_resource type="PackedScene" uid="uid://dvo5j26ukn4fd" path="res://assets/Avatar/avatar w face bs/bald female .glb" id="5_qq7yf"]
 [ext_resource type="PackedScene" uid="uid://dapqre2k3ntaw" path="res://assets/Avatar/avatar w face bs/Remy.fbx" id="6_qq7yf"]
+[ext_resource type="PackedScene" uid="uid://cdk0sly1cyau2" path="res://assets/Avatar/avatar w face bs/megan.glb" id="7_56o05"]
 
 [sub_resource type="Environment" id="Environment_11l3f"]
 
@@ -55,6 +56,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18494439, 0, -1.1172895)
 [node name="Remy" parent="." instance=ExtResource("6_qq7yf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7234638, -0.8497528, -3.6428013)
 
+[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="Remy"]
+target = NodePath("../Skeleton3D/Body")
+
+[node name="megan" parent="." instance=ExtResource("7_56o05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4466634, -0.27177882, -1.8249998)
+
+[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="megan"]
+target = NodePath("../Armature/Skeleton3D/Ch22_Body")
+
 [editable path="metaHumanHead_52shapekeys_01"]
 [editable path="male3"]
 [editable path="bald male face"]
+[editable path="Remy"]
+[editable path="megan"]
