@@ -319,8 +319,16 @@ replication_config = SubResource("SceneReplicationConfig_7e1ug")
 stream = SubResource("AudioStreamGenerator_ljrr4")
 autoplay = true
 
-[node name="Calibration" type="Node3D" parent="." unique_id=294551844]
+[node name="Calibration" type="Node3D" parent="." unique_id=294551844 node_paths=PackedStringArray("hmd", "left_hand", "right_hand", "waist", "left_foot", "right_foot")]
 script = ExtResource("11_8px4q")
+hmd = NodePath("../XRCamera3D")
+left_hand = NodePath("../LeftController")
+right_hand = NodePath("../RightController")
+waist = NodePath("../Waist")
+left_foot = NodePath("../LAnkle")
+right_foot = NodePath("../RAnkle")
+avatar_scene = ExtResource("9_7e1ug")
+eye_offset = 0.1
 
 [connection signal="button_pressed" from="RightController" to="." method="_on_right_controller_button_pressed"]
 
