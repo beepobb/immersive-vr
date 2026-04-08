@@ -47,9 +47,9 @@ func load_player_scaled() -> void:
 	player_eye_height = hmd.global_position.y
 	print(player_eye_height)
 	
-	var player = get_node_or_null("../XROrigin3D/AvatarRoot/Remy")
+	var player = get_node_or_null("../AvatarRoot/Remy")
 	# all avatar scene need skeleton3d node to be first child
-	var player_skeleton: Skeleton3D = player.get_child(0)
+	var player_skeleton: Skeleton3D = player.get_child(0).get_child(0)
 	var lfoot_bone_idx: int = player_skeleton.find_bone(lfoot_bone_name)
 	var head_bone_idx: int = player_skeleton.find_bone(head_bone_name)
 	print(player)
@@ -81,7 +81,7 @@ func load_player_scaled() -> void:
 	print_debug("Scale: ", avatar_scale)
 	
 	# Load avatar into scene scaled to player height
-	player.scale = Vector3.ONE * avatar_scale
+	player.scale = Vector3.ONE * avatar_scale * 10
 	avatar_loaded = true
 	
 func save_body_axes() -> void:
