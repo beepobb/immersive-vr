@@ -84,7 +84,7 @@ func call_transcribe_docx(input_audio_path: String, output_docx_path: String) ->
 		"-H", "accept: application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 		"-F", "file=@" + abs_input,
 		"-F", "diarize=true",
-		"--output=" + abs_output
+		"--output", abs_output
 	]
 
 	var exit_code := OS.execute("curl", args, output, true)
