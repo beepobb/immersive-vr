@@ -50,6 +50,8 @@ properties/7/path = NodePath("RAnkle:transform")
 properties/7/spawn = true
 properties/7/replication_mode = 1
 
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_ljrr4"]
+
 [node name="XROrigin3D" type="XROrigin3D" unique_id=1503267807]
 script = ExtResource("1_kfx4a")
 in_call = true
