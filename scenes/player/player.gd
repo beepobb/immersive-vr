@@ -58,5 +58,7 @@ func _on_right_controller_button_pressed(name: String) -> void:
 	if name == "ax_button":
 		if $RightController/in_call_control_viewport.visible == false:
 			$RightController/in_call_control_viewport.show()
+			$LeftController/FunctionPointer.show()
 		else:
 			$RightController/in_call_control_viewport.hide()
+			$LeftController/FunctionPointer.hide()
