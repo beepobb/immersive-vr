@@ -18,6 +18,7 @@ var fallback: bool = false
 var player_eye_height: float = 0.0
 var avatar_eye_height: float = 0.0
 var avatar_loaded: bool = false
+@export var no_ft: bool = false
 
 # ======= BODY AXES ========
 var body_forward: Vector3
@@ -46,10 +47,25 @@ func _ready() -> void:
 func load_player_scaled() -> void:
 	player_eye_height = hmd.global_position.y
 	print(player_eye_height)
-	var avatar_name = get_node_or_null("../AvatarRoot").get_child(0).name
-	var player = get_node_or_null("../AvatarRoot/" + avatar_name)
+	var player
+	var player_skeleton
+	if no_ft:
+		$"../AvatarRoot/bernard".visible = true
+		$"../AvatarRoot/Remy".visible = false
+	else:
+		$"../AvatarRoot/bernard".visible = false
+		$"../AvatarRoot/Remy".visible = true
+	if not no_ft:
+		var avatar_name = get_node_or_null("../AvatarRoot").get_child(0).name
+		player = get_node_or_null("../AvatarRoot/" + avatar_name)
+		player_skeleton = player.get_child(0).get_child(0)
+		
+	else:
+		player = get_node_or_null("../AvatarRoot/Remy")
+		player_skeleton = player.get_child(0)
+		
 	# all avatar scene need skeleton3d node to be first child
-	var player_skeleton: Skeleton3D = player.get_child(0).get_child(0)
+	
 	var lfoot_bone_idx: int = player_skeleton.find_bone(lfoot_bone_name)
 	var head_bone_idx: int = player_skeleton.find_bone(head_bone_name)
 	print(player)
@@ -79,9 +95,11 @@ func load_player_scaled() -> void:
 	# Compute scale
 	var avatar_scale: float = player_eye_height / avatar_eye_height
 	print_debug("Scale: ", avatar_scale)
-	
+	if no_ft:
 	# Load avatar into scene scaled to player height
-	player.scale = Vector3.ONE * avatar_scale * 10
+		player.scale = Vector3.ONE * avatar_scale
+	else:
+		player.scale = Vector3.ONE * avatar_scale * 3
 	avatar_loaded = true
 	
 func save_body_axes() -> void:
