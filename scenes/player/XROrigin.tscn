@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jg1qkgdrf47o"]
 
 [ext_resource type="Script" uid="uid://cr4ye0kyb54an" path="res://scenes/player/player.gd" id="1_kfx4a"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_kfx4a"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_x2gul"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_kfx4a"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7e1ug"]
@@ -21,7 +22,33 @@ properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_ljrr4"]
+properties/1/path = NodePath(".:basis")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+properties/2/path = NodePath("XRCamera3D:transform")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+properties/3/path = NodePath("LeftController:transform")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+properties/4/path = NodePath("RightController:transform")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+properties/5/path = NodePath("Waist:transform")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+
+properties/6/path = NodePath("LAnkle:transform")
+properties/6/spawn = true
+properties/6/replication_mode = 1
+
+properties/7/path = NodePath("RAnkle:transform")
+properties/7/spawn = true
+properties/7/replication_mode = 1
 
 [node name="XROrigin3D" type="XROrigin3D" unique_id=1503267807]
 script = ExtResource("1_kfx4a")
@@ -40,7 +67,11 @@ tracker = &"left_hand"
 transform = Transform3D(0.18580386, -2.0891815e-08, 0.98258686, -0.9825868, -9.146643e-08, 0.18580383, 8.599192e-08, -0.9999999, -3.7522863e-08, 0, 0, 0)
 
 [node name="Pole" type="Marker3D" parent="LeftController/Target" unique_id=2005305365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071, -0.204, -0.056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025910378, -0.75166434, 0.13004434)
+
+[node name="FunctionPointer" parent="LeftController" unique_id=1684494267 instance=ExtResource("3_kfx4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+visible = false
 
 [node name="RightController" type="XRController3D" parent="." unique_id=2121946272]
 tracker = &"right_hand"
@@ -51,10 +82,11 @@ tracker = &"right_hand"
 transform = Transform3D(0.18566667, 3.5595647e-08, -0.982613, 0.982613, -4.2951374e-08, 0.18566667, -3.559565e-08, -1.0000001, -4.295138e-08, 0, 0, 0)
 
 [node name="Pole" type="Marker3D" parent="RightController/Target" unique_id=1127663476]
-transform = Transform3D(1.0000002, 0, 0, -1.4901161e-08, 1, 0, 2.9802322e-08, 0, 1.0000002, 0.071, -0.204, -0.056)
+transform = Transform3D(1.0000002, 0, 0, -1.4901161e-08, 1, 0, 2.9802322e-08, 0, 1.0000002, 0.026, -0.752, 0.13)
 
 [node name="in_call_control_viewport" parent="RightController" unique_id=1876519974 instance=ExtResource("7_7e1ug")]
 transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0.1, -0.399)
+visible = false
 
 [node name="Waist" type="XRController3D" parent="." unique_id=2128659618]
 tracker = &"/user/vive_tracker_htcx/role/waist"
@@ -100,7 +132,12 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="Remy" parent="AvatarRoot" unique_id=413273482 instance=ExtResource("10_8px4q")]
 
-[node name="LHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="7" unique_id=1865650410]
+[node name="Skeleton3D" parent="AvatarRoot/Remy" index="0" unique_id=1667281552]
+bones/17/rotation = Quaternion(0.25189453, -0.059464402, 0.22192542, 0.9400863)
+bones/34/rotation = Quaternion(0.008705135, -0.0008868446, -0.10134756, 0.9948126)
+bones/41/rotation = Quaternion(0.25189725, 0.05946548, -0.22192715, 0.9400852)
+
+[node name="LHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="7" unique_id=1865650410]
 setting_count = 1
 settings/0/target_node = NodePath("../../../../LeftController/Target")
 settings/0/pole_node = NodePath("../../../../LeftController/Target/Pole")
@@ -114,7 +151,7 @@ settings/0/end_bone = 12
 settings/0/use_virtual_end = false
 settings/0/extend_end_bone = false
 
-[node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="8" unique_id=2003297423]
+[node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="8" unique_id=2003297423]
 setting_count = 1
 settings/0/amount = 1.0
 settings/0/apply_bone_name = "mixamorig_LeftHand"
@@ -126,7 +163,7 @@ settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="LHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="9" unique_id=238084257]
+[node name="LHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" index="9" unique_id=238084257]
 setting_count = 1
 settings/0/root_bone_name = "mixamorig_LeftArm"
 settings/0/root_bone = 10
@@ -139,7 +176,7 @@ settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
 settings/0/joint_count = 3
 
-[node name="RHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="10" unique_id=372145464]
+[node name="RHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="10" unique_id=372145464]
 setting_count = 1
 settings/0/target_node = NodePath("../../../../RightController/Target")
 settings/0/pole_node = NodePath("../../../../RightController/Target/Pole")
@@ -153,7 +190,7 @@ settings/0/end_bone = 36
 settings/0/use_virtual_end = false
 settings/0/extend_end_bone = false
 
-[node name="RHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="11" unique_id=172825771]
+[node name="RHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="11" unique_id=172825771]
 setting_count = 1
 settings/0/amount = 1.0
 settings/0/apply_bone_name = "mixamorig_RightHand"
@@ -165,7 +202,7 @@ settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="RHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="12" unique_id=1776142330]
+[node name="RHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" index="12" unique_id=1776142330]
 setting_count = 1
 settings/0/root_bone_name = "mixamorig_RightArm"
 settings/0/root_bone = 34
@@ -178,7 +215,7 @@ settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
 settings/0/joint_count = 3
 
-[node name="LATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="13" unique_id=77550632]
+[node name="LATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="13" unique_id=77550632]
 setting_count = 1
 settings/0/target_node = NodePath("../../../../LAnkle/Target")
 settings/0/pole_node = NodePath("../../../../LAnkle/Target/Pole")
@@ -192,7 +229,7 @@ settings/0/end_bone = 59
 settings/0/use_virtual_end = false
 settings/0/extend_end_bone = false
 
-[node name="LACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="14" unique_id=709933215]
+[node name="LACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="14" unique_id=709933215]
 setting_count = 1
 settings/0/amount = 1.0
 settings/0/apply_bone_name = "mixamorig_LeftFoot"
@@ -204,7 +241,7 @@ settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="LABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="15" unique_id=1318857736]
+[node name="LABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" index="15" unique_id=1318857736]
 setting_count = 1
 settings/0/root_bone_name = "mixamorig_LeftUpLeg"
 settings/0/root_bone = 57
@@ -217,7 +254,7 @@ settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
 settings/0/joint_count = 3
 
-[node name="RATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="16" unique_id=2083406330]
+[node name="RATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="16" unique_id=2083406330]
 setting_count = 1
 settings/0/target_node = NodePath("../../../../RAnkle/Target")
 settings/0/pole_node = NodePath("../../../../RAnkle/Target/Pole")
@@ -231,7 +268,7 @@ settings/0/end_bone = 64
 settings/0/use_virtual_end = false
 settings/0/extend_end_bone = false
 
-[node name="RACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="17" unique_id=954693370]
+[node name="RACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="17" unique_id=954693370]
 setting_count = 1
 settings/0/amount = 1.0
 settings/0/apply_bone_name = "mixamorig_RightFoot"
@@ -243,7 +280,7 @@ settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="RABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="18" unique_id=1209096863]
+[node name="RABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" index="18" unique_id=1209096863]
 setting_count = 1
 settings/0/root_bone_name = "mixamorig_RightUpLeg"
 settings/0/root_bone = 62
@@ -256,7 +293,7 @@ settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
 settings/0/joint_count = 3
 
-[node name="CCDIK3D" type="CCDIK3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="19" unique_id=549962878]
+[node name="CCDIK3D" type="CCDIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="19" unique_id=549962878]
 setting_count = 1
 settings/0/target_node = NodePath("../../../../XRCamera3D/Target")
 settings/0/root_bone_name = "mixamorig_Spine"
@@ -274,7 +311,7 @@ settings/0/joints/2/limitation = null
 settings/0/joints/3/rotation_axis = 3
 settings/0/joints/3/limitation = null
 
-[node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="20" unique_id=1241026055]
+[node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="20" unique_id=1241026055]
 setting_count = 1
 settings/0/amount = 1.0
 settings/0/apply_bone_name = "mixamorig_Neck"
@@ -286,7 +323,7 @@ settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="WaistCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" parent_id_path=PackedInt32Array(413273482, 1595158692) index="21" unique_id=1922121618]
+[node name="WaistCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="21" unique_id=1922121618]
 setting_count = 1
 settings/0/amount = 1.0
 settings/0/apply_bone_name = "mixamorig_Hips"

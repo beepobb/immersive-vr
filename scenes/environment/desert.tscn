@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://m3kfh03rvjir"]
+[gd_scene format=3 uid="uid://cw0ur8vn8bxb7"]
 
 [ext_resource type="PackedScene" uid="uid://dn2dk8snuf7ak" path="res://assets/environment/Metaverse Environment 02/MetaVerse_Env_02.glb" id="1_bm3y1"]
 [ext_resource type="Script" uid="uid://cdpyo05lkw6oa" path="res://scripts/ui/select_environment/bird_flock.gd" id="2_mlip8"]
