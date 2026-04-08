@@ -8,6 +8,7 @@ const SELECT_ENVIRONMENT_SCENE_PATH := "res://scenes/game/select_environment/sel
 const IN_CALL_SCENE_PATH := "res://scenes/game/call/environment.tscn"
 const CALL_SUMMARY_SCENE_PATH := "res://scenes/game/call/call_summary.tscn"
 const CallRecordingManager = preload("res://scripts/call_recording_manager.gd")
+const CallTranscribe = preload("res://scripts/call_transcription.gd")
 
 const DEFAULT_VISUAL_PRESETS := {
 	"male": {
@@ -50,6 +51,7 @@ var _appearance_service := AvatarAppearanceService.new()
 var _manifests_loaded := false
 var _lobby_network_connected := false
 var _call_recording_manager := CallRecordingManager.new()
+var _call_transcribe := CallTranscribe.new()
 
 var recording
 var recording_path: String
@@ -188,6 +190,7 @@ func end_call_session(notice: String) -> void:
 	var recording_result := _call_recording_manager.stop_and_save_if_host(is_host_therapist)
 	recording = recording_result.get("recording")
 	recording_path = String(recording_result.get("path", ""))
+	_call_transcribe.process_latest_recording(recording_path)
 
 	_cleanup_call_state()
 	await get_tree().process_frame

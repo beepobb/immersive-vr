@@ -64,3 +64,34 @@ func get_latest_audio_file(folder_path: String) -> String:
 func build_output_docx_path(audio_path: String) -> String:
 	var base_name := audio_path.get_file().get_basename()
 	return OUTPUT_DIR.path_join(base_name + "_transcript.docx")
+
+
+func call_transcribe_docx(input_audio_path: String, output_docx_path: String) -> bool:
+	var output := []
+
+	var abs_input := ProjectSettings.globalize_path(input_audio_path)
+	var abs_output := ProjectSettings.globalize_path(output_docx_path)
+	
+	var output_dir := abs_output.get_base_dir()
+	DirAccess.make_dir_recursive_absolute(output_dir)
+	
+	print("Input path: ", abs_input)
+	print("Output path: ", abs_output)
+
+	var args := [
+		"-X", "POST",
+		API_URL,
+		"-H", "accept: application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+		"-F", "file=@" + abs_input,
+		"-F", "diarize=true",
+		"--output=" + abs_output
+	]
+
+	var exit_code := OS.execute("curl", args, output, true)
+
+	if exit_code != 0:
+		print("curl failed. Exit code: ", exit_code)
+		print(output)
+		return false
+
+	return FileAccess.file_exists(output_docx_path)

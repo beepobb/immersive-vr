@@ -27,13 +27,13 @@ driver/mix_rate=48000
 
 [autoload]
 
-XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
-XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
+XRToolsUserSettings="*uid://bqgb8i74tm0t"
+XRToolsRumbleManager="*uid://by853dk86g1qw"
 EnvironmentCatalog="*res://scripts/ui/environment_catalog.gd"
 XrSimulator="*uid://ctltchlf2j2r4"
 GameState="*res://scripts/game_state.gd"
-UIButtonAudio="*res://scripts/ui/ui_button_audio.gd"
 Roles="*res://scripts/roles.gd"
+UIButtonAudio="*res://scripts/ui/ui_button_audio.gd"
 
 [debug_draw_3d]
 
@@ -78,3 +78,4 @@ shaders/enabled=true
 openxr/size/viewport_height=648
 openxr/size/viewport_width=1152
 openxr/stdout/verbose_stdout=true
+openxr/extensions/htc/face_tracking=true
