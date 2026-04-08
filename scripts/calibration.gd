@@ -46,8 +46,8 @@ func _ready() -> void:
 func load_player_scaled() -> void:
 	player_eye_height = hmd.global_position.y
 	print(player_eye_height)
-	
-	var player = get_node_or_null("../AvatarRoot/Remy")
+	var avatar_name = get_node_or_null("../AvatarRoot").get_child(0).name
+	var player = get_node_or_null("../AvatarRoot/" + avatar_name)
 	# all avatar scene need skeleton3d node to be first child
 	var player_skeleton: Skeleton3D = player.get_child(0).get_child(0)
 	var lfoot_bone_idx: int = player_skeleton.find_bone(lfoot_bone_name)

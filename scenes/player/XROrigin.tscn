@@ -134,19 +134,21 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 setting_count = 1
 settings/0/target_node = NodePath("../../../../../LeftController/Target")
 settings/0/pole_node = NodePath("../../../../../LeftController/Target/Pole")
-settings/0/root_bone_name = "mixamorig_LeftArm"
-settings/0/root_bone = -1
-settings/0/middle_bone_name = "mixamorig_LeftForeArm"
-settings/0/middle_bone = -1
+settings/0/root_bone_name = "mixamorig9_LeftArm"
+settings/0/root_bone = 8
+settings/0/middle_bone_name = "mixamorig9_LeftForeArm"
+settings/0/middle_bone = 9
 settings/0/pole_direction = 0
-settings/0/end_bone_name = "mixamorig_LeftHand"
-settings/0/end_bone = -1
+settings/0/end_bone_name = "mixamorig9_LeftHand"
+settings/0/end_bone = 10
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
 
 [node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="8" unique_id=667495555]
 setting_count = 1
 settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_LeftHand"
-settings/0/apply_bone = -1
+settings/0/apply_bone_name = "mixamorig9_LeftHand"
+settings/0/apply_bone = 10
 settings/0/reference_type = 1
 settings/0/reference_node = NodePath("../../../../../LeftController/Target")
 settings/0/copy = 2
@@ -156,33 +158,36 @@ settings/0/additive = false
 
 [node name="LHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="9" unique_id=811069044]
 setting_count = 1
-settings/0/root_bone_name = "mixamorig_LeftArm"
-settings/0/root_bone = -1
-settings/0/end_bone_name = "mixamorig_LeftHand"
-settings/0/end_bone = -1
+settings/0/root_bone_name = "mixamorig9_LeftArm"
+settings/0/root_bone = 8
+settings/0/end_bone_name = "mixamorig9_LeftHand"
+settings/0/end_bone = 10
+settings/0/extend_end_bone = true
 settings/0/end_bone_direction = 6
 settings/0/twist_from_rest = true
 settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
-settings/0/joint_count = 0
+settings/0/joint_count = 3
 
 [node name="RHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="10" unique_id=45097490]
 setting_count = 1
 settings/0/target_node = NodePath("../../../../../RightController/Target")
 settings/0/pole_node = NodePath("../../../../../RightController/Target/Pole")
-settings/0/root_bone_name = "mixamorig_RightArm"
-settings/0/root_bone = -1
-settings/0/middle_bone_name = "mixamorig_RightForeArm"
-settings/0/middle_bone = -1
+settings/0/root_bone_name = "mixamorig9_RightArm"
+settings/0/root_bone = 32
+settings/0/middle_bone_name = "mixamorig9_RightForeArm"
+settings/0/middle_bone = 33
 settings/0/pole_direction = 0
-settings/0/end_bone_name = "mixamorig_RightHand"
-settings/0/end_bone = -1
+settings/0/end_bone_name = "mixamorig9_RightHand"
+settings/0/end_bone = 34
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
 
 [node name="RHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="11" unique_id=184416804]
 setting_count = 1
 settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_RightHand"
-settings/0/apply_bone = -1
+settings/0/apply_bone_name = "mixamorig9_RightHand"
+settings/0/apply_bone = 34
 settings/0/reference_type = 1
 settings/0/reference_node = NodePath("../../../../../RightController/Target")
 settings/0/copy = 2
@@ -192,33 +197,36 @@ settings/0/additive = false
 
 [node name="RHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="12" unique_id=1171713168]
 setting_count = 1
-settings/0/root_bone_name = "mixamorig_RightArm"
-settings/0/root_bone = -1
-settings/0/end_bone_name = "mixamorig_RightHand"
-settings/0/end_bone = -1
+settings/0/root_bone_name = "mixamorig9_RightArm"
+settings/0/root_bone = 32
+settings/0/end_bone_name = "mixamorig9_RightHand"
+settings/0/end_bone = 34
+settings/0/extend_end_bone = true
 settings/0/end_bone_direction = 6
 settings/0/twist_from_rest = true
 settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
-settings/0/joint_count = 0
+settings/0/joint_count = 3
 
 [node name="LATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="13" unique_id=1974378056]
 setting_count = 1
 settings/0/target_node = NodePath("../../../../../LAnkle/Target")
 settings/0/pole_node = NodePath("../../../../../LAnkle/Target/Pole")
-settings/0/root_bone_name = "mixamorig_LeftUpLeg"
-settings/0/root_bone = -1
-settings/0/middle_bone_name = "mixamorig_LeftLeg"
-settings/0/middle_bone = -1
+settings/0/root_bone_name = "mixamorig9_LeftUpLeg"
+settings/0/root_bone = 55
+settings/0/middle_bone_name = "mixamorig9_LeftLeg"
+settings/0/middle_bone = 56
 settings/0/pole_direction = 0
-settings/0/end_bone_name = "mixamorig_LeftFoot"
-settings/0/end_bone = -1
+settings/0/end_bone_name = "mixamorig9_LeftFoot"
+settings/0/end_bone = 57
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
 
 [node name="LACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="14" unique_id=323710274]
 setting_count = 1
 settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_LeftFoot"
-settings/0/apply_bone = -1
+settings/0/apply_bone_name = "mixamorig9_LeftFoot"
+settings/0/apply_bone = 57
 settings/0/reference_type = 1
 settings/0/reference_node = NodePath("../../../../../LAnkle/Target")
 settings/0/copy = 2
@@ -228,33 +236,36 @@ settings/0/additive = false
 
 [node name="LABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="15" unique_id=218119964]
 setting_count = 1
-settings/0/root_bone_name = "mixamorig_LeftUpLeg"
-settings/0/root_bone = -1
-settings/0/end_bone_name = "mixamorig_LeftFoot"
-settings/0/end_bone = -1
+settings/0/root_bone_name = "mixamorig9_LeftUpLeg"
+settings/0/root_bone = 55
+settings/0/end_bone_name = "mixamorig9_LeftFoot"
+settings/0/end_bone = 57
+settings/0/extend_end_bone = true
 settings/0/end_bone_direction = 6
 settings/0/twist_from_rest = true
 settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
-settings/0/joint_count = 0
+settings/0/joint_count = 3
 
 [node name="RATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="16" unique_id=1984493775]
 setting_count = 1
 settings/0/target_node = NodePath("../../../../../RAnkle/Target")
 settings/0/pole_node = NodePath("../../../../../RAnkle/Target/Pole")
-settings/0/root_bone_name = "mixamorig_RightUpLeg"
-settings/0/root_bone = -1
-settings/0/middle_bone_name = "mixamorig_RightLeg"
-settings/0/middle_bone = -1
+settings/0/root_bone_name = "mixamorig9_RightUpLeg"
+settings/0/root_bone = 60
+settings/0/middle_bone_name = "mixamorig9_RightLeg"
+settings/0/middle_bone = 61
 settings/0/pole_direction = 0
-settings/0/end_bone_name = "mixamorig_RightFoot"
-settings/0/end_bone = -1
+settings/0/end_bone_name = "mixamorig9_RightFoot"
+settings/0/end_bone = 62
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
 
 [node name="RACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="17" unique_id=1968032641]
 setting_count = 1
 settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_RightFoot"
-settings/0/apply_bone = -1
+settings/0/apply_bone_name = "mixamorig9_RightFoot"
+settings/0/apply_bone = 62
 settings/0/reference_type = 1
 settings/0/reference_node = NodePath("../../../../../RightController/Target")
 settings/0/copy = 2
@@ -264,30 +275,40 @@ settings/0/additive = false
 
 [node name="RABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="18" unique_id=709646700]
 setting_count = 1
-settings/0/root_bone_name = "mixamorig_RightUpLeg"
-settings/0/root_bone = -1
-settings/0/end_bone_name = "mixamorig_RightFoot"
-settings/0/end_bone = -1
+settings/0/root_bone_name = "mixamorig9_RightUpLeg"
+settings/0/root_bone = 60
+settings/0/end_bone_name = "mixamorig9_RightFoot"
+settings/0/end_bone = 62
+settings/0/extend_end_bone = true
 settings/0/end_bone_direction = 6
 settings/0/twist_from_rest = true
 settings/0/disperse_mode = 1
 settings/0/weight_position = 0.15
-settings/0/joint_count = 0
+settings/0/joint_count = 3
 
 [node name="CCDIK3D" type="CCDIK3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="19" unique_id=1587821144]
 setting_count = 1
 settings/0/target_node = NodePath("../../../../../XRCamera3D/Target")
-settings/0/root_bone_name = "mixamorig_Spine"
-settings/0/root_bone = -1
-settings/0/end_bone_name = "mixamorig_Neck"
-settings/0/end_bone = -1
-settings/0/joint_count = 0
+settings/0/root_bone_name = "mixamorig9_Spine"
+settings/0/root_bone = 1
+settings/0/end_bone_name = "mixamorig9_Neck"
+settings/0/end_bone = 4
+settings/0/extend_end_bone = false
+settings/0/joint_count = 4
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+settings/0/joints/3/rotation_axis = 3
+settings/0/joints/3/limitation = null
 
 [node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="20" unique_id=634725132]
 setting_count = 1
 settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_Neck"
-settings/0/apply_bone = -1
+settings/0/apply_bone_name = "mixamorig9_Neck"
+settings/0/apply_bone = 4
 settings/0/reference_type = 1
 settings/0/reference_node = NodePath("../../../../../XRCamera3D")
 settings/0/copy = 2
@@ -298,8 +319,8 @@ settings/0/additive = false
 [node name="WaistCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="21" unique_id=322138730]
 setting_count = 1
 settings/0/amount = 1.0
-settings/0/apply_bone_name = "mixamorig_Hips"
-settings/0/apply_bone = -1
+settings/0/apply_bone_name = "mixamorig9_Hips"
+settings/0/apply_bone = 0
 settings/0/reference_type = 1
 settings/0/reference_node = NodePath("../../../../../Waist/Target")
 settings/0/copy = 2
