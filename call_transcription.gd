@@ -1,9 +1,10 @@
 extends Node
 
-const DOWNLOADS_DIR := "/Users/thamhaowei/Downloads"
+const DOWNLOADS_DIR := "user://recordings"
+const OUTPUT_DIR := "user://documents"
 const API_URL := "http://127.0.0.1:8000/transcribe-docx"
 
-const AUDIO_EXTENSIONS := ["wav", "mp3", "m4a", "aac", "flac", "ogg", "opus"]
+const AUDIO_EXTENSIONS := ["wav"]
 
 func _ready() -> void:
 	print("Scene started.")
@@ -59,7 +60,7 @@ func get_latest_audio_file(folder_path: String) -> String:
 
 func build_output_docx_path(audio_path: String) -> String:
 	var base_name := audio_path.get_file().get_basename()
-	return DOWNLOADS_DIR.path_join(base_name + "_transcript.docx")
+	return OUTPUT_DIR.path_join(base_name + "_transcript.docx")
 
 
 func call_transcribe_docx(input_audio_path: String, output_docx_path: String) -> bool:
