@@ -42,6 +42,7 @@ signal request_quit
 #gdlint : disable = unused - argument
 
 @export var in_call: bool = false
+@export var avatar_test_path: NodePath = NodePath("AvatarTest")
 
 ## Interface
 
@@ -235,7 +236,51 @@ func scene_loaded(user_data = null):
 ## scene is loaded - usually from the previous scene.
 func scene_visible(user_data = null):
 #Called after the scene becomes fully visible
-	pass
+	_apply_saved_avatar()
+	
+func _apply_saved_avatar() -> void:
+	if GameState.selected_avatar_scene_path == "":
+		var default_avatar := get_node_or_null(avatar_test_path)
+		if default_avatar != null:
+			var skeleton := default_avatar.get_node_or_null("Human_rig/Skeleton3D") as Node3D
+			if skeleton != null:
+				GameState.avatar = skeleton
+				GameState.apply_to_avatar()
+		return
+
+	var old_avatar: Node3D = get_node_or_null(avatar_test_path) as Node3D
+	if old_avatar == null:
+		push_error("Lobby AvatarTest not found.")
+		return
+
+	var parent: Node = old_avatar.get_parent()
+	if parent == null:
+		push_error("Lobby AvatarTest has no parent.")
+		return
+
+	var old_transform: Transform3D = old_avatar.transform
+	var old_name: String = old_avatar.name
+
+	old_avatar.queue_free()
+	await get_tree().process_frame
+
+	var avatar_scene := load(GameState.selected_avatar_scene_path) as PackedScene
+	if avatar_scene == null:
+		push_error("Failed to load saved avatar scene: " + GameState.selected_avatar_scene_path)
+		return
+
+	var new_avatar: Node3D = avatar_scene.instantiate() as Node3D
+	if new_avatar == null:
+		push_error("Failed to instantiate saved avatar scene.")
+		return
+
+	new_avatar.name = old_name
+	parent.add_child(new_avatar)
+	new_avatar.transform = old_transform
+
+	var skeleton := new_avatar.get_node_or_null("Human_rig/Skeleton3D") as Node3D
+	if skeleton != null:
+		GameState.avatar = skeleton
 
 
 ## This method is called before the start of transition from this scene to a

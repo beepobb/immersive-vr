@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db0850lbp1qri"
-path.s3tc="res://.godot/imported/Middle asian_middleage_lightskinned_female_diffuse2.png-c493849119c4de008dd18ad6ee9d16bf.s3tc.ctex"
-path.etc2="res://.godot/imported/Middle asian_middleage_lightskinned_female_diffuse2.png-c493849119c4de008dd18ad6ee9d16bf.etc2.ctex"
+path.s3tc="res://.godot/imported/Middle asian_middleage_lightskinned_female_diffuse2.png-658bd9d6aa26b7c73d6a33512ceeab66.s3tc.ctex"
+path.etc2="res://.godot/imported/Middle asian_middleage_lightskinned_female_diffuse2.png-658bd9d6aa26b7c73d6a33512ceeab66.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Skin/Female/Middle asian_middleage_lightskinned_female_diffuse2.png"
-dest_files=["res://.godot/imported/Middle asian_middleage_lightskinned_female_diffuse2.png-c493849119c4de008dd18ad6ee9d16bf.s3tc.ctex", "res://.godot/imported/Middle asian_middleage_lightskinned_female_diffuse2.png-c493849119c4de008dd18ad6ee9d16bf.etc2.ctex"]
+source_file="res://assets/skin/Female/Middle asian_middleage_lightskinned_female_diffuse2.png"
+dest_files=["res://.godot/imported/Middle asian_middleage_lightskinned_female_diffuse2.png-658bd9d6aa26b7c73d6a33512ceeab66.s3tc.ctex", "res://.godot/imported/Middle asian_middleage_lightskinned_female_diffuse2.png-658bd9d6aa26b7c73d6a33512ceeab66.etc2.ctex"]
 
 [params]
 

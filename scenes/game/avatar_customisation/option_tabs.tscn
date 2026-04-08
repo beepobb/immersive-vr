@@ -2,13 +2,18 @@
 
 [ext_resource type="Script" uid="uid://cdsd8beik62kt" path="res://scripts/ui/avatar_customisation/option_tabs.gd" id="1_uqvoq"]
 [ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="2_10tdl"]
+[ext_resource type="FontFile" uid="uid://3cmsgjt8csyb" path="res://tools/Poppins/Poppins-SemiBold.ttf" id="3_0bcty"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hsv1"]
 content_margin_left = 16.0
 content_margin_top = 16.0
 content_margin_right = 16.0
 content_margin_bottom = 16.0
-bg_color = Color(0.52708346, 0.52708346, 0.52708346, 0.8235294)
+bg_color = Color(0.21950084, 0.21950108, 0.21950087, 0.8235294)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_blend = true
 corner_radius_top_left = 24
 corner_radius_bottom_left = 24
 
@@ -28,7 +33,10 @@ corner_radius_top_left = 24
 corner_radius_bottom_left = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxbqf"]
-bg_color = Color(0.5254902, 0.5254902, 0.5254902, 0.8235294)
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 0.8235294)
+border_width_top = 2
+border_width_bottom = 2
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cbjt"]
 bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
@@ -40,7 +48,10 @@ bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
 bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytbdc"]
-bg_color = Color(0.5254902, 0.5254902, 0.5254902, 0.8235294)
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 0.8235294)
+border_width_top = 2
+border_width_bottom = 2
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6s8w"]
 bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
@@ -52,7 +63,11 @@ bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
 bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owq5e"]
-bg_color = Color(0.5254902, 0.5254902, 0.5254902, 0.8235294)
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 0.8235294)
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 
@@ -81,6 +96,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_3hsv1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mhfsl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1aak")
@@ -93,6 +110,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_rxbqf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1cbjt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8mxhm")
@@ -104,6 +123,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_ytbdc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y6s8w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nakv3")
@@ -115,6 +136,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_ytbdc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y6s8w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nakv3")
@@ -126,6 +149,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_owq5e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lo5ah")
 theme_override_styles/hover = SubResource("StyleBoxFlat_u8loy")

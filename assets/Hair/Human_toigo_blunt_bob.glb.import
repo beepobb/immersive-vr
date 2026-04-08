@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://vmmhvu0itfer"
-path="res://.godot/imported/Human_toigo_blunt_bob.glb-bb9ea914cf5b59dfd7307ecf8750b4de.scn"
+path="res://.godot/imported/Human_toigo_blunt_bob.glb-dd0714f64d348f5877b4c8aa7faec201.scn"
 
 [deps]
 
-source_file="res://assets/Hair/Human_toigo_blunt_bob.glb"
-dest_files=["res://.godot/imported/Human_toigo_blunt_bob.glb-bb9ea914cf5b59dfd7307ecf8750b4de.scn"]
+source_file="res://assets/hair/Human_toigo_blunt_bob.glb"
+dest_files=["res://.godot/imported/Human_toigo_blunt_bob.glb-dd0714f64d348f5877b4c8aa7faec201.scn"]
 
 [params]
 

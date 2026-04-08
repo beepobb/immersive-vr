@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cylw6s4hqc0h8"
-path.s3tc="res://.godot/imported/Old caucasian_old_lightskinned_female_diffuse.png-7bd16cd56b6b984d20a616735aad02e7.s3tc.ctex"
-path.etc2="res://.godot/imported/Old caucasian_old_lightskinned_female_diffuse.png-7bd16cd56b6b984d20a616735aad02e7.etc2.ctex"
+path.s3tc="res://.godot/imported/Old caucasian_old_lightskinned_female_diffuse.png-dabaecc9b084d8f2715896ba67d3ccb9.s3tc.ctex"
+path.etc2="res://.godot/imported/Old caucasian_old_lightskinned_female_diffuse.png-dabaecc9b084d8f2715896ba67d3ccb9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Skin/Female/Old caucasian_old_lightskinned_female_diffuse.png"
-dest_files=["res://.godot/imported/Old caucasian_old_lightskinned_female_diffuse.png-7bd16cd56b6b984d20a616735aad02e7.s3tc.ctex", "res://.godot/imported/Old caucasian_old_lightskinned_female_diffuse.png-7bd16cd56b6b984d20a616735aad02e7.etc2.ctex"]
+source_file="res://assets/skin/Female/Old caucasian_old_lightskinned_female_diffuse.png"
+dest_files=["res://.godot/imported/Old caucasian_old_lightskinned_female_diffuse.png-dabaecc9b084d8f2715896ba67d3ccb9.s3tc.ctex", "res://.godot/imported/Old caucasian_old_lightskinned_female_diffuse.png-dabaecc9b084d8f2715896ba67d3ccb9.etc2.ctex"]
 
 [params]
 

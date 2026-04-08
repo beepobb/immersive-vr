@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bak0xgwof8jcb"
-path.s3tc="res://.godot/imported/culturalibre_hair_02_male02_diffuse_black.png-e991cd3e91916b7e555fdcf60c6a8ebc.s3tc.ctex"
-path.etc2="res://.godot/imported/culturalibre_hair_02_male02_diffuse_black.png-e991cd3e91916b7e555fdcf60c6a8ebc.etc2.ctex"
+path.s3tc="res://.godot/imported/culturalibre_hair_02_male02_diffuse_black.png-7a9ca043177d4dac8b216efabb028388.s3tc.ctex"
+path.etc2="res://.godot/imported/culturalibre_hair_02_male02_diffuse_black.png-7a9ca043177d4dac8b216efabb028388.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Hair/culturalibre_hair_02_male02_diffuse_black.png"
-dest_files=["res://.godot/imported/culturalibre_hair_02_male02_diffuse_black.png-e991cd3e91916b7e555fdcf60c6a8ebc.s3tc.ctex", "res://.godot/imported/culturalibre_hair_02_male02_diffuse_black.png-e991cd3e91916b7e555fdcf60c6a8ebc.etc2.ctex"]
+source_file="res://assets/hair/culturalibre_hair_02_male02_diffuse_black.png"
+dest_files=["res://.godot/imported/culturalibre_hair_02_male02_diffuse_black.png-7a9ca043177d4dac8b216efabb028388.s3tc.ctex", "res://.godot/imported/culturalibre_hair_02_male02_diffuse_black.png-7a9ca043177d4dac8b216efabb028388.etc2.ctex"]
 
 [params]
 

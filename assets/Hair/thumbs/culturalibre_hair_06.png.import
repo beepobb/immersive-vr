@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nqjktk8kojhw"
-path="res://.godot/imported/culturalibre_hair_06.png-282fba63e3f0e75800ee9300965731e7.ctex"
+path="res://.godot/imported/culturalibre_hair_06.png-774e1d2b30ab003f135dbc2b1250960f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Hair/thumbs/culturalibre_hair_06.png"
-dest_files=["res://.godot/imported/culturalibre_hair_06.png-282fba63e3f0e75800ee9300965731e7.ctex"]
+source_file="res://assets/hair/thumbs/culturalibre_hair_06.png"
+dest_files=["res://.godot/imported/culturalibre_hair_06.png-774e1d2b30ab003f135dbc2b1250960f.ctex"]
 
 [params]
 

@@ -1,0 +1,18 @@
+{
+  "items": [
+	{
+	  "id": "megan",
+	  "name": "Megan",
+	  "scene": "res://assets/Avatar/avatar w face bs/megan.tscn",
+	  "thumb": "res://assets/Avatar/megan_thumb.png",
+	  "customisable": false
+	},
+	{
+	  "id": "bernard",
+	  "name": "Bernard",
+	  "scene": "res://assets/Avatar/avatar w face bs/bernard.tscn",
+	  "thumb": "res://assets/Avatar/bernard_thumb.png",
+	  "customisable": false
+	}
+  ]
+}

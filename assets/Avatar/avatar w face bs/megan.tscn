@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dep4bw005kt6s"]
+
+[ext_resource type="PackedScene" uid="uid://cdk0sly1cyau2" path="res://assets/Avatar/avatar w face bs/megan.glb" id="1_msxb4"]
+
+[node name="megan" unique_id=2062891718 instance=ExtResource("1_msxb4")]

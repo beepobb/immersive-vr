@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bly5k5g2aorug"]
+
+[ext_resource type="PackedScene" uid="uid://2ry474x0ensh" path="res://assets/Avatar/avatar w face bs/bernard.glb" id="1_n33le"]
+
+[node name="bernard" unique_id=1055880485 instance=ExtResource("1_n33le")]

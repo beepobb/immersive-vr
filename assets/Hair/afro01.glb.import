@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://prid53yte3d5"
-path="res://.godot/imported/afro01.glb-75bfeada38d2bb6611b86d81cb26d29a.scn"
+path="res://.godot/imported/afro01.glb-0cb8c83e71c3378ce045bee241c9d261.scn"
 
 [deps]
 
-source_file="res://assets/Hair/afro01.glb"
-dest_files=["res://.godot/imported/afro01.glb-75bfeada38d2bb6611b86d81cb26d29a.scn"]
+source_file="res://assets/hair/afro01.glb"
+dest_files=["res://.godot/imported/afro01.glb-0cb8c83e71c3378ce045bee241c9d261.scn"]
 
 [params]
 

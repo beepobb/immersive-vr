@@ -2,7 +2,7 @@ extends Control
 
 @onready var right_tabs: TabContainer = %RightTabs
 
-@onready var body_tab: Button = %BodyTab
+@onready var demo_tab: Button = %DemoTab
 @onready var skin_tab: Button = %SkinTab
 @onready var outfit_tab: Button = %OutfitTab
 @onready var hair_tab: Button = %HairTab
@@ -26,18 +26,23 @@ const SHOES_JSON_PATH := "res://assets/shoes/shoes_assets.json"
 var shoes_items: Array = []
 @onready var shoes_grid: GridContainer = %ShoesGrid
 
+# Demo Avatar Path
+const DEMO_AVATAR_JSON_PATH := "res://assets/Avatar/demo_avatar_assets.json"
+var demo_avatar_items: Array = []
+@onready var demo_grid: GridContainer = %DemoGrid
+
 
 func _ready() -> void:
 	print("AVATAR_CUSTOMISER READY RUNNING")
 	main_preview = get_tree().current_scene
 
 	bottom_tabs = []
-	for tab in [body_tab, skin_tab, outfit_tab, hair_tab, shoes_tab]:
+	for tab in [demo_tab, skin_tab, outfit_tab, hair_tab, shoes_tab]:
 		if tab != null:
 			bottom_tabs.append(tab)
 
-	if body_tab != null:
-		body_tab.pressed.connect(func(): _on_bottom_tab_pressed(1))
+	if demo_tab != null:
+		demo_tab.pressed.connect(func(): _on_bottom_tab_pressed(1))
 	if skin_tab != null:
 		skin_tab.pressed.connect(func(): _on_bottom_tab_pressed(2))
 	if outfit_tab != null:
@@ -46,6 +51,11 @@ func _ready() -> void:
 		hair_tab.pressed.connect(func(): _on_bottom_tab_pressed(0))
 	if shoes_tab != null:
 		shoes_tab.pressed.connect(func(): _on_bottom_tab_pressed(4))
+	
+	# Load Demo Avatar Buttons
+	_load_demo_avatar_items()
+	_build_demo_avatar_buttons()
+	
 	#Load Hair Buttons
 	_load_hair_items()
 	_build_hair_buttons()
@@ -67,8 +77,8 @@ func _on_bottom_tab_pressed(target_index: int) -> void:
 
 	match target_index:
 		1:
-			if body_tab != null:
-				body_tab.button_pressed = true
+			if demo_tab != null:
+				demo_tab.button_pressed = true
 		2:
 			if skin_tab != null:
 				skin_tab.button_pressed = true
@@ -81,7 +91,105 @@ func _on_bottom_tab_pressed(target_index: int) -> void:
 		4:
 			if shoes_tab != null:
 				shoes_tab.button_pressed = true
+				
+# ------------ AVATAR -------------- #
+				
+func _avatar_supports_customisation(avatar_id: String) -> bool:
+	return not avatar_id.to_lower() in ["bernard", "megan"]
+	
+func _apply_demo_avatar(scene_path: String, avatar_id: String) -> void:
+	_update_bottom_tab_state(avatar_id)
 
+	if main_preview and main_preview.has_method("set_avatar"):
+		main_preview.set_avatar(scene_path, avatar_id)
+		return
+
+	if main_preview and main_preview.has_method("set_demo_avatar"):
+		main_preview.set_demo_avatar(scene_path, avatar_id)
+		return
+
+	push_error("Main scene has no set_avatar(scene_path, avatar_id) or set_demo_avatar(scene_path, avatar_id).")
+
+func _update_bottom_tab_state(avatar_id: String) -> void:
+	var enabled := _avatar_supports_customisation(avatar_id)
+
+	if hair_tab:
+		hair_tab.visible = enabled
+		hair_tab.disabled = not enabled
+
+	if outfit_tab:
+		outfit_tab.visible = enabled
+		outfit_tab.disabled = not enabled
+
+	if shoes_tab:
+		shoes_tab.visible = enabled
+		shoes_tab.disabled = not enabled
+
+	# Optional: if currently on one of those tabs, jump back to Demo
+	if not enabled:
+		_on_bottom_tab_pressed(1) 
+
+func _load_demo_avatar_items() -> void:
+	var f := FileAccess.open(DEMO_AVATAR_JSON_PATH, FileAccess.READ)
+	if f == null:
+		push_error("Cannot open demo avatar JSON: " + DEMO_AVATAR_JSON_PATH)
+		return
+
+	var data = JSON.parse_string(f.get_as_text())
+	f.close()
+
+	if typeof(data) != TYPE_DICTIONARY or !data.has("items"):
+		push_error("demo_avatar_assets.json invalid.")
+		return
+
+	demo_avatar_items = data["items"]
+	
+func _build_demo_avatar_buttons() -> void:
+	if demo_grid == null:
+		push_error("DemoGrid not found.")
+		return
+
+	for c in demo_grid.get_children():
+		c.queue_free()
+
+	for item in demo_avatar_items:
+		if typeof(item) != TYPE_DICTIONARY:
+			continue
+
+		var avatar_id := String(item.get("id", "")).to_lower()
+		var display_name := String(item.get("name", avatar_id))
+		var thumb_path := String(item.get("thumb", ""))
+		var scene_path := String(item.get("scene", ""))
+
+		if avatar_id == "" or scene_path == "":
+			continue
+
+		var box := VBoxContainer.new()
+		box.custom_minimum_size = Vector2(170, 210)
+
+		var btn := TextureButton.new()
+		btn.custom_minimum_size = Vector2(170, 170)
+		btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		btn.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+		if thumb_path != "" and ResourceLoader.exists(thumb_path):
+			btn.texture_normal = load(thumb_path)
+		else:
+			push_warning("Missing demo avatar thumbnail: " + avatar_id)
+
+		btn.pressed.connect(func():
+			_apply_demo_avatar(scene_path, avatar_id)
+		)
+
+		var label := Label.new()
+		label.text = display_name
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+
+		box.add_child(btn)
+		box.add_child(label)
+		demo_grid.add_child(box)
 
 # ------------ HAIR -------------- #
 func _load_hair_items() -> void: # Load hair json

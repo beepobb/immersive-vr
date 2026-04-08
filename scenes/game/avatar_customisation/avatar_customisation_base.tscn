@@ -16,7 +16,7 @@ script = ExtResource("1_dselv")
 [node name="PreviewStage" parent="." unique_id=1182305872 instance=ExtResource("2_mb1fd")]
 
 [node name="AvatarTest" parent="." unique_id=1582457097 instance=ExtResource("3_7dm38")]
-transform = Transform3D(0.7137029, 0, 0.7004485, 0, 1, 0, -0.7004485, 0, 0.7137029, -1.026, 0.632, 1.427)
+transform = Transform3D(0.9845704, 0, 0.17498867, 0, 1, 0, -0.17498867, 0, 0.9845704, -1.026, 0.632, 1.427)
 
 [node name="AvatarCustomisationViewports" type="Node3D" parent="." unique_id=1773157085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.037)
@@ -38,7 +38,7 @@ transparent = 1
 scene_properties_keys = PackedStringArray("customise_options.gd")
 
 [node name="MaleFemale" parent="AvatarCustomisationViewports" unique_id=1587096809 instance=ExtResource("4_s6nat")]
-transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 1.295, 2.09, 0.468)
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 1.3309177, 2.09, 0.508739)
 screen_size = Vector2(0.14, 0.45)
 scene = ExtResource("7_dselv")
 viewport_size = Vector2(50, 158)
@@ -48,9 +48,9 @@ randomise_avatar_parts = true
 
 [node name="OptionTabs" parent="AvatarCustomisationViewports" unique_id=1485915147 instance=ExtResource("4_s6nat")]
 transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0.6, 2.405, 0.468)
-screen_size = Vector2(1.25, 0.12)
+screen_size = Vector2(1.25, 0.11)
 scene = ExtResource("8_pwh4q")
-viewport_size = Vector2(502, 55)
+viewport_size = Vector2(625, 58)
 input_gamepad = true
 transparent = 1
 unshaded = true
