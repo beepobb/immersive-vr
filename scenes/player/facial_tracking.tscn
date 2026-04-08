@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://bl2kkuxujyj6q"]
+[gd_scene load_steps=7 format=3 uid="uid://bl2kkuxujyj6q"]
 
 [ext_resource type="PackedScene" uid="uid://0rpgxarpuatj" path="res://assets/metaHumanHead_52shapekeys_01.fbx" id="1_11l3f"]
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_uvn5p"]
-[ext_resource type="PackedScene" uid="uid://cvphrq4jx66v6" path="res://assets/Avatar/avatar w face bs/avg bald man2.glb" id="3_jedu7"]
-[ext_resource type="PackedScene" uid="uid://b28plfqfpqg3w" path="res://assets/Avatar/avatar w face bs/bald male face.glb" id="4_umyts"]
-[ext_resource type="PackedScene" uid="uid://dvo5j26ukn4fd" path="res://assets/Avatar/avatar w face bs/bald female .glb" id="5_qq7yf"]
+[ext_resource type="PackedScene" uid="uid://dcpwya54x55or" path="res://assets/Avatar/avatar w face bs/male3.glb" id="3_jedu7"]
+[ext_resource type="PackedScene" uid="uid://2ry474x0ensh" path="res://assets/Avatar/avatar w face bs/bernard.glb" id="5_umyts"]
+[ext_resource type="PackedScene" uid="uid://cdk0sly1cyau2" path="res://assets/Avatar/avatar w face bs/megan.glb" id="7_56o05"]
 
 [sub_resource type="Environment" id="Environment_11l3f"]
 
@@ -45,12 +45,19 @@ visible = false
 [node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="male3"]
 target = NodePath("../Human_rig/Skeleton3D/male1591")
 
-[node name="bald male face" parent="." instance=ExtResource("4_umyts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0987468, 0, -1.6349983)
+[node name="megan" parent="." instance=ExtResource("7_56o05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6760569, 0.4117152, -2.9148257)
 
-[node name="bald female " parent="." instance=ExtResource("5_qq7yf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18494439, 0, -1.1172895)
+[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="megan"]
+target = NodePath("../Armature/Skeleton3D/Ch22_Body")
+
+[node name="bernard" parent="." instance=ExtResource("5_umyts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58035, 0, -1.6319256)
+
+[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="bernard"]
+target = NodePath("../Armature/Skeleton3D/Ch31_Body")
 
 [editable path="metaHumanHead_52shapekeys_01"]
 [editable path="male3"]
-[editable path="bald male face"]
+[editable path="megan"]
+[editable path="bernard"]
