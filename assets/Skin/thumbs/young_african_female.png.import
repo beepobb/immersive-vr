@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nl0dkofadnao"
-path="res://.godot/imported/young_african_female.png-95b4dcc3914c58a686c1152504a370ab.ctex"
+path="res://.godot/imported/young_african_female.png-c2078406ba2e7b52ad867834fe209362.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/skin/thumbs/young_african_female.png"
-dest_files=["res://.godot/imported/young_african_female.png-95b4dcc3914c58a686c1152504a370ab.ctex"]
+source_file="res://assets/Skin/thumbs/young_african_female.png"
+dest_files=["res://.godot/imported/young_african_female.png-c2078406ba2e7b52ad867834fe209362.ctex"]
 
 [params]
 

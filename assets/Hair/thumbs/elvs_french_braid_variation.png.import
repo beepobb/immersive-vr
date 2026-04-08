@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfgruegb6lwed"
-path="res://.godot/imported/elvs_french_braid_variation.png-9bf471b2b212051948d66a55846b7037.ctex"
+path="res://.godot/imported/elvs_french_braid_variation.png-774ba7c86db41eca10400ac90693f69a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hair/thumbs/elvs_french_braid_variation.png"
-dest_files=["res://.godot/imported/elvs_french_braid_variation.png-9bf471b2b212051948d66a55846b7037.ctex"]
+source_file="res://assets/Hair/thumbs/elvs_french_braid_variation.png"
+dest_files=["res://.godot/imported/elvs_french_braid_variation.png-774ba7c86db41eca10400ac90693f69a.ctex"]
 
 [params]
 

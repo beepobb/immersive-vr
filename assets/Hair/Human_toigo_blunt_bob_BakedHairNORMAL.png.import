@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqmlysk0l55vc"
-path.s3tc="res://.godot/imported/Human_toigo_blunt_bob_BakedHairNORMAL.png-438de23aacbac611dca8011f54a46611.s3tc.ctex"
-path.etc2="res://.godot/imported/Human_toigo_blunt_bob_BakedHairNORMAL.png-438de23aacbac611dca8011f54a46611.etc2.ctex"
+path.s3tc="res://.godot/imported/Human_toigo_blunt_bob_BakedHairNORMAL.png-df13c2b3d8f010d8574f1d86184009b8.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_toigo_blunt_bob_BakedHairNORMAL.png-df13c2b3d8f010d8574f1d86184009b8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Human_toigo_blunt_bob_BakedHairNORMAL.png"
-dest_files=["res://.godot/imported/Human_toigo_blunt_bob_BakedHairNORMAL.png-438de23aacbac611dca8011f54a46611.s3tc.ctex", "res://.godot/imported/Human_toigo_blunt_bob_BakedHairNORMAL.png-438de23aacbac611dca8011f54a46611.etc2.ctex"]
+source_file="res://assets/Hair/Human_toigo_blunt_bob_BakedHairNORMAL.png"
+dest_files=["res://.godot/imported/Human_toigo_blunt_bob_BakedHairNORMAL.png-df13c2b3d8f010d8574f1d86184009b8.s3tc.ctex", "res://.godot/imported/Human_toigo_blunt_bob_BakedHairNORMAL.png-df13c2b3d8f010d8574f1d86184009b8.etc2.ctex"]
 
 [params]
 

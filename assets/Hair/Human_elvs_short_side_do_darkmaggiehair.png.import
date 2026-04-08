@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qjoi85etmh7a"
-path.s3tc="res://.godot/imported/Human_elvs_short_side_do_darkmaggiehair.png-f207c72d20d8881d03c1bdde70c366f8.s3tc.ctex"
-path.etc2="res://.godot/imported/Human_elvs_short_side_do_darkmaggiehair.png-f207c72d20d8881d03c1bdde70c366f8.etc2.ctex"
+path.s3tc="res://.godot/imported/Human_elvs_short_side_do_darkmaggiehair.png-af420845873288421d0741b6c0aeb6e2.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_elvs_short_side_do_darkmaggiehair.png-af420845873288421d0741b6c0aeb6e2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Human_elvs_short_side_do_darkmaggiehair.png"
-dest_files=["res://.godot/imported/Human_elvs_short_side_do_darkmaggiehair.png-f207c72d20d8881d03c1bdde70c366f8.s3tc.ctex", "res://.godot/imported/Human_elvs_short_side_do_darkmaggiehair.png-f207c72d20d8881d03c1bdde70c366f8.etc2.ctex"]
+source_file="res://assets/Hair/Human_elvs_short_side_do_darkmaggiehair.png"
+dest_files=["res://.godot/imported/Human_elvs_short_side_do_darkmaggiehair.png-af420845873288421d0741b6c0aeb6e2.s3tc.ctex", "res://.godot/imported/Human_elvs_short_side_do_darkmaggiehair.png-af420845873288421d0741b6c0aeb6e2.etc2.ctex"]
 
 [params]
 

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk1d1q771grcv"
-path.s3tc="res://.godot/imported/Human_toigo_blunt_bob_StrawberryBlondHair.png-0dd302d0cf8f5cfe8bd03ef3bcabbade.s3tc.ctex"
-path.etc2="res://.godot/imported/Human_toigo_blunt_bob_StrawberryBlondHair.png-0dd302d0cf8f5cfe8bd03ef3bcabbade.etc2.ctex"
+path.s3tc="res://.godot/imported/Human_toigo_blunt_bob_StrawberryBlondHair.png-e328cba238515ab41da84bf4aa732d34.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_toigo_blunt_bob_StrawberryBlondHair.png-e328cba238515ab41da84bf4aa732d34.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/Human_toigo_blunt_bob_StrawberryBlondHair.png"
-dest_files=["res://.godot/imported/Human_toigo_blunt_bob_StrawberryBlondHair.png-0dd302d0cf8f5cfe8bd03ef3bcabbade.s3tc.ctex", "res://.godot/imported/Human_toigo_blunt_bob_StrawberryBlondHair.png-0dd302d0cf8f5cfe8bd03ef3bcabbade.etc2.ctex"]
+source_file="res://assets/Hair/Human_toigo_blunt_bob_StrawberryBlondHair.png"
+dest_files=["res://.godot/imported/Human_toigo_blunt_bob_StrawberryBlondHair.png-e328cba238515ab41da84bf4aa732d34.s3tc.ctex", "res://.godot/imported/Human_toigo_blunt_bob_StrawberryBlondHair.png-e328cba238515ab41da84bf4aa732d34.etc2.ctex"]
 
 [params]
 

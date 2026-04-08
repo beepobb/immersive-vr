@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdo4kwvpw118y" path="res://scripts/main.gd" id="1_b28tf"]
 [ext_resource type="Script" uid="uid://o17r2om0r7y1" path="res://scripts/calibration.gd" id="2_eraqd"]
 [ext_resource type="PackedScene" uid="uid://jg1qkgdrf47o" path="res://scenes/player/XROrigin.tscn" id="3_7032y"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_jdga1"]
 
 [sub_resource type="Environment" id="Environment_b5v5u"]
 
@@ -24,6 +25,15 @@ environment = SubResource("Environment_b5v5u")
 
 [node name="XROrigin3D" parent="." unique_id=1503267807 instance=ExtResource("3_7032y")]
 
+[node name="XRCamera3D" parent="XROrigin3D" index="0" unique_id=2037867909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.440272, 0)
+
+[node name="Target" parent="XROrigin3D/XRCamera3D" index="0" unique_id=683046994]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="FunctionPointer" parent="XROrigin3D/LeftController" parent_id_path=PackedInt32Array(1503267807, 1722520529) index="3" unique_id=1591583672 instance=ExtResource("3_jdga1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+
 [node name="RightController" parent="XROrigin3D" index="2" unique_id=2121946272]
 transform = Transform3D(-4.3711385e-08, -0.0069812606, -0.99997586, 0, 0.99997574, -0.0069812615, 0.99999994, -3.051606e-10, -4.3710333e-08, 0.798, 1.448, 0)
 show_when_tracked = true
@@ -37,7 +47,7 @@ transform = Transform3D(-0.9435124, 0.1617229, 0.2891886, 0.30881038, 0.74553406
 [node name="AvatarRoot" parent="XROrigin3D" index="8" unique_id=1623042168]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 
-[node name="Skeleton3D" parent="XROrigin3D/AvatarRoot/Remy" parent_id_path=PackedInt32Array(1503267807, 413273482) index="0" unique_id=784552269]
+[node name="Skeleton3D" parent="XROrigin3D/AvatarRoot/Remy" parent_id_path=PackedInt32Array(1503267807, 413273482) index="0" unique_id=1595158692]
 bones/17/rotation = Quaternion(0.25189453, -0.059464402, 0.22192542, 0.9400863)
 bones/34/rotation = Quaternion(0.008705135, -0.0008868446, -0.10134756, 0.9948126)
 bones/41/rotation = Quaternion(0.25189725, 0.05946548, -0.22192715, 0.9400852)
@@ -54,8 +64,8 @@ settings/0/copy = 2
 [node name="RACopyTransformModifier3D" parent="XROrigin3D/AvatarRoot/Remy/Skeleton3D" index="17" unique_id=954693370]
 settings/0/copy = 2
 
-[node name="CopyTransformModifier3D" parent="XROrigin3D/AvatarRoot/Remy/Skeleton3D" index="20" unique_id=1806323914]
-settings/0/copy = 2
+[node name="CCDIK3D" parent="XROrigin3D/AvatarRoot/Remy/Skeleton3D" index="19" unique_id=549962878]
+max_iterations = 20
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1213084053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
@@ -75,6 +85,10 @@ waist = NodePath("../XROrigin3D/Waist")
 left_foot = NodePath("../XROrigin3D/LAnkle")
 right_foot = NodePath("../XROrigin3D/RAnkle")
 eye_offset = 0.15
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=953892735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1.482)
+current = true
 
 [editable path="XROrigin3D"]
 [editable path="XROrigin3D/AvatarRoot/Remy"]

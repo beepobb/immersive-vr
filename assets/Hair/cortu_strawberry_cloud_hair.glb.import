@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ce6nwq8n6y0xt"
-path="res://.godot/imported/cortu_strawberry_cloud_hair.glb-8db430947052250abb1c965b2c23bc62.scn"
+path="res://.godot/imported/cortu_strawberry_cloud_hair.glb-42072cbecdd2370be4aab27db0591ecb.scn"
 
 [deps]
 
-source_file="res://assets/hair/cortu_strawberry_cloud_hair.glb"
-dest_files=["res://.godot/imported/cortu_strawberry_cloud_hair.glb-8db430947052250abb1c965b2c23bc62.scn"]
+source_file="res://assets/Hair/cortu_strawberry_cloud_hair.glb"
+dest_files=["res://.godot/imported/cortu_strawberry_cloud_hair.glb-42072cbecdd2370be4aab27db0591ecb.scn"]
 
 [params]
 

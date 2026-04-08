@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnyygsyfhrcan"
-path.s3tc="res://.godot/imported/Middle causcasian_middleage_lightskinned_female_diffuse.png-f29375990726ec72af368935e54f6326.s3tc.ctex"
-path.etc2="res://.godot/imported/Middle causcasian_middleage_lightskinned_female_diffuse.png-f29375990726ec72af368935e54f6326.etc2.ctex"
+path.s3tc="res://.godot/imported/Middle causcasian_middleage_lightskinned_female_diffuse.png-70211f990539f25738f6dd72f304b369.s3tc.ctex"
+path.etc2="res://.godot/imported/Middle causcasian_middleage_lightskinned_female_diffuse.png-70211f990539f25738f6dd72f304b369.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/skin/Female/Middle causcasian_middleage_lightskinned_female_diffuse.png"
-dest_files=["res://.godot/imported/Middle causcasian_middleage_lightskinned_female_diffuse.png-f29375990726ec72af368935e54f6326.s3tc.ctex", "res://.godot/imported/Middle causcasian_middleage_lightskinned_female_diffuse.png-f29375990726ec72af368935e54f6326.etc2.ctex"]
+source_file="res://assets/Skin/Female/Middle causcasian_middleage_lightskinned_female_diffuse.png"
+dest_files=["res://.godot/imported/Middle causcasian_middleage_lightskinned_female_diffuse.png-70211f990539f25738f6dd72f304b369.s3tc.ctex", "res://.godot/imported/Middle causcasian_middleage_lightskinned_female_diffuse.png-70211f990539f25738f6dd72f304b369.etc2.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://8pkhvywxhqce"
-path="res://.godot/imported/elvs_maxwell_hair.glb-7f31ea2fcc03f1dd264a82e1d0b1b321.scn"
+path="res://.godot/imported/elvs_maxwell_hair.glb-4162fdfdd809efa85f3e43ea962c8bae.scn"
 
 [deps]
 
-source_file="res://assets/hair/elvs_maxwell_hair.glb"
-dest_files=["res://.godot/imported/elvs_maxwell_hair.glb-7f31ea2fcc03f1dd264a82e1d0b1b321.scn"]
+source_file="res://assets/Hair/elvs_maxwell_hair.glb"
+dest_files=["res://.godot/imported/elvs_maxwell_hair.glb-4162fdfdd809efa85f3e43ea962c8bae.scn"]
 
 [params]
 

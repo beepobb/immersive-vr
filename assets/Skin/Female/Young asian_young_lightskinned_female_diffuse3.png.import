@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cck54qo62vsrw"
-path.s3tc="res://.godot/imported/Young asian_young_lightskinned_female_diffuse3.png-7c1d4e05d9d4547aba9635032d745ee8.s3tc.ctex"
-path.etc2="res://.godot/imported/Young asian_young_lightskinned_female_diffuse3.png-7c1d4e05d9d4547aba9635032d745ee8.etc2.ctex"
+path.s3tc="res://.godot/imported/Young asian_young_lightskinned_female_diffuse3.png-a54c5d128a1aa03c18f6c1a04bf92c01.s3tc.ctex"
+path.etc2="res://.godot/imported/Young asian_young_lightskinned_female_diffuse3.png-a54c5d128a1aa03c18f6c1a04bf92c01.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/skin/Female/Young asian_young_lightskinned_female_diffuse3.png"
-dest_files=["res://.godot/imported/Young asian_young_lightskinned_female_diffuse3.png-7c1d4e05d9d4547aba9635032d745ee8.s3tc.ctex", "res://.godot/imported/Young asian_young_lightskinned_female_diffuse3.png-7c1d4e05d9d4547aba9635032d745ee8.etc2.ctex"]
+source_file="res://assets/Skin/Female/Young asian_young_lightskinned_female_diffuse3.png"
+dest_files=["res://.godot/imported/Young asian_young_lightskinned_female_diffuse3.png-a54c5d128a1aa03c18f6c1a04bf92c01.s3tc.ctex", "res://.godot/imported/Young asian_young_lightskinned_female_diffuse3.png-a54c5d128a1aa03c18f6c1a04bf92c01.etc2.ctex"]
 
 [params]
 
