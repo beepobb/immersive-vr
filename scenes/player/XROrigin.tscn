@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://jg1qkgdrf47o"]
 
-[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_k04qm"]
 [ext_resource type="Script" uid="uid://cr4ye0kyb54an" path="res://scenes/player/player.gd" id="1_kfx4a"]
-[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="3_vi16e"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_x2gul"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_kfx4a"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7e1ug"]
@@ -36,9 +34,6 @@ in_call = true
 [node name="LeftController" type="XRController3D" parent="." unique_id=1722520529]
 tracker = &"left_hand"
 
-[node name="LeftHand" parent="LeftController" unique_id=759549420 instance=ExtResource("1_k04qm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022, 0.05, -0.177)
-
 [node name="MovementDirect" parent="LeftController" unique_id=1424597202 instance=ExtResource("3_x2gul")]
 
 [node name="Target" type="Marker3D" parent="LeftController" unique_id=245992039]
@@ -49,9 +44,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071, -0.204, -0.056)
 
 [node name="RightController" type="XRController3D" parent="." unique_id=2121946272]
 tracker = &"right_hand"
-
-[node name="RightHand" parent="RightController" unique_id=670448450 instance=ExtResource("3_vi16e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 0.05, -0.177)
 
 [node name="MovementTurn" parent="RightController" unique_id=807471930 instance=ExtResource("5_kfx4a")]
 
