@@ -39,6 +39,8 @@ var skin_tone: String = ""
 var outfit: String = ""
 var hair_style: String = ""
 var shoes: String = ""
+var selected_avatar_id: String = "default"
+var selected_avatar_scene_path: String = ""
 
 # Environment choice
 var environment_id: String = "" # "clarity_room", "dialogue_cafe", etc.
@@ -58,7 +60,8 @@ var recording_path: String
 
 func reset() -> void:
 	gender = "female"
-
+	selected_avatar_id = "default"
+	selected_avatar_scene_path = ""
 	#TODO: shoes, hair, outfit, skin tone
 
 func update_customisations(hair_id: String, outfit_id: String, shoe_id: String, skin_tone_id: String = "") -> void:
@@ -66,6 +69,10 @@ func update_customisations(hair_id: String, outfit_id: String, shoe_id: String, 
 	outfit = outfit_id
 	shoes = shoe_id
 	skin_tone = skin_tone_id
+
+func update_selected_avatar(avatar_id: String, scene_path: String) -> void:
+	selected_avatar_id = avatar_id
+	selected_avatar_scene_path = scene_path
 
 func set_default_options() -> void:
 	var preset: Dictionary = DEFAULT_VISUAL_PRESETS.get(gender.to_lower(), {})

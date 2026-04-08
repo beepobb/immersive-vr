@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d2p30tm3xpnoh"
-path="res://.godot/imported/elvs_grump_hair.glb-dd6f188616852dbd51b53e566ea3ea0d.scn"
+path="res://.godot/imported/elvs_grump_hair.glb-38ec2f88c47dfcf4200dc84385eb9682.scn"
 
 [deps]
 
-source_file="res://assets/Hair/elvs_grump_hair.glb"
-dest_files=["res://.godot/imported/elvs_grump_hair.glb-dd6f188616852dbd51b53e566ea3ea0d.scn"]
+source_file="res://assets/hair/elvs_grump_hair.glb"
+dest_files=["res://.godot/imported/elvs_grump_hair.glb-38ec2f88c47dfcf4200dc84385eb9682.scn"]
 
 [params]
 

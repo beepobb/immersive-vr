@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blali5uoooyiv"
-path.s3tc="res://.godot/imported/Hair_ponytail_ponytail01_diffuse.png-2bd1d0bfafb1c0f975746de494754bef.s3tc.ctex"
-path.etc2="res://.godot/imported/Hair_ponytail_ponytail01_diffuse.png-2bd1d0bfafb1c0f975746de494754bef.etc2.ctex"
+path.s3tc="res://.godot/imported/Hair_ponytail_ponytail01_diffuse.png-09c0eb607ea39e28061bb475a546eecf.s3tc.ctex"
+path.etc2="res://.godot/imported/Hair_ponytail_ponytail01_diffuse.png-09c0eb607ea39e28061bb475a546eecf.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Hair/Hair_ponytail_ponytail01_diffuse.png"
-dest_files=["res://.godot/imported/Hair_ponytail_ponytail01_diffuse.png-2bd1d0bfafb1c0f975746de494754bef.s3tc.ctex", "res://.godot/imported/Hair_ponytail_ponytail01_diffuse.png-2bd1d0bfafb1c0f975746de494754bef.etc2.ctex"]
+source_file="res://assets/hair/Hair_ponytail_ponytail01_diffuse.png"
+dest_files=["res://.godot/imported/Hair_ponytail_ponytail01_diffuse.png-09c0eb607ea39e28061bb475a546eecf.s3tc.ctex", "res://.godot/imported/Hair_ponytail_ponytail01_diffuse.png-09c0eb607ea39e28061bb475a546eecf.etc2.ctex"]
 
 [params]
 

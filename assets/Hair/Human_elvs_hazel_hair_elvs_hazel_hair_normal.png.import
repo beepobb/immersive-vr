@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drkh34taw0int"
-path.s3tc="res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png-3389037b9b967a527508cf126756cc37.s3tc.ctex"
-path.etc2="res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png-3389037b9b967a527508cf126756cc37.etc2.ctex"
+path.s3tc="res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png-c5ec311876f85f31a46c79faaa2b24f9.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png-c5ec311876f85f31a46c79faaa2b24f9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Hair/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png"
-dest_files=["res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png-3389037b9b967a527508cf126756cc37.s3tc.ctex", "res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png-3389037b9b967a527508cf126756cc37.etc2.ctex"]
+source_file="res://assets/hair/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png"
+dest_files=["res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png-c5ec311876f85f31a46c79faaa2b24f9.s3tc.ctex", "res://.godot/imported/Human_elvs_hazel_hair_elvs_hazel_hair_normal.png-c5ec311876f85f31a46c79faaa2b24f9.etc2.ctex"]
 
 [params]
 

@@ -13,10 +13,15 @@ var appearance_service = AvatarAppearanceService.new()
 var _selected_by_tab: Dictionary = {}
 var _button_base_modulate: Dictionary = {}
 
+var _demo_built := false
+const DEMO_AVATAR_JSON_PATH := "res://assets/Avatar/demo_avatar_assets.json"
+var demo_items: Array = []
+
 func _ready() -> void:
 	UIButtonAudio.setup_buttons(self )
 	tab_container.tab_changed.connect(_on_tab_changed)
 	appearance_service.load_manifests()
+	_load_demo_items()
 	_refresh_current_tab()
 	_apply_glass_tabs(tab_container)
 
@@ -34,6 +39,10 @@ func _refresh_current_tab() -> void:
 	if tab.name == "Hair" and !_hair_built:
 		_build_buttons_from_json(tab, appearance_service.hair_map)
 		_hair_built = true
+		
+	if tab.name == "Demo" and !_demo_built:
+		_build_demo_buttons(tab)
+		_demo_built = true
 
 	if tab.name == "Outfit" and !_outfit_built:
 		_build_buttons_from_json(tab, appearance_service.outfit_map)
@@ -78,7 +87,71 @@ func _build_skin_palette(tab: Control) -> void:
 		btn.add_theme_stylebox_override("focus", _make_rect_stylebox(col, true))
 		grid.add_child(btn)
 		_connect_button_effects(btn, tab.name)
+		
+func _build_demo_buttons(tab: Control) -> void:
+	var grid := tab.get_node_or_null("MarginContainer/VBoxContainer/ScrollContainer/GridContainer")
+	if grid == null:
+		push_error("Demo GridContainer not found in tab: " + tab.name)
+		return
 
+	for c in grid.get_children():
+		c.queue_free()
+
+	# 2 avatars side by side
+	grid.columns = 2
+	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	grid.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+	for item in demo_items:
+		if typeof(item) != TYPE_DICTIONARY:
+			continue
+
+		var avatar_id := String(item.get("id", "")).to_lower()
+		var display_name := String(item.get("name", avatar_id))
+		var thumb_path := String(item.get("thumb", ""))
+
+		if avatar_id == "":
+			continue
+
+		var box := VBoxContainer.new()
+		box.custom_minimum_size = Vector2(220, 260)
+		box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		box.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+		box.alignment = BoxContainer.ALIGNMENT_CENTER
+
+		var btn := TextureButton.new()
+		btn.custom_minimum_size = Vector2(220, 220)
+		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		btn.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		btn.ignore_texture_size = true
+		btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		btn.name = avatar_id
+		btn.set_meta("id", avatar_id)
+		btn.set_meta("tab_name", tab.name)
+		btn.focus_mode = Control.FOCUS_NONE
+
+		if thumb_path != "" and ResourceLoader.exists(thumb_path):
+			var tex = load(thumb_path)
+			btn.texture_normal = tex
+			btn.texture_hover = tex
+			btn.texture_pressed = tex
+			btn.texture_disabled = tex
+		else:
+			push_warning("Missing demo avatar thumbnail: " + avatar_id)
+
+		var label := Label.new()
+		label.text = display_name.capitalize()
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
+		box.add_child(btn)
+		box.add_child(label)
+		grid.add_child(box)
+
+		_connect_button_effects(btn, tab.name)
+		
 func _make_rect_stylebox(color: Color, selected: bool) -> StyleBoxFlat:
 	var sb := StyleBoxFlat.new()
 	sb.bg_color = color
@@ -101,7 +174,22 @@ func _make_rect_stylebox(color: Color, selected: bool) -> StyleBoxFlat:
 		sb.border_color = Color(1, 1, 1, 0.15)
 
 	return sb
+	
+func _load_demo_items() -> void:
+	var f := FileAccess.open(DEMO_AVATAR_JSON_PATH, FileAccess.READ)
+	if f == null:
+		push_error("Cannot open demo avatar JSON: " + DEMO_AVATAR_JSON_PATH)
+		return
 
+	var data = JSON.parse_string(f.get_as_text())
+	f.close()
+
+	if typeof(data) != TYPE_DICTIONARY or !data.has("items"):
+		push_error("demo_avatar_assets.json invalid.")
+		return
+
+	demo_items = data["items"]
+	
 func _build_buttons_from_json(tab: Control, map: Array) -> void:
 	var grid := tab.get_node_or_null("MarginContainer/VBoxContainer/ScrollContainer/GridContainer")
 	if grid == null:

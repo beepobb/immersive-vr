@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cedvftmp63ks"
-path.s3tc="res://.godot/imported/elvs_maxwell_hair_maxhairtex6.png-19f30e574c8db24606ed3170b3465ee3.s3tc.ctex"
-path.etc2="res://.godot/imported/elvs_maxwell_hair_maxhairtex6.png-19f30e574c8db24606ed3170b3465ee3.etc2.ctex"
+path.s3tc="res://.godot/imported/elvs_maxwell_hair_maxhairtex6.png-ca4d6033230c8412200c828fbadd78fa.s3tc.ctex"
+path.etc2="res://.godot/imported/elvs_maxwell_hair_maxhairtex6.png-ca4d6033230c8412200c828fbadd78fa.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Hair/elvs_maxwell_hair_maxhairtex6.png"
-dest_files=["res://.godot/imported/elvs_maxwell_hair_maxhairtex6.png-19f30e574c8db24606ed3170b3465ee3.s3tc.ctex", "res://.godot/imported/elvs_maxwell_hair_maxhairtex6.png-19f30e574c8db24606ed3170b3465ee3.etc2.ctex"]
+source_file="res://assets/hair/elvs_maxwell_hair_maxhairtex6.png"
+dest_files=["res://.godot/imported/elvs_maxwell_hair_maxhairtex6.png-ca4d6033230c8412200c828fbadd78fa.s3tc.ctex", "res://.godot/imported/elvs_maxwell_hair_maxhairtex6.png-ca4d6033230c8412200c828fbadd78fa.etc2.ctex"]
 
 [params]
 

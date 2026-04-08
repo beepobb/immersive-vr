@@ -26,6 +26,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Lobby" unique_id=1701868660 instance=ExtResource("1_ein8w")]
+avatar_test_path = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=2055827521]
 environment = SubResource("Environment_is1y2")
@@ -35,7 +36,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, 0)
 
 [node name="ServerInfo" parent="UI" index="0" unique_id=489379600 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.7789513, -0.4445969)
+transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.7789513, 0.10486114)
 screen_size = Vector2(0.96, 1.39)
 scene = ExtResource("2_ein8w")
 viewport_size = Vector2(454, 564.85)
@@ -45,7 +46,7 @@ scene_properties_keys = PackedStringArray("room_info.gd", "player_card")
 player_card = ExtResource("5_yy71y")
 
 [node name="EnvPreview" parent="UI" index="1" unique_id=1614598740 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.554275, 1.848, -0.37237382)
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.554275, 1.8479999, 0.17708421)
 screen_size = Vector2(0.935, 1.39)
 scene = ExtResource("7_tprm0")
 viewport_size = Vector2(540, 782)
@@ -54,7 +55,7 @@ unshaded = true
 scene_properties_keys = PackedStringArray("selected_env_preview.gd")
 
 [node name="CustomiseOptions" parent="UI" index="2" unique_id=1983447249 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.68, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.545794, 0.549458)
 screen_size = Vector2(0.6, 0.18)
 scene = ExtResource("8_tprm0")
 viewport_size = Vector2(421, 118)
@@ -62,10 +63,10 @@ transparent = 1
 scene_properties_keys = PackedStringArray("avatar_env.gd")
 
 [node name="Leave" parent="UI" index="3" unique_id=2106558892 instance=ExtResource("1_8ldoj")]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -1.928, 2.599, -0.348)
-screen_size = Vector2(0.47, 0.16)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -1.8356892, 2.5065956, 0.20145804)
+screen_size = Vector2(0.5, 0.2)
 scene = ExtResource("7_mw24c")
-viewport_size = Vector2(339, 118)
+viewport_size = Vector2(300, 110)
 transparent = 1
 scene_properties_keys = PackedStringArray("leave.gd")
 

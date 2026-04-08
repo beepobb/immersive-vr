@@ -4,38 +4,60 @@
 [ext_resource type="Texture2D" uid="uid://do3pxipuvipnn" path="res://assets/ui/icons/edit.png" id="2_pm3xj"]
 [ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="3_nhdj7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csjua"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0.105882354, 0.105882354, 0.10980392, 0.72156864)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.59607846, 0.59607846, 0.60784316, 0.72156864)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydyi8"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0, 0, 0, 0.78039217)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k444i"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3dmx"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="CustomiseAvatar" type="Button" unique_id=1995690849]
-offset_right = 421.0
-offset_bottom = 118.0
+custom_minimum_size = Vector2(250, 50)
+offset_right = 300.0
+offset_bottom = 80.0
 theme = ExtResource("3_nhdj7")
-script = ExtResource("1_cfl4j")
-
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=465541747]
-layout_mode = 0
-offset_right = 421.0
-offset_bottom = 118.0
-theme_override_constants/margin_left = 35
-theme_override_constants/margin_right = 35
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1943709672]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=1894133309]
-layout_mode = 2
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_bottom = 30
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=658284959]
-custom_minimum_size = Vector2(60, 0)
-layout_mode = 2
-texture = ExtResource("2_pm3xj")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=854203471]
-layout_mode = 2
-theme = ExtResource("3_nhdj7")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_csjua")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ydyi8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k444i")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p3dmx")
 text = "Customise Avatar"
+icon = ExtResource("2_pm3xj")
+script = ExtResource("1_cfl4j")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
