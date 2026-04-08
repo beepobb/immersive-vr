@@ -184,7 +184,7 @@ func end_call_session(notice: String) -> void:
 	if not multiplayer.is_server():
 		return
 
-	var is_host_therapist := multiplayer.multiplayer_peer != null and multiplayer.is_server() and Roles.user_role == Roles.Role.THERAPIST
+	var is_host_therapist = multiplayer.multiplayer_peer != null and multiplayer.is_server() and Roles.user_role == Roles.Role.THERAPIST
 	var recording_result := _call_recording_manager.stop_and_save_if_host(is_host_therapist)
 	recording = recording_result.get("recording")
 	recording_path = String(recording_result.get("path", ""))
@@ -325,7 +325,7 @@ func _role_to_text(role_value: int) -> String:
 @rpc("authority", "call_remote")
 func start_call() -> void:
 	load_scene(IN_CALL_SCENE_PATH)
-	var is_host_therapist := multiplayer.multiplayer_peer != null and multiplayer.is_server() and Roles.user_role == Roles.Role.THERAPIST
+	var is_host_therapist = multiplayer.multiplayer_peer != null and multiplayer.is_server() and Roles.user_role == Roles.Role.THERAPIST
 	_call_recording_manager.start_if_host(is_host_therapist)
 
 func start_call_for_clients():

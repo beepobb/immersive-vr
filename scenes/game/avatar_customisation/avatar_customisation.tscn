@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_ex4w4"]
 [ext_resource type="PackedScene" uid="uid://x0k1ixl4v7o1" path="res://scenes/game/avatar_customisation/avatar_customisation_base.tscn" id="2_515di"]
-[ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="3_515di"]
+[ext_resource type="PackedScene" uid="uid://c6wjq0f3tu7tc" path="res://scenes/environment/circular_hall.tscn" id="3_515di"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_515di"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
