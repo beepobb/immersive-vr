@@ -1,6 +1,6 @@
 extends Node3D
 
-@export_group("Trackers") 
+@export_group("Trackers")
 @export var hmd: XRCamera3D
 @export var left_hand: XRController3D
 @export var right_hand: XRController3D
@@ -18,6 +18,8 @@ var fallback: bool = false
 var player_eye_height: float = 0.0
 var avatar_eye_height: float = 0.0
 var avatar_loaded: bool = false
+@export var no_ft: bool = false
+@export var glb_scale: float = 1.0
 
 # ======= BODY AXES ========
 var body_forward: Vector3
@@ -45,10 +47,25 @@ func _ready() -> void:
 	
 func load_player_scaled() -> void:
 	player_eye_height = hmd.global_position.y
-	var avatar_name = get_node_or_null("../AvatarRoot").get_child(0).name
-	var player = get_node_or_null("../AvatarRoot/" + avatar_name)
+	var player
+	var player_skeleton
+	if no_ft:
+		$"../AvatarRoot/bernard".visible = true
+		$"../AvatarRoot/Remy".visible = false
+	else:
+		$"../AvatarRoot/bernard".visible = false
+		$"../AvatarRoot/Remy".visible = true
+	if not no_ft:
+		var avatar_name = get_node_or_null("../AvatarRoot").get_child(0).name
+		player = get_node_or_null("../AvatarRoot/" + avatar_name)
+		player_skeleton = player.get_child(0).get_child(0)
+		
+	else:
+		player = get_node_or_null("../AvatarRoot/Remy")
+		player_skeleton = player.get_child(0)
+		
 	# all avatar scene need skeleton3d node to be first child
-	var player_skeleton: Skeleton3D = player.get_child(0).get_child(0)
+	
 	var lfoot_bone_idx: int = player_skeleton.find_bone(lfoot_bone_name)
 	var head_bone_idx: int = player_skeleton.find_bone(head_bone_name)
 	
@@ -63,7 +80,7 @@ func load_player_scaled() -> void:
 		# Update player to use fallback avatar
 		player = fallback_avatar.instantiate()
 		# Update skeleton to use fallback avatar's skeleton
-		player_skeleton= player.get_child(0) 
+		player_skeleton = player.get_child(0)
 		lfoot_bone_idx = 62
 		head_bone_idx = 5
 		eye_offset = 0.15 # Tested with mixamo default character
@@ -75,12 +92,15 @@ func load_player_scaled() -> void:
 	# Compute scale
 	var avatar_scale: float = player_eye_height / avatar_eye_height
 	
+	if no_ft:
 	# Load avatar into scene scaled to player height
-	player.scale = Vector3.ONE * avatar_scale * 10
+		player.scale = Vector3.ONE * avatar_scale
+	else:
+		player.scale = Vector3.ONE * avatar_scale * glb_scale
 	avatar_loaded = true
 	
 func save_body_axes() -> void:
-	body_forward = -waist.global_basis.z # Forward is -Z in Godot
+	body_forward = - waist.global_basis.z # Forward is -Z in Godot
 	body_forward.y = 0
 	body_forward = body_forward.normalized()
 	body_right = body_forward.cross(body_up).normalized()
