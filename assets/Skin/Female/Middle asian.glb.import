@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ono64hflan1f"
-path="res://.godot/imported/Middle asian.glb-14b87a2f8fa3e3876906f18ba6abc8e4.scn"
+path="res://.godot/imported/Middle asian.glb-9c07f0d1b0e11ad2fc4c91518e357bf4.scn"
 
 [deps]
 
-source_file="res://assets/skin/Female/Middle asian.glb"
-dest_files=["res://.godot/imported/Middle asian.glb-14b87a2f8fa3e3876906f18ba6abc8e4.scn"]
+source_file="res://assets/Skin/Female/Middle asian.glb"
+dest_files=["res://.godot/imported/Middle asian.glb-9c07f0d1b0e11ad2fc4c91518e357bf4.scn"]
 
 [params]
 

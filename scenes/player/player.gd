@@ -3,21 +3,20 @@ extends XROrigin3D
 var _is_local_player := false
 var spawn_point: Node3D
 # uncomment for facial tracking and delete all blendshapes in synchroniser
-# var _face_blend_shape_values := PackedFloat32Array()
-# var _face_sync_accumulator := 0.0
+var _face_blend_shape_values := PackedFloat32Array()
+var _face_sync_accumulator := 0.0
+const FACE_SYNC_INTERVAL_SECONDS := 1.0 / 30.0
+const FACE_MESH_PATH := "AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body"
 
-# const FACE_SYNC_INTERVAL_SECONDS := 1.0 / 30.0
-# const FACE_MESH_PATH := "AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body"
+@onready var _face_mesh: MeshInstance3D = get_node_or_null(FACE_MESH_PATH)
 
-# @onready var _face_mesh: MeshInstance3D = get_node_or_null(FACE_MESH_PATH)
-
-# @export var face_blend_shape_values: PackedFloat32Array:
-# 	set(value):
-# 		_face_blend_shape_values = value
-# 		if not _is_local_player:
-# 			_apply_face_blend_shapes(value)
-# 	get:
-# 		return _face_blend_shape_values
+@export var face_blend_shape_values: PackedFloat32Array:
+	set(value):
+		_face_blend_shape_values = value
+		if not _is_local_player:
+			_apply_face_blend_shapes(value)
+	get:
+		return _face_blend_shape_values
 
 func _enter_tree() -> void:
 	# Authority is local-only state, so each peer must set it for this node.
@@ -89,42 +88,42 @@ func _ready():
 		# _apply_face_blend_shapes(_face_blend_shape_values)
 
 
-# func _process(delta: float) -> void:
-# 	if not _is_local_player:
-# 		return
-# 	if _face_mesh == null:
-# 		return
+func _process(delta: float) -> void:
+	if not _is_local_player:
+		return
+	if _face_mesh == null:
+		return
 
-# 	_face_sync_accumulator += delta
-# 	if _face_sync_accumulator < FACE_SYNC_INTERVAL_SECONDS:
-# 		return
-# 	_face_sync_accumulator = 0.0
+	_face_sync_accumulator += delta
+	if _face_sync_accumulator < FACE_SYNC_INTERVAL_SECONDS:
+		return
+	_face_sync_accumulator = 0.0
 
-# 	var blend_shape_count := _face_mesh.get_blend_shape_count()
-# 	if blend_shape_count <= 0:
-# 		return
+	var blend_shape_count := _face_mesh.get_blend_shape_count()
+	if blend_shape_count <= 0:
+		return
 
-# 	var sampled_values := PackedFloat32Array()
-# 	sampled_values.resize(blend_shape_count)
+	var sampled_values := PackedFloat32Array()
+	sampled_values.resize(blend_shape_count)
 
-# 	var changed := _face_blend_shape_values.size() != blend_shape_count
-# 	for i in blend_shape_count:
-# 		var sampled_value := _face_mesh.get_blend_shape_value(i)
-# 		sampled_values[i] = sampled_value
-# 		if not changed and not is_equal_approx(_face_blend_shape_values[i], sampled_value):
-# 			changed = true
+	var changed := _face_blend_shape_values.size() != blend_shape_count
+	for i in blend_shape_count:
+		var sampled_value := _face_mesh.get_blend_shape_value(i)
+		sampled_values[i] = sampled_value
+		if not changed and not is_equal_approx(_face_blend_shape_values[i], sampled_value):
+			changed = true
+	
+	if changed:
+		face_blend_shape_values = sampled_values
 
-# 	if changed:
-# 		face_blend_shape_values = sampled_values
 
+func _apply_face_blend_shapes(values: PackedFloat32Array) -> void:
+	if _face_mesh == null:
+		return
 
-# func _apply_face_blend_shapes(values: PackedFloat32Array) -> void:
-# 	if _face_mesh == null:
-# 		return
-
-# 	var blend_shape_count: int = min(_face_mesh.get_blend_shape_count(), values.size())
-# 	for i in blend_shape_count:
-# 		_face_mesh.set_blend_shape_value(i, values[i])
+	var blend_shape_count: int = min(_face_mesh.get_blend_shape_count(), values.size())
+	for i in blend_shape_count:
+		_face_mesh.set_blend_shape_value(i, values[i])
 	
 func hide_all_meshes(node: Node = $AvatarRoot) -> void:
 	for child in node.get_children():

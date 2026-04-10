@@ -3,17 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_8ddht"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_nn4wk"]
 [ext_resource type="PackedScene" uid="uid://c18us5fwp0oc1" path="res://scenes/game/call/end_call_summary.tscn" id="3_r2qld"]
-[ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="4_g3pbj"]
+[ext_resource type="PackedScene" uid="uid://c6wjq0f3tu7tc" path="res://scenes/environment/circular_hall.tscn" id="4_g3pbj"]
 
 [node name="CallSummary" unique_id=621000924 instance=ExtResource("1_8ddht")]
 
 [node name="PlayerLoader" parent="." index="0" unique_id=1066474312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 0)
 moving = false
-spawn_point = Vector3(0, 1.74, 0)
 
 [node name="Viewport2Din3D" parent="." index="1" unique_id=651325637 instance=ExtResource("2_nn4wk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049, 2.8, -1.481)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049, 3, -1.481)
 screen_size = Vector2(1.28, 0.72)
 scene = ExtResource("3_r2qld")
 viewport_size = Vector2(1280, 720)

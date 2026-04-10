@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e1uxhu4unxx3"
-path.s3tc="res://.godot/imported/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png-d8797241786b1c35a8cb9501899ca38c.s3tc.ctex"
-path.etc2="res://.godot/imported/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png-d8797241786b1c35a8cb9501899ca38c.etc2.ctex"
+path.s3tc="res://.godot/imported/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png-e4eaa4e75237f0f5d538dbdc39a37d94.s3tc.ctex"
+path.etc2="res://.godot/imported/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png-e4eaa4e75237f0f5d538dbdc39a37d94.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/hair/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png"
-dest_files=["res://.godot/imported/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png-d8797241786b1c35a8cb9501899ca38c.s3tc.ctex", "res://.godot/imported/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png-d8797241786b1c35a8cb9501899ca38c.etc2.ctex"]
+source_file="res://assets/Hair/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png"
+dest_files=["res://.godot/imported/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png-e4eaa4e75237f0f5d538dbdc39a37d94.s3tc.ctex", "res://.godot/imported/cortu_strawberry_cloud_hair_strawberry_cloud_diff.png-e4eaa4e75237f0f5d538dbdc39a37d94.etc2.ctex"]
 
 [params]
 

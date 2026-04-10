@@ -10,4 +10,3 @@ prompt_for_continue = false
 [node name="LoadingScreen" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.102315664, -12.319333, -0.0027275085)
 splash_screen = ExtResource("2_k1qkh")
-progress = 0.3
