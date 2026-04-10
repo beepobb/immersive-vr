@@ -25,7 +25,7 @@ const ENVIRONMENTS := {
 		"name": "Tranquil Park",
 		"description": "A gentle outdoor park with greenery and winding paths. Ideal for relaxed, natural conversations in a refreshing setting.",
 		"thumbnail": "res://assets/ui/card/park.jpg",
-		"scene_path": "res://scenes/environment/meta_env_06.tscn",
+		"scene_path": "res://scenes/environment/park.tscn",
 	},
 	"desert": {
 		"name": "Desert Serenity",

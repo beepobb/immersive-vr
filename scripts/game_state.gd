@@ -58,6 +58,16 @@ var _call_transcribe := CallTranscribe.new()
 var recording
 var recording_path: String
 
+var in_debug: bool
+
+func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_M):
+		if not in_debug:
+			in_debug = true
+		else:
+			in_debug = false
+	
+
 func reset() -> void:
 	gender = "female"
 	selected_avatar_id = "default"

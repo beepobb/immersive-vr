@@ -45,15 +45,12 @@ func _ready() -> void:
 	
 func load_player_scaled() -> void:
 	player_eye_height = hmd.global_position.y
-	print(player_eye_height)
 	var avatar_name = get_node_or_null("../AvatarRoot").get_child(0).name
 	var player = get_node_or_null("../AvatarRoot/" + avatar_name)
 	# all avatar scene need skeleton3d node to be first child
 	var player_skeleton: Skeleton3D = player.get_child(0).get_child(0)
 	var lfoot_bone_idx: int = player_skeleton.find_bone(lfoot_bone_name)
 	var head_bone_idx: int = player_skeleton.find_bone(head_bone_name)
-	print(player)
-	print(lfoot_bone_idx)
 	
 	if (lfoot_bone_idx == -1):
 		push_warning("Left foot bone name is invalid. Using default avatar...")
@@ -74,11 +71,9 @@ func load_player_scaled() -> void:
 	var lfoot_pos: Transform3D = player_skeleton.get_bone_global_pose(lfoot_bone_idx)
 	var head_pos: Transform3D = player_skeleton.get_bone_global_pose(head_bone_idx)
 	avatar_eye_height = head_pos.origin.y - lfoot_pos.origin.y + eye_offset
-	print_debug(player_eye_height, avatar_eye_height)
 	
 	# Compute scale
 	var avatar_scale: float = player_eye_height / avatar_eye_height
-	print_debug("Scale: ", avatar_scale)
 	
 	# Load avatar into scene scaled to player height
 	player.scale = Vector3.ONE * avatar_scale * 10
