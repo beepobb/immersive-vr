@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://tp33cmnql5ut"]
+
+[ext_resource type="Script" uid="uid://cmlmdook4bs5c" path="res://scripts/ui/lobby/avatar_env.gd" id="1_cfl4j"]
+[ext_resource type="Texture2D" uid="uid://do3pxipuvipnn" path="res://assets/ui/icons/edit.png" id="2_pm3xj"]
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="3_nhdj7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csjua"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0.105882354, 0.105882354, 0.10980392, 0.72156864)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.59607846, 0.59607846, 0.60784316, 0.72156864)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydyi8"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0, 0, 0, 0.78039217)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k444i"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3dmx"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="CustomiseAvatar" type="Button" unique_id=1995690849]
+custom_minimum_size = Vector2(250, 50)
+offset_right = 300.0
+offset_bottom = 80.0
+theme = ExtResource("3_nhdj7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_csjua")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ydyi8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k444i")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p3dmx")
+text = "Customise Avatar"
+icon = ExtResource("2_pm3xj")
+script = ExtResource("1_cfl4j")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm8p822fuwv0y"]
+
+[ext_resource type="PackedScene" uid="uid://db65o6wdx8hui" path="res://assets/outfit/elvs_racing_fire_suit_male1.glb" id="1_0wu54"]
+
+[node name="elvs_racing_fire_suit_male1" instance=ExtResource("1_0wu54")]

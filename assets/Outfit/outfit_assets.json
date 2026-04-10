@@ -1,0 +1,134 @@
+{
+	"items": [
+		{
+			"id": "elvs_male_coveralls_1",
+			"name": "Elvs Male Coveralls 1",
+			"scene": "res://Assets/Outfit/elvs_male_coveralls_1.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_male_coveralls_1.png"
+		},
+		{
+			"id": "elvs_racing_fire_suit_male_1",
+			"name": "Elvs Racing Fire Suit Male 1",
+			"scene": "res://Assets/Outfit/elvs_racing_fire_suit_male_1.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/elvs_racing_fire_suit_male1.png"
+		},
+		{
+			"id": "female_casualsuit_01",
+			"name": "Female Casualsuit 01",
+			"scene": "res://Assets/Outfit/female_casualsuit_01.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/female_casualsuit01.png"
+		},
+		{
+			"id": "female_casualsuit_02",
+			"name": "Female Casualsuit 02",
+			"scene": "res://Assets/Outfit/female_casualsuit_02.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/female_casualsuit02.png"
+		},
+		{
+			"id": "female_elegantsuit",
+			"name": "Female Elegantsuit",
+			"scene": "res://Assets/Outfit/female_elegantsuit.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/female_elegantsuit.png"
+		},
+		{
+			"id": "female_sportsuit_01",
+			"name": "Female Sportsuit 01",
+			"scene": "res://Assets/Outfit/female_sportsuit_01.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/female_sportsuit01.png"
+		},
+		{
+			"id": "maciekg_wizard_robe",
+			"name": "Maciekg Wizard Robe",
+			"scene": "res://Assets/Outfit/maciekg_wizard_robe.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/maciekg_wizard_robe.png"
+		},
+		{
+			"id": "male_casualsuit",
+			"name": "Male Casualsuit",
+			"scene": "res://Assets/Outfit/male_casualsuit.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/male_casualsuit.png"
+		},
+		{
+			"id": "male_casualsuit_02",
+			"name": "Male Casualsuit 02",
+			"scene": "res://Assets/Outfit/male_casualsuit_02.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/male_casualsuit02.png"
+		},
+		{
+			"id": "male_casualsuit_03",
+			"name": "Male Casualsuit 03",
+			"scene": "res://Assets/Outfit/male_casualsuit_03.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/male_casualsuit03.png"
+		},
+		{
+			"id": "male_casualsuit_04",
+			"name": "Male Casualsuit 04",
+			"scene": "res://Assets/Outfit/male_casualsuit_04.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/male_casualsuit04.png"
+		},
+		{
+			"id": "male_casualsuit_05",
+			"name": "Male Casualsuit 05",
+			"scene": "res://Assets/Outfit/male_casualsuit_05.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/male_casualsuit05.png"
+		},
+		{
+			"id": "male_casualsuit_06",
+			"name": "Male Casualsuit 06",
+			"scene": "res://Assets/Outfit/male_casualsuit_06.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/male_casualsuit06.png"
+		},
+		{
+			"id": "male_elegantsuit_01",
+			"name": "Male Elegantsuit 01",
+			"scene": "res://Assets/Outfit/male_elegantsuit_01.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/male_elegantsuit.png"
+		},
+		{
+			"id": "male_worksuit_01",
+			"name": "Male Worksuit 01",
+			"scene": "res://Assets/Outfit/male_worksuit_01.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/male_worksuit01.png"
+		},
+		{
+			"id": "punkduck_tennis_dress",
+			"name": "Punkduck Tennis Dress",
+			"scene": "res://Assets/Outfit/punkduck_tennis_dress.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/punkduck_tennis_dress.png"
+		},
+		{
+			"id": "toigo_female_double_breasted_suit",
+			"name": "Toigo Female Double Breasted Suit",
+			"scene": "res://Assets/Outfit/toigo_female_double_breasted_suit.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/toigo_female_double_breasted_suit.png"
+		},
+		{
+			"id": "toigo_female_suit",
+			"name": "Toigo Female Suit",
+			"scene": "res://Assets/Outfit/toigo_female_suit.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/toigo_female_suit.png"
+		},
+		{
+			"id": "toigo_male_double_breasted_suit",
+			"name": "Toigo Male Double Breasted Suit",
+			"scene": "res://Assets/Outfit/toigo_male_double_breasted_suit.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/toigo_male_double_breasted_suit.png"
+		},
+		{
+			"id": "toigo_male_suit_3",
+			"name": "Toigo Male Suit 3",
+			"scene": "res://Assets/Outfit/toigo_male_suit_3.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/toigo_male_suit_3.png"
+		},
+		{
+			"id": "toigo_male_suit_tie_and_jacket",
+			"name": "Toigo Male Suit Tie And Jacket",
+			"scene": "res://Assets/Outfit/toigo_male_suit_tie_and_jacket.tscn",
+			"thumb": "res://Assets/Outfit/thumbs/toigo_male_suit_tie_and_jacket.png"
+		}
+	],
+	"root": "res://Assets/Outfit",
+	"thumb_root": "res://Assets/Outfit/thumbs",
+	"type": "outfit_set",
+	"version": 4
+}

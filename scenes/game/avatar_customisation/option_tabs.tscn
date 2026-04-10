@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://cifcm62bjtidk"]
+
+[ext_resource type="Script" uid="uid://cdsd8beik62kt" path="res://scripts/ui/avatar_customisation/option_tabs.gd" id="1_uqvoq"]
+[ext_resource type="Theme" uid="uid://cemhuq212tawr" path="res://assets/themes/ui_theme.tres" id="2_10tdl"]
+[ext_resource type="FontFile" uid="uid://3cmsgjt8csyb" path="res://tools/Poppins/Poppins-SemiBold.ttf" id="3_0bcty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hsv1"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.21950084, 0.21950108, 0.21950087, 0.8235294)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhfsl"]
+bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
+corner_radius_top_left = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1aak"]
+bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
+corner_radius_top_left = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mvbp"]
+bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
+corner_radius_top_left = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxbqf"]
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 0.8235294)
+border_width_top = 2
+border_width_bottom = 2
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cbjt"]
+bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mxhm"]
+bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7p00"]
+bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytbdc"]
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 0.8235294)
+border_width_top = 2
+border_width_bottom = 2
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6s8w"]
+bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nakv3"]
+bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdywj"]
+bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owq5e"]
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 0.8235294)
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lo5ah"]
+bg_color = Color(0.05882353, 0.05882353, 0.0627451, 0.7019608)
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8loy"]
+bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1knp2"]
+bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+
+[node name="OptionTabs" type="HBoxContainer" unique_id=1550266906]
+offset_right = 502.0
+offset_bottom = 55.0
+script = ExtResource("1_uqvoq")
+
+[node name="Skin" type="Button" parent="." unique_id=702016832]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_3hsv1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhfsl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1aak")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8mvbp")
+text = "Skin
+"
+
+[node name="OutfitTab" type="Button" parent="." unique_id=988848351]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_rxbqf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1cbjt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8mxhm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u7p00")
+text = "Outfit"
+
+[node name="HairTab" type="Button" parent="." unique_id=1635316852]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_ytbdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y6s8w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nakv3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cdywj")
+text = "Hair"
+
+[node name="ShoesTab" type="Button" parent="." unique_id=876034097]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_ytbdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y6s8w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nakv3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cdywj")
+text = "Shoes"
+
+[node name="DemoTab" type="Button" parent="." unique_id=1941561530]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme = ExtResource("2_10tdl")
+theme_override_fonts/font = ExtResource("3_0bcty")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_owq5e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lo5ah")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u8loy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1knp2")
+text = "Demo"

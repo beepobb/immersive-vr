@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d124jvs5kft71"]
+
+[ext_resource type="Script" uid="uid://dm1v4b1h6fbdw" path="res://scripts/select_environment_root.gd" id="1_yrp6g"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_t6phl"]
+[ext_resource type="PackedScene" uid="uid://dn4xw3ejwujxl" path="res://scenes/game/select_environment/env_header.tscn" id="3_ts8dw"]
+[ext_resource type="PackedScene" uid="uid://ybm36ivsjvoj" path="res://scenes/game/select_environment/indicator_bar.tscn" id="4_7x3i6"]
+[ext_resource type="PackedScene" uid="uid://gail3i3os4a" path="res://scenes/game/select_environment/carousel.tscn" id="5_qcmem"]
+[ext_resource type="PackedScene" uid="uid://pqe224nmdhdj" path="res://scenes/game/select_environment/confirm_env_button.tscn" id="6_fdfhe"]
+
+[node name="EnvCarousel" type="Node3D" unique_id=1535981731]
+script = ExtResource("1_yrp6g")
+
+[node name="Header" parent="." unique_id=529547991 instance=ExtResource("2_t6phl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2234983, -2.4660447)
+screen_size = Vector2(4, 0.25)
+scene = ExtResource("3_ts8dw")
+viewport_size = Vector2(1350, 95)
+transparent = 1
+scene_properties_keys = PackedStringArray()
+
+[node name="IndicatorBar" parent="." unique_id=2003041163 instance=ExtResource("2_t6phl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93923664, -2.26798)
+screen_size = Vector2(2.7, 0.2)
+scene = ExtResource("4_7x3i6")
+viewport_size = Vector2(738, 54)
+transparent = 1
+scene_properties_keys = PackedStringArray("indicator_bar.gd")
+
+[node name="Carousel" parent="." unique_id=582770318 instance=ExtResource("2_t6phl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9800291, -2.3408446)
+screen_size = Vector2(4.52, 1.8)
+scene = ExtResource("5_qcmem")
+viewport_size = Vector2(1380, 580)
+transparent = 1
+scene_properties_keys = PackedStringArray("carousel.gd", "start_index")
+start_index = 0
+
+[node name="ConfirmButton" parent="." unique_id=651780012 instance=ExtResource("2_t6phl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64199233, -2.3134701)
+screen_size = Vector2(0.8, 0.2)
+scene = ExtResource("6_fdfhe")
+viewport_size = Vector2(200, 50)
+transparent = 1
+scene_properties_keys = PackedStringArray("confirm_env_button.gd")

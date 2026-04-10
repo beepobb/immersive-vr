@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cu6ifuf2vc8gv"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_8ldoj"]
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_ein8w"]
+[ext_resource type="PackedScene" uid="uid://cffhyue0c2whs" path="res://scenes/game/lobby/room_info.tscn" id="2_ein8w"]
+[ext_resource type="PackedScene" uid="uid://dbnkofu6ipe70" path="res://scenes/game/lobby/player_card.tscn" id="5_yy71y"]
+[ext_resource type="PackedScene" uid="uid://b16xpdpjtl72k" path="res://assets/Avatar/AvatarTest.glb" id="6_mcopp"]
+[ext_resource type="PackedScene" uid="uid://dpvf32trmgdmm" path="res://scenes/game/lobby/leave.tscn" id="7_mw24c"]
+[ext_resource type="PackedScene" uid="uid://cjo2n1yw7ll28" path="res://scenes/game/lobby/selected_env_preview.tscn" id="7_tprm0"]
+[ext_resource type="Script" uid="uid://8y5l23xo83v1" path="res://scripts/ui/lobby/lobby_manager.gd" id="8_ein8w"]
+[ext_resource type="PackedScene" uid="uid://tp33cmnql5ut" path="res://scenes/game/lobby/customise_avatar.tscn" id="8_tprm0"]
+[ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="9_p2j6g"]
+[ext_resource type="PackedScene" uid="uid://c8mkjqu5ta77d" path="res://scenes/game/disclaimer_viewport.tscn" id="10_flkj0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iy8d8"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_s5j51"]
+sky_material = SubResource("ProceduralSkyMaterial_iy8d8")
+
+[sub_resource type="Environment" id="Environment_is1y2"]
+background_mode = 2
+sky = SubResource("Sky_s5j51")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Lobby" unique_id=1701868660 instance=ExtResource("1_ein8w")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=2055827521]
+environment = SubResource("Environment_is1y2")
+
+[node name="UI" type="Node3D" parent="." index="1" unique_id=1114705087]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, -2.604053)
+
+[node name="ServerInfo" parent="UI" index="0" unique_id=489379600 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(0.96592575, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.96592575, -1.6468065, 1.7789513, 0.10486114)
+screen_size = Vector2(0.96, 1.39)
+scene = ExtResource("2_ein8w")
+viewport_size = Vector2(454, 564.85)
+transparent = 1
+unshaded = true
+scene_properties_keys = PackedStringArray("room_info.gd", "player_card")
+player_card = ExtResource("5_yy71y")
+
+[node name="EnvPreview" parent="UI" index="1" unique_id=1614598740 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.554275, 1.8479999, 0.17708421)
+screen_size = Vector2(0.935, 1.39)
+scene = ExtResource("7_tprm0")
+viewport_size = Vector2(540, 782)
+transparent = 1
+unshaded = true
+scene_properties_keys = PackedStringArray("selected_env_preview.gd")
+
+[node name="CustomiseOptions" parent="UI" index="2" unique_id=1983447249 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.545794, 0.549458)
+screen_size = Vector2(0.6, 0.18)
+scene = ExtResource("8_tprm0")
+viewport_size = Vector2(421, 118)
+transparent = 1
+scene_properties_keys = PackedStringArray("avatar_env.gd")
+
+[node name="Leave" parent="UI" index="3" unique_id=2106558892 instance=ExtResource("1_8ldoj")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -1.8356892, 2.5065956, 0.20145804)
+screen_size = Vector2(0.5, 0.2)
+scene = ExtResource("7_mw24c")
+viewport_size = Vector2(300, 110)
+transparent = 1
+scene_properties_keys = PackedStringArray("leave.gd")
+
+[node name="AvatarTest" parent="." index="2" unique_id=917422586 instance=ExtResource("6_mcopp")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.6, -2.822053)
+
+[node name="LobbyManager" type="Node3D" parent="." index="3" unique_id=500149902]
+script = ExtResource("8_ein8w")
+
+[node name="PlayerLoader" parent="." index="4" unique_id=1066474312]
+moving = false
+
+[node name="EnvironmentRoot" type="Node" parent="." index="5" unique_id=1157440965]
+
+[node name="Room" parent="EnvironmentRoot" index="0" unique_id=1582964686 instance=ExtResource("9_p2j6g")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="6" unique_id=579464998]
+light_energy = 0.4
+
+[node name="DisclaimerViewports" parent="." index="7" unique_id=1862570522 instance=ExtResource("10_flkj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, -2.055053)
+visible = false

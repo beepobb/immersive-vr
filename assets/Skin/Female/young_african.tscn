@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dom6bwn675bp3"]
+
+[ext_resource type="PackedScene" uid="uid://cnp0mpxoe5qt8" path="res://assets/skin/Female/Young african.glb" id="1_n88bo"]
+
+[node name="Young african" instance=ExtResource("1_n88bo")]

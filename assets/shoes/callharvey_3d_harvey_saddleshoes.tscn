@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1pfxx5xlpxdr"]
+
+[ext_resource type="PackedScene" uid="uid://coyf7uqcvegwn" path="res://assets/shoes/callharvey3d_harvey_saddleshoes.glb" id="1_1jvmf"]
+
+[node name="callharvey3d_harvey_saddleshoes" instance=ExtResource("1_1jvmf")]

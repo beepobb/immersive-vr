@@ -1,0 +1,695 @@
+[gd_scene format=3 uid="uid://jg1qkgdrf47o"]
+
+[ext_resource type="Script" uid="uid://cr4ye0kyb54an" path="res://scenes/player/player.gd" id="1_kfx4a"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_kfx4a"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_x2gul"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_kfx4a"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7e1ug"]
+[ext_resource type="PackedScene" uid="uid://cd2qni7yip51i" path="res://scenes/game/call/in_call_control_viewport.tscn" id="7_7e1ug"]
+[ext_resource type="PackedScene" uid="uid://chcuj3jysipk8" path="res://addons/godot-xr-tools/functions/movement_jog.tscn" id="8_2118c"]
+[ext_resource type="PackedScene" uid="uid://2ry474x0ensh" path="res://assets/Avatar/avatar w face bs/bernard.glb" id="9_7e1ug"]
+[ext_resource type="PackedScene" uid="uid://b37ap7blkr2og" path="res://assets/Remy.fbx" id="9_8px4q"]
+[ext_resource type="Script" uid="uid://o17r2om0r7y1" path="res://scripts/calibration.gd" id="11_8px4q"]
+[ext_resource type="PackedScene" uid="uid://ckwle4bd44t16" path="res://scenes/audio_manager.tscn" id="12_2118c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2gul"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kfx4a"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_x2gul"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7e1ug"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:basis")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("XRCamera3D:transform")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("LeftController:transform")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("RightController:transform")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("Waist:transform")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+properties/6/path = NodePath("LAnkle:transform")
+properties/6/spawn = true
+properties/6/replication_mode = 1
+properties/7/path = NodePath("RAnkle:transform")
+properties/7/spawn = true
+properties/7/replication_mode = 1
+properties/8/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeBlinkLeft")
+properties/8/spawn = true
+properties/8/replication_mode = 1
+properties/9/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeLookDownLeft")
+properties/9/spawn = true
+properties/9/replication_mode = 1
+properties/10/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeLookInLeft")
+properties/10/spawn = true
+properties/10/replication_mode = 1
+properties/11/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeLookOutLeft")
+properties/11/spawn = true
+properties/11/replication_mode = 1
+properties/12/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeLookUpLeft")
+properties/12/spawn = true
+properties/12/replication_mode = 1
+properties/13/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeSquintLeft")
+properties/13/spawn = true
+properties/13/replication_mode = 1
+properties/14/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeWideLeft")
+properties/14/spawn = true
+properties/14/replication_mode = 1
+properties/15/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeBlinkRight")
+properties/15/spawn = true
+properties/15/replication_mode = 1
+properties/16/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeLookDownRight")
+properties/16/spawn = true
+properties/16/replication_mode = 1
+properties/17/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeLookInRight")
+properties/17/spawn = true
+properties/17/replication_mode = 1
+properties/18/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeLookOutRight")
+properties/18/spawn = true
+properties/18/replication_mode = 1
+properties/19/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeLookUpRight")
+properties/19/spawn = true
+properties/19/replication_mode = 1
+properties/20/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeSquintRight")
+properties/20/spawn = true
+properties/20/replication_mode = 1
+properties/21/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/eyeWideRight")
+properties/21/spawn = true
+properties/21/replication_mode = 1
+properties/22/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/jawForward")
+properties/22/spawn = true
+properties/22/replication_mode = 1
+properties/23/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/jawLeft")
+properties/23/spawn = true
+properties/23/replication_mode = 1
+properties/24/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/jawRight")
+properties/24/spawn = true
+properties/24/replication_mode = 1
+properties/25/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/jawOpen")
+properties/25/spawn = true
+properties/25/replication_mode = 1
+properties/26/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthClose")
+properties/26/spawn = true
+properties/26/replication_mode = 1
+properties/27/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthFunnel")
+properties/27/spawn = true
+properties/27/replication_mode = 1
+properties/28/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthPucker")
+properties/28/spawn = true
+properties/28/replication_mode = 1
+properties/29/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthRight")
+properties/29/spawn = true
+properties/29/replication_mode = 1
+properties/30/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthLeft")
+properties/30/spawn = true
+properties/30/replication_mode = 1
+properties/31/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthSmileLeft")
+properties/31/spawn = true
+properties/31/replication_mode = 1
+properties/32/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthSmileRight")
+properties/32/spawn = true
+properties/32/replication_mode = 1
+properties/33/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthFrownLeft")
+properties/33/spawn = true
+properties/33/replication_mode = 1
+properties/34/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthFrownRight")
+properties/34/spawn = true
+properties/34/replication_mode = 1
+properties/35/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthDimpleLeft")
+properties/35/spawn = true
+properties/35/replication_mode = 1
+properties/36/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthDimpleRight")
+properties/36/spawn = true
+properties/36/replication_mode = 1
+properties/37/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthStretchLeft")
+properties/37/spawn = true
+properties/37/replication_mode = 1
+properties/38/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthStretchRight")
+properties/38/spawn = true
+properties/38/replication_mode = 1
+properties/39/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthRollLower")
+properties/39/spawn = true
+properties/39/replication_mode = 1
+properties/40/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthRollUpper")
+properties/40/spawn = true
+properties/40/replication_mode = 1
+properties/41/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthShrugLower")
+properties/41/spawn = true
+properties/41/replication_mode = 1
+properties/42/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthShrugUpper")
+properties/42/spawn = true
+properties/42/replication_mode = 1
+properties/43/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthPressLeft")
+properties/43/spawn = true
+properties/43/replication_mode = 1
+properties/44/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthPressRight")
+properties/44/spawn = true
+properties/44/replication_mode = 1
+properties/45/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthLowerDownLeft")
+properties/45/spawn = true
+properties/45/replication_mode = 1
+properties/46/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthLowerDownRight")
+properties/46/spawn = true
+properties/46/replication_mode = 1
+properties/47/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthUpperUpLeft")
+properties/47/spawn = true
+properties/47/replication_mode = 1
+properties/48/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/mouthUpperUpRight")
+properties/48/spawn = true
+properties/48/replication_mode = 1
+properties/49/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/browDownLeft")
+properties/49/spawn = true
+properties/49/replication_mode = 1
+properties/50/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/browDownRight")
+properties/50/spawn = true
+properties/50/replication_mode = 1
+properties/51/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/browInnerUp")
+properties/51/spawn = true
+properties/51/replication_mode = 1
+properties/52/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/browOuterUpLeft")
+properties/52/spawn = true
+properties/52/replication_mode = 1
+properties/53/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/browOuterUpRight")
+properties/53/spawn = true
+properties/53/replication_mode = 1
+properties/54/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/cheekPuff")
+properties/54/spawn = true
+properties/54/replication_mode = 1
+properties/55/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/cheekSquintLeft")
+properties/55/spawn = true
+properties/55/replication_mode = 1
+properties/56/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/cheekSquintRight")
+properties/56/spawn = true
+properties/56/replication_mode = 1
+properties/57/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/noseSneerLeft")
+properties/57/spawn = true
+properties/57/replication_mode = 1
+properties/58/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/noseSneerRight")
+properties/58/spawn = true
+properties/58/replication_mode = 1
+properties/59/path = NodePath("AvatarRoot/bernard/Armature/Skeleton3D/Ch31_Body:blend_shapes/tongueOut")
+properties/59/spawn = true
+properties/59/replication_mode = 1
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_ljrr4"]
+
+[node name="XROrigin3D" type="XROrigin3D" unique_id=1503267807]
+script = ExtResource("1_kfx4a")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=2037867909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8237953, 0)
+
+[node name="Target" type="Marker3D" parent="XRCamera3D" unique_id=683046994]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="LeftController" type="XRController3D" parent="." unique_id=1722520529]
+tracker = &"left_hand"
+
+[node name="MovementDirect" parent="LeftController" unique_id=1424597202 instance=ExtResource("3_x2gul")]
+
+[node name="Target" type="Marker3D" parent="LeftController" unique_id=245992039]
+transform = Transform3D(0.18580386, -2.0891815e-08, 0.98258686, -0.9825868, -9.146643e-08, 0.18580383, 8.599192e-08, -0.9999999, -3.7522863e-08, 0, 0, 0)
+
+[node name="Pole" type="Marker3D" parent="LeftController/Target" unique_id=2005305365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025910378, -0.75166434, 0.13004434)
+
+[node name="FunctionPointer" parent="LeftController" unique_id=1684494267 instance=ExtResource("3_kfx4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+visible = false
+
+[node name="RightController" type="XRController3D" parent="." unique_id=2121946272]
+tracker = &"right_hand"
+
+[node name="MovementTurn" parent="RightController" unique_id=807471930 instance=ExtResource("5_kfx4a")]
+
+[node name="Target" type="Marker3D" parent="RightController" unique_id=367184279]
+transform = Transform3D(0.18566667, 3.5595647e-08, -0.982613, 0.982613, -4.2951374e-08, 0.18566667, -3.559565e-08, -1.0000001, -4.295138e-08, 0, 0, 0)
+
+[node name="Pole" type="Marker3D" parent="RightController/Target" unique_id=1127663476]
+transform = Transform3D(1.0000002, 0, 0, -1.4901161e-08, 1, 0, 2.9802322e-08, 0, 1.0000002, 0.026, -0.752, 0.13)
+
+[node name="in_call_control_viewport" parent="RightController" unique_id=1876519974 instance=ExtResource("7_7e1ug")]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0.1, -0.399)
+visible = false
+
+[node name="Waist" type="XRController3D" parent="." unique_id=2128659618]
+tracker = &"/user/vive_tracker_htcx/role/waist"
+
+[node name="Target" type="Marker3D" parent="Waist" unique_id=1659487416]
+
+[node name="LAnkle" type="XRController3D" parent="." unique_id=1653117457]
+tracker = &"/user/vive_tracker_htcx/role/left_ankle"
+
+[node name="Visual" type="MeshInstance3D" parent="LAnkle" unique_id=2096252396]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_x2gul")
+mesh = SubResource("SphereMesh_kfx4a")
+
+[node name="Target" type="Marker3D" parent="LAnkle" unique_id=2740982]
+transform = Transform3D(-0.9659258, -0.25881907, 6.1275436e-08, -0.18140866, 0.6770263, 0.71325046, -0.18460289, 0.68894696, -0.70090926, 0, 0, 0)
+
+[node name="Pole" type="Marker3D" parent="LAnkle/Target" unique_id=978475879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.048030674, -0.005936414, 0.4179113)
+
+[node name="RAnkle" type="XRController3D" parent="." unique_id=995186668]
+tracker = &"/user/vive_tracker_htcx/role/right_ankle"
+
+[node name="Visual" type="MeshInstance3D" parent="RAnkle" unique_id=986151774]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+visible = false
+mesh = SubResource("SphereMesh_x2gul")
+
+[node name="Target" type="Marker3D" parent="RAnkle" unique_id=760069603]
+transform = Transform3D(-0.9659258, 0.25881907, -6.127542e-08, 0.18140866, 0.6770263, 0.71325034, 0.18460289, 0.68894696, -0.70090914, 0, 0, 0)
+
+[node name="Pole" type="Marker3D" parent="RAnkle/Target" unique_id=649456851]
+transform = Transform3D(0.9999999, -1.7881393e-07, -4.4703484e-07, 1.4901161e-08, 1, -8.940697e-08, 1.4901161e-08, 0, 0.99999976, -0.048030674, -0.005936414, 0.4179113)
+
+[node name="PlayerBody" parent="." unique_id=1156645439 instance=ExtResource("6_7e1ug")]
+player_calibrate_height = false
+
+[node name="MovementJog" parent="." unique_id=413540329 instance=ExtResource("8_2118c")]
+
+[node name="AvatarRoot" type="Node3D" parent="." unique_id=1623042168]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="bernard" parent="AvatarRoot" unique_id=1333121216 instance=ExtResource("9_7e1ug")]
+
+[node name="LHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="7" unique_id=2100463575]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../LeftController/Target")
+settings/0/pole_node = NodePath("../../../../../LeftController/Target/Pole")
+settings/0/root_bone_name = "mixamorig9_LeftArm"
+settings/0/root_bone = 8
+settings/0/middle_bone_name = "mixamorig9_LeftForeArm"
+settings/0/middle_bone = 9
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "mixamorig9_LeftHand"
+settings/0/end_bone = 10
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="8" unique_id=667495555]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig9_LeftHand"
+settings/0/apply_bone = 10
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../LeftController/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="LHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="9" unique_id=811069044]
+setting_count = 1
+settings/0/root_bone_name = "mixamorig9_LeftArm"
+settings/0/root_bone = 8
+settings/0/end_bone_name = "mixamorig9_LeftHand"
+settings/0/end_bone = 10
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="RHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="10" unique_id=45097490]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../RightController/Target")
+settings/0/pole_node = NodePath("../../../../../RightController/Target/Pole")
+settings/0/root_bone_name = "mixamorig9_RightArm"
+settings/0/root_bone = 32
+settings/0/middle_bone_name = "mixamorig9_RightForeArm"
+settings/0/middle_bone = 33
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "mixamorig9_RightHand"
+settings/0/end_bone = 34
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="RHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="11" unique_id=184416804]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig9_RightHand"
+settings/0/apply_bone = 34
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../RightController/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="RHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="12" unique_id=1171713168]
+setting_count = 1
+settings/0/root_bone_name = "mixamorig9_RightArm"
+settings/0/root_bone = 32
+settings/0/end_bone_name = "mixamorig9_RightHand"
+settings/0/end_bone = 34
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="LATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="13" unique_id=1974378056]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../LAnkle/Target")
+settings/0/pole_node = NodePath("../../../../../LAnkle/Target/Pole")
+settings/0/root_bone_name = "mixamorig9_LeftUpLeg"
+settings/0/root_bone = 55
+settings/0/middle_bone_name = "mixamorig9_LeftLeg"
+settings/0/middle_bone = 56
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "mixamorig9_LeftFoot"
+settings/0/end_bone = 57
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="LACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="14" unique_id=323710274]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig9_LeftFoot"
+settings/0/apply_bone = 57
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../LAnkle/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="LABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="15" unique_id=218119964]
+setting_count = 1
+settings/0/root_bone_name = "mixamorig9_LeftUpLeg"
+settings/0/root_bone = 55
+settings/0/end_bone_name = "mixamorig9_LeftFoot"
+settings/0/end_bone = 57
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="RATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="16" unique_id=1984493775]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../RAnkle/Target")
+settings/0/pole_node = NodePath("../../../../../RAnkle/Target/Pole")
+settings/0/root_bone_name = "mixamorig9_RightUpLeg"
+settings/0/root_bone = 60
+settings/0/middle_bone_name = "mixamorig9_RightLeg"
+settings/0/middle_bone = 61
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "mixamorig9_RightFoot"
+settings/0/end_bone = 62
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="RACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="17" unique_id=1968032641]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig9_RightFoot"
+settings/0/apply_bone = 62
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../RAnkle/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="RABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="18" unique_id=709646700]
+setting_count = 1
+settings/0/root_bone_name = "mixamorig9_RightUpLeg"
+settings/0/root_bone = 60
+settings/0/end_bone_name = "mixamorig9_RightFoot"
+settings/0/end_bone = 62
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="CCDIK3D" type="CCDIK3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="19" unique_id=1587821144]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../XRCamera3D/Target")
+settings/0/root_bone_name = "mixamorig9_Spine"
+settings/0/root_bone = 1
+settings/0/end_bone_name = "mixamorig9_Neck"
+settings/0/end_bone = 4
+settings/0/extend_end_bone = false
+settings/0/joint_count = 4
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+settings/0/joints/3/rotation_axis = 3
+settings/0/joints/3/limitation = null
+
+[node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/bernard/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1333121216, 1423124669) index="20" unique_id=634725132]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig9_Neck"
+settings/0/apply_bone = 4
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../XRCamera3D/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="AvatarRoot/bernard" unique_id=497356409]
+target = NodePath("../Armature/Skeleton3D/Ch31_Body")
+
+[node name="Remy" parent="AvatarRoot" unique_id=712562608 instance=ExtResource("9_8px4q")]
+visible = false
+
+[node name="Skeleton3D" parent="AvatarRoot/Remy" index="0" unique_id=1667281552]
+bones/17/rotation = Quaternion(0.25189453, -0.059464402, 0.22192542, 0.9400863)
+bones/34/rotation = Quaternion(0.008705135, -0.0008868446, -0.10134756, 0.9948126)
+bones/41/rotation = Quaternion(0.25189725, 0.05946548, -0.22192715, 0.9400852)
+
+[node name="LHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="7" unique_id=2123524015]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../LeftController/Target")
+settings/0/pole_node = NodePath("../../../../LeftController/Target/Pole")
+settings/0/root_bone_name = "mixamorig_LeftArm"
+settings/0/root_bone = 10
+settings/0/middle_bone_name = "mixamorig_LeftForeArm"
+settings/0/middle_bone = 11
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "mixamorig_LeftHand"
+settings/0/end_bone = 12
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="8" unique_id=14855362]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig_LeftHand"
+settings/0/apply_bone = 12
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../LeftController/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="LHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" index="9" unique_id=1432786820]
+setting_count = 1
+settings/0/root_bone_name = "mixamorig_LeftArm"
+settings/0/root_bone = 10
+settings/0/end_bone_name = "mixamorig_LeftHand"
+settings/0/end_bone = 12
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="RHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="10" unique_id=489294860]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../RightController/Target")
+settings/0/pole_node = NodePath("../../../../RightController/Target/Pole")
+settings/0/root_bone_name = "mixamorig_RightArm"
+settings/0/root_bone = 34
+settings/0/middle_bone_name = "mixamorig_RightForeArm"
+settings/0/middle_bone = 35
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "mixamorig_RightHand"
+settings/0/end_bone = 36
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="RHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="11" unique_id=512156]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig_RightHand"
+settings/0/apply_bone = 36
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../RightController/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="RHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" index="12" unique_id=1345360364]
+setting_count = 1
+settings/0/root_bone_name = "mixamorig_RightArm"
+settings/0/root_bone = 34
+settings/0/end_bone_name = "mixamorig_RightHand"
+settings/0/end_bone = 36
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="LATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="13" unique_id=1638758577]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../LAnkle/Target")
+settings/0/pole_node = NodePath("../../../../LAnkle/Target/Pole")
+settings/0/root_bone_name = "mixamorig_LeftUpLeg"
+settings/0/root_bone = 57
+settings/0/middle_bone_name = "mixamorig_LeftLeg"
+settings/0/middle_bone = 58
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "mixamorig_LeftFoot"
+settings/0/end_bone = 59
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="LACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="14" unique_id=484808563]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig_LeftFoot"
+settings/0/apply_bone = 59
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../LAnkle/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="LABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" index="15" unique_id=1172965382]
+setting_count = 1
+settings/0/root_bone_name = "mixamorig_LeftUpLeg"
+settings/0/root_bone = 57
+settings/0/end_bone_name = "mixamorig_LeftFoot"
+settings/0/end_bone = 59
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="RATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="16" unique_id=1513499070]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../RAnkle/Target")
+settings/0/pole_node = NodePath("../../../../RAnkle/Target/Pole")
+settings/0/root_bone_name = "mixamorig_RightUpLeg"
+settings/0/root_bone = 62
+settings/0/middle_bone_name = "mixamorig_RightLeg"
+settings/0/middle_bone = 63
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "mixamorig_RightFoot"
+settings/0/end_bone = 64
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="RACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="17" unique_id=898155379]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig_RightFoot"
+settings/0/apply_bone = 64
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../RAnkle/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="RABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/Remy/Skeleton3D" index="18" unique_id=853448199]
+setting_count = 1
+settings/0/root_bone_name = "mixamorig_RightUpLeg"
+settings/0/root_bone = 62
+settings/0/end_bone_name = "mixamorig_RightFoot"
+settings/0/end_bone = 64
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 3
+
+[node name="CCDIK3D" type="CCDIK3D" parent="AvatarRoot/Remy/Skeleton3D" index="19" unique_id=553081359]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../XRCamera3D/Target")
+settings/0/root_bone_name = "mixamorig_Spine"
+settings/0/root_bone = 1
+settings/0/end_bone_name = "mixamorig_Neck"
+settings/0/end_bone = 4
+settings/0/extend_end_bone = false
+settings/0/joint_count = 4
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+settings/0/joints/3/rotation_axis = 3
+settings/0/joints/3/limitation = null
+
+[node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/Remy/Skeleton3D" index="20" unique_id=111965675]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "mixamorig_Neck"
+settings/0/apply_bone = 4
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../XRCamera3D/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=96480807]
+replication_config = SubResource("SceneReplicationConfig_7e1ug")
+
+[node name="AudioManager" parent="." unique_id=1555394438 instance=ExtResource("12_2118c")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=691999784]
+stream = SubResource("AudioStreamGenerator_ljrr4")
+autoplay = true
+
+[node name="Calibration" type="Node3D" parent="." unique_id=294551844 node_paths=PackedStringArray("hmd", "left_hand", "right_hand", "waist", "left_foot", "right_foot")]
+script = ExtResource("11_8px4q")
+hmd = NodePath("../XRCamera3D")
+left_hand = NodePath("../LeftController")
+right_hand = NodePath("../RightController")
+waist = NodePath("../Waist")
+left_foot = NodePath("../LAnkle")
+right_foot = NodePath("../RAnkle")
+avatar_scene = ExtResource("9_7e1ug")
+eye_offset = 0.1
+
+[connection signal="button_pressed" from="RightController" to="." method="_on_right_controller_button_pressed"]
+
+[editable path="AvatarRoot/bernard"]
+[editable path="AvatarRoot/Remy"]

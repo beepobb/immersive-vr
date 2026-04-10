@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ccpjb3rbritd2"]
+
+[ext_resource type="Script" uid="uid://bif6ly3f8g0th" path="res://scenes/game/landing_page/exit.gd" id="1_0b7pw"]
+[ext_resource type="Texture2D" uid="uid://1axyobbu08jx" path="res://assets/icons/back_logo.png" id="2_yse7m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5psj0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.47058824)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[node name="Exit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0b7pw")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5psj0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Exit_button" type="TextureButton" parent="Panel/MarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_yse7m")

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://3p3n7xgukuqa"]
+
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_ex4w4"]
+[ext_resource type="PackedScene" uid="uid://x0k1ixl4v7o1" path="res://scenes/game/avatar_customisation/avatar_customisation_base.tscn" id="2_515di"]
+[ext_resource type="PackedScene" uid="uid://c6wjq0f3tu7tc" path="res://scenes/environment/circular_hall.tscn" id="3_515di"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_515di"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_qvcbg"]
+sky_material = SubResource("ProceduralSkyMaterial_515di")
+
+[sub_resource type="Environment" id="Environment_kxn41"]
+background_mode = 2
+sky = SubResource("Sky_qvcbg")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="AvatarCustomisation" unique_id=621000924 instance=ExtResource("1_ex4w4")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=1811613669]
+environment = SubResource("Environment_kxn41")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=891171652]
+transform = Transform3D(-0.86602545, -0.43301275, 0.24999993, 0.49866748, -0.78448105, 0.36867368, 0.036479793, 0.44394758, 0.8953099, 0, 3.0599432, 3.1913033)
+shadow_enabled = true
+
+[node name="PlayerLoader" parent="." index="2" unique_id=1066474312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+moving = false
+spawn_point = Vector3(0, 1.7, 0.82)
+
+[node name="AvatarCustomisationBase" parent="." index="3" unique_id=371794598 instance=ExtResource("2_515di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43563092, 0.033273995, -2.573516)
+
+[node name="EnvironmentRoot" type="Node" parent="." index="4" unique_id=1091448256]
+
+[node name="Room" parent="EnvironmentRoot" index="0" unique_id=1188904861 instance=ExtResource("3_515di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0.074656606, 0.064830184, -0.081789136)
+
+[node name="Camera3D" type="Camera3D" parent="." index="5" unique_id=1676589494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0.82)

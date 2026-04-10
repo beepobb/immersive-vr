@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://brab7ph4ccy00"]
+
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="1_p5pyc"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="2_uwvnq"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_yx8g4"]
+[ext_resource type="PackedScene" uid="uid://dewij3vp4xo67" path="res://assets/Avatar/avatar w face bs/female 2.glb" id="5_e2jr5"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_0yynq"]
+
+[node name="XROrigin3D" type="XROrigin3D" unique_id=1315667455]
+script = ExtResource("6_17wg2")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1761901374]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 2, 0)
+
+[node name="Target" type="Marker3D" parent="XRCamera3D" unique_id=1563973035]
+
+[node name="LeftHand" type="XRController3D" parent="." unique_id=705817181]
+tracker = &"left_hand"
+
+[node name="MovementDirect" parent="LeftHand" unique_id=1665739895 instance=ExtResource("1_p5pyc")]
+
+[node name="Target" type="Marker3D" parent="LeftHand" unique_id=1501056674]
+
+[node name="Pole" type="Marker3D" parent="LeftHand/Target" unique_id=63072796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04905367, -0.16784859, 0)
+
+[node name="RightHand" type="XRController3D" parent="." unique_id=293328061]
+tracker = &"right_hand"
+
+[node name="MovementTurn" parent="RightHand" unique_id=1598548516 instance=ExtResource("2_uwvnq")]
+
+[node name="Target" type="Marker3D" parent="RightHand" unique_id=245020111]
+
+[node name="Pole" type="Marker3D" parent="RightHand/Target" unique_id=185197913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36463028, -0.15300393, 0)
+
+[node name="Waist" type="XRController3D" parent="." unique_id=197640934]
+tracker = &"/user/vive_tracker_htcx/role/waist"
+
+[node name="LeftFoot" type="XRController3D" parent="." unique_id=1095554998]
+tracker = &"/user/vive_tracker_htcx/role/left_ankle"
+
+[node name="Target" type="Marker3D" parent="LeftFoot" unique_id=361439534]
+transform = Transform3D(1.0000008, 0, 0, 0, 1.0000011, 0, 0, 0, 1.0000008, 0, 0, 0)
+
+[node name="Pole" type="Marker3D" parent="LeftFoot/Target" unique_id=2136236405]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.108888894, 0.013836697, -0.58896327)
+
+[node name="RightFoot" type="XRController3D" parent="." unique_id=772368523]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+tracker = &"/user/vive_tracker_htcx/role/right_ankle"
+
+[node name="Target" type="Marker3D" parent="RightFoot" unique_id=197880211]
+
+[node name="Pole" type="Marker3D" parent="RightFoot/Target" unique_id=1205544447]
+
+[node name="PlayerBody" parent="." unique_id=1377701254 instance=ExtResource("2_yx8g4")]
+
+[node name="AvatarRoot" type="Node3D" parent="." unique_id=1850600177]
+
+[node name="female 2" parent="AvatarRoot" unique_id=1898373451 instance=ExtResource("5_e2jr5")]
+
+[node name="Human_long01" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="3" unique_id=1341773647]
+visible = false
+
+[node name="LHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="7" unique_id=1811673746]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../LeftHand/Target")
+settings/0/pole_node = NodePath("../../../../../LeftHand/Target/Pole")
+settings/0/root_bone_name = "shoulder01.L"
+settings/0/root_bone = 23
+settings/0/middle_bone_name = "lowerarm01.L"
+settings/0/middle_bone = 26
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "wrist.L"
+settings/0/end_bone = 28
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="LHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="8" unique_id=1506230994]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "wrist.L"
+settings/0/apply_bone = 28
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../LeftHand/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="LHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="9" unique_id=1765718823]
+setting_count = 1
+settings/0/root_bone_name = "upperarm01.L"
+settings/0/root_bone = 24
+settings/0/end_bone_name = "wrist.L"
+settings/0/end_bone = 28
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 5
+
+[node name="RHTwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="10" unique_id=1635430544]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../RightHand/Target")
+settings/0/pole_node = NodePath("../../../../../RightHand/Target/Pole")
+settings/0/root_bone_name = "shoulder01.R"
+settings/0/root_bone = 49
+settings/0/middle_bone_name = "lowerarm01.R"
+settings/0/middle_bone = 52
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "wrist.R"
+settings/0/end_bone = 54
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="RHCopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="11" unique_id=105235260]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "wrist.R"
+settings/0/apply_bone = 54
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../RightHand/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="RHBoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="12" unique_id=1591258727]
+setting_count = 1
+settings/0/root_bone_name = "upperarm01.R"
+settings/0/root_bone = 50
+settings/0/end_bone_name = "wrist.R"
+settings/0/end_bone = 54
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 5
+
+[node name="LATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="13" unique_id=1546680275]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../LeftFoot/Target")
+settings/0/pole_node = NodePath("../../../../../LeftFoot/Target/Pole")
+settings/0/root_bone_name = "upperleg01.L"
+settings/0/root_bone = 2
+settings/0/middle_bone_name = "lowerleg01.L"
+settings/0/middle_bone = 4
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "foot.L"
+settings/0/end_bone = 6
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="LACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="14" unique_id=1520015296]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "foot.L"
+settings/0/apply_bone = 6
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../LeftFoot/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="LABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="15" unique_id=528422]
+setting_count = 1
+settings/0/root_bone_name = "upperleg01.L"
+settings/0/root_bone = 2
+settings/0/end_bone_name = "foot.L"
+settings/0/end_bone = 6
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 5
+
+[node name="RATwoBoneIK3D" type="TwoBoneIK3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="16" unique_id=1783752267]
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../RightFoot/Target")
+settings/0/pole_node = NodePath("../../../../../RightFoot/Target/Pole")
+settings/0/root_bone_name = "upperleg01.R"
+settings/0/root_bone = 9
+settings/0/middle_bone_name = "lowerleg01.R"
+settings/0/middle_bone = 11
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "foot.R"
+settings/0/end_bone = 13
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="RACopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="17" unique_id=816716865]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "foot.R"
+settings/0/apply_bone = 13
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../RightFoot/Target")
+settings/0/copy = 6
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="RABoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="18" unique_id=1543611557]
+setting_count = 1
+settings/0/root_bone_name = "upperleg01.R"
+settings/0/root_bone = 9
+settings/0/end_bone_name = "foot.R"
+settings/0/end_bone = 13
+settings/0/extend_end_bone = true
+settings/0/end_bone_direction = 6
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 1
+settings/0/weight_position = 0.15
+settings/0/joint_count = 5
+
+[node name="CCDIK3D" type="CCDIK3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="19" unique_id=330759715]
+angular_delta_limit = 0.08726646259971647
+setting_count = 1
+settings/0/target_node = NodePath("../../../../../XRCamera3D/Target")
+settings/0/root_bone_name = "spine05"
+settings/0/root_bone = 15
+settings/0/end_bone_name = "head"
+settings/0/end_bone = 77
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.0
+settings/0/joint_count = 9
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+settings/0/joints/3/rotation_axis = 3
+settings/0/joints/3/limitation = null
+settings/0/joints/4/rotation_axis = 3
+settings/0/joints/4/limitation = null
+settings/0/joints/5/rotation_axis = 3
+settings/0/joints/5/limitation = null
+settings/0/joints/6/rotation_axis = 3
+settings/0/joints/6/limitation = null
+settings/0/joints/7/rotation_axis = 3
+settings/0/joints/7/limitation = null
+settings/0/joints/8/rotation_axis = 3
+settings/0/joints/8/limitation = null
+
+[node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="AvatarRoot/female 2/Human_rig/Skeleton3D" parent_id_path=PackedInt32Array(1898373451, 1814412682) index="20" unique_id=1617309484]
+setting_count = 1
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "neck03"
+settings/0/apply_bone = 76
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../XRCamera3D/Target")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1422199456]
+replication_config = SubResource("SceneReplicationConfig_0yynq")
+
+[editable path="AvatarRoot/female 2"]

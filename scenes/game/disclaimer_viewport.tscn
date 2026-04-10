@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c8mkjqu5ta77d"]
+
+[ext_resource type="Script" uid="uid://bjxf5pppmtxwe" path="res://scripts/ui/call_session/disclaimer_viewports.gd" id="1_balkl"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_yymyn"]
+[ext_resource type="PackedScene" uid="uid://ncmxwoiw3wmq" path="res://scenes/game/disclaimer_popup.tscn" id="3_0eto3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yymyn"]
+size = Vector3(3, 1.5, 0.1)
+
+[node name="DisclaimerViewports" type="Node3D" unique_id=1486387343]
+script = ExtResource("1_balkl")
+
+[node name="DisclaimerPopup" parent="." unique_id=278983125 instance=ExtResource("1_yymyn")]
+rotation_order = 5
+screen_size = Vector2(2.48, 1.5)
+scene = ExtResource("3_0eto3")
+viewport_size = Vector2(1280, 871)
+transparent = 1
+scene_properties_keys = PackedStringArray("disclaimer_popup.gd")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1821768455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.102761745)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1974855409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035847068, -0.09163952)
+shape = SubResource("BoxShape3D_yymyn")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1299306983]
+transform = Transform3D(-0.99995786, 0, -0.00918033, 0, 1, 0, 0.00918033, 0, -0.99995786, 0, 0, -2.3723512)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1593575747]

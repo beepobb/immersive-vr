@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cykoj57u0ghhf"]
+
+[ext_resource type="PackedScene" uid="uid://cf70j1rwa51ct" path="res://assets/hair/culturalibre_hair_14.glb" id="1_ul5bj"]
+
+[node name="culturalibre_hair_14" instance=ExtResource("1_ul5bj")]

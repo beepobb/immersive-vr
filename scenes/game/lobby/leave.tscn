@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dpvf32trmgdmm"]
+
+[ext_resource type="Script" uid="uid://bsxk8jbjuwb2p" path="res://scripts/ui/lobby/leave.gd" id="2_dw6av"]
+[ext_resource type="Texture2D" uid="uid://cjv2bqv8g4kcu" path="res://assets/ui/icons/door_open.png" id="3_dw6av"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7ch7"]
+content_margin_left = 30.0
+content_margin_right = 20.0
+bg_color = Color(0.105882354, 0.105882354, 0.10980392, 0.72156864)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.59607846, 0.59607846, 0.60784316, 0.72156864)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw6av"]
+content_margin_left = 30.0
+content_margin_right = 20.0
+bg_color = Color(0, 0, 0, 0.78039217)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.59607846, 0.59607846, 0.60784316, 0.72156864)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7ja5"]
+content_margin_left = 30.0
+content_margin_right = 20.0
+bg_color = Color(0.17254902, 0.17254902, 0.18039216, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.59607846, 0.59607846, 0.60784316, 0.72156864)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k11wr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lvu3"]
+content_margin_left = 30.0
+content_margin_right = 20.0
+bg_color = Color(0.22745098, 0.22745098, 0.23529412, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.59607846, 0.59607846, 0.60784316, 0.72156864)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="LeaveLobby" type="Button" unique_id=1995690849]
+custom_minimum_size = Vector2(200, 50)
+offset_right = 100.0
+offset_bottom = 50.0
+theme_override_colors/font_focus_color = Color(0.07450981, 0.4862745, 0.70980394, 1)
+theme_override_colors/font_hover_color = Color(0.07501093, 0.48471403, 0.7084362, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.055538677, 0.4258756, 0.62530494, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_e7ch7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dw6av")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u7ja5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k11wr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3lvu3")
+text = "Leave Lobby"
+icon = ExtResource("3_dw6av")
+script = ExtResource("2_dw6av")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,2 @@
+Unable to load material library
+Unable to read material "Bird_Standard" in .mtl file

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ms81qucl3k15"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctitc"]
+bg_color = Color(0.21176471, 0.6313726, 0.92156863, 0.5882353)
+shadow_size = 10
+shadow_offset = Vector2(0, 5)
+
+[node name="Panel" type="Panel" unique_id=1173568981]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ctitc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=620342250]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1583857044]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Welcome to VRnture
+Create your avatar to get started!"
+horizontal_alignment = 1

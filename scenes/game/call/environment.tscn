@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dwv36ohpotvy3"]
+
+[ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_00014"]
+[ext_resource type="PackedScene" uid="uid://cbppc18jtfe6c" path="res://assets/environment/Metaverse Environment 02/MetaVerse_Env_02.glb" id="2_pa1iy"]
+[ext_resource type="Script" uid="uid://cncvrq0yb88s8" path="res://scripts/environment_scene.gd" id="4_pk5nr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3jj1w"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_3jj1w")
+
+[sub_resource type="Environment" id="Environment_3gbvy"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Environment" unique_id=621000924 instance=ExtResource("1_00014")]
+in_call = true
+
+[node name="SpawnPoints" type="Node3D" parent="." index="0" unique_id=910772321]
+
+[node name="Therapist" type="Marker3D" parent="SpawnPoints" index="0" unique_id=1437240083 groups=["therapist"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Patient" type="Marker3D" parent="SpawnPoints" index="1" unique_id=546121713 groups=["patient"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="EnvironmentManager" type="Node3D" parent="." index="1" unique_id=1796291922]
+script = ExtResource("4_pk5nr")
+
+[node name="PlayerLoader" parent="." index="2" unique_id=1066474312]
+in_call = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="3" unique_id=991987366]
+transform = Transform3D(1, 0, 0, 0, -0.26166698, 0.9651582, 0, -0.9651582, -0.26166698, 0, 0, 0)
+shadow_enabled = true
+
+[node name="EnvironmentRoot" type="Node3D" parent="." index="4" unique_id=1926923436]
+unique_name_in_owner = true
+
+[node name="MetaVerse_Env_02" parent="EnvironmentRoot" index="0" unique_id=1690684314 instance=ExtResource("2_pa1iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5" unique_id=1423901652]
+environment = SubResource("Environment_3gbvy")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." index="6" unique_id=585296081]
+_spawnable_scenes = PackedStringArray("uid://jg1qkgdrf47o")
+spawn_path = NodePath("../PlayerLoader")
+spawn_limit = 2
