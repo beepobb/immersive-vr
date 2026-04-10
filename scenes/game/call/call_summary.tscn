@@ -12,7 +12,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 0)
 moving = false
 
 [node name="Viewport2Din3D" parent="." index="1" unique_id=651325637 instance=ExtResource("2_nn4wk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049, 3, -1.481)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049, 4.6030188, -1.481)
 screen_size = Vector2(1.28, 0.72)
 scene = ExtResource("3_r2qld")
 viewport_size = Vector2(1280, 720)

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bj11hgjjit1h8" path="res://scenes/staging/base_scene.tscn" id="1_wkxb3"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_u3dp7"]
 [ext_resource type="PackedScene" uid="uid://c80okq4yeqntk" path="res://scenes/game/lobby/server_ui.tscn" id="4_sktvb"]
-[ext_resource type="PackedScene" path="res://scenes/environment/circular_hall.tscn" id="4_wkxb3"]
+[ext_resource type="PackedScene" uid="uid://c6wjq0f3tu7tc" path="res://scenes/environment/circular_hall.tscn" id="4_wkxb3"]
 [ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="5_xa3pu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pi8sn"]
@@ -31,7 +31,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 moving = false
 
 [node name="HostJoin" parent="." index="3" unique_id=1027545802 instance=ExtResource("3_u3dp7")]
-transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0.03, 2, -2.016)
+transform = Transform3D(0.99993867, -0.003755237, -0.010421175, 0.0035356553, 0.999773, -0.021010146, 0.010497705, 0.02097201, 0.9997249, 0.03, 1.5, -2.016)
 screen_size = Vector2(3, 1.8)
 scene = ExtResource("4_sktvb")
 viewport_size = Vector2(600, 380)

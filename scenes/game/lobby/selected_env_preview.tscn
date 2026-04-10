@@ -26,7 +26,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ld0w2")
-theme_override_colors/font_color = Color(0.7392882, 0.7392882, 0.7392882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.1656563, 0.16565642, 0.16565639, 1)
 theme_override_font_sizes/font_size = 24
 text = "Clarity Room"
 
