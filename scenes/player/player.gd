@@ -75,7 +75,8 @@ func _ready():
 			$RightController.button_pressed.disconnect(_on_right_controller_button_pressed)
 		$RightController/in_call_control_viewport.visible = false
 	if is_multiplayer_authority():
-		hide_all_meshes($AvatarRoot/bernard/Armature/Skeleton3D)
+		print("local_id: ", get_multiplayer_authority(), " hide all meshes")
+		hide_all_meshes()
 	# for makehuman
 	#if in_call and is_local_player:
 		#GameState.avatar = self
@@ -125,12 +126,10 @@ func _ready():
 # 	for i in blend_shape_count:
 # 		_face_mesh.set_blend_shape_value(i, values[i])
 	
-func hide_all_meshes(node: Node) -> void:
+func hide_all_meshes(node: Node = $AvatarRoot) -> void:
 	for child in node.get_children():
 		if child is MeshInstance3D:
 			child.visible = false
-		
-		# Recurse into children
 		hide_all_meshes(child)
 		
 func _on_right_controller_button_pressed(action_name: String) -> void:

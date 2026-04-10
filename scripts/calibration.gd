@@ -55,7 +55,7 @@ func load_player_scaled() -> void:
 	else:
 		$"../AvatarRoot/bernard".visible = false
 		$"../AvatarRoot/Remy".visible = true
-	if not no_ft:
+	if not no_ft: # use facial tracking avatar
 		var avatar_name = get_node_or_null("../AvatarRoot").get_child(0).name
 		player = get_node_or_null("../AvatarRoot/" + avatar_name)
 		player_skeleton = player.get_child(0).get_child(0)

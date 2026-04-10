@@ -44,6 +44,6 @@ scene_properties_keys = PackedStringArray("server_ui.gd")
 [node name="Room" parent="EnvironmentRoot" index="0" unique_id=1212729777 instance=ExtResource("4_wkxb3")]
 
 [node name="VirtualKeyboard" parent="." index="5" unique_id=1143409856 instance=ExtResource("5_xa3pu")]
-transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 2.2, -1.4)
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, -0.17600703, 1.0440011, -1.4)
 visible = false
 scene_properties_keys = PackedStringArray("virtual_keyboard_2d.gd")
