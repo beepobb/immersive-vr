@@ -49,18 +49,15 @@ func load_player_scaled() -> void:
 	player_eye_height = hmd.global_position.y
 	var player
 	var player_skeleton
-	if no_ft:
+	if Roles.get_role_text() == "Patient":
 		$"../AvatarRoot/bernard".visible = true
 		$"../AvatarRoot/Remy".visible = false
-	else:
-		$"../AvatarRoot/bernard".visible = false
-		$"../AvatarRoot/Remy".visible = true
-	if not no_ft: # use facial tracking avatar
 		var avatar_name = get_node_or_null("../AvatarRoot").get_child(0).name
 		player = get_node_or_null("../AvatarRoot/" + avatar_name)
 		player_skeleton = player.get_child(0).get_child(0)
-		
-	else:
+	elif Roles.get_role_text() == "Therapist":
+		$"../AvatarRoot/bernard".visible = false
+		$"../AvatarRoot/Remy".visible = true
 		player = get_node_or_null("../AvatarRoot/Remy")
 		player_skeleton = player.get_child(0)
 		
