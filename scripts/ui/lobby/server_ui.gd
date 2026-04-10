@@ -50,7 +50,7 @@ func _on_host_pressed() -> void:
 	multiplayer.multiplayer_peer = peer
 	Roles.set_role(Roles.Role.THERAPIST)
 	_set_status("Hosting...")
-	load_lobby()
+	call_deferred("load_lobby")
 
 func _on_join_pressed() -> void:
 	if get_input:
@@ -117,11 +117,7 @@ func _on_connection_timeout() -> void:
 	confirm_button.disabled = false
 	
 func load_lobby() -> void:
-	var scene_base := XRTools.find_xr_ancestor(self , "*", "XRToolsSceneBase")
-	if not scene_base:
-		print("ERROR: Could not find XRToolsSceneBase ancestor!")
-		return
-	scene_base.load_scene("res://scenes/game/lobby/lobby.tscn")
+	GameState.load_scene("res://scenes/game/lobby/lobby.tscn")
 
 func _set_status(message: String) -> void:
 	status_label.text = message
